@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "_raw.md")
 MEDIA_SRC = os.path.join(HERE, "media")
 OUT = os.path.dirname(HERE)            # raiz do repo (uma acima de _src/)
-KEEP = {".git", "_src", ".gitignore"}  # nunca apagar na limpeza
+KEEP = {".git", "_src", ".gitignore", "LICENSE"}  # nunca apagar na limpeza
 
 raw = open(SRC, encoding="utf-8").read()
 
@@ -76,6 +76,8 @@ b_release = "https://img.shields.io/github/v/release/BrunoDomenesDutra/ranmzagt?
 b_downloads = "https://img.shields.io/github/downloads/BrunoDomenesDutra/ranmzagt/total?label=downloads&color=brightgreen"
 b_stars = "https://img.shields.io/github/stars/BrunoDomenesDutra/ranmzagt?label=stars&color=yellow"
 b_platform = "https://img.shields.io/badge/plataforma-Windows-0078D6"
+b_license = "https://img.shields.io/badge/licen%C3%A7a-Freeware-orange"
+LICENSE_URL = f"{REPO_URL}/blob/main/LICENSE"
 
 tagline = "Traduz qualquer jogo, vídeo ou texto na tela — por cima, em tempo real."
 desc = ("O **Ranmza GT** captura uma área da tela, reconhece o texto com OCR, traduz e "
@@ -92,6 +94,7 @@ home += f'  <a href="{RELEASES_URL}"><img src="{b_release}" alt="Release"></a>\n
 home += f'  <a href="{RELEASES_URL}"><img src="{b_downloads}" alt="Downloads"></a>\n'
 home += f'  <a href="{REPO_URL}/stargazers"><img src="{b_stars}" alt="Stars"></a>\n'
 home += f'  <img src="{b_platform}" alt="Plataforma">\n'
+home += f'  <a href="{LICENSE_URL}"><img src="{b_license}" alt="Licenca"></a>\n'
 home += '</p>\n\n---\n\n'
 home += desc + '\n\n'
 home += (f"\U0001F4D6 **[Manual completo]({PAGES_URL})** &nbsp;&middot;&nbsp; "

@@ -9,6 +9,7 @@
   <a href="https://github.com/BrunoDomenesDutra/ranmzagt/releases"><img src="https://img.shields.io/github/downloads/BrunoDomenesDutra/ranmzagt/total?label=downloads&color=brightgreen" alt="Downloads"></a>
   <a href="https://github.com/BrunoDomenesDutra/ranmzagt/stargazers"><img src="https://img.shields.io/github/stars/BrunoDomenesDutra/ranmzagt?label=stars&color=yellow" alt="Stars"></a>
   <img src="https://img.shields.io/badge/plataforma-Windows-0078D6" alt="Plataforma">
+  <a href="https://github.com/BrunoDomenesDutra/ranmzagt/blob/main/LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-Freeware-orange" alt="Licenca"></a>
 </p>
 
 ---
