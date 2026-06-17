@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "_raw.md")
 MEDIA_SRC = os.path.join(HERE, "media")
 OUT = os.path.dirname(HERE)            # raiz do repo (uma acima de _src/)
-KEEP = {".git", "_src"}                # nunca apagar na limpeza
+KEEP = {".git", "_src", ".gitignore"}  # nunca apagar na limpeza
 
 raw = open(SRC, encoding="utf-8").read()
 
@@ -58,21 +58,32 @@ for l in topmatter:
         continue
     intro.append(s)
 
-home = "# Ranmza Game Translator\n\n"
-if img_src:
-    home += f"![Ranmza GT]({img_src})\n\n"
-home += "> **Manual do Usuario v1.0.0**\n\n" + '\n\n'.join(intro) + "\n"
-write('README.md', home)
+# paginas do manual vao para a subpasta Manual/
+MANUAL_DIR = os.path.join(OUT, 'Manual')
+os.makedirs(MANUAL_DIR, exist_ok=True)
+RELEASES_URL = "https://github.com/BrunoDomenesDutra/ranmzagt/releases"
 
 sidebar = ["- [Inicio](README.md)"]
+first_page = None
 for title, body in sections:
     if slug(title) == 'sumario':
         continue
     fname = f"{slug(title)}.md"
-    write(fname, body + '\n')
-    sidebar.append(f"- [{title}]({fname})")
+    if first_page is None:
+        first_page = fname
+    open(os.path.join(MANUAL_DIR, fname), 'w', encoding='utf-8', newline='\n').write(body + '\n')
+    sidebar.append(f"- [{title}](Manual/{fname})")
 write('_sidebar.md', '\n'.join(sidebar) + '\n')
 write('.nojekyll', '')
+
+home = "# Ranmza Game Translator\n\n"
+if img_src:
+    home += f"![Ranmza GT]({img_src})\n\n"
+home += "> **Manual do Usuario v1.0.0**\n\n" + '\n\n'.join(intro) + "\n\n---\n\n"
+if first_page:
+    home += f"\U0001F4D6 **[Abrir o manual](Manual/{first_page})**"
+home += f" &nbsp;&middot;&nbsp; ⬇️ **[Downloads (Releases)]({RELEASES_URL})**\n"
+write('README.md', home)
 
 write('index.html', '''<!DOCTYPE html>
 <html lang="pt-BR">
@@ -90,6 +101,7 @@ write('index.html', '''<!DOCTYPE html>
       name: 'Ranmza GT',
       repo: 'https://github.com/BrunoDomenesDutra/ranmzagt',
       loadSidebar: true,
+      alias: { '/.*/_sidebar.md': '/_sidebar.md' },
       subMaxLevel: 3,
       auto2top: true,
       search: { placeholder: 'Buscar no manual...', noData: 'Nada encontrado.' }

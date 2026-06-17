@@ -24,6 +24,11 @@ with open(SRC, "rb") as f:
         f, convert_image=mammoth.images.img_element(handle_image)
     ).value
 
-text = md(html, heading_style="ATX", bullets="-", strong_em_symbol="*")
+# keep_inline_images_in: o markdownify, por padrao, descarta <img> que estejam
+# dentro de heading/celula/etc. O logo vem num <h1> -> precisa estar nesta lista.
+text = md(
+    html, heading_style="ATX", bullets="-", strong_em_symbol="*",
+    keep_inline_images_in=["h1", "h2", "h3", "h4", "p", "td", "th", "li", "figure", "a", "span", "div"],
+)
 open(os.path.join(HERE, "_raw.md"), "w", encoding="utf-8", newline="\n").write(text)
 print("imagens:", count[0], "| chars:", len(text))
