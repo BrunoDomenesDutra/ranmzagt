@@ -1,29 +1,35 @@
 # -*- coding: utf-8 -*-
-# Passo 2: _raw.md -> site Docsify na raiz do repo.
-# Limpa o markdown, divide em uma pagina por secao "## " e gera README/_sidebar.
+# Gera o site Docsify (raiz do repo) a partir do markdown-mestre do manual.
+# Divide o markdown em uma pagina por secao "## " e escreve README/_sidebar/etc.
+#
+# Fonte: o mestre vive em game-translator/planos/MANUAL_DO_USUARIO.md. Se este
+# clone estiver ao lado do repo de codigo, o mestre e copiado para _src/manual.md
+# automaticamente; senao, usa a copia ja presente em _src/manual.md.
 import re, os, shutil, unicodedata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(HERE, "_raw.md")
-MEDIA_SRC = os.path.join(HERE, "media")
 OUT = os.path.dirname(HERE)            # raiz do repo (uma acima de _src/)
 KEEP = {".git", "_src", ".gitignore", "LICENSE"}  # nunca apagar na limpeza
 
+SRC = os.path.join(HERE, "manual.md")
+MASTER = os.path.normpath(os.path.join(
+    HERE, "..", "..", "game-translator", "planos", "MANUAL_DO_USUARIO.md"))
+if os.path.isfile(MASTER):
+    shutil.copyfile(MASTER, SRC)
+    print("manual.md sincronizado do mestre")
+
+LOGO = os.path.join(HERE, "logo.png")  # asset fixo da marca (nao vem do manual)
+
 raw = open(SRC, encoding="utf-8").read()
 
-# 1. remove ancoras do Google Docs, se houver (<a id="_heading=..."></a>)
+# Limpeza leve (o mestre ja e markdown limpo; passos idempotentes):
+# remove ancoras herdadas, cabecalhos vazios e colapsa linhas em branco.
 raw = re.sub(r'<a id="[^"]*"></a>', '', raw)
-# 2. desfaz escapes seguros (pontuacao que nunca e markdown inline; "_" nao
-#    vira italico intra-palavra no GFM/Docsify)
-for ch in ['.', ',', ';', ':', '!', '?', '(', ')', '"', '-', '/', '_']:
-    raw = raw.replace('\\' + ch, ch)
-# 3. remove cabecalhos vazios e colapsa linhas em branco
 raw = '\n'.join(l for l in raw.split('\n') if not re.match(r'^#{1,6}\s*$', l.strip()))
 raw = re.sub(r'\n{3,}', '\n\n', raw).strip() + '\n'
 
 lines = raw.split('\n')
 idx = [i for i, l in enumerate(lines) if l.startswith('## ')]
-topmatter = lines[:idx[0]]
 
 sections = []
 for k, start in enumerate(idx):
@@ -35,18 +41,19 @@ def slug(s):
     s = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode()
     return re.sub(r'[^a-zA-Z0-9]+', '-', s).strip('-').lower() or 'secao'
 
-img = re.search(r'!\[\]\((media/[^)]+)\)', '\n'.join(topmatter))
-img_src = img.group(1) if img else None
-
-# limpa a saida antiga (preserva .git e _src)
+# limpa a saida antiga (preserva o que esta em KEEP)
 for n in os.listdir(OUT):
     if n in KEEP:
         continue
     p = os.path.join(OUT, n)
     shutil.rmtree(p) if os.path.isdir(p) else os.remove(p)
 
-if os.path.isdir(MEDIA_SRC):
-    shutil.copytree(MEDIA_SRC, os.path.join(OUT, 'media'))
+# logo (asset fixo) -> media/logo.png
+os.makedirs(os.path.join(OUT, 'media'), exist_ok=True)
+img_src = None
+if os.path.isfile(LOGO):
+    shutil.copyfile(LOGO, os.path.join(OUT, 'media', 'logo.png'))
+    img_src = 'media/logo.png'
 
 def write(name, text):
     open(os.path.join(OUT, name), 'w', encoding='utf-8', newline='\n').write(text)

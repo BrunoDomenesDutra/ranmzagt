@@ -1,6 +1,6 @@
 <h1 align="center">Ranmza Game Translator</h1>
 
-<p align="center"><img src="media/img1.png" alt="Ranmza GT" width="200"></p>
+<p align="center"><img src="media/logo.png" alt="Ranmza GT" width="200"></p>
 
 <p align="center"><i>Traduz qualquer jogo, vídeo ou texto na tela — por cima, em tempo real.</i></p>
 
