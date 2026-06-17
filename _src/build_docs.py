@@ -77,6 +77,9 @@ write('_sidebar.md', '\n'.join(sidebar) + '\n')
 write('.nojekyll', '')
 
 home = "# Ranmza Game Translator\n\n"
+home += (f"[![Downloads](https://img.shields.io/github/downloads/"
+         f"BrunoDomenesDutra/ranmzagt/total?label=downloads&color=brightgreen)]"
+         f"({RELEASES_URL})\n\n")
 if img_src:
     home += f"![Ranmza GT]({img_src})\n\n"
 home += "> **Manual do Usuario v1.0.0**\n\n" + '\n\n'.join(intro) + "\n\n---\n\n"

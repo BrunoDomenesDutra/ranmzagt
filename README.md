@@ -1,5 +1,7 @@
 # Ranmza Game Translator
 
+[![Downloads](https://img.shields.io/github/downloads/BrunoDomenesDutra/ranmzagt/total?label=downloads&color=brightgreen)](https://github.com/BrunoDomenesDutra/ranmzagt/releases)
+
 ![Ranmza GT](media/img1.png)
 
 > **Manual do Usuario v1.0.0**
