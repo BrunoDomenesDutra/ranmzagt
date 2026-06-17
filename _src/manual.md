@@ -205,9 +205,6 @@ Se mesmo com pré-processamento o reconhecimento continuar ruim, a aba **OCR** p
 o "motor" de reconhecimento de texto:
 
 - **WinOCR** (padrão) — rápido, já vem pronto, mas pode errar em fontes muito estilizadas.
-- **Tesseract** — mais lento, mas costuma reconhecer melhor fontes "artísticas" de jogos. Você
-  precisa baixar e instalar o Tesseract separadamente (a aba tem um link e instruções). Depois
-  de instalado, use o botão "Verificar instalação" para o programa localizar automaticamente.
 - **OneOCR** (experimental, Windows 11) — o motor de OCR da Ferramenta de Captura (Snipping
   Tool), muito melhor que o WinOCR em fontes estilizadas e multilíngue automático (não precisa
   configurar idioma de origem). Você copia 3 arquivos do próprio Windows para uma pasta sua —
@@ -442,7 +439,6 @@ O campo do idioma de origem **se adapta ao motor de OCR** selecionado na aba OCR
   - *WinOCR* — uma tag BCP-47 (ex.: `en`, `ja`, `ko`, `zh-Hans`, `pt`). Se o pacote do idioma
     não estiver instalado no Windows, aparece um aviso vermelho com o botão **Instalar pacote
     de idioma** (abre direto a tela de idiomas do Windows).
-  - *Tesseract* — código de 3 letras do tessdata (ex.: `eng`, `por`, `jpn`).
   - *OneOCR* — **detecção automática**; não há idioma de origem para configurar.
 - **Idioma destino** — para qual idioma traduzir (ex.: `pt`, `es`, `fr`, `de`, `it`, `zh`).
 
@@ -526,9 +522,6 @@ As três primeiras seções só aparecem com um provedor de IA selecionado (não
     automático. Usa API não oficial da Microsoft; você copia 3 arquivos do próprio Windows
     (`oneocr.dll`, `oneocr.onemodel`, `onnxruntime.dll`) e aponta a pasta (botões Procurar /
     Verificar — a pasta é configurada automaticamente se válida).
-  - *Tesseract* — quando ativo, mostra um card de configuração: baixe de
-    github.com/UB-Mannheim/tesseract/wiki (selecionando os idiomas), e use Procurar / Verificar
-    para o programa localizar o `tesseract.exe`.
 - **Agrupamento de Blocos** — como as linhas detectadas são combinadas antes de traduzir:
   - *Modo Parágrafo* — agrupa linhas verticalmente próximas (diálogos, texto corrido). Mostra
     *Sensibilidade do agrupamento* (0–3,0; padrão 1): menor separa mais, maior junta mais.

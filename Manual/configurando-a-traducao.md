@@ -37,9 +37,6 @@ Se mesmo com pré-processamento o reconhecimento continuar ruim, a aba **OCR** p
 o "motor" de reconhecimento de texto:
 
 - **WinOCR** (padrão) — rápido, já vem pronto, mas pode errar em fontes muito estilizadas.
-- **Tesseract** — mais lento, mas costuma reconhecer melhor fontes "artísticas" de jogos. Você
-  precisa baixar e instalar o Tesseract separadamente (a aba tem um link e instruções). Depois
-  de instalado, use o botão "Verificar instalação" para o programa localizar automaticamente.
 - **OneOCR** (experimental, Windows 11) — o motor de OCR da Ferramenta de Captura (Snipping
   Tool), muito melhor que o WinOCR em fontes estilizadas e multilíngue automático (não precisa
   configurar idioma de origem). Você copia 3 arquivos do próprio Windows para uma pasta sua —
