@@ -51,13 +51,6 @@ if os.path.isdir(MEDIA_SRC):
 def write(name, text):
     open(os.path.join(OUT, name), 'w', encoding='utf-8', newline='\n').write(text)
 
-intro = []
-for l in topmatter:
-    s = l.strip()
-    if not s or s.startswith('#') or s == 'Ranmza Game Translator' or s.startswith('Manual do Usu') or re.match(r'^!\[', s):
-        continue
-    intro.append(s)
-
 # paginas do manual vao para a subpasta Manual/
 MANUAL_DIR = os.path.join(OUT, 'Manual')
 os.makedirs(MANUAL_DIR, exist_ok=True)
@@ -76,16 +69,33 @@ for title, body in sections:
 write('_sidebar.md', '\n'.join(sidebar) + '\n')
 write('.nojekyll', '')
 
-badge = ("https://img.shields.io/github/downloads/"
-         "BrunoDomenesDutra/ranmzagt/total?label=downloads&color=brightgreen")
-home = "# Ranmza Game Translator\n\n"
+REPO_URL = "https://github.com/BrunoDomenesDutra/ranmzagt"
+PAGES_URL = "https://brunodomenesdutra.github.io/ranmzagt/"
+
+b_release = "https://img.shields.io/github/v/release/BrunoDomenesDutra/ranmzagt?label=release&color=blue"
+b_downloads = "https://img.shields.io/github/downloads/BrunoDomenesDutra/ranmzagt/total?label=downloads&color=brightgreen"
+b_stars = "https://img.shields.io/github/stars/BrunoDomenesDutra/ranmzagt?label=stars&color=yellow"
+b_platform = "https://img.shields.io/badge/plataforma-Windows-0078D6"
+
+tagline = "Traduz qualquer jogo, vídeo ou texto na tela — por cima, em tempo real."
+desc = ("O **Ranmza GT** captura uma área da tela, reconhece o texto com OCR, traduz e "
+        "desenha a tradução **sobreposta ao jogo**, na mesma posição do texto original — "
+        "como uma legenda flutuante. Funciona com qualquer jogo, vídeo ou programa que "
+        "mostre texto na tela.")
+
+home = '<h1 align="center">Ranmza Game Translator</h1>\n\n'
 if img_src:
     home += f'<p align="center"><img src="{img_src}" alt="Ranmza GT" width="200"></p>\n\n'
-home += "> **Manual do Usuario v1.0.0**\n\n" + '\n\n'.join(intro) + "\n\n---\n\n"
-if first_page:
-    home += f"\U0001F4D6 **[Abrir o manual](Manual/{first_page})**"
-home += f" &nbsp;&middot;&nbsp; ⬇️ **[Downloads (Releases)]({RELEASES_URL})**\n\n"
-home += f'<p align="center"><a href="{RELEASES_URL}"><img src="{badge}" alt="Downloads"></a></p>\n'
+home += f'<p align="center"><i>{tagline}</i></p>\n\n'
+home += '<p align="center">\n'
+home += f'  <a href="{RELEASES_URL}"><img src="{b_release}" alt="Release"></a>\n'
+home += f'  <a href="{RELEASES_URL}"><img src="{b_downloads}" alt="Downloads"></a>\n'
+home += f'  <a href="{REPO_URL}/stargazers"><img src="{b_stars}" alt="Stars"></a>\n'
+home += f'  <img src="{b_platform}" alt="Plataforma">\n'
+home += '</p>\n\n---\n\n'
+home += desc + '\n\n'
+home += (f"\U0001F4D6 **[Manual completo]({PAGES_URL})** &nbsp;&middot;&nbsp; "
+         f"⬇️ **[Baixar (Releases)]({RELEASES_URL})**\n")
 write('README.md', home)
 
 write('index.html', '''<!DOCTYPE html>
