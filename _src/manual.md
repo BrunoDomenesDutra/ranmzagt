@@ -330,6 +330,22 @@ tempo, e você quer tudo traduzido ao vivo, na posição original, sem clicar.
 > Por ser contínuo e desenhar várias áreas ao vivo, o Tempo Real é mais pesado que os outros
 > modos. Se notar travadas, aumente o **intervalo** na aba Experimental.
 
+### Estabilidade com fundo animado
+
+Em cenas com fundo em movimento (animações de jogos de RPG, vídeos), o reconhecimento de texto
+pode oscilar de um quadro para outro, fazendo a tradução **tremer** ou **piscar**. Dois ajustes
+na aba Experimental controlam isso:
+
+- **Estabilidade da posição** — quantos pixels o texto precisa andar para a tradução ser
+  reposicionada. Maior = tradução mais "parada" (ignora o tremor); menor = acompanha o texto
+  mais de perto. (Padrão: 12px.)
+- **Segurar em falha de OCR** — por quantos ciclos uma tradução continua na tela quando o
+  reconhecimento falha por um instante, evitando a piscada. Maior = segura mais tempo; menor =
+  some mais rápido. (Padrão: 6.)
+
+Regra prática: se ainda **tremer**, aumente a *Estabilidade da posição*; se ainda **piscar**,
+aumente o *Segurar em falha de OCR*.
+
 ### Efeito máquina de escrever (typewriter)
 
 Muitos jogos revelam o texto **letra por letra**. Para não traduzir frases pela metade, ligue
@@ -599,8 +615,9 @@ Log da sessão em tempo real.
   **Contorno** na aba Captura, pois o fundo reconstruído pode ficar claro.
 - **Modo Tempo Real** — tradução contínua desenhada **no lugar** do texto original, sobre uma
   área própria. Tem suas próprias opções de intervalo, fonte, fundo, contorno e desligamento
-  automático, além de um pré-processamento de imagem exclusivo. Atalhos `Numpad3` (liga/desliga)
-  e `Numpad6` (selecionar área). Veja a **seção 9**.
+  automático, ajustes de estabilidade (*Estabilidade da posição* e *Segurar em falha de OCR*,
+  contra tremor/piscada com fundo animado) e um pré-processamento de imagem exclusivo. Atalhos
+  `Numpad3` (liga/desliga) e `Numpad6` (selecionar área). Veja a **seção 9**.
 - **Máquina de escrever (efeito typewriter)** — espera o texto parar de mudar antes de traduzir,
   evitando traduzir frases que ainda estão "sendo digitadas" na tela. Vale para o Modo Legenda e
   o Modo Tempo Real. Ajuste quão estável o texto precisa ficar e o tempo máximo de espera.

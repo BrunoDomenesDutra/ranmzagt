@@ -25,6 +25,22 @@ tempo, e você quer tudo traduzido ao vivo, na posição original, sem clicar.
 > Por ser contínuo e desenhar várias áreas ao vivo, o Tempo Real é mais pesado que os outros
 > modos. Se notar travadas, aumente o **intervalo** na aba Experimental.
 
+### Estabilidade com fundo animado
+
+Em cenas com fundo em movimento (animações de jogos de RPG, vídeos), o reconhecimento de texto
+pode oscilar de um quadro para outro, fazendo a tradução **tremer** ou **piscar**. Dois ajustes
+na aba Experimental controlam isso:
+
+- **Estabilidade da posição** — quantos pixels o texto precisa andar para a tradução ser
+  reposicionada. Maior = tradução mais "parada" (ignora o tremor); menor = acompanha o texto
+  mais de perto. (Padrão: 12px.)
+- **Segurar em falha de OCR** — por quantos ciclos uma tradução continua na tela quando o
+  reconhecimento falha por um instante, evitando a piscada. Maior = segura mais tempo; menor =
+  some mais rápido. (Padrão: 6.)
+
+Regra prática: se ainda **tremer**, aumente a *Estabilidade da posição*; se ainda **piscar**,
+aumente o *Segurar em falha de OCR*.
+
 ### Efeito máquina de escrever (typewriter)
 
 Muitos jogos revelam o texto **letra por letra**. Para não traduzir frases pela metade, ligue

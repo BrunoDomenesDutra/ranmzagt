@@ -187,8 +187,9 @@ Log da sessão em tempo real.
   **Contorno** na aba Captura, pois o fundo reconstruído pode ficar claro.
 - **Modo Tempo Real** — tradução contínua desenhada **no lugar** do texto original, sobre uma
   área própria. Tem suas próprias opções de intervalo, fonte, fundo, contorno e desligamento
-  automático, além de um pré-processamento de imagem exclusivo. Atalhos `Numpad3` (liga/desliga)
-  e `Numpad6` (selecionar área). Veja a **seção 9**.
+  automático, ajustes de estabilidade (*Estabilidade da posição* e *Segurar em falha de OCR*,
+  contra tremor/piscada com fundo animado) e um pré-processamento de imagem exclusivo. Atalhos
+  `Numpad3` (liga/desliga) e `Numpad6` (selecionar área). Veja a **seção 9**.
 - **Máquina de escrever (efeito typewriter)** — espera o texto parar de mudar antes de traduzir,
   evitando traduzir frases que ainda estão "sendo digitadas" na tela. Vale para o Modo Legenda e
   o Modo Tempo Real. Ajuste quão estável o texto precisa ficar e o tempo máximo de espera.
