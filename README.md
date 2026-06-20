@@ -21,7 +21,7 @@ O **Ranmza GT** captura uma área da tela, reconhece o texto com OCR, traduz e d
 **Como funciona:**
 
 1. **Captura** — ao apertar o atalho, fotografa a área da tela escolhida.
-2. **OCR** — reconhece o texto na imagem (Windows OCR nativo, OneOCR ou Tesseract, à sua escolha).
+2. **OCR** — reconhece o texto na imagem (Windows OCR nativo ou OneOCR, à sua escolha).
 3. **Tradução** — envia o texto para o motor escolhido (Google, OpenAI, Claude ou Gemini) e recebe a tradução.
 4. **Overlay** — desenha a tradução por cima do jogo, na mesma posição do texto original, sem capturar foco nem travar a janela.
 
@@ -38,7 +38,7 @@ Desenvolvido em **Rust** 🦀 — nativo para Windows, sem runtime pesado, com b
 **How it works:**
 
 1. **Capture** — when you press the hotkey, it grabs the chosen area of the screen.
-2. **OCR** — recognizes the text in the image (native Windows OCR, OneOCR or Tesseract, your choice).
+2. **OCR** — recognizes the text in the image (native Windows OCR or OneOCR, your choice).
 3. **Translation** — sends the text to the chosen engine (Google, OpenAI, Claude or Gemini) and gets the translation back.
 4. **Overlay** — draws the translation over the game, in the same position as the original text, without stealing focus or freezing the window.
 

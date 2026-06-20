@@ -92,7 +92,7 @@ desc_pt = ("O **Ranmza GT** captura uma área da tela, reconhece o texto com OCR
            "como uma legenda flutuante. Funciona com qualquer jogo, visual novel, mangá "
            "digital, vídeo ou programa que mostre texto na tela.")
 how_pt = ("1. **Captura** — ao apertar o atalho, fotografa a área da tela escolhida.\n"
-          "2. **OCR** — reconhece o texto na imagem (Windows OCR nativo, OneOCR ou Tesseract, "
+          "2. **OCR** — reconhece o texto na imagem (Windows OCR nativo ou OneOCR, "
           "à sua escolha).\n"
           "3. **Tradução** — envia o texto para o motor escolhido (Google, OpenAI, Claude ou "
           "Gemini) e recebe a tradução.\n"
@@ -108,8 +108,8 @@ desc_en = ("**Ranmza GT** captures an area of the screen, recognizes the text wi
            "visual novel, digital manga, video or program that shows text on screen.")
 how_en = ("1. **Capture** — when you press the hotkey, it grabs the chosen area of the "
           "screen.\n"
-          "2. **OCR** — recognizes the text in the image (native Windows OCR, OneOCR or "
-          "Tesseract, your choice).\n"
+          "2. **OCR** — recognizes the text in the image (native Windows OCR or OneOCR, "
+          "your choice).\n"
           "3. **Translation** — sends the text to the chosen engine (Google, OpenAI, Claude "
           "or Gemini) and gets the translation back.\n"
           "4. **Overlay** — draws the translation over the game, in the same position as the "
