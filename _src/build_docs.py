@@ -86,16 +86,42 @@ b_platform = "https://img.shields.io/badge/plataforma-Windows-0078D6"
 b_license = "https://img.shields.io/badge/licen%C3%A7a-Freeware-orange"
 LICENSE_URL = f"{REPO_URL}/blob/main/LICENSE"
 
-tagline = "Traduz qualquer jogo, vídeo ou texto na tela — por cima, em tempo real."
-desc = ("O **Ranmza GT** captura uma área da tela, reconhece o texto com OCR, traduz e "
-        "desenha a tradução **sobreposta ao jogo**, na mesma posição do texto original — "
-        "como uma legenda flutuante. Funciona com qualquer jogo, vídeo ou programa que "
-        "mostre texto na tela.")
+tagline_pt = "Traduz qualquer jogo, vídeo ou texto na tela — por cima, em tempo real."
+desc_pt = ("O **Ranmza GT** captura uma área da tela, reconhece o texto com OCR, traduz e "
+           "desenha a tradução **sobreposta ao jogo**, na mesma posição do texto original — "
+           "como uma legenda flutuante. Funciona com qualquer jogo, visual novel, mangá "
+           "digital, vídeo ou programa que mostre texto na tela.")
+how_pt = ("1. **Captura** — fotografa uma área da tela (ou a tela inteira) várias vezes por "
+          "segundo.\n"
+          "2. **OCR** — reconhece o texto na imagem (Windows OCR nativo, OneOCR ou Tesseract, "
+          "à sua escolha).\n"
+          "3. **Tradução** — envia o texto para o motor escolhido (Google, OpenAI, Claude ou "
+          "Gemini) e recebe a tradução.\n"
+          "4. **Overlay** — desenha a tradução por cima do jogo, na mesma posição do texto "
+          "original, sem capturar foco nem travar a janela.")
+rust_pt = ("Desenvolvido em **Rust** 🦀 — nativo para Windows, sem runtime pesado, com baixo "
+           "consumo de CPU/memória mesmo rodando junto de um jogo.")
+
+tagline_en = "Translate any game, video or on-screen text — overlaid, in real time."
+desc_en = ("**Ranmza GT** captures an area of the screen, recognizes the text with OCR, "
+           "translates it and draws the translation **overlaid on the game**, in the same "
+           "position as the original text — like a floating subtitle. Works with any game, "
+           "visual novel, digital manga, video or program that shows text on screen.")
+how_en = ("1. **Capture** — grabs an area of the screen (or the whole screen) several times "
+          "per second.\n"
+          "2. **OCR** — recognizes the text in the image (native Windows OCR, OneOCR or "
+          "Tesseract, your choice).\n"
+          "3. **Translation** — sends the text to the chosen engine (Google, OpenAI, Claude "
+          "or Gemini) and gets the translation back.\n"
+          "4. **Overlay** — draws the translation over the game, in the same position as the "
+          "original text, without stealing focus or freezing the window.")
+rust_en = ("Built in **Rust** 🦀 — native for Windows, no heavy runtime, low CPU/memory "
+           "footprint even while running alongside a game.")
 
 home = '<h1 align="center">Ranmza Game Translator</h1>\n\n'
 if img_src:
     home += f'<p align="center"><img src="{img_src}" alt="Ranmza GT" width="200"></p>\n\n'
-home += f'<p align="center"><i>{tagline}</i></p>\n\n'
+home += f'<p align="center"><i>{tagline_pt}</i></p>\n\n'
 home += '<p align="center">\n'
 home += f'  <a href="{RELEASES_URL}"><img src="{b_release}" alt="Release"></a>\n'
 home += f'  <a href="{RELEASES_URL}"><img src="{b_downloads}" alt="Downloads"></a>\n'
@@ -103,9 +129,20 @@ home += f'  <a href="{REPO_URL}/stargazers"><img src="{b_stars}" alt="Stars"></a
 home += f'  <img src="{b_platform}" alt="Plataforma">\n'
 home += f'  <a href="{LICENSE_URL}"><img src="{b_license}" alt="Licenca"></a>\n'
 home += '</p>\n\n---\n\n'
-home += desc + '\n\n'
+
+home += '## Português\n\n'
+home += desc_pt + '\n\n'
+home += '**Como funciona:**\n\n' + how_pt + '\n\n'
+home += rust_pt + '\n\n'
 home += (f"\U0001F4D6 **[Manual completo]({PAGES_URL})** &nbsp;&middot;&nbsp; "
-         f"⬇️ **[Baixar (Releases)]({RELEASES_URL})**\n")
+          f"⬇️ **[Baixar (Releases)]({RELEASES_URL})**\n\n---\n\n")
+
+home += '## English\n\n'
+home += desc_en + '\n\n'
+home += '**How it works:**\n\n' + how_en + '\n\n'
+home += rust_en + '\n\n'
+home += (f"\U0001F4D6 **[Full manual]({PAGES_URL})** &nbsp;&middot;&nbsp; "
+          f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n")
 write('README.md', home)
 
 write('index.html', '''<!DOCTYPE html>
