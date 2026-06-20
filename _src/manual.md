@@ -446,6 +446,12 @@ Onde o programa opera.
   **exige reiniciar** (botão "Reiniciar agora" aparece logo abaixo).
 - **Barra flutuante → Mostrar barra flutuante** — liga a janelinha de botões sempre visível,
   arrastável entre monitores (veja a seção 3).
+- **Configuração → Resetar para o padrão** — restaura todas as opções aos valores de fábrica.
+  **Mantém** o monitor, as áreas selecionadas, as chaves de API e os prompts (System Prompt e
+  Informações do Jogo).
+- **Idioma da interface** — troca o idioma da própria tela de configuração (Português/Inglês).
+  Detecta automaticamente o idioma do Windows na primeira vez (cai para Inglês se não for
+  Português); pode ser trocado manualmente aqui a qualquer momento.
 
 ### Idioma
 
@@ -515,6 +521,10 @@ Limpar overlay · Ligar/desligar legenda · Selecionar área da legenda · Mostr
     - OpenAI: GPT-4o mini (econômico) · GPT-4o (qualidade superior).
     - Claude: Haiku 4.5 (rápido/econômico) · Sonnet 4.6 (qualidade superior).
     - Gemini: 1.5 Flash · 2.0 Flash · 1.5 Pro.
+  - *Testar conexão* — faz uma chamada de teste ao provedor com a chave e o modelo atuais e
+    mostra na hora se está tudo certo (✓, com a tradução de exemplo) ou o erro retornado (✗),
+    em vez de você só descobrir o problema ao traduzir. Também disponível no Google (verifica a
+    conectividade).
 
 ### IA
 
@@ -526,8 +536,10 @@ As três primeiras seções só aparecem com um provedor de IA selecionado (não
 - **Contexto de Conversa → Falas anteriores** (0–20) — no Modo Legenda, envia as últimas falas
   (original + tradução) como contexto para manter consistência de termos e tom. 0 = desativado;
   recomendado 3–5.
-- **System Prompt** — papel do tradutor e regras gerais (botão **Salvar**).
-- **Informações do Jogo** — tema, personagens e glossário; mude por jogo (botão **Salvar**).
+- **System Prompt** — papel do tradutor e regras gerais (botões **Salvar** e **Restaurar
+  padrão**, que recupera o texto de fábrica só deste campo).
+- **Informações do Jogo** — tema, personagens e glossário; mude por jogo (botões **Salvar** e
+  **Restaurar padrão**). O reset geral (aba Geral) **não** apaga este campo nem o System Prompt.
 
 ### OCR
 
