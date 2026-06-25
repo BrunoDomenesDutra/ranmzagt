@@ -7,9 +7,10 @@ mesma tela, deixe em "Automático". Se trocar o monitor, o programa pede para re
 "Reiniciar agora" na própria aba) — isso é necessário para tudo (captura, área selecionada,
 overlay) passar a funcionar na tela certa.
 
-> **Windows 10**: enquanto o programa está ativo, a tela usada para captura mostra um contorno
-> dourado/amarelo nas bordas. Isso é do próprio Windows, não é um erro, e não pode ser
-> desligado. No Windows 11 isso não acontece.
+> **Windows 10**: por padrão (backend *Automático*, que usa o DXGI no Windows 10) **não aparece**
+> mais a borda dourada/amarela em volta da tela capturada. Ela só surge se você trocar
+> manualmente o **Backend de captura** (aba Geral) para *WGC* no Windows 10 — nesse caso, volte
+> para *Automático* (ou *DXGI*) para removê-la. No Windows 11 essa borda nunca aparece.
 
 ### 2.2 Escolha os idiomas
 
