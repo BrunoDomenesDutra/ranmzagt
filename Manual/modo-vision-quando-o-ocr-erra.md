@@ -9,7 +9,7 @@ que "olha" a imagem e entende melhor o que está escrito, mesmo que o reconhecim
 tenha errado.
 
 **Importante:**
-- Só funciona com **OpenAI, Claude ou Gemini** (o Google Translate não suporta esse modo).
+- Só funciona com **OpenAI, Claude ou Gemini** (Google Translate e DeepL não suportam esse modo).
 - É um pouco mais lento e **sempre faz uma chamada nova** à IA (não usa o histórico de
   traduções já feitas).
 - A posição da tradução na tela ainda depende de onde o reconhecimento de texto encontrou algo

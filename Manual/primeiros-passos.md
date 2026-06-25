@@ -29,6 +29,10 @@ Na aba **Tradutores**, escolha o serviço de tradução:
 
 - **Google Translate** — já funciona "de fábrica", sem precisar configurar nada. Boa opção
   para começar.
+- **DeepL** — tradução de alta qualidade, referência em naturalidade. Exige uma chave de API,
+  mas o DeepL oferece um **plano gratuito** (chaves que terminam em `:fx`); cole a chave e o
+  programa escolhe sozinho o servidor certo (gratuito ou pago). Não é uma IA conversacional —
+  é um tradutor dedicado, rápido e barato, com opção de **formalidade** (veja a aba Tradutores).
 - **OpenAI**, **Claude** ou **Gemini** — exigem que você tenha uma chave de API (conta paga ou
   com créditos no respectivo serviço). Em troca, entregam traduções bem mais naturais e
   consistentes, especialmente em diálogos longos. Cole sua chave no campo "Autenticação" e

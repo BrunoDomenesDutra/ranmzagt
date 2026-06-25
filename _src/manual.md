@@ -82,6 +82,10 @@ Na aba **Tradutores**, escolha o serviço de tradução:
 
 - **Google Translate** — já funciona "de fábrica", sem precisar configurar nada. Boa opção
   para começar.
+- **DeepL** — tradução de alta qualidade, referência em naturalidade. Exige uma chave de API,
+  mas o DeepL oferece um **plano gratuito** (chaves que terminam em `:fx`); cole a chave e o
+  programa escolhe sozinho o servidor certo (gratuito ou pago). Não é uma IA conversacional —
+  é um tradutor dedicado, rápido e barato, com opção de **formalidade** (veja a aba Tradutores).
 - **OpenAI**, **Claude** ou **Gemini** — exigem que você tenha uma chave de API (conta paga ou
   com créditos no respectivo serviço). Em troca, entregam traduções bem mais naturais e
   consistentes, especialmente em diálogos longos. Cole sua chave no campo "Autenticação" e
@@ -249,7 +253,7 @@ que "olha" a imagem e entende melhor o que está escrito, mesmo que o reconhecim
 tenha errado.
 
 **Importante:**
-- Só funciona com **OpenAI, Claude ou Gemini** (o Google Translate não suporta esse modo).
+- Só funciona com **OpenAI, Claude ou Gemini** (Google Translate e DeepL não suportam esse modo).
 - É um pouco mais lento e **sempre faz uma chamada nova** à IA (não usa o histórico de
   traduções já feitas).
 - A posição da tradução na tela ainda depende de onde o reconhecimento de texto encontrou algo
@@ -384,6 +388,9 @@ etc.) usando o endereço `/captura` mostrado na aba.
 - **Aba Monitor**: liga um registro das últimas traduções com o tempo que cada etapa levou
   (captura, reconhecimento, tradução, total) — útil para perceber se alguma configuração está
   deixando o programa lento (por exemplo, pré-processamento muito pesado).
+- **Uso do DeepL** (aba **Tradutores**, com o DeepL selecionado): mostra quantos **caracteres** o
+  DeepL traduziu nesta sessão e a **cota da conta** (caracteres usados/limite do período de
+  cobrança) — clique em "Atualizar" para consultar. É exclusivo do DeepL.
 
 ---
 
@@ -513,6 +520,14 @@ Limpar overlay · Ligar/desligar legenda · Selecionar área da legenda · Mostr
 
 - **Provedor de Tradução → Provedor ativo**:
   - *Google Translate* — gratuito, sem chave. **Não suporta o Modo Vision.**
+  - *DeepL* — exige chave (com plano gratuito; chaves `:fx` usam o servidor gratuito
+    automaticamente). Tradutor dedicado de alta qualidade; **não suporta o Modo Vision**. Sem
+    seleção de modelo, mas com **Formalidade** (Padrão / Mais formal / Mais informal) — afeta os
+    idiomas com suporte, incluindo PT-BR. O DeepL também aproveita o campo **Informações do Jogo**
+    (aba IA) e, no Modo Legenda, as falas anteriores, como contexto para traduzir melhor (sem
+    custo extra). Com o DeepL selecionado, aparece ainda o card **Uso do DeepL** (caracteres
+    traduzidos na sessão + **Cota da conta** via botão "Atualizar"; "Zerar sessão" reinicia a
+    contagem). É o único motor com esse acompanhamento — os de IA não expõem o gasto pela chave.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — exigem chave de API.
 - **Autenticação** (aparece para os provedores com chave; as credenciais são **salvas por motor
   independentemente**, então trocar e voltar não apaga nada):
