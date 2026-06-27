@@ -397,6 +397,12 @@ etc.) usando o endereço `/captura` mostrado na aba.
 
 ## 12. Problemas comuns e soluções
 
+**"Erro ao abrir o programa: VCRUNTIME140.dll não foi encontrado" (ou MSVCP140.dll)**
+→ Falta o **Microsoft Visual C++ Redistributable** no seu Windows — um componente gratuito da
+Microsoft que alguns PCs recém-formatados ainda não têm. Baixe e instale o pacote **x64** por este
+link oficial: <https://aka.ms/vs/17/release/vc_redist.x64.exe> — depois reabra o Ranmza GT, que ele
+abre normalmente.
+
 **"O reconhecimento não detecta nada" / aviso vermelho sobre idioma**
 → Vá na aba Idioma e clique no aviso para instalar o pacote de idioma do Windows necessário.
 
