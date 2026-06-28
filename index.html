@@ -11,16 +11,20 @@
        Light = Alucard Classic · Dark = Dracula Classic.
        Sobrescreve as cores do tema vue do docsify via variaveis. */
     :root{
+      /* Light = Alucard Classic */
       --bg:#FFFBEB; --text:#1F1F1F; --muted:#6C664B;
-      --border:#CFCFDE; --soft:#CFCFDE;
-      --code-bg:#CFCFDE; --code-text:#A3144D;
+      --border:#CFCFDE; --soft:#CFCFDE; --code-text:#A3144D;
       --accent:#644AC9; --theme-color:#644AC9;
+      --c-purple:#644AC9; --c-pink:#A3144D; --c-cyan:#036A96;
+      --c-green:#14710A; --c-orange:#A34D14; --c-yellow:#846E15;
     }
     html[data-theme="dark"]{
+      /* Dark = Dracula Classic */
       --bg:#282A36; --text:#F8F8F2; --muted:#6272A4;
-      --border:#44475A; --soft:#44475A;
-      --code-bg:#44475A; --code-text:#FF79C6;
+      --border:#44475A; --soft:#44475A; --code-text:#FF79C6;
       --accent:#BD93F9; --theme-color:#BD93F9;
+      --c-purple:#BD93F9; --c-pink:#FF79C6; --c-cyan:#8BE9FD;
+      --c-green:#50FA7B; --c-orange:#FFB86C; --c-yellow:#F1FA8C;
     }
     body{ background:var(--bg); color:var(--text); }
     #app{ color:var(--text); }
@@ -30,11 +34,13 @@
     .sidebar ul li a:hover{ color:var(--accent); }
     .sidebar ul li.active > a{ color:var(--accent); border-right:2px solid var(--accent); }
     .markdown-section a{ color:var(--accent); }
-    .markdown-section h1,.markdown-section h2,.markdown-section h3,
-    .markdown-section h4,.markdown-section h5,.markdown-section h6,
-    .markdown-section h1 a,.markdown-section h2 a,.markdown-section h3 a,
-    .markdown-section h4 a,.markdown-section h5 a,.markdown-section h6 a,
-    .markdown-section .anchor span{ color:var(--text) !important; }
+    /* Titulos por nivel, cada um com uma cor da paleta (texto vive no .anchor span). */
+    .markdown-section h1,.markdown-section h1 a,.markdown-section h1 .anchor span{ color:var(--c-purple) !important; }
+    .markdown-section h2,.markdown-section h2 a,.markdown-section h2 .anchor span{ color:var(--c-pink) !important; }
+    .markdown-section h3,.markdown-section h3 a,.markdown-section h3 .anchor span{ color:var(--c-cyan) !important; }
+    .markdown-section h4,.markdown-section h4 a,.markdown-section h4 .anchor span{ color:var(--c-green) !important; }
+    .markdown-section h5,.markdown-section h5 a,.markdown-section h5 .anchor span{ color:var(--c-orange) !important; }
+    .markdown-section h6,.markdown-section h6 a,.markdown-section h6 .anchor span{ color:var(--c-yellow) !important; }
     .markdown-section strong{ color:var(--text); }
     .markdown-section p,.markdown-section li,.markdown-section td{ color:var(--text); }
     /* Callouts: texto em contraste cheio (antes usava a cor "Comment", ilegivel). */
