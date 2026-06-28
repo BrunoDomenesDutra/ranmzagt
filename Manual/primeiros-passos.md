@@ -1,5 +1,12 @@
 ## 2. Primeiros passos
 
+> **Antes de começar — requisito do Windows:** o Ranmza GT precisa do **Microsoft Visual C++
+> Redistributable (x64)**, um componente gratuito da Microsoft. A maioria dos PCs já tem (ele vem
+> junto com muitos jogos e programas), mas em um **Windows recém-formatado** pode faltar — e aí o
+> programa não abre, mostrando o erro *"VCRUNTIME140.dll não foi encontrado"*. Se acontecer com
+> você, baixe e instale o pacote **x64** por este link oficial:
+> <https://aka.ms/vs/17/release/vc_redist.x64.exe>
+
 ### 2.1 Escolha o monitor (se você tem mais de um)
 
 Na aba **Geral**, escolha em qual monitor o programa deve trabalhar. Se você joga sempre na
