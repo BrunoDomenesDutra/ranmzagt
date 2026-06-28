@@ -31,13 +31,15 @@
     .sidebar ul li.active > a{ color:var(--accent); border-right:2px solid var(--accent); }
     .markdown-section a{ color:var(--accent); }
     .markdown-section h1,.markdown-section h2,.markdown-section h3,
-    .markdown-section h4,.markdown-section strong{ color:var(--text); }
+    .markdown-section h4,.markdown-section h5,.markdown-section h6{ color:var(--text) !important; }
+    .markdown-section strong{ color:var(--text); }
     .markdown-section p,.markdown-section li,.markdown-section td{ color:var(--text); }
-    .markdown-section blockquote{ border-left:4px solid var(--accent); background:var(--soft); color:var(--muted); }
-    .markdown-section blockquote p{ color:var(--muted); }
-    .markdown-section code{ background:var(--code-bg); color:var(--code-text); }
-    .markdown-section pre{ background:var(--code-bg); }
-    .markdown-section pre > code{ background:transparent; color:var(--text); }
+    /* Callouts: texto em contraste cheio (antes usava a cor "Comment", ilegivel). */
+    .markdown-section blockquote{ border-left:4px solid var(--accent); background:var(--soft); color:var(--text); }
+    .markdown-section blockquote p,.markdown-section blockquote li{ color:var(--text); }
+    .markdown-section code{ background:var(--bg); border:1px solid var(--border); color:var(--code-text); }
+    .markdown-section pre{ background:var(--soft); }
+    .markdown-section pre > code{ background:transparent; border:0; color:var(--text); }
     .markdown-section tr{ border-top:1px solid var(--border); background:var(--bg); }
     .markdown-section tr:nth-child(2n){ background:var(--soft); }
     .markdown-section th,.markdown-section td{ border:1px solid var(--border); }
