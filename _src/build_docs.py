@@ -152,8 +152,72 @@ write('index.html', '''<!DOCTYPE html>
   <title>Ranmza GT - Manual do Usuario</title>
   <meta name="description" content="Manual do usuario do Ranmza Game Translator">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    /* ── Paleta Dracula oficial (https://draculatheme.com) ──
+       Light = Alucard Classic · Dark = Dracula Classic.
+       Sobrescreve as cores do tema vue do docsify via variaveis. */
+    :root{
+      --bg:#FFFBEB; --text:#1F1F1F; --muted:#6C664B;
+      --border:#CFCFDE; --soft:#CFCFDE;
+      --code-bg:#CFCFDE; --code-text:#A3144D;
+      --accent:#644AC9; --theme-color:#644AC9;
+    }
+    html[data-theme="dark"]{
+      --bg:#282A36; --text:#F8F8F2; --muted:#6272A4;
+      --border:#44475A; --soft:#44475A;
+      --code-bg:#44475A; --code-text:#FF79C6;
+      --accent:#BD93F9; --theme-color:#BD93F9;
+    }
+    body{ background:var(--bg); color:var(--text); }
+    #app{ color:var(--text); }
+    .sidebar{ background:var(--bg); color:var(--text); border-right:1px solid var(--border); }
+    .sidebar .app-name-link{ color:var(--accent); }
+    .sidebar ul li a{ color:var(--text); }
+    .sidebar ul li a:hover{ color:var(--accent); }
+    .sidebar ul li.active > a{ color:var(--accent); border-right:2px solid var(--accent); }
+    .markdown-section a{ color:var(--accent); }
+    .markdown-section h1,.markdown-section h2,.markdown-section h3,
+    .markdown-section h4,.markdown-section strong{ color:var(--text); }
+    .markdown-section p,.markdown-section li,.markdown-section td{ color:var(--text); }
+    .markdown-section blockquote{ border-left:4px solid var(--accent); background:var(--soft); color:var(--muted); }
+    .markdown-section blockquote p{ color:var(--muted); }
+    .markdown-section code{ background:var(--code-bg); color:var(--code-text); }
+    .markdown-section pre{ background:var(--code-bg); }
+    .markdown-section pre > code{ background:transparent; color:var(--text); }
+    .markdown-section tr{ border-top:1px solid var(--border); background:var(--bg); }
+    .markdown-section tr:nth-child(2n){ background:var(--soft); }
+    .markdown-section th,.markdown-section td{ border:1px solid var(--border); }
+    .markdown-section hr{ border-bottom:1px solid var(--border); }
+    /* plugin de busca */
+    .search input{ background:var(--bg); color:var(--text); border:1px solid var(--border); }
+    .search .results-panel{ background:var(--bg); color:var(--text); }
+    .search .matching-post{ border-bottom:1px solid var(--border); }
+    .search p{ color:var(--muted); }
+    .search .search-keyword{ color:var(--accent); }
+    .search h2,.search .matching-post h2{ color:var(--text); }
+    /* botao de alternar tema */
+    #theme-toggle{
+      position:fixed; top:14px; right:16px; z-index:100;
+      width:40px; height:40px; border-radius:10px;
+      border:1px solid var(--border); background:var(--bg); color:var(--text);
+      cursor:pointer; font-size:18px; line-height:1;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 2px 6px rgba(0,0,0,.18); transition:border-color .15s,color .15s;
+    }
+    #theme-toggle:hover{ border-color:var(--accent); color:var(--accent); }
+  </style>
+  <script>
+    /* Define o tema ANTES da pintura (evita flash): escolha salva -> preferencia do SO -> dark. */
+    (function(){
+      var k='ranmza-doc-theme', s=null;
+      try{ s=localStorage.getItem(k); }catch(e){}
+      if(!s) s=(window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', s);
+    })();
+  </script>
 </head>
 <body>
+  <button id="theme-toggle" onclick="RToggleTheme()" aria-label="Alternar tema claro/escuro" title="Alternar tema">&#127769;</button>
   <div id="app">Carregando o manual...</div>
   <script>
     window.$docsify = {
@@ -165,6 +229,19 @@ write('index.html', '''<!DOCTYPE html>
       auto2top: true,
       search: { placeholder: 'Buscar no manual...', noData: 'Nada encontrado.' }
     };
+    function RSyncThemeBtn(){
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var b = document.getElementById('theme-toggle');
+      if(b) b.innerHTML = dark ? '&#9728;&#65039;' : '&#127769;';
+    }
+    function RToggleTheme(){
+      var k='ranmza-doc-theme';
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      try{ localStorage.setItem(k, next); }catch(e){}
+      document.documentElement.setAttribute('data-theme', next);
+      RSyncThemeBtn();
+    }
+    RSyncThemeBtn();
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
