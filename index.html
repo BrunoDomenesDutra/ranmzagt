@@ -64,11 +64,13 @@
     .markdown-section h6 {
       color: var(--drac-fg) !important;
     }
-    .markdown-section h2 { border-bottom: 1px solid var(--drac-current) !important; }
+    .markdown-section h2 { color: var(--drac-cyan) !important; border-bottom: 1px solid var(--drac-current) !important; }
     .markdown-section h3 { color: var(--drac-cyan) !important; }
 
-    /* Anchor links */
-    .markdown-section .anchor span { color: var(--drac-comment) !important; }
+    /* Headings sao links no Docsify (h2 > a.anchor > span). O link e o span herdam
+       a cor do nivel — senao o texto pegaria o roxo de link / o cinza "comment". */
+    .markdown-section .anchor,
+    .markdown-section .anchor span { color: inherit !important; }
 
     /* Parágrafos, listas */
     .markdown-section p,
