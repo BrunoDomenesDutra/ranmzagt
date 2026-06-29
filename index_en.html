@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranmza GT - User Manual</title>
+  <meta name="description" content="User manual for Ranmza Game Translator">
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prism-themes@1/themes/prism-one-light.css">
+
+  <style>
+    /* ════════════════════════════════════════════════════════
+       ALUCARD THEME — Ranmza GT Docs
+       Alucard é a variante Light oficial do Dracula Theme.
+       https://draculatheme.com
+    ════════════════════════════════════════════════════════ */
+
+    :root {
+      --al-bg:       #F8F8F2;
+      --al-sidebar:  #EEEEE6;
+      --al-current:  #E2E2D8;
+      --al-fg:       #282A36;
+      --al-comment:  #6272A4;
+      --al-cyan:     #0397C8;
+      --al-green:    #1E8C1E;
+      --al-orange:   #C97010;
+      --al-pink:     #C2185B;
+      --al-purple:   #6D31F5;
+      --al-red:      #D32F2F;
+      --al-yellow:   #8A7300;
+      --al-border:   #D4D4C8;
+    }
+
+    /* ── Base ── */
+    body { background: var(--al-bg) !important; color: var(--al-fg) !important; }
+    #app { color: var(--al-fg); }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      background: var(--al-sidebar) !important;
+      border-right: 1px solid var(--al-border) !important;
+    }
+    .sidebar .app-name-link { color: var(--al-purple) !important; }
+    .sidebar ul li a          { color: var(--al-comment) !important; }
+    .sidebar ul li a:hover    { color: var(--al-fg) !important; }
+    .sidebar ul li.active > a {
+      color: var(--al-purple) !important;
+      border-right: 2px solid var(--al-purple) !important;
+    }
+
+    /* ── Conteúdo ── */
+    .markdown-section { color: var(--al-fg) !important; }
+
+    .markdown-section h1,
+    .markdown-section h2,
+    .markdown-section h3,
+    .markdown-section h4,
+    .markdown-section h5,
+    .markdown-section h6 { color: var(--al-fg) !important; }
+    .markdown-section h2 { color: var(--al-cyan) !important; border-bottom: 1px solid var(--al-border) !important; }
+    .markdown-section h3 { color: var(--al-cyan) !important; }
+
+    /* Headings sao links no Docsify (h2 > a.anchor > span). O link e o span herdam
+       a cor do nivel — senao o texto pegaria o roxo de link / o cinza "comment". */
+    .markdown-section .anchor,
+    .markdown-section .anchor span { color: inherit !important; }
+    .markdown-section p,
+    .markdown-section li,
+    .markdown-section td   { color: var(--al-fg) !important; }
+    .markdown-section strong { color: var(--al-orange) !important; }
+    .markdown-section em     { color: var(--al-yellow) !important; font-style: italic; }
+    .markdown-section a      { color: var(--al-purple) !important; }
+    .markdown-section a:hover { color: var(--al-pink) !important; }
+
+    /* Blockquote */
+    .markdown-section blockquote {
+      border-left: 3px solid var(--al-purple) !important;
+      background: rgba(109,49,245,.06) !important;
+      color: var(--al-fg) !important;
+    }
+    .markdown-section blockquote p,
+    .markdown-section blockquote li { color: var(--al-fg) !important; }
+
+    /* Código inline */
+    .markdown-section code {
+      background: var(--al-current) !important;
+      color: var(--al-pink) !important;
+      border: none !important;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace !important;
+    }
+
+    /* Bloco de código */
+    .markdown-section pre {
+      background: #EEEEE0 !important;
+      border: 1px solid var(--al-border) !important;
+    }
+    .markdown-section pre > code {
+      background: transparent !important;
+      color: var(--al-fg) !important;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace !important;
+    }
+
+    /* Tabelas */
+    .markdown-section tr     { background: var(--al-bg) !important; border-top: 1px solid var(--al-border) !important; }
+    .markdown-section tr:nth-child(2n) { background: rgba(0,0,0,.03) !important; }
+    .markdown-section th,
+    .markdown-section td     { border: 1px solid var(--al-border) !important; }
+    .markdown-section th     { background: var(--al-sidebar) !important; color: var(--al-purple) !important; }
+
+    .markdown-section hr { border-bottom: 1px solid var(--al-border) !important; }
+    .markdown-section img { border-radius: 6px; }
+
+    /* ── Busca ── */
+    .search input {
+      background: var(--al-current) !important;
+      color: var(--al-fg) !important;
+      border: 1px solid transparent !important;
+      border-radius: 6px !important;
+    }
+    .search input:focus { border-color: var(--al-purple) !important; }
+    .search input::placeholder { color: var(--al-comment) !important; }
+    .search .results-panel    { background: var(--al-bg) !important; }
+    .search .matching-post    { border-bottom: 1px solid var(--al-border) !important; }
+    .search p                 { color: var(--al-comment) !important; }
+    .search .search-keyword   { color: var(--al-purple) !important; }
+    .search h2,
+    .search .matching-post h2 { color: var(--al-fg) !important; }
+
+    /* ── Toggle ── */
+    #theme-toggle {
+      position: fixed; top: 14px; right: 16px; z-index: 100;
+      width: 38px; height: 38px; border-radius: 8px;
+      border: 1px solid var(--al-border);
+      background: var(--al-sidebar);
+      color: var(--al-fg);
+      cursor: pointer; font-size: 17px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12);
+      transition: border-color .15s, color .15s;
+    }
+    #theme-toggle:hover { border-color: var(--al-purple); color: var(--al-purple); }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar       { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--al-bg); }
+    ::-webkit-scrollbar-thumb { background: var(--al-current); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--al-comment); }
+
+    /* ── Dark mode (Dracula clássico) — ativado via botão ── */
+    html[data-theme="dark"] {
+      --al-bg:      #282A36;
+      --al-sidebar: #21222C;
+      --al-current: #44475A;
+      --al-fg:      #F8F8F2;
+      --al-comment: #6272A4;
+      --al-cyan:    #8BE9FD;
+      --al-green:   #50FA7B;
+      --al-orange:  #FFB86C;
+      --al-pink:    #FF79C6;
+      --al-purple:  #BD93F9;
+      --al-red:     #FF5555;
+      --al-yellow:  #F1FA8C;
+      --al-border:  #44475A;
+    }
+  </style>
+
+  <!-- Aplica tema antes da pintura (sem flash) — padrão: light (Alucard) -->
+  <script>
+    (function(){
+      var k = 'ranmza-doc-theme', s = null;
+      try { s = localStorage.getItem(k); } catch(e) {}
+      if (!s) s = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', s);
+    })();
+  </script>
+</head>
+<body>
+
+  <button id="theme-toggle" onclick="RToggleTheme()" aria-label="Alternar tema" title="Alternar tema claro/escuro">☀️</button>
+
+  <div id="app">Carregando o manual...</div>
+
+  <script>
+    window.$docsify = {
+      name: 'Ranmza GT',
+      repo: 'https://github.com/BrunoDomenesDutra/ranmzagt',
+      loadSidebar: true,
+      alias: { '/.*/_sidebar_en.md': '/_sidebar_en.md' },
+      subMaxLevel: 3,
+      auto2top: true,
+      search: {
+        placeholder: 'Buscar no manual...',
+        noData: 'Nada encontrado.',
+        depth: 3
+      }
+    };
+
+    function RSyncThemeBtn() {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var b = document.getElementById('theme-toggle');
+      if (b) b.innerHTML = dark ? '&#9728;&#65039;' : '&#127769;';
+    }
+
+    function RToggleTheme() {
+      var k = 'ranmza-doc-theme';
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem(k, next); } catch(e) {}
+      document.documentElement.setAttribute('data-theme', next);
+      RSyncThemeBtn();
+    }
+
+    RSyncThemeBtn();
+  </script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+
+</body>
+</html>
