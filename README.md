@@ -27,4 +27,4 @@ O **Ranmza GT** captura uma área da tela, reconhece o texto com OCR, traduz e d
 
 Desenvolvido em **Rust** 🦀 — nativo para Windows, sem runtime pesado, com baixo consumo de CPU/memória mesmo rodando junto de um jogo.
 
-⬇️ **[Baixar (Releases)](https://github.com/BrunoDomenesDutra/ranmzagt/releases)**
+📖 **[Abrir o manual completo](https://brunodomenesdutra.github.io/ranmzagt/)** &nbsp;·&nbsp; ⬇️ **[Baixar (Releases)](https://github.com/BrunoDomenesDutra/ranmzagt/releases)**

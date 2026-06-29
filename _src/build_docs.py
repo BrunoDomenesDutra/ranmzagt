@@ -72,6 +72,7 @@ def write(name, text):
 
 RELEASES_URL = "https://github.com/BrunoDomenesDutra/ranmzagt/releases"
 REPO_URL = "https://github.com/BrunoDomenesDutra/ranmzagt"
+PAGES_URL = "https://brunodomenesdutra.github.io/ranmzagt/"
 
 b_release = "https://img.shields.io/github/v/release/BrunoDomenesDutra/ranmzagt?label=release&color=blue"
 b_downloads = "https://img.shields.io/github/downloads/BrunoDomenesDutra/ranmzagt/total?label=downloads&color=brightgreen"
@@ -141,7 +142,8 @@ home_pt += '<p align="center"><strong>🇧🇷 Português</strong> &nbsp;·&nbsp
 home_pt += desc_pt + '\n\n'
 home_pt += '### Como funciona\n\n' + how_pt + '\n\n'
 home_pt += rust_pt + '\n\n'
-home_pt += f"⬇️ **[Baixar (Releases)]({RELEASES_URL})**\n"
+home_pt += (f"📖 **[Abrir o manual completo]({PAGES_URL})** &nbsp;·&nbsp; "
+            f"⬇️ **[Baixar (Releases)]({RELEASES_URL})**\n")
 
 # --- EN ---
 tagline_en = "Translate any game, video or on-screen text — overlaid, in real time."
@@ -167,7 +169,8 @@ home_en += '<p align="center"><a href="#/">🇧🇷 Português</a> &nbsp;·&nbsp
 home_en += desc_en + '\n\n'
 home_en += '### How it works\n\n' + how_en + '\n\n'
 home_en += rust_en + '\n\n'
-home_en += f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n"
+home_en += (f"📖 **[Open the full manual]({PAGES_URL}#/en/)** &nbsp;·&nbsp; "
+            f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n")
 
 # ---------- Gera ----------
 n_pt = build_lang(read_and_split(SRC_PT), out_prefix='',   sidebar_home_label='Início',
