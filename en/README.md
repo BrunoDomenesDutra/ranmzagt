@@ -9,18 +9,16 @@
   <a href="https://github.com/BrunoDomenesDutra/ranmzagt/releases"><img src="https://img.shields.io/github/downloads/BrunoDomenesDutra/ranmzagt/total?label=downloads&color=brightgreen" alt="Downloads"></a>
   <a href="https://github.com/BrunoDomenesDutra/ranmzagt/stargazers"><img src="https://img.shields.io/github/stars/BrunoDomenesDutra/ranmzagt?label=stars&color=yellow" alt="Stars"></a>
   <img src="https://img.shields.io/badge/plataforma-Windows-0078D6" alt="Platform">
-  <a href="https://github.com/BrunoDomenesDutra/ranmzagt/blob/main/LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-Freeware-orange" alt="License"></a>
-</p>
+  <a href="https://github.com/BrunoDomenesDutra/ranmzagt/blob/main/LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-Freeware-orange" alt="License">
+</a></p>
 
-<p align="center">
-  <strong><a href="/">🇧🇷 Português</a></strong> &nbsp;·&nbsp;   <strong><a href="/index_en.html">🇬🇧 English</a></strong>
-</p>
+<p align="center"><a href="#/">🇧🇷 Português</a> &nbsp;·&nbsp; <strong>🇬🇧 English</strong></p>
 
 ---
 
 **Ranmza GT** captures an area of the screen, recognizes the text with OCR, translates it and draws the translation **overlaid on the game**, in the same position as the original text — like a floating subtitle. Works with any game, visual novel, digital manga, video or program that shows text on screen.
 
-**How it works:**
+### How it works
 
 1. **Capture** — when you press the hotkey, it grabs the chosen area of the screen.
 2. **OCR** — recognizes the text in the image (native Windows OCR or OneOCR, your choice).
@@ -29,4 +27,4 @@
 
 Built in **Rust** 🦀 — native for Windows, no heavy runtime, low CPU/memory footprint even while running alongside a game.
 
-📖 **[Full manual](https://brunodomenesdutra.github.io/ranmzagt/index_en.html)** &nbsp;·&nbsp; ⬇️ **[Download (Releases)](https://github.com/BrunoDomenesDutra/ranmzagt/releases)**
+⬇️ **[Download (Releases)](https://github.com/BrunoDomenesDutra/ranmzagt/releases)**

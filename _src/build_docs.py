@@ -1,14 +1,19 @@
 # -*- coding: utf-8 -*-
-# Gera o site Docsify bilíngue (PT + EN) a partir de dois markdown-mestres.
+# Gera o site Docsify bilíngue (PT raiz + EN em /en/) a partir de dois mestres.
 # Divide cada markdown em uma pagina por secao "## " e escreve README/_sidebar/etc.
 #
-# Fonte: mestres vivem em game-translator/planos/MANUAL_DO_USUARIO.md (PT) e
-# são copiados para _src/manual.md; manual_en.md (EN) é a tradução.
+# Multi-idioma e feito do jeito canonico do Docsify: UM unico index.html roteia
+#   PT  -> #/            (README.md, _sidebar.md, Manual/*.md na raiz)
+#   EN  -> #/en/         (en/README.md, en/_sidebar.md, en/Manual/*.md)
+# O index.html (mantido a mao) tem o alias do _sidebar de /en/ e o botao de idioma.
+#
+# Fonte: mestre PT vive em game-translator/planos/MANUAL_DO_USUARIO.md e e copiado
+# para _src/manual.md; manual_en.md (EN) e a traducao mantida aqui em _src/.
 import re, os, shutil, unicodedata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.dirname(HERE)            # raiz do repo (uma acima de _src/)
-KEEP = {".git", "_src", ".gitignore", "LICENSE", "index.html", "index_en.html"}  # nunca apagar na limpeza
+KEEP = {".git", "_src", ".gitignore", "LICENSE", "index.html"}  # nunca apagar na limpeza
 
 # Tenta sincronizar o mestre PT do game-translator
 MASTER = os.path.normpath(os.path.join(
@@ -61,50 +66,12 @@ if os.path.isfile(LOGO):
     img_src = 'media/logo.png'
 
 def write(name, text):
-    open(os.path.join(OUT, name), 'w', encoding='utf-8', newline='\n').write(text)
-
-# ---- Processa PT e EN ----
-sections_pt = read_and_split(SRC_PT)
-sections_en = read_and_split(SRC_EN)
+    path = os.path.join(OUT, name)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    open(path, 'w', encoding='utf-8', newline='\n').write(text)
 
 RELEASES_URL = "https://github.com/BrunoDomenesDutra/ranmzagt/releases"
-
-# PT
-MANUAL_DIR_PT = os.path.join(OUT, 'Manual')
-os.makedirs(MANUAL_DIR_PT, exist_ok=True)
-
-sidebar_pt = ["- [Inicio](README.md)"]
-first_page_pt = None
-for title, body in sections_pt:
-    if slug(title) == 'sumario':
-        continue
-    fname = f"{slug(title)}.md"
-    if first_page_pt is None:
-        first_page_pt = fname
-    open(os.path.join(MANUAL_DIR_PT, fname), 'w', encoding='utf-8', newline='\n').write(body + '\n')
-    sidebar_pt.append(f"- [{title}](Manual/{fname})")
-write('_sidebar.md', '\n'.join(sidebar_pt) + '\n')
-
-# EN
-MANUAL_DIR_EN = os.path.join(OUT, 'Manual_EN')
-os.makedirs(MANUAL_DIR_EN, exist_ok=True)
-
-sidebar_en = ["- [Home](README_EN.md)"]
-first_page_en = None
-for title, body in sections_en:
-    if slug(title) == 'table-of-contents':
-        continue
-    fname = f"{slug(title)}.md"
-    if first_page_en is None:
-        first_page_en = fname
-    open(os.path.join(MANUAL_DIR_EN, fname), 'w', encoding='utf-8', newline='\n').write(body + '\n')
-    sidebar_en.append(f"- [{title}](Manual_EN/{fname})")
-write('_sidebar_en.md', '\n'.join(sidebar_en) + '\n')
-
-write('.nojekyll', '')
-
 REPO_URL = "https://github.com/BrunoDomenesDutra/ranmzagt"
-PAGES_URL = "https://brunodomenesdutra.github.io/ranmzagt/"
 
 b_release = "https://img.shields.io/github/v/release/BrunoDomenesDutra/ranmzagt?label=release&color=blue"
 b_downloads = "https://img.shields.io/github/downloads/BrunoDomenesDutra/ranmzagt/total?label=downloads&color=brightgreen"
@@ -113,14 +80,51 @@ b_platform = "https://img.shields.io/badge/plataforma-Windows-0078D6"
 b_license = "https://img.shields.io/badge/licen%C3%A7a-Freeware-orange"
 LICENSE_URL = f"{REPO_URL}/blob/main/LICENSE"
 
+def build_lang(sections, *, out_prefix, sidebar_home_label, home_md,
+               skip_slug, manual_label):
+    """Gera Manual/*.md + _sidebar.md de um idioma. out_prefix='' (PT) ou 'en' (EN).
+
+    Os links do sidebar sao ABSOLUTOS com o prefixo do idioma (`/...` ou `/en/...`):
+    com relativePath desligado (padrao do Docsify), link de sidebar resolve a partir
+    da raiz — logo o sidebar EN precisa do prefixo /en/ para nao cair no conteudo PT.
+    """
+    manual_dir = os.path.join(OUT, out_prefix, 'Manual')
+    os.makedirs(manual_dir, exist_ok=True)
+
+    route = f"/{out_prefix}/" if out_prefix else "/"   # /  ou  /en/
+    sidebar = [f"- [{sidebar_home_label}]({route})"]
+    for title, body in sections:
+        if slug(title) == skip_slug:
+            continue
+        fname = f"{slug(title)}.md"
+        open(os.path.join(manual_dir, fname), 'w', encoding='utf-8', newline='\n').write(body + '\n')
+        sidebar.append(f"- [{title}]({route}Manual/{fname})")
+
+    write(os.path.join(out_prefix, '_sidebar.md'), '\n'.join(sidebar) + '\n')
+    write(os.path.join(out_prefix, 'README.md'), home_md)
+    return len(sidebar)
+
+# ---------- Home (README.md) de cada idioma ----------
+# Links de idioma usam rotas de hash do Docsify: '/' = PT, '/en/' = EN.
+
+def badges(platform_alt, license_alt):
+    s  = '<p align="center">\n'
+    s += f'  <a href="{RELEASES_URL}"><img src="{b_release}" alt="Release"></a>\n'
+    s += f'  <a href="{RELEASES_URL}"><img src="{b_downloads}" alt="Downloads"></a>\n'
+    s += f'  <a href="{REPO_URL}/stargazers"><img src="{b_stars}" alt="Stars"></a>\n'
+    s += f'  <img src="{b_platform}" alt="{platform_alt}">\n'
+    s += f'  <a href="{LICENSE_URL}"><img src="{b_license}" alt="{license_alt}">\n'
+    s += '</a></p>\n\n'
+    return s
+
+# --- PT ---
 tagline_pt = "Traduz qualquer jogo, vídeo ou texto na tela — por cima, em tempo real."
 desc_pt = ("O **Ranmza GT** captura uma área da tela, reconhece o texto com OCR, traduz e "
            "desenha a tradução **sobreposta ao jogo**, na mesma posição do texto original — "
            "como uma legenda flutuante. Funciona com qualquer jogo, visual novel, mangá "
            "digital, vídeo ou programa que mostre texto na tela.")
 how_pt = ("1. **Captura** — ao apertar o atalho, fotografa a área da tela escolhida.\n"
-          "2. **OCR** — reconhece o texto na imagem (Windows OCR nativo ou OneOCR, "
-          "à sua escolha).\n"
+          "2. **OCR** — reconhece o texto na imagem (Windows OCR nativo ou OneOCR, à sua escolha).\n"
           "3. **Tradução** — envia o texto para o motor escolhido (Google, OpenAI, Claude ou "
           "Gemini) e recebe a tradução.\n"
           "4. **Overlay** — desenha a tradução por cima do jogo, na mesma posição do texto "
@@ -128,80 +132,49 @@ how_pt = ("1. **Captura** — ao apertar o atalho, fotografa a área da tela esc
 rust_pt = ("Desenvolvido em **Rust** 🦀 — nativo para Windows, sem runtime pesado, com baixo "
            "consumo de CPU/memória mesmo rodando junto de um jogo.")
 
+home_pt = '<h1 align="center">Ranmza Game Translator</h1>\n\n'
+if img_src:
+    home_pt += f'<p align="center"><img src="{img_src}" alt="Ranmza GT" width="200"></p>\n\n'
+home_pt += f'<p align="center"><i>{tagline_pt}</i></p>\n\n'
+home_pt += badges("Plataforma", "Licenca")
+home_pt += '<p align="center"><strong>🇧🇷 Português</strong> &nbsp;·&nbsp; <a href="#/en/">🇬🇧 English</a></p>\n\n---\n\n'
+home_pt += desc_pt + '\n\n'
+home_pt += '### Como funciona\n\n' + how_pt + '\n\n'
+home_pt += rust_pt + '\n\n'
+home_pt += f"⬇️ **[Baixar (Releases)]({RELEASES_URL})**\n"
+
+# --- EN ---
 tagline_en = "Translate any game, video or on-screen text — overlaid, in real time."
 desc_en = ("**Ranmza GT** captures an area of the screen, recognizes the text with OCR, "
            "translates it and draws the translation **overlaid on the game**, in the same "
            "position as the original text — like a floating subtitle. Works with any game, "
            "visual novel, digital manga, video or program that shows text on screen.")
-how_en = ("1. **Capture** — when you press the hotkey, it grabs the chosen area of the "
-          "screen.\n"
-          "2. **OCR** — recognizes the text in the image (native Windows OCR or OneOCR, "
-          "your choice).\n"
-          "3. **Translation** — sends the text to the chosen engine (Google, OpenAI, Claude "
-          "or Gemini) and gets the translation back.\n"
+how_en = ("1. **Capture** — when you press the hotkey, it grabs the chosen area of the screen.\n"
+          "2. **OCR** — recognizes the text in the image (native Windows OCR or OneOCR, your choice).\n"
+          "3. **Translation** — sends the text to the chosen engine (Google, OpenAI, Claude or "
+          "Gemini) and gets the translation back.\n"
           "4. **Overlay** — draws the translation over the game, in the same position as the "
           "original text, without stealing focus or freezing the window.")
 rust_en = ("Built in **Rust** 🦀 — native for Windows, no heavy runtime, low CPU/memory "
            "footprint even while running alongside a game.")
 
-# README.md (PT com link pra EN)
-home = '<h1 align="center">Ranmza Game Translator</h1>\n\n'
-if img_src:
-    home += f'<p align="center"><img src="{img_src}" alt="Ranmza GT" width="200"></p>\n\n'
-home += f'<p align="center"><i>{tagline_pt}</i></p>\n\n'
-home += '<p align="center">\n'
-home += f'  <a href="{RELEASES_URL}"><img src="{b_release}" alt="Release"></a>\n'
-home += f'  <a href="{RELEASES_URL}"><img src="{b_downloads}" alt="Downloads"></a>\n'
-home += f'  <a href="{REPO_URL}/stargazers"><img src="{b_stars}" alt="Stars"></a>\n'
-home += f'  <img src="{b_platform}" alt="Plataforma">\n'
-home += f'  <a href="{LICENSE_URL}"><img src="{b_license}" alt="Licenca"></a>\n'
-home += '</p>\n\n'
-home += '<p align="center">\n'
-home += '  <strong><a href="/">🇧🇷 Português</a></strong> &nbsp;·&nbsp; '
-home += '  <strong><a href="/index_en.html">🇬🇧 English</a></strong>\n'
-home += '</p>\n\n---\n\n'
-
-home += '## Português\n\n'
-home += desc_pt + '\n\n'
-home += '**Como funciona:**\n\n' + how_pt + '\n\n'
-home += rust_pt + '\n\n'
-home += (f"📖 **[Manual completo]({PAGES_URL})** &nbsp;·&nbsp; "
-         f"⬇️ **[Baixar (Releases)]({RELEASES_URL})**\n\n---\n\n")
-
-home += '## English\n\n'
-home += desc_en + '\n\n'
-home += '**How it works:**\n\n' + how_en + '\n\n'
-home += rust_en + '\n\n'
-home += (f"📖 **[Full manual]({PAGES_URL}index_en.html)** &nbsp;·&nbsp; "
-         f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n")
-write('README.md', home)
-
-# README_EN.md (EN com link pra PT)
 home_en = '<h1 align="center">Ranmza Game Translator</h1>\n\n'
 if img_src:
     home_en += f'<p align="center"><img src="{img_src}" alt="Ranmza GT" width="200"></p>\n\n'
 home_en += f'<p align="center"><i>{tagline_en}</i></p>\n\n'
-home_en += '<p align="center">\n'
-home_en += f'  <a href="{RELEASES_URL}"><img src="{b_release}" alt="Release"></a>\n'
-home_en += f'  <a href="{RELEASES_URL}"><img src="{b_downloads}" alt="Downloads"></a>\n'
-home_en += f'  <a href="{REPO_URL}/stargazers"><img src="{b_stars}" alt="Stars"></a>\n'
-home_en += f'  <img src="{b_platform}" alt="Platform">\n'
-home_en += f'  <a href="{LICENSE_URL}"><img src="{b_license}" alt="License"></a>\n'
-home_en += '</p>\n\n'
-home_en += '<p align="center">\n'
-home_en += '  <strong><a href="/">🇧🇷 Português</a></strong> &nbsp;·&nbsp; '
-home_en += '  <strong><a href="/index_en.html">🇬🇧 English</a></strong>\n'
-home_en += '</p>\n\n---\n\n'
-
+home_en += badges("Platform", "License")
+home_en += '<p align="center"><a href="#/">🇧🇷 Português</a> &nbsp;·&nbsp; <strong>🇬🇧 English</strong></p>\n\n---\n\n'
 home_en += desc_en + '\n\n'
-home_en += '**How it works:**\n\n' + how_en + '\n\n'
+home_en += '### How it works\n\n' + how_en + '\n\n'
 home_en += rust_en + '\n\n'
-home_en += (f"📖 **[Full manual]({PAGES_URL}index_en.html)** &nbsp;·&nbsp; "
-            f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n")
-write('README_EN.md', home_en)
+home_en += f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n"
 
-# index_en.html e index.html nao sao regenerados (mantidos a mao, blindados em KEEP)
-# Se index_en.html nao existir ainda, cria como cópia de index.html mas apontando a _sidebar_en
-# (na prática, o usuario vai customizar o index_en.html se necessário)
+# ---------- Gera ----------
+n_pt = build_lang(read_and_split(SRC_PT), out_prefix='',   sidebar_home_label='Início',
+                  home_md=home_pt, skip_slug='sumario',           manual_label='Manual')
+n_en = build_lang(read_and_split(SRC_EN), out_prefix='en', sidebar_home_label='Home',
+                  home_md=home_en, skip_slug='table-of-contents', manual_label='Manual')
 
-print(f"OK -> {OUT} | PT: {len(sidebar_pt)} paginas | EN: {len(sidebar_en)} paginas")
+write('.nojekyll', '')
+
+print(f"OK -> {OUT} | PT: {n_pt} itens | EN: {n_en} itens")
