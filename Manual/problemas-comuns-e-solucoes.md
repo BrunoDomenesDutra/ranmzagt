@@ -14,6 +14,14 @@ abre normalmente.
 o jogo em foco). Se mesmo assim não funcionar, ative a **barra flutuante** (aba Geral) e use os
 botões dela.
 
+**"Os atalhos não funcionam em alguns jogos (mesmo com o jogo em foco)"**
+→ Alguns jogos rodam com privilégios elevados (Administrador) e, por isso, **bloqueiam o registro
+dos atalhos globais** do Ranmza GT. Nesse caso, **execute o Ranmza GT como Administrador** (clique
+com o botão direito no `.exe` → *Executar como administrador*) — assim ele consegue ativar os
+atalhos por cima do jogo. Para não precisar repetir toda vez, marque *Executar este programa como
+administrador* em **Propriedades → Compatibilidade** do executável. (Alternativa: use a **barra
+flutuante**, que dispara as ações por clique do mouse e não depende dos atalhos do teclado.)
+
 **"A tradução não aparece, ou demora muito"**
 → Confira a aba Histórico/Monitor para ver se a tradução está sendo feita. Se aparecer um aviso
 amarelo de "fallback para Google Translate", quer dizer que o serviço configurado (OpenAI,

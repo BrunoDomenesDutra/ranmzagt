@@ -9,7 +9,10 @@ import re, os, shutil, unicodedata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.dirname(HERE)            # raiz do repo (uma acima de _src/)
-KEEP = {".git", "_src", ".gitignore", "LICENSE"}  # nunca apagar na limpeza
+# index.html e mantido a mao (tema Alucard/Dracula hi-fi) — NAO e regenerado pelo
+# template abaixo; fica no KEEP para a limpeza nao apaga-lo e a escrita so ocorre
+# se ele ainda nao existir (bootstrap de clone novo).
+KEEP = {".git", "_src", ".gitignore", "LICENSE", "index.html"}  # nunca apagar na limpeza
 
 SRC = os.path.join(HERE, "manual.md")
 MASTER = os.path.normpath(os.path.join(
@@ -144,7 +147,7 @@ home += (f"\U0001F4D6 **[Full manual]({PAGES_URL})** &nbsp;&middot;&nbsp; "
           f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n")
 write('README.md', home)
 
-write('index.html', '''<!DOCTYPE html>
+if not os.path.isfile(os.path.join(OUT, 'index.html')): write('index.html', '''<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">

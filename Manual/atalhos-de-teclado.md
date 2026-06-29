@@ -11,6 +11,7 @@
 | Mostrar/ocultar áreas | `Numpad2` | Mostra os retângulos das áreas configuradas |
 | Ligar/desligar Modo Tempo Real | `Numpad3` | Tradução contínua no lugar, experimental (veja seção 9) |
 | Selecionar área do Tempo Real | `Numpad6` | Escolhe a área que o Modo Tempo Real vai traduzir |
+| Mostrar/ocultar barra flutuante | `NumpadSubtract` (menos do Numpad) | Abre ou fecha a barra flutuante de botões (veja seção 3) |
 
 Todos podem ser trocados na aba **Atalhos** — escolha outra tecla e, se quiser, combine com
 Ctrl/Alt/Shift. Se escolher uma **letra** como atalho, é **obrigatório** usar pelo menos um

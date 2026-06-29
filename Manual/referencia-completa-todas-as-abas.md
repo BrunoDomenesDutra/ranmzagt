@@ -17,7 +17,9 @@ Onde o programa opera.
   usa o monitor principal do Windows. Trocar de monitor **limpa a área de captura** salva e
   **exige reiniciar** (botão "Reiniciar agora" aparece logo abaixo).
 - **Barra flutuante → Mostrar barra flutuante** — liga a janelinha de botões sempre visível,
-  arrastável entre monitores (veja a seção 3).
+  arrastável entre monitores (veja a seção 3). Também pode ser aberta/fechada pelo atalho
+  **Mostrar/ocultar barra flutuante** (padrão `NumpadSubtract`), e ela **lembra a última posição**
+  em que você a deixou.
 - **Configuração → Resetar para o padrão** — restaura todas as opções aos valores de fábrica.
   **Mantém** o monitor, as áreas selecionadas, as chaves de API e os prompts (System Prompt e
   Informações do Jogo).
@@ -73,10 +75,11 @@ Tem aparência e pré-processamento **próprios**, independentes da aba Captura.
 
 ### Atalhos
 
-Sete atalhos globais (funcionam com o jogo em foco; desativados quando a janela de config está
+Dez atalhos globais (funcionam com o jogo em foco; desativados quando a janela de config está
 em primeiro plano). Cada um tem os modificadores **Ctrl / Alt / Shift** e a tecla principal
 (grupos Numpad, Função F1–F12 e Letras): Selecionar área · Traduzir · Traduzir com IA Vision ·
-Limpar overlay · Ligar/desligar legenda · Selecionar área da legenda · Mostrar/ocultar áreas.
+Limpar overlay · Ligar/desligar legenda · Selecionar área da legenda · Mostrar/ocultar áreas ·
+Ligar/desligar Tempo Real · Selecionar área do Tempo Real · Mostrar/ocultar barra flutuante.
 
 > Letras como tecla principal **exigem** um modificador (Ctrl, Alt ou Shift) para não conflitar
 > com o jogo. Numpad e F-keys funcionam sem modificador.

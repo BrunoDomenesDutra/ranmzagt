@@ -167,6 +167,7 @@ legenda aparece). Aperte de novo para esconder. Não traduz nada, é só um guia
 | Mostrar/ocultar áreas | `Numpad2` | Mostra os retângulos das áreas configuradas |
 | Ligar/desligar Modo Tempo Real | `Numpad3` | Tradução contínua no lugar, experimental (veja seção 9) |
 | Selecionar área do Tempo Real | `Numpad6` | Escolhe a área que o Modo Tempo Real vai traduzir |
+| Mostrar/ocultar barra flutuante | `NumpadSubtract` (menos do Numpad) | Abre ou fecha a barra flutuante de botões (veja seção 3) |
 
 Todos podem ser trocados na aba **Atalhos** — escolha outra tecla e, se quiser, combine com
 Ctrl/Alt/Shift. Se escolher uma **letra** como atalho, é **obrigatório** usar pelo menos um
@@ -302,6 +303,11 @@ tom ao longo de uma conversa. Se notar que a IA está mudando o nome de um perso
 da tradução de uma fala para outra, aumente esse valor; se preferir que cada fala seja
 traduzida sem depender das anteriores, deixe em 0.
 
+> O **DeepL** também aproveita as falas anteriores como contexto, **sem custo extra** — ele
+> recebe as últimas falas como referência (seguindo o mesmo controle **"Falas anteriores"**)
+> para manter a consistência de nomes e termos. Mesmo não sendo uma IA conversacional, isso
+> deixa a tradução contínua mais coesa. **Google Translate** não usa esse contexto.
+
 ### Aparência separada
 
 A aba Legenda tem suas próprias opções de fonte, fundo e contorno — independentes da tradução
@@ -418,6 +424,14 @@ abre normalmente.
 o jogo em foco). Se mesmo assim não funcionar, ative a **barra flutuante** (aba Geral) e use os
 botões dela.
 
+**"Os atalhos não funcionam em alguns jogos (mesmo com o jogo em foco)"**
+→ Alguns jogos rodam com privilégios elevados (Administrador) e, por isso, **bloqueiam o registro
+dos atalhos globais** do Ranmza GT. Nesse caso, **execute o Ranmza GT como Administrador** (clique
+com o botão direito no `.exe` → *Executar como administrador*) — assim ele consegue ativar os
+atalhos por cima do jogo. Para não precisar repetir toda vez, marque *Executar este programa como
+administrador* em **Propriedades → Compatibilidade** do executável. (Alternativa: use a **barra
+flutuante**, que dispara as ações por clique do mouse e não depende dos atalhos do teclado.)
+
 **"A tradução não aparece, ou demora muito"**
 → Confira a aba Histórico/Monitor para ver se a tradução está sendo feita. Se aparecer um aviso
 amarelo de "fallback para Google Translate", quer dizer que o serviço configurado (OpenAI,
@@ -466,7 +480,9 @@ Onde o programa opera.
   usa o monitor principal do Windows. Trocar de monitor **limpa a área de captura** salva e
   **exige reiniciar** (botão "Reiniciar agora" aparece logo abaixo).
 - **Barra flutuante → Mostrar barra flutuante** — liga a janelinha de botões sempre visível,
-  arrastável entre monitores (veja a seção 3).
+  arrastável entre monitores (veja a seção 3). Também pode ser aberta/fechada pelo atalho
+  **Mostrar/ocultar barra flutuante** (padrão `NumpadSubtract`), e ela **lembra a última posição**
+  em que você a deixou.
 - **Configuração → Resetar para o padrão** — restaura todas as opções aos valores de fábrica.
   **Mantém** o monitor, as áreas selecionadas, as chaves de API e os prompts (System Prompt e
   Informações do Jogo).
@@ -522,10 +538,11 @@ Tem aparência e pré-processamento **próprios**, independentes da aba Captura.
 
 ### Atalhos
 
-Sete atalhos globais (funcionam com o jogo em foco; desativados quando a janela de config está
+Dez atalhos globais (funcionam com o jogo em foco; desativados quando a janela de config está
 em primeiro plano). Cada um tem os modificadores **Ctrl / Alt / Shift** e a tecla principal
 (grupos Numpad, Função F1–F12 e Letras): Selecionar área · Traduzir · Traduzir com IA Vision ·
-Limpar overlay · Ligar/desligar legenda · Selecionar área da legenda · Mostrar/ocultar áreas.
+Limpar overlay · Ligar/desligar legenda · Selecionar área da legenda · Mostrar/ocultar áreas ·
+Ligar/desligar Tempo Real · Selecionar área do Tempo Real · Mostrar/ocultar barra flutuante.
 
 > Letras como tecla principal **exigem** um modificador (Ctrl, Alt ou Shift) para não conflitar
 > com o jogo. Numpad e F-keys funcionam sem modificador.
