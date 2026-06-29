@@ -172,6 +172,15 @@ home_en += rust_en + '\n\n'
 home_en += (f"📖 **[Open the full manual]({PAGES_URL}#/en/)** &nbsp;·&nbsp; "
             f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n")
 
+# O README raiz (landing do GitHub + home PT do Docsify) tambem traz a versao EN da
+# descricao, com link pro manual EN — para quem chega pela pagina do repo em ingles.
+home_pt += '\n---\n\n## English\n\n'
+home_pt += desc_en + '\n\n'
+home_pt += '### How it works\n\n' + how_en + '\n\n'
+home_pt += rust_en + '\n\n'
+home_pt += (f"📖 **[Open the full manual]({PAGES_URL}#/en/)** &nbsp;·&nbsp; "
+            f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n")
+
 # ---------- Gera ----------
 n_pt = build_lang(read_and_split(SRC_PT), out_prefix='',   sidebar_home_label='Início',
                   home_md=home_pt, skip_slug='sumario',           manual_label='Manual')

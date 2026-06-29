@@ -28,3 +28,20 @@ O **Ranmza GT** captura uma área da tela, reconhece o texto com OCR, traduz e d
 Desenvolvido em **Rust** 🦀 — nativo para Windows, sem runtime pesado, com baixo consumo de CPU/memória mesmo rodando junto de um jogo.
 
 📖 **[Abrir o manual completo](https://brunodomenesdutra.github.io/ranmzagt/)** &nbsp;·&nbsp; ⬇️ **[Baixar (Releases)](https://github.com/BrunoDomenesDutra/ranmzagt/releases)**
+
+---
+
+## English
+
+**Ranmza GT** captures an area of the screen, recognizes the text with OCR, translates it and draws the translation **overlaid on the game**, in the same position as the original text — like a floating subtitle. Works with any game, visual novel, digital manga, video or program that shows text on screen.
+
+### How it works
+
+1. **Capture** — when you press the hotkey, it grabs the chosen area of the screen.
+2. **OCR** — recognizes the text in the image (native Windows OCR or OneOCR, your choice).
+3. **Translation** — sends the text to the chosen engine (Google, OpenAI, Claude or Gemini) and gets the translation back.
+4. **Overlay** — draws the translation over the game, in the same position as the original text, without stealing focus or freezing the window.
+
+Built in **Rust** 🦀 — native for Windows, no heavy runtime, low CPU/memory footprint even while running alongside a game.
+
+📖 **[Open the full manual](https://brunodomenesdutra.github.io/ranmzagt/#/en/)** &nbsp;·&nbsp; ⬇️ **[Download (Releases)](https://github.com/BrunoDomenesDutra/ranmzagt/releases)**
