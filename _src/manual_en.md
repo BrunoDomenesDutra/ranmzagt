@@ -165,7 +165,7 @@ In the **Capture** tab, appearance section:
 
 - **Font**: choose from fonts in the `fonts/` folder or use Windows' default font.
 - **Font size** and **Line height**: adjust so text is readable and well-spaced.
-- **Auto-fit**: leave enabled so the program **automatically shrinks the font** if the translation is bigger than the original text's space — this way text is never cut off.
+- **Auto-fit**: leave enabled so the program **automatically shrinks the font** until the whole translation fits the original text's space — this way text is never cut off. Tip: with Auto-fit on, set **Font size** to the maximum — the program finds the largest size that shows the complete translation filling the area nicely, and raising the control further changes nothing.
 - **Background**: draws a dark box behind the text (with adjustable opacity) to guarantee readability over any scenery.
 - **Outline**: alternative to background — draws a black border around letters, no visible box, for a more discrete/integrated look.
 
@@ -292,10 +292,10 @@ The page can also be opened in any browser on the local network (phone, second m
 → Some games run with elevated privileges (Administrator) and therefore **block Ranmza GT's global hotkey registration**. In that case, **run Ranmza GT as Administrator** (right-click the `.exe` → *Run as administrator*) — then it can activate hotkeys over the game. To avoid repeating every time, check *Run this program as an administrator* in **Properties → Compatibility** of the executable. (Alternative: use the **floating toolbar**, which fires actions by mouse click and doesn't depend on keyboard hotkeys.)
 
 **"Translation doesn't appear, or it's slow"**
-→ Check the History/Monitor tab to see if translation is being done. If a yellow "fallback to Google Translate" warning appears, the configured service (OpenAI, Claude, Gemini) failed — check your API key and credits in the Translators tab.
+→ Check the History/Monitor tab to see if translation is being done. Transient failures (rate limit, server briefly down, connection drop) are **automatically retried** once before falling back to Google Translate. If a yellow "fallback to Google Translate" warning appears — and in History the translation is marked "Google Translate (fallback)" —, the configured service (OpenAI, Claude, Gemini) failed even after the retry; check your API key and credits in the Translators tab.
 
 **"A red error warning appeared"**
-→ Usually means invalid API key, exhausted credits, or the service temporarily down. Check the Translators tab.
+→ Usually means invalid API key, exhausted credits, or the service temporarily down. Check the Translators tab. If the warning says the response was **cut off at the token limit**, increase **Max Tokens** in the AI tab (happens only with very large text blocks).
 
 **"Recognized text is wrong/incomplete"**
 → Try enabling preprocessing (Capture tab) with upscale and contrast adjustments, or use the **Translate with AI Vision** hotkey (`Numpad4`) to let the AI "see" the image and correct it.
@@ -375,9 +375,9 @@ Has its own appearance and preprocessing, independent from the Capture tab.
 
 ### Shortcuts
 
-Ten global hotkeys (work with game in focus; disabled when the settings window is in the foreground). Each has **Ctrl / Alt / Shift** modifiers and a main key (Numpad groups, Function F1–F12, and Letters): Select area · Translate · Translate with AI Vision · Clear overlay · Toggle Caption Mode · Select caption area · Show/hide areas · Toggle Real-time Mode · Select Real-time area · Show/hide floating toolbar.
+Ten global hotkeys (work with game in focus; disabled when the settings window is in the foreground). Each has **Ctrl / Alt / Shift** modifiers and a main key, chosen from the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Numbers** (top-row 0–9), and **Letters** groups: Select area · Translate · Translate with AI Vision · Clear overlay · Toggle Caption Mode · Select caption area · Show/hide areas · Toggle Real-time Mode · Select Real-time area · Show/hide floating toolbar.
 
-> Letters as main key **require** a modifier (Ctrl, Alt, or Shift) to not conflict with the game. Numpad and F-keys work without modifier.
+> **Letters and numbers** as main key **require** a modifier (Ctrl, Alt, or Shift) to not conflict with the game (games use WASD and the 0–9 slots all the time). Numpad, F-keys, and navigation keys work without a modifier. The Numbers and Navigation groups are handy on laptops without a numpad.
 
 ### Translators
 
@@ -387,10 +387,11 @@ Ten global hotkeys (work with game in focus; disabled when the settings window i
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — require an API key.
 - **Authentication** (appears for providers with a key; credentials are **saved per engine independently**, so switching and coming back doesn't erase anything):
   - *API Key* — your key (`sk-...`, `sk-ant-...`, `AIza...`).
-  - *Model*:
-    - OpenAI: GPT-4o mini (economical) · GPT-4o (superior quality).
-    - Claude: Haiku 4.5 (fast/economical) · Sonnet 4.6 (superior quality).
-    - Gemini: 1.5 Flash · 2.0 Flash · 1.5 Pro.
+  - *Model* — each AI engine offers three tiers: a **fast/economical** one, a **balanced** one, and a **top** one (superior quality).
+    - OpenAI: GPT-4.1 nano · GPT-4.1 mini · GPT-4.1.
+    - Claude: Haiku 4.5 · Sonnet 5 · Opus 4.8.
+    - Gemini: 2.0 Flash · 2.5 Flash · 2.5 Pro.
+    - *Custom…* — the last option in the selector: opens a free text field to type **any model ID** accepted by the provider. Use it to run a newer model that isn't in the list yet, without waiting for an app update (the backend adjusts the parameters on its own, including for OpenAI's reasoning models).
   - *Test connection* — makes a test call to the provider with your current key and model and shows immediately if it works (✓, with example translation) or the returned error (✗), instead of discovering the problem only when translating. Also available for Google (checks connectivity).
 
 ### AI
@@ -408,7 +409,7 @@ The first three sections only appear with an AI provider selected (not Google).
 
 - **OCR Engine → Active engine**:
   - *WinOCR* (default) — native to Windows, ~30 ms, offline; depends on Windows language packages. Can fail on very stylized fonts.
-  - *OneOCR* (experimental, Windows 11) — engine from Screenshot Tool (Snipping Tool), ~50–150 ms, auto-multilingual. Uses an unofficial Microsoft API; you copy 3 files from Windows itself (`oneocr.dll`, `oneocr.onemodel`, `onnxruntime.dll`) and point to the folder (Browse / Verify buttons — folder configures automatically if valid).
+  - *OneOCR* (experimental, Windows 11) — engine from Screenshot Tool (Snipping Tool), ~50–150 ms, auto-multilingual. Uses an unofficial Microsoft API; you copy 3 files from Windows itself (`oneocr.dll`, `oneocr.onemodel`, `onnxruntime.dll`) and point to the folder (Browse / Verify buttons — folder configures automatically if valid). The step-by-step card is **collapsible**: while no folder is configured it stays open (so the tutorial is visible); once configured, you can collapse it and it **remembers** that choice across sessions.
 - **Block Grouping** — how detected lines are combined before translating:
   - *Paragraph Mode* — groups vertically close lines (dialogs, flowing text). Shows *Grouping sensitivity* (0–3.0; default 1): lower separates more, higher groups more.
   - *Line Mode* — each line becomes an independent block (menus, HUD).

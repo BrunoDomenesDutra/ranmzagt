@@ -234,8 +234,11 @@ Na aba **Captura**, seção de aparência:
   Windows.
 - **Tamanho da fonte** e **Altura da linha**: ajuste para o texto ficar legível e bem
   espaçado.
-- **Auto-fit**: deixe ativado para o programa **diminuir a fonte automaticamente** se a
-  tradução for maior que o espaço do texto original — assim o texto nunca é cortado.
+- **Auto-fit**: deixe ativado para o programa **diminuir a fonte automaticamente** até a
+  tradução inteira caber no espaço do texto original — assim o texto nunca é cortado. Dica: com
+  o Auto-fit ligado, deixe o **Tamanho da fonte** no máximo — o programa encontra sozinho o
+  maior tamanho que exibe a tradução completa preenchendo bem a área, e subir mais o controle
+  não muda mais nada.
 - **Fundo**: desenha uma caixa escura atrás do texto (com opacidade ajustável), para garantir
   legibilidade sobre qualquer cenário.
 - **Contorno**: alternativa ao fundo — desenha uma borda preta nas letras, sem caixa visível,
@@ -433,13 +436,18 @@ administrador* em **Propriedades → Compatibilidade** do executável. (Alternat
 flutuante**, que dispara as ações por clique do mouse e não depende dos atalhos do teclado.)
 
 **"A tradução não aparece, ou demora muito"**
-→ Confira a aba Histórico/Monitor para ver se a tradução está sendo feita. Se aparecer um aviso
-amarelo de "fallback para Google Translate", quer dizer que o serviço configurado (OpenAI,
-Claude, Gemini) falhou — confira sua chave de API e créditos na aba Tradutores.
+→ Confira a aba Histórico/Monitor para ver se a tradução está sendo feita. Falhas passageiras
+(limite de requisições, servidor fora do ar por um instante, queda de conexão) são **tentadas de
+novo automaticamente** uma vez antes de recorrer ao Google Translate. Se aparecer um aviso
+amarelo de "fallback para Google Translate" — e no Histórico a tradução vier marcada como
+"Google Translate (fallback)" —, quer dizer que o serviço configurado (OpenAI, Claude, Gemini)
+falhou mesmo após a retentativa; confira sua chave de API e créditos na aba Tradutores.
 
 **"Apareceu um aviso vermelho de erro"**
 → Geralmente indica chave de API inválida, créditos esgotados, ou o serviço fora do ar
-temporariamente. Confira a aba Tradutores.
+temporariamente. Confira a aba Tradutores. Se o aviso disser que a resposta foi **cortada no
+limite de tokens**, aumente o **Max Tokens** na aba I.A (acontece só em blocos de texto muito
+grandes).
 
 **"O texto reconhecido está errado/incompleto"**
 → Tente ativar o pré-processamento (aba Captura) com upscale e ajuste de contraste, ou use o
@@ -539,13 +547,17 @@ Tem aparência e pré-processamento **próprios**, independentes da aba Captura.
 ### Atalhos
 
 Dez atalhos globais (funcionam com o jogo em foco; desativados quando a janela de config está
-em primeiro plano). Cada um tem os modificadores **Ctrl / Alt / Shift** e a tecla principal
-(grupos Numpad, Função F1–F12 e Letras): Selecionar área · Traduzir · Traduzir com IA Vision ·
-Limpar overlay · Ligar/desligar legenda · Selecionar área da legenda · Mostrar/ocultar áreas ·
-Ligar/desligar Tempo Real · Selecionar área do Tempo Real · Mostrar/ocultar barra flutuante.
+em primeiro plano). Cada um tem os modificadores **Ctrl / Alt / Shift** e a tecla principal,
+escolhida entre os grupos **Numpad**, **Função** (F1–F12), **Navegação** (setas, Insert, Delete,
+Home, End, PageUp, PageDown), **Números** (0–9 da fileira superior) e **Letras**: Selecionar
+área · Traduzir · Traduzir com IA Vision · Limpar overlay · Ligar/desligar legenda · Selecionar
+área da legenda · Mostrar/ocultar áreas · Ligar/desligar Tempo Real · Selecionar área do Tempo
+Real · Mostrar/ocultar barra flutuante.
 
-> Letras como tecla principal **exigem** um modificador (Ctrl, Alt ou Shift) para não conflitar
-> com o jogo. Numpad e F-keys funcionam sem modificador.
+> **Letras e números** como tecla principal **exigem** um modificador (Ctrl, Alt ou Shift) para
+> não conflitar com o jogo (jogos usam WASD e os slots 0–9 o tempo todo). Numpad, F-keys e as
+> teclas de navegação funcionam sem modificador. Os grupos Números e Navegação são úteis em
+> notebooks sem teclado numérico.
 
 ### Tradutores
 
@@ -563,10 +575,15 @@ Ligar/desligar Tempo Real · Selecionar área do Tempo Real · Mostrar/ocultar b
 - **Autenticação** (aparece para os provedores com chave; as credenciais são **salvas por motor
   independentemente**, então trocar e voltar não apaga nada):
   - *API Key* — sua chave (`sk-...`, `sk-ant-...`, `AIza...`).
-  - *Modelo*:
-    - OpenAI: GPT-4o mini (econômico) · GPT-4o (qualidade superior).
-    - Claude: Haiku 4.5 (rápido/econômico) · Sonnet 4.6 (qualidade superior).
-    - Gemini: 1.5 Flash · 2.0 Flash · 1.5 Pro.
+  - *Modelo* — cada motor de IA oferece três faixas: uma **rápida/econômica**, uma de
+    **equilíbrio** e uma **top** (qualidade superior).
+    - OpenAI: GPT-4.1 nano · GPT-4.1 mini · GPT-4.1.
+    - Claude: Haiku 4.5 · Sonnet 5 · Opus 4.8.
+    - Gemini: 2.0 Flash · 2.5 Flash · 2.5 Pro.
+    - *Personalizado…* — última opção do seletor: abre um campo de texto livre para você
+      digitar **qualquer ID de modelo** aceito pelo provedor. Serve para usar um modelo mais
+      novo que ainda não está na lista, sem esperar uma atualização do programa (o backend
+      ajusta os parâmetros sozinho, inclusive para os modelos de raciocínio da OpenAI).
   - *Testar conexão* — faz uma chamada de teste ao provedor com a chave e o modelo atuais e
     mostra na hora se está tudo certo (✓, com a tradução de exemplo) ou o erro retornado (✗),
     em vez de você só descobrir o problema ao traduzir. Também disponível no Google (verifica a
@@ -595,7 +612,10 @@ As três primeiras seções só aparecem com um provedor de IA selecionado (não
   - *OneOCR* (experimental, Windows 11) — motor do Snipping Tool, ~50–150 ms, multilíngue
     automático. Usa API não oficial da Microsoft; você copia 3 arquivos do próprio Windows
     (`oneocr.dll`, `oneocr.onemodel`, `onnxruntime.dll`) e aponta a pasta (botões Procurar /
-    Verificar — a pasta é configurada automaticamente se válida).
+    Verificar — a pasta é configurada automaticamente se válida). O card com o passo a passo é
+    **recolhível**: enquanto a pasta não estiver configurada ele fica sempre aberto (para o
+    tutorial ficar visível); depois de configurado, você pode recolhê-lo e ele **lembra** essa
+    escolha entre sessões.
 - **Agrupamento de Blocos** — como as linhas detectadas são combinadas antes de traduzir:
   - *Modo Parágrafo* — agrupa linhas verticalmente próximas (diálogos, texto corrido). Mostra
     *Sensibilidade do agrupamento* (0–3,0; padrão 1): menor separa mais, maior junta mais.

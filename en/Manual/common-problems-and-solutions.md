@@ -13,10 +13,10 @@
 → Some games run with elevated privileges (Administrator) and therefore **block Ranmza GT's global hotkey registration**. In that case, **run Ranmza GT as Administrator** (right-click the `.exe` → *Run as administrator*) — then it can activate hotkeys over the game. To avoid repeating every time, check *Run this program as an administrator* in **Properties → Compatibility** of the executable. (Alternative: use the **floating toolbar**, which fires actions by mouse click and doesn't depend on keyboard hotkeys.)
 
 **"Translation doesn't appear, or it's slow"**
-→ Check the History/Monitor tab to see if translation is being done. If a yellow "fallback to Google Translate" warning appears, the configured service (OpenAI, Claude, Gemini) failed — check your API key and credits in the Translators tab.
+→ Check the History/Monitor tab to see if translation is being done. Transient failures (rate limit, server briefly down, connection drop) are **automatically retried** once before falling back to Google Translate. If a yellow "fallback to Google Translate" warning appears — and in History the translation is marked "Google Translate (fallback)" —, the configured service (OpenAI, Claude, Gemini) failed even after the retry; check your API key and credits in the Translators tab.
 
 **"A red error warning appeared"**
-→ Usually means invalid API key, exhausted credits, or the service temporarily down. Check the Translators tab.
+→ Usually means invalid API key, exhausted credits, or the service temporarily down. Check the Translators tab. If the warning says the response was **cut off at the token limit**, increase **Max Tokens** in the AI tab (happens only with very large text blocks).
 
 **"Recognized text is wrong/incomplete"**
 → Try enabling preprocessing (Capture tab) with upscale and contrast adjustments, or use the **Translate with AI Vision** hotkey (`Numpad4`) to let the AI "see" the image and correct it.

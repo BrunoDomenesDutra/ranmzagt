@@ -6,8 +6,11 @@ Na aba **Captura**, seção de aparência:
   Windows.
 - **Tamanho da fonte** e **Altura da linha**: ajuste para o texto ficar legível e bem
   espaçado.
-- **Auto-fit**: deixe ativado para o programa **diminuir a fonte automaticamente** se a
-  tradução for maior que o espaço do texto original — assim o texto nunca é cortado.
+- **Auto-fit**: deixe ativado para o programa **diminuir a fonte automaticamente** até a
+  tradução inteira caber no espaço do texto original — assim o texto nunca é cortado. Dica: com
+  o Auto-fit ligado, deixe o **Tamanho da fonte** no máximo — o programa encontra sozinho o
+  maior tamanho que exibe a tradução completa preenchendo bem a área, e subir mais o controle
+  não muda mais nada.
 - **Fundo**: desenha uma caixa escura atrás do texto (com opacidade ajustável), para garantir
   legibilidade sobre qualquer cenário.
 - **Contorno**: alternativa ao fundo — desenha uma borda preta nas letras, sem caixa visível,

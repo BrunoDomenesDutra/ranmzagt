@@ -23,13 +23,18 @@ administrador* em **Propriedades → Compatibilidade** do executável. (Alternat
 flutuante**, que dispara as ações por clique do mouse e não depende dos atalhos do teclado.)
 
 **"A tradução não aparece, ou demora muito"**
-→ Confira a aba Histórico/Monitor para ver se a tradução está sendo feita. Se aparecer um aviso
-amarelo de "fallback para Google Translate", quer dizer que o serviço configurado (OpenAI,
-Claude, Gemini) falhou — confira sua chave de API e créditos na aba Tradutores.
+→ Confira a aba Histórico/Monitor para ver se a tradução está sendo feita. Falhas passageiras
+(limite de requisições, servidor fora do ar por um instante, queda de conexão) são **tentadas de
+novo automaticamente** uma vez antes de recorrer ao Google Translate. Se aparecer um aviso
+amarelo de "fallback para Google Translate" — e no Histórico a tradução vier marcada como
+"Google Translate (fallback)" —, quer dizer que o serviço configurado (OpenAI, Claude, Gemini)
+falhou mesmo após a retentativa; confira sua chave de API e créditos na aba Tradutores.
 
 **"Apareceu um aviso vermelho de erro"**
 → Geralmente indica chave de API inválida, créditos esgotados, ou o serviço fora do ar
-temporariamente. Confira a aba Tradutores.
+temporariamente. Confira a aba Tradutores. Se o aviso disser que a resposta foi **cortada no
+limite de tokens**, aumente o **Max Tokens** na aba I.A (acontece só em blocos de texto muito
+grandes).
 
 **"O texto reconhecido está errado/incompleto"**
 → Tente ativar o pré-processamento (aba Captura) com upscale e ajuste de contraste, ou use o
