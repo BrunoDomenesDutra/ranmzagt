@@ -91,8 +91,8 @@ b_livepix_en = "https://img.shields.io/badge/LivePix-donate%20with%20Pix-32BCAD?
 
 def support_pt():
     s  = '### Apoie o projeto\n\n'
-    s += ('O Ranmza GT é gratuito. Se ele te ajudou, uma doação ajuda a manter o '
-          'desenvolvimento e as chaves de API dos motores de tradução.\n\n')
+    s += ('O Ranmza GT é gratuito. Se ele te ajudou, considere apoiar o '
+          'desenvolvimento:\n\n')
     s += '<p align="center">\n'
     s += f'  <a href="{LIVEPIX_URL}"><img src="{b_livepix}" alt="LivePix"></a>\n'
     s += f'  <a href="{KOFI_URL}"><img src="{b_kofi}" alt="Ko-fi"></a>\n'
@@ -103,8 +103,8 @@ def support_pt():
 
 def support_en():
     s  = '### Support the project\n\n'
-    s += ('Ranmza GT is free. If it helped you, a donation keeps development going and '
-          'pays for the translation engines\' API keys.\n\n')
+    s += ('Ranmza GT is free. If it helped you, consider supporting the '
+          'development:\n\n')
     s += '<p align="center">\n'
     s += f'  <a href="{KOFI_URL}"><img src="{b_kofi_en}" alt="Ko-fi"></a>\n'
     s += f'  <a href="{LIVEPIX_URL}"><img src="{b_livepix_en}" alt="LivePix"></a>\n'

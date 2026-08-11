@@ -31,7 +31,7 @@ Desenvolvido em **Rust** 🦀 — nativo para Windows, sem runtime pesado, com b
 
 ### Apoie o projeto
 
-O Ranmza GT é gratuito. Se ele te ajudou, uma doação ajuda a manter o desenvolvimento e as chaves de API dos motores de tradução.
+O Ranmza GT é gratuito. Se ele te ajudou, considere apoiar o desenvolvimento:
 
 <p align="center">
   <a href="https://livepix.gg/ranmza"><img src="https://img.shields.io/badge/LivePix-doar%20via%20Pix-32BCAD?logo=pix&logoColor=white" alt="LivePix"></a>
@@ -59,7 +59,7 @@ Built in **Rust** 🦀 — native for Windows, no heavy runtime, low CPU/memory 
 
 ### Support the project
 
-Ranmza GT is free. If it helped you, a donation keeps development going and pays for the translation engines' API keys.
+Ranmza GT is free. If it helped you, consider supporting the development:
 
 <p align="center">
   <a href="https://ko-fi.com/ranmza"><img src="https://img.shields.io/badge/Ko--fi-support-FF5E5B?logo=kofi&logoColor=white" alt="Ko-fi"></a>

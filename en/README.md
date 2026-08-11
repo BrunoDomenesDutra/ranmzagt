@@ -31,7 +31,7 @@ Built in **Rust** 🦀 — native for Windows, no heavy runtime, low CPU/memory 
 
 ### Support the project
 
-Ranmza GT is free. If it helped you, a donation keeps development going and pays for the translation engines' API keys.
+Ranmza GT is free. If it helped you, consider supporting the development:
 
 <p align="center">
   <a href="https://ko-fi.com/ranmza"><img src="https://img.shields.io/badge/Ko--fi-support-FF5E5B?logo=kofi&logoColor=white" alt="Ko-fi"></a>
