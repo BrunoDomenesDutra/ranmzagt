@@ -13,7 +13,7 @@ Practical guide to using **Ranmza GT**, the translator for games, visual novels,
 5. [Configuring translation](#5-configuring-translation)
 6. [Making translation look like the game](#6-making-translation-look-like-the-game)
 7. [Vision Mode — when OCR fails](#7-vision-mode--when-ocr-fails)
-8. [Caption Mode — continuous automatic translation](#8-caption-mode--continuous-automatic-translation)
+8. [Subtitle Mode — continuous automatic translation](#8-subtitle-mode--continuous-automatic-translation)
 9. [Real-time Mode — continuous translation in place (experimental)](#9-real-time-mode--continuous-translation-in-place-experimental)
 10. [Using with OBS / streaming](#10-using-with-obs--streaming)
 11. [History and performance](#11-history-and-performance)
@@ -110,7 +110,7 @@ When you want better quality, switch in **Active provider**:
 
 Each engine stores its own credentials, so switching away and back doesn't erase anything. Use the **Test connection** button to confirm the key is valid before jumping into the game.
 
-> **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Very handy in long Caption Mode sessions.
+> **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Very handy in long Subtitle Mode sessions.
 
 > Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate and DeepL don't. See [section 7](/en/Manual/vision-mode-when-ocr-fails.md).
 
@@ -155,7 +155,7 @@ The buttons, left to right (hover over one to see its name):
 | Three lines (pink) | Translate with AI Vision (Paragraph) |
 | Dash (pink) | Translate with AI Vision (Line) |
 | X (red) | Clear overlay |
-| Bubble (green) | Caption Mode — on/off |
+| Bubble (green) | Subtitle Mode — on/off |
 | Rectangle (green) | Select subtitle area |
 | Four dots (orange) | Show/hide areas |
 
@@ -188,14 +188,23 @@ Other problems are covered in [section 12](/en/Manual/common-problems-and-soluti
 > **Important**: keyboard shortcuts only work with the **game window in focus**. If Ranmza GT's settings window is open and selected (in the foreground), the shortcuts are disabled — click back on the game (or minimize the settings) before using `Numpad9`, `Numpad7`, etc.
 
 1. Play normally.
-2. When text you want to translate appears, press **Translate** (default `Numpad9`).
+2. When text you want to translate appears, press **Translate**: `Numpad8` for dialogue (paragraph mode) or `Numpad9` for menus (line mode).
 3. The translation appears on screen, in the position of the original text.
 4. It disappears on its own after a while (configurable), or press **Clear overlay** (default `NumpadDecimal`) to remove it right away.
 5. If game text changes before the translation disappears, just press **Translate** again — the old translation is automatically cleared before the new capture.
 
+### Paragraph or line: get the hang of it
+
+Choosing between `Numpad8` and `Numpad9` is the adjustment that changes your results the most day to day, and you make it on the spot, without opening any settings:
+
+- **`Numpad8` (paragraph)** merges nearby lines into a single block. That's what you want in a dialogue box, where the line carries over to the next.
+- **`Numpad9` (line)** translates each line on its own. That's what you want in an inventory or menu, where "Potion" and "Long sword" have nothing to do with each other.
+
+Picked the wrong mode? Just press the other hotkey right after — the previous translation is cleared automatically.
+
 ### Don't trust keyboard shortcuts?
 
-Enable the **floating toolbar** in the **General** tab. It's a compact window that stays **always on top of any window** — even fullscreen games (borderless) — with the main commands at hand: select area, translate, translate with Vision, clear, toggle Caption Mode, select caption area, and show/hide areas (hover over a button to see its name).
+Enable the **floating toolbar** in **General › Config**. It's a compact window that stays **always on top of any window** — even fullscreen games (borderless) — with the main commands at hand: select area, translate, translate with Vision, clear, toggle Subtitle Mode, select subtitle area, and show/hide areas (hover over a button to see its name).
 
 Three advantages:
 
@@ -205,7 +214,7 @@ Three advantages:
 
 ### Checking if your areas are correct
 
-Press **Show/hide areas** (default `Numpad2`) to draw colored rectangles showing where the program will capture (and, if Caption Mode is configured, where the caption appears). Press again to hide them. It doesn't translate anything, just a visual guide.
+Press **Show/hide areas** (default `Numpad2`) to draw colored rectangles showing where the program will capture (and, if Subtitle Mode is configured, where the subtitle appears). Press again to hide them. It doesn't translate anything, just a visual guide.
 
 ---
 
@@ -214,17 +223,19 @@ Press **Show/hide areas** (default `Numpad2`) to draw colored rectangles showing
 | Shortcut | Default | What it does |
 |---|---|---|
 | Select area | `Numpad7` | Opens the selector to choose where text is |
-| Translate | `Numpad9` | Captures, translates and displays on screen |
-| Translate with AI Vision | `Numpad4` | Same as "Translate", but using smarter AI (see section 7) |
-| Clear translation | `NumpadDecimal` (Numpad period) | Hides the displayed translation |
-| Toggle Caption Mode | `Numpad0` | Activates continuous automatic translation (see section 8) |
-| Select caption area | `Numpad1` | Choose where the game's caption appears |
-| Show/hide areas | `Numpad2` | Shows rectangles of configured areas |
-| Toggle Real-time Mode | `Numpad3` | Continuous translation in place, experimental (see section 9) |
-| Select Real-time area | `Numpad6` | Choose the area Real-time Mode will translate |
+| Translate (paragraph mode) | `Numpad8` | Captures and translates merging nearby lines into a block — dialogue |
+| Translate (line mode) | `Numpad9` | Captures and translates each line on its own — menus and lists |
+| Translate with AI Vision (paragraph mode) | `Numpad5` | Same as `Numpad8`, but sending the image to the AI (see section 7) |
+| Translate with AI Vision (line mode) | `Numpad6` | Same as `Numpad9`, but sending the image to the AI (see section 7) |
+| Clear overlay | `NumpadDecimal` (Numpad period) | Hides the displayed translation |
+| Toggle subtitles | `Numpad0` | Activates continuous automatic translation (see section 8) |
+| Select subtitle area | `Numpad1` | Choose where the game's subtitle appears |
+| Show/hide areas (preview) | `Numpad2` | Shows rectangles of configured areas |
 | Show/hide floating toolbar | `NumpadSubtract` (Numpad minus) | Opens or closes the floating toolbar of buttons (see section 3) |
 
-All can be changed in the **Shortcuts** tab — choose another key and, if you want, combine with Ctrl/Alt/Shift. If you choose a **letter** as a hotkey, it's **mandatory** to use at least one modifier (Ctrl, Alt, or Shift) to not interfere with normal game controls.
+> **What about Real-time Mode?** Its shortcuts — toggle and select area — aren't in this list nor in General › Shortcuts: being experimental, they live in the **Experimental** tab and come with **no key assigned**. You pick your own there. See [section 9](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md).
+
+All can be changed in **General › Shortcuts** — choose another key and, if you want, combine with Ctrl/Alt/Shift. If you choose a **letter or a number** from the top row, it's **mandatory** to use at least one modifier (Ctrl, Alt, or Shift) to not interfere with normal game controls (which use WASD and slots 0–9 constantly). Numpad, F1–F12 and the navigation keys work on their own — the **Numbers** and **Navigation** groups are what save you on a laptop with no numpad.
 
 > Shortcuts only work when the game window is in focus (i.e., when Ranmza GT's settings window isn't in the foreground). This way you can type normally in settings fields without triggering commands accidentally.
 
@@ -234,40 +245,45 @@ All can be changed in the **Shortcuts** tab — choose another key and, if you w
 
 ### Text type: dialog or menu?
 
-In the **OCR** tab, under "Block Grouping", choose:
+The grouping mode **isn't picked in a tab** — it's decided at capture time, by which hotkey you press:
 
-- **Paragraph Mode** (default) — groups nearby lines into a single translation block. Use for **dialogs, character speech, flowing text** (visual novels, JRPGs).
-- **Line Mode** — each line becomes a separate translation. Use for **menus, inventory, status, HUD** — where each line is independent info and shouldn't be mixed with the one above or below.
+- **`Numpad8` — Paragraph Mode** — groups nearby lines into a single translation block. Use for **dialogs, character speech, flowing text** (visual novels, JRPGs).
+- **`Numpad9` — Line Mode** — each line becomes a separate translation. Use for **menus, inventory, status, HUD** — where each line is independent info and shouldn't be mixed with the one above or below.
 
-If the program is grouping lines that should be separate (or separating a speech that should stay together), adjust the **"Grouping sensitivity"** control that appears in Paragraph Mode:
+The same goes for Vision: `Numpad5` is paragraph and `Numpad6` is line.
+
+If Paragraph Mode is grouping lines that should be separate (or separating a speech that should stay together), adjust the **Grouping sensitivity** in **General › OCR**:
 - Text being **separated too much**? Increase the value (up to 3.0).
 - Text being **grouped too much**? Decrease the value (down to 0).
 
+This adjustment only affects Paragraph Mode — in Line Mode it is ignored.
+
 ### Improving difficult text recognition
 
-If the program isn't detecting text correctly (small fonts, stylized, with effects), go to the **Capture** tab and enable **Preprocessing**. A few quick tips:
+If the program isn't detecting text correctly (small fonts, stylized, with effects), go to **Overlay › Capture** and enable **Preprocessing**. A few quick tips:
 
 - **Small text**: increase **Upscale** (2x or 3x usually fixes it).
 - **Font with thick outline**: increase **Sharpen** a bit.
 - **Text with low contrast against background**: increase **Contrast**.
 - **Light text on dark background** (or vice versa, if it's giving wrong results): try **Invert colors**.
 
-Don't know where to start? Use the **Lab** tab — you can test all these options on sample images, see the result in real time, and then apply the best-working configuration directly to Capture or Caption.
+Don't know where to start? Use **Tools › Lab** — you can test all these options on sample images, see the result in real time, and then apply the best-working configuration directly to Capture or Subtitles.
 
 ### Switching OCR engine (advanced)
 
-If preprocessing still doesn't fix recognition, the **OCR** tab lets you switch the text recognition "engine":
+If preprocessing still doesn't fix recognition, **General › OCR** lets you switch the text recognition "engine":
 
-- **WinOCR** (default) — fast, comes ready, but can fail on very stylized fonts.
-- **OneOCR** (experimental, Windows 11) — the OCR engine from Windows Screenshot Tool (Snipping Tool), much better than WinOCR on stylized fonts and auto-detects language (no need to configure source language). You copy 3 files from Windows itself to a folder of yours — the OCR tab shows step-by-step. Because it uses an unofficial Microsoft API, a Snipping Tool update might break it; if so, just re-extract the files.
+- **WinOCR** (default) — fast (~30 ms), comes ready, but can fail on very stylized fonts.
+- **OneOCR** (experimental) — the OCR engine from the Snipping Tool, much better than WinOCR on stylized fonts and auto-detects language (no need to configure source language). You copy 3 files from Windows itself to a folder of yours — the OCR tab shows step-by-step. Because it uses an unofficial Microsoft API, a Snipping Tool update might break it; if so, just re-extract the files.
 
 ---
 
 ## 6. Making translation look like the game
 
-In the **Capture** tab, appearance section:
+In **Overlay › Capture**, in the **Text** card:
 
-- **Font**: choose from fonts in the `fonts/` folder or use Windows' default font.
+- **Font**: choose from fonts in the `fonts/` folder or use the system default (Arial). The preview right below shows how it looks.
+- **Text color**: white by default; change it to match the game's palette.
 - **Font size** and **Line height**: adjust so text is readable and well-spaced.
 - **Auto-fit**: leave enabled so the program **automatically shrinks the font** until the whole translation fits the original text's space — this way text is never cut off. Tip: with Auto-fit on, set **Font size** to the maximum — the program finds the largest size that shows the complete translation filling the area nicely, and raising the control further changes nothing.
 - **Background**: draws a dark box behind the text (with adjustable opacity) to guarantee readability over any scenery.
@@ -285,7 +301,12 @@ Under "Display", choose how long the translation stays visible after appearing: 
 
 Sometimes normal text recognition (OCR) misses letters, loses parts of text, or gets completely lost on very stylized/artistic fonts, with symbols or icons mixed in the text.
 
-For those cases, use the **Translate with AI Vision** hotkey (default `Numpad4`). Instead of relying only on recognized text, the program **sends the screen image to Artificial Intelligence**, which "looks" at the image and understands better what's written, even if text recognition got it wrong.
+For those cases, use **Translate with AI Vision**. Instead of relying only on recognized text, the program **sends the screen image to Artificial Intelligence**, which "looks" at the image and understands better what's written, even if text recognition got it wrong.
+
+Just like normal Translate, Vision has both modes, and you pick with the hotkey:
+
+- **`Numpad5`** — Vision in **paragraph mode** (dialogue).
+- **`Numpad6`** — Vision in **line mode** (menus and lists).
 
 **Important:**
 - Only works with **OpenAI, Claude, or Gemini** (Google Translate and DeepL don't support this mode).
@@ -296,15 +317,15 @@ For those cases, use the **Translate with AI Vision** hotkey (default `Numpad4`)
 
 ---
 
-## 8. Caption Mode — continuous automatic translation
+## 8. Subtitle Mode — continuous automatic translation
 
-For scenes with ongoing dialog (cutscenes, visual novel auto mode, videos with subtitles), Caption Mode translates **on its own, repeatedly**, without you needing to press anything.
+For scenes with ongoing dialog (cutscenes, visual novel auto mode, videos with subtitles), Subtitle Mode translates **on its own, repeatedly**, without you needing to press anything.
 
 ### How to set up
 
-1. In the **Caption** tab, adjust capture options (interval, how many lines to show, etc.) — defaults work well for most cases.
-2. Press **Select caption area** (default `Numpad1`) and draw a rectangle over where the game's caption/dialog appears.
-3. Press **Toggle Caption Mode** (default `Numpad0`) to activate.
+1. In **Overlay › Subtitles**, adjust capture options (interval, how many lines to show, etc.) — defaults work well for most cases.
+2. Press **Select subtitle area** (default `Numpad1`) and draw a rectangle over where the game's subtitle/dialogue appears.
+3. Press **Toggle subtitles** (default `Numpad0`) to activate.
 
 From then on, the program watches that area, automatically translating whenever new text appears and stays "still" for a moment (this avoids translating letters appearing one by one in "typewriter" effects).
 
@@ -312,17 +333,19 @@ Translations appear **above** the selected area, in order (most recent at bottom
 
 ### Letting the AI "remember" previous lines
 
-If you're using OpenAI, Claude, or Gemini, the **AI** tab has a **"Previous lines"** control (0 to 20, default 5). When enabled, the AI gets the last already-translated lines as reference before translating the next one — this helps keep the same character names, terms, and tone throughout a conversation. If you notice the AI is changing a character's name or translation tone from one line to another, increase this value; if you prefer each line translated without depending on previous ones, leave it at 0.
+If you're using OpenAI, Claude, or Gemini, **Translation › AI** has a **"Previous lines"** control (0 to 20, default 5). When enabled, the AI gets the last already-translated lines as reference before translating the next one — this helps keep the same character names, terms, and tone throughout a conversation. If you notice the AI is changing a character's name or translation tone from one line to another, increase this value; if you prefer each line translated without depending on previous ones, leave it at 0.
 
 > **DeepL** also benefits from previous lines as context, **at no extra cost** — it gets the last lines as reference (following the same **"Previous lines"** control) to keep character names and terms consistent. Even though it's not a conversational AI, this makes continuous translation more cohesive. **Google Translate** doesn't use this context.
 
 ### Separate appearance
 
-The Caption tab has its own font, background, and outline options — separate from manual translation — so you can keep continuous caption smaller/more discreet and manual translation (`Numpad9`) bigger, for example.
+Overlay › Subtitles has its own font, color, background and outline options — separate from manual translation — so you can keep the continuous subtitle smaller/more discreet and the manual translation (`Numpad8`/`Numpad9`) bigger, for example. The image preprocessing is independent too.
 
 ### Turning it off
 
-Press **Numpad0** again (or the corresponding button, if you created one on the floating toolbar). The caption on screen clears immediately.
+Press **`Numpad0`** again, or the green bubble button on the floating toolbar. The subtitle on screen clears immediately.
+
+The mode also **turns itself off** after a while with no text detected in the region, so it doesn't keep running for nothing when you leave the cutscene and forget to switch it off. The timeout is set in *Overlay › Subtitles → Turn off Subtitle Mode after inactivity*: Never, 1, 2, 3, 5 or 10 minutes (default 1 minute). Note this **turns the mode off**, not just hides the subtitle — press `Numpad0` to switch it back on.
 
 ---
 
@@ -330,22 +353,28 @@ Press **Numpad0** again (or the corresponding button, if you created one on the 
 
 > **Experimental feature** — configured via the **Experimental** tab. Behavior may still change and bugs are expected.
 
-Real-time Mode combines the best of the other two modes: it's **continuous and automatic** like Caption Mode (no need to press anything for each line), but draws the translation **in the original text's place**, over each detected line, like Translate mode — instead of stacking everything in a box outside the area. It works over its **own area**, usually bigger than the caption area (covers the entire dialog box, character name, multiple lines at once).
+Real-time Mode combines the best of the other two modes: it's **continuous and automatic** like Subtitle Mode (no need to press anything for each line), but draws the translation **in the original text's place**, over each detected line, like Translate mode — instead of stacking everything in a box outside the area. It works over its **own area**, usually bigger than the subtitle area (covers the entire dialog box, character name, multiple lines at once).
 
 It's ideal for conversations with NPCs where **name + multiple lines of speech** appear at the same time, and you want everything translated live, in the original position, without clicking.
 
 ### How to use
 
-1. In the **Experimental** tab, adjust Real-time options (interval, font, background, outline, auto-off) — defaults work fine.
-2. Press **Select Real-time area** (default `Numpad6`) and draw the rectangle over the region where text appears.
-3. Press **Toggle Real-time Mode** (default `Numpad3`) to activate. Translation starts appearing overlaid, updating automatically as text changes.
-4. Press `Numpad3` again to turn it off.
+Everything about Real-time Mode lives in the **Experimental** tab, inside the *Real-time Mode (live overlay)* card — including the shortcuts, which come with **no key assigned**. That's deliberate: while the feature is experimental, it doesn't claim a key on your keyboard without you asking.
 
-> Because it's continuous and draws multiple areas live, Real-time Mode is heavier than other modes. If you notice stuttering, increase the **interval** in the Experimental tab.
+1. Open the **Experimental** tab and expand the **Real-time Mode** card.
+2. Turn on **Allow Real-time Mode**. That switch only **unlocks** the hotkey — it doesn't start translating anything by itself. With it off, the hotkey does absolutely nothing.
+3. Set the two keys right there: **Toggle Real-time** and **Select Real-time area**. Pick free Numpad keys (`Numpad3` and `Numpad4` are unused in the factory defaults) or any other combination.
+4. Adjust the options if you like (interval, font, background, outline, auto-clear) — the defaults work fine.
+5. Press your **select area** key and draw the rectangle over the region where text appears.
+6. Press your **toggle** key. Translation starts appearing overlaid, updating automatically as text changes. Press it again to turn it off.
+
+> **Turn on "Hide overlay from screen capture" first**, the top card of the Experimental tab. Without it, the translation the program draws on top ends up recaptured by its own OCR on the next cycle — the text feeds back on itself and turns to mush. The Real-time card reminds you of this.
+
+> Because it's continuous and draws multiple areas live, Real-time Mode is heavier than other modes. If you notice stuttering, increase the **interval** in the card.
 
 ### Stability with animated backgrounds
 
-In scenes with moving backgrounds (RPG game animations, videos), text recognition may vary from frame to frame, making the translation **shake** or **flicker**. Two adjustments in the Experimental tab control this:
+In scenes with moving backgrounds (RPG game animations, videos), text recognition may vary from frame to frame, making the translation **shake** or **flicker**. Two adjustments in the Real-time card control this:
 
 - **Position stability** — how many pixels text must move for the translation to reposition. Higher = translation more "still" (ignores shaking); lower = follows text more closely. (Default: 12px.)
 - **Hold on OCR failure** — how many cycles a translation stays on screen when recognition fails for a moment, avoiding flicker. Higher = holds longer; lower = disappears faster. (Default: 6.)
@@ -354,7 +383,9 @@ Quick rule: still **shaking**? Increase *Position stability*; still **flickering
 
 ### Typewriter effect (typewriter)
 
-Many games reveal text **letter by letter**. To avoid translating incomplete sentences, turn on **Typewriter** in the Experimental tab: the program waits for text to "settle" (stop changing) before translating. Works for both Real-time Mode and Caption Mode. You can adjust how stable text needs to be and the maximum wait time before translating anyway.
+Many games reveal text **letter by letter**. To avoid translating incomplete sentences, turn on **Wait for the text to settle**, in the *Wait for complete text (typewriter effect)* card of the Experimental tab: the program waits for the line to stop changing before translating. Works for both Real-time Mode and Subtitle Mode.
+
+Three controls fine-tune it: how many consecutive reads must match (*Required stable captures*), how alike they must be to count as identical (*'Same text' threshold*), and the longest it will wait before translating whatever it has (*Wait cap*).
 
 ---
 
@@ -362,22 +393,24 @@ Many games reveal text **letter by letter**. To avoid translating incomplete sen
 
 If you stream or record the game and want **the translation to also appear in the video/stream** (or only in the video, without appearing in the game itself), use the **Web** tab:
 
-1. Enable the **server**.
-2. Copy the `/captura/obs` address shown in the tab.
+1. Turn on **Server active**.
+2. Copy the **Capture — OBS** address (`/captura/obs`) shown in the tab, with the *Copy* button.
 3. In OBS, add a source of type **"Browser Source"** and paste that address. This version of the page has a transparent background, ready to overlay the game capture.
-4. (Optional) Enable **"Show translation on screen"** to **turn off the normal overlay** and let the translation appear **only** on the browser page/OBS — useful if OBS's capture already includes the overlay window and you don't want to see the translation twice.
+4. (Optional) **Turn off** the **"Show translation on screen"** switch to drop the overlay from the game and let the translation appear **only** on the browser page/OBS — useful if OBS's capture already includes the overlay window and you don't want to see the translation twice. Leave it **on** if you want the translation in both places.
 
 You can also customize theme (light/dark/dracula), colors, font size, and whether you want to show the original text together with the translation, time, and which service was used.
 
-The page can also be opened in any browser on the local network (phone, second monitor, etc.) using the `/captura` address shown in the tab.
+The page can also be opened in any browser on the local network (phone, second monitor, etc.) using the **Capture** address (`/captura`) shown in the tab — that version comes with history and a clear button.
+
+> If the translation disappears from your recordings and streams without you touching any of this, the culprit is **Hide overlay from screen capture** (Experimental tab): it makes the overlay invisible to any screen capture, OBS included. That is exactly the case the Web server solves.
 
 ---
 
 ## 11. History and performance
 
-- **History tab**: shows translations made during the current session (original text, translation, time and service used). Has a button to clear.
-- **Monitor tab**: turns on a log of the latest translations with the time each step took (capture, recognition, translation, total) — useful to notice if any configuration is slowing the program down (for example, heavy preprocessing).
-- **DeepL usage** (Translators tab, with DeepL selected): shows how many **characters** DeepL translated in this session and your **account quota** (characters used/billing period limit) — click "Update" to check. Exclusive to DeepL.
+- **History tab**: shows translations made during the current session (original text, translation, time and service used), most recent first. Click an entry to copy the translation; there's also a button to clear everything.
+- **Debug › Monitor**: turns on a log of the last 10 translations with the time each step took (capture, preprocessing, recognition, translation, total) — useful to notice if any configuration is slowing the program down (for example, heavy preprocessing).
+- **DeepL usage** (**Translation › Translators**, with DeepL selected): shows how many **characters** DeepL translated in this session and your **account quota** (characters used/billing period limit) — click "Update" to check. Exclusive to DeepL.
 
 ---
 
@@ -387,34 +420,34 @@ The page can also be opened in any browser on the local network (phone, second m
 → Your Windows is missing **Microsoft Visual C++ Redistributable** — a free Microsoft component some freshly-formatted PCs don't have. Download and install the **x64** package from this official link: <https://aka.ms/vs/17/release/vc_redist.x64.exe> — then reopen Ranmza GT, it should open normally.
 
 **"Recognition detects nothing" / red warning about language**
-→ Go to the Language tab and click the warning to install the necessary Windows language package.
+→ Go to **General › Language** and click the warning to install the necessary Windows language package.
 
 **"I pressed the hotkey and nothing happened"**
-→ Check if the settings window isn't in the foreground (hotkeys only work with the game in focus). If still nothing, enable the **floating toolbar** (General tab) and use its buttons.
+→ Check if the settings window isn't in the foreground (hotkeys only work with the game in focus). If still nothing, enable the **floating toolbar** (**General › Config**) and use its buttons.
 
 **"Hotkeys don't work in some games (even with game in focus)"**
 → Some games run with elevated privileges (Administrator) and therefore **block Ranmza GT's global hotkey registration**. In that case, **run Ranmza GT as Administrator** (right-click the `.exe` → *Run as administrator*) — then it can activate hotkeys over the game. To avoid repeating every time, check *Run this program as an administrator* in **Properties → Compatibility** of the executable. (Alternative: use the **floating toolbar**, which fires actions by mouse click and doesn't depend on keyboard hotkeys.)
 
 **"Translation doesn't appear, or it's slow"**
-→ Check the History/Monitor tab to see if translation is being done. Transient failures (rate limit, server briefly down, connection drop) are **automatically retried** once before falling back to Google Translate. If a yellow "fallback to Google Translate" warning appears — and in History the translation is marked "Google Translate (fallback)" —, the configured service (OpenAI, Claude, Gemini) failed even after the retry; check your API key and credits in the Translators tab.
+→ Check the **History** and **Debug › Monitor** tabs to see if translation is being done. Transient failures (rate limit, server briefly down, connection drop) are **automatically retried** once before falling back to Google Translate. If you have **more than one key** registered for the engine, it still tries the other keys in the list before the fallback. If a yellow "fallback to Google Translate" warning appears — and in History the translation is marked "Google Translate (fallback)" —, the configured service (OpenAI, Claude, Gemini) failed on **every** key; check your API keys and credits in Translation › Translators.
 
 **"A red error warning appeared"**
-→ Usually means invalid API key, exhausted credits, or the service temporarily down. Check the Translators tab. If the warning says the response was **cut off at the token limit**, increase **Max Tokens** in the AI tab (happens only with very large text blocks).
+→ Usually means invalid API key, exhausted credits, or the service temporarily down. Check **Translation › Translators**. If the warning says the response was **cut off at the token limit**, increase **Max tokens** in **Translation › AI** (happens only with very large text blocks).
 
 **"Recognized text is wrong/incomplete"**
-→ Try enabling preprocessing (Capture tab) with upscale and contrast adjustments, or use the **Translate with AI Vision** hotkey (`Numpad4`) to let the AI "see" the image and correct it.
+→ Try enabling preprocessing (**Overlay › Capture**) with upscale and contrast adjustments, or use **Translate with AI Vision** (`Numpad5` paragraph, `Numpad6` line) to let the AI "see" the image and correct it.
 
 **"Translation is cut off or doesn't fit in the box"**
-→ Enable **Auto-fit** in the Capture tab — the program will automatically shrink the font until it fits.
+→ Enable **Auto-fit** in **Overlay › Capture** — the program will automatically shrink the font until it fits.
 
 **"Translations of different lines are mixing into one block (or the opposite)"**
-→ Adjust **Grouping sensitivity** in the OCR tab (Paragraph Mode).
+→ First check you pressed the right hotkey: `Numpad8` merges lines (paragraph) and `Numpad9` keeps them apart (line). If the mode is right and it still gets it wrong, adjust **Grouping sensitivity** in **General › OCR** — it only affects Paragraph Mode.
 
 **"I switched monitors and capture isn't working right anymore"**
-→ Restart the program via the General tab button — it's necessary after switching monitors.
+→ Restart the program via the button in **General › Config** — it's necessary after switching monitors.
 
 **"I want to share my logs for support, but don't want to show game content"**
-→ Check the Logs/Debug tab if the option "Log captured texts and translations" is **disabled** (it's the default) — this way logs don't show text/translation content.
+→ Check **Debug › Logs** if the option "Log captured texts and translations" is **disabled** (it's the default) — this way logs don't show text/translation content.
 
 ---
 
@@ -443,7 +476,7 @@ Where the program runs.
 
 ### General › Language
 
-The source-language field **adapts to the OCR engine** picked in the OCR tab.
+The source-language field **adapts to the OCR engine** picked in General › OCR.
 
 <p align="center"><img src="media/geral-idioma.png" alt="General › Language tab" width="820"></p>
 
@@ -515,7 +548,7 @@ Appearance of manual translations, and image preprocessing.
 
 ### Overlay › Subtitles
 
-Subtitle Mode has its **own** appearance and preprocessing, independent of the Capture tab.
+Subtitle Mode has its **own** appearance and preprocessing, independent of Overlay › Capture.
 
 <p align="center"><img src="media/overlay-legenda.png" alt="Overlay › Subtitles tab" width="820"></p>
 
@@ -526,7 +559,7 @@ Subtitle Mode has its **own** appearance and preprocessing, independent of the C
   - *Visible lines* — how many subtitle lines to keep on screen (1 to 8).
   - *Clear after silence* — wipes the subtitle if no new text shows up for X seconds (1 to 5 s).
   - *Turn off Subtitle Mode after inactivity* — **turns the mode off**, not just hides it, after that long without detecting text in the region: Never / 1 / 2 / 3 / 5 / 10 minutes.
-- **OCR Preprocessing** — the same controls as the Capture tab, but independent of it.
+- **OCR Preprocessing** — the same controls as Overlay › Capture, but independent of it.
 
 ### Overlay › Web
 
@@ -550,7 +583,7 @@ Which service translates, and with which credentials.
 
 - **Translation Provider → Active provider**
   - *Google Translate — free, no key* — unofficial API, nothing to configure. **Doesn't support Vision Mode.**
-  - *DeepL (requires API key)* — a high-quality dedicated translator; **doesn't support Vision Mode**. It has no model selection, but it does have **Formality** (Default / More formal / More informal), which only affects target languages that support it — PT-BR included — and is ignored on the rest. It makes use of the **Game Info** field (AI tab) and, in Subtitle Mode, the previous lines as context, at no extra cost.
+  - *DeepL (requires API key)* — a high-quality dedicated translator; **doesn't support Vision Mode**. It has no model selection, but it does have **Formality** (Default / More formal / More informal), which only affects target languages that support it — PT-BR included — and is ignored on the rest. It makes use of the **Game Info** field (Translation › AI) and, in Subtitle Mode, the previous lines as context, at no extra cost.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AI engines, requiring an API key.
 - **Authentication** — shown for providers with a key. Credentials are **saved per engine**, so switching services and back erases nothing.
   - *Model* (AI engines) — each engine offers three tiers: fast/cheap, best balance, and top quality.
@@ -608,7 +641,7 @@ A lab for testing preprocessing without touching the game.
 <p align="center"><img src="media/ferramentas-lab-preprocessamento.png" alt="Tools › Lab tab" width="820"></p>
 
 - **Test Image** — pick a PNG/JPG from the `images/lab_images/` folder, next to the executable.
-- **Preprocessing Parameters** — the same controls as the Capture tab, with a **live preview**: the original and processed images appear below, side by side.
+- **Preprocessing Parameters** — the same controls as Overlay › Capture, with a **live preview**: the original and processed images appear below, side by side.
 - **Apply to Capture** / **Apply to Subtitles** — copy the setup you just tested into the matching tab.
 
 Turning on *Advanced* reveals Threshold, Blur, Dilation and Erosion, for the hard cases:

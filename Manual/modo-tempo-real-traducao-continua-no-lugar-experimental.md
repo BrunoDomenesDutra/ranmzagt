@@ -14,22 +14,36 @@ tempo, e você quer tudo traduzido ao vivo, na posição original, sem clicar.
 
 ## Como usar
 
-1. Na aba **Experimental**, ajuste as opções do Tempo Real (intervalo, fonte, fundo, contorno,
-   desligamento automático) — os padrões já funcionam.
-2. Aperte **Selecionar área do Tempo Real** (padrão `Numpad6`) e desenhe o retângulo sobre a
-   região onde o texto aparece.
-3. Aperte **Ligar/desligar Modo Tempo Real** (padrão `Numpad3`) para ativar. A tradução passa a
-   aparecer sobreposta, atualizando sozinha conforme o texto muda.
-4. Aperte `Numpad3` de novo para desligar.
+Tudo do Tempo Real fica na aba **Experimental**, dentro do card *Modo Tempo Real (sobreposição
+ao vivo)* — inclusive os atalhos, que **não vêm com tecla definida**. É de propósito: enquanto
+o recurso é experimental, ele não ocupa uma tecla do seu teclado sem você pedir.
+
+1. Abra a aba **Experimental** e expanda o card **Modo Tempo Real**.
+2. Ligue **Permitir Modo Tempo Real**. Essa chave só **destrava** a hotkey — não começa a
+   traduzir nada por si só. Com ela desligada, o atalho não faz absolutamente nada.
+3. Defina as duas teclas ali mesmo: **Ligar/desligar Tempo Real** e **Selecionar área do Tempo
+   Real**. Escolha teclas livres do Numpad (`Numpad3` e `Numpad4` estão sobrando nos padrões de
+   fábrica) ou qualquer outra combinação.
+4. Ajuste as opções, se quiser (intervalo, fonte, fundo, contorno, limpeza automática) — os
+   padrões já funcionam.
+5. Aperte a tecla de **selecionar área** e desenhe o retângulo sobre a região onde o texto
+   aparece.
+6. Aperte a tecla de **ligar/desligar**. A tradução passa a aparecer sobreposta, atualizando
+   sozinha conforme o texto muda. Aperte de novo para desligar.
+
+> **Ligue antes o "Esconder overlay da captura de tela"**, o primeiro card da aba Experimental.
+> Sem ele, a tradução que o programa desenha por cima acaba sendo recapturada pelo próprio OCR
+> no ciclo seguinte — o texto se retroalimenta e vira uma bagunça. O próprio card do Tempo Real
+> lembra disso.
 
 > Por ser contínuo e desenhar várias áreas ao vivo, o Tempo Real é mais pesado que os outros
-> modos. Se notar travadas, aumente o **intervalo** na aba Experimental.
+> modos. Se notar travadas, aumente o **intervalo** no card.
 
 ## Estabilidade com fundo animado
 
 Em cenas com fundo em movimento (animações de jogos de RPG, vídeos), o reconhecimento de texto
 pode oscilar de um quadro para outro, fazendo a tradução **tremer** ou **piscar**. Dois ajustes
-na aba Experimental controlam isso:
+no card do Tempo Real controlam isso:
 
 - **Estabilidade da posição** — quantos pixels o texto precisa andar para a tradução ser
   reposicionada. Maior = tradução mais "parada" (ignora o tremor); menor = acompanha o texto
@@ -44,9 +58,13 @@ aumente o *Segurar em falha de OCR*.
 ## Efeito máquina de escrever (typewriter)
 
 Muitos jogos revelam o texto **letra por letra**. Para não traduzir frases pela metade, ligue
-**Máquina de escrever** na aba Experimental: o programa espera o texto "assentar" (parar de
-mudar) antes de traduzir. Vale tanto para o Modo Tempo Real quanto para o Modo Legenda. Dá para
-ajustar quão estável o texto precisa ficar e o tempo máximo de espera antes de traduzir mesmo
-assim.
+**Esperar o texto assentar**, no card *Esperar texto completo (efeito máquina de escrever)* da
+aba Experimental: o programa aguarda a fala parar de mudar antes de traduzir. Vale tanto para o
+Modo Tempo Real quanto para o Modo Legenda.
+
+Três controles afinam o comportamento: quantas leituras seguidas precisam bater (*Capturas
+estáveis exigidas*), o quanto elas precisam se parecer para contarem como iguais (*Limiar de
+"mesmo texto"*) e quanto tempo no máximo esperar antes de traduzir do jeito que está (*Teto de
+espera*).
 
 ---

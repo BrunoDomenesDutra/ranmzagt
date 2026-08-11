@@ -23,7 +23,7 @@ Where the program runs.
 
 ## General › Language
 
-The source-language field **adapts to the OCR engine** picked in the OCR tab.
+The source-language field **adapts to the OCR engine** picked in General › OCR.
 
 <p align="center"><img src="media/geral-idioma.png" alt="General › Language tab" width="820"></p>
 
@@ -95,7 +95,7 @@ Appearance of manual translations, and image preprocessing.
 
 ## Overlay › Subtitles
 
-Subtitle Mode has its **own** appearance and preprocessing, independent of the Capture tab.
+Subtitle Mode has its **own** appearance and preprocessing, independent of Overlay › Capture.
 
 <p align="center"><img src="media/overlay-legenda.png" alt="Overlay › Subtitles tab" width="820"></p>
 
@@ -106,7 +106,7 @@ Subtitle Mode has its **own** appearance and preprocessing, independent of the C
   - *Visible lines* — how many subtitle lines to keep on screen (1 to 8).
   - *Clear after silence* — wipes the subtitle if no new text shows up for X seconds (1 to 5 s).
   - *Turn off Subtitle Mode after inactivity* — **turns the mode off**, not just hides it, after that long without detecting text in the region: Never / 1 / 2 / 3 / 5 / 10 minutes.
-- **OCR Preprocessing** — the same controls as the Capture tab, but independent of it.
+- **OCR Preprocessing** — the same controls as Overlay › Capture, but independent of it.
 
 ## Overlay › Web
 
@@ -130,7 +130,7 @@ Which service translates, and with which credentials.
 
 - **Translation Provider → Active provider**
   - *Google Translate — free, no key* — unofficial API, nothing to configure. **Doesn't support Vision Mode.**
-  - *DeepL (requires API key)* — a high-quality dedicated translator; **doesn't support Vision Mode**. It has no model selection, but it does have **Formality** (Default / More formal / More informal), which only affects target languages that support it — PT-BR included — and is ignored on the rest. It makes use of the **Game Info** field (AI tab) and, in Subtitle Mode, the previous lines as context, at no extra cost.
+  - *DeepL (requires API key)* — a high-quality dedicated translator; **doesn't support Vision Mode**. It has no model selection, but it does have **Formality** (Default / More formal / More informal), which only affects target languages that support it — PT-BR included — and is ignored on the rest. It makes use of the **Game Info** field (Translation › AI) and, in Subtitle Mode, the previous lines as context, at no extra cost.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AI engines, requiring an API key.
 - **Authentication** — shown for providers with a key. Credentials are **saved per engine**, so switching services and back erases nothing.
   - *Model* (AI engines) — each engine offers three tiers: fast/cheap, best balance, and top quality.
@@ -188,7 +188,7 @@ A lab for testing preprocessing without touching the game.
 <p align="center"><img src="media/ferramentas-lab-preprocessamento.png" alt="Tools › Lab tab" width="820"></p>
 
 - **Test Image** — pick a PNG/JPG from the `images/lab_images/` folder, next to the executable.
-- **Preprocessing Parameters** — the same controls as the Capture tab, with a **live preview**: the original and processed images appear below, side by side.
+- **Preprocessing Parameters** — the same controls as Overlay › Capture, with a **live preview**: the original and processed images appear below, side by side.
 - **Apply to Capture** / **Apply to Subtitles** — copy the setup you just tested into the matching tab.
 
 Turning on *Advanced* reveals Threshold, Blur, Dilation and Erosion, for the hard cases:

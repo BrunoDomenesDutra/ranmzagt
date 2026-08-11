@@ -6,7 +6,7 @@
 - [5. Configuring translation](/en/Manual/configuring-translation.md)
 - [6. Making translation look like the game](/en/Manual/making-translation-look-like-the-game.md)
 - [7. Vision Mode — when OCR fails](/en/Manual/vision-mode-when-ocr-fails.md)
-- [8. Caption Mode — continuous automatic translation](/en/Manual/caption-mode-continuous-automatic-translation.md)
+- [8. Subtitle Mode — continuous automatic translation](/en/Manual/subtitle-mode-continuous-automatic-translation.md)
 - [9. Real-time Mode — continuous translation in place (experimental)](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md)
 - [10. Using with OBS / streaming](/en/Manual/using-with-obs-streaming.md)
 - [11. History and performance](/en/Manual/history-and-performance.md)

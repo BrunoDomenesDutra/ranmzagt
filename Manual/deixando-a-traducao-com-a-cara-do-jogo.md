@@ -1,9 +1,10 @@
 # 6. Deixando a tradução com a "cara" do jogo
 
-Na aba **Captura**, seção de aparência:
+Em **Overlay › Captura**, no card **Texto**:
 
-- **Fonte**: escolha entre as fontes incluídas na pasta `fonts/` ou use a fonte padrão do
-  Windows.
+- **Fonte**: escolha entre as fontes incluídas na pasta `fonts/` ou use a padrão do sistema
+  (Arial). A prévia logo abaixo mostra como fica.
+- **Cor do texto**: branco por padrão; troque para combinar com a paleta do jogo.
 - **Tamanho da fonte** e **Altura da linha**: ajuste para o texto ficar legível e bem
   espaçado.
 - **Auto-fit**: deixe ativado para o programa **diminuir a fonte automaticamente** até a

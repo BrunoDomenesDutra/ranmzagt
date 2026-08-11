@@ -69,7 +69,7 @@ When you want better quality, switch in **Active provider**:
 
 Each engine stores its own credentials, so switching away and back doesn't erase anything. Use the **Test connection** button to confirm the key is valid before jumping into the game.
 
-> **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Very handy in long Caption Mode sessions.
+> **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Very handy in long Subtitle Mode sessions.
 
 > Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate and DeepL don't. See [section 7](/en/Manual/vision-mode-when-ocr-fails.md).
 
@@ -114,7 +114,7 @@ The buttons, left to right (hover over one to see its name):
 | Three lines (pink) | Translate with AI Vision (Paragraph) |
 | Dash (pink) | Translate with AI Vision (Line) |
 | X (red) | Clear overlay |
-| Bubble (green) | Caption Mode — on/off |
+| Bubble (green) | Subtitle Mode — on/off |
 | Rectangle (green) | Select subtitle area |
 | Four dots (orange) | Show/hide areas |
 

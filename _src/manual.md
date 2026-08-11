@@ -260,28 +260,32 @@ Outros problemas estão na [seção 12](/Manual/problemas-comuns-e-solucoes.md).
 > usar `Numpad9`, `Numpad7`, etc.
 
 1. Jogue normalmente.
-2. Quando aparecer um texto que você quer traduzir, aperte **Traduzir** (padrão `Numpad9`).
+2. Quando aparecer um texto que você quer traduzir, aperte **Traduzir**: `Numpad8` para
+   diálogos (modo parágrafo) ou `Numpad9` para menus (modo linha).
 3. A tradução aparece na tela, na posição do texto original.
 4. Ela some sozinha depois de um tempo (configurável), ou aperte **Limpar overlay** (padrão
    `NumpadDecimal`) para tirá-la na hora.
 5. Se o texto do jogo mudar antes da tradução sumir, é só apertar **Traduzir** de novo — a
    tradução antiga é limpa automaticamente antes da nova captura.
 
+### Parágrafo ou linha: pegue o jeito
+
+A escolha entre `Numpad8` e `Numpad9` é o ajuste que mais muda o resultado no dia a dia, e você
+faz na hora, sem abrir configuração nenhuma:
+
+- **`Numpad8` (parágrafo)** junta as linhas próximas num bloco só. É o que você quer numa caixa
+  de diálogo, onde a fala continua de uma linha para a outra.
+- **`Numpad9` (linha)** traduz cada linha por conta própria. É o que você quer num inventário ou
+  menu, onde "Poção" e "Espada longa" não têm nada a ver uma com a outra.
+
+Errou o modo? Aperte o outro atalho na sequência — a tradução anterior é limpa sozinha.
+
 ### Não confia nos atalhos do teclado?
 
-Ative a **barra flutuante** na aba **Geral**. É uma janelinha compacta que fica **sempre por
-cima de qualquer janela** — inclusive jogos em tela cheia (sem borda) — com os 7 comandos
-principais à mão: selecionar área, traduzir, traduzir com Vision, limpar, ligar/desligar Modo
-Legenda, selecionar área da legenda e mostrar/ocultar áreas (passe o mouse sobre um botão para
-ver o nome).
-
-Os três trunfos dela:
-
-- **Fica sempre visível, acima de tudo** — não some atrás do jogo nem precisa de Alt+Tab.
-- **Move livremente entre monitores** — arraste para qualquer canto da tela, em qualquer monitor.
-- **Funciona quando o teclado não funciona** — alguns jogos "engolem" ou bloqueiam as teclas do
-  Numpad (ou o NumLock atrapalha). Como a barra dispara as ações por clique do mouse, ela
-  contorna isso completamente: é o plano B garantido para quando os atalhos não respondem.
+Ative a **barra flutuante** em **Geral › Config** e dispare tudo por clique do mouse. Ela fica
+sempre acima de qualquer janela, move-se livremente entre monitores e é o plano B para quando o
+jogo "engole" as teclas do Numpad. Os nove botões estão explicados no
+[passo 2.7](/Manual/configuracao-rapida.md).
 
 ### Conferindo se as áreas estão certas
 
@@ -296,19 +300,27 @@ legenda aparece). Aperte de novo para esconder. Não traduz nada, é só um guia
 | Atalho | Padrão | O que faz |
 |---|---|---|
 | Selecionar área | `Numpad7` | Abre o seletor para escolher onde está o texto |
-| Traduzir | `Numpad9` | Captura, traduz e mostra na tela |
-| Traduzir com IA Vision | `Numpad4` | Igual ao "Traduzir", mas usando IA mais inteligente (veja seção 7) |
-| Limpar tradução | `NumpadDecimal` (vírgula do Numpad) | Esconde a tradução exibida |
-| Ligar/desligar Modo Legenda | `Numpad0` | Ativa a tradução automática contínua (veja seção 8) |
+| Traduzir (modo parágrafo) | `Numpad8` | Captura e traduz juntando as linhas próximas num bloco — diálogos |
+| Traduzir (modo linha) | `Numpad9` | Captura e traduz cada linha por conta própria — menus e listas |
+| Traduzir com I.A Vision (modo parágrafo) | `Numpad5` | Igual ao `Numpad8`, mas mandando a imagem para a IA (veja seção 7) |
+| Traduzir com I.A Vision (modo linha) | `Numpad6` | Igual ao `Numpad9`, mas mandando a imagem para a IA (veja seção 7) |
+| Limpar overlay | `NumpadDecimal` (vírgula do Numpad) | Esconde a tradução exibida |
+| Ligar/desligar legenda | `Numpad0` | Ativa a tradução automática contínua (veja seção 8) |
 | Selecionar área da legenda | `Numpad1` | Escolhe onde está a legenda do jogo |
-| Mostrar/ocultar áreas | `Numpad2` | Mostra os retângulos das áreas configuradas |
-| Ligar/desligar Modo Tempo Real | `Numpad3` | Tradução contínua no lugar, experimental (veja seção 9) |
-| Selecionar área do Tempo Real | `Numpad6` | Escolhe a área que o Modo Tempo Real vai traduzir |
-| Mostrar/ocultar barra flutuante | `NumpadSubtract` (menos do Numpad) | Abre ou fecha a barra flutuante de botões (veja seção 3) |
+| Mostrar/ocultar áreas (preview) | `Numpad2` | Mostra os retângulos das áreas configuradas |
+| Mostrar/esconder barra flutuante | `NumpadSubtract` (menos do Numpad) | Abre ou fecha a barra flutuante de botões (veja seção 3) |
 
-Todos podem ser trocados na aba **Atalhos** — escolha outra tecla e, se quiser, combine com
-Ctrl/Alt/Shift. Se escolher uma **letra** como atalho, é **obrigatório** usar pelo menos um
-modificador (Ctrl, Alt ou Shift), para não atrapalhar os controles normais do jogo.
+> **E o Modo Tempo Real?** Os atalhos dele — ligar/desligar e selecionar área — não estão nesta
+> lista nem em Geral › Atalhos: por ser experimental, ficam na aba **Experimental**, e vêm **sem
+> tecla definida**. Você escolhe as suas lá. Veja a
+> [seção 9](/Manual/modo-tempo-real-traducao-continua-no-lugar-experimental.md).
+
+Todos podem ser trocados em **Geral › Atalhos** — escolha outra tecla e, se quiser, combine com
+Ctrl/Alt/Shift. Se escolher uma **letra ou um número** da fileira de cima, é **obrigatório** usar
+pelo menos um modificador (Ctrl, Alt ou Shift), para não atrapalhar os controles normais do jogo
+(que usam WASD e os slots 0–9 o tempo todo). Numpad, F1–F12 e as teclas de navegação funcionam
+sozinhas — os grupos **Números** e **Navegação** salvam quem está em notebook sem teclado
+numérico.
 
 > Os atalhos só funcionam quando a janela do jogo está em foco (ou seja, quando a janela de
 > configuração do Ranmza GT não está em primeiro plano). Assim você pode digitar normalmente
@@ -320,24 +332,29 @@ modificador (Ctrl, Alt ou Shift), para não atrapalhar os controles normais do j
 
 ### Tipo de texto: diálogo ou menu?
 
-Na aba **OCR**, em "Agrupamento de Blocos", escolha:
+O modo de agrupamento **não se escolhe numa aba** — é decidido na hora da captura, pelo atalho
+que você aperta:
 
-- **Modo Parágrafo** (padrão) — junta linhas próximas em um único bloco de tradução. Use para
+- **`Numpad8` — Modo Parágrafo** — junta linhas próximas em um único bloco de tradução. Use para
   **diálogos, falas de personagens, textos corridos** (visual novels, JRPGs).
-- **Modo Linha** — cada linha vira uma tradução separada. Use para **menus, inventário, status,
-  HUD** — onde cada linha é uma informação independente e não deve ser misturada com a de cima
-  ou de baixo.
+- **`Numpad9` — Modo Linha** — cada linha vira uma tradução separada. Use para **menus,
+  inventário, status, HUD** — onde cada linha é uma informação independente e não deve ser
+  misturada com a de cima ou de baixo.
 
-Se o programa estiver juntando falas que deveriam ser separadas (ou separando uma fala que
-deveria ficar junta), ajuste o controle **"Sensibilidade do agrupamento"** que aparece no Modo
-Parágrafo:
-- Texto sendo **separado demais**? Aumente o valor (até 3.0).
+O mesmo vale para o Vision: `Numpad5` é parágrafo e `Numpad6` é linha.
+
+Se o modo Parágrafo estiver juntando falas que deveriam ser separadas (ou separando uma fala que
+deveria ficar junta), ajuste a **Sensibilidade do agrupamento**, em **Geral › OCR**:
+
+- Texto sendo **separado demais**? Aumente o valor (até 3,0).
 - Texto sendo **juntado demais**? Diminua o valor (até 0).
+
+Esse ajuste só afeta o modo Parágrafo — no modo Linha ele é ignorado.
 
 ### Melhorando o reconhecimento de texto difícil
 
 Se o programa não está detectando o texto direito (fontes pequenas, estilizadas, com efeitos),
-vá na aba **Captura** e ative o **Pré-processamento**. Algumas dicas rápidas:
+vá em **Overlay › Captura** e ative o **Pré-processamento**. Algumas dicas rápidas:
 
 - **Texto pequeno**: aumente o **Upscale** (2x ou 3x costuma resolver).
 - **Fonte com contorno grosso**: aumente um pouco o **Sharpen**.
@@ -345,30 +362,34 @@ vá na aba **Captura** e ative o **Pré-processamento**. Algumas dicas rápidas:
 - **Texto claro sobre fundo escuro** (ou vice-versa, se estiver dando errado): tente
   **Inverter cores**.
 
-Não sabe por onde começar? Use a aba **Lab** — lá dá para testar todas essas opções em imagens
-de exemplo, ver o resultado em tempo real, e depois aplicar a configuração que funcionou
+Não sabe por onde começar? Use **Ferramentas › Lab** — lá dá para testar todas essas opções em
+imagens de exemplo, ver o resultado em tempo real, e depois aplicar a configuração que funcionou
 melhor direto na Captura ou na Legenda.
 
 ### Trocando o motor de OCR (avançado)
 
-Se mesmo com pré-processamento o reconhecimento continuar ruim, a aba **OCR** permite trocar
+Se mesmo com pré-processamento o reconhecimento continuar ruim, **Geral › OCR** permite trocar
 o "motor" de reconhecimento de texto:
 
-- **WinOCR** (padrão) — rápido, já vem pronto, mas pode errar em fontes muito estilizadas.
-- **OneOCR** (experimental, Windows 11) — o motor de OCR da Ferramenta de Captura (Snipping
-  Tool), muito melhor que o WinOCR em fontes estilizadas e multilíngue automático (não precisa
-  configurar idioma de origem). Você copia 3 arquivos do próprio Windows para uma pasta sua —
-  o card na aba OCR mostra o passo a passo. Por usar uma API não oficial da Microsoft, uma
-  atualização do Snipping Tool pode parar de funcionar; nesse caso, basta reextrair os arquivos.
+- **WinOCR** (padrão) — rápido (~30 ms), já vem pronto, mas pode errar em fontes muito
+  estilizadas.
+- **OneOCR** (experimental) — o motor de OCR da Ferramenta de Captura (Snipping Tool), muito
+  melhor que o WinOCR em fontes estilizadas e multilíngue automático (não precisa configurar
+  idioma de origem). **Roda no Windows 10 e no 11**; o que é exclusivo do Windows 11 são os
+  3 arquivos que ele usa — eles só vêm com o Snipping Tool do Win11, então você os copia de uma
+  máquina com Windows 11 e aponta a pasta. O card em Geral › OCR mostra o passo a passo. Por
+  usar uma API não oficial da Microsoft, uma atualização do Snipping Tool pode parar de
+  funcionar; nesse caso, basta reextrair os arquivos.
 
 ---
 
 ## 6. Deixando a tradução com a "cara" do jogo
 
-Na aba **Captura**, seção de aparência:
+Em **Overlay › Captura**, no card **Texto**:
 
-- **Fonte**: escolha entre as fontes incluídas na pasta `fonts/` ou use a fonte padrão do
-  Windows.
+- **Fonte**: escolha entre as fontes incluídas na pasta `fonts/` ou use a padrão do sistema
+  (Arial). A prévia logo abaixo mostra como fica.
+- **Cor do texto**: branco por padrão; troque para combinar com a paleta do jogo.
 - **Tamanho da fonte** e **Altura da linha**: ajuste para o texto ficar legível e bem
   espaçado.
 - **Auto-fit**: deixe ativado para o programa **diminuir a fonte automaticamente** até a
@@ -396,10 +417,14 @@ o atalho de limpar ou traduzir de novo).
 Às vezes o reconhecimento de texto comum (OCR) erra letras, perde pedaços do texto ou se perde
 totalmente em fontes muito estilizadas/artísticas, com símbolos ou ícones no meio do texto.
 
-Para esses casos, use o atalho **Traduzir com IA Vision** (padrão `Numpad4`). Em vez de confiar
-só no texto reconhecido, o programa **envia a imagem da tela para a Inteligência Artificial**,
-que "olha" a imagem e entende melhor o que está escrito, mesmo que o reconhecimento de texto
-tenha errado.
+Para esses casos, use o **Traduzir com I.A Vision**. Em vez de confiar só no texto reconhecido, o
+programa **envia a imagem da tela para a Inteligência Artificial**, que "olha" a imagem e entende
+melhor o que está escrito, mesmo que o reconhecimento de texto tenha errado.
+
+Assim como no Traduzir normal, o Vision tem os dois modos, e você escolhe pelo atalho:
+
+- **`Numpad5`** — Vision no **modo parágrafo** (diálogos).
+- **`Numpad6`** — Vision no **modo linha** (menus e listas).
 
 **Importante:**
 - Só funciona com **OpenAI, Claude ou Gemini** (Google Translate e DeepL não suportam esse modo).
@@ -421,11 +446,11 @@ legenda), o Modo Legenda traduz **sozinho, repetidamente**, sem você precisar a
 
 ### Como configurar
 
-1. Na aba **Legenda**, ajuste as opções de captura (intervalo, quantas linhas mostrar, etc.) —
-   os padrões já funcionam bem para a maioria dos casos.
+1. Em **Overlay › Legenda**, ajuste as opções de captura (intervalo, quantas linhas mostrar,
+   etc.) — os padrões já funcionam bem para a maioria dos casos.
 2. Aperte **Selecionar área da legenda** (padrão `Numpad1`) e desenhe um retângulo sobre onde a
    legenda/diálogo aparece no jogo.
-3. Aperte **Ligar/desligar Modo Legenda** (padrão `Numpad0`) para ativar.
+3. Aperte **Ligar/desligar legenda** (padrão `Numpad0`) para ativar.
 
 A partir daí, o programa fica de olho naquela área, traduzindo automaticamente sempre que um
 texto novo aparecer e ficar "parado" por um instante (isso evita traduzir letras aparecendo uma
@@ -436,7 +461,7 @@ sozinhas se nenhum texto novo aparecer por alguns segundos.
 
 ### Deixando a IA "lembrar" das falas anteriores
 
-Se você está usando OpenAI, Claude ou Gemini, a aba **IA** tem um controle **"Falas
+Se você está usando OpenAI, Claude ou Gemini, **Traducao › I.A** tem um controle **"Falas
 anteriores"** (0 a 20, padrão 5). Com ele ligado, a IA recebe as últimas falas já traduzidas
 como referência antes de traduzir a próxima — isso ajuda a manter os mesmos nomes, termos e
 tom ao longo de uma conversa. Se notar que a IA está mudando o nome de um personagem ou o tom
@@ -450,14 +475,21 @@ traduzida sem depender das anteriores, deixe em 0.
 
 ### Aparência separada
 
-A aba Legenda tem suas próprias opções de fonte, fundo e contorno — independentes da tradução
-manual — então você pode deixar a legenda contínua menor/mais discreta e a tradução manual
-(`Numpad9`) maior, por exemplo.
+Overlay › Legenda tem suas próprias opções de fonte, cor, fundo e contorno — independentes da
+tradução manual — então você pode deixar a legenda contínua menor/mais discreta e a tradução
+manual (`Numpad8`/`Numpad9`) maior, por exemplo. O pré-processamento de imagem também é
+independente.
 
 ### Desligando
 
-Aperte **Numpad0** novamente (ou o botão correspondente, se você tiver criado um na barra
-flutuante). A legenda na tela é limpa imediatamente.
+Aperte **`Numpad0`** novamente, ou o botão verde de balão na barra flutuante. A legenda na tela
+é limpa imediatamente.
+
+O modo também **se desliga sozinho** depois de um tempo sem detectar texto na região, para não
+ficar rodando à toa quando você sai da cutscene e esquece de desligar. O tempo é escolhido em
+*Overlay › Legenda → Desligar Modo Legenda após inatividade*: Nunca, 1, 2, 3, 5 ou 10 minutos
+(padrão 1 minuto). Repare que isso **desliga o modo**, não só esconde a legenda — para religar,
+aperte `Numpad0`.
 
 ---
 
@@ -477,22 +509,36 @@ tempo, e você quer tudo traduzido ao vivo, na posição original, sem clicar.
 
 ### Como usar
 
-1. Na aba **Experimental**, ajuste as opções do Tempo Real (intervalo, fonte, fundo, contorno,
-   desligamento automático) — os padrões já funcionam.
-2. Aperte **Selecionar área do Tempo Real** (padrão `Numpad6`) e desenhe o retângulo sobre a
-   região onde o texto aparece.
-3. Aperte **Ligar/desligar Modo Tempo Real** (padrão `Numpad3`) para ativar. A tradução passa a
-   aparecer sobreposta, atualizando sozinha conforme o texto muda.
-4. Aperte `Numpad3` de novo para desligar.
+Tudo do Tempo Real fica na aba **Experimental**, dentro do card *Modo Tempo Real (sobreposição
+ao vivo)* — inclusive os atalhos, que **não vêm com tecla definida**. É de propósito: enquanto
+o recurso é experimental, ele não ocupa uma tecla do seu teclado sem você pedir.
+
+1. Abra a aba **Experimental** e expanda o card **Modo Tempo Real**.
+2. Ligue **Permitir Modo Tempo Real**. Essa chave só **destrava** a hotkey — não começa a
+   traduzir nada por si só. Com ela desligada, o atalho não faz absolutamente nada.
+3. Defina as duas teclas ali mesmo: **Ligar/desligar Tempo Real** e **Selecionar área do Tempo
+   Real**. Escolha teclas livres do Numpad (`Numpad3` e `Numpad4` estão sobrando nos padrões de
+   fábrica) ou qualquer outra combinação.
+4. Ajuste as opções, se quiser (intervalo, fonte, fundo, contorno, limpeza automática) — os
+   padrões já funcionam.
+5. Aperte a tecla de **selecionar área** e desenhe o retângulo sobre a região onde o texto
+   aparece.
+6. Aperte a tecla de **ligar/desligar**. A tradução passa a aparecer sobreposta, atualizando
+   sozinha conforme o texto muda. Aperte de novo para desligar.
+
+> **Ligue antes o "Esconder overlay da captura de tela"**, o primeiro card da aba Experimental.
+> Sem ele, a tradução que o programa desenha por cima acaba sendo recapturada pelo próprio OCR
+> no ciclo seguinte — o texto se retroalimenta e vira uma bagunça. O próprio card do Tempo Real
+> lembra disso.
 
 > Por ser contínuo e desenhar várias áreas ao vivo, o Tempo Real é mais pesado que os outros
-> modos. Se notar travadas, aumente o **intervalo** na aba Experimental.
+> modos. Se notar travadas, aumente o **intervalo** no card.
 
 ### Estabilidade com fundo animado
 
 Em cenas com fundo em movimento (animações de jogos de RPG, vídeos), o reconhecimento de texto
 pode oscilar de um quadro para outro, fazendo a tradução **tremer** ou **piscar**. Dois ajustes
-na aba Experimental controlam isso:
+no card do Tempo Real controlam isso:
 
 - **Estabilidade da posição** — quantos pixels o texto precisa andar para a tradução ser
   reposicionada. Maior = tradução mais "parada" (ignora o tremor); menor = acompanha o texto
@@ -507,44 +553,58 @@ aumente o *Segurar em falha de OCR*.
 ### Efeito máquina de escrever (typewriter)
 
 Muitos jogos revelam o texto **letra por letra**. Para não traduzir frases pela metade, ligue
-**Máquina de escrever** na aba Experimental: o programa espera o texto "assentar" (parar de
-mudar) antes de traduzir. Vale tanto para o Modo Tempo Real quanto para o Modo Legenda. Dá para
-ajustar quão estável o texto precisa ficar e o tempo máximo de espera antes de traduzir mesmo
-assim.
+**Esperar o texto assentar**, no card *Esperar texto completo (efeito máquina de escrever)* da
+aba Experimental: o programa aguarda a fala parar de mudar antes de traduzir. Vale tanto para o
+Modo Tempo Real quanto para o Modo Legenda.
+
+Três controles afinam o comportamento: quantas leituras seguidas precisam bater (*Capturas
+estáveis exigidas*), o quanto elas precisam se parecer para contarem como iguais (*Limiar de
+"mesmo texto"*) e quanto tempo no máximo esperar antes de traduzir do jeito que está (*Teto de
+espera*).
 
 ---
 
 ## 10. Usando no OBS / transmissões
 
 Se você transmite ou grava o jogo e quer que **a tradução apareça também no vídeo/stream**
-(ou só no vídeo, sem aparecer no jogo em si), use a aba **Web**:
+(ou só no vídeo, sem aparecer no jogo em si), use **Overlay › Web**:
 
-1. Ative o **servidor**.
-2. Copie o endereço `/captura/obs` mostrado na aba.
+1. Ative o **Servidor ativo**.
+2. Copie o endereço **Captura — OBS** (`/captura/obs`) mostrado na aba, no botão *Copiar*.
 3. No OBS, adicione uma fonte do tipo **"Navegador" (Browser Source)** e cole esse endereço.
    Essa versão da página tem fundo transparente, pronta para sobrepor à captura do jogo.
-4. (Opcional) Ative **"Mostrar tradução na tela"** para **desligar o overlay normal** e deixar
-   a tradução aparecer **só** na página do navegador/OBS — útil se a captura do OBS já inclui a
-   janela do overlay e você não quer ver a tradução duplicada.
+4. (Opcional) **Desative** a chave **"Mostrar tradução na tela"** para tirar o overlay do jogo e
+   deixar a tradução aparecer **só** na página do navegador/OBS — útil se a captura do OBS já
+   inclui a janela do overlay e você não quer ver a tradução duplicada. Deixe **ligada** se
+   quiser a tradução nos dois lugares.
 
 Você também pode personalizar tema (claro/escuro/dracula), cores, tamanho da fonte, e se quer
 mostrar o texto original junto com a tradução, horário e qual serviço foi usado.
 
 A página também pode ser aberta em qualquer navegador da rede local (celular, segundo monitor,
-etc.) usando o endereço `/captura` mostrado na aba.
+etc.) usando o endereço **Captura** (`/captura`) mostrado na aba — essa versão vem com histórico
+e botão de limpar.
+
+> Se a tradução some das suas gravações e transmissões sem você ter mexido aqui, o culpado é o
+> **Esconder overlay da captura de tela** (aba Experimental): ele torna o overlay invisível para
+> qualquer captura de tela, OBS incluso. É justamente nesse caso que o servidor Web resolve.
 
 ---
 
 ## 11. Histórico e desempenho
 
-- **Aba Histórico**: mostra as traduções feitas durante a sessão atual (texto original,
-  tradução, horário e serviço usado). Tem um botão para limpar.
-- **Aba Monitor**: liga um registro das últimas traduções com o tempo que cada etapa levou
-  (captura, reconhecimento, tradução, total) — útil para perceber se alguma configuração está
-  deixando o programa lento (por exemplo, pré-processamento muito pesado).
-- **Uso do DeepL** (aba **Tradutores**, com o DeepL selecionado): mostra quantos **caracteres** o
-  DeepL traduziu nesta sessão e a **cota da conta** (caracteres usados/limite do período de
-  cobrança) — clique em "Atualizar" para consultar. É exclusivo do DeepL.
+- **Aba Historico**: mostra as traduções feitas durante a sessão atual (texto original,
+  tradução, horário e serviço usado), da mais recente para a mais antiga. Clique numa entrada
+  para copiar a tradução; há também um botão para limpar tudo.
+- **Debug › Monitor**: liga um registro das últimas 10 traduções com o tempo que cada etapa
+  levou (captura, pré-processamento, reconhecimento, tradução, total) — útil para perceber se
+  alguma configuração está deixando o programa lento (por exemplo, pré-processamento muito
+  pesado). A coluna **Cache** mostra quantos blocos foram resolvidos sem chamar a API, e a
+  **API**, quantas chamadas foram feitas de fato.
+- **Uso do DeepL** (**Traducao › Tradutores**, com o DeepL selecionado): mostra quantos
+  **caracteres** o DeepL traduziu nesta sessão e a **cota da conta** (caracteres usados/limite do
+  período de cobrança) — clique em "Atualizar" para consultar. É exclusivo do DeepL; os motores
+  de IA não expõem o gasto pela chave.
 
 ---
 
@@ -557,12 +617,12 @@ link oficial: <https://aka.ms/vs/17/release/vc_redist.x64.exe> — depois reabra
 abre normalmente.
 
 **"O reconhecimento não detecta nada" / aviso vermelho sobre idioma**
-→ Vá na aba Idioma e clique no aviso para instalar o pacote de idioma do Windows necessário.
+→ Vá em **Geral › Idioma** e clique no aviso para instalar o pacote de idioma do Windows necessário.
 
 **"Apertei o atalho e nada acontece"**
 → Confira se a janela de configuração não está em primeiro plano (os atalhos só funcionam com
-o jogo em foco). Se mesmo assim não funcionar, ative a **barra flutuante** (aba Geral) e use os
-botões dela.
+o jogo em foco). Se mesmo assim não funcionar, ative a **barra flutuante** (**Geral › Config**) e use
+os botões dela.
 
 **"Os atalhos não funcionam em alguns jogos (mesmo com o jogo em foco)"**
 → Alguns jogos rodam com privilégios elevados (Administrador) e, por isso, **bloqueiam o registro
@@ -573,36 +633,39 @@ administrador* em **Propriedades → Compatibilidade** do executável. (Alternat
 flutuante**, que dispara as ações por clique do mouse e não depende dos atalhos do teclado.)
 
 **"A tradução não aparece, ou demora muito"**
-→ Confira a aba Histórico/Monitor para ver se a tradução está sendo feita. Falhas passageiras
+→ Confira as abas **Historico** e **Debug › Monitor** para ver se a tradução está sendo feita. Falhas passageiras
 (limite de requisições, servidor fora do ar por um instante, queda de conexão) são **tentadas de
 novo automaticamente** uma vez antes de recorrer ao Google Translate. Se você tiver **mais de uma
 chave** cadastrada para o motor, ele ainda tenta as demais chaves da lista antes do fallback. Se
 aparecer um aviso amarelo de "fallback para Google Translate" — e no Histórico a tradução vier
 marcada como "Google Translate (fallback)" —, quer dizer que o serviço configurado (OpenAI, Claude,
-Gemini) falhou em **todas** as chaves; confira suas chaves de API e créditos na aba Tradutores.
+Gemini) falhou em **todas** as chaves; confira suas chaves de API e créditos em Traducao › Tradutores.
 
 **"Apareceu um aviso vermelho de erro"**
 → Geralmente indica chave de API inválida, créditos esgotados, ou o serviço fora do ar
-temporariamente. Confira a aba Tradutores. Se o aviso disser que a resposta foi **cortada no
-limite de tokens**, aumente o **Max Tokens** na aba I.A (acontece só em blocos de texto muito
+temporariamente. Confira **Traducao › Tradutores**. Se o aviso disser que a resposta foi **cortada no
+limite de tokens**, aumente o **Max tokens** em **Traducao › I.A** (acontece só em blocos de texto muito
 grandes).
 
 **"O texto reconhecido está errado/incompleto"**
-→ Tente ativar o pré-processamento (aba Captura) com upscale e ajuste de contraste, ou use o
-atalho **Traduzir com IA Vision** (`Numpad4`) para deixar a IA "ver" a imagem e corrigir.
+→ Tente ativar o pré-processamento (**Overlay › Captura**) com upscale e ajuste de contraste,
+ou use o **Traduzir com I.A Vision** (`Numpad5` parágrafo, `Numpad6` linha) para deixar a IA
+"ver" a imagem e corrigir.
 
 **"A tradução fica cortada ou não cabe na caixa"**
-→ Ative **Auto-fit** na aba Captura — o programa vai diminuir a fonte automaticamente até
+→ Ative **Auto-fit** em **Overlay › Captura** — o programa vai diminuir a fonte automaticamente até
 caber.
 
 **"As traduções de falas diferentes estão se misturando num bloco só" (ou o contrário)**
-→ Ajuste a **Sensibilidade do agrupamento** na aba OCR (Modo Parágrafo).
+→ Primeiro confira se você apertou o atalho certo: `Numpad8` junta as linhas (parágrafo) e
+`Numpad9` separa (linha). Se o modo está certo e ainda erra, ajuste a **Sensibilidade do
+agrupamento** em **Geral › OCR** — ela só afeta o modo Parágrafo.
 
 **"Troquei de monitor e a captura não funciona mais direito"**
-→ Reinicie o programa pelo botão da aba Geral — é necessário após trocar de monitor.
+→ Reinicie o programa pelo botão em **Geral › Config** — é necessário após trocar de monitor.
 
 **"Quero compartilhar meus logs para suporte, mas não quero mostrar o conteúdo do jogo"**
-→ Confira na aba Logs/Debug se a opção "Logar textos capturados e traduções" está
+→ Confira em **Debug › Logs** se a opção "Logar textos capturados e traduções" está
 **desativada** (é o padrão) — assim os logs não mostram o conteúdo dos textos/traduções.
 
 ---
@@ -643,7 +706,7 @@ Onde o programa opera.
 
 ### Geral › Idioma
 
-O campo do idioma de origem **se adapta ao motor de OCR** escolhido na aba OCR.
+O campo do idioma de origem **se adapta ao motor de OCR** escolhido em Geral › OCR.
 
 <p align="center"><img src="media/geral-idioma.png" alt="Aba Geral › Idioma" width="820"></p>
 
@@ -743,7 +806,7 @@ Aparência da tradução manual e pré-processamento da imagem.
 
 ### Overlay › Legenda
 
-O Modo Legenda tem aparência e pré-processamento **próprios**, independentes da aba Captura.
+O Modo Legenda tem aparência e pré-processamento **próprios**, independentes de Overlay › Captura.
 
 <p align="center"><img src="media/overlay-legenda.png" alt="Aba Overlay › Legenda" width="820"></p>
 
@@ -758,7 +821,8 @@ O Modo Legenda tem aparência e pré-processamento **próprios**, independentes 
     (1 a 5 s).
   - *Desligar Modo Legenda após inatividade* — **desliga o modo**, não só esconde, depois desse
     tempo sem detectar texto na região: Nunca / 1 / 2 / 3 / 5 / 10 minutos.
-- **Pré-processamento OCR** — os mesmos controles da aba Captura, porém independentes dela.
+- **Pré-processamento OCR** — os mesmos controles de Overlay › Captura, porém independentes
+  dela.
 
 ### Overlay › Web
 
@@ -792,7 +856,7 @@ Qual serviço traduz e com quais credenciais.
   - *DeepL (requer chave de API)* — tradutor dedicado de alta qualidade; **não suporta o Modo
     Vision**. Não tem seleção de modelo, mas tem **Formalidade** (Padrão / Mais formal / Mais
     informal), que só afeta os idiomas-destino com suporte — PT-BR incluso — e é ignorada nos
-    demais. Aproveita o campo **Informações do Jogo** (aba I.A) e, no Modo Legenda, as falas
+    demais. Aproveita o campo **Informações do Jogo** (Traducao › I.A) e, no Modo Legenda, as falas
     anteriores como contexto, sem custo extra.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — motores de IA, exigem chave de API.
 - **Autenticação** — aparece nos provedores com chave. As credenciais são **salvas por motor**,
@@ -879,7 +943,7 @@ Laboratório para testar o pré-processamento sem mexer no jogo.
 
 - **Imagem de Teste** — escolhe uma imagem PNG/JPG da pasta `images/lab_images/`, ao lado do
   executável.
-- **Parâmetros de Pré-processamento** — os mesmos controles da aba Captura, com **prévia ao
+- **Parâmetros de Pré-processamento** — os mesmos controles de Overlay › Captura, com **prévia ao
   vivo**: a imagem original e a processada aparecem embaixo, lado a lado.
 - **Aplicar em Captura** / **Aplicar em Legenda** — copiam a configuração que você acabou de
   testar para a aba correspondente.

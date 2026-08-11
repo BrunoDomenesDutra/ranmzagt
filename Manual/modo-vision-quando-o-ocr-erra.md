@@ -3,10 +3,14 @@
 Às vezes o reconhecimento de texto comum (OCR) erra letras, perde pedaços do texto ou se perde
 totalmente em fontes muito estilizadas/artísticas, com símbolos ou ícones no meio do texto.
 
-Para esses casos, use o atalho **Traduzir com IA Vision** (padrão `Numpad4`). Em vez de confiar
-só no texto reconhecido, o programa **envia a imagem da tela para a Inteligência Artificial**,
-que "olha" a imagem e entende melhor o que está escrito, mesmo que o reconhecimento de texto
-tenha errado.
+Para esses casos, use o **Traduzir com I.A Vision**. Em vez de confiar só no texto reconhecido, o
+programa **envia a imagem da tela para a Inteligência Artificial**, que "olha" a imagem e entende
+melhor o que está escrito, mesmo que o reconhecimento de texto tenha errado.
+
+Assim como no Traduzir normal, o Vision tem os dois modos, e você escolhe pelo atalho:
+
+- **`Numpad5`** — Vision no **modo parágrafo** (diálogos).
+- **`Numpad6`** — Vision no **modo linha** (menus e listas).
 
 **Importante:**
 - Só funciona com **OpenAI, Claude ou Gemini** (Google Translate e DeepL não suportam esse modo).

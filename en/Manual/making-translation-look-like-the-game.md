@@ -1,8 +1,9 @@
 # 6. Making translation look like the game
 
-In the **Capture** tab, appearance section:
+In **Overlay › Capture**, in the **Text** card:
 
-- **Font**: choose from fonts in the `fonts/` folder or use Windows' default font.
+- **Font**: choose from fonts in the `fonts/` folder or use the system default (Arial). The preview right below shows how it looks.
+- **Text color**: white by default; change it to match the game's palette.
 - **Font size** and **Line height**: adjust so text is readable and well-spaced.
 - **Auto-fit**: leave enabled so the program **automatically shrinks the font** until the whole translation fits the original text's space — this way text is never cut off. Tip: with Auto-fit on, set **Font size** to the maximum — the program finds the largest size that shows the complete translation filling the area nicely, and raising the control further changes nothing.
 - **Background**: draws a dark box behind the text (with adjustable opacity) to guarantee readability over any scenery.

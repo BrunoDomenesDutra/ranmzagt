@@ -34,7 +34,7 @@ Onde o programa opera.
 
 ## Geral › Idioma
 
-O campo do idioma de origem **se adapta ao motor de OCR** escolhido na aba OCR.
+O campo do idioma de origem **se adapta ao motor de OCR** escolhido em Geral › OCR.
 
 <p align="center"><img src="media/geral-idioma.png" alt="Aba Geral › Idioma" width="820"></p>
 
@@ -134,7 +134,7 @@ Aparência da tradução manual e pré-processamento da imagem.
 
 ## Overlay › Legenda
 
-O Modo Legenda tem aparência e pré-processamento **próprios**, independentes da aba Captura.
+O Modo Legenda tem aparência e pré-processamento **próprios**, independentes de Overlay › Captura.
 
 <p align="center"><img src="media/overlay-legenda.png" alt="Aba Overlay › Legenda" width="820"></p>
 
@@ -149,7 +149,8 @@ O Modo Legenda tem aparência e pré-processamento **próprios**, independentes 
     (1 a 5 s).
   - *Desligar Modo Legenda após inatividade* — **desliga o modo**, não só esconde, depois desse
     tempo sem detectar texto na região: Nunca / 1 / 2 / 3 / 5 / 10 minutos.
-- **Pré-processamento OCR** — os mesmos controles da aba Captura, porém independentes dela.
+- **Pré-processamento OCR** — os mesmos controles de Overlay › Captura, porém independentes
+  dela.
 
 ## Overlay › Web
 
@@ -183,7 +184,7 @@ Qual serviço traduz e com quais credenciais.
   - *DeepL (requer chave de API)* — tradutor dedicado de alta qualidade; **não suporta o Modo
     Vision**. Não tem seleção de modelo, mas tem **Formalidade** (Padrão / Mais formal / Mais
     informal), que só afeta os idiomas-destino com suporte — PT-BR incluso — e é ignorada nos
-    demais. Aproveita o campo **Informações do Jogo** (aba I.A) e, no Modo Legenda, as falas
+    demais. Aproveita o campo **Informações do Jogo** (Traducao › I.A) e, no Modo Legenda, as falas
     anteriores como contexto, sem custo extra.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — motores de IA, exigem chave de API.
 - **Autenticação** — aparece nos provedores com chave. As credenciais são **salvas por motor**,
@@ -270,7 +271,7 @@ Laboratório para testar o pré-processamento sem mexer no jogo.
 
 - **Imagem de Teste** — escolhe uma imagem PNG/JPG da pasta `images/lab_images/`, ao lado do
   executável.
-- **Parâmetros de Pré-processamento** — os mesmos controles da aba Captura, com **prévia ao
+- **Parâmetros de Pré-processamento** — os mesmos controles de Overlay › Captura, com **prévia ao
   vivo**: a imagem original e a processada aparecem embaixo, lado a lado.
 - **Aplicar em Captura** / **Aplicar em Legenda** — copiam a configuração que você acabou de
   testar para a aba correspondente.

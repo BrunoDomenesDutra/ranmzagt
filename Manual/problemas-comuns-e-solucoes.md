@@ -7,12 +7,12 @@ link oficial: <https://aka.ms/vs/17/release/vc_redist.x64.exe> — depois reabra
 abre normalmente.
 
 **"O reconhecimento não detecta nada" / aviso vermelho sobre idioma**
-→ Vá na aba Idioma e clique no aviso para instalar o pacote de idioma do Windows necessário.
+→ Vá em **Geral › Idioma** e clique no aviso para instalar o pacote de idioma do Windows necessário.
 
 **"Apertei o atalho e nada acontece"**
 → Confira se a janela de configuração não está em primeiro plano (os atalhos só funcionam com
-o jogo em foco). Se mesmo assim não funcionar, ative a **barra flutuante** (aba Geral) e use os
-botões dela.
+o jogo em foco). Se mesmo assim não funcionar, ative a **barra flutuante** (**Geral › Config**) e use
+os botões dela.
 
 **"Os atalhos não funcionam em alguns jogos (mesmo com o jogo em foco)"**
 → Alguns jogos rodam com privilégios elevados (Administrador) e, por isso, **bloqueiam o registro
@@ -23,36 +23,39 @@ administrador* em **Propriedades → Compatibilidade** do executável. (Alternat
 flutuante**, que dispara as ações por clique do mouse e não depende dos atalhos do teclado.)
 
 **"A tradução não aparece, ou demora muito"**
-→ Confira a aba Histórico/Monitor para ver se a tradução está sendo feita. Falhas passageiras
+→ Confira as abas **Historico** e **Debug › Monitor** para ver se a tradução está sendo feita. Falhas passageiras
 (limite de requisições, servidor fora do ar por um instante, queda de conexão) são **tentadas de
 novo automaticamente** uma vez antes de recorrer ao Google Translate. Se você tiver **mais de uma
 chave** cadastrada para o motor, ele ainda tenta as demais chaves da lista antes do fallback. Se
 aparecer um aviso amarelo de "fallback para Google Translate" — e no Histórico a tradução vier
 marcada como "Google Translate (fallback)" —, quer dizer que o serviço configurado (OpenAI, Claude,
-Gemini) falhou em **todas** as chaves; confira suas chaves de API e créditos na aba Tradutores.
+Gemini) falhou em **todas** as chaves; confira suas chaves de API e créditos em Traducao › Tradutores.
 
 **"Apareceu um aviso vermelho de erro"**
 → Geralmente indica chave de API inválida, créditos esgotados, ou o serviço fora do ar
-temporariamente. Confira a aba Tradutores. Se o aviso disser que a resposta foi **cortada no
-limite de tokens**, aumente o **Max Tokens** na aba I.A (acontece só em blocos de texto muito
+temporariamente. Confira **Traducao › Tradutores**. Se o aviso disser que a resposta foi **cortada no
+limite de tokens**, aumente o **Max tokens** em **Traducao › I.A** (acontece só em blocos de texto muito
 grandes).
 
 **"O texto reconhecido está errado/incompleto"**
-→ Tente ativar o pré-processamento (aba Captura) com upscale e ajuste de contraste, ou use o
-atalho **Traduzir com IA Vision** (`Numpad4`) para deixar a IA "ver" a imagem e corrigir.
+→ Tente ativar o pré-processamento (**Overlay › Captura**) com upscale e ajuste de contraste,
+ou use o **Traduzir com I.A Vision** (`Numpad5` parágrafo, `Numpad6` linha) para deixar a IA
+"ver" a imagem e corrigir.
 
 **"A tradução fica cortada ou não cabe na caixa"**
-→ Ative **Auto-fit** na aba Captura — o programa vai diminuir a fonte automaticamente até
+→ Ative **Auto-fit** em **Overlay › Captura** — o programa vai diminuir a fonte automaticamente até
 caber.
 
 **"As traduções de falas diferentes estão se misturando num bloco só" (ou o contrário)**
-→ Ajuste a **Sensibilidade do agrupamento** na aba OCR (Modo Parágrafo).
+→ Primeiro confira se você apertou o atalho certo: `Numpad8` junta as linhas (parágrafo) e
+`Numpad9` separa (linha). Se o modo está certo e ainda erra, ajuste a **Sensibilidade do
+agrupamento** em **Geral › OCR** — ela só afeta o modo Parágrafo.
 
 **"Troquei de monitor e a captura não funciona mais direito"**
-→ Reinicie o programa pelo botão da aba Geral — é necessário após trocar de monitor.
+→ Reinicie o programa pelo botão em **Geral › Config** — é necessário após trocar de monitor.
 
 **"Quero compartilhar meus logs para suporte, mas não quero mostrar o conteúdo do jogo"**
-→ Confira na aba Logs/Debug se a opção "Logar textos capturados e traduções" está
+→ Confira em **Debug › Logs** se a opção "Logar textos capturados e traduções" está
 **desativada** (é o padrão) — assim os logs não mostram o conteúdo dos textos/traduções.
 
 ---
