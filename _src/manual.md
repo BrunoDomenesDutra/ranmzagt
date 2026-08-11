@@ -9,7 +9,7 @@ detalhes técnicos.
 ## Sumário
 
 1. [O que o programa faz](#1-o-que-o-programa-faz)
-2. [Primeiros passos](#2-primeiros-passos)
+2. [Configuração rápida — pronto para usar em 5 minutos](#2-configuração-rápida--pronto-para-usar-em-5-minutos)
 3. [Uso básico no dia a dia](#3-uso-básico-no-dia-a-dia)
 4. [Atalhos de teclado](#4-atalhos-de-teclado)
 5. [Configurando a tradução](#5-configurando-a-tradução)
@@ -51,73 +51,160 @@ O fluxo básico é sempre:
 
 ---
 
-## 2. Primeiros passos
+## 2. Configuração rápida — pronto para usar em 5 minutos
 
-> **Antes de começar — requisito do Windows:** o Ranmza GT precisa do **Microsoft Visual C++
-> Redistributable (x64)**, um componente gratuito da Microsoft. A maioria dos PCs já tem (ele vem
-> junto com muitos jogos e programas), mas em um **Windows recém-formatado** pode faltar — e aí o
-> programa não abre, mostrando o erro *"VCRUNTIME140.dll não foi encontrado"*. Se acontecer com
-> você, baixe e instale o pacote **x64** por este link oficial:
+São **cinco ajustes**. Depois deles você já está traduzindo; todo o resto deste manual é
+refinamento, e você lê quando (e se) precisar.
+
+| Passo | O que fazer | Onde |
+|---|---|---|
+| 1 | Escolher o monitor | aba **Geral › Config** |
+| 2 | Escolher os idiomas | aba **Geral › Idioma** |
+| 3 | Escolher o tradutor | aba **Traducao › Tradutores** |
+| 4 | Marcar a área do texto | atalho `Numpad7`, com o jogo aberto |
+| 5 | Traduzir | atalho `Numpad9` (linha) ou `Numpad8` (parágrafo) |
+
+> **Antes de tudo: o jogo em modo Janela.** Em *Tela cheia exclusiva* nenhum programa consegue
+> desenhar por cima — a tradução simplesmente não aparece. Troque o jogo para **Janela sem
+> borda** nas opções de vídeo dele. Explicação completa na
+> [seção 1](/Manual/o-que-o-programa-faz.md).
+
+> **O programa nem abriu, com erro *"VCRUNTIME140.dll não foi encontrado"*?** Falta o
+> **Microsoft Visual C++ Redistributable (x64)**, um componente gratuito da Microsoft que a
+> maioria dos PCs já tem (vem junto com muitos jogos), mas costuma faltar em Windows
+> recém-formatado. Instale por este link oficial e abra o programa de novo:
 > <https://aka.ms/vs/17/release/vc_redist.x64.exe>
 
-### 2.1 Escolha o monitor (se você tem mais de um)
+### 2.1 Primeiro olhar: como a janela é organizada
 
-Na aba **Geral**, escolha em qual monitor o programa deve trabalhar. Se você joga sempre na
-mesma tela, deixe em "Automático". Se trocar o monitor, o programa pede para reiniciar (botão
-"Reiniciar agora" na própria aba) — isso é necessário para tudo (captura, área selecionada,
-overlay) passar a funcionar na tela certa.
+<p align="center"><img src="media/geral-config.png" alt="Aba Geral › Config" width="820"></p>
 
-> **Windows 10**: por padrão (backend *Automático*, que usa o DXGI no Windows 10) **não aparece**
-> mais a borda dourada/amarela em volta da tela capturada. Ela só surge se você trocar
-> manualmente o **Backend de captura** (aba Geral) para *WGC* no Windows 10 — nesse caso, volte
-> para *Automático* (ou *DXGI*) para removê-la. No Windows 11 essa borda nunca aparece.
+O menu da esquerda agrupa as opções por assunto. Nesta configuração rápida você só encosta em
+**Geral** e **Traducao** — o resto existe para quando você quiser afinar alguma coisa.
 
-### 2.2 Escolha os idiomas
+| Menu | O que tem dentro |
+|---|---|
+| **Geral** | Config (monitor, tema, barra flutuante), Idioma, OCR e Atalhos |
+| **Overlay** | Aparência da tradução na tela: Captura, Legenda e Web |
+| **Traducao** | Tradutores (motor e chaves de API) e I.A (prompts e parâmetros) |
+| **Ferramentas** | Inpaint (apagar o texto original) e Lab (testar pré-processamento) |
+| **Debug** | Monitor de desempenho, imagens de diagnóstico e Logs |
+| **Historico** | As traduções da sessão atual |
+| **Experimental** | Recursos em desenvolvimento, como o Modo Tempo Real |
+| **Sobre** | Versão do programa e links |
 
-Na aba **Idioma**:
+> **Idioma da interface** (em *Geral › Config*) muda só o idioma **do programa** — os menus e
+> textos que você está vendo. Não tem nada a ver com o idioma que vai ser traduzido; esse é o
+> passo 2.3.
 
-- **Idioma do texto original**: o idioma do jogo que você quer traduzir (japonês, inglês,
-  coreano, etc.).
-- **Idioma destino**: para qual idioma você quer ler (português, por exemplo).
+### 2.2 Escolha o monitor
 
-> Se aparecer um aviso vermelho dizendo que o idioma não está instalado, clique no botão do
-> aviso — ele abre direto a tela de idiomas do Windows para você instalar o pacote necessário.
-> Sem isso, o reconhecimento de texto não funciona para aquele idioma.
+Ainda em **Geral › Config**, no card **Monitor**, escolha em **Tela ativa** onde o programa vai
+trabalhar. Com um monitor só, deixe em *Automatico* e siga em frente.
 
-> **Usando o OneOCR?** Aí não existe idioma de origem para escolher. O OneOCR é um modelo único
-> multilíngue (latim, CJK, cirílico…) que detecta o idioma sozinho — o campo **Idioma do texto
-> original** nem aparece na aba Idioma enquanto ele estiver selecionado, e o aviso de pacote de
-> idioma do Windows não se aplica (não há pacote para instalar). O **Idioma destino** continua
-> valendo normalmente. Tudo acima sobre o idioma de origem vale só para o **Windows OCR**.
+Trocar de monitor **exige reiniciar o programa** — aparece um aviso com o botão **Reiniciar
+agora** no rodapé da aba. Só depois do reinício a captura, o seletor de área e a tradução na
+tela passam a valer para a outra tela. A área que você já tinha selecionado é apagada na troca.
 
-### 2.3 Escolha como vai traduzir
+O **Backend de captura** logo acima pode ficar em *Auto (recomendado)*: ele usa o método certo
+para a sua versão do Windows sozinho e troca na hora, sem reiniciar.
 
-Na aba **Tradutores**, escolha o serviço de tradução:
+### 2.3 Escolha os idiomas
 
-- **Google Translate** — já funciona "de fábrica", sem precisar configurar nada. Boa opção
-  para começar.
-- **DeepL** — tradução de alta qualidade, referência em naturalidade. Exige uma chave de API,
-  mas o DeepL oferece um **plano gratuito** (chaves que terminam em `:fx`); cole a chave e o
-  programa escolhe sozinho o servidor certo (gratuito ou pago). Não é uma IA conversacional —
-  é um tradutor dedicado, rápido e barato, com opção de **formalidade** (veja a aba Tradutores).
-- **OpenAI**, **Claude** ou **Gemini** — exigem que você tenha uma chave de API (conta paga ou
-  com créditos no respectivo serviço). Em troca, entregam traduções bem mais naturais e
-  consistentes, especialmente em diálogos longos. Cole sua chave no campo "Autenticação" e
-  escolha o modelo desejado.
+Abra **Geral › Idioma**.
 
-Você pode trocar de serviço a qualquer momento — as chaves de cada serviço ficam guardadas
-separadamente, então trocar e voltar não apaga nada.
+<p align="center"><img src="media/geral-idioma.png" alt="Aba Geral › Idioma" width="820"></p>
 
-### 2.4 Selecione a área do texto
+- **Idioma do texto** — o idioma que está escrito no jogo. Digite a sigla do idioma
+  (`en` para inglês, `ja` para japonês, `ko` para coreano, `zh` para chinês…).
+- **Idioma destino** — o idioma no qual você quer ler. `pt` para português.
 
-Pressione o atalho **Selecionar área** (padrão `Numpad7`). A tela fica com uma "cortina" e você
-arrasta o mouse para desenhar um retângulo sobre a região onde o texto do jogo aparece (por
-exemplo, a caixa de diálogo). Solte o botão para confirmar, ou aperte `ESC` para cancelar.
+> **Aviso amarelo sobre pacote de idioma?** O Windows OCR só reconhece idiomas cujo pacote está
+> instalado no Windows. Instale em *Configurações → Hora e Idioma → Idioma e região*. Sem o
+> pacote, o programa não consegue ler o texto naquele idioma.
 
-Essa área fica salva — você só precisa selecionar de novo se o jogo mudar a posição da caixa de
-texto, mudar de resolução, etc.
+> **Usando OneOCR?** Aí não existe idioma de origem para escolher: ele é um modelo único
+> multilíngue (latim, CJK, cirílico…) que detecta o idioma sozinho, e o campo **Idioma do
+> texto** nem aparece enquanto ele estiver selecionado — nem o aviso de pacote do Windows, que
+> não se aplica. O **Idioma destino** continua valendo normalmente. O motor de OCR se troca em
+> *Geral › OCR*, mas para começar deixe no padrão.
 
-> Não selecionou nenhuma área? O programa captura a **tela inteira**.
+### 2.4 Escolha o tradutor
+
+Abra **Traducao › Tradutores**.
+
+<p align="center"><img src="media/tradutores-google.png" alt="Aba Traducao › Tradutores com Google Translate" width="820"></p>
+
+O padrão é o **Google Translate — gratuito, sem chave**: não precisa configurar nada, já está
+pronto para uso. É com ele que você deve fazer o primeiro teste.
+
+Quando quiser mais qualidade, troque em **Provedor ativo**:
+
+- **DeepL** — tradutor dedicado, muito natural, com opção de formalidade. Precisa de chave de
+  API, mas tem **plano gratuito** (as chaves terminam em `:fx`, e o programa reconhece sozinho
+  qual servidor usar).
+- **OpenAI**, **Anthropic (Claude)** ou **Gemini** — motores de IA. Precisam de chave de API
+  com créditos, e em troca entregam traduções bem mais naturais e consistentes, principalmente
+  em diálogos longos. Escolha o modelo em *Autenticação* e cole a chave em *Chaves de API*.
+
+Cada motor guarda as suas próprias credenciais, então trocar de um para outro e voltar não
+apaga nada. Use o botão **Testar conexao** para confirmar que a chave está válida antes de
+entrar no jogo.
+
+> **Várias chaves com rotação automática.** Todo motor com chave aceita **mais de uma**: clique
+> em *+ Adicionar chave*. Se a chave em uso ficar sem crédito ou bater no limite de requisições,
+> o programa passa sozinho para a próxima da lista; esgotadas todas, ele cai no Google
+> Translate. Ajuda bastante em sessões longas de Modo Legenda.
+
+> Só os motores de IA (OpenAI, Claude, Gemini) suportam o **Modo Vision** — o Google Translate e
+> o DeepL não. Veja a [seção 7](/Manual/modo-vision-quando-o-ocr-erra.md).
+
+### 2.5 Marque a área do texto
+
+Com o jogo aberto e em foco, aperte **`Numpad7`**. A tela escurece e você arrasta o mouse para
+desenhar um retângulo sobre a região onde o texto aparece — normalmente a caixa de diálogo.
+Solte o botão para confirmar, ou aperte `ESC` para cancelar.
+
+A área fica salva. Você só precisa marcar de novo se o jogo mudar a posição da caixa de texto
+ou se você trocar a resolução.
+
+> Não marcou nenhuma área? O programa captura a **tela inteira** — funciona, mas fica mais lento
+> e erra mais. Vale marcar.
+
+### 2.6 Traduza
+
+Com o texto na tela, aperte um dos dois atalhos de tradução — a diferença é só **como as linhas
+são agrupadas** antes de traduzir:
+
+| Atalho | Modo | Use quando |
+|---|---|---|
+| **`Numpad9`** | **Linha** | Menus, listas, itens, botões — cada linha é uma coisa separada |
+| **`Numpad8`** | **Parágrafo** | Diálogos e textos corridos — junta as linhas próximas num bloco só |
+
+Na dúvida, comece pelo `Numpad8` em jogos de história e pelo `Numpad9` em menus.
+
+A tradução aparece por cima do jogo, na posição do texto original, e some sozinha depois de um
+tempo. Para tirá-la na hora, aperte **`NumpadDecimal`** (a vírgula do teclado numérico).
+
+> **Os atalhos só funcionam com o jogo em foco.** Com a janela de configuração do Ranmza GT em
+> primeiro plano eles ficam desativados de propósito — assim você digita nos campos sem
+> disparar comandos sem querer. Clique de volta no jogo antes de testar.
+
+### Deu certo? E se não deu
+
+Se a tradução apareceu sobre o jogo, está tudo pronto — siga para a
+[seção 3](/Manual/uso-basico-no-dia-a-dia.md).
+
+- **Nada aconteceu ao apertar o atalho** → a janela de configuração estava em foco, ou o jogo
+  está "engolindo" as teclas do Numpad. Ative a **barra flutuante** em *Geral › Config* e use os
+  botões com o mouse (veja a [seção 3](/Manual/uso-basico-no-dia-a-dia.md)).
+- **A tradução aparece na aba Historico, mas não sobre o jogo** → o jogo está em *Tela cheia
+  exclusiva*. Troque para *Janela sem borda*.
+- **Saiu tradução errada ou embaralhada** → o OCR leu mal. Comece trocando o modo de
+  agrupamento (`Numpad9` ↔ `Numpad8`) e veja a
+  [seção 5](/Manual/configurando-a-traducao.md).
+
+Outros problemas estão na [seção 12](/Manual/problemas-comuns-e-solucoes.md).
 
 ---
 
@@ -444,10 +531,11 @@ flutuante**, que dispara as ações por clique do mouse e não depende dos atalh
 **"A tradução não aparece, ou demora muito"**
 → Confira a aba Histórico/Monitor para ver se a tradução está sendo feita. Falhas passageiras
 (limite de requisições, servidor fora do ar por um instante, queda de conexão) são **tentadas de
-novo automaticamente** uma vez antes de recorrer ao Google Translate. Se aparecer um aviso
-amarelo de "fallback para Google Translate" — e no Histórico a tradução vier marcada como
-"Google Translate (fallback)" —, quer dizer que o serviço configurado (OpenAI, Claude, Gemini)
-falhou mesmo após a retentativa; confira sua chave de API e créditos na aba Tradutores.
+novo automaticamente** uma vez antes de recorrer ao Google Translate. Se você tiver **mais de uma
+chave** cadastrada para o motor, ele ainda tenta as demais chaves da lista antes do fallback. Se
+aparecer um aviso amarelo de "fallback para Google Translate" — e no Histórico a tradução vier
+marcada como "Google Translate (fallback)" —, quer dizer que o serviço configurado (OpenAI, Claude,
+Gemini) falhou em **todas** as chaves; confira suas chaves de API e créditos na aba Tradutores.
 
 **"Apareceu um aviso vermelho de erro"**
 → Geralmente indica chave de API inválida, créditos esgotados, ou o serviço fora do ar
@@ -578,10 +666,10 @@ Real · Mostrar/ocultar barra flutuante.
     traduzidos na sessão + **Cota da conta** via botão "Atualizar"; "Zerar sessão" reinicia a
     contagem). É o único motor com esse acompanhamento — os de IA não expõem o gasto pela chave.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — exigem chave de API.
-- **Autenticação** (aparece para os provedores com chave; as credenciais são **salvas por motor
+- **Autenticação** (aparece para os provedores com chave; as configurações são **salvas por motor
   independentemente**, então trocar e voltar não apaga nada):
-  - *API Key* — sua chave (`sk-...`, `sk-ant-...`, `AIza...`).
-  - *Modelo* — cada motor de IA oferece três faixas: uma **rápida/econômica**, uma de
+  - *Formalidade* (só DeepL) — mais formal / mais informal / padrão.
+  - *Modelo* (motores de IA) — cada motor oferece três faixas: uma **rápida/econômica**, uma de
     **equilíbrio** e uma **top** (qualidade superior).
     - OpenAI: GPT-4.1 nano · GPT-4.1 mini · GPT-4.1.
     - Claude: Haiku 4.5 · Sonnet 5 · Opus 4.8.
@@ -590,10 +678,20 @@ Real · Mostrar/ocultar barra flutuante.
       digitar **qualquer ID de modelo** aceito pelo provedor. Serve para usar um modelo mais
       novo que ainda não está na lista, sem esperar uma atualização do programa (o backend
       ajusta os parâmetros sozinho, inclusive para os modelos de raciocínio da OpenAI).
-  - *Testar conexão* — faz uma chamada de teste ao provedor com a chave e o modelo atuais e
+  - *Testar conexão* — faz uma chamada de teste ao provedor com a(s) chave(s) e o modelo atuais e
     mostra na hora se está tudo certo (✓, com a tradução de exemplo) ou o erro retornado (✗),
     em vez de você só descobrir o problema ao traduzir. Também disponível no Google (verifica a
     conectividade).
+- **Chaves de API** (card recolhível, o **último** da aba; no DeepL fica logo antes do card *Uso
+  do DeepL*): onde você cadastra a credencial do motor selecionado (`sk-...`, `sk-ant-...`,
+  `AIza...`, ou a chave DeepL `:fx` do plano gratuito). As chaves são **salvas por motor**, então
+  trocar de serviço e voltar não apaga nada.
+  - *Adicionar chave* / *✕* — você pode cadastrar **quantas chaves quiser** para o mesmo motor.
+    Quando a chave em uso **fica sem crédito** ou bate no limite de requisições, a tradução tenta a
+    **próxima chave da lista** automaticamente e passa a usá-la; esgotadas todas, cai no fallback do
+    Google Translate. Útil em sessões longas, que estouram a cota de uma só chave.
+  - O card **abre sozinho** enquanto nenhuma chave estiver preenchida e pode ser **recolhido**
+    depois de configurado.
 
 ### IA
 

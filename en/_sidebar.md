@@ -1,6 +1,6 @@
 - [Home](/en/)
 - [1. What the program does](/en/Manual/what-the-program-does.md)
-- [2. Getting started](/en/Manual/getting-started.md)
+- [2. Quick setup — ready to use in 5 minutes](/en/Manual/quick-setup-ready-to-use-in-5-minutes.md)
 - [3. Basic day-to-day usage](/en/Manual/basic-day-to-day-usage.md)
 - [4. Keyboard shortcuts](/en/Manual/keyboard-shortcuts.md)
 - [5. Configuring translation](/en/Manual/configuring-translation.md)

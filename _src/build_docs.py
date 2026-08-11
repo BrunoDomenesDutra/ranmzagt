@@ -25,7 +25,8 @@ if os.path.isfile(MASTER):
     shutil.copyfile(MASTER, SRC_PT)
     print("manual.md sincronizado do mestre")
 
-LOGO = os.path.join(HERE, "logo.png")  # asset fixo da marca
+LOGO = os.path.join(HERE, "logo.png")   # asset fixo da marca
+MEDIA = os.path.join(HERE, "media")     # screenshots do manual (fonte)
 
 def read_and_split(filepath):
     """Le um markdown e o divide em secoes (## title)."""
@@ -58,8 +59,12 @@ for n in os.listdir(OUT):
     p = os.path.join(OUT, n)
     shutil.rmtree(p) if os.path.isdir(p) else os.remove(p)
 
-# logo (asset fixo) -> media/logo.png
+# assets (_src/logo.png + _src/media/*) -> media/
+# A limpeza acima apaga media/ inteiro, entao a fonte das imagens tem de viver em
+# _src/media/ — nunca solte screenshot direto na media/ da raiz, ela some no build.
 os.makedirs(os.path.join(OUT, 'media'), exist_ok=True)
+if os.path.isdir(MEDIA):
+    shutil.copytree(MEDIA, os.path.join(OUT, 'media'), dirs_exist_ok=True)
 img_src = None
 if os.path.isfile(LOGO):
     shutil.copyfile(LOGO, os.path.join(OUT, 'media', 'logo.png'))

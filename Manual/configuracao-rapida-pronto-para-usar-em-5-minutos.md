@@ -1,0 +1,156 @@
+## 2. Configuração rápida — pronto para usar em 5 minutos
+
+São **cinco ajustes**. Depois deles você já está traduzindo; todo o resto deste manual é
+refinamento, e você lê quando (e se) precisar.
+
+| Passo | O que fazer | Onde |
+|---|---|---|
+| 1 | Escolher o monitor | aba **Geral › Config** |
+| 2 | Escolher os idiomas | aba **Geral › Idioma** |
+| 3 | Escolher o tradutor | aba **Traducao › Tradutores** |
+| 4 | Marcar a área do texto | atalho `Numpad7`, com o jogo aberto |
+| 5 | Traduzir | atalho `Numpad9` (linha) ou `Numpad8` (parágrafo) |
+
+> **Antes de tudo: o jogo em modo Janela.** Em *Tela cheia exclusiva* nenhum programa consegue
+> desenhar por cima — a tradução simplesmente não aparece. Troque o jogo para **Janela sem
+> borda** nas opções de vídeo dele. Explicação completa na
+> [seção 1](/Manual/o-que-o-programa-faz.md).
+
+> **O programa nem abriu, com erro *"VCRUNTIME140.dll não foi encontrado"*?** Falta o
+> **Microsoft Visual C++ Redistributable (x64)**, um componente gratuito da Microsoft que a
+> maioria dos PCs já tem (vem junto com muitos jogos), mas costuma faltar em Windows
+> recém-formatado. Instale por este link oficial e abra o programa de novo:
+> <https://aka.ms/vs/17/release/vc_redist.x64.exe>
+
+### 2.1 Primeiro olhar: como a janela é organizada
+
+<p align="center"><img src="media/geral-config.png" alt="Aba Geral › Config" width="820"></p>
+
+O menu da esquerda agrupa as opções por assunto. Nesta configuração rápida você só encosta em
+**Geral** e **Traducao** — o resto existe para quando você quiser afinar alguma coisa.
+
+| Menu | O que tem dentro |
+|---|---|
+| **Geral** | Config (monitor, tema, barra flutuante), Idioma, OCR e Atalhos |
+| **Overlay** | Aparência da tradução na tela: Captura, Legenda e Web |
+| **Traducao** | Tradutores (motor e chaves de API) e I.A (prompts e parâmetros) |
+| **Ferramentas** | Inpaint (apagar o texto original) e Lab (testar pré-processamento) |
+| **Debug** | Monitor de desempenho, imagens de diagnóstico e Logs |
+| **Historico** | As traduções da sessão atual |
+| **Experimental** | Recursos em desenvolvimento, como o Modo Tempo Real |
+| **Sobre** | Versão do programa e links |
+
+> **Idioma da interface** (em *Geral › Config*) muda só o idioma **do programa** — os menus e
+> textos que você está vendo. Não tem nada a ver com o idioma que vai ser traduzido; esse é o
+> passo 2.3.
+
+### 2.2 Escolha o monitor
+
+Ainda em **Geral › Config**, no card **Monitor**, escolha em **Tela ativa** onde o programa vai
+trabalhar. Com um monitor só, deixe em *Automatico* e siga em frente.
+
+Trocar de monitor **exige reiniciar o programa** — aparece um aviso com o botão **Reiniciar
+agora** no rodapé da aba. Só depois do reinício a captura, o seletor de área e a tradução na
+tela passam a valer para a outra tela. A área que você já tinha selecionado é apagada na troca.
+
+O **Backend de captura** logo acima pode ficar em *Auto (recomendado)*: ele usa o método certo
+para a sua versão do Windows sozinho e troca na hora, sem reiniciar.
+
+### 2.3 Escolha os idiomas
+
+Abra **Geral › Idioma**.
+
+<p align="center"><img src="media/geral-idioma.png" alt="Aba Geral › Idioma" width="820"></p>
+
+- **Idioma do texto** — o idioma que está escrito no jogo. Digite a sigla do idioma
+  (`en` para inglês, `ja` para japonês, `ko` para coreano, `zh` para chinês…).
+- **Idioma destino** — o idioma no qual você quer ler. `pt` para português.
+
+> **Aviso amarelo sobre pacote de idioma?** O Windows OCR só reconhece idiomas cujo pacote está
+> instalado no Windows. Instale em *Configurações → Hora e Idioma → Idioma e região*. Sem o
+> pacote, o programa não consegue ler o texto naquele idioma.
+
+> **Usando OneOCR?** Aí não existe idioma de origem para escolher: ele é um modelo único
+> multilíngue (latim, CJK, cirílico…) que detecta o idioma sozinho, e o campo **Idioma do
+> texto** nem aparece enquanto ele estiver selecionado — nem o aviso de pacote do Windows, que
+> não se aplica. O **Idioma destino** continua valendo normalmente. O motor de OCR se troca em
+> *Geral › OCR*, mas para começar deixe no padrão.
+
+### 2.4 Escolha o tradutor
+
+Abra **Traducao › Tradutores**.
+
+<p align="center"><img src="media/tradutores-google.png" alt="Aba Traducao › Tradutores com Google Translate" width="820"></p>
+
+O padrão é o **Google Translate — gratuito, sem chave**: não precisa configurar nada, já está
+pronto para uso. É com ele que você deve fazer o primeiro teste.
+
+Quando quiser mais qualidade, troque em **Provedor ativo**:
+
+- **DeepL** — tradutor dedicado, muito natural, com opção de formalidade. Precisa de chave de
+  API, mas tem **plano gratuito** (as chaves terminam em `:fx`, e o programa reconhece sozinho
+  qual servidor usar).
+- **OpenAI**, **Anthropic (Claude)** ou **Gemini** — motores de IA. Precisam de chave de API
+  com créditos, e em troca entregam traduções bem mais naturais e consistentes, principalmente
+  em diálogos longos. Escolha o modelo em *Autenticação* e cole a chave em *Chaves de API*.
+
+Cada motor guarda as suas próprias credenciais, então trocar de um para outro e voltar não
+apaga nada. Use o botão **Testar conexao** para confirmar que a chave está válida antes de
+entrar no jogo.
+
+> **Várias chaves com rotação automática.** Todo motor com chave aceita **mais de uma**: clique
+> em *+ Adicionar chave*. Se a chave em uso ficar sem crédito ou bater no limite de requisições,
+> o programa passa sozinho para a próxima da lista; esgotadas todas, ele cai no Google
+> Translate. Ajuda bastante em sessões longas de Modo Legenda.
+
+> Só os motores de IA (OpenAI, Claude, Gemini) suportam o **Modo Vision** — o Google Translate e
+> o DeepL não. Veja a [seção 7](/Manual/modo-vision-quando-o-ocr-erra.md).
+
+### 2.5 Marque a área do texto
+
+Com o jogo aberto e em foco, aperte **`Numpad7`**. A tela escurece e você arrasta o mouse para
+desenhar um retângulo sobre a região onde o texto aparece — normalmente a caixa de diálogo.
+Solte o botão para confirmar, ou aperte `ESC` para cancelar.
+
+A área fica salva. Você só precisa marcar de novo se o jogo mudar a posição da caixa de texto
+ou se você trocar a resolução.
+
+> Não marcou nenhuma área? O programa captura a **tela inteira** — funciona, mas fica mais lento
+> e erra mais. Vale marcar.
+
+### 2.6 Traduza
+
+Com o texto na tela, aperte um dos dois atalhos de tradução — a diferença é só **como as linhas
+são agrupadas** antes de traduzir:
+
+| Atalho | Modo | Use quando |
+|---|---|---|
+| **`Numpad9`** | **Linha** | Menus, listas, itens, botões — cada linha é uma coisa separada |
+| **`Numpad8`** | **Parágrafo** | Diálogos e textos corridos — junta as linhas próximas num bloco só |
+
+Na dúvida, comece pelo `Numpad8` em jogos de história e pelo `Numpad9` em menus.
+
+A tradução aparece por cima do jogo, na posição do texto original, e some sozinha depois de um
+tempo. Para tirá-la na hora, aperte **`NumpadDecimal`** (a vírgula do teclado numérico).
+
+> **Os atalhos só funcionam com o jogo em foco.** Com a janela de configuração do Ranmza GT em
+> primeiro plano eles ficam desativados de propósito — assim você digita nos campos sem
+> disparar comandos sem querer. Clique de volta no jogo antes de testar.
+
+### Deu certo? E se não deu
+
+Se a tradução apareceu sobre o jogo, está tudo pronto — siga para a
+[seção 3](/Manual/uso-basico-no-dia-a-dia.md).
+
+- **Nada aconteceu ao apertar o atalho** → a janela de configuração estava em foco, ou o jogo
+  está "engolindo" as teclas do Numpad. Ative a **barra flutuante** em *Geral › Config* e use os
+  botões com o mouse (veja a [seção 3](/Manual/uso-basico-no-dia-a-dia.md)).
+- **A tradução aparece na aba Historico, mas não sobre o jogo** → o jogo está em *Tela cheia
+  exclusiva*. Troque para *Janela sem borda*.
+- **Saiu tradução errada ou embaralhada** → o OCR leu mal. Comece trocando o modo de
+  agrupamento (`Numpad9` ↔ `Numpad8`) e veja a
+  [seção 5](/Manual/configurando-a-traducao.md).
+
+Outros problemas estão na [seção 12](/Manual/problemas-comuns-e-solucoes.md).
+
+---

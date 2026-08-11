@@ -25,10 +25,11 @@ flutuante**, que dispara as ações por clique do mouse e não depende dos atalh
 **"A tradução não aparece, ou demora muito"**
 → Confira a aba Histórico/Monitor para ver se a tradução está sendo feita. Falhas passageiras
 (limite de requisições, servidor fora do ar por um instante, queda de conexão) são **tentadas de
-novo automaticamente** uma vez antes de recorrer ao Google Translate. Se aparecer um aviso
-amarelo de "fallback para Google Translate" — e no Histórico a tradução vier marcada como
-"Google Translate (fallback)" —, quer dizer que o serviço configurado (OpenAI, Claude, Gemini)
-falhou mesmo após a retentativa; confira sua chave de API e créditos na aba Tradutores.
+novo automaticamente** uma vez antes de recorrer ao Google Translate. Se você tiver **mais de uma
+chave** cadastrada para o motor, ele ainda tenta as demais chaves da lista antes do fallback. Se
+aparecer um aviso amarelo de "fallback para Google Translate" — e no Histórico a tradução vier
+marcada como "Google Translate (fallback)" —, quer dizer que o serviço configurado (OpenAI, Claude,
+Gemini) falhou em **todas** as chaves; confira suas chaves de API e créditos na aba Tradutores.
 
 **"Apareceu um aviso vermelho de erro"**
 → Geralmente indica chave de API inválida, créditos esgotados, ou o serviço fora do ar

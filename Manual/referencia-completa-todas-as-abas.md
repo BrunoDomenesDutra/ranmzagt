@@ -101,10 +101,10 @@ Real · Mostrar/ocultar barra flutuante.
     traduzidos na sessão + **Cota da conta** via botão "Atualizar"; "Zerar sessão" reinicia a
     contagem). É o único motor com esse acompanhamento — os de IA não expõem o gasto pela chave.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — exigem chave de API.
-- **Autenticação** (aparece para os provedores com chave; as credenciais são **salvas por motor
+- **Autenticação** (aparece para os provedores com chave; as configurações são **salvas por motor
   independentemente**, então trocar e voltar não apaga nada):
-  - *API Key* — sua chave (`sk-...`, `sk-ant-...`, `AIza...`).
-  - *Modelo* — cada motor de IA oferece três faixas: uma **rápida/econômica**, uma de
+  - *Formalidade* (só DeepL) — mais formal / mais informal / padrão.
+  - *Modelo* (motores de IA) — cada motor oferece três faixas: uma **rápida/econômica**, uma de
     **equilíbrio** e uma **top** (qualidade superior).
     - OpenAI: GPT-4.1 nano · GPT-4.1 mini · GPT-4.1.
     - Claude: Haiku 4.5 · Sonnet 5 · Opus 4.8.
@@ -113,10 +113,20 @@ Real · Mostrar/ocultar barra flutuante.
       digitar **qualquer ID de modelo** aceito pelo provedor. Serve para usar um modelo mais
       novo que ainda não está na lista, sem esperar uma atualização do programa (o backend
       ajusta os parâmetros sozinho, inclusive para os modelos de raciocínio da OpenAI).
-  - *Testar conexão* — faz uma chamada de teste ao provedor com a chave e o modelo atuais e
+  - *Testar conexão* — faz uma chamada de teste ao provedor com a(s) chave(s) e o modelo atuais e
     mostra na hora se está tudo certo (✓, com a tradução de exemplo) ou o erro retornado (✗),
     em vez de você só descobrir o problema ao traduzir. Também disponível no Google (verifica a
     conectividade).
+- **Chaves de API** (card recolhível, o **último** da aba; no DeepL fica logo antes do card *Uso
+  do DeepL*): onde você cadastra a credencial do motor selecionado (`sk-...`, `sk-ant-...`,
+  `AIza...`, ou a chave DeepL `:fx` do plano gratuito). As chaves são **salvas por motor**, então
+  trocar de serviço e voltar não apaga nada.
+  - *Adicionar chave* / *✕* — você pode cadastrar **quantas chaves quiser** para o mesmo motor.
+    Quando a chave em uso **fica sem crédito** ou bate no limite de requisições, a tradução tenta a
+    **próxima chave da lista** automaticamente e passa a usá-la; esgotadas todas, cai no fallback do
+    Google Translate. Útil em sessões longas, que estouram a cota de uma só chave.
+  - O card **abre sozinho** enquanto nenhuma chave estiver preenchida e pode ser **recolhido**
+    depois de configurado.
 
 ### IA
 
