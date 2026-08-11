@@ -28,3 +28,14 @@
 Built in **Rust** 🦀 — native for Windows, no heavy runtime, low CPU/memory footprint even while running alongside a game.
 
 📖 **[Open the full manual](https://brunodomenesdutra.github.io/ranmzagt/#/en/)** &nbsp;·&nbsp; ⬇️ **[Download (Releases)](https://github.com/BrunoDomenesDutra/ranmzagt/releases)**
+
+### Support the project
+
+Ranmza GT is free. If it helped you, a donation keeps development going and pays for the translation engines' API keys.
+
+<p align="center">
+  <a href="https://ko-fi.com/ranmza"><img src="https://img.shields.io/badge/Ko--fi-support-FF5E5B?logo=kofi&logoColor=white" alt="Ko-fi"></a>
+  <a href="https://livepix.gg/ranmza"><img src="https://img.shields.io/badge/LivePix-donate%20with%20Pix-32BCAD?logo=pix&logoColor=white" alt="LivePix"></a>
+</p>
+
+☕ **[Ko-fi](https://ko-fi.com/ranmza)** (card/PayPal, worldwide) &nbsp;·&nbsp; 💚 **[LivePix](https://livepix.gg/ranmza)** (Pix, Brazil only)

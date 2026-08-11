@@ -29,6 +29,17 @@ Desenvolvido em **Rust** 🦀 — nativo para Windows, sem runtime pesado, com b
 
 📖 **[Abrir o manual completo](https://brunodomenesdutra.github.io/ranmzagt/)** &nbsp;·&nbsp; ⬇️ **[Baixar (Releases)](https://github.com/BrunoDomenesDutra/ranmzagt/releases)**
 
+### Apoie o projeto
+
+O Ranmza GT é gratuito. Se ele te ajudou, uma doação ajuda a manter o desenvolvimento e as chaves de API dos motores de tradução.
+
+<p align="center">
+  <a href="https://livepix.gg/ranmza"><img src="https://img.shields.io/badge/LivePix-doar%20via%20Pix-32BCAD?logo=pix&logoColor=white" alt="LivePix"></a>
+  <a href="https://ko-fi.com/ranmza"><img src="https://img.shields.io/badge/Ko--fi-apoiar-FF5E5B?logo=kofi&logoColor=white" alt="Ko-fi"></a>
+</p>
+
+💚 **[LivePix](https://livepix.gg/ranmza)** (Pix, nacional) &nbsp;·&nbsp; ☕ **[Ko-fi](https://ko-fi.com/ranmza)** (cartão/PayPal, internacional)
+
 ---
 
 ## English
@@ -45,3 +56,14 @@ Desenvolvido em **Rust** 🦀 — nativo para Windows, sem runtime pesado, com b
 Built in **Rust** 🦀 — native for Windows, no heavy runtime, low CPU/memory footprint even while running alongside a game.
 
 📖 **[Open the full manual](https://brunodomenesdutra.github.io/ranmzagt/#/en/)** &nbsp;·&nbsp; ⬇️ **[Download (Releases)](https://github.com/BrunoDomenesDutra/ranmzagt/releases)**
+
+### Support the project
+
+Ranmza GT is free. If it helped you, a donation keeps development going and pays for the translation engines' API keys.
+
+<p align="center">
+  <a href="https://ko-fi.com/ranmza"><img src="https://img.shields.io/badge/Ko--fi-support-FF5E5B?logo=kofi&logoColor=white" alt="Ko-fi"></a>
+  <a href="https://livepix.gg/ranmza"><img src="https://img.shields.io/badge/LivePix-donate%20with%20Pix-32BCAD?logo=pix&logoColor=white" alt="LivePix"></a>
+</p>
+
+☕ **[Ko-fi](https://ko-fi.com/ranmza)** (card/PayPal, worldwide) &nbsp;·&nbsp; 💚 **[LivePix](https://livepix.gg/ranmza)** (Pix, Brazil only)

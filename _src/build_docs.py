@@ -13,7 +13,7 @@ import re, os, shutil, unicodedata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.dirname(HERE)            # raiz do repo (uma acima de _src/)
-KEEP = {".git", "_src", ".gitignore", "LICENSE", "index.html"}  # nunca apagar na limpeza
+KEEP = {".git", ".github", "_src", ".gitignore", "LICENSE", "index.html"}  # nunca apagar na limpeza
 
 # Tenta sincronizar o mestre PT do game-translator
 MASTER = os.path.normpath(os.path.join(
@@ -81,6 +81,38 @@ b_platform = "https://img.shields.io/badge/plataforma-Windows-0078D6"
 b_license = "https://img.shields.io/badge/licen%C3%A7a-Freeware-orange"
 LICENSE_URL = f"{REPO_URL}/blob/main/LICENSE"
 
+# Doacoes: LivePix (Pix, nacional) e Ko-fi (cartao/PayPal, internacional).
+LIVEPIX_URL = "https://livepix.gg/ranmza"
+KOFI_URL = "https://ko-fi.com/ranmza"
+b_livepix = "https://img.shields.io/badge/LivePix-doar%20via%20Pix-32BCAD?logo=pix&logoColor=white"
+b_kofi = "https://img.shields.io/badge/Ko--fi-apoiar-FF5E5B?logo=kofi&logoColor=white"
+b_kofi_en = "https://img.shields.io/badge/Ko--fi-support-FF5E5B?logo=kofi&logoColor=white"
+b_livepix_en = "https://img.shields.io/badge/LivePix-donate%20with%20Pix-32BCAD?logo=pix&logoColor=white"
+
+def support_pt():
+    s  = '### Apoie o projeto\n\n'
+    s += ('O Ranmza GT é gratuito. Se ele te ajudou, uma doação ajuda a manter o '
+          'desenvolvimento e as chaves de API dos motores de tradução.\n\n')
+    s += '<p align="center">\n'
+    s += f'  <a href="{LIVEPIX_URL}"><img src="{b_livepix}" alt="LivePix"></a>\n'
+    s += f'  <a href="{KOFI_URL}"><img src="{b_kofi}" alt="Ko-fi"></a>\n'
+    s += '</p>\n\n'
+    s += (f'💚 **[LivePix]({LIVEPIX_URL})** (Pix, nacional) &nbsp;·&nbsp; '
+          f'☕ **[Ko-fi]({KOFI_URL})** (cartão/PayPal, internacional)\n')
+    return s
+
+def support_en():
+    s  = '### Support the project\n\n'
+    s += ('Ranmza GT is free. If it helped you, a donation keeps development going and '
+          'pays for the translation engines\' API keys.\n\n')
+    s += '<p align="center">\n'
+    s += f'  <a href="{KOFI_URL}"><img src="{b_kofi_en}" alt="Ko-fi"></a>\n'
+    s += f'  <a href="{LIVEPIX_URL}"><img src="{b_livepix_en}" alt="LivePix"></a>\n'
+    s += '</p>\n\n'
+    s += (f'☕ **[Ko-fi]({KOFI_URL})** (card/PayPal, worldwide) &nbsp;·&nbsp; '
+          f'💚 **[LivePix]({LIVEPIX_URL})** (Pix, Brazil only)\n')
+    return s
+
 def build_lang(sections, *, out_prefix, sidebar_home_label, home_md,
                skip_slug, manual_label):
     """Gera Manual/*.md + _sidebar.md de um idioma. out_prefix='' (PT) ou 'en' (EN).
@@ -143,7 +175,8 @@ home_pt += desc_pt + '\n\n'
 home_pt += '### Como funciona\n\n' + how_pt + '\n\n'
 home_pt += rust_pt + '\n\n'
 home_pt += (f"📖 **[Abrir o manual completo]({PAGES_URL})** &nbsp;·&nbsp; "
-            f"⬇️ **[Baixar (Releases)]({RELEASES_URL})**\n")
+            f"⬇️ **[Baixar (Releases)]({RELEASES_URL})**\n\n")
+home_pt += support_pt()
 
 # --- EN ---
 tagline_en = "Translate any game, video or on-screen text — overlaid, in real time."
@@ -170,7 +203,8 @@ home_en += desc_en + '\n\n'
 home_en += '### How it works\n\n' + how_en + '\n\n'
 home_en += rust_en + '\n\n'
 home_en += (f"📖 **[Open the full manual]({PAGES_URL}#/en/)** &nbsp;·&nbsp; "
-            f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n")
+            f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n\n")
+home_en += support_en()
 
 # O README raiz (landing do GitHub + home PT do Docsify) tambem traz a versao EN da
 # descricao, com link pro manual EN — para quem chega pela pagina do repo em ingles.
@@ -179,7 +213,8 @@ home_pt += desc_en + '\n\n'
 home_pt += '### How it works\n\n' + how_en + '\n\n'
 home_pt += rust_en + '\n\n'
 home_pt += (f"📖 **[Open the full manual]({PAGES_URL}#/en/)** &nbsp;·&nbsp; "
-            f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n")
+            f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n\n")
+home_pt += support_en()
 
 # ---------- Gera ----------
 n_pt = build_lang(read_and_split(SRC_PT), out_prefix='',   sidebar_home_label='Início',
