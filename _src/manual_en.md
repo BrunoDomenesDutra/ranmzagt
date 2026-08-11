@@ -59,6 +59,8 @@ In the **Language** tab:
 
 > If a red warning appears saying the language isn't installed, click the warning button — it opens Windows language settings directly so you can install the necessary package. Without it, text recognition won't work for that language.
 
+> **Using OneOCR?** Then there is no source language to pick. OneOCR is a single multilingual model (Latin, CJK, Cyrillic…) that detects the language on its own — the **Original text language** field doesn't even show up in the Language tab while it's selected, and the Windows language pack warning doesn't apply (there's no pack to install). **Target language** still works normally. Everything above about the source language applies to **Windows OCR** only.
+
 ### 2.3 Choose how to translate
 
 In the **Translators** tab, choose the translation service:

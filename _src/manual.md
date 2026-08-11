@@ -84,6 +84,12 @@ Na aba **Idioma**:
 > aviso — ele abre direto a tela de idiomas do Windows para você instalar o pacote necessário.
 > Sem isso, o reconhecimento de texto não funciona para aquele idioma.
 
+> **Usando o OneOCR?** Aí não existe idioma de origem para escolher. O OneOCR é um modelo único
+> multilíngue (latim, CJK, cirílico…) que detecta o idioma sozinho — o campo **Idioma do texto
+> original** nem aparece na aba Idioma enquanto ele estiver selecionado, e o aviso de pacote de
+> idioma do Windows não se aplica (não há pacote para instalar). O **Idioma destino** continua
+> valendo normalmente. Tudo acima sobre o idioma de origem vale só para o **Windows OCR**.
+
 ### 2.3 Escolha como vai traduzir
 
 Na aba **Tradutores**, escolha o serviço de tradução:
