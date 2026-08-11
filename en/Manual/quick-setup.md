@@ -1,4 +1,4 @@
-## 2. Quick setup — ready to use in 5 minutes
+# 2. Quick setup
 
 **Five settings.** After them you're already translating; everything else in this manual is fine-tuning, to be read when (and if) you need it.
 
@@ -12,9 +12,9 @@
 
 > **Before anything else: run the game in Windowed mode.** In *Exclusive Fullscreen* no program can draw on top — the translation simply won't appear. Switch the game to **Borderless Fullscreen** in its video options. Full explanation in [section 1](/en/Manual/what-the-program-does.md).
 
-> **Program won't even open, with the error *"VCRUNTIME140.dll not found"*?** The **Microsoft Visual C++ Redistributable (x64)** is missing — a free component from Microsoft that most PCs already have (it ships with many games), but is often absent on a freshly formatted Windows. Install it from this official link and open the program again: <https://aka.ms/vs/17/release/vc_redist.x64.exe>
+> **Program won't even open, with the error *"VCRUNTIME140.dll not found"*?** The **Microsoft Visual C++ Redistributable (x64)** is missing — a free component from Microsoft that most PCs already have (it ships with many games). Install it from this official link and open the program again: <https://aka.ms/vs/17/release/vc_redist.x64.exe>
 
-### 2.1 First look: how the window is organized
+## 2.1 First look: how the window is organized
 
 <p align="center"><img src="media/geral-config.png" alt="Geral › Config tab" width="820"></p>
 
@@ -33,7 +33,7 @@ The left-hand menu groups options by subject. For this quick setup you only touc
 
 > **Interface language** (in *Geral › Config*) only changes the language **of the program** — the menus and labels you're looking at. It has nothing to do with the language being translated; that's step 2.3.
 
-### 2.2 Pick your monitor
+## 2.2 Pick your monitor
 
 Still in **Geral › Config**, in the **Monitor** card, choose in **Tela ativa** which screen the program should work on. With a single monitor, leave it on *Automatico* and move on.
 
@@ -41,7 +41,7 @@ Switching monitors **requires restarting the program** — a notice with a **Rei
 
 The **Backend de captura** just above can stay on *Auto (recomendado)*: it picks the right method for your Windows version by itself, and switches on the fly with no restart.
 
-### 2.3 Pick your languages
+## 2.3 Pick your languages
 
 Open **Geral › Idioma**.
 
@@ -54,7 +54,7 @@ Open **Geral › Idioma**.
 
 > **Using OneOCR?** Then there's no source language to pick: it's a single multilingual model (Latin, CJK, Cyrillic…) that detects the language on its own, and the **Idioma do texto** field doesn't even show while it's selected — nor does the Windows pack warning, which doesn't apply. **Idioma destino** works normally. The OCR engine is switched in *Geral › OCR*, but leave it on the default to get started.
 
-### 2.4 Pick your translator
+## 2.4 Pick your translator
 
 Open **Traducao › Tradutores**.
 
@@ -73,7 +73,7 @@ Each engine stores its own credentials, so switching away and back doesn't erase
 
 > Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate and DeepL don't. See [section 7](/en/Manual/vision-mode-when-ocr-fails.md).
 
-### 2.5 Mark the text area
+## 2.5 Mark the text area
 
 With the game open and focused, press **`Numpad7`**. The screen dims and you drag the mouse to draw a rectangle over the region where the text appears — usually the dialogue box. Release the button to confirm, or press `ESC` to cancel.
 
@@ -81,7 +81,7 @@ The area is saved. You only need to mark it again if the game moves its text box
 
 > Didn't mark any area? The program captures the **whole screen** — it works, but it's slower and less accurate. Marking is worth it.
 
-### 2.6 Translate
+## 2.6 Translate
 
 With text on screen, press one of the two translation hotkeys — the only difference is **how lines are grouped** before translating:
 
@@ -96,7 +96,7 @@ The translation appears over the game, in the position of the original text, and
 
 > **Hotkeys only work with the game focused.** With the Ranmza GT settings window in the foreground they're disabled on purpose — that way you can type into fields without firing off commands. Click back into the game before testing.
 
-### Did it work? And if it didn't
+## Did it work? And if it didn't
 
 If the translation showed up over the game, you're all set — move on to [section 3](/en/Manual/basic-day-to-day-usage.md).
 

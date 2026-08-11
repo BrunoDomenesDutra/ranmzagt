@@ -1,4 +1,4 @@
-## 6. Deixando a tradução com a "cara" do jogo
+# 6. Deixando a tradução com a "cara" do jogo
 
 Na aba **Captura**, seção de aparência:
 
@@ -18,7 +18,7 @@ Na aba **Captura**, seção de aparência:
 
 > Fundo e contorno são opções alternativas — ativar uma desativa a outra automaticamente.
 
-### Quanto tempo a tradução fica na tela
+## Quanto tempo a tradução fica na tela
 
 Em "Exibição", escolha por quanto tempo a tradução permanece visível depois de aparecer: 15s,
 30s, 1 minuto (padrão), 2, 5 ou 10 minutos — ou "Nunca" (a tradução só some quando você apertar

@@ -1,6 +1,6 @@
-## 5. Configurando a tradução
+# 5. Configurando a tradução
 
-### Tipo de texto: diálogo ou menu?
+## Tipo de texto: diálogo ou menu?
 
 Na aba **OCR**, em "Agrupamento de Blocos", escolha:
 
@@ -16,7 +16,7 @@ Parágrafo:
 - Texto sendo **separado demais**? Aumente o valor (até 3.0).
 - Texto sendo **juntado demais**? Diminua o valor (até 0).
 
-### Melhorando o reconhecimento de texto difícil
+## Melhorando o reconhecimento de texto difícil
 
 Se o programa não está detectando o texto direito (fontes pequenas, estilizadas, com efeitos),
 vá na aba **Captura** e ative o **Pré-processamento**. Algumas dicas rápidas:
@@ -31,7 +31,7 @@ Não sabe por onde começar? Use a aba **Lab** — lá dá para testar todas ess
 de exemplo, ver o resultado em tempo real, e depois aplicar a configuração que funcionou
 melhor direto na Captura ou na Legenda.
 
-### Trocando o motor de OCR (avançado)
+## Trocando o motor de OCR (avançado)
 
 Se mesmo com pré-processamento o reconhecimento continuar ruim, a aba **OCR** permite trocar
 o "motor" de reconhecimento de texto:

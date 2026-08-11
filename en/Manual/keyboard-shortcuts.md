@@ -1,4 +1,4 @@
-## 4. Keyboard shortcuts
+# 4. Keyboard shortcuts
 
 | Shortcut | Default | What it does |
 |---|---|---|

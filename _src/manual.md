@@ -9,7 +9,7 @@ detalhes técnicos.
 ## Sumário
 
 1. [O que o programa faz](#1-o-que-o-programa-faz)
-2. [Configuração rápida — pronto para usar em 5 minutos](#2-configuração-rápida--pronto-para-usar-em-5-minutos)
+2. [Configuração rápida](#2-configuração-rápida)
 3. [Uso básico no dia a dia](#3-uso-básico-no-dia-a-dia)
 4. [Atalhos de teclado](#4-atalhos-de-teclado)
 5. [Configurando a tradução](#5-configurando-a-tradução)
@@ -51,7 +51,7 @@ O fluxo básico é sempre:
 
 ---
 
-## 2. Configuração rápida — pronto para usar em 5 minutos
+## 2. Configuração rápida
 
 São **cinco ajustes**. Depois deles você já está traduzindo; todo o resto deste manual é
 refinamento, e você lê quando (e se) precisar.
@@ -71,8 +71,8 @@ refinamento, e você lê quando (e se) precisar.
 
 > **O programa nem abriu, com erro *"VCRUNTIME140.dll não foi encontrado"*?** Falta o
 > **Microsoft Visual C++ Redistributable (x64)**, um componente gratuito da Microsoft que a
-> maioria dos PCs já tem (vem junto com muitos jogos), mas costuma faltar em Windows
-> recém-formatado. Instale por este link oficial e abra o programa de novo:
+> maioria dos PCs já tem (vem junto com muitos jogos). Instale por este link oficial e abra o
+> programa de novo:
 > <https://aka.ms/vs/17/release/vc_redist.x64.exe>
 
 ### 2.1 Primeiro olhar: como a janela é organizada

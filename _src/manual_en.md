@@ -7,7 +7,7 @@ Practical guide to using **Ranmza GT**, the translator for games, visual novels,
 ## Table of Contents
 
 1. [What the program does](#1-what-the-program-does)
-2. [Quick setup — ready to use in 5 minutes](#2-quick-setup--ready-to-use-in-5-minutes)
+2. [Quick setup](#2-quick-setup)
 3. [Basic day-to-day usage](#3-basic-day-to-day-usage)
 4. [Keyboard shortcuts](#4-keyboard-shortcuts)
 5. [Configuring translation](#5-configuring-translation)
@@ -39,7 +39,7 @@ The basic workflow is always:
 
 ---
 
-## 2. Quick setup — ready to use in 5 minutes
+## 2. Quick setup
 
 **Five settings.** After them you're already translating; everything else in this manual is fine-tuning, to be read when (and if) you need it.
 
@@ -53,7 +53,7 @@ The basic workflow is always:
 
 > **Before anything else: run the game in Windowed mode.** In *Exclusive Fullscreen* no program can draw on top — the translation simply won't appear. Switch the game to **Borderless Fullscreen** in its video options. Full explanation in [section 1](/en/Manual/what-the-program-does.md).
 
-> **Program won't even open, with the error *"VCRUNTIME140.dll not found"*?** The **Microsoft Visual C++ Redistributable (x64)** is missing — a free component from Microsoft that most PCs already have (it ships with many games), but is often absent on a freshly formatted Windows. Install it from this official link and open the program again: <https://aka.ms/vs/17/release/vc_redist.x64.exe>
+> **Program won't even open, with the error *"VCRUNTIME140.dll not found"*?** The **Microsoft Visual C++ Redistributable (x64)** is missing — a free component from Microsoft that most PCs already have (it ships with many games). Install it from this official link and open the program again: <https://aka.ms/vs/17/release/vc_redist.x64.exe>
 
 ### 2.1 First look: how the window is organized
 

@@ -1,10 +1,10 @@
-## 13. Referência completa — todas as abas
+# 13. Referência completa — todas as abas
 
 Esta seção descreve **cada aba e cada opção** da janela de configuração, na ordem em que
 aparecem na barra lateral. Use como consulta — para o dia a dia, as seções anteriores já
 bastam.
 
-### Geral
+## Geral
 
 Onde o programa opera.
 
@@ -27,7 +27,7 @@ Onde o programa opera.
   Detecta automaticamente o idioma do Windows na primeira vez (cai para Inglês se não for
   Português); pode ser trocado manualmente aqui a qualquer momento.
 
-### Idioma
+## Idioma
 
 O campo do idioma de origem **se adapta ao motor de OCR** selecionado na aba OCR.
 
@@ -38,7 +38,7 @@ O campo do idioma de origem **se adapta ao motor de OCR** selecionado na aba OCR
   - *OneOCR* — **detecção automática**; não há idioma de origem para configurar.
 - **Idioma destino** — para qual idioma traduzir (ex.: `pt`, `es`, `fr`, `de`, `it`, `zh`).
 
-### Captura
+## Captura
 
 Aparência da tradução manual e pré-processamento da imagem.
 
@@ -59,7 +59,7 @@ Aparência da tradução manual e pré-processamento da imagem.
   - *Avançado* (só é aplicado quando ligado): *Threshold* (0–255), *Blur* (0–5,0×),
     *Dilatação* (0–10 px), *Erosão* (0–10 px).
 
-### Legenda
+## Legenda
 
 Tem aparência e pré-processamento **próprios**, independentes da aba Captura.
 
@@ -73,7 +73,7 @@ Tem aparência e pré-processamento **próprios**, independentes da aba Captura.
   - *Mostrar contorno* + *Espessura do contorno* (1–5 px)
 - **Pré-processamento OCR** — mesmos controles da aba Captura, mas independentes.
 
-### Atalhos
+## Atalhos
 
 Dez atalhos globais (funcionam com o jogo em foco; desativados quando a janela de config está
 em primeiro plano). Cada um tem os modificadores **Ctrl / Alt / Shift** e a tecla principal,
@@ -88,7 +88,7 @@ Real · Mostrar/ocultar barra flutuante.
 > teclas de navegação funcionam sem modificador. Os grupos Números e Navegação são úteis em
 > notebooks sem teclado numérico.
 
-### Tradutores
+## Tradutores
 
 - **Provedor de Tradução → Provedor ativo**:
   - *Google Translate* — gratuito, sem chave. **Não suporta o Modo Vision.**
@@ -128,7 +128,7 @@ Real · Mostrar/ocultar barra flutuante.
   - O card **abre sozinho** enquanto nenhuma chave estiver preenchida e pode ser **recolhido**
     depois de configurado.
 
-### IA
+## IA
 
 As três primeiras seções só aparecem com um provedor de IA selecionado (não no Google).
 
@@ -143,7 +143,7 @@ As três primeiras seções só aparecem com um provedor de IA selecionado (não
 - **Informações do Jogo** — tema, personagens e glossário; mude por jogo (botões **Salvar** e
   **Restaurar padrão**). O reset geral (aba Geral) **não** apaga este campo nem o System Prompt.
 
-### OCR
+## OCR
 
 - **Engine de OCR → Engine ativo**:
   - *WinOCR* (padrão) — nativo do Windows, ~30 ms, offline; depende dos pacotes de idioma
@@ -160,7 +160,7 @@ As três primeiras seções só aparecem com um provedor de IA selecionado (não
     *Sensibilidade do agrupamento* (0–3,0; padrão 1): menor separa mais, maior junta mais.
   - *Modo Linha* — cada linha vira um bloco independente (menus, HUD).
 
-### Web
+## Web
 
 Transmite as traduções para navegadores na rede local (e para o OBS).
 
@@ -177,13 +177,13 @@ Transmite as traduções para navegadores na rede local (e para o OBS).
   borda do card).
 - **Histórico → Entradas mantidas no buffer** (10–200).
 
-### Histórico
+## Histórico
 
 Lista as traduções da **sessão atual** (horário, serviço, tradução e, abaixo, o texto
 original), da mais recente para a mais antiga, até o limite definido na aba Web. Botão **Limpar
 histórico**.
 
-### Lab
+## Lab
 
 Laboratório para testar o pré-processamento sem afetar o jogo.
 
@@ -193,7 +193,7 @@ Laboratório para testar o pré-processamento sem afetar o jogo.
 - Botões **Aplicar em Captura** e **Aplicar em Legenda** — copiam a configuração testada para a
   aba correspondente.
 
-### Monitor
+## Monitor
 
 - **Monitoramento → Ativo** — registra o tempo de cada etapa do pipeline a cada tradução
   (mantido ao navegar entre abas).
@@ -201,7 +201,7 @@ Laboratório para testar o pré-processamento sem afetar o jogo.
   Tradução, Total, Blocos, Cache (acertos sem API) e API (chamadas feitas).
 - **Estatísticas** — mín / média / máx de cada etapa (a partir de 2 execuções).
 
-### Debug
+## Debug
 
 - **Modo Debug → Ativado** — salva imagens de diagnóstico a cada captura na pasta de output.
 - **Imagens a salvar** — Captura original (`frame.png`), Captura pós pré-processamento
@@ -209,7 +209,7 @@ Laboratório para testar o pré-processamento sem afetar o jogo.
   (`ocr_paragraphs.png`), Preview da máscara de inpainting (`mask.png`).
 - **Pasta de output** — caminho dos arquivos + botão para abrir a pasta.
 
-### Logs
+## Logs
 
 Log da sessão em tempo real.
 
@@ -218,7 +218,7 @@ Log da sessão em tempo real.
 - **Filtrar linhas** · **Auto-scroll** · **Atualizar** — controles da visualização (erros em
   vermelho, avisos em amarelo, etc.).
 
-### Experimental
+## Experimental
 
 > Tudo nesta aba está **em desenvolvimento** — o comportamento pode mudar, bugs são esperados e
 > recursos podem ser removidos.

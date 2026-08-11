@@ -1,4 +1,4 @@
-## 12. Problemas comuns e soluções
+# 12. Problemas comuns e soluções
 
 **"Erro ao abrir o programa: VCRUNTIME140.dll não foi encontrado" (ou MSVCP140.dll)**
 → Falta o **Microsoft Visual C++ Redistributable** no seu Windows — um componente gratuito da

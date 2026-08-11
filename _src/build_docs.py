@@ -47,6 +47,20 @@ def read_and_split(filepath):
 
     return sections
 
+def demote(body):
+    """Sobe um nivel todos os titulos da pagina: '## X' -> '# X', '### Y' -> '## Y'.
+
+    No mestre a secao e '## ' e as subsecoes '### '. Se a pagina gerada mantivesse
+    esses niveis, o Docsify listaria o titulo da propria pagina como sub-item do
+    link dela no sidebar (o mesmo texto duas vezes, um dentro do outro). Com o
+    titulo virando '# ', o Docsify o trata como titulo da pagina e o sub-indice
+    passa a mostrar as subsecoes — que e o util.
+    """
+    return '\n'.join(
+        l[1:] if re.match(r'^#{2,6} ', l) else l
+        for l in body.split('\n')
+    )
+
 def slug(s):
     s = re.sub(r'^\d+[.)]?\s*', '', s)
     s = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode()
@@ -135,7 +149,7 @@ def build_lang(sections, *, out_prefix, sidebar_home_label, home_md,
         if slug(title) == skip_slug:
             continue
         fname = f"{slug(title)}.md"
-        open(os.path.join(manual_dir, fname), 'w', encoding='utf-8', newline='\n').write(body + '\n')
+        open(os.path.join(manual_dir, fname), 'w', encoding='utf-8', newline='\n').write(demote(body) + '\n')
         sidebar.append(f"- [{title}]({route}Manual/{fname})")
 
     write(os.path.join(out_prefix, '_sidebar.md'), '\n'.join(sidebar) + '\n')

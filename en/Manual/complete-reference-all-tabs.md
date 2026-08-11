@@ -1,8 +1,8 @@
-## 13. Complete reference — all tabs
+# 13. Complete reference — all tabs
 
 This section describes **every tab and every option** in the settings window, in the order they appear in the sidebar. Use as reference — for day-to-day use, the previous sections are enough.
 
-### General
+## General
 
 Where the program operates.
 
@@ -15,7 +15,7 @@ Where the program operates.
 - **Configuration → Reset to defaults** — restores all options to factory values. **Keeps** the monitor, selected areas, API keys, and prompts (System Prompt and Game Information).
 - **Interface language** — changes the language of the settings window itself (Portuguese/English). Auto-detects Windows language on first run (defaults to English if not Portuguese); can be manually changed anytime here.
 
-### Language
+## Language
 
 The source language field **adapts to the OCR engine** selected in the OCR tab.
 
@@ -24,7 +24,7 @@ The source language field **adapts to the OCR engine** selected in the OCR tab.
   - *OneOCR* — **automatic detection**; no source language to configure.
 - **Target language** — which language to translate to (ex.: `en`, `es`, `fr`, `de`, `it`, `zh`).
 
-### Capture
+## Capture
 
 Appearance of manual translation and image preprocessing.
 
@@ -43,7 +43,7 @@ Appearance of manual translation and image preprocessing.
   - *Contrast* (1.0–3.0×) · *Upscale* (1.0–4.0×) · *Sharpen* (0–2.0×)
   - *Advanced* (only applied when enabled): *Threshold* (0–255), *Blur* (0–5.0×), *Dilation* (0–10 px), *Erosion* (0–10 px).
 
-### Caption
+## Caption
 
 Has its own appearance and preprocessing, independent from the Capture tab.
 
@@ -57,13 +57,13 @@ Has its own appearance and preprocessing, independent from the Capture tab.
   - *Show outline* + *Outline thickness* (1–5 px)
 - **OCR Preprocessing** — same controls as the Capture tab, but independent.
 
-### Shortcuts
+## Shortcuts
 
 Ten global hotkeys (work with game in focus; disabled when the settings window is in the foreground). Each has **Ctrl / Alt / Shift** modifiers and a main key, chosen from the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Numbers** (top-row 0–9), and **Letters** groups: Select area · Translate · Translate with AI Vision · Clear overlay · Toggle Caption Mode · Select caption area · Show/hide areas · Toggle Real-time Mode · Select Real-time area · Show/hide floating toolbar.
 
 > **Letters and numbers** as main key **require** a modifier (Ctrl, Alt, or Shift) to not conflict with the game (games use WASD and the 0–9 slots all the time). Numpad, F-keys, and navigation keys work without a modifier. The Numbers and Navigation groups are handy on laptops without a numpad.
 
-### Translators
+## Translators
 
 - **Translation Provider → Active provider**:
   - *Google Translate* — free, no key needed. **Doesn't support Vision Mode.**
@@ -78,7 +78,7 @@ Ten global hotkeys (work with game in focus; disabled when the settings window i
     - *Custom…* — the last option in the selector: opens a free text field to type **any model ID** accepted by the provider. Use it to run a newer model that isn't in the list yet, without waiting for an app update (the backend adjusts the parameters on its own, including for OpenAI's reasoning models).
   - *Test connection* — makes a test call to the provider with your current key and model and shows immediately if it works (✓, with example translation) or the returned error (✗), instead of discovering the problem only when translating. Also available for Google (checks connectivity).
 
-### AI
+## AI
 
 The first three sections only appear with an AI provider selected (not Google).
 
@@ -89,7 +89,7 @@ The first three sections only appear with an AI provider selected (not Google).
 - **System Prompt** — translator role and general rules (**Save** and **Restore defaults** buttons, which recovers factory text just for this field).
 - **Game Information** — theme, characters and glossary; change per game (**Save** and **Restore defaults** buttons). The general reset (General tab) **doesn't** erase this field or the System Prompt.
 
-### OCR
+## OCR
 
 - **OCR Engine → Active engine**:
   - *WinOCR* (default) — native to Windows, ~30 ms, offline; depends on Windows language packages. Can fail on very stylized fonts.
@@ -98,7 +98,7 @@ The first three sections only appear with an AI provider selected (not Google).
   - *Paragraph Mode* — groups vertically close lines (dialogs, flowing text). Shows *Grouping sensitivity* (0–3.0; default 1): lower separates more, higher groups more.
   - *Line Mode* — each line becomes an independent block (menus, HUD).
 
-### Web
+## Web
 
 Streams translations to browsers on the local network (and to OBS).
 
@@ -110,11 +110,11 @@ Streams translations to browsers on the local network (and to OBS).
 - **Appearance** — *Theme* (Dark / Light / Dracula) · *Font size* (12–48 px) · *Bold* · *Detected text* (shows original) · *Time and service* · *Custom colors* (unlocks 6 color pickers: translated text, original text, time, service/badge, card background, card border).
 - **History → Entries kept in buffer** (10–200).
 
-### History
+## History
 
 Lists translations from the **current session** (time, service, translation and, below, the original text), newest to oldest, up to the limit set in the Web tab. **Clear history** button.
 
-### Lab
+## Lab
 
 Laboratory to test preprocessing without affecting the game.
 
@@ -122,26 +122,26 @@ Laboratory to test preprocessing without affecting the game.
 - **Preprocessing Parameters** — the same controls as the Capture tab, with **live preview** (original image × processed).
 - **Apply to Capture** and **Apply to Caption** buttons — copy the tested configuration to the corresponding tab.
 
-### Monitor
+## Monitor
 
 - **Monitoring → Active** — logs the time of each pipeline step for every translation (kept when navigating tabs).
 - **Execution History** — table of the last 10 captures: Time, Capture, Preproc, OCR, Translation, Total, Blocks, Cache (hits without API) and API (calls made).
 - **Statistics** — min / average / max of each step (from 2 executions onward).
 
-### Debug
+## Debug
 
 - **Debug Mode → Enabled** — saves diagnostic images for each capture in the output folder.
 - **Images to save** — Original capture (`frame.png`), capture after preprocessing (`frame_proc.png`), OCR lines (`ocr_lines.png`), grouped paragraphs (`ocr_paragraphs.png`), inpainting mask preview (`mask.png`).
 - **Output folder** — path to files + button to open the folder.
 
-### Logs
+## Logs
 
 Real-time session log.
 
 - **Log captured texts and translations** — privacy toggle; **disabled by default**. Keep off when sharing logs for support, to not expose game content.
 - **Filter lines** · **Auto-scroll** · **Update** — view controls (errors in red, warnings in yellow, etc.).
 
-### Experimental
+## Experimental
 
 > Everything in this tab is **under development** — behavior may change, bugs are expected, and features may be removed.
 

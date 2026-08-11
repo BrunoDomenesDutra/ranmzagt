@@ -1,4 +1,4 @@
-## 6. Making translation look like the game
+# 6. Making translation look like the game
 
 In the **Capture** tab, appearance section:
 
@@ -10,7 +10,7 @@ In the **Capture** tab, appearance section:
 
 > Background and outline are alternatives — enabling one disables the other automatically.
 
-### How long translation stays on screen
+## How long translation stays on screen
 
 Under "Display", choose how long the translation stays visible after appearing: 15s, 30s, 1 minute (default), 2, 5, or 10 minutes — or "Never" (translation only disappears when you press clear or translate again).
 

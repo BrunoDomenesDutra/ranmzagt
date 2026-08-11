@@ -1,4 +1,4 @@
-## 11. History and performance
+# 11. History and performance
 
 - **History tab**: shows translations made during the current session (original text, translation, time and service used). Has a button to clear.
 - **Monitor tab**: turns on a log of the latest translations with the time each step took (capture, recognition, translation, total) — useful to notice if any configuration is slowing the program down (for example, heavy preprocessing).

@@ -1,4 +1,4 @@
-## 9. Modo Tempo Real — tradução contínua no lugar (experimental)
+# 9. Modo Tempo Real — tradução contínua no lugar (experimental)
 
 > Recurso **experimental** — ligado e configurado pela aba **Experimental**. O comportamento
 > ainda pode mudar e bugs são esperados.
@@ -12,7 +12,7 @@ caixa fora da área. Ele trabalha sobre uma **área própria**, normalmente maio
 É indicado para conversas com NPCs em que aparecem **nome + várias linhas de fala** ao mesmo
 tempo, e você quer tudo traduzido ao vivo, na posição original, sem clicar.
 
-### Como usar
+## Como usar
 
 1. Na aba **Experimental**, ajuste as opções do Tempo Real (intervalo, fonte, fundo, contorno,
    desligamento automático) — os padrões já funcionam.
@@ -25,7 +25,7 @@ tempo, e você quer tudo traduzido ao vivo, na posição original, sem clicar.
 > Por ser contínuo e desenhar várias áreas ao vivo, o Tempo Real é mais pesado que os outros
 > modos. Se notar travadas, aumente o **intervalo** na aba Experimental.
 
-### Estabilidade com fundo animado
+## Estabilidade com fundo animado
 
 Em cenas com fundo em movimento (animações de jogos de RPG, vídeos), o reconhecimento de texto
 pode oscilar de um quadro para outro, fazendo a tradução **tremer** ou **piscar**. Dois ajustes
@@ -41,7 +41,7 @@ na aba Experimental controlam isso:
 Regra prática: se ainda **tremer**, aumente a *Estabilidade da posição*; se ainda **piscar**,
 aumente o *Segurar em falha de OCR*.
 
-### Efeito máquina de escrever (typewriter)
+## Efeito máquina de escrever (typewriter)
 
 Muitos jogos revelam o texto **letra por letra**. Para não traduzir frases pela metade, ligue
 **Máquina de escrever** na aba Experimental: o programa espera o texto "assentar" (parar de

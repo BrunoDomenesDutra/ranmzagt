@@ -1,6 +1,6 @@
 - [Início](/)
 - [1. O que o programa faz](/Manual/o-que-o-programa-faz.md)
-- [2. Configuração rápida — pronto para usar em 5 minutos](/Manual/configuracao-rapida-pronto-para-usar-em-5-minutos.md)
+- [2. Configuração rápida](/Manual/configuracao-rapida.md)
 - [3. Uso básico no dia a dia](/Manual/uso-basico-no-dia-a-dia.md)
 - [4. Atalhos de teclado](/Manual/atalhos-de-teclado.md)
 - [5. Configurando a tradução](/Manual/configurando-a-traducao.md)

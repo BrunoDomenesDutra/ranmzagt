@@ -1,4 +1,4 @@
-## 7. Modo Vision — quando o OCR erra
+# 7. Modo Vision — quando o OCR erra
 
 Às vezes o reconhecimento de texto comum (OCR) erra letras, perde pedaços do texto ou se perde
 totalmente em fontes muito estilizadas/artísticas, com símbolos ou ícones no meio do texto.

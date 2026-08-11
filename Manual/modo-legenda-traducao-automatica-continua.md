@@ -1,9 +1,9 @@
-## 8. Modo Legenda — tradução automática contínua
+# 8. Modo Legenda — tradução automática contínua
 
 Para cenas com diálogo contínuo (cutscenes, modo automático de visual novels, vídeos com
 legenda), o Modo Legenda traduz **sozinho, repetidamente**, sem você precisar apertar nada.
 
-### Como configurar
+## Como configurar
 
 1. Na aba **Legenda**, ajuste as opções de captura (intervalo, quantas linhas mostrar, etc.) —
    os padrões já funcionam bem para a maioria dos casos.
@@ -18,7 +18,7 @@ por uma em efeitos de "máquina de escrever").
 As traduções aparecem **acima** da área selecionada, em ordem (mais recente embaixo), e somem
 sozinhas se nenhum texto novo aparecer por alguns segundos.
 
-### Deixando a IA "lembrar" das falas anteriores
+## Deixando a IA "lembrar" das falas anteriores
 
 Se você está usando OpenAI, Claude ou Gemini, a aba **IA** tem um controle **"Falas
 anteriores"** (0 a 20, padrão 5). Com ele ligado, a IA recebe as últimas falas já traduzidas
@@ -32,13 +32,13 @@ traduzida sem depender das anteriores, deixe em 0.
 > para manter a consistência de nomes e termos. Mesmo não sendo uma IA conversacional, isso
 > deixa a tradução contínua mais coesa. **Google Translate** não usa esse contexto.
 
-### Aparência separada
+## Aparência separada
 
 A aba Legenda tem suas próprias opções de fonte, fundo e contorno — independentes da tradução
 manual — então você pode deixar a legenda contínua menor/mais discreta e a tradução manual
 (`Numpad9`) maior, por exemplo.
 
-### Desligando
+## Desligando
 
 Aperte **Numpad0** novamente (ou o botão correspondente, se você tiver criado um na barra
 flutuante). A legenda na tela é limpa imediatamente.

@@ -1,6 +1,6 @@
-## 5. Configuring translation
+# 5. Configuring translation
 
-### Text type: dialog or menu?
+## Text type: dialog or menu?
 
 In the **OCR** tab, under "Block Grouping", choose:
 
@@ -11,7 +11,7 @@ If the program is grouping lines that should be separate (or separating a speech
 - Text being **separated too much**? Increase the value (up to 3.0).
 - Text being **grouped too much**? Decrease the value (down to 0).
 
-### Improving difficult text recognition
+## Improving difficult text recognition
 
 If the program isn't detecting text correctly (small fonts, stylized, with effects), go to the **Capture** tab and enable **Preprocessing**. A few quick tips:
 
@@ -22,7 +22,7 @@ If the program isn't detecting text correctly (small fonts, stylized, with effec
 
 Don't know where to start? Use the **Lab** tab — you can test all these options on sample images, see the result in real time, and then apply the best-working configuration directly to Capture or Caption.
 
-### Switching OCR engine (advanced)
+## Switching OCR engine (advanced)
 
 If preprocessing still doesn't fix recognition, the **OCR** tab lets you switch the text recognition "engine":
 

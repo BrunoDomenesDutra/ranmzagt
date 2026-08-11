@@ -1,4 +1,4 @@
-## 7. Vision Mode — when OCR fails
+# 7. Vision Mode — when OCR fails
 
 Sometimes normal text recognition (OCR) misses letters, loses parts of text, or gets completely lost on very stylized/artistic fonts, with symbols or icons mixed in the text.
 

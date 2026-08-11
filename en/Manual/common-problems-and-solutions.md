@@ -1,4 +1,4 @@
-## 12. Common problems and solutions
+# 12. Common problems and solutions
 
 **"Error opening program: VCRUNTIME140.dll not found" (or MSVCP140.dll)**
 → Your Windows is missing **Microsoft Visual C++ Redistributable** — a free Microsoft component some freshly-formatted PCs don't have. Download and install the **x64** package from this official link: <https://aka.ms/vs/17/release/vc_redist.x64.exe> — then reopen Ranmza GT, it should open normally.

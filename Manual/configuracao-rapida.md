@@ -1,4 +1,4 @@
-## 2. Configuração rápida — pronto para usar em 5 minutos
+# 2. Configuração rápida
 
 São **cinco ajustes**. Depois deles você já está traduzindo; todo o resto deste manual é
 refinamento, e você lê quando (e se) precisar.
@@ -18,11 +18,11 @@ refinamento, e você lê quando (e se) precisar.
 
 > **O programa nem abriu, com erro *"VCRUNTIME140.dll não foi encontrado"*?** Falta o
 > **Microsoft Visual C++ Redistributable (x64)**, um componente gratuito da Microsoft que a
-> maioria dos PCs já tem (vem junto com muitos jogos), mas costuma faltar em Windows
-> recém-formatado. Instale por este link oficial e abra o programa de novo:
+> maioria dos PCs já tem (vem junto com muitos jogos). Instale por este link oficial e abra o
+> programa de novo:
 > <https://aka.ms/vs/17/release/vc_redist.x64.exe>
 
-### 2.1 Primeiro olhar: como a janela é organizada
+## 2.1 Primeiro olhar: como a janela é organizada
 
 <p align="center"><img src="media/geral-config.png" alt="Aba Geral › Config" width="820"></p>
 
@@ -44,7 +44,7 @@ O menu da esquerda agrupa as opções por assunto. Nesta configuração rápida 
 > textos que você está vendo. Não tem nada a ver com o idioma que vai ser traduzido; esse é o
 > passo 2.3.
 
-### 2.2 Escolha o monitor
+## 2.2 Escolha o monitor
 
 Ainda em **Geral › Config**, no card **Monitor**, escolha em **Tela ativa** onde o programa vai
 trabalhar. Com um monitor só, deixe em *Automatico* e siga em frente.
@@ -56,7 +56,7 @@ tela passam a valer para a outra tela. A área que você já tinha selecionado �
 O **Backend de captura** logo acima pode ficar em *Auto (recomendado)*: ele usa o método certo
 para a sua versão do Windows sozinho e troca na hora, sem reiniciar.
 
-### 2.3 Escolha os idiomas
+## 2.3 Escolha os idiomas
 
 Abra **Geral › Idioma**.
 
@@ -76,7 +76,7 @@ Abra **Geral › Idioma**.
 > não se aplica. O **Idioma destino** continua valendo normalmente. O motor de OCR se troca em
 > *Geral › OCR*, mas para começar deixe no padrão.
 
-### 2.4 Escolha o tradutor
+## 2.4 Escolha o tradutor
 
 Abra **Traducao › Tradutores**.
 
@@ -106,7 +106,7 @@ entrar no jogo.
 > Só os motores de IA (OpenAI, Claude, Gemini) suportam o **Modo Vision** — o Google Translate e
 > o DeepL não. Veja a [seção 7](/Manual/modo-vision-quando-o-ocr-erra.md).
 
-### 2.5 Marque a área do texto
+## 2.5 Marque a área do texto
 
 Com o jogo aberto e em foco, aperte **`Numpad7`**. A tela escurece e você arrasta o mouse para
 desenhar um retângulo sobre a região onde o texto aparece — normalmente a caixa de diálogo.
@@ -118,7 +118,7 @@ ou se você trocar a resolução.
 > Não marcou nenhuma área? O programa captura a **tela inteira** — funciona, mas fica mais lento
 > e erra mais. Vale marcar.
 
-### 2.6 Traduza
+## 2.6 Traduza
 
 Com o texto na tela, aperte um dos dois atalhos de tradução — a diferença é só **como as linhas
 são agrupadas** antes de traduzir:
@@ -137,7 +137,7 @@ tempo. Para tirá-la na hora, aperte **`NumpadDecimal`** (a vírgula do teclado 
 > primeiro plano eles ficam desativados de propósito — assim você digita nos campos sem
 > disparar comandos sem querer. Clique de volta no jogo antes de testar.
 
-### Deu certo? E se não deu
+## Deu certo? E se não deu
 
 Se a tradução apareceu sobre o jogo, está tudo pronto — siga para a
 [seção 3](/Manual/uso-basico-no-dia-a-dia.md).

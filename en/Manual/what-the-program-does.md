@@ -1,4 +1,4 @@
-## 1. What the program does
+# 1. What the program does
 
 Ranmza GT takes a screenshot of an area on your screen, recognizes the text in it, translates it, and displays the translation **on top of the game**, in the same position as the original text — like a floating subtitle.
 

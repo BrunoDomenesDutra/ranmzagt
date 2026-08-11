@@ -1,4 +1,4 @@
-## 4. Atalhos de teclado
+# 4. Atalhos de teclado
 
 | Atalho | Padrão | O que faz |
 |---|---|---|

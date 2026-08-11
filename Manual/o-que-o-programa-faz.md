@@ -1,4 +1,4 @@
-## 1. O que o programa faz
+# 1. O que o programa faz
 
 O Ranmza GT tira um "print" de uma área da tela, reconhece o texto que está nela, traduz e
 mostra a tradução **por cima do jogo**, na mesma posição do texto original — como se fosse uma

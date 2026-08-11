@@ -1,4 +1,4 @@
-## 3. Uso básico no dia a dia
+# 3. Uso básico no dia a dia
 
 > **Importante**: os atalhos de teclado só funcionam com a **janela do jogo em foco**. Se a
 > janela de configuração do Ranmza GT estiver aberta e selecionada (em primeiro plano), os
@@ -13,7 +13,7 @@
 5. Se o texto do jogo mudar antes da tradução sumir, é só apertar **Traduzir** de novo — a
    tradução antiga é limpa automaticamente antes da nova captura.
 
-### Não confia nos atalhos do teclado?
+## Não confia nos atalhos do teclado?
 
 Ative a **barra flutuante** na aba **Geral**. É uma janelinha compacta que fica **sempre por
 cima de qualquer janela** — inclusive jogos em tela cheia (sem borda) — com os 7 comandos
@@ -29,7 +29,7 @@ Os três trunfos dela:
   Numpad (ou o NumLock atrapalha). Como a barra dispara as ações por clique do mouse, ela
   contorna isso completamente: é o plano B garantido para quando os atalhos não respondem.
 
-### Conferindo se as áreas estão certas
+## Conferindo se as áreas estão certas
 
 Aperte **Mostrar/ocultar áreas** (padrão `Numpad2`) para desenhar retângulos coloridos
 mostrando onde o programa vai capturar (e, se o Modo Legenda estiver configurado, onde a
