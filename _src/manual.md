@@ -1,6 +1,6 @@
 # Manual do Usuário — Ranmza GT
 
-Guia prático de uso do **Ranmza GT**, o tradutor de jogos, visual novels, mangás e qualquer
+Guia prático de uso do **Ranmza GT**, o tradutor de jogos, visual novels, vídeos e qualquer
 conteúdo em tela. Este manual explica **como usar** cada parte do programa, sem entrar em
 detalhes técnicos.
 
@@ -30,7 +30,7 @@ O Ranmza GT tira um "print" de uma área da tela, reconhece o texto que está ne
 mostra a tradução **por cima do jogo**, na mesma posição do texto original — como se fosse uma
 legenda flutuante.
 
-Funciona com qualquer jogo, visual novel, mangá digital, vídeo ou programa que mostre texto na
+Funciona com qualquer jogo, visual novel, vídeo ou programa que mostre texto na
 tela.
 
 > **⚠️ Requisito essencial: o jogo precisa estar em modo Janela ou Janela sem borda.** O Ranmza

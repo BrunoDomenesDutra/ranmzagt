@@ -4,7 +4,7 @@ O Ranmza GT tira um "print" de uma área da tela, reconhece o texto que está ne
 mostra a tradução **por cima do jogo**, na mesma posição do texto original — como se fosse uma
 legenda flutuante.
 
-Funciona com qualquer jogo, visual novel, mangá digital, vídeo ou programa que mostre texto na
+Funciona com qualquer jogo, visual novel, vídeo ou programa que mostre texto na
 tela.
 
 > **⚠️ Requisito essencial: o jogo precisa estar em modo Janela ou Janela sem borda.** O Ranmza

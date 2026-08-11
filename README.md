@@ -16,7 +16,7 @@
 
 ---
 
-O **Ranmza GT** captura uma área da tela, reconhece o texto com OCR, traduz e desenha a tradução **sobreposta ao jogo**, na mesma posição do texto original — como uma legenda flutuante. Funciona com qualquer jogo, visual novel, mangá digital, vídeo ou programa que mostre texto na tela.
+O **Ranmza GT** captura uma área da tela, reconhece o texto com OCR, traduz e desenha a tradução **sobreposta ao jogo**, na mesma posição do texto original — como uma legenda flutuante. Funciona com qualquer jogo, visual novel, vídeo ou programa que mostre texto na tela.
 
 ### Como funciona
 
@@ -44,7 +44,7 @@ O Ranmza GT é gratuito. Se ele te ajudou, considere apoiar o desenvolvimento:
 
 ## English
 
-**Ranmza GT** captures an area of the screen, recognizes the text with OCR, translates it and draws the translation **overlaid on the game**, in the same position as the original text — like a floating subtitle. Works with any game, visual novel, digital manga, video or program that shows text on screen.
+**Ranmza GT** captures an area of the screen, recognizes the text with OCR, translates it and draws the translation **overlaid on the game**, in the same position as the original text — like a floating subtitle. Works with any game, visual novel, video or program that shows text on screen.
 
 ### How it works
 
