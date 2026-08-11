@@ -4,9 +4,9 @@
 
 | Step | What to do | Where |
 |---|---|---|
-| 1 | Pick your monitor | **Geral › Config** tab |
-| 2 | Pick your languages | **Geral › Idioma** tab |
-| 3 | Pick your translator | **Traducao › Tradutores** tab |
+| 1 | Pick your monitor | **General › Config** tab |
+| 2 | Pick your languages | **General › Language** tab |
+| 3 | Pick your translator | **Translation › Translators** tab |
 | 4 | Mark the text area | `Numpad7` hotkey, with the game open |
 | 5 | Translate | `Numpad9` (line) or `Numpad8` (paragraph) hotkey |
 
@@ -16,60 +16,60 @@
 
 ## 2.1 First look: how the window is organized
 
-<p align="center"><img src="media/geral-config.png" alt="Geral › Config tab" width="820"></p>
+<p align="center"><img src="media/geral-config.png" alt="General › Config tab" width="820"></p>
 
-The left-hand menu groups options by subject. For this quick setup you only touch **Geral** and **Traducao** — the rest is there for when you want to fine-tune something.
+The left-hand menu groups options by subject. For this quick setup you only touch **General** and **Translation** — the rest is there for when you want to fine-tune something.
 
 | Menu | What's inside |
 |---|---|
-| **Geral** | Config (monitor, theme, floating bar), Idioma, OCR and Atalhos |
-| **Overlay** | How the translation looks on screen: Captura, Legenda and Web |
-| **Traducao** | Tradutores (engine and API keys) and I.A (prompts and parameters) |
-| **Ferramentas** | Inpaint (erase the original text) and Lab (test preprocessing) |
+| **General** | Config (monitor, theme, floating toolbar), Language, OCR and Shortcuts |
+| **Overlay** | How the translation looks on screen: Capture, Subtitles and Web |
+| **Translation** | Translators (engine and API keys) and AI (prompts and parameters) |
+| **Tools** | Inpaint (erase the original text) and Lab (test preprocessing) |
 | **Debug** | Performance monitor, diagnostic images and Logs |
-| **Historico** | Translations from the current session |
+| **History** | Translations from the current session |
 | **Experimental** | Features under development, such as Real-time Mode |
-| **Sobre** | Program version and links |
+| **About** | Program version and links |
 
-> **Interface language** (in *Geral › Config*) only changes the language **of the program** — the menus and labels you're looking at. It has nothing to do with the language being translated; that's step 2.3.
+> **Interface language** (in *General › Config*) only changes the language **of the program** — the menus and labels you're looking at. It has nothing to do with the language being translated; that's step 2.3.
 
 ## 2.2 Pick your monitor
 
-Still in **Geral › Config**, in the **Monitor** card, choose in **Tela ativa** which screen the program should work on. With a single monitor, leave it on *Automatico* and move on.
+Still in **General › Config**, in the **Monitor** card, choose in **Active display** which screen the program should work on. With a single monitor, leave it on *Automatic* and move on.
 
-Switching monitors **requires restarting the program** — a notice with a **Reiniciar agora** button appears at the bottom of the tab. Only after the restart do capture, the area selector and the on-screen translation move to the other screen. Any area you had already selected is cleared by the switch.
+Switching monitors **requires restarting the program** — a notice with a **Restart now** button appears at the bottom of the tab. Only after the restart do capture, the area selector and the on-screen translation move to the other screen. Any area you had already selected is cleared by the switch.
 
-The **Backend de captura** just above can stay on *Auto (recomendado)*: it picks the right method for your Windows version by itself, and switches on the fly with no restart.
+The **Capture backend** just above can stay on *Auto (recommended)*: it picks the right method for your Windows version by itself, and switches on the fly with no restart.
 
 ## 2.3 Pick your languages
 
-Open **Geral › Idioma**.
+Open **General › Language**.
 
-<p align="center"><img src="media/geral-idioma.png" alt="Geral › Idioma tab" width="820"></p>
+<p align="center"><img src="media/geral-idioma.png" alt="General › Language tab" width="820"></p>
 
-- **Idioma do texto** — the language written in the game. Type the language code (`en` for English, `ja` for Japanese, `ko` for Korean, `zh` for Chinese…).
-- **Idioma destino** — the language you want to read in. `en` for English.
+- **Text language** — the language written in the game. Type the language code (`en` for English, `ja` for Japanese, `ko` for Korean, `zh` for Chinese…).
+- **Target language** — the language you want to read in. `en` for English.
 
 > **Yellow warning about a language pack?** Windows OCR only recognizes languages whose pack is installed in Windows. Install it under *Settings → Time & Language → Language & region*. Without the pack, the program can't read text in that language.
 
-> **Using OneOCR?** Then there's no source language to pick: it's a single multilingual model (Latin, CJK, Cyrillic…) that detects the language on its own, and the **Idioma do texto** field doesn't even show while it's selected — nor does the Windows pack warning, which doesn't apply. **Idioma destino** works normally. The OCR engine is switched in *Geral › OCR*, but leave it on the default to get started.
+> **Using OneOCR?** Then there's no source language to pick: it's a single multilingual model (Latin, CJK, Cyrillic…) that detects the language on its own, and the **Text language** field doesn't even show while it's selected — nor does the Windows pack warning, which doesn't apply. **Target language** works normally. The OCR engine is switched in *General › OCR*, but leave it on the default to get started.
 
 ## 2.4 Pick your translator
 
-Open **Traducao › Tradutores**.
+Open **Translation › Translators**.
 
-<p align="center"><img src="media/tradutores-google.png" alt="Traducao › Tradutores tab with Google Translate" width="820"></p>
+<p align="center"><img src="media/tradutores-google.png" alt="Translation › Translators tab with Google Translate" width="820"></p>
 
 The default is **Google Translate — free, no key**: nothing to configure, it's ready to use. Do your first test with it.
 
-When you want better quality, switch in **Provedor ativo**:
+When you want better quality, switch in **Active provider**:
 
 - **DeepL** — a dedicated translator, very natural, with a formality option. Requires an API key, but has a **free plan** (those keys end in `:fx`, and the program figures out which server to use by itself).
-- **OpenAI**, **Anthropic (Claude)** or **Gemini** — AI engines. They need an API key with credits, and in return deliver far more natural and consistent translations, especially in long dialogue. Pick the model under *Autenticação* and paste the key under *Chaves de API*.
+- **OpenAI**, **Anthropic (Claude)** or **Gemini** — AI engines. They need an API key with credits, and in return deliver far more natural and consistent translations, especially in long dialogue. Pick the model under *Authentication* and paste the key under *API Keys*.
 
-Each engine stores its own credentials, so switching away and back doesn't erase anything. Use the **Testar conexao** button to confirm the key is valid before jumping into the game.
+Each engine stores its own credentials, so switching away and back doesn't erase anything. Use the **Test connection** button to confirm the key is valid before jumping into the game.
 
-> **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Adicionar chave*. If the key in use runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Very handy in long Caption Mode sessions.
+> **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Very handy in long Caption Mode sessions.
 
 > Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate and DeepL don't. See [section 7](/en/Manual/vision-mode-when-ocr-fails.md).
 
@@ -98,7 +98,7 @@ The translation appears over the game, in the position of the original text, and
 
 ## 2.7 Plan B: the floating bar
 
-Some games swallow the numpad keys, and NumLock sometimes gets in the way. For those cases, turn on **Mostrar barra flutuante** in *Geral › Config*: a small window with the same commands as buttons, fired with the mouse.
+Some games swallow the numpad keys, and NumLock sometimes gets in the way. For those cases, turn on **Show floating toolbar** in *General › Config*: a small window with the same commands as buttons, fired with the mouse.
 
 <p align="center"><img src="media/barra-flutuante.png" alt="Ranmza GT floating bar" width="560"></p>
 
@@ -120,9 +120,9 @@ The buttons, left to right (hover over one to see its name):
 
 ## 2.8 Changing the hotkeys
 
-If the default keys don't suit you — a keyboard with no numpad, a clash with the game's controls — change them in **Geral › Atalhos**.
+If the default keys don't suit you — a keyboard with no numpad, a clash with the game's controls — change them in **General › Shortcuts**.
 
-<p align="center"><img src="media/geral-atalhos.png" alt="Geral › Atalhos tab" width="820"></p>
+<p align="center"><img src="media/geral-atalhos.png" alt="General › Shortcuts tab" width="820"></p>
 
 Each action has a main key, picked from the list on the right, plus three modifier buttons (Ctrl, Alt and Shift) you toggle if you want a combination.
 
@@ -135,7 +135,7 @@ The **Real-time Mode** keys aren't here: being experimental, they live in the **
 If the translation showed up over the game, you're all set — move on to [section 3](/en/Manual/basic-day-to-day-usage.md).
 
 - **Nothing happened when you pressed the hotkey** → the settings window was focused, or the game is swallowing the numpad keys. Use the **floating bar** (step 2.7) or change the key (step 2.8).
-- **The translation shows in the Historico tab, but not over the game** → the game is in *Exclusive Fullscreen*. Switch it to *Borderless Fullscreen*.
+- **The translation shows in the History tab, but not over the game** → the game is in *Exclusive Fullscreen*. Switch it to *Borderless Fullscreen*.
 - **The translation came out wrong or scrambled** → the OCR misread it. Start by switching the grouping mode (`Numpad9` ↔ `Numpad8`) and see [section 5](/en/Manual/configuring-translation.md).
 
 Other problems are covered in [section 12](/en/Manual/common-problems-and-solutions.md).
