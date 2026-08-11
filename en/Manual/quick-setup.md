@@ -96,11 +96,45 @@ The translation appears over the game, in the position of the original text, and
 
 > **Hotkeys only work with the game focused.** With the Ranmza GT settings window in the foreground they're disabled on purpose — that way you can type into fields without firing off commands. Click back into the game before testing.
 
+## 2.7 Plan B: the floating bar
+
+Some games swallow the numpad keys, and NumLock sometimes gets in the way. For those cases, turn on **Mostrar barra flutuante** in *Geral › Config*: a small window with the same commands as buttons, fired with the mouse.
+
+<p align="center"><img src="media/barra-flutuante.png" alt="Ranmza GT floating bar" width="560"></p>
+
+It stays **on top of everything** — including a game in borderless fullscreen — and you drag it by the dotted handle on the left to any corner of any monitor. The `NumpadSubtract` hotkey (the numpad's minus) shows and hides the bar.
+
+The buttons, left to right (hover over one to see its name):
+
+| Icon | What it does |
+|---|---|
+| Brackets (cyan) | Select capture area |
+| Three lines (purple) | Translate (Paragraph) |
+| Dash (purple) | Translate (Line) |
+| Three lines (pink) | Translate with AI Vision (Paragraph) |
+| Dash (pink) | Translate with AI Vision (Line) |
+| X (red) | Clear overlay |
+| Bubble (green) | Caption Mode — on/off |
+| Rectangle (green) | Select subtitle area |
+| Four dots (orange) | Show/hide areas |
+
+## 2.8 Changing the hotkeys
+
+If the default keys don't suit you — a keyboard with no numpad, a clash with the game's controls — change them in **Geral › Atalhos**.
+
+<p align="center"><img src="media/geral-atalhos.png" alt="Geral › Atalhos tab" width="820"></p>
+
+Each action has a main key, picked from the list on the right, plus three modifier buttons (Ctrl, Alt and Shift) you toggle if you want a combination.
+
+> **A letter or number as the main key requires a modifier** (Ctrl, Alt or Shift) — otherwise you'd fire the program every time you typed in the game. Numpad keys, F1–F12 and the navigation keys work on their own.
+
+The **Real-time Mode** keys aren't here: being experimental, they live in the **Experimental** tab, and come with no key assigned. See [section 9](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md).
+
 ## Did it work? And if it didn't
 
 If the translation showed up over the game, you're all set — move on to [section 3](/en/Manual/basic-day-to-day-usage.md).
 
-- **Nothing happened when you pressed the hotkey** → the settings window was focused, or the game is swallowing the numpad keys. Enable the **floating bar** in *Geral › Config* and use the buttons with your mouse (see [section 3](/en/Manual/basic-day-to-day-usage.md)).
+- **Nothing happened when you pressed the hotkey** → the settings window was focused, or the game is swallowing the numpad keys. Use the **floating bar** (step 2.7) or change the key (step 2.8).
 - **The translation shows in the Historico tab, but not over the game** → the game is in *Exclusive Fullscreen*. Switch it to *Borderless Fullscreen*.
 - **The translation came out wrong or scrambled** → the OCR misread it. Start by switching the grouping mode (`Numpad9` ↔ `Numpad8`) and see [section 5](/en/Manual/configuring-translation.md).
 

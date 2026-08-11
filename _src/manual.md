@@ -190,14 +190,58 @@ tempo. Para tirá-la na hora, aperte **`NumpadDecimal`** (a vírgula do teclado 
 > primeiro plano eles ficam desativados de propósito — assim você digita nos campos sem
 > disparar comandos sem querer. Clique de volta no jogo antes de testar.
 
+### 2.7 Plano B: a barra flutuante
+
+Alguns jogos "engolem" as teclas do Numpad, e às vezes o NumLock atrapalha. Para esses casos,
+ative **Mostrar barra flutuante** em *Geral › Config*: uma janelinha com os mesmos comandos em
+botões, disparados por clique do mouse.
+
+<p align="center"><img src="media/barra-flutuante.png" alt="Barra flutuante do Ranmza GT" width="560"></p>
+
+Ela fica **sempre por cima de tudo** — inclusive de jogo em janela sem borda — e você a arrasta
+pelo canhoto de pontinhos da esquerda para qualquer canto de qualquer monitor. O atalho
+`NumpadSubtract` (o menos do teclado numérico) mostra e esconde a barra.
+
+Os botões, da esquerda para a direita (passe o mouse sobre um para ver o nome):
+
+| Ícone | O que faz |
+|---|---|
+| Colchetes (ciano) | Selecionar área de captura |
+| Três linhas (roxo) | Traduzir (Parágrafo) |
+| Traço (roxo) | Traduzir (Linha) |
+| Três linhas (rosa) | Traduzir com I.A Vision (Parágrafo) |
+| Traço (rosa) | Traduzir com I.A Vision (Linha) |
+| X (vermelho) | Limpar overlay |
+| Balão (verde) | Modo Legenda — ligar/desligar |
+| Retângulo (verde) | Selecionar área da legenda |
+| Quatro pontos (laranja) | Mostrar/ocultar áreas |
+
+### 2.8 Trocando os atalhos
+
+Se as teclas padrão não te servem — teclado sem numérico, conflito com os controles do jogo —
+troque em **Geral › Atalhos**.
+
+<p align="center"><img src="media/geral-atalhos.png" alt="Aba Geral › Atalhos" width="820"></p>
+
+Cada ação tem uma tecla principal, escolhida na lista à direita, e três botões de modificador
+(Ctrl, Alt e Shift) que você liga se quiser combinar.
+
+> **Letra ou número como tecla principal exige um modificador** (Ctrl, Alt ou Shift), senão você
+> dispararia o programa toda vez que digitasse no jogo. Teclas do Numpad, F1–F12 e as de
+> navegação funcionam sozinhas.
+
+As teclas do **Modo Tempo Real** não ficam aqui: por ser experimental, elas moram na aba
+**Experimental**, e vêm sem tecla definida. Veja a
+[seção 9](/Manual/modo-tempo-real-traducao-continua-no-lugar-experimental.md).
+
 ### Deu certo? E se não deu
 
 Se a tradução apareceu sobre o jogo, está tudo pronto — siga para a
 [seção 3](/Manual/uso-basico-no-dia-a-dia.md).
 
 - **Nada aconteceu ao apertar o atalho** → a janela de configuração estava em foco, ou o jogo
-  está "engolindo" as teclas do Numpad. Ative a **barra flutuante** em *Geral › Config* e use os
-  botões com o mouse (veja a [seção 3](/Manual/uso-basico-no-dia-a-dia.md)).
+  está "engolindo" as teclas do Numpad. Use a **barra flutuante** (passo 2.7) ou troque a tecla
+  (passo 2.8).
 - **A tradução aparece na aba Historico, mas não sobre o jogo** → o jogo está em *Tela cheia
   exclusiva*. Troque para *Janela sem borda*.
 - **Saiu tradução errada ou embaralhada** → o OCR leu mal. Comece trocando o modo de
