@@ -133,6 +133,12 @@ Na dúvida, comece pelo `Numpad8` em jogos de história e pelo `Numpad9` em menu
 A tradução aparece por cima do jogo, na posição do texto original, e some sozinha depois de um
 tempo. Para tirá-la na hora, aperte **`NumpadDecimal`** (a vírgula do teclado numérico).
 
+<p align="center">
+  <video src="media/captura.mp4" width="820" controls preload="metadata"></video>
+</p>
+
+<p align="center"><i>Selecionando a área e traduzindo — nos modos linha e parágrafo.</i></p>
+
 > **Os atalhos só funcionam com o jogo em foco.** Com a janela de configuração do Ranmza GT em
 > primeiro plano eles ficam desativados de propósito — assim você digita nos campos sem
 > disparar comandos sem querer. Clique de volta no jogo antes de testar.

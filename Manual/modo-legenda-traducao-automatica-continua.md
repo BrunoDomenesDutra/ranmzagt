@@ -19,6 +19,12 @@ Por padrão, as traduções aparecem **acima** da área selecionada, em ordem (m
 embaixo), e somem sozinhas se nenhum texto novo aparecer por alguns segundos. Dá para trocar
 isso pela sobreposição no lugar da legenda original — é o tópico a seguir.
 
+<p align="center">
+  <video src="media/legenda.mp4" width="820" controls preload="metadata"></video>
+</p>
+
+<p align="center"><i>Modo Legenda traduzindo sozinho, com as traduções acima da área selecionada.</i></p>
+
 ## Substituindo a legenda original no lugar
 
 Em **Overlay › Legenda**, o primeiro card (*Posição da tradução*) tem a opção **"Substituir a

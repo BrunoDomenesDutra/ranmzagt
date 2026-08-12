@@ -271,6 +271,12 @@ com um modelo de inpainting rodando dentro do programa — a tradução fica par
 jogo. Vale para as **traduções manuais** (Traduzir e Vision); o Modo Legenda não usa. Custa
 ~50–200 ms por tradução e ~200 MB de RAM enquanto ativo.
 
+<p align="center">
+  <video src="media/inpaint.mp4" width="820" controls preload="metadata"></video>
+</p>
+
+<p align="center"><i>O fundo reconstruído no lugar da caixa preta atrás da tradução.</i></p>
+
 - **Ativar fundo reconstruído** — só tem efeito com os arquivos configurados abaixo.
 - **Ajuste fino da máscara**
   - *Dilatação da máscara* (0–12 px; padrão 3) — se depois de apagar o texto ainda sobra um

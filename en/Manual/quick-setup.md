@@ -94,6 +94,12 @@ When in doubt, start with `Numpad8` in story games and `Numpad9` in menus.
 
 The translation appears over the game, in the position of the original text, and disappears on its own after a while. To clear it right away, press **`NumpadDecimal`** (the numpad's decimal point).
 
+<p align="center">
+  <video src="media/captura.mp4" width="820" controls preload="metadata"></video>
+</p>
+
+<p align="center"><i>Selecting the area and translating — in line and paragraph modes.</i></p>
+
 > **Hotkeys only work with the game focused.** With the Ranmza GT settings window in the foreground they're disabled on purpose — that way you can type into fields without firing off commands. Click back into the game before testing.
 
 ## 2.7 Plan B: the floating bar

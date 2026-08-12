@@ -190,6 +190,12 @@ AI-reconstructed background (MI-GAN) — under development.
 
 Instead of a black box behind the translation, it erases the original text from the capture and reconstructs the background with an inpainting model running inside the program — the translation ends up looking native to the game. It applies to **manual translations** (Translate and Vision); Subtitle Mode doesn't use it. It costs ~50–200 ms per translation and ~200 MB of RAM while active.
 
+<p align="center">
+  <video src="media/inpaint.mp4" width="820" controls preload="metadata"></video>
+</p>
+
+<p align="center"><i>The reconstructed background in place of the black box behind the translation.</i></p>
+
 - **Enable reconstructed background** — only takes effect with the files configured below.
 - **Mask fine-tuning**
   - *Mask dilation* (0–12 px; default 3) — if an edge residue remains after erasing the text (the font halo), raise it so MI-GAN reconstructs a bit beyond the letters.

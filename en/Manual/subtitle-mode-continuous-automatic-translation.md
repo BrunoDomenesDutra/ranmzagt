@@ -12,6 +12,12 @@ From then on, the program watches that area, automatically translating whenever 
 
 By default, translations appear **above** the selected area, in order (most recent at bottom), and disappear on their own if no new text appears for a few seconds. You can swap that for drawing over the original subtitle instead — that's the next topic.
 
+<p align="center">
+  <video src="media/legenda.mp4" width="820" controls preload="metadata"></video>
+</p>
+
+<p align="center"><i>Subtitle Mode translating on its own, with the translations above the selected area.</i></p>
+
 ## Replacing the original subtitle in place
 
 In **Overlay › Subtitles**, the first card (*Translation position*) has the **"Replace the original subtitle in place"** option. When on, the translation stops appearing above the area and is drawn **over** it, covering the game's original subtitle — as if the game were subtitled in your language.

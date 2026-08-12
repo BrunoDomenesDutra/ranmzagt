@@ -136,6 +136,12 @@ When in doubt, start with `Numpad8` in story games and `Numpad9` in menus.
 
 The translation appears over the game, in the position of the original text, and disappears on its own after a while. To clear it right away, press **`NumpadDecimal`** (the numpad's decimal point).
 
+<p align="center">
+  <video src="media/captura.mp4" width="820" controls preload="metadata"></video>
+</p>
+
+<p align="center"><i>Selecting the area and translating — in line and paragraph modes.</i></p>
+
 > **Hotkeys only work with the game focused.** With the Ranmza GT settings window in the foreground they're disabled on purpose — that way you can type into fields without firing off commands. Click back into the game before testing.
 
 ### 2.7 Plan B: the floating bar
@@ -335,6 +341,12 @@ For scenes with ongoing dialog (cutscenes, visual novel auto mode, videos with s
 From then on, the program watches that area, automatically translating whenever new text appears and stays "still" for a moment (this avoids translating letters appearing one by one in "typewriter" effects).
 
 By default, translations appear **above** the selected area, in order (most recent at bottom), and disappear on their own if no new text appears for a few seconds. You can swap that for drawing over the original subtitle instead — that's the next topic.
+
+<p align="center">
+  <video src="media/legenda.mp4" width="820" controls preload="metadata"></video>
+</p>
+
+<p align="center"><i>Subtitle Mode translating on its own, with the translations above the selected area.</i></p>
 
 ### Replacing the original subtitle in place
 
@@ -660,6 +672,12 @@ AI-reconstructed background (MI-GAN) — under development.
 <p align="center"><img src="media/ferramentas-inpaint.png" alt="Tools › Inpaint tab" width="820"></p>
 
 Instead of a black box behind the translation, it erases the original text from the capture and reconstructs the background with an inpainting model running inside the program — the translation ends up looking native to the game. It applies to **manual translations** (Translate and Vision); Subtitle Mode doesn't use it. It costs ~50–200 ms per translation and ~200 MB of RAM while active.
+
+<p align="center">
+  <video src="media/inpaint.mp4" width="820" controls preload="metadata"></video>
+</p>
+
+<p align="center"><i>The reconstructed background in place of the black box behind the translation.</i></p>
 
 - **Enable reconstructed background** — only takes effect with the files configured below.
 - **Mask fine-tuning**

@@ -187,6 +187,12 @@ Na dúvida, comece pelo `Numpad8` em jogos de história e pelo `Numpad9` em menu
 A tradução aparece por cima do jogo, na posição do texto original, e some sozinha depois de um
 tempo. Para tirá-la na hora, aperte **`NumpadDecimal`** (a vírgula do teclado numérico).
 
+<p align="center">
+  <video src="media/captura.mp4" width="820" controls preload="metadata"></video>
+</p>
+
+<p align="center"><i>Selecionando a área e traduzindo — nos modos linha e parágrafo.</i></p>
+
 > **Os atalhos só funcionam com o jogo em foco.** Com a janela de configuração do Ranmza GT em
 > primeiro plano eles ficam desativados de propósito — assim você digita nos campos sem
 > disparar comandos sem querer. Clique de volta no jogo antes de testar.
@@ -469,6 +475,12 @@ por uma em efeitos de "máquina de escrever").
 Por padrão, as traduções aparecem **acima** da área selecionada, em ordem (mais recente
 embaixo), e somem sozinhas se nenhum texto novo aparecer por alguns segundos. Dá para trocar
 isso pela sobreposição no lugar da legenda original — é o tópico a seguir.
+
+<p align="center">
+  <video src="media/legenda.mp4" width="820" controls preload="metadata"></video>
+</p>
+
+<p align="center"><i>Modo Legenda traduzindo sozinho, com as traduções acima da área selecionada.</i></p>
 
 ### Substituindo a legenda original no lugar
 
@@ -984,6 +996,12 @@ Em vez da caixa preta atrás da tradução, apaga o texto original da captura e 
 com um modelo de inpainting rodando dentro do programa — a tradução fica parecendo nativa do
 jogo. Vale para as **traduções manuais** (Traduzir e Vision); o Modo Legenda não usa. Custa
 ~50–200 ms por tradução e ~200 MB de RAM enquanto ativo.
+
+<p align="center">
+  <video src="media/inpaint.mp4" width="820" controls preload="metadata"></video>
+</p>
+
+<p align="center"><i>O fundo reconstruído no lugar da caixa preta atrás da tradução.</i></p>
 
 - **Ativar fundo reconstruído** — só tem efeito com os arquivos configurados abaixo.
 - **Ajuste fino da máscara**
