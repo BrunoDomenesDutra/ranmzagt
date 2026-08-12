@@ -19,9 +19,12 @@ Por padrão, as traduções aparecem **acima** da área selecionada, em ordem (m
 embaixo), e somem sozinhas se nenhum texto novo aparecer por alguns segundos. Dá para trocar
 isso pela sobreposição no lugar da legenda original — é o tópico a seguir.
 
-<p align="center">
-  <video src="media/legenda.mp4" width="820" controls preload="metadata"></video>
-</p>
+<div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
+  <iframe src="https://player.vimeo.com/video/1217784520"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+          allow="fullscreen; picture-in-picture" allowfullscreen
+          title="Modo Legenda traduzindo sozinho"></iframe>
+</div>
 
 <p align="center"><i>Modo Legenda traduzindo sozinho, com as traduções acima da área selecionada.</i></p>
 

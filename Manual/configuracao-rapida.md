@@ -133,9 +133,12 @@ Na dúvida, comece pelo `Numpad8` em jogos de história e pelo `Numpad9` em menu
 A tradução aparece por cima do jogo, na posição do texto original, e some sozinha depois de um
 tempo. Para tirá-la na hora, aperte **`NumpadDecimal`** (a vírgula do teclado numérico).
 
-<p align="center">
-  <video src="media/captura.mp4" width="820" controls preload="metadata"></video>
-</p>
+<div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
+  <iframe src="https://player.vimeo.com/video/1217778050"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+          allow="fullscreen; picture-in-picture" allowfullscreen
+          title="Selecionando a área e traduzindo"></iframe>
+</div>
 
 <p align="center"><i>Selecionando a área e traduzindo — nos modos linha e parágrafo.</i></p>
 

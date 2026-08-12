@@ -12,9 +12,12 @@ From then on, the program watches that area, automatically translating whenever 
 
 By default, translations appear **above** the selected area, in order (most recent at bottom), and disappear on their own if no new text appears for a few seconds. You can swap that for drawing over the original subtitle instead — that's the next topic.
 
-<p align="center">
-  <video src="media/legenda.mp4" width="820" controls preload="metadata"></video>
-</p>
+<div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
+  <iframe src="https://player.vimeo.com/video/1217784520"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+          allow="fullscreen; picture-in-picture" allowfullscreen
+          title="Subtitle Mode translating on its own"></iframe>
+</div>
 
 <p align="center"><i>Subtitle Mode translating on its own, with the translations above the selected area.</i></p>
 

@@ -187,9 +187,12 @@ Na dúvida, comece pelo `Numpad8` em jogos de história e pelo `Numpad9` em menu
 A tradução aparece por cima do jogo, na posição do texto original, e some sozinha depois de um
 tempo. Para tirá-la na hora, aperte **`NumpadDecimal`** (a vírgula do teclado numérico).
 
-<p align="center">
-  <video src="media/captura.mp4" width="820" controls preload="metadata"></video>
-</p>
+<div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
+  <iframe src="https://player.vimeo.com/video/1217778050"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+          allow="fullscreen; picture-in-picture" allowfullscreen
+          title="Selecionando a área e traduzindo"></iframe>
+</div>
 
 <p align="center"><i>Selecionando a área e traduzindo — nos modos linha e parágrafo.</i></p>
 
@@ -476,9 +479,12 @@ Por padrão, as traduções aparecem **acima** da área selecionada, em ordem (m
 embaixo), e somem sozinhas se nenhum texto novo aparecer por alguns segundos. Dá para trocar
 isso pela sobreposição no lugar da legenda original — é o tópico a seguir.
 
-<p align="center">
-  <video src="media/legenda.mp4" width="820" controls preload="metadata"></video>
-</p>
+<div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
+  <iframe src="https://player.vimeo.com/video/1217784520"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+          allow="fullscreen; picture-in-picture" allowfullscreen
+          title="Modo Legenda traduzindo sozinho"></iframe>
+</div>
 
 <p align="center"><i>Modo Legenda traduzindo sozinho, com as traduções acima da área selecionada.</i></p>
 
@@ -997,9 +1003,12 @@ com um modelo de inpainting rodando dentro do programa — a tradução fica par
 jogo. Vale para as **traduções manuais** (Traduzir e Vision); o Modo Legenda não usa. Custa
 ~50–200 ms por tradução e ~200 MB de RAM enquanto ativo.
 
-<p align="center">
-  <video src="media/inpaint.mp4" width="820" controls preload="metadata"></video>
-</p>
+<div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
+  <iframe src="https://player.vimeo.com/video/1217778049"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+          allow="fullscreen; picture-in-picture" allowfullscreen
+          title="Fundo reconstruído por IA"></iframe>
+</div>
 
 <p align="center"><i>O fundo reconstruído no lugar da caixa preta atrás da tradução.</i></p>
 

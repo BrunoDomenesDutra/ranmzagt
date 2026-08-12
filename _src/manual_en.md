@@ -136,9 +136,12 @@ When in doubt, start with `Numpad8` in story games and `Numpad9` in menus.
 
 The translation appears over the game, in the position of the original text, and disappears on its own after a while. To clear it right away, press **`NumpadDecimal`** (the numpad's decimal point).
 
-<p align="center">
-  <video src="media/captura.mp4" width="820" controls preload="metadata"></video>
-</p>
+<div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
+  <iframe src="https://player.vimeo.com/video/1217778050"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+          allow="fullscreen; picture-in-picture" allowfullscreen
+          title="Selecting the area and translating"></iframe>
+</div>
 
 <p align="center"><i>Selecting the area and translating — in line and paragraph modes.</i></p>
 
@@ -342,9 +345,12 @@ From then on, the program watches that area, automatically translating whenever 
 
 By default, translations appear **above** the selected area, in order (most recent at bottom), and disappear on their own if no new text appears for a few seconds. You can swap that for drawing over the original subtitle instead — that's the next topic.
 
-<p align="center">
-  <video src="media/legenda.mp4" width="820" controls preload="metadata"></video>
-</p>
+<div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
+  <iframe src="https://player.vimeo.com/video/1217784520"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+          allow="fullscreen; picture-in-picture" allowfullscreen
+          title="Subtitle Mode translating on its own"></iframe>
+</div>
 
 <p align="center"><i>Subtitle Mode translating on its own, with the translations above the selected area.</i></p>
 
@@ -673,9 +679,12 @@ AI-reconstructed background (MI-GAN) — under development.
 
 Instead of a black box behind the translation, it erases the original text from the capture and reconstructs the background with an inpainting model running inside the program — the translation ends up looking native to the game. It applies to **manual translations** (Translate and Vision); Subtitle Mode doesn't use it. It costs ~50–200 ms per translation and ~200 MB of RAM while active.
 
-<p align="center">
-  <video src="media/inpaint.mp4" width="820" controls preload="metadata"></video>
-</p>
+<div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
+  <iframe src="https://player.vimeo.com/video/1217778049"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+          allow="fullscreen; picture-in-picture" allowfullscreen
+          title="AI-reconstructed background"></iframe>
+</div>
 
 <p align="center"><i>The reconstructed background in place of the black box behind the translation.</i></p>
 

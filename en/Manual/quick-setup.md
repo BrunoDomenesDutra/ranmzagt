@@ -94,9 +94,12 @@ When in doubt, start with `Numpad8` in story games and `Numpad9` in menus.
 
 The translation appears over the game, in the position of the original text, and disappears on its own after a while. To clear it right away, press **`NumpadDecimal`** (the numpad's decimal point).
 
-<p align="center">
-  <video src="media/captura.mp4" width="820" controls preload="metadata"></video>
-</p>
+<div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
+  <iframe src="https://player.vimeo.com/video/1217778050"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+          allow="fullscreen; picture-in-picture" allowfullscreen
+          title="Selecting the area and translating"></iframe>
+</div>
 
 <p align="center"><i>Selecting the area and translating — in line and paragraph modes.</i></p>
 
