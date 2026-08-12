@@ -43,8 +43,11 @@ ou use o **Traduzir com I.A Vision** (`Numpad5` parágrafo, `Numpad6` linha) par
 "ver" a imagem e corrigir.
 
 **"A tradução fica cortada ou não cabe na caixa"**
-→ Ative **Auto-fit** em **Overlay › Captura** — o programa vai diminuir a fonte automaticamente até
-caber.
+→ Na tradução manual (`Numpad8`/`Numpad9`), ative **Auto-fit** em **Overlay › Captura** — o programa
+vai diminuir a fonte automaticamente até caber.
+→ No **Modo Legenda** com *Substituir a legenda original no lugar* ligado não há auto-fit: a
+tradução tem que caber na área que você marcou. Diminua o *Tamanho da fonte* em **Overlay ›
+Legenda**, ou refaça a seleção da área um pouco mais alta que a legenda do jogo.
 
 **"As traduções de falas diferentes estão se misturando num bloco só" (ou o contrário)**
 → Primeiro confira se você apertou o atalho certo: `Numpad8` junta as linhas (parágrafo) e

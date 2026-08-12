@@ -410,6 +410,15 @@ Em "Exibição", escolha por quanto tempo a tradução permanece visível depois
 30s, 1 minuto (padrão), 2, 5 ou 10 minutos — ou "Nunca" (a tradução só some quando você apertar
 o atalho de limpar ou traduzir de novo).
 
+No mesmo card fica **"Esconder a tradução de gravações e transmissões"**: ligada, a tradução
+continua na sua tela normalmente, mas não aparece para programas de captura. Útil para gravar o
+jogo sem a tradução por cima. Vale só para a tradução manual; o Modo Legenda tem a opção
+equivalente na aba dele.
+
+> Funciona só com programas rodando **NESTE PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc).
+> Gravando por placa de captura, a tradução aparece assim mesmo — quem esconde a janela é o
+> Windows, e o que sai pelo cabo de vídeo é a tela inteira.
+
 ---
 
 ## 7. Modo Vision — quando o OCR erra
@@ -456,8 +465,33 @@ A partir daí, o programa fica de olho naquela área, traduzindo automaticamente
 texto novo aparecer e ficar "parado" por um instante (isso evita traduzir letras aparecendo uma
 por uma em efeitos de "máquina de escrever").
 
-As traduções aparecem **acima** da área selecionada, em ordem (mais recente embaixo), e somem
-sozinhas se nenhum texto novo aparecer por alguns segundos.
+Por padrão, as traduções aparecem **acima** da área selecionada, em ordem (mais recente
+embaixo), e somem sozinhas se nenhum texto novo aparecer por alguns segundos. Dá para trocar
+isso pela sobreposição no lugar da legenda original — é o tópico a seguir.
+
+### Substituindo a legenda original no lugar
+
+Em **Overlay › Legenda**, o primeiro card (*Posição da tradução*) tem a opção **"Substituir a
+legenda original no lugar"**. Ligada, a tradução deixa de aparecer acima da área e passa a ser
+desenhada **em cima** dela, cobrindo a legenda original do jogo — como se o jogo estivesse
+legendado no seu idioma.
+
+Nesse modo o programa mostra **uma fala por vez**, e o controle *Linhas visíveis* fica travado
+em 1. O motivo é simples: a área que você selecionou tem o tamanho de **uma** legenda do jogo,
+então empilhar duas ou três falas traduzidas ali dentro não caberia — o texto sairia cortado na
+borda. Sua escolha de linhas fica guardada e volta a valer assim que você desligar a opção.
+
+> Se mesmo com uma fala a tradução não couber (o português costuma ser mais longo que o inglês
+> ou o japonês), diminua o *Tamanho da fonte* no card **Texto**, ou refaça a seleção da área um
+> pouco mais alta que a legenda do jogo.
+
+> Nesse modo a legenda fica **escondida das capturas de tela**. Não é um defeito: é justamente
+> isso que impede o OCR de reler a própria tradução no ciclo seguinte e se retroalimentar.
+> Funciona só com programas rodando **NESTE PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc).
+> Gravando por placa de captura, a tradução aparece assim mesmo.
+
+A opção vale só para o Modo Legenda — a tradução manual (`Numpad8`/`Numpad9`) e o Modo Tempo
+Real não são afetados.
 
 ### Deixando a IA "lembrar" das falas anteriores
 
@@ -526,10 +560,11 @@ o recurso é experimental, ele não ocupa uma tecla do seu teclado sem você ped
 6. Aperte a tecla de **ligar/desligar**. A tradução passa a aparecer sobreposta, atualizando
    sozinha conforme o texto muda. Aperte de novo para desligar.
 
-> **Ligue antes o "Esconder overlay da captura de tela"**, o primeiro card da aba Experimental.
-> Sem ele, a tradução que o programa desenha por cima acaba sendo recapturada pelo próprio OCR
-> no ciclo seguinte — o texto se retroalimenta e vira uma bagunça. O próprio card do Tempo Real
-> lembra disso.
+> O overlay do Tempo Real é **sempre** escondido das capturas de tela — não há nada para
+> ligar. Sem isso, a tradução que o programa desenha por cima seria recapturada pelo próprio
+> OCR no ciclo seguinte, se retroalimentando até virar uma bagunça. Funciona só com programas
+> rodando **NESTE PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). Gravando por placa de captura,
+> a tradução aparece assim mesmo.
 
 > Por ser contínuo e desenhar várias áreas ao vivo, o Tempo Real é mais pesado que os outros
 > modos. Se notar travadas, aumente o **intervalo** no card.
@@ -585,9 +620,12 @@ A página também pode ser aberta em qualquer navegador da rede local (celular, 
 etc.) usando o endereço **Captura** (`/captura`) mostrado na aba — essa versão vem com histórico
 e botão de limpar.
 
-> Se a tradução some das suas gravações e transmissões sem você ter mexido aqui, o culpado é o
-> **Esconder overlay da captura de tela** (aba Experimental): ele torna o overlay invisível para
-> qualquer captura de tela, OBS incluso. É justamente nesse caso que o servidor Web resolve.
+> Se a tradução some das suas gravações e transmissões, há três causas possíveis. Duas são
+> automáticas, nos modos que desenham **por cima** do texto original: o Modo Tempo Real (sempre)
+> e o Modo Legenda com *"Substituir a legenda original no lugar"* ligado — nos dois o overlay
+> precisa ficar invisível para capturas, senão o OCR releria a própria tradução. A terceira é
+> uma escolha sua: *"Esconder a tradução de gravações e transmissões"*, no card **Exibição** de
+> Overlay › Captura. É justamente nesses casos que o servidor Web resolve.
 
 ---
 
@@ -653,8 +691,11 @@ ou use o **Traduzir com I.A Vision** (`Numpad5` parágrafo, `Numpad6` linha) par
 "ver" a imagem e corrigir.
 
 **"A tradução fica cortada ou não cabe na caixa"**
-→ Ative **Auto-fit** em **Overlay › Captura** — o programa vai diminuir a fonte automaticamente até
-caber.
+→ Na tradução manual (`Numpad8`/`Numpad9`), ative **Auto-fit** em **Overlay › Captura** — o programa
+vai diminuir a fonte automaticamente até caber.
+→ No **Modo Legenda** com *Substituir a legenda original no lugar* ligado não há auto-fit: a
+tradução tem que caber na área que você marcou. Diminua o *Tamanho da fonte* em **Overlay ›
+Legenda**, ou refaça a seleção da área um pouco mais alta que a legenda do jogo.
 
 **"As traduções de falas diferentes estão se misturando num bloco só" (ou o contrário)**
 → Primeiro confira se você apertou o atalho certo: `Numpad8` junta as linhas (parágrafo) e
@@ -795,8 +836,16 @@ Aparência da tradução manual e pré-processamento da imagem.
 - **Fundo e Contorno** — são alternativos, ligar um desliga o outro.
   - *Mostrar fundo* + *Opacidade do fundo* (10–100%) — caixa escura atrás do texto.
   - *Mostrar contorno* + *Espessura* (2–5 px) — contorno preto ao redor de cada letra.
-- **Exibição → Duração do overlay** — Nunca limpar automaticamente / 15 s / 30 s /
-  **1 minuto (padrão)** / 2 / 5 / 10 minutos.
+
+<p align="center"><img src="media/overlay-captura-exibicao.png" alt="Aba Overlay › Captura — Exibição e pré-processamento" width="820"></p>
+
+- **Exibição**
+  - *Duração do overlay* — Nunca limpar automaticamente / 15 s / 30 s /
+    **1 minuto (padrão)** / 2 / 5 / 10 minutos.
+  - *Esconder a tradução de gravações e transmissões* — a tradução continua visível na sua tela,
+    mas some das capturas. Funciona só com programas rodando neste PC (OBS, Game Bar, NVIDIA
+    ShadowPlay, etc); gravando por placa de captura, ela aparece assim mesmo. Afeta só a
+    tradução manual.
 - **Pré-processamento OCR** — filtros aplicados à imagem antes do reconhecimento:
   - *Ativar pré-processamento* liga o bloco.
   - *Escala de cinza* · *Inverter cores*
@@ -810,13 +859,22 @@ O Modo Legenda tem aparência e pré-processamento **próprios**, independentes 
 
 <p align="center"><img src="media/overlay-legenda.png" alt="Aba Overlay › Legenda" width="820"></p>
 
+- **Posição da tradução** — *Substituir a legenda original no lugar*: desenha a tradução em cima
+  da área capturada, cobrindo a legenda original, em vez de mostrá-la acima da área. Mostra uma
+  fala por vez (ver *Linhas visíveis* abaixo). Nesse modo a legenda some das capturas feitas
+  neste PC — é o que impede o OCR de reler a própria tradução. Ver a seção 8.
 - **Texto** — *Fonte*, *Cor do texto* e *Tamanho da fonte* (10–48 pt). Não tem altura de linha
   nem auto-fit.
 - **Fundo e Contorno** — *Mostrar fundo* + *Opacidade* (10–100%) ou *Mostrar contorno* +
   *Espessura do contorno* (1–5 px).
+
+<p align="center"><img src="media/overlay-legenda-captura.png" alt="Aba Overlay › Legenda — Captura e pré-processamento" width="820"></p>
+
 - **Captura**
   - *Intervalo* — de quanto em quanto tempo a área é relida (25 ms a 5 s).
-  - *Linhas visíveis* — quantas linhas de legenda manter na tela (1 a 8).
+  - *Linhas visíveis* — quantas linhas de legenda manter na tela (1 a 8). Fica **travado em 1**
+    quando *Substituir a legenda original no lugar* está ligado; o valor escolhido é preservado
+    para quando a opção for desligada.
   - *Limpar após silêncio* — apaga a legenda se nenhum texto novo aparecer por X segundos
     (1 a 5 s).
   - *Desligar Modo Legenda após inatividade* — **desliga o modo**, não só esconde, depois desse
@@ -1003,13 +1061,7 @@ entrada para copiar a tradução. Botão **Limpar histórico**.
 
 <p align="center"><img src="media/experimental.png" alt="Aba Experimental" width="820"></p>
 
-São três cards recolhíveis.
-
-**Esconder overlay da captura de tela** — impede que a tradução desenhada por cima seja
-recapturada pelo OCR (realimentação), o que atrapalha principalmente os modos contínuos. No Modo
-Legenda, a tradução passa a substituir a legenda original no lugar. Efeito colateral: o overlay
-também **some de gravações e transmissões** (OBS, Game Bar, compartilhamento de tela) — para
-mostrar na live, use o servidor Web como Browser Source (seção 10).
+São dois cards recolhíveis.
 
 **Modo Tempo Real (sobreposição ao vivo)** — tradução contínua desenhada no lugar do texto
 original, sobre uma área própria.
@@ -1026,7 +1078,8 @@ original, sobre uma área própria.
   piscada quando o fundo é animado.
 - Tem ainda um pré-processamento de imagem exclusivo. Veja a **seção 9**.
 
-> O card recomenda ligar **Esconder overlay da captura** antes de usar o Tempo Real.
+> O overlay do Tempo Real é sempre invisível para capturas de tela (inclusive OBS) — ver a
+> seção 9.
 
 **Esperar texto completo (efeito máquina de escrever)** — só traduz depois que a fala termina de
 aparecer, evitando traduzir frases ainda "sendo digitadas" na tela. Vale para o Modo Legenda e o

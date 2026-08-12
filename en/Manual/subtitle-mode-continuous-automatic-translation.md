@@ -10,7 +10,19 @@ For scenes with ongoing dialog (cutscenes, visual novel auto mode, videos with s
 
 From then on, the program watches that area, automatically translating whenever new text appears and stays "still" for a moment (this avoids translating letters appearing one by one in "typewriter" effects).
 
-Translations appear **above** the selected area, in order (most recent at bottom), and disappear on their own if no new text appears for a few seconds.
+By default, translations appear **above** the selected area, in order (most recent at bottom), and disappear on their own if no new text appears for a few seconds. You can swap that for drawing over the original subtitle instead — that's the next topic.
+
+## Replacing the original subtitle in place
+
+In **Overlay › Subtitles**, the first card (*Translation position*) has the **"Replace the original subtitle in place"** option. When on, the translation stops appearing above the area and is drawn **over** it, covering the game's original subtitle — as if the game were subtitled in your language.
+
+In this mode the program shows **one line at a time**, and the *Visible lines* control is locked at 1. The reason is simple: the area you selected is the size of **one** game subtitle, so stacking two or three translated lines in there wouldn't fit — the text would end up cut off at the edge. Your line choice is kept and comes back as soon as you turn the option off.
+
+> If the translation doesn't fit even with a single line (English or Japanese is often shorter than other languages), lower the *Font size* in the **Text** card, or redo the area selection a bit taller than the game's subtitle.
+
+> In this mode the subtitle is **hidden from screen capture**. It's not a defect: that's exactly what keeps the OCR from re-reading its own translation on the next cycle and feeding back on itself. Only works with programs running **ON THIS PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). If you record with a capture card, the translation still shows up.
+
+The option applies to Subtitle Mode only — manual translation (`Numpad8`/`Numpad9`) and Real-time Mode are not affected.
 
 ## Letting the AI "remember" previous lines
 

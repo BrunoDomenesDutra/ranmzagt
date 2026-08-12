@@ -295,6 +295,10 @@ In **Overlay › Capture**, in the **Text** card:
 
 Under "Display", choose how long the translation stays visible after appearing: 15s, 30s, 1 minute (default), 2, 5, or 10 minutes — or "Never" (translation only disappears when you press clear or translate again).
 
+The same card holds **"Hide the translation from recordings and streams"**: when on, the translation stays on your screen as usual but doesn't show up for capture programs. Handy for recording the game without the translation on top. It only affects manual translation; Subtitle Mode has the equivalent option in its own tab.
+
+> Only works with programs running **ON THIS PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). If you record with a capture card, the translation still shows up — it's Windows that hides the window, and what goes out the video cable is the whole screen.
+
 ---
 
 ## 7. Vision Mode — when OCR fails
@@ -329,7 +333,19 @@ For scenes with ongoing dialog (cutscenes, visual novel auto mode, videos with s
 
 From then on, the program watches that area, automatically translating whenever new text appears and stays "still" for a moment (this avoids translating letters appearing one by one in "typewriter" effects).
 
-Translations appear **above** the selected area, in order (most recent at bottom), and disappear on their own if no new text appears for a few seconds.
+By default, translations appear **above** the selected area, in order (most recent at bottom), and disappear on their own if no new text appears for a few seconds. You can swap that for drawing over the original subtitle instead — that's the next topic.
+
+### Replacing the original subtitle in place
+
+In **Overlay › Subtitles**, the first card (*Translation position*) has the **"Replace the original subtitle in place"** option. When on, the translation stops appearing above the area and is drawn **over** it, covering the game's original subtitle — as if the game were subtitled in your language.
+
+In this mode the program shows **one line at a time**, and the *Visible lines* control is locked at 1. The reason is simple: the area you selected is the size of **one** game subtitle, so stacking two or three translated lines in there wouldn't fit — the text would end up cut off at the edge. Your line choice is kept and comes back as soon as you turn the option off.
+
+> If the translation doesn't fit even with a single line (English or Japanese is often shorter than other languages), lower the *Font size* in the **Text** card, or redo the area selection a bit taller than the game's subtitle.
+
+> In this mode the subtitle is **hidden from screen capture**. It's not a defect: that's exactly what keeps the OCR from re-reading its own translation on the next cycle and feeding back on itself. Only works with programs running **ON THIS PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). If you record with a capture card, the translation still shows up.
+
+The option applies to Subtitle Mode only — manual translation (`Numpad8`/`Numpad9`) and Real-time Mode are not affected.
 
 ### Letting the AI "remember" previous lines
 
@@ -368,7 +384,7 @@ Everything about Real-time Mode lives in the **Experimental** tab, inside the *R
 5. Press your **select area** key and draw the rectangle over the region where text appears.
 6. Press your **toggle** key. Translation starts appearing overlaid, updating automatically as text changes. Press it again to turn it off.
 
-> **Turn on "Hide overlay from screen capture" first**, the top card of the Experimental tab. Without it, the translation the program draws on top ends up recaptured by its own OCR on the next cycle — the text feeds back on itself and turns to mush. The Real-time card reminds you of this.
+> The Real-time overlay is **always** hidden from screen capture — there's nothing to turn on. Without that, the translation the program draws on top would be recaptured by its own OCR on the next cycle, feeding back on itself until it turns to mush. Only works with programs running **ON THIS PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). If you record with a capture card, the translation still shows up.
 
 > Because it's continuous and draws multiple areas live, Real-time Mode is heavier than other modes. If you notice stuttering, increase the **interval** in the card.
 
@@ -402,7 +418,7 @@ You can also customize theme (light/dark/dracula), colors, font size, and whethe
 
 The page can also be opened in any browser on the local network (phone, second monitor, etc.) using the **Capture** address (`/captura`) shown in the tab — that version comes with history and a clear button.
 
-> If the translation disappears from your recordings and streams without you touching any of this, the culprit is **Hide overlay from screen capture** (Experimental tab): it makes the overlay invisible to any screen capture, OBS included. That is exactly the case the Web server solves.
+> If the translation disappears from your recordings and streams, there are three possible causes. Two are automatic, in the modes that draw **over** the original text: Real-time Mode (always) and Subtitle Mode with *"Replace the original subtitle in place"* on — in both the overlay has to be invisible to captures, otherwise the OCR would re-read its own translation. The third is your own choice: *"Hide the translation from recordings and streams"*, in the **Display** card of Overlay › Capture. That is exactly the case the Web server solves.
 
 ---
 
@@ -438,7 +454,8 @@ The page can also be opened in any browser on the local network (phone, second m
 → Try enabling preprocessing (**Overlay › Capture**) with upscale and contrast adjustments, or use **Translate with AI Vision** (`Numpad5` paragraph, `Numpad6` line) to let the AI "see" the image and correct it.
 
 **"Translation is cut off or doesn't fit in the box"**
-→ Enable **Auto-fit** in **Overlay › Capture** — the program will automatically shrink the font until it fits.
+→ For manual translation (`Numpad8`/`Numpad9`), enable **Auto-fit** in **Overlay › Capture** — the program will automatically shrink the font until it fits.
+→ In **Subtitle Mode** with *Replace the original subtitle in place* on there is no auto-fit: the translation has to fit the area you marked. Lower the *Font size* in **Overlay › Subtitles**, or redo the area selection a bit taller than the game's subtitle.
 
 **"Translations of different lines are mixing into one block (or the opposite)"**
 → First check you pressed the right hotkey: `Numpad8` merges lines (paragraph) and `Numpad9` keeps them apart (line). If the mode is right and it still gets it wrong, adjust **Grouping sensitivity** in **General › OCR** — it only affects Paragraph Mode.
@@ -539,7 +556,14 @@ Appearance of manual translations, and image preprocessing.
 - **Background and Outline** — mutually exclusive; turning one on turns the other off.
   - *Show background* + *Background opacity* (10–100%) — a dark box behind the text.
   - *Show outline* + *Thickness* (2–5 px) — a black outline around each letter.
-- **Display → Overlay duration** — Never clear automatically / 15 s / 30 s / **1 minute (default)** / 2 / 5 / 10 minutes.
+
+<p align="center"><img src="media/overlay-captura-exibicao.png" alt="Overlay › Capture tab — Display and preprocessing" width="820"></p>
+
+- **Display**
+  - *Overlay duration* — Never clear automatically / 15 s / 30 s / **1 minute (default)** / 2 / 5 / 10 minutes.
+  - *Hide the translation from recordings and streams* — the translation stays visible on your own
+    screen but disappears from captures. Only works with programs running on this PC (OBS, Game Bar,
+    NVIDIA ShadowPlay, etc); with a capture card it still shows up. Affects manual translation only.
 - **OCR Preprocessing** — filters applied to the image before recognition:
   - *Enable preprocessing* turns the block on.
   - *Grayscale* · *Invert colors*
@@ -552,11 +576,20 @@ Subtitle Mode has its **own** appearance and preprocessing, independent of Overl
 
 <p align="center"><img src="media/overlay-legenda.png" alt="Overlay › Subtitles tab" width="820"></p>
 
+- **Translation position** — *Replace the original subtitle in place*: draws the translation over the
+  captured area, covering the original subtitle, instead of showing it above the area. Shows one line
+  at a time (see *Visible lines* below). In this mode the subtitle disappears from captures made on
+  this PC — that's what keeps the OCR from re-reading its own translation. See section 8.
 - **Text** — *Font*, *Text color* and *Font size* (10–48 pt). No line height and no auto-fit.
 - **Background and Outline** — *Show background* + *opacity* (10–100%), or *Show outline* + *Outline thickness* (1–5 px).
+
+<p align="center"><img src="media/overlay-legenda-captura.png" alt="Overlay › Subtitles tab — Capture and preprocessing" width="820"></p>
+
 - **Capture**
   - *Interval* — how often the area is re-read (25 ms to 5 s).
-  - *Visible lines* — how many subtitle lines to keep on screen (1 to 8).
+  - *Visible lines* — how many subtitle lines to keep on screen (1 to 8). **Locked at 1** when
+    *Replace the original subtitle in place* is on; the value you picked is kept for when the option
+    is turned off.
   - *Clear after silence* — wipes the subtitle if no new text shows up for X seconds (1 to 5 s).
   - *Turn off Subtitle Mode after inactivity* — **turns the mode off**, not just hides it, after that long without detecting text in the region: Never / 1 / 2 / 3 / 5 / 10 minutes.
 - **OCR Preprocessing** — the same controls as Overlay › Capture, but independent of it.
@@ -689,9 +722,7 @@ Lists the **current session's** translations — time, service, translation and,
 
 <p align="center"><img src="media/experimental.png" alt="Experimental tab" width="820"></p>
 
-Three collapsible cards.
-
-**Hide overlay from screen capture** — stops the translation drawn on top from being recaptured by OCR (a feedback loop), which mostly hurts the continuous modes. In Subtitle Mode, the translation replaces the original subtitle in place. Side effect: the overlay also **disappears from recordings and streams** (OBS, Game Bar, screen sharing) — to show it on a live stream, use the Web server as a Browser Source (section 10).
+Two collapsible cards.
 
 **Real-time Mode (live overlay)** — continuous translation drawn in place of the original text, over its own area.
 
@@ -703,7 +734,7 @@ Three collapsible cards.
 - *Position stability* (0–60 px) and *Hold on OCR failure* (0–30 ticks) — against shaking and flicker when the background is animated.
 - It also has its own dedicated image preprocessing. See **section 9**.
 
-> The card recommends turning on **Hide overlay from capture** before using Real-time Mode.
+> The Real-time overlay is always hidden from screen capture (OBS included) — see section 9.
 
 **Wait for complete text (typewriter effect)** — only translates once the line has finished appearing, so you don't translate sentences still "being typed" on screen. Applies to Subtitle Mode and Real-time Mode.
 

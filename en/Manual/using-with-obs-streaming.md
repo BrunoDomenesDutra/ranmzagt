@@ -11,6 +11,6 @@ You can also customize theme (light/dark/dracula), colors, font size, and whethe
 
 The page can also be opened in any browser on the local network (phone, second monitor, etc.) using the **Capture** address (`/captura`) shown in the tab — that version comes with history and a clear button.
 
-> If the translation disappears from your recordings and streams without you touching any of this, the culprit is **Hide overlay from screen capture** (Experimental tab): it makes the overlay invisible to any screen capture, OBS included. That is exactly the case the Web server solves.
+> If the translation disappears from your recordings and streams, there are three possible causes. Two are automatic, in the modes that draw **over** the original text: Real-time Mode (always) and Subtitle Mode with *"Replace the original subtitle in place"* on — in both the overlay has to be invisible to captures, otherwise the OCR would re-read its own translation. The third is your own choice: *"Hide the translation from recordings and streams"*, in the **Display** card of Overlay › Capture. That is exactly the case the Web server solves.
 
 ---

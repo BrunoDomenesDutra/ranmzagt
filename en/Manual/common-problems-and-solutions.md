@@ -22,7 +22,8 @@
 → Try enabling preprocessing (**Overlay › Capture**) with upscale and contrast adjustments, or use **Translate with AI Vision** (`Numpad5` paragraph, `Numpad6` line) to let the AI "see" the image and correct it.
 
 **"Translation is cut off or doesn't fit in the box"**
-→ Enable **Auto-fit** in **Overlay › Capture** — the program will automatically shrink the font until it fits.
+→ For manual translation (`Numpad8`/`Numpad9`), enable **Auto-fit** in **Overlay › Capture** — the program will automatically shrink the font until it fits.
+→ In **Subtitle Mode** with *Replace the original subtitle in place* on there is no auto-fit: the translation has to fit the area you marked. Lower the *Font size* in **Overlay › Subtitles**, or redo the area selection a bit taller than the game's subtitle.
 
 **"Translations of different lines are mixing into one block (or the opposite)"**
 → First check you pressed the right hotkey: `Numpad8` merges lines (paragraph) and `Numpad9` keeps them apart (line). If the mode is right and it still gets it wrong, adjust **Grouping sensitivity** in **General › OCR** — it only affects Paragraph Mode.

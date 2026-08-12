@@ -25,4 +25,13 @@ Em "Exibição", escolha por quanto tempo a tradução permanece visível depois
 30s, 1 minuto (padrão), 2, 5 ou 10 minutos — ou "Nunca" (a tradução só some quando você apertar
 o atalho de limpar ou traduzir de novo).
 
+No mesmo card fica **"Esconder a tradução de gravações e transmissões"**: ligada, a tradução
+continua na sua tela normalmente, mas não aparece para programas de captura. Útil para gravar o
+jogo sem a tradução por cima. Vale só para a tradução manual; o Modo Legenda tem a opção
+equivalente na aba dele.
+
+> Funciona só com programas rodando **NESTE PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc).
+> Gravando por placa de captura, a tradução aparece assim mesmo — quem esconde a janela é o
+> Windows, e o que sai pelo cabo de vídeo é a tela inteira.
+
 ---

@@ -19,8 +19,11 @@ A página também pode ser aberta em qualquer navegador da rede local (celular, 
 etc.) usando o endereço **Captura** (`/captura`) mostrado na aba — essa versão vem com histórico
 e botão de limpar.
 
-> Se a tradução some das suas gravações e transmissões sem você ter mexido aqui, o culpado é o
-> **Esconder overlay da captura de tela** (aba Experimental): ele torna o overlay invisível para
-> qualquer captura de tela, OBS incluso. É justamente nesse caso que o servidor Web resolve.
+> Se a tradução some das suas gravações e transmissões, há três causas possíveis. Duas são
+> automáticas, nos modos que desenham **por cima** do texto original: o Modo Tempo Real (sempre)
+> e o Modo Legenda com *"Substituir a legenda original no lugar"* ligado — nos dois o overlay
+> precisa ficar invisível para capturas, senão o OCR releria a própria tradução. A terceira é
+> uma escolha sua: *"Esconder a tradução de gravações e transmissões"*, no card **Exibição** de
+> Overlay › Captura. É justamente nesses casos que o servidor Web resolve.
 
 ---

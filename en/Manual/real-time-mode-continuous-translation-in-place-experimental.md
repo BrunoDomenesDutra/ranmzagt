@@ -17,7 +17,7 @@ Everything about Real-time Mode lives in the **Experimental** tab, inside the *R
 5. Press your **select area** key and draw the rectangle over the region where text appears.
 6. Press your **toggle** key. Translation starts appearing overlaid, updating automatically as text changes. Press it again to turn it off.
 
-> **Turn on "Hide overlay from screen capture" first**, the top card of the Experimental tab. Without it, the translation the program draws on top ends up recaptured by its own OCR on the next cycle — the text feeds back on itself and turns to mush. The Real-time card reminds you of this.
+> The Real-time overlay is **always** hidden from screen capture — there's nothing to turn on. Without that, the translation the program draws on top would be recaptured by its own OCR on the next cycle, feeding back on itself until it turns to mush. Only works with programs running **ON THIS PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). If you record with a capture card, the translation still shows up.
 
 > Because it's continuous and draws multiple areas live, Real-time Mode is heavier than other modes. If you notice stuttering, increase the **interval** in the card.
 

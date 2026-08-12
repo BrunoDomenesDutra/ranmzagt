@@ -15,8 +15,33 @@ A partir daí, o programa fica de olho naquela área, traduzindo automaticamente
 texto novo aparecer e ficar "parado" por um instante (isso evita traduzir letras aparecendo uma
 por uma em efeitos de "máquina de escrever").
 
-As traduções aparecem **acima** da área selecionada, em ordem (mais recente embaixo), e somem
-sozinhas se nenhum texto novo aparecer por alguns segundos.
+Por padrão, as traduções aparecem **acima** da área selecionada, em ordem (mais recente
+embaixo), e somem sozinhas se nenhum texto novo aparecer por alguns segundos. Dá para trocar
+isso pela sobreposição no lugar da legenda original — é o tópico a seguir.
+
+## Substituindo a legenda original no lugar
+
+Em **Overlay › Legenda**, o primeiro card (*Posição da tradução*) tem a opção **"Substituir a
+legenda original no lugar"**. Ligada, a tradução deixa de aparecer acima da área e passa a ser
+desenhada **em cima** dela, cobrindo a legenda original do jogo — como se o jogo estivesse
+legendado no seu idioma.
+
+Nesse modo o programa mostra **uma fala por vez**, e o controle *Linhas visíveis* fica travado
+em 1. O motivo é simples: a área que você selecionou tem o tamanho de **uma** legenda do jogo,
+então empilhar duas ou três falas traduzidas ali dentro não caberia — o texto sairia cortado na
+borda. Sua escolha de linhas fica guardada e volta a valer assim que você desligar a opção.
+
+> Se mesmo com uma fala a tradução não couber (o português costuma ser mais longo que o inglês
+> ou o japonês), diminua o *Tamanho da fonte* no card **Texto**, ou refaça a seleção da área um
+> pouco mais alta que a legenda do jogo.
+
+> Nesse modo a legenda fica **escondida das capturas de tela**. Não é um defeito: é justamente
+> isso que impede o OCR de reler a própria tradução no ciclo seguinte e se retroalimentar.
+> Funciona só com programas rodando **NESTE PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc).
+> Gravando por placa de captura, a tradução aparece assim mesmo.
+
+A opção vale só para o Modo Legenda — a tradução manual (`Numpad8`/`Numpad9`) e o Modo Tempo
+Real não são afetados.
 
 ## Deixando a IA "lembrar" das falas anteriores
 

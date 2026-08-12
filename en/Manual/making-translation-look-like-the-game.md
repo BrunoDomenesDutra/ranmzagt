@@ -15,4 +15,8 @@ In **Overlay › Capture**, in the **Text** card:
 
 Under "Display", choose how long the translation stays visible after appearing: 15s, 30s, 1 minute (default), 2, 5, or 10 minutes — or "Never" (translation only disappears when you press clear or translate again).
 
+The same card holds **"Hide the translation from recordings and streams"**: when on, the translation stays on your screen as usual but doesn't show up for capture programs. Handy for recording the game without the translation on top. It only affects manual translation; Subtitle Mode has the equivalent option in its own tab.
+
+> Only works with programs running **ON THIS PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). If you record with a capture card, the translation still shows up — it's Windows that hides the window, and what goes out the video cable is the whole screen.
+
 ---

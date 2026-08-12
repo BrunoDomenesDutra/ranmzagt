@@ -123,8 +123,16 @@ Aparência da tradução manual e pré-processamento da imagem.
 - **Fundo e Contorno** — são alternativos, ligar um desliga o outro.
   - *Mostrar fundo* + *Opacidade do fundo* (10–100%) — caixa escura atrás do texto.
   - *Mostrar contorno* + *Espessura* (2–5 px) — contorno preto ao redor de cada letra.
-- **Exibição → Duração do overlay** — Nunca limpar automaticamente / 15 s / 30 s /
-  **1 minuto (padrão)** / 2 / 5 / 10 minutos.
+
+<p align="center"><img src="media/overlay-captura-exibicao.png" alt="Aba Overlay › Captura — Exibição e pré-processamento" width="820"></p>
+
+- **Exibição**
+  - *Duração do overlay* — Nunca limpar automaticamente / 15 s / 30 s /
+    **1 minuto (padrão)** / 2 / 5 / 10 minutos.
+  - *Esconder a tradução de gravações e transmissões* — a tradução continua visível na sua tela,
+    mas some das capturas. Funciona só com programas rodando neste PC (OBS, Game Bar, NVIDIA
+    ShadowPlay, etc); gravando por placa de captura, ela aparece assim mesmo. Afeta só a
+    tradução manual.
 - **Pré-processamento OCR** — filtros aplicados à imagem antes do reconhecimento:
   - *Ativar pré-processamento* liga o bloco.
   - *Escala de cinza* · *Inverter cores*
@@ -138,13 +146,22 @@ O Modo Legenda tem aparência e pré-processamento **próprios**, independentes 
 
 <p align="center"><img src="media/overlay-legenda.png" alt="Aba Overlay › Legenda" width="820"></p>
 
+- **Posição da tradução** — *Substituir a legenda original no lugar*: desenha a tradução em cima
+  da área capturada, cobrindo a legenda original, em vez de mostrá-la acima da área. Mostra uma
+  fala por vez (ver *Linhas visíveis* abaixo). Nesse modo a legenda some das capturas feitas
+  neste PC — é o que impede o OCR de reler a própria tradução. Ver a seção 8.
 - **Texto** — *Fonte*, *Cor do texto* e *Tamanho da fonte* (10–48 pt). Não tem altura de linha
   nem auto-fit.
 - **Fundo e Contorno** — *Mostrar fundo* + *Opacidade* (10–100%) ou *Mostrar contorno* +
   *Espessura do contorno* (1–5 px).
+
+<p align="center"><img src="media/overlay-legenda-captura.png" alt="Aba Overlay › Legenda — Captura e pré-processamento" width="820"></p>
+
 - **Captura**
   - *Intervalo* — de quanto em quanto tempo a área é relida (25 ms a 5 s).
-  - *Linhas visíveis* — quantas linhas de legenda manter na tela (1 a 8).
+  - *Linhas visíveis* — quantas linhas de legenda manter na tela (1 a 8). Fica **travado em 1**
+    quando *Substituir a legenda original no lugar* está ligado; o valor escolhido é preservado
+    para quando a opção for desligada.
   - *Limpar após silêncio* — apaga a legenda se nenhum texto novo aparecer por X segundos
     (1 a 5 s).
   - *Desligar Modo Legenda após inatividade* — **desliga o modo**, não só esconde, depois desse
@@ -331,13 +348,7 @@ entrada para copiar a tradução. Botão **Limpar histórico**.
 
 <p align="center"><img src="media/experimental.png" alt="Aba Experimental" width="820"></p>
 
-São três cards recolhíveis.
-
-**Esconder overlay da captura de tela** — impede que a tradução desenhada por cima seja
-recapturada pelo OCR (realimentação), o que atrapalha principalmente os modos contínuos. No Modo
-Legenda, a tradução passa a substituir a legenda original no lugar. Efeito colateral: o overlay
-também **some de gravações e transmissões** (OBS, Game Bar, compartilhamento de tela) — para
-mostrar na live, use o servidor Web como Browser Source (seção 10).
+São dois cards recolhíveis.
 
 **Modo Tempo Real (sobreposição ao vivo)** — tradução contínua desenhada no lugar do texto
 original, sobre uma área própria.
@@ -354,7 +365,8 @@ original, sobre uma área própria.
   piscada quando o fundo é animado.
 - Tem ainda um pré-processamento de imagem exclusivo. Veja a **seção 9**.
 
-> O card recomenda ligar **Esconder overlay da captura** antes de usar o Tempo Real.
+> O overlay do Tempo Real é sempre invisível para capturas de tela (inclusive OBS) — ver a
+> seção 9.
 
 **Esperar texto completo (efeito máquina de escrever)** — só traduz depois que a fala termina de
 aparecer, evitando traduzir frases ainda "sendo digitadas" na tela. Vale para o Modo Legenda e o

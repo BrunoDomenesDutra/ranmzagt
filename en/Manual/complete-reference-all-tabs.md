@@ -86,7 +86,14 @@ Appearance of manual translations, and image preprocessing.
 - **Background and Outline** — mutually exclusive; turning one on turns the other off.
   - *Show background* + *Background opacity* (10–100%) — a dark box behind the text.
   - *Show outline* + *Thickness* (2–5 px) — a black outline around each letter.
-- **Display → Overlay duration** — Never clear automatically / 15 s / 30 s / **1 minute (default)** / 2 / 5 / 10 minutes.
+
+<p align="center"><img src="media/overlay-captura-exibicao.png" alt="Overlay › Capture tab — Display and preprocessing" width="820"></p>
+
+- **Display**
+  - *Overlay duration* — Never clear automatically / 15 s / 30 s / **1 minute (default)** / 2 / 5 / 10 minutes.
+  - *Hide the translation from recordings and streams* — the translation stays visible on your own
+    screen but disappears from captures. Only works with programs running on this PC (OBS, Game Bar,
+    NVIDIA ShadowPlay, etc); with a capture card it still shows up. Affects manual translation only.
 - **OCR Preprocessing** — filters applied to the image before recognition:
   - *Enable preprocessing* turns the block on.
   - *Grayscale* · *Invert colors*
@@ -99,11 +106,20 @@ Subtitle Mode has its **own** appearance and preprocessing, independent of Overl
 
 <p align="center"><img src="media/overlay-legenda.png" alt="Overlay › Subtitles tab" width="820"></p>
 
+- **Translation position** — *Replace the original subtitle in place*: draws the translation over the
+  captured area, covering the original subtitle, instead of showing it above the area. Shows one line
+  at a time (see *Visible lines* below). In this mode the subtitle disappears from captures made on
+  this PC — that's what keeps the OCR from re-reading its own translation. See section 8.
 - **Text** — *Font*, *Text color* and *Font size* (10–48 pt). No line height and no auto-fit.
 - **Background and Outline** — *Show background* + *opacity* (10–100%), or *Show outline* + *Outline thickness* (1–5 px).
+
+<p align="center"><img src="media/overlay-legenda-captura.png" alt="Overlay › Subtitles tab — Capture and preprocessing" width="820"></p>
+
 - **Capture**
   - *Interval* — how often the area is re-read (25 ms to 5 s).
-  - *Visible lines* — how many subtitle lines to keep on screen (1 to 8).
+  - *Visible lines* — how many subtitle lines to keep on screen (1 to 8). **Locked at 1** when
+    *Replace the original subtitle in place* is on; the value you picked is kept for when the option
+    is turned off.
   - *Clear after silence* — wipes the subtitle if no new text shows up for X seconds (1 to 5 s).
   - *Turn off Subtitle Mode after inactivity* — **turns the mode off**, not just hides it, after that long without detecting text in the region: Never / 1 / 2 / 3 / 5 / 10 minutes.
 - **OCR Preprocessing** — the same controls as Overlay › Capture, but independent of it.
@@ -236,9 +252,7 @@ Lists the **current session's** translations — time, service, translation and,
 
 <p align="center"><img src="media/experimental.png" alt="Experimental tab" width="820"></p>
 
-Three collapsible cards.
-
-**Hide overlay from screen capture** — stops the translation drawn on top from being recaptured by OCR (a feedback loop), which mostly hurts the continuous modes. In Subtitle Mode, the translation replaces the original subtitle in place. Side effect: the overlay also **disappears from recordings and streams** (OBS, Game Bar, screen sharing) — to show it on a live stream, use the Web server as a Browser Source (section 10).
+Two collapsible cards.
 
 **Real-time Mode (live overlay)** — continuous translation drawn in place of the original text, over its own area.
 
@@ -250,7 +264,7 @@ Three collapsible cards.
 - *Position stability* (0–60 px) and *Hold on OCR failure* (0–30 ticks) — against shaking and flicker when the background is animated.
 - It also has its own dedicated image preprocessing. See **section 9**.
 
-> The card recommends turning on **Hide overlay from capture** before using Real-time Mode.
+> The Real-time overlay is always hidden from screen capture (OBS included) — see section 9.
 
 **Wait for complete text (typewriter effect)** — only translates once the line has finished appearing, so you don't translate sentences still "being typed" on screen. Applies to Subtitle Mode and Real-time Mode.
 

@@ -31,10 +31,11 @@ o recurso é experimental, ele não ocupa uma tecla do seu teclado sem você ped
 6. Aperte a tecla de **ligar/desligar**. A tradução passa a aparecer sobreposta, atualizando
    sozinha conforme o texto muda. Aperte de novo para desligar.
 
-> **Ligue antes o "Esconder overlay da captura de tela"**, o primeiro card da aba Experimental.
-> Sem ele, a tradução que o programa desenha por cima acaba sendo recapturada pelo próprio OCR
-> no ciclo seguinte — o texto se retroalimenta e vira uma bagunça. O próprio card do Tempo Real
-> lembra disso.
+> O overlay do Tempo Real é **sempre** escondido das capturas de tela — não há nada para
+> ligar. Sem isso, a tradução que o programa desenha por cima seria recapturada pelo próprio
+> OCR no ciclo seguinte, se retroalimentando até virar uma bagunça. Funciona só com programas
+> rodando **NESTE PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). Gravando por placa de captura,
+> a tradução aparece assim mesmo.
 
 > Por ser contínuo e desenhar várias áreas ao vivo, o Tempo Real é mais pesado que os outros
 > modos. Se notar travadas, aumente o **intervalo** no card.
