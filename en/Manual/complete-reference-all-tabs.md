@@ -13,7 +13,9 @@ Where the program runs.
 <p align="center"><img src="media/geral-config.png" alt="General › Config tab" width="820"></p>
 
 - **App language → Interface language** — switches the language of the settings window itself (Portuguese / English). It does not affect the OCR and translation languages. On first run it detects the Windows language (falling back to English if it isn't Portuguese).
-- **Configuration → Reset to default** — restores every option to factory values. It **keeps** the monitor, the selected areas, the API keys and the prompts (System Prompt and Game Info).
+- **Updates → Notify me about new versions** — turns on the notice that shows up when you open the program and a newer version has been published (see section 14). Turn it off here, or from the notice itself, and turn it back on with this toggle.
+- **Updates → Check now** — checks right away whether a new version is out, even with the notice turned off. The answer appears next to the button: *"You are on the latest version"*, the version found (with a **Download** button that opens the page in your browser), or a warning that the check failed.
+- **Configuration → Reset to default** — restores every option to factory values. It **keeps** the monitor, the selected areas, the API keys, the prompts (System Prompt and Game Info) and the update-notice preference.
 - **Capture backend → Backend** — how the program reads screen pixels:
   - *Auto (recommended)* — decides on its own: WGC on Windows 11, DXGI on Windows 10, with no yellow border. Switches instantly, no restart.
   - *WGC (Windows 11)* — Windows Graphics Capture.
@@ -277,3 +279,5 @@ Two collapsible cards.
 ## About
 
 Program information: icon, name and installed **version**, the feature list, the author, and the full **License** — what's allowed (free personal use, distributing unmodified copies, creating content such as videos and streams) and what's prohibited (modifying or reverse-engineering, selling, redistributing modified versions, commercial use without authorization, removing credits), plus the warranty disclaimer.
+
+---

@@ -12,3 +12,4 @@
 - [11. Histórico e desempenho](/Manual/historico-e-desempenho.md)
 - [12. Problemas comuns e soluções](/Manual/problemas-comuns-e-solucoes.md)
 - [13. Referência completa — todas as abas](/Manual/referencia-completa-todas-as-abas.md)
+- [14. Atualizando o programa](/Manual/atualizando-o-programa.md)

@@ -12,3 +12,4 @@
 - [11. History and performance](/en/Manual/history-and-performance.md)
 - [12. Common problems and solutions](/en/Manual/common-problems-and-solutions.md)
 - [13. Complete reference — all tabs](/en/Manual/complete-reference-all-tabs.md)
+- [14. Updating the program](/en/Manual/updating-the-program.md)

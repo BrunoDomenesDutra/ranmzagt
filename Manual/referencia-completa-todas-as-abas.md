@@ -16,9 +16,16 @@ Onde o programa opera.
 - **Idioma do programa → Idioma da interface** — troca o idioma da própria janela de
   configuração (Português / Inglês). Não afeta os idiomas de OCR e tradução. Na primeira
   execução ele detecta o idioma do Windows (cai para Inglês se não for Português).
+- **Atualizações → Avisar sobre novas versões** — liga o aviso que aparece ao abrir o programa
+  quando existe versão mais nova publicada (veja a seção 14). Desligue aqui, ou pelo próprio
+  aviso, e religue por este toggle.
+- **Atualizações → Verificar agora** — consulta na hora se existe versão nova, mesmo com o
+  aviso desligado. A resposta aparece ao lado do botão: *"Você está na versão mais recente"*,
+  a versão encontrada (com um botão **Baixar** que abre a página no navegador) ou um aviso de
+  que não foi possível verificar.
 - **Configuração → Resetar para o padrão** — restaura todas as opções aos valores de fábrica.
-  **Mantém** o monitor, as áreas selecionadas, as chaves de API e os prompts (System Prompt e
-  Informações do Jogo).
+  **Mantém** o monitor, as áreas selecionadas, as chaves de API, os prompts (System Prompt e
+  Informações do Jogo) e a preferência de aviso de atualização.
 - **Backend de captura → Backend** — como o programa lê os pixels da tela:
   - *Auto (recomendado)* — escolhe sozinho: WGC no Windows 11, DXGI no Windows 10, sem a borda
     amarela. A troca vale na hora, sem reiniciar.
@@ -386,3 +393,5 @@ e a **Licença de Uso** completa — o que é permitido (uso pessoal gratuito, d
 modificadas, criar conteúdo como vídeos e streams) e o que é proibido (modificar ou fazer
 engenharia reversa, vender, redistribuir versões modificadas, uso comercial sem autorização,
 remover créditos), além do aviso de garantia.
+
+---
