@@ -370,6 +370,10 @@ deveria ficar junta), ajuste a **Sensibilidade do agrupamento**, em **Geral › 
 
 Esse ajuste só afeta o modo Parágrafo — no modo Linha ele é ignorado.
 
+<p align="center"><img src="media/ocr-sensibilidade.png" alt="Sensibilidade do agrupamento, em Geral › OCR" width="820"></p>
+
+<p align="center"><i>O ajuste fica no fim da aba <b>Geral › OCR</b>, no card <b>Ajuste Fino do Modo Parágrafo</b>.</i></p>
+
 ### Melhorando o reconhecimento de texto difícil
 
 Se o programa não está detectando o texto direito (fontes pequenas, estilizadas, com efeitos),

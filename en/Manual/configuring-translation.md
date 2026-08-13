@@ -15,6 +15,10 @@ If Paragraph Mode is grouping lines that should be separate (or separating a spe
 
 This adjustment only affects Paragraph Mode — in Line Mode it is ignored.
 
+<p align="center"><img src="media/ocr-sensibilidade.png" alt="Grouping sensitivity, in General › OCR" width="820"></p>
+
+<p align="center"><i>The setting sits at the bottom of the <b>General › OCR</b> tab, in the <b>Paragraph Mode Fine-Tuning</b> card.</i></p>
+
 ## Improving difficult text recognition
 
 If the program isn't detecting text correctly (small fonts, stylized, with effects), go to **Overlay › Capture** and enable **Preprocessing**. A few quick tips:
