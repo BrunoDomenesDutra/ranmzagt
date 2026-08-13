@@ -123,6 +123,15 @@ The area is saved. You only need to mark it again if the game moves its text box
 
 > Didn't mark any area? The program captures the **whole screen** — it works, but it's slower and less accurate. Marking is worth it.
 
+<div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
+  <iframe src="https://player.vimeo.com/video/1218016540"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+          allow="fullscreen; picture-in-picture" allowfullscreen
+          title="Marking the text area"></iframe>
+</div>
+
+<p align="center"><i>Marking the text area with `Numpad7`.</i></p>
+
 ### 2.6 Translate
 
 With text on screen, press one of the two translation hotkeys — the only difference is **how lines are grouped** before translating:

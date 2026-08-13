@@ -118,6 +118,15 @@ ou se você trocar a resolução.
 > Não marcou nenhuma área? O programa captura a **tela inteira** — funciona, mas fica mais lento
 > e erra mais. Vale marcar.
 
+<div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
+  <iframe src="https://player.vimeo.com/video/1218016540"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+          allow="fullscreen; picture-in-picture" allowfullscreen
+          title="Marcando a área do texto"></iframe>
+</div>
+
+<p align="center"><i>Marcando a área do texto com o `Numpad7`.</i></p>
+
 ## 2.6 Traduza
 
 Com o texto na tela, aperte um dos dois atalhos de tradução — a diferença é só **como as linhas
