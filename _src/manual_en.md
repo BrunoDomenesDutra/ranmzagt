@@ -290,6 +290,10 @@ If the program isn't detecting text correctly (small fonts, stylized, with effec
 - **Text with low contrast against background**: increase **Contrast**.
 - **Light text on dark background** (or vice versa, if it's giving wrong results): try **Invert colors**.
 
+<p align="center"><img src="media/captura-preprocessamento.png" alt="OCR Preprocessing card, in Overlay › Capture" width="820"></p>
+
+<p align="center"><i>The <b>OCR Preprocessing</b> card, in <b>Overlay › Capture</b>. The extra filters (Threshold, Blur, Dilation, Erosion) only kick in with <b>Advanced</b> turned on.</i></p>
+
 Don't know where to start? Use **Tools › Lab** — you can test all these options on sample images, see the result in real time, and then apply the best-working configuration directly to Capture or Subtitles.
 
 ### Switching OCR engine (advanced)
@@ -314,11 +318,19 @@ In **Overlay › Capture**, in the **Text** card:
 
 > Background and outline are alternatives — enabling one disables the other automatically.
 
+<p align="center"><img src="media/captura-texto-fundo.png" alt="Text and Background & Outline cards, in Overlay › Capture" width="720"></p>
+
+<p align="center"><i>The <b>Text</b> and <b>Background &amp; Outline</b> cards, in <b>Overlay › Capture</b>. The preview under the font shows the result before you try it in the game.</i></p>
+
 ### How long translation stays on screen
 
 Under "Display", choose how long the translation stays visible after appearing: 15s, 30s, 1 minute (default), 2, 5, or 10 minutes — or "Never" (translation only disappears when you press clear or translate again).
 
 The same card holds **"Hide the translation from recordings and streams"**: when on, the translation stays on your screen as usual but doesn't show up for capture programs. Handy for recording the game without the translation on top. It only affects manual translation; Subtitle Mode has the equivalent option in its own tab.
+
+<p align="center"><img src="media/captura-exibicao-duracao.png" alt="Display card, in Overlay › Capture" width="820"></p>
+
+<p align="center"><i>The <b>Display</b> card, in <b>Overlay › Capture</b>.</i></p>
 
 > Only works with programs running **ON THIS PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). If you record with a capture card, the translation still shows up — it's Windows that hides the window, and what goes out the video cable is the whole screen.
 

@@ -385,6 +385,11 @@ vá em **Overlay › Captura** e ative o **Pré-processamento**. Algumas dicas r
 - **Texto claro sobre fundo escuro** (ou vice-versa, se estiver dando errado): tente
   **Inverter cores**.
 
+<p align="center"><img src="media/captura-preprocessamento.png" alt="Card Pré-processamento OCR, em Overlay › Captura" width="820"></p>
+
+<p align="center"><i>O card <b>Pré-processamento OCR</b>, em <b>Overlay › Captura</b>. Os filtros extras
+(Threshold, Blur, Dilatação, Erosão) só entram com o <b>Avançado</b> ligado.</i></p>
+
 Não sabe por onde começar? Use **Ferramentas › Lab** — lá dá para testar todas essas opções em
 imagens de exemplo, ver o resultado em tempo real, e depois aplicar a configuração que funcionou
 melhor direto na Captura ou na Legenda.
@@ -427,6 +432,11 @@ Em **Overlay › Captura**, no card **Texto**:
 
 > Fundo e contorno são opções alternativas — ativar uma desativa a outra automaticamente.
 
+<p align="center"><img src="media/captura-texto-fundo.png" alt="Cards Texto e Fundo e Contorno, em Overlay › Captura" width="720"></p>
+
+<p align="center"><i>Os cards <b>Texto</b> e <b>Fundo e Contorno</b>, em <b>Overlay › Captura</b>.
+A prévia embaixo da fonte mostra o resultado antes de você testar no jogo.</i></p>
+
 ### Quanto tempo a tradução fica na tela
 
 Em "Exibição", escolha por quanto tempo a tradução permanece visível depois de aparecer: 15s,
@@ -437,6 +447,10 @@ No mesmo card fica **"Esconder a tradução de gravações e transmissões"**: l
 continua na sua tela normalmente, mas não aparece para programas de captura. Útil para gravar o
 jogo sem a tradução por cima. Vale só para a tradução manual; o Modo Legenda tem a opção
 equivalente na aba dele.
+
+<p align="center"><img src="media/captura-exibicao-duracao.png" alt="Card Exibição, em Overlay › Captura" width="820"></p>
+
+<p align="center"><i>O card <b>Exibição</b>, em <b>Overlay › Captura</b>.</i></p>
 
 > Funciona só com programas rodando **NESTE PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc).
 > Gravando por placa de captura, a tradução aparece assim mesmo — quem esconde a janela é o

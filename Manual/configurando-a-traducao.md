@@ -36,6 +36,11 @@ vá em **Overlay › Captura** e ative o **Pré-processamento**. Algumas dicas r
 - **Texto claro sobre fundo escuro** (ou vice-versa, se estiver dando errado): tente
   **Inverter cores**.
 
+<p align="center"><img src="media/captura-preprocessamento.png" alt="Card Pré-processamento OCR, em Overlay › Captura" width="820"></p>
+
+<p align="center"><i>O card <b>Pré-processamento OCR</b>, em <b>Overlay › Captura</b>. Os filtros extras
+(Threshold, Blur, Dilatação, Erosão) só entram com o <b>Avançado</b> ligado.</i></p>
+
 Não sabe por onde começar? Use **Ferramentas › Lab** — lá dá para testar todas essas opções em
 imagens de exemplo, ver o resultado em tempo real, e depois aplicar a configuração que funcionou
 melhor direto na Captura ou na Legenda.

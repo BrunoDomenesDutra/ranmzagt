@@ -28,6 +28,10 @@ If the program isn't detecting text correctly (small fonts, stylized, with effec
 - **Text with low contrast against background**: increase **Contrast**.
 - **Light text on dark background** (or vice versa, if it's giving wrong results): try **Invert colors**.
 
+<p align="center"><img src="media/captura-preprocessamento.png" alt="OCR Preprocessing card, in Overlay › Capture" width="820"></p>
+
+<p align="center"><i>The <b>OCR Preprocessing</b> card, in <b>Overlay › Capture</b>. The extra filters (Threshold, Blur, Dilation, Erosion) only kick in with <b>Advanced</b> turned on.</i></p>
+
 Don't know where to start? Use **Tools › Lab** — you can test all these options on sample images, see the result in real time, and then apply the best-working configuration directly to Capture or Subtitles.
 
 ## Switching OCR engine (advanced)
