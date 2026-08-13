@@ -33,6 +33,15 @@ In this mode the program shows **one line at a time**, and the *Visible lines* c
 
 The option applies to Subtitle Mode only — manual translation (`Numpad8`/`Numpad9`) and Real-time Mode are not affected.
 
+<div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
+  <iframe src="https://player.vimeo.com/video/1218086653"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+          allow="fullscreen; picture-in-picture" allowfullscreen
+          title="Translation covering the original subtitle"></iframe>
+</div>
+
+<p align="center"><i>The translation drawn over the game's original subtitle. The video was filmed with a phone precisely because, in this mode, the subtitle doesn't show up in screen recordings.</i></p>
+
 ## Letting the AI "remember" previous lines
 
 If you're using OpenAI, Claude, or Gemini, **Translation › AI** has a **"Previous lines"** control (0 to 20, default 5). When enabled, the AI gets the last already-translated lines as reference before translating the next one — this helps keep the same character names, terms, and tone throughout a conversation. If you notice the AI is changing a character's name or translation tone from one line to another, increase this value; if you prefer each line translated without depending on previous ones, leave it at 0.
