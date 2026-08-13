@@ -540,14 +540,15 @@ A opção vale só para o Modo Legenda — a tradução manual (`Numpad8`/`Numpa
 Real não são afetados.
 
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
-  <iframe src="https://player.vimeo.com/video/1218086653"
+  <iframe src="https://player.vimeo.com/video/1218094053"
           style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
           allow="fullscreen; picture-in-picture" allowfullscreen
           title="Tradução cobrindo a legenda original"></iframe>
 </div>
 
-<p align="center"><i>A tradução desenhada por cima da legenda original. O vídeo foi filmado com
-celular justamente porque, nesse modo, a legenda não aparece em gravações de tela.</i></p>
+<p align="center"><i>A tradução desenhada por cima da legenda original. O vídeo foi gravado com
+celular porque, nesse modo, a legenda fica escondida das capturas de tela — uma gravação normal
+não mostraria a função funcionando.</i></p>
 
 ### Deixando a IA "lembrar" das falas anteriores
 

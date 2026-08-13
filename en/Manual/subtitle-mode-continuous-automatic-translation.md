@@ -34,13 +34,13 @@ In this mode the program shows **one line at a time**, and the *Visible lines* c
 The option applies to Subtitle Mode only — manual translation (`Numpad8`/`Numpad9`) and Real-time Mode are not affected.
 
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
-  <iframe src="https://player.vimeo.com/video/1218086653"
+  <iframe src="https://player.vimeo.com/video/1218094053"
           style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
           allow="fullscreen; picture-in-picture" allowfullscreen
           title="Translation covering the original subtitle"></iframe>
 </div>
 
-<p align="center"><i>The translation drawn over the game's original subtitle. The video was filmed with a phone precisely because, in this mode, the subtitle doesn't show up in screen recordings.</i></p>
+<p align="center"><i>The translation drawn over the game's original subtitle. The video was recorded with a phone because, in this mode, the subtitle is hidden from screen capture — a normal screen recording wouldn't show the feature working.</i></p>
 
 ## Letting the AI "remember" previous lines
 
