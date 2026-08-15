@@ -1,4 +1,4 @@
-# 6. Making translation look like the game
+# 7. Making translation look like the game
 
 In **Overlay › Capture**, in the **Text** card:
 

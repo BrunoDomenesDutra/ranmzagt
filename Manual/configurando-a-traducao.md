@@ -1,4 +1,4 @@
-# 5. Configurando a tradução
+# 6. Configurando a tradução
 
 ## Tipo de texto: diálogo ou menu?
 

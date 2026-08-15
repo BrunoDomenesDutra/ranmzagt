@@ -1,4 +1,4 @@
-# 5. Configuring translation
+# 6. Configuring translation
 
 ## Text type: dialog or menu?
 

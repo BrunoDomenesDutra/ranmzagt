@@ -1,4 +1,4 @@
-# 10. Usando no OBS / transmissões
+# 11. Usando no OBS / transmissões
 
 Se você transmite ou grava o jogo e quer que **a tradução apareça também no vídeo/stream**
 (ou só no vídeo, sem aparecer no jogo em si), use **Overlay › Web**:

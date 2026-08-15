@@ -1,4 +1,4 @@
-# 9. Real-time Mode — continuous translation in place (experimental)
+# 10. Real-time Mode — continuous translation in place (experimental)
 
 > **Experimental feature** — configured via the **Experimental** tab. Behavior may still change and bugs are expected.
 

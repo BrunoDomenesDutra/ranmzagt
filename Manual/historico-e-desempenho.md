@@ -1,4 +1,4 @@
-# 11. Histórico e desempenho
+# 12. Histórico e desempenho
 
 - **Aba Historico**: mostra as traduções feitas durante a sessão atual (texto original,
   tradução, horário e serviço usado), da mais recente para a mais antiga. Clique numa entrada

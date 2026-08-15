@@ -1,4 +1,4 @@
-# 14. Updating the program
+# 15. Updating the program
 
 When you open the program, if a newer version has been published, a notice appears showing the version you have and the one that came out. The **Download** button opens the new version's page in your browser — that's where the release notes and the `.zip` file are.
 

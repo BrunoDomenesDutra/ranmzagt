@@ -11,17 +11,18 @@ detalhes técnicos.
 1. [O que o programa faz](#1-o-que-o-programa-faz)
 2. [Configuração rápida](#2-configuração-rápida)
 3. [Uso básico no dia a dia](#3-uso-básico-no-dia-a-dia)
-4. [Atalhos de teclado](#4-atalhos-de-teclado)
-5. [Configurando a tradução](#5-configurando-a-tradução)
-6. [Deixando a tradução com a "cara" do jogo](#6-deixando-a-tradução-com-a-cara-do-jogo)
-7. [Modo Vision — quando o OCR erra](#7-modo-vision--quando-o-ocr-erra)
-8. [Modo Legenda — tradução automática contínua](#8-modo-legenda--tradução-automática-contínua)
-9. [Modo Tempo Real — tradução contínua no lugar (experimental)](#9-modo-tempo-real--tradução-contínua-no-lugar-experimental)
-10. [Usando no OBS / transmissões](#10-usando-no-obs--transmissões)
-11. [Histórico e desempenho](#11-histórico-e-desempenho)
-12. [Problemas comuns e soluções](#12-problemas-comuns-e-soluções)
-13. [Referência completa — todas as abas](#13-referência-completa--todas-as-abas)
-14. [Atualizando o programa](#14-atualizando-o-programa)
+4. [Perfis — um conjunto de ajustes por jogo](#4-perfis--um-conjunto-de-ajustes-por-jogo)
+5. [Atalhos de teclado](#5-atalhos-de-teclado)
+6. [Configurando a tradução](#6-configurando-a-tradução)
+7. [Deixando a tradução com a "cara" do jogo](#7-deixando-a-tradução-com-a-cara-do-jogo)
+8. [Modo Vision — quando o OCR erra](#8-modo-vision--quando-o-ocr-erra)
+9. [Modo Legenda — tradução automática contínua](#9-modo-legenda--tradução-automática-contínua)
+10. [Modo Tempo Real — tradução contínua no lugar (experimental)](#10-modo-tempo-real--tradução-contínua-no-lugar-experimental)
+11. [Usando no OBS / transmissões](#11-usando-no-obs--transmissões)
+12. [Histórico e desempenho](#12-histórico-e-desempenho)
+13. [Problemas comuns e soluções](#13-problemas-comuns-e-soluções)
+14. [Referência completa — todas as abas](#14-referência-completa--todas-as-abas)
+15. [Atualizando o programa](#15-atualizando-o-programa)
 
 ---
 
@@ -85,7 +86,7 @@ O menu da esquerda agrupa as opções por assunto. Nesta configuração rápida 
 
 | Menu | O que tem dentro |
 |---|---|
-| **Geral** | Config (monitor, tema, barra flutuante), Idioma, OCR e Atalhos |
+| **Geral** | Config (monitor, tema, barra flutuante), Perfis, Idioma, OCR e Atalhos |
 | **Overlay** | Aparência da tradução na tela: Captura, Legenda e Web |
 | **Traducao** | Tradutores (motor e chaves de API) e I.A (prompts e parâmetros) |
 | **Ferramentas** | Inpaint (apagar o texto original) e Lab (testar pré-processamento) |
@@ -158,7 +159,7 @@ entrar no jogo.
 > Translate. Ajuda bastante em sessões longas de Modo Legenda.
 
 > Só os motores de IA (OpenAI, Claude, Gemini) suportam o **Modo Vision** — o Google Translate e
-> o DeepL não. Veja a [seção 7](/Manual/modo-vision-quando-o-ocr-erra.md).
+> o DeepL não. Veja a [seção 8](/Manual/modo-vision-quando-o-ocr-erra.md).
 
 ### 2.5 Marque a área do texto
 
@@ -251,7 +252,7 @@ Cada ação tem uma tecla principal, escolhida na lista à direita, e três bot�
 
 As teclas do **Modo Tempo Real** não ficam aqui: por ser experimental, elas moram na aba
 **Experimental**, e vêm sem tecla definida. Veja a
-[seção 9](/Manual/modo-tempo-real-traducao-continua-no-lugar-experimental.md).
+[seção 10](/Manual/modo-tempo-real-traducao-continua-no-lugar-experimental.md).
 
 ### Deu certo? E se não deu
 
@@ -265,9 +266,9 @@ Se a tradução apareceu sobre o jogo, está tudo pronto — siga para a
   exclusiva*. Troque para *Janela sem borda*.
 - **Saiu tradução errada ou embaralhada** → o OCR leu mal. Comece trocando o modo de
   agrupamento (`Numpad9` ↔ `Numpad8`) e veja a
-  [seção 5](/Manual/configurando-a-traducao.md).
+  [seção 6](/Manual/configurando-a-traducao.md).
 
-Outros problemas estão na [seção 12](/Manual/problemas-comuns-e-solucoes.md).
+Outros problemas estão na [seção 13](/Manual/problemas-comuns-e-solucoes.md).
 
 ---
 
@@ -314,17 +315,83 @@ legenda aparece). Aperte de novo para esconder. Não traduz nada, é só um guia
 
 ---
 
-## 4. Atalhos de teclado
+## 4. Perfis — um conjunto de ajustes por jogo
+
+Cada jogo pede um ajuste diferente: a caixa de diálogo fica num canto da tela, o idioma é
+outro, a fonte que lê bem num não lê no outro, e o glossário de nomes não serve para mais
+nada fora dali. Um **perfil** guarda tudo isso junto, e você troca de jogo em um clique.
+
+O seletor fica no **canto superior direito da janela**, ao lado do botão de tema, e aparece
+em todas as abas — porque o perfil ativo é o contexto de tudo que elas mostram.
+
+<p align="center"><img src="media/geral-perfis.png" alt="Aba Geral › Perfis" width="820"></p>
+
+### O perfil Padrão
+
+Existe sempre, já vem ativo e **não pode ser apagado nem renomeado**. Se você nunca criar
+outro perfil, o programa funciona exatamente como antes: tudo que você ajustar fica nele.
+
+Quem já usava o Ranmza GT não perde nada na atualização — a configuração de hoje vira o
+perfil Padrão automaticamente.
+
+### Criando um perfil
+
+Vá em **Geral › Perfis**, escreva o nome do jogo e escolha:
+
+- **Duplicar o atual** — copia tudo que está valendo agora, inclusive as áreas já
+  selecionadas. É o caminho normal: você deixou o programa do jeito certo para um jogo e quer
+  guardar aquilo com um nome.
+- **Começar do zero** — usa os valores de fábrica. Serve para um jogo que não tem nada a ver
+  com o anterior.
+
+O perfil criado já fica ativo. A partir daí é só ajustar o programa normalmente, nas abas de
+sempre: **tudo que você mexer é gravado nele sozinho**, sem botão de salvar.
+
+### Trocando de perfil
+
+Clique no seletor do cabeçalho e escolha outro (ou clique na linha dele em *Geral › Perfis*).
+A troca vale na hora — áreas, idiomas, aparência e glossário mudam juntos, sem reiniciar. Uma
+notificação na tela confirma qual perfil entrou, útil quando você troca com o jogo em
+primeiro plano.
+
+Se o **Modo Legenda** ou o **Tempo Real** estiverem ligados, eles continuam ligados e passam
+a capturar a área do perfil novo.
+
+### Renomear e apagar
+
+Em **Geral › Perfis**, cada perfil (menos o Padrão) tem **Renomear** e **Apagar**. Apagar pede
+confirmação; se você apagar o perfil que está em uso, o Padrão assume na hora.
+
+### O que NÃO muda ao trocar de perfil
+
+Nem tudo é "por jogo" — o que é seu continua valendo em todos os perfis:
+
+| Acompanha o perfil | Vale para todos os perfis |
+|---|---|
+| Idioma do texto e da tradução | Chaves de API |
+| Área de captura e área da legenda | Atalhos de teclado |
+| Aparência da tradução (fonte, cor, fundo, duração) | Monitor e barra flutuante |
+| Pré-processamento de imagem | Motor de OCR e pasta do OneOCR (aba *Geral › OCR*) |
+| Motor de tradução e modelo | Inpaint |
+| System Prompt e Informações do Jogo | Servidor web |
+| Modo Legenda e Modo Tempo Real | Idioma da interface e as opções de diagnóstico |
+
+A chave de API é o caso que mais importa: você digita **uma vez** e ela vale em todos os
+perfis, inclusive nos que criar depois.
+
+---
+
+## 5. Atalhos de teclado
 
 | Atalho | Padrão | O que faz |
 |---|---|---|
 | Selecionar área | `Numpad7` | Abre o seletor para escolher onde está o texto |
 | Traduzir (modo parágrafo) | `Numpad8` | Captura e traduz juntando as linhas próximas num bloco — diálogos |
 | Traduzir (modo linha) | `Numpad9` | Captura e traduz cada linha por conta própria — menus e listas |
-| Traduzir com I.A Vision (modo parágrafo) | `Numpad5` | Igual ao `Numpad8`, mas mandando a imagem para a IA (veja seção 7) |
-| Traduzir com I.A Vision (modo linha) | `Numpad6` | Igual ao `Numpad9`, mas mandando a imagem para a IA (veja seção 7) |
+| Traduzir com I.A Vision (modo parágrafo) | `Numpad5` | Igual ao `Numpad8`, mas mandando a imagem para a IA (veja seção 8) |
+| Traduzir com I.A Vision (modo linha) | `Numpad6` | Igual ao `Numpad9`, mas mandando a imagem para a IA (veja seção 8) |
 | Limpar overlay | `NumpadDecimal` (vírgula do Numpad) | Esconde a tradução exibida |
-| Ligar/desligar legenda | `Numpad0` | Ativa a tradução automática contínua (veja seção 8) |
+| Ligar/desligar legenda | `Numpad0` | Ativa a tradução automática contínua (veja seção 9) |
 | Selecionar área da legenda | `Numpad1` | Escolhe onde está a legenda do jogo |
 | Mostrar/ocultar áreas (preview) | `Numpad2` | Mostra os retângulos das áreas configuradas |
 | Mostrar/esconder barra flutuante | `NumpadSubtract` (menos do Numpad) | Abre ou fecha a barra flutuante de botões (veja seção 3) |
@@ -332,7 +399,7 @@ legenda aparece). Aperte de novo para esconder. Não traduz nada, é só um guia
 > **E o Modo Tempo Real?** Os atalhos dele — ligar/desligar e selecionar área — não estão nesta
 > lista nem em Geral › Atalhos: por ser experimental, ficam na aba **Experimental**, e vêm **sem
 > tecla definida**. Você escolhe as suas lá. Veja a
-> [seção 9](/Manual/modo-tempo-real-traducao-continua-no-lugar-experimental.md).
+> [seção 10](/Manual/modo-tempo-real-traducao-continua-no-lugar-experimental.md).
 
 Todos podem ser trocados em **Geral › Atalhos** — escolha outra tecla e, se quiser, combine com
 Ctrl/Alt/Shift. Se escolher uma **letra ou um número** da fileira de cima, é **obrigatório** usar
@@ -347,7 +414,7 @@ numérico.
 
 ---
 
-## 5. Configurando a tradução
+## 6. Configurando a tradução
 
 ### Tipo de texto: diálogo ou menu?
 
@@ -411,7 +478,7 @@ o "motor" de reconhecimento de texto:
 
 ---
 
-## 6. Deixando a tradução com a "cara" do jogo
+## 7. Deixando a tradução com a "cara" do jogo
 
 Em **Overlay › Captura**, no card **Texto**:
 
@@ -458,7 +525,7 @@ equivalente na aba dele.
 
 ---
 
-## 7. Modo Vision — quando o OCR erra
+## 8. Modo Vision — quando o OCR erra
 
 Às vezes o reconhecimento de texto comum (OCR) erra letras, perde pedaços do texto ou se perde
 totalmente em fontes muito estilizadas/artísticas, com símbolos ou ícones no meio do texto.
@@ -485,7 +552,7 @@ misturados (ex: "pressione [ícone de botão] para continuar"), ou sempre que o 
 
 ---
 
-## 8. Modo Legenda — tradução automática contínua
+## 9. Modo Legenda — tradução automática contínua
 
 Para cenas com diálogo contínuo (cutscenes, modo automático de visual novels, vídeos com
 legenda), o Modo Legenda traduz **sozinho, repetidamente**, sem você precisar apertar nada.
@@ -584,7 +651,7 @@ aperte `Numpad0`.
 
 ---
 
-## 9. Modo Tempo Real — tradução contínua no lugar (experimental)
+## 10. Modo Tempo Real — tradução contínua no lugar (experimental)
 
 > Recurso **experimental** — ligado e configurado pela aba **Experimental**. O comportamento
 > ainda pode mudar e bugs são esperados.
@@ -656,7 +723,7 @@ espera*).
 
 ---
 
-## 10. Usando no OBS / transmissões
+## 11. Usando no OBS / transmissões
 
 Se você transmite ou grava o jogo e quer que **a tradução apareça também no vídeo/stream**
 (ou só no vídeo, sem aparecer no jogo em si), use **Overlay › Web**:
@@ -686,7 +753,7 @@ e botão de limpar.
 
 ---
 
-## 11. Histórico e desempenho
+## 12. Histórico e desempenho
 
 - **Aba Historico**: mostra as traduções feitas durante a sessão atual (texto original,
   tradução, horário e serviço usado), da mais recente para a mais antiga. Clique numa entrada
@@ -703,7 +770,7 @@ e botão de limpar.
 
 ---
 
-## 12. Problemas comuns e soluções
+## 13. Problemas comuns e soluções
 
 **"Erro ao abrir o programa: VCRUNTIME140.dll não foi encontrado" (ou MSVCP140.dll)**
 → Falta o **Microsoft Visual C++ Redistributable** no seu Windows — um componente gratuito da
@@ -768,7 +835,7 @@ agrupamento** em **Geral › OCR** — ela só afeta o modo Parágrafo.
 
 ---
 
-## 13. Referência completa — todas as abas
+## 14. Referência completa — todas as abas
 
 Esta seção descreve **cada aba e cada opção** da janela de configuração, na ordem em que
 aparecem no menu da esquerda. É material de consulta — para o dia a dia, as seções anteriores
@@ -787,7 +854,7 @@ Onde o programa opera.
   configuração (Português / Inglês). Não afeta os idiomas de OCR e tradução. Na primeira
   execução ele detecta o idioma do Windows (cai para Inglês se não for Português).
 - **Atualizações → Avisar sobre novas versões** — liga o aviso que aparece ao abrir o programa
-  quando existe versão mais nova publicada (veja a seção 14). Desligue aqui, ou pelo próprio
+  quando existe versão mais nova publicada (veja a seção 15). Desligue aqui, ou pelo próprio
   aviso, e religue por este toggle.
 - **Atualizações → Verificar agora** — consulta na hora se existe versão nova, mesmo com o
   aviso desligado. A resposta aparece ao lado do botão: *"Você está na versão mais recente"*,
@@ -808,6 +875,29 @@ Onde o programa opera.
 - **Barra flutuante → Mostrar barra flutuante** — liga a janelinha de botões sempre visível
   (veja o passo 2.7). Também abre e fecha pelo atalho `NumpadSubtract`, e ela **lembra a última
   posição** em que você a deixou.
+
+### Geral › Perfis
+
+Um conjunto de configurações por jogo. O conceito e o passo a passo estão na
+[seção 4](/Manual/perfis-um-conjunto-de-ajustes-por-jogo.md); aqui ficam só os controles.
+
+<p align="center"><img src="media/geral-perfis.png" alt="Aba Geral › Perfis" width="820"></p>
+
+- **Novo perfil → Nome do jogo** — o nome do perfil que vai ser criado.
+  - **Duplicar o atual** — cria a partir de tudo que está valendo agora, **inclusive as áreas
+    selecionadas**.
+  - **Começar do zero** — cria com os valores de fábrica.
+  - Em ambos os casos o perfil criado **já fica ativo**, e daí em diante tudo que você mexer
+    nas outras abas é gravado nele sozinho.
+- **Seus perfis** — a lista, num card retrátil: clique no cabeçalho para recolher quando ela
+  crescer. O perfil ativo aparece destacado e marcado como *ativo*; clique em qualquer outro
+  para ativá-lo na hora.
+  - **Renomear** — troca o nome. O **Padrão** não tem este botão: o nome dele acompanha o
+    idioma da interface.
+  - **Apagar** — pede confirmação (*Apagar mesmo*). O **Padrão** não pode ser apagado. Se o
+    perfil apagado era o que estava em uso, o Padrão assume na hora.
+- **O que muda ao trocar de perfil** — o resumo de quais opções acompanham o perfil e quais
+  valem para todos (chaves de API, atalhos, monitor, aba OCR, Inpaint e servidor web).
 
 ### Geral › Idioma
 
@@ -926,7 +1016,7 @@ O Modo Legenda tem aparência e pré-processamento **próprios**, independentes 
 - **Posição da tradução** — *Substituir a legenda original no lugar*: desenha a tradução em cima
   da área capturada, cobrindo a legenda original, em vez de mostrá-la acima da área. Mostra uma
   fala por vez (ver *Linhas visíveis* abaixo). Nesse modo a legenda some das capturas feitas
-  neste PC — é o que impede o OCR de reler a própria tradução. Ver a seção 8.
+  neste PC — é o que impede o OCR de reler a própria tradução. Ver a seção 9.
 - **Texto** — *Fonte*, *Cor do texto* e *Tamanho da fonte* (10–48 pt). Não tem altura de linha
   nem auto-fit.
 - **Fundo e Contorno** — *Mostrar fundo* + *Opacidade* (10–100%) ou *Mostrar contorno* +
@@ -986,11 +1076,17 @@ Qual serviço traduz e com quais credenciais.
   - *Modelo* (motores de IA) — cada motor traz três faixas: rápida/econômica, melhor equilíbrio
     e qualidade superior.
     - OpenAI: GPT-4.1 nano · GPT-4.1 mini · GPT-4.1
-    - Claude: Haiku 4.5 · Sonnet 5 · Opus 4.8
-    - Gemini: 2.0 Flash · 2.5 Flash · 2.5 Pro
+    - Claude: Haiku 4.5 · Sonnet 5 · Opus 5
+    - Gemini: 3.5 Flash-Lite · 3.6 Flash · 3.7 Flash
     - *Personalizado…* — última opção da lista: abre um campo livre onde você digita **qualquer
       ID de modelo** aceito pelo provedor, para usar um modelo mais novo sem esperar uma
       atualização do programa.
+    - *Ver a lista completa de modelos do provedor* — abre no navegador a página oficial do
+      motor selecionado, com todos os modelos e os IDs exatos. Útil em duas situações: quando
+      sai um modelo mais novo que a lista fixa, e quando você tem uma chave antiga que ainda
+      alcança modelos que o provedor já fechou para contas novas — é o caso das famílias
+      Gemini 2.0 e 2.5, que respondem para chaves antigas mas devolvem erro em chaves
+      recém-criadas. Nos dois casos, copie o ID de lá para o campo *Personalizado…*.
   - *Testar conexão* — faz uma chamada de teste com a chave e o modelo atuais e mostra na hora
     se está tudo certo ou qual erro voltou, em vez de você descobrir o problema no meio do jogo.
     Também existe no Google, para checar a conectividade.
@@ -1149,10 +1245,10 @@ original, sobre uma área própria.
   (10–100%) · *Mostrar contorno* · *Limpar após silêncio* (0–10 s).
 - *Estabilidade da posição* (0–60 px) e *Segurar em falha de OCR* (0–30 ticks) — contra tremor e
   piscada quando o fundo é animado.
-- Tem ainda um pré-processamento de imagem exclusivo. Veja a **seção 9**.
+- Tem ainda um pré-processamento de imagem exclusivo. Veja a **seção 10**.
 
 > O overlay do Tempo Real é sempre invisível para capturas de tela (inclusive OBS) — ver a
-> seção 9.
+> seção 10.
 
 **Esperar texto completo (efeito máquina de escrever)** — só traduz depois que a fala termina de
 aparecer, evitando traduzir frases ainda "sendo digitadas" na tela. Vale para o Modo Legenda e o
@@ -1175,7 +1271,7 @@ remover créditos), além do aviso de garantia.
 
 ---
 
-## 14. Atualizando o programa
+## 15. Atualizando o programa
 
 Ao abrir o programa, se existir uma versão mais nova publicada, aparece um aviso com a versão
 que você tem e a que saiu. O botão **Baixar** abre a página da versão nova no seu navegador —

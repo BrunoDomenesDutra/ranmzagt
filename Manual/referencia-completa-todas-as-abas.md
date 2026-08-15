@@ -1,4 +1,4 @@
-# 13. Referência completa — todas as abas
+# 14. Referência completa — todas as abas
 
 Esta seção descreve **cada aba e cada opção** da janela de configuração, na ordem em que
 aparecem no menu da esquerda. É material de consulta — para o dia a dia, as seções anteriores
@@ -17,7 +17,7 @@ Onde o programa opera.
   configuração (Português / Inglês). Não afeta os idiomas de OCR e tradução. Na primeira
   execução ele detecta o idioma do Windows (cai para Inglês se não for Português).
 - **Atualizações → Avisar sobre novas versões** — liga o aviso que aparece ao abrir o programa
-  quando existe versão mais nova publicada (veja a seção 14). Desligue aqui, ou pelo próprio
+  quando existe versão mais nova publicada (veja a seção 15). Desligue aqui, ou pelo próprio
   aviso, e religue por este toggle.
 - **Atualizações → Verificar agora** — consulta na hora se existe versão nova, mesmo com o
   aviso desligado. A resposta aparece ao lado do botão: *"Você está na versão mais recente"*,
@@ -38,6 +38,29 @@ Onde o programa opera.
 - **Barra flutuante → Mostrar barra flutuante** — liga a janelinha de botões sempre visível
   (veja o passo 2.7). Também abre e fecha pelo atalho `NumpadSubtract`, e ela **lembra a última
   posição** em que você a deixou.
+
+## Geral › Perfis
+
+Um conjunto de configurações por jogo. O conceito e o passo a passo estão na
+[seção 4](/Manual/perfis-um-conjunto-de-ajustes-por-jogo.md); aqui ficam só os controles.
+
+<p align="center"><img src="media/geral-perfis.png" alt="Aba Geral › Perfis" width="820"></p>
+
+- **Novo perfil → Nome do jogo** — o nome do perfil que vai ser criado.
+  - **Duplicar o atual** — cria a partir de tudo que está valendo agora, **inclusive as áreas
+    selecionadas**.
+  - **Começar do zero** — cria com os valores de fábrica.
+  - Em ambos os casos o perfil criado **já fica ativo**, e daí em diante tudo que você mexer
+    nas outras abas é gravado nele sozinho.
+- **Seus perfis** — a lista, num card retrátil: clique no cabeçalho para recolher quando ela
+  crescer. O perfil ativo aparece destacado e marcado como *ativo*; clique em qualquer outro
+  para ativá-lo na hora.
+  - **Renomear** — troca o nome. O **Padrão** não tem este botão: o nome dele acompanha o
+    idioma da interface.
+  - **Apagar** — pede confirmação (*Apagar mesmo*). O **Padrão** não pode ser apagado. Se o
+    perfil apagado era o que estava em uso, o Padrão assume na hora.
+- **O que muda ao trocar de perfil** — o resumo de quais opções acompanham o perfil e quais
+  valem para todos (chaves de API, atalhos, monitor, aba OCR, Inpaint e servidor web).
 
 ## Geral › Idioma
 
@@ -156,7 +179,7 @@ O Modo Legenda tem aparência e pré-processamento **próprios**, independentes 
 - **Posição da tradução** — *Substituir a legenda original no lugar*: desenha a tradução em cima
   da área capturada, cobrindo a legenda original, em vez de mostrá-la acima da área. Mostra uma
   fala por vez (ver *Linhas visíveis* abaixo). Nesse modo a legenda some das capturas feitas
-  neste PC — é o que impede o OCR de reler a própria tradução. Ver a seção 8.
+  neste PC — é o que impede o OCR de reler a própria tradução. Ver a seção 9.
 - **Texto** — *Fonte*, *Cor do texto* e *Tamanho da fonte* (10–48 pt). Não tem altura de linha
   nem auto-fit.
 - **Fundo e Contorno** — *Mostrar fundo* + *Opacidade* (10–100%) ou *Mostrar contorno* +
@@ -216,11 +239,17 @@ Qual serviço traduz e com quais credenciais.
   - *Modelo* (motores de IA) — cada motor traz três faixas: rápida/econômica, melhor equilíbrio
     e qualidade superior.
     - OpenAI: GPT-4.1 nano · GPT-4.1 mini · GPT-4.1
-    - Claude: Haiku 4.5 · Sonnet 5 · Opus 4.8
-    - Gemini: 2.0 Flash · 2.5 Flash · 2.5 Pro
+    - Claude: Haiku 4.5 · Sonnet 5 · Opus 5
+    - Gemini: 3.5 Flash-Lite · 3.6 Flash · 3.7 Flash
     - *Personalizado…* — última opção da lista: abre um campo livre onde você digita **qualquer
       ID de modelo** aceito pelo provedor, para usar um modelo mais novo sem esperar uma
       atualização do programa.
+    - *Ver a lista completa de modelos do provedor* — abre no navegador a página oficial do
+      motor selecionado, com todos os modelos e os IDs exatos. Útil em duas situações: quando
+      sai um modelo mais novo que a lista fixa, e quando você tem uma chave antiga que ainda
+      alcança modelos que o provedor já fechou para contas novas — é o caso das famílias
+      Gemini 2.0 e 2.5, que respondem para chaves antigas mas devolvem erro em chaves
+      recém-criadas. Nos dois casos, copie o ID de lá para o campo *Personalizado…*.
   - *Testar conexão* — faz uma chamada de teste com a chave e o modelo atuais e mostra na hora
     se está tudo certo ou qual erro voltou, em vez de você descobrir o problema no meio do jogo.
     Também existe no Google, para checar a conectividade.
@@ -379,10 +408,10 @@ original, sobre uma área própria.
   (10–100%) · *Mostrar contorno* · *Limpar após silêncio* (0–10 s).
 - *Estabilidade da posição* (0–60 px) e *Segurar em falha de OCR* (0–30 ticks) — contra tremor e
   piscada quando o fundo é animado.
-- Tem ainda um pré-processamento de imagem exclusivo. Veja a **seção 9**.
+- Tem ainda um pré-processamento de imagem exclusivo. Veja a **seção 10**.
 
 > O overlay do Tempo Real é sempre invisível para capturas de tela (inclusive OBS) — ver a
-> seção 9.
+> seção 10.
 
 **Esperar texto completo (efeito máquina de escrever)** — só traduz depois que a fala termina de
 aparecer, evitando traduzir frases ainda "sendo digitadas" na tela. Vale para o Modo Legenda e o

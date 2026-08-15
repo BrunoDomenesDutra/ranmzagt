@@ -1,4 +1,4 @@
-# 13. Complete reference — all tabs
+# 14. Complete reference — all tabs
 
 This section describes **every tab and every option** in the settings window, in the order they appear in the left-hand menu. It's reference material — for day-to-day use, the earlier sections are enough.
 
@@ -13,7 +13,7 @@ Where the program runs.
 <p align="center"><img src="media/geral-config.png" alt="General › Config tab" width="820"></p>
 
 - **App language → Interface language** — switches the language of the settings window itself (Portuguese / English). It does not affect the OCR and translation languages. On first run it detects the Windows language (falling back to English if it isn't Portuguese).
-- **Updates → Notify me about new versions** — turns on the notice that shows up when you open the program and a newer version has been published (see section 14). Turn it off here, or from the notice itself, and turn it back on with this toggle.
+- **Updates → Notify me about new versions** — turns on the notice that shows up when you open the program and a newer version has been published (see section 15). Turn it off here, or from the notice itself, and turn it back on with this toggle.
 - **Updates → Check now** — checks right away whether a new version is out, even with the notice turned off. The answer appears next to the button: *"You are on the latest version"*, the version found (with a **Download** button that opens the page in your browser), or a warning that the check failed.
 - **Configuration → Reset to default** — restores every option to factory values. It **keeps** the monitor, the selected areas, the API keys, the prompts (System Prompt and Game Info) and the update-notice preference.
 - **Capture backend → Backend** — how the program reads screen pixels:
@@ -22,6 +22,21 @@ Where the program runs.
   - *DXGI (Windows 10)* — Desktop Duplication; it exists so Windows 10 doesn't draw the yellow border around the captured monitor.
 - **Monitor → Active display** — which monitor the program captures, translates and displays on. *Automatic* uses the Windows primary monitor. Switching monitors **clears the saved capture area** and **requires a restart** (a "Restart now" button appears at the bottom of the tab).
 - **Floating toolbar → Show floating toolbar** — turns on the always-visible button window (see step 2.7). It also opens and closes with the `NumpadSubtract` hotkey, and it **remembers the last position** you left it in.
+
+## General › Profiles
+
+One set of settings per game. The concept and the walkthrough are in [section 4](/en/Manual/profiles-one-set-of-settings-per-game.md); this is just the controls.
+
+<p align="center"><img src="media/geral-perfis.png" alt="General › Profiles tab" width="820"></p>
+
+- **New profile → Game name** — the name of the profile to be created.
+  - **Duplicate current** — creates it from everything in effect right now, **selected areas included**.
+  - **Start from scratch** — creates it with the factory values.
+  - Either way the new profile **becomes active**, and from then on everything you change in the other tabs is saved into it by itself.
+- **Your profiles** — the list, in a collapsible card: click the header to fold it away once it grows. The active profile is highlighted and marked *active*; click any other one to activate it right away.
+  - **Rename** — changes the name. **Default** doesn't have this button: its name follows the interface language.
+  - **Delete** — asks for confirmation (*Delete it*). **Default** cannot be deleted. If the deleted profile was the one in use, Default takes over immediately.
+- **What changes when you switch profiles** — the summary of which options follow the profile and which apply to all of them (API keys, shortcuts, monitor, OCR tab, Inpaint and web server).
 
 ## General › Language
 
@@ -111,7 +126,7 @@ Subtitle Mode has its **own** appearance and preprocessing, independent of Overl
 - **Translation position** — *Replace the original subtitle in place*: draws the translation over the
   captured area, covering the original subtitle, instead of showing it above the area. Shows one line
   at a time (see *Visible lines* below). In this mode the subtitle disappears from captures made on
-  this PC — that's what keeps the OCR from re-reading its own translation. See section 8.
+  this PC — that's what keeps the OCR from re-reading its own translation. See section 9.
 - **Text** — *Font*, *Text color* and *Font size* (10–48 pt). No line height and no auto-fit.
 - **Background and Outline** — *Show background* + *opacity* (10–100%), or *Show outline* + *Outline thickness* (1–5 px).
 
@@ -153,9 +168,10 @@ Which service translates, and with which credentials.
 - **Authentication** — shown for providers with a key. Credentials are **saved per engine**, so switching services and back erases nothing.
   - *Model* (AI engines) — each engine offers three tiers: fast/cheap, best balance, and top quality.
     - OpenAI: GPT-4.1 nano · GPT-4.1 mini · GPT-4.1
-    - Claude: Haiku 4.5 · Sonnet 5 · Opus 4.8
-    - Gemini: 2.0 Flash · 2.5 Flash · 2.5 Pro
+    - Claude: Haiku 4.5 · Sonnet 5 · Opus 5
+    - Gemini: 3.5 Flash-Lite · 3.6 Flash · 3.7 Flash
     - *Custom…* — the last option in the list: opens a free-text field where you type **any model ID** the provider accepts, so you can use a newer model without waiting for a program update.
+    - *See the provider's full model list* — opens the selected engine's official page in your browser, with every model and its exact ID. Useful in two situations: when a model newer than the built-in list comes out, and when you have an older key that still reaches models the provider has closed off to new accounts — that's the case with the Gemini 2.0 and 2.5 families, which answer for older keys but return an error on freshly created ones. Either way, copy the ID from there into the *Custom…* field.
   - *Test connection* — makes a test call with the current key and model and tells you right away whether everything is fine or which error came back, instead of you finding out mid-game. It also exists for Google, to check connectivity.
 - **API Keys** — a collapsible card where the selected engine's credential goes (`sk-…`, `sk-ant-…`, `AIza…`, or the free-plan DeepL `:fx` key). It **opens by itself** while no key is filled in.
   - *+ Add key* / *✕* — you can register **as many keys as you like** for the same engine. When the key in use runs out of credit or hits the request limit, the next one in the list takes over automatically; once all are exhausted, it falls back to Google Translate.
@@ -273,9 +289,9 @@ Two collapsible cards.
 - Both shortcuts — *Toggle Real-time* and *Select Real-time area* — live here and come with **no key assigned**; pick your own.
 - *Interval* (25 ms–2 s) · *Font size* (10–48 pt) · *Show background* + *opacity* (10–100%) · *Show outline* · *Clear after silence* (0–10 s).
 - *Position stability* (0–60 px) and *Hold on OCR failure* (0–30 ticks) — against shaking and flicker when the background is animated.
-- It also has its own dedicated image preprocessing. See **section 9**.
+- It also has its own dedicated image preprocessing. See **section 10**.
 
-> The Real-time overlay is always hidden from screen capture (OBS included) — see section 9.
+> The Real-time overlay is always hidden from screen capture (OBS included) — see section 10.
 
 **Wait for complete text (typewriter effect)** — only translates once the line has finished appearing, so you don't translate sentences still "being typed" on screen. Applies to Subtitle Mode and Real-time Mode.
 

@@ -1,4 +1,4 @@
-# 14. Atualizando o programa
+# 15. Atualizando o programa
 
 Ao abrir o programa, se existir uma versão mais nova publicada, aparece um aviso com a versão
 que você tem e a que saiu. O botão **Baixar** abre a página da versão nova no seu navegador —

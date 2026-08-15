@@ -1,4 +1,4 @@
-# 9. Modo Tempo Real — tradução contínua no lugar (experimental)
+# 10. Modo Tempo Real — tradução contínua no lugar (experimental)
 
 > Recurso **experimental** — ligado e configurado pela aba **Experimental**. O comportamento
 > ainda pode mudar e bugs são esperados.

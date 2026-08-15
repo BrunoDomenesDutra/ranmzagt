@@ -1,4 +1,4 @@
-# 8. Subtitle Mode — continuous automatic translation
+# 9. Subtitle Mode — continuous automatic translation
 
 For scenes with ongoing dialog (cutscenes, visual novel auto mode, videos with subtitles), Subtitle Mode translates **on its own, repeatedly**, without you needing to press anything.
 

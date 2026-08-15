@@ -1,4 +1,4 @@
-# 6. Deixando a tradução com a "cara" do jogo
+# 7. Deixando a tradução com a "cara" do jogo
 
 Em **Overlay › Captura**, no card **Texto**:
 

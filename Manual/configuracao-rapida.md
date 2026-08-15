@@ -31,7 +31,7 @@ O menu da esquerda agrupa as opções por assunto. Nesta configuração rápida 
 
 | Menu | O que tem dentro |
 |---|---|
-| **Geral** | Config (monitor, tema, barra flutuante), Idioma, OCR e Atalhos |
+| **Geral** | Config (monitor, tema, barra flutuante), Perfis, Idioma, OCR e Atalhos |
 | **Overlay** | Aparência da tradução na tela: Captura, Legenda e Web |
 | **Traducao** | Tradutores (motor e chaves de API) e I.A (prompts e parâmetros) |
 | **Ferramentas** | Inpaint (apagar o texto original) e Lab (testar pré-processamento) |
@@ -104,7 +104,7 @@ entrar no jogo.
 > Translate. Ajuda bastante em sessões longas de Modo Legenda.
 
 > Só os motores de IA (OpenAI, Claude, Gemini) suportam o **Modo Vision** — o Google Translate e
-> o DeepL não. Veja a [seção 7](/Manual/modo-vision-quando-o-ocr-erra.md).
+> o DeepL não. Veja a [seção 8](/Manual/modo-vision-quando-o-ocr-erra.md).
 
 ## 2.5 Marque a área do texto
 
@@ -197,7 +197,7 @@ Cada ação tem uma tecla principal, escolhida na lista à direita, e três bot�
 
 As teclas do **Modo Tempo Real** não ficam aqui: por ser experimental, elas moram na aba
 **Experimental**, e vêm sem tecla definida. Veja a
-[seção 9](/Manual/modo-tempo-real-traducao-continua-no-lugar-experimental.md).
+[seção 10](/Manual/modo-tempo-real-traducao-continua-no-lugar-experimental.md).
 
 ## Deu certo? E se não deu
 
@@ -211,8 +211,8 @@ Se a tradução apareceu sobre o jogo, está tudo pronto — siga para a
   exclusiva*. Troque para *Janela sem borda*.
 - **Saiu tradução errada ou embaralhada** → o OCR leu mal. Comece trocando o modo de
   agrupamento (`Numpad9` ↔ `Numpad8`) e veja a
-  [seção 5](/Manual/configurando-a-traducao.md).
+  [seção 6](/Manual/configurando-a-traducao.md).
 
-Outros problemas estão na [seção 12](/Manual/problemas-comuns-e-solucoes.md).
+Outros problemas estão na [seção 13](/Manual/problemas-comuns-e-solucoes.md).
 
 ---

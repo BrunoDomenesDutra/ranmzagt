@@ -22,7 +22,7 @@ The left-hand menu groups options by subject. For this quick setup you only touc
 
 | Menu | What's inside |
 |---|---|
-| **General** | Config (monitor, theme, floating toolbar), Language, OCR and Shortcuts |
+| **General** | Config (monitor, theme, floating toolbar), Profiles, Language, OCR and Shortcuts |
 | **Overlay** | How the translation looks on screen: Capture, Subtitles and Web |
 | **Translation** | Translators (engine and API keys) and AI (prompts and parameters) |
 | **Tools** | Inpaint (erase the original text) and Lab (test preprocessing) |
@@ -71,7 +71,7 @@ Each engine stores its own credentials, so switching away and back doesn't erase
 
 > **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Very handy in long Subtitle Mode sessions.
 
-> Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate and DeepL don't. See [section 7](/en/Manual/vision-mode-when-ocr-fails.md).
+> Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate and DeepL don't. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
 
 ## 2.5 Mark the text area
 
@@ -146,7 +146,7 @@ Each action has a main key, picked from the list on the right, plus three modifi
 
 > **A letter or number as the main key requires a modifier** (Ctrl, Alt or Shift) — otherwise you'd fire the program every time you typed in the game. Numpad keys, F1–F12 and the navigation keys work on their own.
 
-The **Real-time Mode** keys aren't here: being experimental, they live in the **Experimental** tab, and come with no key assigned. See [section 9](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md).
+The **Real-time Mode** keys aren't here: being experimental, they live in the **Experimental** tab, and come with no key assigned. See [section 10](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md).
 
 ## Did it work? And if it didn't
 
@@ -154,8 +154,8 @@ If the translation showed up over the game, you're all set — move on to [secti
 
 - **Nothing happened when you pressed the hotkey** → the settings window was focused, or the game is swallowing the numpad keys. Use the **floating bar** (step 2.7) or change the key (step 2.8).
 - **The translation shows in the History tab, but not over the game** → the game is in *Exclusive Fullscreen*. Switch it to *Borderless Fullscreen*.
-- **The translation came out wrong or scrambled** → the OCR misread it. Start by switching the grouping mode (`Numpad9` ↔ `Numpad8`) and see [section 5](/en/Manual/configuring-translation.md).
+- **The translation came out wrong or scrambled** → the OCR misread it. Start by switching the grouping mode (`Numpad9` ↔ `Numpad8`) and see [section 6](/en/Manual/configuring-translation.md).
 
-Other problems are covered in [section 12](/en/Manual/common-problems-and-solutions.md).
+Other problems are covered in [section 13](/en/Manual/common-problems-and-solutions.md).
 
 ---

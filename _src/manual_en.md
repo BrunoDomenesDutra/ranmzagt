@@ -244,6 +244,8 @@ Every game asks for different settings: the dialogue box sits in a different cor
 
 The selector lives in the **top-right corner of the window**, next to the theme button, and shows up on every tab — because the active profile is the context for everything they display.
 
+<p align="center"><img src="media/geral-perfis.png" alt="General › Profiles tab" width="820"></p>
+
 ### The Default profile
 
 It always exists, comes active and **cannot be deleted or renamed**. If you never create another profile, the program works exactly as before: everything you adjust stays in it.
@@ -600,13 +602,15 @@ Where the program runs.
 
 One set of settings per game. The concept and the walkthrough are in [section 4](/en/Manual/profiles-one-set-of-settings-per-game.md); this is just the controls.
 
-- **Your profiles** — the list. The active profile is highlighted and marked *active*; click any other one to activate it right away.
-  - **Rename** — changes the name. **Default** doesn't have this button: its name follows the interface language.
-  - **Delete** — asks for confirmation (*Delete it*). **Default** cannot be deleted. If the deleted profile was the one in use, Default takes over immediately.
+<p align="center"><img src="media/geral-perfis.png" alt="General › Profiles tab" width="820"></p>
+
 - **New profile → Game name** — the name of the profile to be created.
   - **Duplicate current** — creates it from everything in effect right now, **selected areas included**.
   - **Start from scratch** — creates it with the factory values.
   - Either way the new profile **becomes active**, and from then on everything you change in the other tabs is saved into it by itself.
+- **Your profiles** — the list, in a collapsible card: click the header to fold it away once it grows. The active profile is highlighted and marked *active*; click any other one to activate it right away.
+  - **Rename** — changes the name. **Default** doesn't have this button: its name follows the interface language.
+  - **Delete** — asks for confirmation (*Delete it*). **Default** cannot be deleted. If the deleted profile was the one in use, Default takes over immediately.
 - **What changes when you switch profiles** — the summary of which options follow the profile and which apply to all of them (API keys, shortcuts, monitor, OCR tab, Inpaint and web server).
 
 ### General › Language
@@ -739,9 +743,10 @@ Which service translates, and with which credentials.
 - **Authentication** — shown for providers with a key. Credentials are **saved per engine**, so switching services and back erases nothing.
   - *Model* (AI engines) — each engine offers three tiers: fast/cheap, best balance, and top quality.
     - OpenAI: GPT-4.1 nano · GPT-4.1 mini · GPT-4.1
-    - Claude: Haiku 4.5 · Sonnet 5 · Opus 4.8
-    - Gemini: 2.0 Flash · 2.5 Flash · 2.5 Pro
+    - Claude: Haiku 4.5 · Sonnet 5 · Opus 5
+    - Gemini: 3.5 Flash-Lite · 3.6 Flash · 3.7 Flash
     - *Custom…* — the last option in the list: opens a free-text field where you type **any model ID** the provider accepts, so you can use a newer model without waiting for a program update.
+    - *See the provider's full model list* — opens the selected engine's official page in your browser, with every model and its exact ID. Useful in two situations: when a model newer than the built-in list comes out, and when you have an older key that still reaches models the provider has closed off to new accounts — that's the case with the Gemini 2.0 and 2.5 families, which answer for older keys but return an error on freshly created ones. Either way, copy the ID from there into the *Custom…* field.
   - *Test connection* — makes a test call with the current key and model and tells you right away whether everything is fine or which error came back, instead of you finding out mid-game. It also exists for Google, to check connectivity.
 - **API Keys** — a collapsible card where the selected engine's credential goes (`sk-…`, `sk-ant-…`, `AIza…`, or the free-plan DeepL `:fx` key). It **opens by itself** while no key is filled in.
   - *+ Add key* / *✕* — you can register **as many keys as you like** for the same engine. When the key in use runs out of credit or hits the request limit, the next one in the list takes over automatically; once all are exhausted, it falls back to Google Translate.

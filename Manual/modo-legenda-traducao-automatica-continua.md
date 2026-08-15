@@ -1,4 +1,4 @@
-# 8. Modo Legenda — tradução automática contínua
+# 9. Modo Legenda — tradução automática contínua
 
 Para cenas com diálogo contínuo (cutscenes, modo automático de visual novels, vídeos com
 legenda), o Modo Legenda traduz **sozinho, repetidamente**, sem você precisar apertar nada.

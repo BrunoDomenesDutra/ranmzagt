@@ -1,4 +1,4 @@
-# 10. Using with OBS / streaming
+# 11. Using with OBS / streaming
 
 If you stream or record the game and want **the translation to also appear in the video/stream** (or only in the video, without appearing in the game itself), use the **Web** tab:
 
