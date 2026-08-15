@@ -9,17 +9,18 @@ Practical guide to using **Ranmza GT**, the translator for games, visual novels,
 1. [What the program does](#1-what-the-program-does)
 2. [Quick setup](#2-quick-setup)
 3. [Basic day-to-day usage](#3-basic-day-to-day-usage)
-4. [Keyboard shortcuts](#4-keyboard-shortcuts)
-5. [Configuring translation](#5-configuring-translation)
-6. [Making translation look like the game](#6-making-translation-look-like-the-game)
-7. [Vision Mode — when OCR fails](#7-vision-mode--when-ocr-fails)
-8. [Subtitle Mode — continuous automatic translation](#8-subtitle-mode--continuous-automatic-translation)
-9. [Real-time Mode — continuous translation in place (experimental)](#9-real-time-mode--continuous-translation-in-place-experimental)
-10. [Using with OBS / streaming](#10-using-with-obs--streaming)
-11. [History and performance](#11-history-and-performance)
-12. [Common problems and solutions](#12-common-problems-and-solutions)
-13. [Complete reference — all tabs](#13-complete-reference--all-tabs)
-14. [Updating the program](#14-updating-the-program)
+4. [Profiles — one set of settings per game](#4-profiles--one-set-of-settings-per-game)
+5. [Keyboard shortcuts](#5-keyboard-shortcuts)
+6. [Configuring translation](#6-configuring-translation)
+7. [Making translation look like the game](#7-making-translation-look-like-the-game)
+8. [Vision Mode — when OCR fails](#8-vision-mode--when-ocr-fails)
+9. [Subtitle Mode — continuous automatic translation](#9-subtitle-mode--continuous-automatic-translation)
+10. [Real-time Mode — continuous translation in place (experimental)](#10-real-time-mode--continuous-translation-in-place-experimental)
+11. [Using with OBS / streaming](#11-using-with-obs--streaming)
+12. [History and performance](#12-history-and-performance)
+13. [Common problems and solutions](#13-common-problems-and-solutions)
+14. [Complete reference — all tabs](#14-complete-reference--all-tabs)
+15. [Updating the program](#15-updating-the-program)
 
 ---
 
@@ -64,7 +65,7 @@ The left-hand menu groups options by subject. For this quick setup you only touc
 
 | Menu | What's inside |
 |---|---|
-| **General** | Config (monitor, theme, floating toolbar), Language, OCR and Shortcuts |
+| **General** | Config (monitor, theme, floating toolbar), Profiles, Language, OCR and Shortcuts |
 | **Overlay** | How the translation looks on screen: Capture, Subtitles and Web |
 | **Translation** | Translators (engine and API keys) and AI (prompts and parameters) |
 | **Tools** | Inpaint (erase the original text) and Lab (test preprocessing) |
@@ -113,7 +114,7 @@ Each engine stores its own credentials, so switching away and back doesn't erase
 
 > **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Very handy in long Subtitle Mode sessions.
 
-> Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate and DeepL don't. See [section 7](/en/Manual/vision-mode-when-ocr-fails.md).
+> Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate and DeepL don't. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
 
 ### 2.5 Mark the text area
 
@@ -188,7 +189,7 @@ Each action has a main key, picked from the list on the right, plus three modifi
 
 > **A letter or number as the main key requires a modifier** (Ctrl, Alt or Shift) — otherwise you'd fire the program every time you typed in the game. Numpad keys, F1–F12 and the navigation keys work on their own.
 
-The **Real-time Mode** keys aren't here: being experimental, they live in the **Experimental** tab, and come with no key assigned. See [section 9](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md).
+The **Real-time Mode** keys aren't here: being experimental, they live in the **Experimental** tab, and come with no key assigned. See [section 10](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md).
 
 ### Did it work? And if it didn't
 
@@ -196,9 +197,9 @@ If the translation showed up over the game, you're all set — move on to [secti
 
 - **Nothing happened when you pressed the hotkey** → the settings window was focused, or the game is swallowing the numpad keys. Use the **floating bar** (step 2.7) or change the key (step 2.8).
 - **The translation shows in the History tab, but not over the game** → the game is in *Exclusive Fullscreen*. Switch it to *Borderless Fullscreen*.
-- **The translation came out wrong or scrambled** → the OCR misread it. Start by switching the grouping mode (`Numpad9` ↔ `Numpad8`) and see [section 5](/en/Manual/configuring-translation.md).
+- **The translation came out wrong or scrambled** → the OCR misread it. Start by switching the grouping mode (`Numpad9` ↔ `Numpad8`) and see [section 6](/en/Manual/configuring-translation.md).
 
-Other problems are covered in [section 12](/en/Manual/common-problems-and-solutions.md).
+Other problems are covered in [section 13](/en/Manual/common-problems-and-solutions.md).
 
 ---
 
@@ -237,22 +238,71 @@ Press **Show/hide areas** (default `Numpad2`) to draw colored rectangles showing
 
 ---
 
-## 4. Keyboard shortcuts
+## 4. Profiles — one set of settings per game
+
+Every game asks for different settings: the dialogue box sits in a different corner of the screen, the language is another one, the font that reads well in one doesn't in the other, and the glossary of names is useless anywhere else. A **profile** keeps all of that together, and you switch games in one click.
+
+The selector lives in the **top-right corner of the window**, next to the theme button, and shows up on every tab — because the active profile is the context for everything they display.
+
+### The Default profile
+
+It always exists, comes active and **cannot be deleted or renamed**. If you never create another profile, the program works exactly as before: everything you adjust stays in it.
+
+Nobody already using Ranmza GT loses anything on the update — your current configuration becomes the Default profile automatically.
+
+### Creating a profile
+
+Go to **General › Profiles**, type the game's name and choose:
+
+- **Duplicate current** — copies everything in effect right now, selected areas included. This is the usual path: you got the program right for a game and want to save that under a name.
+- **Start from scratch** — uses the factory values. Good for a game that has nothing to do with the previous one.
+
+The new profile becomes active right away. From there you just set the program up as usual, in the same tabs: **everything you change is saved into it by itself**, with no save button.
+
+### Switching profiles
+
+Click the selector in the header and pick another one (or click its row in *General › Profiles*). The switch takes effect immediately — areas, languages, appearance and glossary all change together, with no restart. An on-screen notification confirms which profile took over, handy when you switch with the game in the foreground.
+
+If **Subtitle Mode** or **Real-time Mode** are running, they stay running and start capturing the new profile's area.
+
+### Renaming and deleting
+
+In **General › Profiles**, every profile (except Default) has **Rename** and **Delete**. Deleting asks for confirmation; if you delete the profile in use, Default takes over immediately.
+
+### What does NOT change when you switch profiles
+
+Not everything is "per game" — what is yours keeps applying across all profiles:
+
+| Follows the profile | Applies to every profile |
+|---|---|
+| Source and translation languages | API keys |
+| Capture area and subtitle area | Keyboard shortcuts |
+| Translation appearance (font, color, background, duration) | Monitor and floating toolbar |
+| Image preprocessing | OCR engine and OneOCR folder (*General › OCR* tab) |
+| Translation engine and model | Inpaint |
+| System Prompt and Game Information | Web server |
+| Subtitle Mode and Real-time Mode | Interface language and the diagnostic options |
+
+The API key is the one that matters most: you type it **once** and it applies to every profile, including the ones you create later.
+
+---
+
+## 5. Keyboard shortcuts
 
 | Shortcut | Default | What it does |
 |---|---|---|
 | Select area | `Numpad7` | Opens the selector to choose where text is |
 | Translate (paragraph mode) | `Numpad8` | Captures and translates merging nearby lines into a block — dialogue |
 | Translate (line mode) | `Numpad9` | Captures and translates each line on its own — menus and lists |
-| Translate with AI Vision (paragraph mode) | `Numpad5` | Same as `Numpad8`, but sending the image to the AI (see section 7) |
-| Translate with AI Vision (line mode) | `Numpad6` | Same as `Numpad9`, but sending the image to the AI (see section 7) |
+| Translate with AI Vision (paragraph mode) | `Numpad5` | Same as `Numpad8`, but sending the image to the AI (see section 8) |
+| Translate with AI Vision (line mode) | `Numpad6` | Same as `Numpad9`, but sending the image to the AI (see section 8) |
 | Clear overlay | `NumpadDecimal` (Numpad period) | Hides the displayed translation |
-| Toggle subtitles | `Numpad0` | Activates continuous automatic translation (see section 8) |
+| Toggle subtitles | `Numpad0` | Activates continuous automatic translation (see section 9) |
 | Select subtitle area | `Numpad1` | Choose where the game's subtitle appears |
 | Show/hide areas (preview) | `Numpad2` | Shows rectangles of configured areas |
 | Show/hide floating toolbar | `NumpadSubtract` (Numpad minus) | Opens or closes the floating toolbar of buttons (see section 3) |
 
-> **What about Real-time Mode?** Its shortcuts — toggle and select area — aren't in this list nor in General › Shortcuts: being experimental, they live in the **Experimental** tab and come with **no key assigned**. You pick your own there. See [section 9](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md).
+> **What about Real-time Mode?** Its shortcuts — toggle and select area — aren't in this list nor in General › Shortcuts: being experimental, they live in the **Experimental** tab and come with **no key assigned**. You pick your own there. See [section 10](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md).
 
 All can be changed in **General › Shortcuts** — choose another key and, if you want, combine with Ctrl/Alt/Shift. If you choose a **letter or a number** from the top row, it's **mandatory** to use at least one modifier (Ctrl, Alt, or Shift) to not interfere with normal game controls (which use WASD and slots 0–9 constantly). Numpad, F1–F12 and the navigation keys work on their own — the **Numbers** and **Navigation** groups are what save you on a laptop with no numpad.
 
@@ -260,7 +310,7 @@ All can be changed in **General › Shortcuts** — choose another key and, if y
 
 ---
 
-## 5. Configuring translation
+## 6. Configuring translation
 
 ### Text type: dialog or menu?
 
@@ -305,7 +355,7 @@ If preprocessing still doesn't fix recognition, **General › OCR** lets you swi
 
 ---
 
-## 6. Making translation look like the game
+## 7. Making translation look like the game
 
 In **Overlay › Capture**, in the **Text** card:
 
@@ -336,7 +386,7 @@ The same card holds **"Hide the translation from recordings and streams"**: when
 
 ---
 
-## 7. Vision Mode — when OCR fails
+## 8. Vision Mode — when OCR fails
 
 Sometimes normal text recognition (OCR) misses letters, loses parts of text, or gets completely lost on very stylized/artistic fonts, with symbols or icons mixed in the text.
 
@@ -356,7 +406,7 @@ Just like normal Translate, Vision has both modes, and you pick with the hotkey:
 
 ---
 
-## 8. Subtitle Mode — continuous automatic translation
+## 9. Subtitle Mode — continuous automatic translation
 
 For scenes with ongoing dialog (cutscenes, visual novel auto mode, videos with subtitles), Subtitle Mode translates **on its own, repeatedly**, without you needing to press anything.
 
@@ -418,7 +468,7 @@ The mode also **turns itself off** after a while with no text detected in the re
 
 ---
 
-## 9. Real-time Mode — continuous translation in place (experimental)
+## 10. Real-time Mode — continuous translation in place (experimental)
 
 > **Experimental feature** — configured via the **Experimental** tab. Behavior may still change and bugs are expected.
 
@@ -458,7 +508,7 @@ Three controls fine-tune it: how many consecutive reads must match (*Required st
 
 ---
 
-## 10. Using with OBS / streaming
+## 11. Using with OBS / streaming
 
 If you stream or record the game and want **the translation to also appear in the video/stream** (or only in the video, without appearing in the game itself), use the **Web** tab:
 
@@ -475,7 +525,7 @@ The page can also be opened in any browser on the local network (phone, second m
 
 ---
 
-## 11. History and performance
+## 12. History and performance
 
 - **History tab**: shows translations made during the current session (original text, translation, time and service used), most recent first. Click an entry to copy the translation; there's also a button to clear everything.
 - **Debug › Monitor**: turns on a log of the last 10 translations with the time each step took (capture, preprocessing, recognition, translation, total) — useful to notice if any configuration is slowing the program down (for example, heavy preprocessing).
@@ -483,7 +533,7 @@ The page can also be opened in any browser on the local network (phone, second m
 
 ---
 
-## 12. Common problems and solutions
+## 13. Common problems and solutions
 
 **"Error opening program: VCRUNTIME140.dll not found" (or MSVCP140.dll)**
 → Your Windows is missing **Microsoft Visual C++ Redistributable** — a free Microsoft component some freshly-formatted PCs don't have. Download and install the **x64** package from this official link: <https://aka.ms/vs/17/release/vc_redist.x64.exe> — then reopen Ranmza GT, it should open normally.
@@ -521,7 +571,7 @@ The page can also be opened in any browser on the local network (phone, second m
 
 ---
 
-## 13. Complete reference — all tabs
+## 14. Complete reference — all tabs
 
 This section describes **every tab and every option** in the settings window, in the order they appear in the left-hand menu. It's reference material — for day-to-day use, the earlier sections are enough.
 
@@ -536,7 +586,7 @@ Where the program runs.
 <p align="center"><img src="media/geral-config.png" alt="General › Config tab" width="820"></p>
 
 - **App language → Interface language** — switches the language of the settings window itself (Portuguese / English). It does not affect the OCR and translation languages. On first run it detects the Windows language (falling back to English if it isn't Portuguese).
-- **Updates → Notify me about new versions** — turns on the notice that shows up when you open the program and a newer version has been published (see section 14). Turn it off here, or from the notice itself, and turn it back on with this toggle.
+- **Updates → Notify me about new versions** — turns on the notice that shows up when you open the program and a newer version has been published (see section 15). Turn it off here, or from the notice itself, and turn it back on with this toggle.
 - **Updates → Check now** — checks right away whether a new version is out, even with the notice turned off. The answer appears next to the button: *"You are on the latest version"*, the version found (with a **Download** button that opens the page in your browser), or a warning that the check failed.
 - **Configuration → Reset to default** — restores every option to factory values. It **keeps** the monitor, the selected areas, the API keys, the prompts (System Prompt and Game Info) and the update-notice preference.
 - **Capture backend → Backend** — how the program reads screen pixels:
@@ -545,6 +595,19 @@ Where the program runs.
   - *DXGI (Windows 10)* — Desktop Duplication; it exists so Windows 10 doesn't draw the yellow border around the captured monitor.
 - **Monitor → Active display** — which monitor the program captures, translates and displays on. *Automatic* uses the Windows primary monitor. Switching monitors **clears the saved capture area** and **requires a restart** (a "Restart now" button appears at the bottom of the tab).
 - **Floating toolbar → Show floating toolbar** — turns on the always-visible button window (see step 2.7). It also opens and closes with the `NumpadSubtract` hotkey, and it **remembers the last position** you left it in.
+
+### General › Profiles
+
+One set of settings per game. The concept and the walkthrough are in [section 4](/en/Manual/profiles-one-set-of-settings-per-game.md); this is just the controls.
+
+- **Your profiles** — the list. The active profile is highlighted and marked *active*; click any other one to activate it right away.
+  - **Rename** — changes the name. **Default** doesn't have this button: its name follows the interface language.
+  - **Delete** — asks for confirmation (*Delete it*). **Default** cannot be deleted. If the deleted profile was the one in use, Default takes over immediately.
+- **New profile → Game name** — the name of the profile to be created.
+  - **Duplicate current** — creates it from everything in effect right now, **selected areas included**.
+  - **Start from scratch** — creates it with the factory values.
+  - Either way the new profile **becomes active**, and from then on everything you change in the other tabs is saved into it by itself.
+- **What changes when you switch profiles** — the summary of which options follow the profile and which apply to all of them (API keys, shortcuts, monitor, OCR tab, Inpaint and web server).
 
 ### General › Language
 
@@ -634,7 +697,7 @@ Subtitle Mode has its **own** appearance and preprocessing, independent of Overl
 - **Translation position** — *Replace the original subtitle in place*: draws the translation over the
   captured area, covering the original subtitle, instead of showing it above the area. Shows one line
   at a time (see *Visible lines* below). In this mode the subtitle disappears from captures made on
-  this PC — that's what keeps the OCR from re-reading its own translation. See section 8.
+  this PC — that's what keeps the OCR from re-reading its own translation. See section 9.
 - **Text** — *Font*, *Text color* and *Font size* (10–48 pt). No line height and no auto-fit.
 - **Background and Outline** — *Show background* + *opacity* (10–100%), or *Show outline* + *Outline thickness* (1–5 px).
 
@@ -796,9 +859,9 @@ Two collapsible cards.
 - Both shortcuts — *Toggle Real-time* and *Select Real-time area* — live here and come with **no key assigned**; pick your own.
 - *Interval* (25 ms–2 s) · *Font size* (10–48 pt) · *Show background* + *opacity* (10–100%) · *Show outline* · *Clear after silence* (0–10 s).
 - *Position stability* (0–60 px) and *Hold on OCR failure* (0–30 ticks) — against shaking and flicker when the background is animated.
-- It also has its own dedicated image preprocessing. See **section 9**.
+- It also has its own dedicated image preprocessing. See **section 10**.
 
-> The Real-time overlay is always hidden from screen capture (OBS included) — see section 9.
+> The Real-time overlay is always hidden from screen capture (OBS included) — see section 10.
 
 **Wait for complete text (typewriter effect)** — only translates once the line has finished appearing, so you don't translate sentences still "being typed" on screen. Applies to Subtitle Mode and Real-time Mode.
 
@@ -814,7 +877,7 @@ Program information: icon, name and installed **version**, the feature list, the
 
 ---
 
-## 14. Updating the program
+## 15. Updating the program
 
 When you open the program, if a newer version has been published, a notice appears showing the version you have and the one that came out. The **Download** button opens the new version's page in your browser — that's where the release notes and the `.zip` file are.
 
