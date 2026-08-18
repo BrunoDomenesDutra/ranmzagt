@@ -55,6 +55,7 @@ Nem tudo é "por jogo" — o que é seu continua valendo em todos os perfis:
 | Área de captura e área da legenda | Atalhos de teclado |
 | Aparência da tradução (fonte, cor, fundo, duração) | Monitor e barra flutuante |
 | Pré-processamento de imagem | Motor de OCR e pasta do OneOCR (aba *Geral › OCR*) |
+| | Sensibilidade do agrupamento (em *Overlay › Captura*) |
 | Motor de tradução e modelo | Inpaint |
 | System Prompt e Informações do Jogo | Servidor web |
 | Modo Legenda e Modo Tempo Real | Idioma da interface e as opções de diagnóstico |

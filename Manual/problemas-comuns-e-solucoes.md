@@ -8,6 +8,8 @@ abre normalmente.
 
 **"O reconhecimento não detecta nada" / aviso vermelho sobre idioma**
 → Vá em **Geral › Idioma** e clique no aviso para instalar o pacote de idioma do Windows necessário.
+Esse aviso é coisa do **WinOCR**: o **OneOCR** não usa pacotes de idioma do Windows e lê qualquer
+idioma sem instalar nada — outro motivo para trocar de motor em **Geral › OCR**.
 
 **"Apertei o atalho e nada acontece"**
 → Confira se a janela de configuração não está em primeiro plano (os atalhos só funcionam com
@@ -38,9 +40,12 @@ limite de tokens**, aumente o **Max tokens** em **Traducao › I.A** (acontece s
 grandes).
 
 **"O texto reconhecido está errado/incompleto"**
-→ Tente ativar o pré-processamento (**Overlay › Captura**) com upscale e ajuste de contraste,
-ou use o **Traduzir com I.A Vision** (`Numpad5` parágrafo, `Numpad6` linha) para deixar a IA
-"ver" a imagem e corrigir.
+→ A solução que mais resolve é trocar o motor de OCR para o **OneOCR** em **Geral › OCR** — ele
+lê fontes de jogo muito melhor que o WinOCR e dispensa quase todo ajuste de imagem (o passo a
+passo e o porquê estão na [seção 6](/Manual/configurando-a-traducao.md), em *Trocando o motor de
+OCR*). Se preferir seguir no WinOCR, ative o pré-processamento (**Overlay › Captura**) com
+upscale e ajuste de contraste. Em último caso, use o **Traduzir com I.A Vision** (`Numpad5`
+parágrafo, `Numpad6` linha) para deixar a IA "ver" a imagem e corrigir.
 
 **"A tradução fica cortada ou não cabe na caixa"**
 → Na tradução manual (`Numpad8`/`Numpad9`), ative **Auto-fit** em **Overlay › Captura** — o programa

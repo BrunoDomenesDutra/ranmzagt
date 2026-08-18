@@ -26,6 +26,11 @@ Onde o programa opera.
 - **Configuração → Resetar para o padrão** — restaura todas as opções aos valores de fábrica.
   **Mantém** o monitor, as áreas selecionadas, as chaves de API, os prompts (System Prompt e
   Informações do Jogo) e a preferência de aviso de atualização.
+
+<p align="center"><img src="media/geral-config-monitor.png" alt="Aba Geral › Config — backend, monitor e barra flutuante" width="820"></p>
+
+<p align="center"><i>Rolando a mesma aba: <b>Backend de captura</b>, <b>Monitor</b> e <b>Barra flutuante</b>.</i></p>
+
 - **Backend de captura → Backend** — como o programa lê os pixels da tela:
   - *Auto (recomendado)* — escolhe sozinho: WGC no Windows 11, DXGI no Windows 10, sem a borda
     amarela. A troca vale na hora, sem reiniciar.
@@ -78,31 +83,34 @@ O campo do idioma de origem **se adapta ao motor de OCR** escolhido em Geral ›
 
 ## Geral › OCR
 
-Qual motor reconhece o texto e como ele agrupa as linhas.
+Qual motor reconhece o texto na tela.
 
 <p align="center"><img src="media/geral-ocr.png" alt="Aba Geral › OCR" width="820"></p>
 
 - **Engine de OCR → Engine ativo**
-  - *WinOCR (padrão — nativo, ~30 ms)* — motor embutido no Windows: rápido, offline e sem
+  - *WinOCR (nativo do Windows)* — motor embutido no Windows: rápido, offline e sem
     dependência externa. O reconhecimento depende dos pacotes de idioma instalados no sistema.
-    É o mais rápido, mas pode errar em fontes muito estilizadas de jogos.
-  - *OneOCR (Snipping Tool — experimental, ~50–150 ms)* — modelo multilíngue com detecção
-    automática de idioma. **Roda no Windows 10 e no 11**; o que é exclusivo do Windows 11 são os
+    Não precisa de instalação nenhuma, mas pode errar em fontes muito estilizadas de jogos.
+  - *OneOCR (Snipping Tool — recomendado)* — modelo multilíngue com detecção
+    automática de idioma, bem superior ao WinOCR em fontes de jogo e praticamente sem precisar
+    de pré-processamento (o porquê está na
+    [seção 6](/Manual/configurando-a-traducao.md), em *Trocando o motor de OCR*).
+    **Roda no Windows 10 e no 11**; o que é exclusivo do Windows 11 são os
     arquivos: `oneocr.dll`, `oneocr.onemodel` e `onnxruntime.dll` só vêm com o Snipping Tool do
-    Windows 11. Você os copia de uma máquina com Win11 e aponta a pasta (o card traz o passo a
-    passo, inclusive o comando do PowerShell para achar a pasta do Snipping Tool). Usa uma API
-    não oficial da Microsoft — uma atualização do Snipping Tool pode quebrar a integração, e aí
-    é só reextrair os arquivos.
-  - O card de configuração do motor é **recolhível**: fica aberto enquanto a pasta não estiver
+    Windows 11. Usa uma API não oficial da Microsoft — uma atualização do Snipping Tool pode
+    quebrar a integração, e aí é só rodar a detecção de novo.
+- **Configuração do OneOCR** (aparece com o OneOCR selecionado)
+  - *Detectar e Copiar Automaticamente* — acha o Snipping Tool instalado, copia os 3 arquivos
+    para a pasta do programa e configura o caminho. Avisa quando o app não está instalado ou
+    quando é uma versão sem os arquivos (o caso do Windows 10).
+  - *Passo a passo manual* — bloco recolhível com as instruções de cópia à mão, para o Windows
+    10 ou quando a detecção não acha nada. Fica aberto por padrão e lembra se você fechar.
+  - *Pasta com os 3 arquivos* — o caminho em si, com **Procurar...** e **Verificar**.
+  - O card inteiro também é **recolhível**: fica aberto enquanto a pasta não estiver
     configurada, e depois você pode fechá-lo.
-- **Ajuste Fino do Modo Parágrafo → Sensibilidade do agrupamento** (0–3,0; padrão 1) —
-  multiplicador sobre o espaçamento vertical típico entre linhas, usado para decidir se duas
-  linhas pertencem ao mesmo parágrafo. Valores menores separam parágrafos com mais facilidade;
-  maiores juntam linhas mais distantes num bloco só.
 
-> **O modo não se escolhe aqui.** Parágrafo ou linha é decidido **na hora de capturar**, pelo
-> atalho que você aperta: `Numpad8` (parágrafo) ou `Numpad9` (linha). Esta aba só afina como o
-> modo Parágrafo agrupa.
+> **O agrupamento não se ajusta aqui.** A *Sensibilidade do agrupamento* do modo Parágrafo fica
+> em **Overlay › Captura**, junto do pré-processamento.
 
 ## Geral › Atalhos
 
@@ -143,6 +151,13 @@ Aparência da tradução manual e pré-processamento da imagem.
 
 <p align="center"><img src="media/overlay-captura.png" alt="Aba Overlay › Captura" width="820"></p>
 
+- **Exibição**
+  - *Duração do overlay* — Nunca limpar automaticamente / 15 s / 30 s /
+    **1 minuto (padrão)** / 2 / 5 / 10 minutos.
+  - *Esconder a tradução de gravações e transmissões* — a tradução continua visível na sua tela,
+    mas some das capturas. Funciona só com programas rodando neste PC (OBS, Game Bar, NVIDIA
+    ShadowPlay, etc); gravando por placa de captura, ela aparece assim mesmo. Afeta só a
+    tradução manual.
 - **Texto**
   - *Fonte* — "Padrão do sistema (Arial)" ou qualquer fonte da pasta `fonts/`, com prévia ao
     lado.
@@ -156,13 +171,12 @@ Aparência da tradução manual e pré-processamento da imagem.
 
 <p align="center"><img src="media/overlay-captura-exibicao.png" alt="Aba Overlay › Captura — Exibição e pré-processamento" width="820"></p>
 
-- **Exibição**
-  - *Duração do overlay* — Nunca limpar automaticamente / 15 s / 30 s /
-    **1 minuto (padrão)** / 2 / 5 / 10 minutos.
-  - *Esconder a tradução de gravações e transmissões* — a tradução continua visível na sua tela,
-    mas some das capturas. Funciona só com programas rodando neste PC (OBS, Game Bar, NVIDIA
-    ShadowPlay, etc); gravando por placa de captura, ela aparece assim mesmo. Afeta só a
-    tradução manual.
+- **Ajuste Fino do Modo Parágrafo → Sensibilidade do agrupamento** (0–3,0; padrão 1) —
+  multiplicador sobre o espaçamento vertical típico entre linhas, usado para decidir se duas
+  linhas pertencem ao mesmo parágrafo. Valores menores separam parágrafos com mais facilidade;
+  maiores juntam linhas mais distantes num bloco só. O modo em si (parágrafo ou linha) **não se
+  escolhe aqui**: é decidido na hora de capturar, pelo atalho — `Numpad8` (parágrafo) ou
+  `Numpad9` (linha).
 - **Pré-processamento OCR** — filtros aplicados à imagem antes do reconhecimento:
   - *Ativar pré-processamento* liga o bloco.
   - *Escala de cinza* · *Inverter cores*
@@ -213,6 +227,11 @@ Transmite as traduções para navegadores na rede local — e para o OBS.
   - *Porta* (1024–65535) — mostra também quantos clientes estão conectados.
 - **Endereços** — `/captura` (com histórico e botão Limpar) e `/captura/obs` (fundo
   transparente, para usar como Browser Source no OBS), cada um com botão **Copiar**.
+
+<p align="center"><img src="media/overlay-web-aparencia.png" alt="Aba Overlay › Web — aparência da página e histórico" width="820"></p>
+
+<p align="center"><i>Rolando a mesma aba: <b>Aparência</b> da página web e o buffer do <b>Histórico</b>.</i></p>
+
 - **Aparência** — *Tema* · *Tamanho da fonte* (12–48 px) · *Negrito* · *Texto detectado* (mostra
   o original abaixo da tradução) · *Horário e serviço* · *Cores personalizadas*, que libera seis
   seletores: texto traduzido, texto original, horário, serviço (badge), fundo do card e borda do

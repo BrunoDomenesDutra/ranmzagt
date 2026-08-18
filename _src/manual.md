@@ -128,8 +128,10 @@ Abra **Geral › Idioma**.
 > **Usando OneOCR?** Aí não existe idioma de origem para escolher: ele é um modelo único
 > multilíngue (latim, CJK, cirílico…) que detecta o idioma sozinho, e o campo **Idioma do
 > texto** nem aparece enquanto ele estiver selecionado — nem o aviso de pacote do Windows, que
-> não se aplica. O **Idioma destino** continua valendo normalmente. O motor de OCR se troca em
-> *Geral › OCR*, mas para começar deixe no padrão.
+> não se aplica. O **Idioma destino** continua valendo normalmente. O OneOCR é o motor
+> **recomendado** e se escolhe em *Geral › OCR*; para começar dá para seguir com o WinOCR, mas
+> vale trocar assim que puder — veja *Trocando o motor de OCR* na
+> [seção 6](/Manual/configurando-a-traducao.md).
 
 ### 2.4 Escolha o tradutor
 
@@ -372,6 +374,7 @@ Nem tudo é "por jogo" — o que é seu continua valendo em todos os perfis:
 | Área de captura e área da legenda | Atalhos de teclado |
 | Aparência da tradução (fonte, cor, fundo, duração) | Monitor e barra flutuante |
 | Pré-processamento de imagem | Motor de OCR e pasta do OneOCR (aba *Geral › OCR*) |
+| | Sensibilidade do agrupamento (em *Overlay › Captura*) |
 | Motor de tradução e modelo | Inpaint |
 | System Prompt e Informações do Jogo | Servidor web |
 | Modo Legenda e Modo Tempo Real | Idioma da interface e as opções de diagnóstico |
@@ -430,21 +433,25 @@ que você aperta:
 O mesmo vale para o Vision: `Numpad5` é parágrafo e `Numpad6` é linha.
 
 Se o modo Parágrafo estiver juntando falas que deveriam ser separadas (ou separando uma fala que
-deveria ficar junta), ajuste a **Sensibilidade do agrupamento**, em **Geral › OCR**:
+deveria ficar junta), ajuste a **Sensibilidade do agrupamento**, em **Overlay › Captura**:
 
 - Texto sendo **separado demais**? Aumente o valor (até 3,0).
 - Texto sendo **juntado demais**? Diminua o valor (até 0).
 
 Esse ajuste só afeta o modo Parágrafo — no modo Linha ele é ignorado.
 
-<p align="center"><img src="media/ocr-sensibilidade.png" alt="Sensibilidade do agrupamento, em Geral › OCR" width="820"></p>
+<p align="center"><img src="media/ocr-sensibilidade.png" alt="Sensibilidade do agrupamento, em Overlay › Captura" width="820"></p>
 
-<p align="center"><i>O ajuste fica no fim da aba <b>Geral › OCR</b>, no card <b>Ajuste Fino do Modo Parágrafo</b>.</i></p>
+<p align="center"><i>O ajuste fica na aba <b>Overlay › Captura</b>, no card <b>Ajuste Fino do Modo Parágrafo</b>.</i></p>
 
 ### Melhorando o reconhecimento de texto difícil
 
-Se o programa não está detectando o texto direito (fontes pequenas, estilizadas, com efeitos),
-vá em **Overlay › Captura** e ative o **Pré-processamento**. Algumas dicas rápidas:
+Antes de mexer em filtro nenhum: se você ainda está no **WinOCR**, o ajuste que mais resolve é
+trocar o motor de OCR para o **OneOCR** — veja *Trocando o motor de OCR*, logo abaixo. Com ele,
+boa parte dos casos desta lista simplesmente deixa de existir.
+
+Se o programa continua não detectando o texto direito (fontes pequenas, estilizadas, com
+efeitos), vá em **Overlay › Captura** e ative o **Pré-processamento**. Algumas dicas rápidas:
 
 - **Texto pequeno**: aumente o **Upscale** (2x ou 3x costuma resolver).
 - **Fonte com contorno grosso**: aumente um pouco o **Sharpen**.
@@ -461,20 +468,55 @@ Não sabe por onde começar? Use **Ferramentas › Lab** — lá dá para testar
 imagens de exemplo, ver o resultado em tempo real, e depois aplicar a configuração que funcionou
 melhor direto na Captura ou na Legenda.
 
-### Trocando o motor de OCR (avançado)
+### Trocando o motor de OCR — e por que o OneOCR é o recomendado
 
-Se mesmo com pré-processamento o reconhecimento continuar ruim, **Geral › OCR** permite trocar
-o "motor" de reconhecimento de texto:
+Em **Geral › OCR** você escolhe qual "motor" lê o texto da tela. São dois:
 
-- **WinOCR** (padrão) — rápido (~30 ms), já vem pronto, mas pode errar em fontes muito
-  estilizadas.
-- **OneOCR** (experimental) — o motor de OCR da Ferramenta de Captura (Snipping Tool), muito
-  melhor que o WinOCR em fontes estilizadas e multilíngue automático (não precisa configurar
-  idioma de origem). **Roda no Windows 10 e no 11**; o que é exclusivo do Windows 11 são os
-  3 arquivos que ele usa — eles só vêm com o Snipping Tool do Win11, então você os copia de uma
-  máquina com Windows 11 e aponta a pasta. O card em Geral › OCR mostra o passo a passo. Por
-  usar uma API não oficial da Microsoft, uma atualização do Snipping Tool pode parar de
-  funcionar; nesse caso, basta reextrair os arquivos.
+- **WinOCR** (nativo do Windows) — já vem pronto, não precisa instalar nada. É a opção que
+  funciona no primeiro minuto de uso, mas tropeça em fontes estilizadas de jogo e só lê os
+  idiomas cujo pacote está instalado no Windows.
+- **OneOCR** (recomendado) — o motor de OCR da Ferramenta de Captura (Snipping Tool) do
+  Windows 11. É o que você deve usar.
+
+**Por que o OneOCR é bem superior:**
+
+- **Qualidade de reconhecimento muito acima do WinOCR.** Fontes estilizadas, texto com
+  contorno, sombra ou efeito por cima, texto pequeno, texto sobre fundo movimentado — situações
+  em que o WinOCR entrega letra trocada ou palavra faltando e o OneOCR lê certo.
+- **Todos os idiomas de uma vez, sem configurar nada.** É um modelo único multilíngue (latim,
+  japonês, chinês, coreano, cirílico…) com detecção automática: não existe "idioma do texto"
+  para escolher, nem pacote de idioma do Windows para instalar, nem aviso amarelo. Um jogo que
+  mistura inglês e japonês na mesma tela é lido do mesmo jeito.
+- **Você para de brigar com o pré-processamento.** Com o WinOCR, texto difícil vira uma sessão
+  de ajuste de Upscale, Contraste, Sharpen e afins até acertar. O OneOCR costuma ler bem a
+  imagem crua, então na maioria dos jogos dá para deixar o pré-processamento desligado e nunca
+  mais mexer nele.
+- **Menos coisa para dar errado no dia a dia.** Sem pacote de idioma faltando, sem reajustar
+  filtro quando o jogo troca de fonte ou de cena.
+
+**Vale a pena o trabalho de pegar os arquivos?** Vale, e com folga. São três arquivos copiados
+uma única vez — depois disso a qualidade da tradução inteira sobe junto, porque tudo o que vem
+depois (agrupamento, tradução, legenda) depende do texto ter sido lido corretamente. Nenhum
+outro ajuste do programa muda tanta coisa de uma vez.
+
+**O que ele exige:** os arquivos `oneocr.dll`, `oneocr.onemodel` e `onnxruntime.dll`.
+
+**No Windows 11 é um clique.** Escolha *OneOCR* em **Geral › OCR** e use o botão **Detectar e
+Copiar Automaticamente**: o programa acha o Snipping Tool instalado, copia os 3 arquivos para a
+pasta dele e já deixa tudo configurado. Se o Snipping Tool não estiver instalado, ou for uma
+versão sem os arquivos, ele avisa em vez de falhar em silêncio.
+
+<p align="center"><img src="media/geral-ocr-oneocr.png" alt="Card de configuração do OneOCR, em Geral › OCR" width="820"></p>
+
+<p align="center"><i>Com o <b>OneOCR</b> selecionado, o card traz o botão automático e, abaixo,
+o passo a passo manual — que dá para recolher depois de instalar.</i></p>
+
+**No Windows 10 é manual**, porque **os arquivos são exclusivos das versões do app do Windows
+11** (o OneOCR em si roda nos dois). Copie os três de uma máquina com Windows 11 e aponte a
+pasta — o passo a passo dentro do card traz o comando do PowerShell que mostra onde eles estão.
+
+Por usar uma API não oficial da Microsoft, uma atualização do Snipping Tool pode quebrar a
+integração; nesse caso, rode a detecção de novo (ou reextraia os arquivos).
 
 ---
 
@@ -780,6 +822,8 @@ abre normalmente.
 
 **"O reconhecimento não detecta nada" / aviso vermelho sobre idioma**
 → Vá em **Geral › Idioma** e clique no aviso para instalar o pacote de idioma do Windows necessário.
+Esse aviso é coisa do **WinOCR**: o **OneOCR** não usa pacotes de idioma do Windows e lê qualquer
+idioma sem instalar nada — outro motivo para trocar de motor em **Geral › OCR**.
 
 **"Apertei o atalho e nada acontece"**
 → Confira se a janela de configuração não está em primeiro plano (os atalhos só funcionam com
@@ -810,9 +854,12 @@ limite de tokens**, aumente o **Max tokens** em **Traducao › I.A** (acontece s
 grandes).
 
 **"O texto reconhecido está errado/incompleto"**
-→ Tente ativar o pré-processamento (**Overlay › Captura**) com upscale e ajuste de contraste,
-ou use o **Traduzir com I.A Vision** (`Numpad5` parágrafo, `Numpad6` linha) para deixar a IA
-"ver" a imagem e corrigir.
+→ A solução que mais resolve é trocar o motor de OCR para o **OneOCR** em **Geral › OCR** — ele
+lê fontes de jogo muito melhor que o WinOCR e dispensa quase todo ajuste de imagem (o passo a
+passo e o porquê estão na [seção 6](/Manual/configurando-a-traducao.md), em *Trocando o motor de
+OCR*). Se preferir seguir no WinOCR, ative o pré-processamento (**Overlay › Captura**) com
+upscale e ajuste de contraste. Em último caso, use o **Traduzir com I.A Vision** (`Numpad5`
+parágrafo, `Numpad6` linha) para deixar a IA "ver" a imagem e corrigir.
 
 **"A tradução fica cortada ou não cabe na caixa"**
 → Na tradução manual (`Numpad8`/`Numpad9`), ative **Auto-fit** em **Overlay › Captura** — o programa
@@ -863,6 +910,11 @@ Onde o programa opera.
 - **Configuração → Resetar para o padrão** — restaura todas as opções aos valores de fábrica.
   **Mantém** o monitor, as áreas selecionadas, as chaves de API, os prompts (System Prompt e
   Informações do Jogo) e a preferência de aviso de atualização.
+
+<p align="center"><img src="media/geral-config-monitor.png" alt="Aba Geral › Config — backend, monitor e barra flutuante" width="820"></p>
+
+<p align="center"><i>Rolando a mesma aba: <b>Backend de captura</b>, <b>Monitor</b> e <b>Barra flutuante</b>.</i></p>
+
 - **Backend de captura → Backend** — como o programa lê os pixels da tela:
   - *Auto (recomendado)* — escolhe sozinho: WGC no Windows 11, DXGI no Windows 10, sem a borda
     amarela. A troca vale na hora, sem reiniciar.
@@ -915,31 +967,34 @@ O campo do idioma de origem **se adapta ao motor de OCR** escolhido em Geral ›
 
 ### Geral › OCR
 
-Qual motor reconhece o texto e como ele agrupa as linhas.
+Qual motor reconhece o texto na tela.
 
 <p align="center"><img src="media/geral-ocr.png" alt="Aba Geral › OCR" width="820"></p>
 
 - **Engine de OCR → Engine ativo**
-  - *WinOCR (padrão — nativo, ~30 ms)* — motor embutido no Windows: rápido, offline e sem
+  - *WinOCR (nativo do Windows)* — motor embutido no Windows: rápido, offline e sem
     dependência externa. O reconhecimento depende dos pacotes de idioma instalados no sistema.
-    É o mais rápido, mas pode errar em fontes muito estilizadas de jogos.
-  - *OneOCR (Snipping Tool — experimental, ~50–150 ms)* — modelo multilíngue com detecção
-    automática de idioma. **Roda no Windows 10 e no 11**; o que é exclusivo do Windows 11 são os
+    Não precisa de instalação nenhuma, mas pode errar em fontes muito estilizadas de jogos.
+  - *OneOCR (Snipping Tool — recomendado)* — modelo multilíngue com detecção
+    automática de idioma, bem superior ao WinOCR em fontes de jogo e praticamente sem precisar
+    de pré-processamento (o porquê está na
+    [seção 6](/Manual/configurando-a-traducao.md), em *Trocando o motor de OCR*).
+    **Roda no Windows 10 e no 11**; o que é exclusivo do Windows 11 são os
     arquivos: `oneocr.dll`, `oneocr.onemodel` e `onnxruntime.dll` só vêm com o Snipping Tool do
-    Windows 11. Você os copia de uma máquina com Win11 e aponta a pasta (o card traz o passo a
-    passo, inclusive o comando do PowerShell para achar a pasta do Snipping Tool). Usa uma API
-    não oficial da Microsoft — uma atualização do Snipping Tool pode quebrar a integração, e aí
-    é só reextrair os arquivos.
-  - O card de configuração do motor é **recolhível**: fica aberto enquanto a pasta não estiver
+    Windows 11. Usa uma API não oficial da Microsoft — uma atualização do Snipping Tool pode
+    quebrar a integração, e aí é só rodar a detecção de novo.
+- **Configuração do OneOCR** (aparece com o OneOCR selecionado)
+  - *Detectar e Copiar Automaticamente* — acha o Snipping Tool instalado, copia os 3 arquivos
+    para a pasta do programa e configura o caminho. Avisa quando o app não está instalado ou
+    quando é uma versão sem os arquivos (o caso do Windows 10).
+  - *Passo a passo manual* — bloco recolhível com as instruções de cópia à mão, para o Windows
+    10 ou quando a detecção não acha nada. Fica aberto por padrão e lembra se você fechar.
+  - *Pasta com os 3 arquivos* — o caminho em si, com **Procurar...** e **Verificar**.
+  - O card inteiro também é **recolhível**: fica aberto enquanto a pasta não estiver
     configurada, e depois você pode fechá-lo.
-- **Ajuste Fino do Modo Parágrafo → Sensibilidade do agrupamento** (0–3,0; padrão 1) —
-  multiplicador sobre o espaçamento vertical típico entre linhas, usado para decidir se duas
-  linhas pertencem ao mesmo parágrafo. Valores menores separam parágrafos com mais facilidade;
-  maiores juntam linhas mais distantes num bloco só.
 
-> **O modo não se escolhe aqui.** Parágrafo ou linha é decidido **na hora de capturar**, pelo
-> atalho que você aperta: `Numpad8` (parágrafo) ou `Numpad9` (linha). Esta aba só afina como o
-> modo Parágrafo agrupa.
+> **O agrupamento não se ajusta aqui.** A *Sensibilidade do agrupamento* do modo Parágrafo fica
+> em **Overlay › Captura**, junto do pré-processamento.
 
 ### Geral › Atalhos
 
@@ -980,6 +1035,13 @@ Aparência da tradução manual e pré-processamento da imagem.
 
 <p align="center"><img src="media/overlay-captura.png" alt="Aba Overlay › Captura" width="820"></p>
 
+- **Exibição**
+  - *Duração do overlay* — Nunca limpar automaticamente / 15 s / 30 s /
+    **1 minuto (padrão)** / 2 / 5 / 10 minutos.
+  - *Esconder a tradução de gravações e transmissões* — a tradução continua visível na sua tela,
+    mas some das capturas. Funciona só com programas rodando neste PC (OBS, Game Bar, NVIDIA
+    ShadowPlay, etc); gravando por placa de captura, ela aparece assim mesmo. Afeta só a
+    tradução manual.
 - **Texto**
   - *Fonte* — "Padrão do sistema (Arial)" ou qualquer fonte da pasta `fonts/`, com prévia ao
     lado.
@@ -993,13 +1055,12 @@ Aparência da tradução manual e pré-processamento da imagem.
 
 <p align="center"><img src="media/overlay-captura-exibicao.png" alt="Aba Overlay › Captura — Exibição e pré-processamento" width="820"></p>
 
-- **Exibição**
-  - *Duração do overlay* — Nunca limpar automaticamente / 15 s / 30 s /
-    **1 minuto (padrão)** / 2 / 5 / 10 minutos.
-  - *Esconder a tradução de gravações e transmissões* — a tradução continua visível na sua tela,
-    mas some das capturas. Funciona só com programas rodando neste PC (OBS, Game Bar, NVIDIA
-    ShadowPlay, etc); gravando por placa de captura, ela aparece assim mesmo. Afeta só a
-    tradução manual.
+- **Ajuste Fino do Modo Parágrafo → Sensibilidade do agrupamento** (0–3,0; padrão 1) —
+  multiplicador sobre o espaçamento vertical típico entre linhas, usado para decidir se duas
+  linhas pertencem ao mesmo parágrafo. Valores menores separam parágrafos com mais facilidade;
+  maiores juntam linhas mais distantes num bloco só. O modo em si (parágrafo ou linha) **não se
+  escolhe aqui**: é decidido na hora de capturar, pelo atalho — `Numpad8` (parágrafo) ou
+  `Numpad9` (linha).
 - **Pré-processamento OCR** — filtros aplicados à imagem antes do reconhecimento:
   - *Ativar pré-processamento* liga o bloco.
   - *Escala de cinza* · *Inverter cores*
@@ -1050,6 +1111,11 @@ Transmite as traduções para navegadores na rede local — e para o OBS.
   - *Porta* (1024–65535) — mostra também quantos clientes estão conectados.
 - **Endereços** — `/captura` (com histórico e botão Limpar) e `/captura/obs` (fundo
   transparente, para usar como Browser Source no OBS), cada um com botão **Copiar**.
+
+<p align="center"><img src="media/overlay-web-aparencia.png" alt="Aba Overlay › Web — aparência da página e histórico" width="820"></p>
+
+<p align="center"><i>Rolando a mesma aba: <b>Aparência</b> da página web e o buffer do <b>Histórico</b>.</i></p>
+
 - **Aparência** — *Tema* · *Tamanho da fonte* (12–48 px) · *Negrito* · *Texto detectado* (mostra
   o original abaixo da tradução) · *Horário e serviço* · *Cores personalizadas*, que libera seis
   seletores: texto traduzido, texto original, horário, serviço (badge), fundo do card e borda do

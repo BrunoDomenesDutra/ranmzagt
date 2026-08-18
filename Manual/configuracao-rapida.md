@@ -73,8 +73,10 @@ Abra **Geral › Idioma**.
 > **Usando OneOCR?** Aí não existe idioma de origem para escolher: ele é um modelo único
 > multilíngue (latim, CJK, cirílico…) que detecta o idioma sozinho, e o campo **Idioma do
 > texto** nem aparece enquanto ele estiver selecionado — nem o aviso de pacote do Windows, que
-> não se aplica. O **Idioma destino** continua valendo normalmente. O motor de OCR se troca em
-> *Geral › OCR*, mas para começar deixe no padrão.
+> não se aplica. O **Idioma destino** continua valendo normalmente. O OneOCR é o motor
+> **recomendado** e se escolhe em *Geral › OCR*; para começar dá para seguir com o WinOCR, mas
+> vale trocar assim que puder — veja *Trocando o motor de OCR* na
+> [seção 6](/Manual/configurando-a-traducao.md).
 
 ## 2.4 Escolha o tradutor
 
