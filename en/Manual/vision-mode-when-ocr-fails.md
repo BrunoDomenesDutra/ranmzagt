@@ -10,7 +10,7 @@ Just like normal Translate, Vision has both modes, and you pick with the hotkey:
 - **`Numpad6`** — Vision in **line mode** (menus and lists).
 
 **Important:**
-- Only works with **OpenAI, Claude, or Gemini** (Google Translate and DeepL don't support this mode).
+- Only works with **OpenAI, Claude, or Gemini** (Google Translate, DeepL and Azure Translator don't support this mode).
 - It's a bit slower and **always makes a new call** to the AI (doesn't use translation history).
 - The translation's position on screen still depends on where text recognition found something — so in rare cases, the translation might be larger than the detected area.
 

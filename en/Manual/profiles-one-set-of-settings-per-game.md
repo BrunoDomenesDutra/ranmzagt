@@ -41,7 +41,7 @@ Not everything is "per game" — what is yours keeps applying across all profile
 | Capture area and subtitle area | Keyboard shortcuts |
 | Translation appearance (font, color, background, duration) | Monitor and floating toolbar |
 | Image preprocessing | OCR engine and OneOCR folder (*General › OCR* tab) |
-| Translation engine and model | Inpaint |
+| Translation engine, model and Azure region | Inpaint |
 | System Prompt and Game Information | Web server |
 | Subtitle Mode and Real-time Mode | Interface language and the diagnostic options |
 

@@ -252,6 +252,11 @@ Qual serviço traduz e com quais credenciais.
     informal), que só afeta os idiomas-destino com suporte — PT-BR incluso — e é ignorada nos
     demais. Aproveita o campo **Informações do Jogo** (Traducao › I.A) e, no Modo Legenda, as falas
     anteriores como contexto, sem custo extra.
+  - *Azure Translator (requer chave de API e região)* — o tradutor da Microsoft; **não suporta o
+    Modo Vision**. Não tem seleção de modelo nem formalidade, e **não usa** o Contexto de Conversa
+    nem as Informações do Jogo — a API de tradução dele não aceita contexto. Em compensação, detecta
+    o idioma de origem **bloco a bloco**: numa captura em que parte do texto está em outro idioma,
+    cada bloco é traduzido a partir do idioma certo.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — motores de IA, exigem chave de API.
 - **Autenticação** — aparece nos provedores com chave. As credenciais são **salvas por motor**,
   então trocar de serviço e voltar não apaga nada.
@@ -269,9 +274,15 @@ Qual serviço traduz e com quais credenciais.
       alcança modelos que o provedor já fechou para contas novas — é o caso das famílias
       Gemini 2.0 e 2.5, que respondem para chaves antigas mas devolvem erro em chaves
       recém-criadas. Nos dois casos, copie o ID de lá para o campo *Personalizado…*.
+  - *Região do recurso* (só no Azure) — **obrigatória**, e fica no lugar onde o DeepL mostra a
+    Formalidade. Aceita a grafia do portal ("Brazil South"): maiúsculas e espaços são ajustados
+    sozinhos. O link *Ver a lista oficial de regiões do Azure* abre a tabela da Microsoft no
+    navegador. Chave e região saem da mesma página: <https://portal.azure.com> → o seu recurso de
+    Translator → *Keys and Endpoint*.
   - *Testar conexão* — faz uma chamada de teste com a chave e o modelo atuais e mostra na hora
     se está tudo certo ou qual erro voltou, em vez de você descobrir o problema no meio do jogo.
-    Também existe no Google, para checar a conectividade.
+    Também existe no Google, para checar a conectividade. No Azure ele só libera depois que a
+    região estiver preenchida, porque sem ela o erro que volta é indistinguível de chave inválida.
 - **Chaves de API** — card recolhível onde entra a credencial do motor selecionado (`sk-…`,
   `sk-ant-…`, `AIza…`, ou a chave DeepL `:fx` do plano gratuito). Ele **abre sozinho** enquanto
   nenhuma chave estiver preenchida.
@@ -280,7 +291,8 @@ Qual serviço traduz e com quais credenciais.
     assume automaticamente; esgotadas todas, cai no Google Translate.
 - **Uso do DeepL** — só com o DeepL selecionado: chamadas e caracteres traduzidos na sessão, mais
   a **cota da conta** (botão *Atualizar*); *Zerar sessão* reinicia a contagem. É o único motor
-  com esse acompanhamento — os de IA não expõem o gasto pela chave.
+  com esse acompanhamento — os de IA não expõem o gasto pela chave, e o Azure não tem um endpoint
+  de cota equivalente.
 
 <p align="center"><img src="media/tradutores-claude.png" alt="Tradutores com Anthropic (Claude) selecionado" width="820"></p>
 
@@ -300,9 +312,10 @@ Parâmetros do modelo e prompts.
   padrão** (que recupera o texto de fábrica só deste campo).
 - **Informações do Jogo** — tema, personagens e glossário; mude a cada jogo. Mesmos botões.
 
-> Com o Google Translate ativo, os cards que não se aplicam ficam marcados em vermelho
-> ("Só vale pros motores de IA…" e "O Google Translate não usa isso."). O **Contexto de
-> Conversa** e as **Informações do Jogo** também valem para o DeepL.
+> Com um motor que não é de IA ativo, os cards que não se aplicam ficam marcados em vermelho
+> ("Só vale pros motores de IA…" e "O motor de tradução atual não usa isso."). O **Contexto de
+> Conversa** e as **Informações do Jogo** também valem para o **DeepL**; o **Google Translate** e o
+> **Azure Translator** ignoram os dois.
 
 <p align="center"><img src="media/ia-avisos.png" alt="Aba I.A com o Google Translate ativo, mostrando os avisos vermelhos" width="820"></p>
 

@@ -164,6 +164,7 @@ Which service translates, and with which credentials.
 - **Translation Provider → Active provider**
   - *Google Translate — free, no key* — unofficial API, nothing to configure. **Doesn't support Vision Mode.**
   - *DeepL (requires API key)* — a high-quality dedicated translator; **doesn't support Vision Mode**. It has no model selection, but it does have **Formality** (Default / More formal / More informal), which only affects target languages that support it — PT-BR included — and is ignored on the rest. It makes use of the **Game Info** field (Translation › AI) and, in Subtitle Mode, the previous lines as context, at no extra cost.
+  - *Azure Translator (requires API key and region)* — Microsoft's translator; **doesn't support Vision Mode**. It has no model selection and no formality, and it **doesn't use** Conversation Context or Game Info — its translation API takes no context. In exchange, it detects the source language **block by block**: in a capture where part of the text is in another language, each block is translated from the right one.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AI engines, requiring an API key.
 - **Authentication** — shown for providers with a key. Credentials are **saved per engine**, so switching services and back erases nothing.
   - *Model* (AI engines) — each engine offers three tiers: fast/cheap, best balance, and top quality.
@@ -172,10 +173,11 @@ Which service translates, and with which credentials.
     - Gemini: 3.5 Flash-Lite · 3.6 Flash · 3.7 Flash
     - *Custom…* — the last option in the list: opens a free-text field where you type **any model ID** the provider accepts, so you can use a newer model without waiting for a program update.
     - *See the provider's full model list* — opens the selected engine's official page in your browser, with every model and its exact ID. Useful in two situations: when a model newer than the built-in list comes out, and when you have an older key that still reaches models the provider has closed off to new accounts — that's the case with the Gemini 2.0 and 2.5 families, which answer for older keys but return an error on freshly created ones. Either way, copy the ID from there into the *Custom…* field.
-  - *Test connection* — makes a test call with the current key and model and tells you right away whether everything is fine or which error came back, instead of you finding out mid-game. It also exists for Google, to check connectivity.
+  - *Resource region* (Azure only) — **required**, and it sits where DeepL shows Formality. It accepts the portal spelling ("Brazil South"): capitals and spaces are normalized for you. The *See Azure's official region list* link opens Microsoft's table in your browser. Key and region come from the same page: <https://portal.azure.com> → your Translator resource → *Keys and Endpoint*.
+  - *Test connection* — makes a test call with the current key and model and tells you right away whether everything is fine or which error came back, instead of you finding out mid-game. It also exists for Google, to check connectivity. On Azure it only unlocks once the region is filled in, because without it the error that comes back is indistinguishable from an invalid key.
 - **API Keys** — a collapsible card where the selected engine's credential goes (`sk-…`, `sk-ant-…`, `AIza…`, or the free-plan DeepL `:fx` key). It **opens by itself** while no key is filled in.
   - *+ Add key* / *✕* — you can register **as many keys as you like** for the same engine. When the key in use runs out of credit or hits the request limit, the next one in the list takes over automatically; once all are exhausted, it falls back to Google Translate.
-- **DeepL usage** — only with DeepL selected: calls and characters translated this session, plus the **account quota** (*Refresh* button); *Reset session* restarts the count. It's the only engine with this tracking — the AI ones don't expose spend through the key.
+- **DeepL usage** — only with DeepL selected: calls and characters translated this session, plus the **account quota** (*Refresh* button); *Reset session* restarts the count. It's the only engine with this tracking — the AI ones don't expose spend through the key, and Azure has no equivalent quota endpoint.
 
 <p align="center"><img src="media/tradutores-claude.png" alt="Translators with Anthropic (Claude) selected" width="820"></p>
 
@@ -192,7 +194,7 @@ Model parameters and prompts.
 - **System Prompt** — translator role and general rules, with **Save** and **Restore default** buttons (the latter recovers the factory text for this field only).
 - **Game Info** — theme, characters and glossary; change it per game. Same buttons.
 
-> With Google Translate active, the cards that don't apply are flagged in red ("Only applies to AI engines…" and "Google Translate doesn't use this."). **Conversation Context** and **Game Info** also apply to DeepL.
+> With a non-AI engine active, the cards that don't apply are flagged in red ("Only applies to AI engines…" and "The current translation engine doesn't use this."). **Conversation Context** and **Game Info** also apply to **DeepL**; **Google Translate** and **Azure Translator** ignore both.
 
 <p align="center"><img src="media/ia-avisos.png" alt="AI tab with Google Translate active, showing the red warnings" width="820"></p>
 

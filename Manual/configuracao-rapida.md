@@ -92,6 +92,9 @@ Quando quiser mais qualidade, troque em **Provedor ativo**:
 - **DeepL** — tradutor dedicado, muito natural, com opção de formalidade. Precisa de chave de
   API, mas tem **plano gratuito** (as chaves terminam em `:fx`, e o programa reconhece sozinho
   qual servidor usar).
+- **Azure Translator** — o tradutor da Microsoft, também dedicado. Além da chave de API, exige a
+  **região** do recurso (as duas coisas ficam na mesma página do portal do Azure). Detecta o idioma
+  de origem **bloco a bloco**, o que ajuda quando a captura mistura idiomas.
 - **OpenAI**, **Anthropic (Claude)** ou **Gemini** — motores de IA. Precisam de chave de API
   com créditos, e em troca entregam traduções bem mais naturais e consistentes, principalmente
   em diálogos longos. Escolha o modelo em *Autenticação* e cole a chave em *Chaves de API*.
@@ -105,8 +108,8 @@ entrar no jogo.
 > o programa passa sozinho para a próxima da lista; esgotadas todas, ele cai no Google
 > Translate. Ajuda bastante em sessões longas de Modo Legenda.
 
-> Só os motores de IA (OpenAI, Claude, Gemini) suportam o **Modo Vision** — o Google Translate e
-> o DeepL não. Veja a [seção 8](/Manual/modo-vision-quando-o-ocr-erra.md).
+> Só os motores de IA (OpenAI, Claude, Gemini) suportam o **Modo Vision** — o Google Translate, o
+> DeepL e o Azure Translator não. Veja a [seção 8](/Manual/modo-vision-quando-o-ocr-erra.md).
 
 ## 2.5 Marque a área do texto
 

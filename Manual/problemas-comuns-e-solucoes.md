@@ -30,14 +30,22 @@ flutuante**, que dispara as ações por clique do mouse e não depende dos atalh
 novo automaticamente** uma vez antes de recorrer ao Google Translate. Se você tiver **mais de uma
 chave** cadastrada para o motor, ele ainda tenta as demais chaves da lista antes do fallback. Se
 aparecer um aviso amarelo de "fallback para Google Translate" — e no Histórico a tradução vier
-marcada como "Google Translate (fallback)" —, quer dizer que o serviço configurado (OpenAI, Claude,
-Gemini) falhou em **todas** as chaves; confira suas chaves de API e créditos em Traducao › Tradutores.
+marcada como "Google Translate (fallback)" —, quer dizer que o serviço configurado (DeepL, Azure ou
+um motor de IA) falhou em **todas** as chaves; confira suas chaves de API e créditos em
+Traducao › Tradutores.
 
 **"Apareceu um aviso vermelho de erro"**
 → Geralmente indica chave de API inválida, créditos esgotados, ou o serviço fora do ar
 temporariamente. Confira **Traducao › Tradutores**. Se o aviso disser que a resposta foi **cortada no
 limite de tokens**, aumente o **Max tokens** em **Traducao › I.A** (acontece só em blocos de texto muito
 grandes).
+
+**"No Azure, o teste diz que a chave é inválida — mas a chave está certa"**
+→ Confira a **Região do recurso** em **Traducao › Tradutores**. O Azure responde o **mesmo erro**
+para chave inválida e para região errada ou ausente, então uma região trocada parece problema de
+chave. Copie a região da página *Keys and Endpoint* do seu recurso, no portal do Azure — pode colar
+como aparece lá ("Brazil South"), que o programa ajusta o espaço e as maiúsculas sozinho. Enquanto o
+campo estiver vazio, o botão *Testar conexão* fica bloqueado.
 
 **"O texto reconhecido está errado/incompleto"**
 → A solução que mais resolve é trocar o motor de OCR para o **OneOCR** em **Geral › OCR** — ele

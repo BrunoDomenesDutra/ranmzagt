@@ -13,7 +13,8 @@ Assim como no Traduzir normal, o Vision tem os dois modos, e você escolhe pelo 
 - **`Numpad6`** — Vision no **modo linha** (menus e listas).
 
 **Importante:**
-- Só funciona com **OpenAI, Claude ou Gemini** (Google Translate e DeepL não suportam esse modo).
+- Só funciona com **OpenAI, Claude ou Gemini** (Google Translate, DeepL e Azure Translator não
+  suportam esse modo).
 - É um pouco mais lento e **sempre faz uma chamada nova** à IA (não usa o histórico de
   traduções já feitas).
 - A posição da tradução na tela ainda depende de onde o reconhecimento de texto encontrou algo

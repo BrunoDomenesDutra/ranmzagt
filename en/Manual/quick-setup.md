@@ -65,13 +65,14 @@ The default is **Google Translate — free, no key**: nothing to configure, it's
 When you want better quality, switch in **Active provider**:
 
 - **DeepL** — a dedicated translator, very natural, with a formality option. Requires an API key, but has a **free plan** (those keys end in `:fx`, and the program figures out which server to use by itself).
+- **Azure Translator** — Microsoft's translator, dedicated as well. On top of the API key it requires the resource **region** (both live on the same page of the Azure portal). It detects the source language **block by block**, which helps when a capture mixes languages.
 - **OpenAI**, **Anthropic (Claude)** or **Gemini** — AI engines. They need an API key with credits, and in return deliver far more natural and consistent translations, especially in long dialogue. Pick the model under *Authentication* and paste the key under *API Keys*.
 
 Each engine stores its own credentials, so switching away and back doesn't erase anything. Use the **Test connection** button to confirm the key is valid before jumping into the game.
 
 > **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Very handy in long Subtitle Mode sessions.
 
-> Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate and DeepL don't. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
+> Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate, DeepL and Azure Translator don't. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
 
 ## 2.5 Mark the text area
 

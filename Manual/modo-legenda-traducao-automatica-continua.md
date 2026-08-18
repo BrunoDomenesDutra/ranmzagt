@@ -75,7 +75,8 @@ traduzida sem depender das anteriores, deixe em 0.
 > O **DeepL** também aproveita as falas anteriores como contexto, **sem custo extra** — ele
 > recebe as últimas falas como referência (seguindo o mesmo controle **"Falas anteriores"**)
 > para manter a consistência de nomes e termos. Mesmo não sendo uma IA conversacional, isso
-> deixa a tradução contínua mais coesa. **Google Translate** não usa esse contexto.
+> deixa a tradução contínua mais coesa. **Google Translate** e **Azure Translator** não usam esse
+> contexto — a API de tradução do Azure não tem um parâmetro de contexto.
 
 ## Aparência separada
 

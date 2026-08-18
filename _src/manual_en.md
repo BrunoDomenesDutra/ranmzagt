@@ -108,13 +108,14 @@ The default is **Google Translate — free, no key**: nothing to configure, it's
 When you want better quality, switch in **Active provider**:
 
 - **DeepL** — a dedicated translator, very natural, with a formality option. Requires an API key, but has a **free plan** (those keys end in `:fx`, and the program figures out which server to use by itself).
+- **Azure Translator** — Microsoft's translator, dedicated as well. On top of the API key it requires the resource **region** (both live on the same page of the Azure portal). It detects the source language **block by block**, which helps when a capture mixes languages.
 - **OpenAI**, **Anthropic (Claude)** or **Gemini** — AI engines. They need an API key with credits, and in return deliver far more natural and consistent translations, especially in long dialogue. Pick the model under *Authentication* and paste the key under *API Keys*.
 
 Each engine stores its own credentials, so switching away and back doesn't erase anything. Use the **Test connection** button to confirm the key is valid before jumping into the game.
 
 > **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Very handy in long Subtitle Mode sessions.
 
-> Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate and DeepL don't. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
+> Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate, DeepL and Azure Translator don't. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
 
 ### 2.5 Mark the text area
 
@@ -281,7 +282,7 @@ Not everything is "per game" — what is yours keeps applying across all profile
 | Capture area and subtitle area | Keyboard shortcuts |
 | Translation appearance (font, color, background, duration) | Monitor and floating toolbar |
 | Image preprocessing | OCR engine and OneOCR folder (*General › OCR* tab) |
-| Translation engine and model | Inpaint |
+| Translation engine, model and Azure region | Inpaint |
 | System Prompt and Game Information | Web server |
 | Subtitle Mode and Real-time Mode | Interface language and the diagnostic options |
 
@@ -400,7 +401,7 @@ Just like normal Translate, Vision has both modes, and you pick with the hotkey:
 - **`Numpad6`** — Vision in **line mode** (menus and lists).
 
 **Important:**
-- Only works with **OpenAI, Claude, or Gemini** (Google Translate and DeepL don't support this mode).
+- Only works with **OpenAI, Claude, or Gemini** (Google Translate, DeepL and Azure Translator don't support this mode).
 - It's a bit slower and **always makes a new call** to the AI (doesn't use translation history).
 - The translation's position on screen still depends on where text recognition found something — so in rare cases, the translation might be larger than the detected area.
 
@@ -456,7 +457,7 @@ The option applies to Subtitle Mode only — manual translation (`Numpad8`/`Nump
 
 If you're using OpenAI, Claude, or Gemini, **Translation › AI** has a **"Previous lines"** control (0 to 20, default 5). When enabled, the AI gets the last already-translated lines as reference before translating the next one — this helps keep the same character names, terms, and tone throughout a conversation. If you notice the AI is changing a character's name or translation tone from one line to another, increase this value; if you prefer each line translated without depending on previous ones, leave it at 0.
 
-> **DeepL** also benefits from previous lines as context, **at no extra cost** — it gets the last lines as reference (following the same **"Previous lines"** control) to keep character names and terms consistent. Even though it's not a conversational AI, this makes continuous translation more cohesive. **Google Translate** doesn't use this context.
+> **DeepL** also benefits from previous lines as context, **at no extra cost** — it gets the last lines as reference (following the same **"Previous lines"** control) to keep character names and terms consistent. Even though it's not a conversational AI, this makes continuous translation more cohesive. **Google Translate** and **Azure Translator** don't use this context — the Azure translation API has no context parameter.
 
 ### Separate appearance
 
@@ -531,7 +532,7 @@ The page can also be opened in any browser on the local network (phone, second m
 
 - **History tab**: shows translations made during the current session (original text, translation, time and service used), most recent first. Click an entry to copy the translation; there's also a button to clear everything.
 - **Debug › Monitor**: turns on a log of the last 10 translations with the time each step took (capture, preprocessing, recognition, translation, total) — useful to notice if any configuration is slowing the program down (for example, heavy preprocessing).
-- **DeepL usage** (**Translation › Translators**, with DeepL selected): shows how many **characters** DeepL translated in this session and your **account quota** (characters used/billing period limit) — click "Update" to check. Exclusive to DeepL.
+- **DeepL usage** (**Translation › Translators**, with DeepL selected): shows how many **characters** DeepL translated in this session and your **account quota** (characters used/billing period limit) — click "Update" to check. Exclusive to DeepL: the AI engines don't expose spend through the key, and Azure has no equivalent quota endpoint (you track it in the Azure portal).
 
 ---
 
@@ -550,10 +551,13 @@ The page can also be opened in any browser on the local network (phone, second m
 → Some games run with elevated privileges (Administrator) and therefore **block Ranmza GT's global hotkey registration**. In that case, **run Ranmza GT as Administrator** (right-click the `.exe` → *Run as administrator*) — then it can activate hotkeys over the game. To avoid repeating every time, check *Run this program as an administrator* in **Properties → Compatibility** of the executable. (Alternative: use the **floating toolbar**, which fires actions by mouse click and doesn't depend on keyboard hotkeys.)
 
 **"Translation doesn't appear, or it's slow"**
-→ Check the **History** and **Debug › Monitor** tabs to see if translation is being done. Transient failures (rate limit, server briefly down, connection drop) are **automatically retried** once before falling back to Google Translate. If you have **more than one key** registered for the engine, it still tries the other keys in the list before the fallback. If a yellow "fallback to Google Translate" warning appears — and in History the translation is marked "Google Translate (fallback)" —, the configured service (OpenAI, Claude, Gemini) failed on **every** key; check your API keys and credits in Translation › Translators.
+→ Check the **History** and **Debug › Monitor** tabs to see if translation is being done. Transient failures (rate limit, server briefly down, connection drop) are **automatically retried** once before falling back to Google Translate. If you have **more than one key** registered for the engine, it still tries the other keys in the list before the fallback. If a yellow "fallback to Google Translate" warning appears — and in History the translation is marked "Google Translate (fallback)" —, the configured service (DeepL, Azure or an AI engine) failed on **every** key; check your API keys and credits in Translation › Translators.
 
 **"A red error warning appeared"**
 → Usually means invalid API key, exhausted credits, or the service temporarily down. Check **Translation › Translators**. If the warning says the response was **cut off at the token limit**, increase **Max tokens** in **Translation › AI** (happens only with very large text blocks).
+
+**"On Azure the test says the key is invalid — but the key is right"**
+→ Check the **Resource region** in **Translation › Translators**. Azure returns the **same error** for an invalid key and for a wrong or missing region, so a mistyped region looks like a key problem. Copy the region from your resource's *Keys and Endpoint* page in the Azure portal — you can paste it exactly as shown there ("Brazil South"), the program strips the space and the capitals by itself. While the field is empty, the *Test connection* button stays disabled.
 
 **"Recognized text is wrong/incomplete"**
 → Try enabling preprocessing (**Overlay › Capture**) with upscale and contrast adjustments, or use **Translate with AI Vision** (`Numpad5` paragraph, `Numpad6` line) to let the AI "see" the image and correct it.
@@ -739,6 +743,7 @@ Which service translates, and with which credentials.
 - **Translation Provider → Active provider**
   - *Google Translate — free, no key* — unofficial API, nothing to configure. **Doesn't support Vision Mode.**
   - *DeepL (requires API key)* — a high-quality dedicated translator; **doesn't support Vision Mode**. It has no model selection, but it does have **Formality** (Default / More formal / More informal), which only affects target languages that support it — PT-BR included — and is ignored on the rest. It makes use of the **Game Info** field (Translation › AI) and, in Subtitle Mode, the previous lines as context, at no extra cost.
+  - *Azure Translator (requires API key and region)* — Microsoft's translator; **doesn't support Vision Mode**. It has no model selection and no formality, and it **doesn't use** Conversation Context or Game Info — its translation API takes no context. In exchange, it detects the source language **block by block**: in a capture where part of the text is in another language, each block is translated from the right one.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AI engines, requiring an API key.
 - **Authentication** — shown for providers with a key. Credentials are **saved per engine**, so switching services and back erases nothing.
   - *Model* (AI engines) — each engine offers three tiers: fast/cheap, best balance, and top quality.
@@ -747,10 +752,11 @@ Which service translates, and with which credentials.
     - Gemini: 3.5 Flash-Lite · 3.6 Flash · 3.7 Flash
     - *Custom…* — the last option in the list: opens a free-text field where you type **any model ID** the provider accepts, so you can use a newer model without waiting for a program update.
     - *See the provider's full model list* — opens the selected engine's official page in your browser, with every model and its exact ID. Useful in two situations: when a model newer than the built-in list comes out, and when you have an older key that still reaches models the provider has closed off to new accounts — that's the case with the Gemini 2.0 and 2.5 families, which answer for older keys but return an error on freshly created ones. Either way, copy the ID from there into the *Custom…* field.
-  - *Test connection* — makes a test call with the current key and model and tells you right away whether everything is fine or which error came back, instead of you finding out mid-game. It also exists for Google, to check connectivity.
+  - *Resource region* (Azure only) — **required**, and it sits where DeepL shows Formality. It accepts the portal spelling ("Brazil South"): capitals and spaces are normalized for you. The *See Azure's official region list* link opens Microsoft's table in your browser. Key and region come from the same page: <https://portal.azure.com> → your Translator resource → *Keys and Endpoint*.
+  - *Test connection* — makes a test call with the current key and model and tells you right away whether everything is fine or which error came back, instead of you finding out mid-game. It also exists for Google, to check connectivity. On Azure it only unlocks once the region is filled in, because without it the error that comes back is indistinguishable from an invalid key.
 - **API Keys** — a collapsible card where the selected engine's credential goes (`sk-…`, `sk-ant-…`, `AIza…`, or the free-plan DeepL `:fx` key). It **opens by itself** while no key is filled in.
   - *+ Add key* / *✕* — you can register **as many keys as you like** for the same engine. When the key in use runs out of credit or hits the request limit, the next one in the list takes over automatically; once all are exhausted, it falls back to Google Translate.
-- **DeepL usage** — only with DeepL selected: calls and characters translated this session, plus the **account quota** (*Refresh* button); *Reset session* restarts the count. It's the only engine with this tracking — the AI ones don't expose spend through the key.
+- **DeepL usage** — only with DeepL selected: calls and characters translated this session, plus the **account quota** (*Refresh* button); *Reset session* restarts the count. It's the only engine with this tracking — the AI ones don't expose spend through the key, and Azure has no equivalent quota endpoint.
 
 <p align="center"><img src="media/tradutores-claude.png" alt="Translators with Anthropic (Claude) selected" width="820"></p>
 
@@ -767,7 +773,7 @@ Model parameters and prompts.
 - **System Prompt** — translator role and general rules, with **Save** and **Restore default** buttons (the latter recovers the factory text for this field only).
 - **Game Info** — theme, characters and glossary; change it per game. Same buttons.
 
-> With Google Translate active, the cards that don't apply are flagged in red ("Only applies to AI engines…" and "Google Translate doesn't use this."). **Conversation Context** and **Game Info** also apply to DeepL.
+> With a non-AI engine active, the cards that don't apply are flagged in red ("Only applies to AI engines…" and "The current translation engine doesn't use this."). **Conversation Context** and **Game Info** also apply to **DeepL**; **Google Translate** and **Azure Translator** ignore both.
 
 <p align="center"><img src="media/ia-avisos.png" alt="AI tab with Google Translate active, showing the red warnings" width="820"></p>
 

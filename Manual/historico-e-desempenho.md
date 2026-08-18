@@ -10,7 +10,8 @@
   **API**, quantas chamadas foram feitas de fato.
 - **Uso do DeepL** (**Traducao › Tradutores**, com o DeepL selecionado): mostra quantos
   **caracteres** o DeepL traduziu nesta sessão e a **cota da conta** (caracteres usados/limite do
-  período de cobrança) — clique em "Atualizar" para consultar. É exclusivo do DeepL; os motores
-  de IA não expõem o gasto pela chave.
+  período de cobrança) — clique em "Atualizar" para consultar. É exclusivo do DeepL: os motores
+  de IA não expõem o gasto pela chave, e o Azure não tem um endpoint de cota equivalente (o
+  acompanhamento dele fica no portal do Azure).
 
 ---
