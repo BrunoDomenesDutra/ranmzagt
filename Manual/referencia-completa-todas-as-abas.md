@@ -296,6 +296,8 @@ Qual serviço traduz e com quais credenciais.
 
 <p align="center"><img src="media/tradutores-claude.png" alt="Tradutores com Anthropic (Claude) selecionado" width="820"></p>
 
+<p align="center"><img src="media/tradutores-azure.png" alt="Tradutores com Azure Translator selecionado, mostrando o campo Regiao do recurso" width="820"></p>
+
 ## Traducao › I.A
 
 Parâmetros do modelo e prompts.

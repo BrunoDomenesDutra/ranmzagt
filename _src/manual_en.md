@@ -760,6 +760,8 @@ Which service translates, and with which credentials.
 
 <p align="center"><img src="media/tradutores-claude.png" alt="Translators with Anthropic (Claude) selected" width="820"></p>
 
+<p align="center"><img src="media/tradutores-azure.png" alt="Translators with Azure Translator selected, showing the Resource region field" width="820"></p>
+
 ### Translation › AI
 
 Model parameters and prompts.
