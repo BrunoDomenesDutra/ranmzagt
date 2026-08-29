@@ -1249,10 +1249,47 @@ jogo. Vale para as **traduções manuais** (Traduzir e Vision); o Modo Legenda n
   - *Limiar de detecção* (1,05–1,60; padrão 1,30) — limiar menor deixa a máscara mais sensível
     (pega mais halo, mas pode confundir fundo texturizado com texto).
   - Os dois valem **por captura**, sem reiniciar.
-- **Instalação** — baixe `migan_pipeline_v2.onnx` (28 MB) e o `onnxruntime.dll` (de dentro do
-  `onnxruntime-win-x64-1.26.0.zip`), coloque os dois na mesma pasta e aponte aqui
-  (**Procurar** / **Verificar**). Trocar a pasta da `onnxruntime.dll` exige reiniciar o
-  programa.
+#### Baixar automaticamente
+
+O recurso precisa de dois arquivos que não vêm no `.zip` do programa: o modelo do MI-GAN
+(27 MB) e a `onnxruntime.dll` (72 MB). O card **Baixar automaticamente** pega os dois para você.
+
+Clique em **Baixar** em cada um. A barra mostra o andamento e o botão vira **Cancelar** —
+cancelar não perde o que já baixou: retomar continua de onde parou.
+
+<p align="center"><img src="media/ferramentas-inpaint-baixando.png" alt="Download do MI-GAN em andamento" width="820"></p>
+
+Terminado, os dois ficam com **Pronto, arquivos conferidos** e um Ok verde, e **a pasta é
+configurada sozinha** — você não precisa copiar caminho nenhum.
+
+<p align="center"><img src="media/ferramentas-inpaint-pronto.png" alt="Os dois arquivos baixados e conferidos" width="820"></p>
+
+O programa confere o **sha256** de cada arquivo antes de aceitá-lo. Arquivo que chega corrompido
+ou diferente do esperado é apagado e o download falha com aviso — nunca fica um arquivo pela
+metade se passando por bom. Os dois vão para a pasta `models\inpaint`, ao lado do executável.
+
+##### Endereço alternativo
+
+Se o download padrão não funcionar na sua rede (algumas redes corporativas e alguns provedores
+bloqueiam o HuggingFace e o GitHub), abra **Endereço alternativo** e cole outro link.
+
+<p align="center"><img src="media/ferramentas-inpaint-endereco.png" alt="Campo de endereço alternativo aberto" width="820"></p>
+
+A conferência por hash **continua valendo** no endereço alternativo. Ele troca de onde o arquivo
+vem, nunca qual arquivo é aceito: um link que entregue outra coisa é recusado.
+
+#### Instalação manual
+
+Se preferir fazer à mão — ou se a máquina do jogo não tem internet —, abra **Instalação manual**.
+São os links dos dois arquivos e o campo da pasta, com **Procurar** e **Verificar**.
+
+<p align="center"><img src="media/ferramentas-inpaint-manual.png" alt="Bloco de instalação manual aberto" width="820"></p>
+
+Baixe `migan_pipeline_v2.onnx` e o `onnxruntime.dll` (de dentro do
+`onnxruntime-win-x64-1.26.0.zip`), coloque os dois na mesma pasta e aponte aqui. Achando os dois,
+a pasta é configurada na hora.
+
+> Trocar a pasta da `onnxruntime.dll` exige reiniciar o programa.
 
 > Dica: ative o **Contorno** na aba Overlay › Captura, porque o fundo reconstruído pode ficar
 > claro demais para texto branco.

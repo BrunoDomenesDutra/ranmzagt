@@ -224,7 +224,37 @@ Instead of a black box behind the translation, it erases the original text from 
   - *Mask dilation* (0–12 px; default 3) — if an edge residue remains after erasing the text (the font halo), raise it so MI-GAN reconstructs a bit beyond the letters.
   - *Detection threshold* (1.05–1.60; default 1.30) — a lower threshold makes the mask more sensitive (catches more halo, but may mistake textured background for text).
   - Both apply **per capture**, with no restart.
-- **Installation** — download `migan_pipeline_v2.onnx` (28 MB) and `onnxruntime.dll` (from inside `onnxruntime-win-x64-1.26.0.zip`), put both in the same folder and point here (**Browse** / **Verify**). Moving the `onnxruntime.dll` to another folder requires restarting the program.
+### Download automatically
+
+The feature needs two files that don't ship inside the program's `.zip`: the MI-GAN model (27 MB) and `onnxruntime.dll` (72 MB). The **Download automatically** card fetches both for you.
+
+Click **Download** on each one. The bar shows progress and the button turns into **Cancel** — cancelling doesn't throw away what already came down: resuming picks up where it stopped.
+
+<p align="center"><img src="media/ferramentas-inpaint-baixando.png" alt="MI-GAN download in progress" width="820"></p>
+
+Once finished, both read **Ready, files verified** with a green check, and **the folder is configured on its own** — you don't have to copy any path.
+
+<p align="center"><img src="media/ferramentas-inpaint-pronto.png" alt="Both files downloaded and verified" width="820"></p>
+
+The program checks each file's **sha256** before accepting it. A file that arrives corrupted or different from what was expected is deleted and the download fails with a message — a half-written file never gets to pass for a good one. Both land in `models\inpaint`, next to the executable.
+
+#### Alternate address
+
+If the default download doesn't work on your network (some corporate networks and some ISPs block HuggingFace and GitHub), open **Alternate address** and paste another link.
+
+<p align="center"><img src="media/ferramentas-inpaint-endereco.png" alt="Alternate address field open" width="820"></p>
+
+Hash verification **still applies** to the alternate address. It changes where the file comes from, never which file is accepted: a link that serves something else is rejected.
+
+### Manual installation
+
+If you'd rather do it by hand — or if the gaming machine has no internet — open **Manual installation**. It has the links for both files and the folder field, with **Browse** and **Verify**.
+
+<p align="center"><img src="media/ferramentas-inpaint-manual.png" alt="Manual installation block open" width="820"></p>
+
+Download `migan_pipeline_v2.onnx` and `onnxruntime.dll` (from inside `onnxruntime-win-x64-1.26.0.zip`), put both in the same folder and point here. Once it finds both, the folder is configured right away.
+
+> Moving the `onnxruntime.dll` to another folder requires restarting the program.
 
 > Tip: turn on **Outline** in Overlay › Capture, because the reconstructed background can come out too light for white text.
 
