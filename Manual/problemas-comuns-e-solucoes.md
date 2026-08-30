@@ -34,6 +34,32 @@ marcada como "Google Translate (fallback)" —, quer dizer que o serviço config
 um motor de IA) falhou em **todas** as chaves; confira suas chaves de API e créditos em
 Traducao › Tradutores.
 
+**"Limite de requisições atingido" usando o Google Translate**
+→ O Google Translate aqui é o **serviço gratuito, sem chave de API** — e serviço gratuito tem
+limite de quantas traduções aceita num intervalo curto. Quando você bate nesse limite, aparece o
+aviso amarelo e a tradução daquela captura não sai.
+
+O que faz você bater no limite mais rápido do que parece: o programa envia **uma requisição para
+cada bloco de texto** da captura, todas ao mesmo tempo. Uma tela com muitas falas separadas vira
+muitas requisições de uma vez só. E os modos contínuos (**Legenda** e **Tempo Real**) repetem isso
+a cada ciclo.
+
+O programa já tenta de novo sozinho, uma vez, depois de um instante — o aviso só aparece quando a
+segunda tentativa também falha. E aqui vale saber de uma diferença: quando um motor com chave
+(DeepL, Azure, IA) falha, o programa cai no Google Translate. **O Google não tem para onde cair** —
+ele já é o último recurso.
+
+O que resolve, do mais simples ao mais definitivo:
+
+- **Espere alguns minutos.** O limite é temporário e se solta sozinho.
+- **Use o modo Parágrafo** (`Numpad8`) em vez do modo Linha (`Numpad9`). O Parágrafo junta as
+  linhas de uma mesma fala num bloco só — menos blocos, menos requisições, mesma tela traduzida.
+- **Nos modos contínuos, aumente o intervalo de captura** em **Overlay › Legenda**. Traduzir a cada
+  meio segundo gasta muito mais do que traduzir a cada dois.
+- **Troque de motor** em **Traducao › Tradutores**. **DeepL** e **Azure Translator** têm plano
+  gratuito: exigem criar uma chave de API, mas em troca você ganha um limite próprio, muito mais
+  folgado, e tradução de qualidade melhor.
+
 **"Apareceu um aviso vermelho de erro"**
 → Geralmente indica chave de API inválida, créditos esgotados, ou o serviço fora do ar
 temporariamente. Confira **Traducao › Tradutores**. Se o aviso disser que a resposta foi **cortada no

@@ -246,7 +246,9 @@ Qual serviço traduz e com quais credenciais.
 
 - **Provedor de Tradução → Provedor ativo**
   - *Google Translate — gratuito, sem chave* — API não oficial, nada para configurar.
-    **Não suporta o Modo Vision.**
+    **Não suporta o Modo Vision.** Por ser gratuito, tem **limite de requisições**: em capturas com
+    muitos blocos ou em uso contínuo, pode aparecer o aviso *"Limite de requisições atingido"* — o
+    que fazer está na [seção 13](/Manual/problemas-comuns-e-solucoes.md).
   - *DeepL (requer chave de API)* — tradutor dedicado de alta qualidade; **não suporta o Modo
     Vision**. Não tem seleção de modelo, mas tem **Formalidade** (Padrão / Mais formal / Mais
     informal), que só afeta os idiomas-destino com suporte — PT-BR incluso — e é ignorada nos
