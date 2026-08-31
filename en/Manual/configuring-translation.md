@@ -9,15 +9,15 @@ The grouping mode **isn't picked in a tab** — it's decided at capture time, by
 
 The same goes for Vision: `Numpad5` is paragraph and `Numpad6` is line.
 
-If Paragraph Mode is grouping lines that should be separate (or separating a speech that should stay together), adjust the **Grouping sensitivity** in **General › OCR**:
+If Paragraph Mode is grouping lines that should be separate (or separating a speech that should stay together), adjust the **Grouping sensitivity**, in **Overlay › Capture**:
 - Text being **separated too much**? Increase the value (up to 3.0).
 - Text being **grouped too much**? Decrease the value (down to 0).
 
 This adjustment only affects Paragraph Mode — in Line Mode it is ignored.
 
-<p align="center"><img src="media/ocr-sensibilidade.png" alt="Grouping sensitivity, in General › OCR" width="820"></p>
+<p align="center"><img src="media/ocr-sensibilidade.png" alt="Grouping sensitivity, in Overlay › Capture" width="820"></p>
 
-<p align="center"><i>The setting sits at the bottom of the <b>General › OCR</b> tab, in the <b>Paragraph Mode Fine-Tuning</b> card.</i></p>
+<p align="center"><i>The setting sits in the <b>Overlay › Capture</b> tab, in the <b>Paragraph Mode Fine-Tuning</b> card.</i></p>
 
 ## Improving difficult text recognition
 

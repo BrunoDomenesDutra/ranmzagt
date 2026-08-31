@@ -951,7 +951,7 @@ Legenda**, ou refaça a seleção da área um pouco mais alta que a legenda do j
 ##### "As traduções de falas diferentes estão se misturando num bloco só" (ou o contrário)
 → Primeiro confira se você apertou o atalho certo: `Numpad8` junta as linhas (parágrafo) e
 `Numpad9` separa (linha). Se o modo está certo e ainda erra, ajuste a **Sensibilidade do
-agrupamento** em **Geral › OCR** — ela só afeta o modo Parágrafo.
+agrupamento** em **Overlay › Captura** — ela só afeta o modo Parágrafo.
 
 ##### "Troquei de monitor e a captura não funciona mais direito"
 → Reinicie o programa pelo botão em **Geral › Config** — é necessário após trocar de monitor.

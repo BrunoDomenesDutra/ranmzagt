@@ -53,7 +53,7 @@ What fixes it, from simplest to most permanent:
 → In **Subtitle Mode** with *Replace the original subtitle in place* on there is no auto-fit: the translation has to fit the area you marked. Lower the *Font size* in **Overlay › Subtitles**, or redo the area selection a bit taller than the game's subtitle.
 
 #### "Translations of different lines are mixing into one block (or the opposite)"
-→ First check you pressed the right hotkey: `Numpad8` merges lines (paragraph) and `Numpad9` keeps them apart (line). If the mode is right and it still gets it wrong, adjust **Grouping sensitivity** in **General › OCR** — it only affects Paragraph Mode.
+→ First check you pressed the right hotkey: `Numpad8` merges lines (paragraph) and `Numpad9` keeps them apart (line). If the mode is right and it still gets it wrong, adjust **Grouping sensitivity** in **Overlay › Capture** — it only affects Paragraph Mode.
 
 #### "I switched monitors and capture isn't working right anymore"
 → Restart the program via the button in **General › Config** — it's necessary after switching monitors.

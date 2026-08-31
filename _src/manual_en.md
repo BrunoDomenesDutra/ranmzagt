@@ -286,6 +286,7 @@ Not everything is "per game" — what is yours keeps applying across all profile
 | Capture area and subtitle area | Keyboard shortcuts |
 | Translation appearance (font, color, background, duration) | Monitor and floating toolbar |
 | Image preprocessing | OCR engine and OneOCR folder (*General › OCR* tab) |
+| | Grouping sensitivity (*Overlay › Capture* tab) |
 | Translation engine, model and Azure region | Inpaint |
 | System Prompt and Game Information | Web server |
 | Subtitle Mode and Real-time Mode | Interface language and the diagnostic options |
@@ -328,15 +329,15 @@ The grouping mode **isn't picked in a tab** — it's decided at capture time, by
 
 The same goes for Vision: `Numpad5` is paragraph and `Numpad6` is line.
 
-If Paragraph Mode is grouping lines that should be separate (or separating a speech that should stay together), adjust the **Grouping sensitivity** in **General › OCR**:
+If Paragraph Mode is grouping lines that should be separate (or separating a speech that should stay together), adjust the **Grouping sensitivity**, in **Overlay › Capture**:
 - Text being **separated too much**? Increase the value (up to 3.0).
 - Text being **grouped too much**? Decrease the value (down to 0).
 
 This adjustment only affects Paragraph Mode — in Line Mode it is ignored.
 
-<p align="center"><img src="media/ocr-sensibilidade.png" alt="Grouping sensitivity, in General › OCR" width="820"></p>
+<p align="center"><img src="media/ocr-sensibilidade.png" alt="Grouping sensitivity, in Overlay › Capture" width="820"></p>
 
-<p align="center"><i>The setting sits at the bottom of the <b>General › OCR</b> tab, in the <b>Paragraph Mode Fine-Tuning</b> card.</i></p>
+<p align="center"><i>The setting sits in the <b>Overlay › Capture</b> tab, in the <b>Paragraph Mode Fine-Tuning</b> card.</i></p>
 
 ### Improving difficult text recognition
 
@@ -595,7 +596,7 @@ What fixes it, from simplest to most permanent:
 → In **Subtitle Mode** with *Replace the original subtitle in place* on there is no auto-fit: the translation has to fit the area you marked. Lower the *Font size* in **Overlay › Subtitles**, or redo the area selection a bit taller than the game's subtitle.
 
 ##### "Translations of different lines are mixing into one block (or the opposite)"
-→ First check you pressed the right hotkey: `Numpad8` merges lines (paragraph) and `Numpad9` keeps them apart (line). If the mode is right and it still gets it wrong, adjust **Grouping sensitivity** in **General › OCR** — it only affects Paragraph Mode.
+→ First check you pressed the right hotkey: `Numpad8` merges lines (paragraph) and `Numpad9` keeps them apart (line). If the mode is right and it still gets it wrong, adjust **Grouping sensitivity** in **Overlay › Capture** — it only affects Paragraph Mode.
 
 ##### "I switched monitors and capture isn't working right anymore"
 → Restart the program via the button in **General › Config** — it's necessary after switching monitors.
@@ -666,9 +667,8 @@ Which engine recognizes the text, and how it groups lines.
   - *WinOCR (default — native, ~30 ms)* — the engine built into Windows: fast, offline, no external dependency. Recognition depends on the language packs installed on the system. It's the fastest, but can trip on heavily stylized game fonts.
   - *OneOCR (Snipping Tool — experimental, ~50–150 ms)* — a multilingual model with automatic language detection. It **runs on Windows 10 and 11**; what's exclusive to Windows 11 are the files: `oneocr.dll`, `oneocr.onemodel` and `onnxruntime.dll` only ship with the Windows 11 Snipping Tool. You copy them from a Win11 machine and point to the folder (the card walks you through it, including the PowerShell command to find the Snipping Tool folder). It uses an unofficial Microsoft API — a Snipping Tool update can break the integration, in which case you just re-extract the files.
   - The engine's configuration card is **collapsible**: it stays open while the folder isn't configured, and you can fold it away afterwards.
-- **Paragraph Mode Fine-Tuning → Grouping sensitivity** (0–3.0; default 1) — a multiplier over the typical vertical spacing between lines, used to decide whether two lines belong to the same paragraph. Lower values split paragraphs more readily; higher ones merge more distant lines into a single block.
 
-> **The mode isn't chosen here.** Paragraph or line is decided **at capture time**, by which hotkey you press: `Numpad8` (paragraph) or `Numpad9` (line). This tab only fine-tunes how Paragraph mode groups.
+> **Grouping isn't adjusted here.** Paragraph mode's *Grouping sensitivity* lives in **Overlay › Capture**, next to preprocessing.
 
 ### General › Shortcuts
 
@@ -718,6 +718,11 @@ Appearance of manual translations, and image preprocessing.
   - *Hide the translation from recordings and streams* — the translation stays visible on your own
     screen but disappears from captures. Only works with programs running on this PC (OBS, Game Bar,
     NVIDIA ShadowPlay, etc); with a capture card it still shows up. Affects manual translation only.
+- **Paragraph Mode Fine-Tuning → Grouping sensitivity** (0–3.0; default 1) — a multiplier over
+  the typical vertical spacing between lines, used to decide whether two lines belong to the same
+  paragraph. Lower values split paragraphs more readily; higher ones merge more distant lines into
+  a single block. The mode itself (paragraph or line) **isn't chosen here**: it's decided at
+  capture time, by the hotkey — `Numpad8` (paragraph) or `Numpad9` (line).
 - **OCR Preprocessing** — filters applied to the image before recognition:
   - *Enable preprocessing* turns the block on.
   - *Grayscale* · *Invert colors*

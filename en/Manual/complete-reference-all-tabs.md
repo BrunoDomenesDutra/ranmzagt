@@ -59,9 +59,8 @@ Which engine recognizes the text, and how it groups lines.
   - *WinOCR (default — native, ~30 ms)* — the engine built into Windows: fast, offline, no external dependency. Recognition depends on the language packs installed on the system. It's the fastest, but can trip on heavily stylized game fonts.
   - *OneOCR (Snipping Tool — experimental, ~50–150 ms)* — a multilingual model with automatic language detection. It **runs on Windows 10 and 11**; what's exclusive to Windows 11 are the files: `oneocr.dll`, `oneocr.onemodel` and `onnxruntime.dll` only ship with the Windows 11 Snipping Tool. You copy them from a Win11 machine and point to the folder (the card walks you through it, including the PowerShell command to find the Snipping Tool folder). It uses an unofficial Microsoft API — a Snipping Tool update can break the integration, in which case you just re-extract the files.
   - The engine's configuration card is **collapsible**: it stays open while the folder isn't configured, and you can fold it away afterwards.
-- **Paragraph Mode Fine-Tuning → Grouping sensitivity** (0–3.0; default 1) — a multiplier over the typical vertical spacing between lines, used to decide whether two lines belong to the same paragraph. Lower values split paragraphs more readily; higher ones merge more distant lines into a single block.
 
-> **The mode isn't chosen here.** Paragraph or line is decided **at capture time**, by which hotkey you press: `Numpad8` (paragraph) or `Numpad9` (line). This tab only fine-tunes how Paragraph mode groups.
+> **Grouping isn't adjusted here.** Paragraph mode's *Grouping sensitivity* lives in **Overlay › Capture**, next to preprocessing.
 
 ## General › Shortcuts
 
@@ -111,6 +110,11 @@ Appearance of manual translations, and image preprocessing.
   - *Hide the translation from recordings and streams* — the translation stays visible on your own
     screen but disappears from captures. Only works with programs running on this PC (OBS, Game Bar,
     NVIDIA ShadowPlay, etc); with a capture card it still shows up. Affects manual translation only.
+- **Paragraph Mode Fine-Tuning → Grouping sensitivity** (0–3.0; default 1) — a multiplier over
+  the typical vertical spacing between lines, used to decide whether two lines belong to the same
+  paragraph. Lower values split paragraphs more readily; higher ones merge more distant lines into
+  a single block. The mode itself (paragraph or line) **isn't chosen here**: it's decided at
+  capture time, by the hotkey — `Numpad8` (paragraph) or `Numpad9` (line).
 - **OCR Preprocessing** — filters applied to the image before recognition:
   - *Enable preprocessing* turns the block on.
   - *Grayscale* · *Invert colors*
