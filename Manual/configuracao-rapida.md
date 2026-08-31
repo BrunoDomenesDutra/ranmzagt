@@ -87,6 +87,14 @@ Abra **Traducao › Tradutores**.
 O padrão é o **Google Translate — gratuito, sem chave**: não precisa configurar nada, já está
 pronto para uso. É com ele que você deve fazer o primeiro teste.
 
+> **Gratuito, mas com limite.** O Google Translate sem chave aceita só um punhado de traduções
+> num intervalo curto. Passou disso, aparece o aviso *"Limite de requisições atingido"* e aquela
+> captura fica sem tradução. Para traduzir uma fala aqui e ali ele dá conta; em sessão longa e nos
+> modos contínuos (Legenda e Tempo Real) o limite chega rápido. E o limite é contado **por
+> endereço de IP** — quem usa internet móvel ou provedor com **CGNAT** divide esse limite com
+> outros clientes e bate nele bem mais cedo. A explicação e o que fazer estão na
+> [seção 13](/Manual/problemas-comuns-e-solucoes.md).
+
 Quando quiser mais qualidade, troque em **Provedor ativo**:
 
 - **DeepL** — tradutor dedicado, muito natural, com opção de formalidade. Precisa de chave de

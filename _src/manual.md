@@ -142,6 +142,14 @@ Abra **Traducao › Tradutores**.
 O padrão é o **Google Translate — gratuito, sem chave**: não precisa configurar nada, já está
 pronto para uso. É com ele que você deve fazer o primeiro teste.
 
+> **Gratuito, mas com limite.** O Google Translate sem chave aceita só um punhado de traduções
+> num intervalo curto. Passou disso, aparece o aviso *"Limite de requisições atingido"* e aquela
+> captura fica sem tradução. Para traduzir uma fala aqui e ali ele dá conta; em sessão longa e nos
+> modos contínuos (Legenda e Tempo Real) o limite chega rápido. E o limite é contado **por
+> endereço de IP** — quem usa internet móvel ou provedor com **CGNAT** divide esse limite com
+> outros clientes e bate nele bem mais cedo. A explicação e o que fazer estão na
+> [seção 13](/Manual/problemas-comuns-e-solucoes.md).
+
 Quando quiser mais qualidade, troque em **Provedor ativo**:
 
 - **DeepL** — tradutor dedicado, muito natural, com opção de formalidade. Precisa de chave de
@@ -869,6 +877,30 @@ segunda tentativa também falha. E aqui vale saber de uma diferença: quando um 
 (DeepL, Azure, IA) falha, o programa cai no Google Translate. **O Google não tem para onde cair** —
 ele já é o último recurso.
 
+**Por que o seu limite parece menor que o do vizinho: CGNAT**
+
+O limite não é por programa nem por conta: ele é contado **por endereço de IP** — o número que
+identifica a sua conexão na internet. Tudo o que sai da sua casa chega ao Google com esse mesmo
+número, e é ele que o Google usa para contar quantas traduções você pediu.
+
+O problema é que muita gente hoje **divide o mesmo IP com estranhos**. Não existe IP público
+sobrando para todo mundo, então boa parte dos provedores (fibra popular, rádio e principalmente
+internet móvel 4G/5G) usa uma técnica chamada **CGNAT**: centenas de clientes saem para a internet
+por um único IP público. É como um prédio grande que tem só um número na rua — as cartas chegam
+todas na portaria e alguém distribui lá dentro. Visto de fora, você e os vizinhos parecem uma
+pessoa só.
+
+Para o Google, então, o limite daquele IP é gasto por todos juntos. Se alguém que divide o IP com
+você já andou usando serviços do Google, parte da cota foi embora antes de você abrir o jogo — e o
+aviso aparece bem mais cedo do que apareceria para quem tem um **IP público só seu**. Não é defeito
+do programa nem do seu computador, e não existe ajuste interno que resolva.
+
+**Como saber se você está atrás de CGNAT:** compare o IP que aparece na tela de status do seu
+roteador (o IP da WAN) com o que um site de "qual é o meu IP" mostra. Se os dois forem diferentes,
+é CGNAT — e o do roteador normalmente começa com algo entre **100.64** e **100.127**, faixa
+reservada justamente para isso. Alguns provedores fornecem IP público a pedido, às vezes cobrando
+à parte.
+
 O que resolve, do mais simples ao mais definitivo:
 
 - **Espere alguns minutos.** O limite é temporário e se solta sozinho.
@@ -878,7 +910,9 @@ O que resolve, do mais simples ao mais definitivo:
   meio segundo gasta muito mais do que traduzir a cada dois.
 - **Troque de motor** em **Traducao › Tradutores**. **DeepL** e **Azure Translator** têm plano
   gratuito: exigem criar uma chave de API, mas em troca você ganha um limite próprio, muito mais
-  folgado, e tradução de qualidade melhor.
+  folgado, e tradução de qualidade melhor. Se você está atrás de CGNAT, é a solução que realmente
+  funciona: o limite passa a ser contado pela **sua chave**, e não pelo IP, então o que os outros
+  clientes do seu provedor fazem deixa de te atrapalhar.
 
 **"Apareceu um aviso vermelho de erro"**
 → Geralmente indica chave de API inválida, créditos esgotados, ou o serviço fora do ar
@@ -1170,9 +1204,10 @@ Qual serviço traduz e com quais credenciais.
 
 - **Provedor de Tradução → Provedor ativo**
   - *Google Translate — gratuito, sem chave* — API não oficial, nada para configurar.
-    **Não suporta o Modo Vision.** Por ser gratuito, tem **limite de requisições**: em capturas com
-    muitos blocos ou em uso contínuo, pode aparecer o aviso *"Limite de requisições atingido"* — o
-    que fazer está na [seção 13](/Manual/problemas-comuns-e-solucoes.md).
+    **Não suporta o Modo Vision.** Por ser gratuito, tem **limite de requisições**, contado por
+    endereço de IP: em capturas com muitos blocos, em uso contínuo ou em conexões com CGNAT (IP
+    dividido com outros clientes do provedor), pode aparecer o aviso *"Limite de requisições
+    atingido"* — o que fazer está na [seção 13](/Manual/problemas-comuns-e-solucoes.md).
   - *DeepL (requer chave de API)* — tradutor dedicado de alta qualidade; **não suporta o Modo
     Vision**. Não tem seleção de modelo, mas tem **Formalidade** (Padrão / Mais formal / Mais
     informal), que só afeta os idiomas-destino com suporte — PT-BR incluso — e é ignorada nos

@@ -105,6 +105,8 @@ Open **Translation › Translators**.
 
 The default is **Google Translate — free, no key**: nothing to configure, it's ready to use. Do your first test with it.
 
+> **Free, but capped.** Google Translate with no key only accepts a handful of translations in a short window. Go past that and a *"Rate limit reached"* warning appears, leaving that capture untranslated. For the odd line here and there it's fine; in a long session or in the continuous modes (Subtitle and Real-time) you reach the cap quickly. And the cap is counted **per IP address** — if you're on mobile internet or an ISP that uses **CGNAT**, you share that cap with other customers and hit it much sooner. The explanation and what to do about it are in [section 13](/en/Manual/common-problems-and-solutions.md).
+
 When you want better quality, switch in **Active provider**:
 
 - **DeepL** — a dedicated translator, very natural, with a formality option. Requires an API key, but has a **free plan** (those keys end in `:fx`, and the program figures out which server to use by itself).
@@ -560,12 +562,22 @@ What makes you hit the limit sooner than you'd expect: the program sends **one r
 
 The program already retries once on its own, after a moment — the warning only appears when the second attempt fails too. And there's a difference worth knowing: when an engine with a key (DeepL, Azure, AI) fails, the program falls back to Google Translate. **Google has nothing to fall back to** — it is already the last resort.
 
+**Why your limit looks smaller than your neighbour's: CGNAT**
+
+The limit isn't per program or per account: it's counted **per IP address** — the number that identifies your connection on the internet. Everything that leaves your house reaches Google with that same number, and that's what Google uses to count how many translations you asked for.
+
+The catch is that a lot of people today **share the same IP with strangers**. There aren't enough public IPs to go around, so many ISPs (budget fibre, fixed wireless and above all mobile 4G/5G) use a technique called **CGNAT**: hundreds of customers reach the internet through a single public IP. It's like a large building with only one street number — every letter arrives at the front desk and someone hands them out inside. Seen from outside, you and your neighbours look like one person.
+
+So as far as Google is concerned, that IP's quota is spent by everyone together. If someone sharing your IP has been using Google services, part of the quota is gone before you even open the game — and the warning shows up far sooner than it would for someone with a **public IP of their own**. It isn't a fault in the program or in your computer, and no setting inside it can fix that.
+
+**How to tell whether you're behind CGNAT:** compare the IP shown on your router's status page (the WAN IP) with the one a "what is my IP" site reports. If the two differ, it's CGNAT — and the router's one usually starts somewhere between **100.64** and **100.127**, a range reserved for exactly this. Some ISPs will give you a public IP on request, sometimes for an extra fee.
+
 What fixes it, from simplest to most permanent:
 
 - **Wait a few minutes.** The limit is temporary and clears on its own.
 - **Use paragraph mode** (`Numpad8`) instead of line mode (`Numpad9`). Paragraph joins the lines of the same speech into a single block — fewer blocks, fewer requests, same screen translated.
 - **In the continuous modes, raise the capture interval** in **Overlay › Subtitles**. Translating every half second costs far more than translating every two.
-- **Switch engines** in **Translation › Translators**. **DeepL** and **Azure Translator** have free tiers: they require creating an API key, but in exchange you get your own, far more generous limit, and better translation quality.
+- **Switch engines** in **Translation › Translators**. **DeepL** and **Azure Translator** have free tiers: they require creating an API key, but in exchange you get your own, far more generous limit, and better translation quality. If you're behind CGNAT, this is the fix that actually works: the limit is then counted against **your key**, not against the IP, so what your ISP's other customers do stops affecting you.
 
 **"A red error warning appeared"**
 → Usually means invalid API key, exhausted credits, or the service temporarily down. Check **Translation › Translators**. If the warning says the response was **cut off at the token limit**, increase **Max tokens** in **Translation › AI** (happens only with very large text blocks).
@@ -755,7 +767,7 @@ Which service translates, and with which credentials.
 <p align="center"><img src="media/tradutores-deepl.png" alt="Translation › Translators tab with DeepL" width="820"></p>
 
 - **Translation Provider → Active provider**
-  - *Google Translate — free, no key* — unofficial API, nothing to configure. **Doesn't support Vision Mode.** Being free, it has a **request limit**: on captures with many blocks or in continuous use, a *"Rate limit reached"* warning may appear — what to do about it is in [section 13](/en/Manual/common-problems-and-solutions.md).
+  - *Google Translate — free, no key* — unofficial API, nothing to configure. **Doesn't support Vision Mode.** Being free, it has a **request limit**, counted per IP address: on captures with many blocks, in continuous use or on CGNAT connections (an IP shared with your ISP's other customers), a *"Rate limit reached"* warning may appear — what to do about it is in [section 13](/en/Manual/common-problems-and-solutions.md).
   - *DeepL (requires API key)* — a high-quality dedicated translator; **doesn't support Vision Mode**. It has no model selection, but it does have **Formality** (Default / More formal / More informal), which only affects target languages that support it — PT-BR included — and is ignored on the rest. It makes use of the **Game Info** field (Translation › AI) and, in Subtitle Mode, the previous lines as context, at no extra cost.
   - *Azure Translator (requires API key and region)* — Microsoft's translator; **doesn't support Vision Mode**. It has no model selection and no formality, and it **doesn't use** Conversation Context or Game Info — its translation API takes no context. In exchange, it detects the source language **block by block**: in a capture where part of the text is in another language, each block is translated from the right one.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AI engines, requiring an API key.

@@ -49,6 +49,30 @@ segunda tentativa também falha. E aqui vale saber de uma diferença: quando um 
 (DeepL, Azure, IA) falha, o programa cai no Google Translate. **O Google não tem para onde cair** —
 ele já é o último recurso.
 
+**Por que o seu limite parece menor que o do vizinho: CGNAT**
+
+O limite não é por programa nem por conta: ele é contado **por endereço de IP** — o número que
+identifica a sua conexão na internet. Tudo o que sai da sua casa chega ao Google com esse mesmo
+número, e é ele que o Google usa para contar quantas traduções você pediu.
+
+O problema é que muita gente hoje **divide o mesmo IP com estranhos**. Não existe IP público
+sobrando para todo mundo, então boa parte dos provedores (fibra popular, rádio e principalmente
+internet móvel 4G/5G) usa uma técnica chamada **CGNAT**: centenas de clientes saem para a internet
+por um único IP público. É como um prédio grande que tem só um número na rua — as cartas chegam
+todas na portaria e alguém distribui lá dentro. Visto de fora, você e os vizinhos parecem uma
+pessoa só.
+
+Para o Google, então, o limite daquele IP é gasto por todos juntos. Se alguém que divide o IP com
+você já andou usando serviços do Google, parte da cota foi embora antes de você abrir o jogo — e o
+aviso aparece bem mais cedo do que apareceria para quem tem um **IP público só seu**. Não é defeito
+do programa nem do seu computador, e não existe ajuste interno que resolva.
+
+**Como saber se você está atrás de CGNAT:** compare o IP que aparece na tela de status do seu
+roteador (o IP da WAN) com o que um site de "qual é o meu IP" mostra. Se os dois forem diferentes,
+é CGNAT — e o do roteador normalmente começa com algo entre **100.64** e **100.127**, faixa
+reservada justamente para isso. Alguns provedores fornecem IP público a pedido, às vezes cobrando
+à parte.
+
 O que resolve, do mais simples ao mais definitivo:
 
 - **Espere alguns minutos.** O limite é temporário e se solta sozinho.
@@ -58,7 +82,9 @@ O que resolve, do mais simples ao mais definitivo:
   meio segundo gasta muito mais do que traduzir a cada dois.
 - **Troque de motor** em **Traducao › Tradutores**. **DeepL** e **Azure Translator** têm plano
   gratuito: exigem criar uma chave de API, mas em troca você ganha um limite próprio, muito mais
-  folgado, e tradução de qualidade melhor.
+  folgado, e tradução de qualidade melhor. Se você está atrás de CGNAT, é a solução que realmente
+  funciona: o limite passa a ser contado pela **sua chave**, e não pelo IP, então o que os outros
+  clientes do seu provedor fazem deixa de te atrapalhar.
 
 **"Apareceu um aviso vermelho de erro"**
 → Geralmente indica chave de API inválida, créditos esgotados, ou o serviço fora do ar

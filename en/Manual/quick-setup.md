@@ -62,6 +62,8 @@ Open **Translation › Translators**.
 
 The default is **Google Translate — free, no key**: nothing to configure, it's ready to use. Do your first test with it.
 
+> **Free, but capped.** Google Translate with no key only accepts a handful of translations in a short window. Go past that and a *"Rate limit reached"* warning appears, leaving that capture untranslated. For the odd line here and there it's fine; in a long session or in the continuous modes (Subtitle and Real-time) you reach the cap quickly. And the cap is counted **per IP address** — if you're on mobile internet or an ISP that uses **CGNAT**, you share that cap with other customers and hit it much sooner. The explanation and what to do about it are in [section 13](/en/Manual/common-problems-and-solutions.md).
+
 When you want better quality, switch in **Active provider**:
 
 - **DeepL** — a dedicated translator, very natural, with a formality option. Requires an API key, but has a **free plan** (those keys end in `:fx`, and the program figures out which server to use by itself).
