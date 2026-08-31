@@ -161,6 +161,24 @@
     .search h2,
     .search .matching-post h2 { color: var(--al-fg) !important; }
 
+    /* O Docsify injeta sozinho a fitinha "fork me" no canto superior direito
+       por causa do "repo" no $docsify — ela ficava atras (ou por baixo) dos
+       nossos botoes de idioma/tema, os dois brigando pelo mesmo canto. Como
+       o link do repo nao e o que importa aqui pro usuario final do manual,
+       tira a fitinha e deixa só os nossos controles. */
+    .github-corner { display: none !important; }
+
+    /* Botao de recolher a sidebar (canto inferior esquerdo). O tema padrao do
+       Docsify da a ele um fundo branco fixo — destoa dos dois temas (fica uma
+       mancha branca tanto no light quanto, pior ainda, no dark). Aqui ele
+       acompanha a cor da sidebar, e as barrinhas usam --al-comment, visivel
+       nos dois. */
+    .sidebar-toggle,
+    body.close .sidebar-toggle {
+      background-color: var(--al-sidebar) !important;
+    }
+    .sidebar-toggle span { background-color: var(--al-comment) !important; }
+
     /* ── Toggle ── */
     #theme-toggle {
       position: fixed; top: 14px; right: 16px; z-index: 100;
