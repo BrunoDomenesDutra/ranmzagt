@@ -149,6 +149,10 @@ pronto para uso. É com ele que você deve fazer o primeiro teste.
 > endereço de IP** — quem usa internet móvel ou provedor com **CGNAT** divide esse limite com
 > outros clientes e bate nele bem mais cedo. A explicação e o que fazer estão na
 > [seção 13](/Manual/problemas-comuns-e-solucoes.md).
+>
+> Some a isso que ela **não é uma API oficial**: é o mesmo endereço que a página do Google
+> Tradutor usa por baixo dos panos, sem chave e sem conta. O Google pode mudá-la ou tirá-la do ar
+> quando quiser, sem aviso. Os motores com chave não correm esse risco.
 
 Quando quiser mais qualidade, troque em **Provedor ativo**:
 
@@ -1203,7 +1207,10 @@ Qual serviço traduz e com quais credenciais.
 <p align="center"><img src="media/tradutores-deepl.png" alt="Aba Traducao › Tradutores com DeepL" width="820"></p>
 
 - **Provedor de Tradução → Provedor ativo**
-  - *Google Translate — gratuito, sem chave* — API não oficial, nada para configurar.
+  - *Google Translate — gratuito, sem chave* — API não oficial, nada para configurar. É o mesmo
+    endereço que a página do Google Tradutor usa internamente; como não é publicada nem
+    documentada, o Google pode alterá-la ou desativá-la a qualquer momento — se um dia ela parar
+    de responder, a saída é trocar por um motor com chave.
     **Não suporta o Modo Vision.** Por ser gratuito, tem **limite de requisições**, contado por
     endereço de IP: em capturas com muitos blocos, em uso contínuo ou em conexões com CGNAT (IP
     dividido com outros clientes do provedor), pode aparecer o aviso *"Limite de requisições

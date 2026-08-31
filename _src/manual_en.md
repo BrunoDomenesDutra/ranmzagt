@@ -106,6 +106,8 @@ Open **Translation › Translators**.
 The default is **Google Translate — free, no key**: nothing to configure, it's ready to use. Do your first test with it.
 
 > **Free, but capped.** Google Translate with no key only accepts a handful of translations in a short window. Go past that and a *"Rate limit reached"* warning appears, leaving that capture untranslated. For the odd line here and there it's fine; in a long session or in the continuous modes (Subtitle and Real-time) you reach the cap quickly. And the cap is counted **per IP address** — if you're on mobile internet or an ISP that uses **CGNAT**, you share that cap with other customers and hit it much sooner. The explanation and what to do about it are in [section 13](/en/Manual/common-problems-and-solutions.md).
+>
+> On top of that, it **isn't an official API**: it's the same address the Google Translate web page uses under the hood, with no key and no account. Google can change it or take it down whenever it likes, without notice. Engines with a key don't carry that risk.
 
 When you want better quality, switch in **Active provider**:
 
@@ -767,7 +769,7 @@ Which service translates, and with which credentials.
 <p align="center"><img src="media/tradutores-deepl.png" alt="Translation › Translators tab with DeepL" width="820"></p>
 
 - **Translation Provider → Active provider**
-  - *Google Translate — free, no key* — unofficial API, nothing to configure. **Doesn't support Vision Mode.** Being free, it has a **request limit**, counted per IP address: on captures with many blocks, in continuous use or on CGNAT connections (an IP shared with your ISP's other customers), a *"Rate limit reached"* warning may appear — what to do about it is in [section 13](/en/Manual/common-problems-and-solutions.md).
+  - *Google Translate — free, no key* — unofficial API, nothing to configure. It's the same address the Google Translate web page uses internally; since it is neither published nor documented, Google can change it or shut it down at any time — if it ever stops responding, the way out is switching to an engine with a key. **Doesn't support Vision Mode.** Being free, it has a **request limit**, counted per IP address: on captures with many blocks, in continuous use or on CGNAT connections (an IP shared with your ISP's other customers), a *"Rate limit reached"* warning may appear — what to do about it is in [section 13](/en/Manual/common-problems-and-solutions.md).
   - *DeepL (requires API key)* — a high-quality dedicated translator; **doesn't support Vision Mode**. It has no model selection, but it does have **Formality** (Default / More formal / More informal), which only affects target languages that support it — PT-BR included — and is ignored on the rest. It makes use of the **Game Info** field (Translation › AI) and, in Subtitle Mode, the previous lines as context, at no extra cost.
   - *Azure Translator (requires API key and region)* — Microsoft's translator; **doesn't support Vision Mode**. It has no model selection and no formality, and it **doesn't use** Conversation Context or Game Info — its translation API takes no context. In exchange, it detects the source language **block by block**: in a capture where part of the text is in another language, each block is translated from the right one.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AI engines, requiring an API key.

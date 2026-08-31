@@ -245,7 +245,10 @@ Qual serviço traduz e com quais credenciais.
 <p align="center"><img src="media/tradutores-deepl.png" alt="Aba Traducao › Tradutores com DeepL" width="820"></p>
 
 - **Provedor de Tradução → Provedor ativo**
-  - *Google Translate — gratuito, sem chave* — API não oficial, nada para configurar.
+  - *Google Translate — gratuito, sem chave* — API não oficial, nada para configurar. É o mesmo
+    endereço que a página do Google Tradutor usa internamente; como não é publicada nem
+    documentada, o Google pode alterá-la ou desativá-la a qualquer momento — se um dia ela parar
+    de responder, a saída é trocar por um motor com chave.
     **Não suporta o Modo Vision.** Por ser gratuito, tem **limite de requisições**, contado por
     endereço de IP: em capturas com muitos blocos, em uso contínuo ou em conexões com CGNAT (IP
     dividido com outros clientes do provedor), pode aparecer o aviso *"Limite de requisições
