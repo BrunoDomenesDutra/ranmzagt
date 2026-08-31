@@ -30,6 +30,11 @@
       --al-red:      #D32F2F;
       --al-yellow:   #8A7300;
       --al-border:   #D4D4C8;
+      /* Aviso: fundo/borda derivados do vermelho, fracos o bastante para o
+         texto continuar no --al-fg (contraste ~13:1) em vez de virar um bloco
+         vermelho de ler no grito. */
+      --al-warn-bg:      rgba(211, 47, 47, .07);
+      --al-warn-border:  rgba(211, 47, 47, .30);
     }
 
     /* ── Base ── */
@@ -81,6 +86,21 @@
     }
     .markdown-section blockquote p,
     .markdown-section blockquote li { color: var(--al-fg) !important; }
+
+    /* Aviso — no markdown e "?> texto"; o Docsify gera <p class="warn">.
+       Vermelho fica na borda e no rotulo em negrito; o corpo segue no --al-fg,
+       senao o bloco perde contraste no dark e cansa no light. */
+    .markdown-section p.warn {
+      background: var(--al-warn-bg) !important;
+      border: 1px solid var(--al-warn-border) !important;
+      border-left: 4px solid var(--al-red) !important;
+      border-radius: 4px !important;
+      padding: .9em 1em !important;
+      color: var(--al-fg) !important;
+    }
+    .markdown-section p.warn strong { color: var(--al-red) !important; }
+    .markdown-section p.warn em     { color: var(--al-fg) !important; }
+    .markdown-section p.warn a      { color: var(--al-red) !important; text-decoration: underline; }
 
     /* Código inline */
     .markdown-section code {
@@ -176,6 +196,8 @@
       --al-red:     #FF5555;
       --al-yellow:  #F1FA8C;
       --al-border:  #44475A;
+      --al-warn-bg:     rgba(255, 85, 85, .10);
+      --al-warn-border: rgba(255, 85, 85, .32);
     }
   </style>
 

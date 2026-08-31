@@ -106,8 +106,8 @@ Open **Translation › Translators**.
 The default is **Google Translate — free, no key**: nothing to configure, it's ready to use. Do your first test with it.
 
 > **Free, but capped.** Google Translate with no key only accepts a handful of translations in a short window. Go past that and a *"Rate limit reached"* warning appears, leaving that capture untranslated. For the odd line here and there it's fine; in a long session or in the continuous modes (Subtitle and Real-time) you reach the cap quickly. And the cap is counted **per IP address** — if you're on mobile internet or an ISP that uses **CGNAT**, you share that cap with other customers and hit it much sooner. The explanation and what to do about it are in [section 13](/en/Manual/common-problems-and-solutions.md).
->
-> On top of that, it **isn't an official API**: it's the same address the Google Translate web page uses under the hood, with no key and no account. Google can change it or take it down whenever it likes, without notice. Engines with a key don't carry that risk.
+
+?> **Careful: the Google API used here is not official.** It's the same address the Google Translate web page uses under the hood, with no key and no account. It is neither published nor documented, so Google can change it or take it down whenever it likes, without notice — and on that day only the engines with a key keep translating. If you depend on the program to play, it's worth having a free **DeepL** or **Azure Translator** key already set up.
 
 When you want better quality, switch in **Active provider**:
 

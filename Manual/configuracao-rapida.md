@@ -94,10 +94,12 @@ pronto para uso. É com ele que você deve fazer o primeiro teste.
 > endereço de IP** — quem usa internet móvel ou provedor com **CGNAT** divide esse limite com
 > outros clientes e bate nele bem mais cedo. A explicação e o que fazer estão na
 > [seção 13](/Manual/problemas-comuns-e-solucoes.md).
->
-> Some a isso que ela **não é uma API oficial**: é o mesmo endereço que a página do Google
-> Tradutor usa por baixo dos panos, sem chave e sem conta. O Google pode mudá-la ou tirá-la do ar
-> quando quiser, sem aviso. Os motores com chave não correm esse risco.
+
+?> **Atenção: a API do Google usada aqui não é oficial.** É o mesmo endereço que a página do
+Google Tradutor usa por baixo dos panos, sem chave e sem conta. Ela não é publicada nem
+documentada, então o Google pode mudá-la ou tirá-la do ar quando quiser, sem aviso — e nesse dia
+só voltam a traduzir os motores com chave. Se você depende do programa para jogar, vale ter uma
+chave gratuita de **DeepL** ou **Azure Translator** já configurada.
 
 Quando quiser mais qualidade, troque em **Provedor ativo**:
 
