@@ -207,19 +207,40 @@
     }
     #lang-toggle:hover { border-color: var(--al-purple); color: var(--al-purple); }
 
+    /* ── Toggle de paleta acessível (daltonismo) ── */
+    #a11y-toggle {
+      position: fixed; top: 14px; right: 114px; z-index: 100;
+      width: 38px; height: 38px; border-radius: 8px;
+      border: 1px solid var(--al-border);
+      background: var(--al-sidebar);
+      color: var(--al-fg);
+      cursor: pointer; font-size: 15px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12);
+      transition: border-color .15s, color .15s;
+    }
+    #a11y-toggle:hover,
+    #a11y-toggle.active { border-color: var(--al-purple); color: var(--al-purple); }
+
     /* ── Scrollbar ── */
     ::-webkit-scrollbar       { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: var(--al-bg); }
     ::-webkit-scrollbar-thumb { background: var(--al-current); border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--al-comment); }
 
-    /* ── Dark mode (Dracula clássico) — ativado via botão ── */
-    html[data-theme="dark"] {
+    /* ── Dark mode (Dracula clássico) e Daltônico dark compartilham a mesma
+       estrutura (fundo/borda) — só os acentos semânticos mudam entre os
+       dois, no bloco html[data-theme="dark-a11y"] logo abaixo. ── */
+    html[data-theme="dark"],
+    html[data-theme="dark-a11y"] {
       --al-bg:      #282A36;
       --al-sidebar: #21222C;
       --al-current: #44475A;
       --al-fg:      #F8F8F2;
       --al-comment: #6272A4;
+      --al-border:  #44475A;
+    }
+    html[data-theme="dark"] {
       --al-cyan:    #8BE9FD;
       --al-green:   #50FA7B;
       --al-orange:  #FFB86C;
@@ -227,25 +248,64 @@
       --al-purple:  #BD93F9;
       --al-red:     #FF5555;
       --al-yellow:  #F1FA8C;
-      --al-border:  #44475A;
       --al-warn-bg:     rgba(255, 85, 85, .10);
       --al-warn-border: rgba(255, 85, 85, .32);
     }
+
+    /* ── Daltônico (Okabe-Ito, 2008) — mesma paleta que o app Ranmza GT e a
+       barra flutuante já usam. Evita o eixo vermelho-verde: funciona sob
+       protanopia, deuteranopia e tritanopia. Os 7 papéis de cor daqui (cyan/
+       roxo/verde/laranja/rosa/vermelho/amarelo) usam as 7 cores não-pretas
+       do Okabe-Ito uma a uma — roxo e rosa são as duas variações (clara/
+       escura) do "reddish purple", já que são conceitos próximos (link e
+       código inline) e não uma distinção que precise sobreviver sozinha por
+       matiz sob daltonismo (código já se distingue pela fonte monoespaçada +
+       fundo, link pelo sublinhado no hover). Tons ajustados de olho — se o
+       contraste incomodar em algum papel, é só recalibrar aqui. ── */
+    html[data-theme="dark-a11y"] {
+      --al-cyan:    #56B4E9;  /* Okabe-Ito sky blue */
+      --al-green:   #33B896;  /* bluish green, clareado p/ fundo escuro */
+      --al-orange:  #F0B840;  /* orange, clareado p/ fundo escuro */
+      --al-pink:    #DEA8C6;  /* reddish purple, bem clareado */
+      --al-purple:  #D694B9;  /* reddish purple, clareado */
+      --al-red:     #E6875C;  /* vermillion, clareado p/ fundo escuro */
+      --al-yellow:  #F0E442;  /* Okabe-Ito yellow */
+      --al-warn-bg:     rgba(230, 135, 92, .10);
+      --al-warn-border: rgba(230, 135, 92, .32);
+    }
+    html[data-theme="light-a11y"] {
+      --al-cyan:    #0072B2;  /* Okabe-Ito blue */
+      --al-green:   #009E73;  /* Okabe-Ito bluish green */
+      --al-orange:  #E69F00;  /* Okabe-Ito orange */
+      --al-pink:    #70435C;  /* reddish purple, escurecido */
+      --al-purple:  #8F5575;  /* reddish purple, escurecido */
+      --al-red:     #D55E00;  /* Okabe-Ito vermillion */
+      --al-yellow:  #8A7300;  /* Okabe-Ito yellow, escurecido p/ fundo claro (mesmo tom que o Alucard já usava) */
+      --al-warn-bg:     rgba(213, 94, 0, .07);
+      --al-warn-border: rgba(213, 94, 0, .30);
+    }
   </style>
 
-  <!-- Aplica tema antes da pintura (sem flash) — padrão: light (Alucard) -->
+  <!-- Aplica tema antes da pintura (sem flash) — padrão: light (Alucard).
+       Esquema (claro/escuro) e paleta (padrão/daltônico) são eixos
+       independentes, combinados num único data-theme: dark | light |
+       dark-a11y | light-a11y — mesmo esquema do app Ranmza GT. -->
   <script>
     (function(){
-      var k = 'ranmza-doc-theme', s = null;
-      try { s = localStorage.getItem(k); } catch(e) {}
-      if (!s) s = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', s);
+      var kScheme = 'ranmza-doc-theme', kPalette = 'ranmza-doc-palette';
+      var scheme = null, palette = null;
+      try { scheme = localStorage.getItem(kScheme); palette = localStorage.getItem(kPalette); } catch(e) {}
+      if (!scheme) scheme = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      if (!palette) palette = 'padrao';
+      var attr = palette === 'acessivel' ? scheme + '-a11y' : scheme;
+      document.documentElement.setAttribute('data-theme', attr);
     })();
   </script>
 </head>
 <body>
 
   <button id="lang-toggle" onclick="RToggleLang()" aria-label="Trocar idioma" title="Português / English">EN</button>
+  <button id="a11y-toggle" onclick="RTogglePalette()" aria-label="Paleta acessível para daltonismo" title="Paleta acessível para daltonismo">👁️</button>
   <button id="theme-toggle" onclick="RToggleTheme()" aria-label="Alternar tema" title="Alternar tema claro/escuro">☀️</button>
 
   <div id="app">Carregando o manual...</div>
@@ -269,21 +329,49 @@
       }
     };
 
+    // ── Tema: esquema (claro/escuro) e paleta (padrão/daltônico) são eixos
+    // independentes, combinados num único data-theme (ver script no <head>).
+    var kScheme = 'ranmza-doc-theme', kPalette = 'ranmza-doc-palette';
+
+    function RCurrentScheme() {
+      var attr = document.documentElement.getAttribute('data-theme') || 'light';
+      return attr.indexOf('dark') === 0 ? 'dark' : 'light';
+    }
+    function RCurrentPalette() {
+      var attr = document.documentElement.getAttribute('data-theme') || 'light';
+      return attr.indexOf('-a11y') > -1 ? 'acessivel' : 'padrao';
+    }
+    function RApplyTheme(scheme, palette) {
+      var attr = palette === 'acessivel' ? scheme + '-a11y' : scheme;
+      document.documentElement.setAttribute('data-theme', attr);
+      RSyncThemeBtn();
+      RSyncPaletteBtn();
+    }
+
     function RSyncThemeBtn() {
-      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
       var b = document.getElementById('theme-toggle');
-      if (b) b.innerHTML = dark ? '&#9728;&#65039;' : '&#127769;';
+      if (b) b.innerHTML = RCurrentScheme() === 'dark' ? '&#9728;&#65039;' : '&#127769;';
+    }
+
+    function RSyncPaletteBtn() {
+      var b = document.getElementById('a11y-toggle');
+      if (b) b.classList.toggle('active', RCurrentPalette() === 'acessivel');
     }
 
     function RToggleTheme() {
-      var k = 'ranmza-doc-theme';
-      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      try { localStorage.setItem(k, next); } catch(e) {}
-      document.documentElement.setAttribute('data-theme', next);
-      RSyncThemeBtn();
+      var next = RCurrentScheme() === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem(kScheme, next); } catch(e) {}
+      RApplyTheme(next, RCurrentPalette());
+    }
+
+    function RTogglePalette() {
+      var next = RCurrentPalette() === 'acessivel' ? 'padrao' : 'acessivel';
+      try { localStorage.setItem(kPalette, next); } catch(e) {}
+      RApplyTheme(RCurrentScheme(), next);
     }
 
     RSyncThemeBtn();
+    RSyncPaletteBtn();
 
     // ── Idioma: PT vive em #/ , EN em #/en/ ──
     function RIsEn() { return (location.hash || '').indexOf('#/en') === 0; }
