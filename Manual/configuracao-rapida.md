@@ -186,19 +186,23 @@ Ela fica **sempre por cima de tudo** — inclusive de jogo em janela sem borda �
 pelo canhoto de pontinhos da esquerda para qualquer canto de qualquer monitor. O atalho
 `NumpadSubtract` (o menos do teclado numérico) mostra e esconde a barra.
 
-Os botões, da esquerda para a direita (passe o mouse sobre um para ver o nome):
+Os botões, da esquerda para a direita (passe o mouse sobre um para ver o nome), agrupados por
+função:
 
 | Ícone | O que faz |
 |---|---|
-| Colchetes (ciano) | Selecionar área de captura |
-| Três linhas (roxo) | Traduzir (Parágrafo) |
-| Traço (roxo) | Traduzir (Linha) |
-| Três linhas (rosa) | Traduzir com I.A Vision (Parágrafo) |
-| Traço (rosa) | Traduzir com I.A Vision (Linha) |
+| Colchetes (azul) | Selecionar área de captura |
+| Três linhas (azul) | Traduzir (Parágrafo) |
+| Traço (azul) | Traduzir (Linha) |
+| Três linhas (amarelo) | Traduzir com I.A Vision (Parágrafo) |
+| Traço (amarelo) | Traduzir com I.A Vision (Linha) |
 | X (vermelho) | Limpar overlay |
-| Balão (verde) | Modo Legenda — ligar/desligar |
-| Retângulo (verde) | Selecionar área da legenda |
+| Colchetes com barra (verde) | Selecionar área da legenda |
+| CC (verde) | Modo Legenda — ligar/desligar |
 | Quatro pontos (laranja) | Mostrar/ocultar áreas |
+
+No canto direito, dois botões **+ / -** ajustam o tamanho da barra inteira na tela — útil em
+monitores 4K ou muito pequenos.
 
 ## 2.8 Trocando os atalhos
 

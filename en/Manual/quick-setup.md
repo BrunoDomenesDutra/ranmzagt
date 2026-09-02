@@ -127,19 +127,22 @@ Some games swallow the numpad keys, and NumLock sometimes gets in the way. For t
 
 It stays **on top of everything** — including a game in borderless fullscreen — and you drag it by the dotted handle on the left to any corner of any monitor. The `NumpadSubtract` hotkey (the numpad's minus) shows and hides the bar.
 
-The buttons, left to right (hover over one to see its name):
+The buttons, left to right (hover over one to see its name), grouped by function:
 
 | Icon | What it does |
 |---|---|
-| Brackets (cyan) | Select capture area |
-| Three lines (purple) | Translate (Paragraph) |
-| Dash (purple) | Translate (Line) |
-| Three lines (pink) | Translate with AI Vision (Paragraph) |
-| Dash (pink) | Translate with AI Vision (Line) |
+| Brackets (blue) | Select capture area |
+| Three lines (blue) | Translate (Paragraph) |
+| Dash (blue) | Translate (Line) |
+| Three lines (yellow) | Translate with AI Vision (Paragraph) |
+| Dash (yellow) | Translate with AI Vision (Line) |
 | X (red) | Clear overlay |
-| Bubble (green) | Subtitle Mode — on/off |
-| Rectangle (green) | Select subtitle area |
+| Brackets with a bar (green) | Select subtitle area |
+| CC (green) | Subtitle Mode — on/off |
 | Four dots (orange) | Show/hide areas |
+
+On the right, two **+ / -** buttons resize the whole bar on screen — handy on 4K or very small
+monitors.
 
 ## 2.8 Changing the hotkeys
 

@@ -165,7 +165,7 @@ Aparência da tradução manual e pré-processamento da imagem.
   - *Tamanho da fonte* — 8 a 72 pt.
   - *Altura da linha* — 0,80 a 2,00.
   - *Auto-fit* — reduz a fonte progressivamente para o texto caber no bloco sem cortar.
-- **Fundo e Contorno** — são alternativos, ligar um desliga o outro.
+- **Fundo e Contorno** — podem ser ligados juntos ou separados.
   - *Mostrar fundo* + *Opacidade do fundo* (10–100%) — caixa escura atrás do texto.
   - *Mostrar contorno* + *Espessura* (2–5 px) — contorno preto ao redor de cada letra.
 

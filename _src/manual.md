@@ -241,19 +241,23 @@ Ela fica **sempre por cima de tudo** — inclusive de jogo em janela sem borda �
 pelo canhoto de pontinhos da esquerda para qualquer canto de qualquer monitor. O atalho
 `NumpadSubtract` (o menos do teclado numérico) mostra e esconde a barra.
 
-Os botões, da esquerda para a direita (passe o mouse sobre um para ver o nome):
+Os botões, da esquerda para a direita (passe o mouse sobre um para ver o nome), agrupados por
+função:
 
 | Ícone | O que faz |
 |---|---|
-| Colchetes (ciano) | Selecionar área de captura |
-| Três linhas (roxo) | Traduzir (Parágrafo) |
-| Traço (roxo) | Traduzir (Linha) |
-| Três linhas (rosa) | Traduzir com I.A Vision (Parágrafo) |
-| Traço (rosa) | Traduzir com I.A Vision (Linha) |
+| Colchetes (azul) | Selecionar área de captura |
+| Três linhas (azul) | Traduzir (Parágrafo) |
+| Traço (azul) | Traduzir (Linha) |
+| Três linhas (amarelo) | Traduzir com I.A Vision (Parágrafo) |
+| Traço (amarelo) | Traduzir com I.A Vision (Linha) |
 | X (vermelho) | Limpar overlay |
-| Balão (verde) | Modo Legenda — ligar/desligar |
-| Retângulo (verde) | Selecionar área da legenda |
+| Colchetes com barra (verde) | Selecionar área da legenda |
+| CC (verde) | Modo Legenda — ligar/desligar |
 | Quatro pontos (laranja) | Mostrar/ocultar áreas |
+
+No canto direito, dois botões **+ / -** ajustam o tamanho da barra inteira na tela — útil em
+monitores 4K ou muito pequenos.
 
 ### 2.8 Trocando os atalhos
 
@@ -553,10 +557,8 @@ Em **Overlay › Captura**, no card **Texto**:
   não muda mais nada.
 - **Fundo**: desenha uma caixa escura atrás do texto (com opacidade ajustável), para garantir
   legibilidade sobre qualquer cenário.
-- **Contorno**: alternativa ao fundo — desenha uma borda preta nas letras, sem caixa visível,
-  para um visual mais discreto/integrado.
-
-> Fundo e contorno são opções alternativas — ativar uma desativa a outra automaticamente.
+- **Contorno**: desenha uma borda preta nas letras, para um visual mais discreto/integrado —
+  pode ser usado sozinho ou junto com o fundo.
 
 <p align="center"><img src="media/captura-texto-fundo.png" alt="Cards Texto e Fundo e Contorno, em Overlay › Captura" width="720"></p>
 
@@ -1129,7 +1131,7 @@ Aparência da tradução manual e pré-processamento da imagem.
   - *Tamanho da fonte* — 8 a 72 pt.
   - *Altura da linha* — 0,80 a 2,00.
   - *Auto-fit* — reduz a fonte progressivamente para o texto caber no bloco sem cortar.
-- **Fundo e Contorno** — são alternativos, ligar um desliga o outro.
+- **Fundo e Contorno** — podem ser ligados juntos ou separados.
   - *Mostrar fundo* + *Opacidade do fundo* (10–100%) — caixa escura atrás do texto.
   - *Mostrar contorno* + *Espessura* (2–5 px) — contorno preto ao redor de cada letra.
 

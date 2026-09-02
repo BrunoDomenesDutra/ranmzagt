@@ -14,10 +14,8 @@ Em **Overlay › Captura**, no card **Texto**:
   não muda mais nada.
 - **Fundo**: desenha uma caixa escura atrás do texto (com opacidade ajustável), para garantir
   legibilidade sobre qualquer cenário.
-- **Contorno**: alternativa ao fundo — desenha uma borda preta nas letras, sem caixa visível,
-  para um visual mais discreto/integrado.
-
-> Fundo e contorno são opções alternativas — ativar uma desativa a outra automaticamente.
+- **Contorno**: desenha uma borda preta nas letras, para um visual mais discreto/integrado —
+  pode ser usado sozinho ou junto com o fundo.
 
 <p align="center"><img src="media/captura-texto-fundo.png" alt="Cards Texto e Fundo e Contorno, em Overlay › Captura" width="720"></p>
 
