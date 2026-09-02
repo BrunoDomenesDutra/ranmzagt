@@ -25,6 +25,8 @@ pelo menos um modificador (Ctrl, Alt ou Shift), para não atrapalhar os controle
 sozinhas — os grupos **Números** e **Navegação** salvam quem está em notebook sem teclado
 numérico.
 
+<p align="center"><img src="media/geral-atalhos.png" alt="Aba Geral › Atalhos" width="820"></p>
+
 > Os atalhos só funcionam quando a janela do jogo está em foco (ou seja, quando a janela de
 > configuração do Ranmza GT não está em primeiro plano). Assim você pode digitar normalmente
 > nos campos da configuração sem disparar comandos sem querer.

@@ -7,7 +7,11 @@ If you stream or record the game and want **the translation to also appear in th
 3. In OBS, add a source of type **"Browser Source"** and paste that address. This version of the page has a transparent background, ready to overlay the game capture.
 4. (Optional) **Turn off** the **"Show translation on screen"** switch to drop the overlay from the game and let the translation appear **only** on the browser page/OBS — useful if OBS's capture already includes the overlay window and you don't want to see the translation twice. Leave it **on** if you want the translation in both places.
 
+<p align="center"><img src="media/overlay-web.png" alt="Overlay › Web tab" width="820"></p>
+
 You can also customize theme (light/dark/dracula), colors, font size, and whether you want to show the original text together with the translation, time, and which service was used.
+
+<p align="center"><img src="media/overlay-web-aparencia.png" alt="Overlay › Web tab — page appearance" width="820"></p>
 
 The page can also be opened in any browser on the local network (phone, second monitor, etc.) using the **Capture** address (`/captura`) shown in the tab — that version comes with history and a clear button.
 

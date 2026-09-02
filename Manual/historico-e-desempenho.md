@@ -14,4 +14,8 @@
   de IA não expõem o gasto pela chave, e o Azure não tem um endpoint de cota equivalente (o
   acompanhamento dele fica no portal do Azure).
 
+<p align="center"><img src="media/historico.png" alt="Aba Historico" width="820"></p>
+
+<p align="center"><img src="media/debug-monitor.png" alt="Aba Debug › Monitor" width="820"></p>
+
 ---

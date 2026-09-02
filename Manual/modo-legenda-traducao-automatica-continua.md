@@ -11,6 +11,8 @@ legenda), o Modo Legenda traduz **sozinho, repetidamente**, sem você precisar a
    legenda/diálogo aparece no jogo.
 3. Aperte **Ligar/desligar legenda** (padrão `Numpad0`) para ativar.
 
+<p align="center"><img src="media/overlay-legenda-captura.png" alt="Aba Overlay › Legenda — Captura" width="820"></p>
+
 A partir daí, o programa fica de olho naquela área, traduzindo automaticamente sempre que um
 texto novo aparecer e ficar "parado" por um instante (isso evita traduzir letras aparecendo uma
 por uma em efeitos de "máquina de escrever").

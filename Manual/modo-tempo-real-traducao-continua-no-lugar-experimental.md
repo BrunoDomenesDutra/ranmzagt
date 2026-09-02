@@ -31,6 +31,8 @@ o recurso é experimental, ele não ocupa uma tecla do seu teclado sem você ped
 6. Aperte a tecla de **ligar/desligar**. A tradução passa a aparecer sobreposta, atualizando
    sozinha conforme o texto muda. Aperte de novo para desligar.
 
+<p align="center"><img src="media/experimental-tempo-real.png" alt="Card do Modo Tempo Real, na aba Experimental" width="820"></p>
+
 > O overlay do Tempo Real é **sempre** escondido das capturas de tela — não há nada para
 > ligar. Sem isso, a tradução que o programa desenha por cima seria recapturada pelo próprio
 > OCR no ciclo seguinte, se retroalimentando até virar uma bagunça. Funciona só com programas
@@ -67,5 +69,7 @@ Três controles afinam o comportamento: quantas leituras seguidas precisam bater
 estáveis exigidas*), o quanto elas precisam se parecer para contarem como iguais (*Limiar de
 "mesmo texto"*) e quanto tempo no máximo esperar antes de traduzir do jeito que está (*Teto de
 espera*).
+
+<p align="center"><img src="media/experimental-typewriter.png" alt="Card do efeito máquina de escrever, na aba Experimental" width="820"></p>
 
 ---

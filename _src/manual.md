@@ -432,6 +432,8 @@ pelo menos um modificador (Ctrl, Alt ou Shift), para não atrapalhar os controle
 sozinhas — os grupos **Números** e **Navegação** salvam quem está em notebook sem teclado
 numérico.
 
+<p align="center"><img src="media/geral-atalhos.png" alt="Aba Geral › Atalhos" width="820"></p>
+
 > Os atalhos só funcionam quando a janela do jogo está em foco (ou seja, quando a janela de
 > configuração do Ranmza GT não está em primeiro plano). Assim você pode digitar normalmente
 > nos campos da configuração sem disparar comandos sem querer.
@@ -627,6 +629,8 @@ legenda), o Modo Legenda traduz **sozinho, repetidamente**, sem você precisar a
    legenda/diálogo aparece no jogo.
 3. Aperte **Ligar/desligar legenda** (padrão `Numpad0`) para ativar.
 
+<p align="center"><img src="media/overlay-legenda-captura.png" alt="Aba Overlay › Legenda — Captura" width="820"></p>
+
 A partir daí, o programa fica de olho naquela área, traduzindo automaticamente sempre que um
 texto novo aparecer e ficar "parado" por um instante (isso evita traduzir letras aparecendo uma
 por uma em efeitos de "máquina de escrever").
@@ -747,6 +751,8 @@ o recurso é experimental, ele não ocupa uma tecla do seu teclado sem você ped
 6. Aperte a tecla de **ligar/desligar**. A tradução passa a aparecer sobreposta, atualizando
    sozinha conforme o texto muda. Aperte de novo para desligar.
 
+<p align="center"><img src="media/experimental-tempo-real.png" alt="Card do Modo Tempo Real, na aba Experimental" width="820"></p>
+
 > O overlay do Tempo Real é **sempre** escondido das capturas de tela — não há nada para
 > ligar. Sem isso, a tradução que o programa desenha por cima seria recapturada pelo próprio
 > OCR no ciclo seguinte, se retroalimentando até virar uma bagunça. Funciona só com programas
@@ -784,6 +790,8 @@ estáveis exigidas*), o quanto elas precisam se parecer para contarem como iguai
 "mesmo texto"*) e quanto tempo no máximo esperar antes de traduzir do jeito que está (*Teto de
 espera*).
 
+<p align="center"><img src="media/experimental-typewriter.png" alt="Card do efeito máquina de escrever, na aba Experimental" width="820"></p>
+
 ---
 
 ## 11. Usando no OBS / transmissões
@@ -800,8 +808,12 @@ Se você transmite ou grava o jogo e quer que **a tradução apareça também no
    inclui a janela do overlay e você não quer ver a tradução duplicada. Deixe **ligada** se
    quiser a tradução nos dois lugares.
 
+<p align="center"><img src="media/overlay-web.png" alt="Aba Overlay › Web" width="820"></p>
+
 Você também pode personalizar tema (claro/escuro/dracula), cores, tamanho da fonte, e se quer
 mostrar o texto original junto com a tradução, horário e qual serviço foi usado.
+
+<p align="center"><img src="media/overlay-web-aparencia.png" alt="Aba Overlay › Web — aparência da página" width="820"></p>
 
 A página também pode ser aberta em qualquer navegador da rede local (celular, segundo monitor,
 etc.) usando o endereço **Captura** (`/captura`) mostrado na aba — essa versão vem com histórico
@@ -831,6 +843,10 @@ e botão de limpar.
   período de cobrança) — clique em "Atualizar" para consultar. É exclusivo do DeepL: os motores
   de IA não expõem o gasto pela chave, e o Azure não tem um endpoint de cota equivalente (o
   acompanhamento dele fica no portal do Azure).
+
+<p align="center"><img src="media/historico.png" alt="Aba Historico" width="820"></p>
+
+<p align="center"><img src="media/debug-monitor.png" alt="Aba Debug › Monitor" width="820"></p>
 
 ---
 

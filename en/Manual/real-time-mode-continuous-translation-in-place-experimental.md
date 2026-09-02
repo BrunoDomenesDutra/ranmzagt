@@ -17,6 +17,8 @@ Everything about Real-time Mode lives in the **Experimental** tab, inside the *R
 5. Press your **select area** key and draw the rectangle over the region where text appears.
 6. Press your **toggle** key. Translation starts appearing overlaid, updating automatically as text changes. Press it again to turn it off.
 
+<p align="center"><img src="media/experimental-tempo-real.png" alt="Real-time Mode card, in the Experimental tab" width="820"></p>
+
 > The Real-time overlay is **always** hidden from screen capture — there's nothing to turn on. Without that, the translation the program draws on top would be recaptured by its own OCR on the next cycle, feeding back on itself until it turns to mush. Only works with programs running **ON THIS PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). If you record with a capture card, the translation still shows up.
 
 > Because it's continuous and draws multiple areas live, Real-time Mode is heavier than other modes. If you notice stuttering, increase the **interval** in the card.
@@ -35,5 +37,7 @@ Quick rule: still **shaking**? Increase *Position stability*; still **flickering
 Many games reveal text **letter by letter**. To avoid translating incomplete sentences, turn on **Wait for the text to settle**, in the *Wait for complete text (typewriter effect)* card of the Experimental tab: the program waits for the line to stop changing before translating. Works for both Real-time Mode and Subtitle Mode.
 
 Three controls fine-tune it: how many consecutive reads must match (*Required stable captures*), how alike they must be to count as identical (*'Same text' threshold*), and the longest it will wait before translating whatever it has (*Wait cap*).
+
+<p align="center"><img src="media/experimental-typewriter.png" alt="Typewriter effect card, in the Experimental tab" width="820"></p>
 
 ---

@@ -317,6 +317,8 @@ The API key is the one that matters most: you type it **once** and it applies to
 
 All can be changed in **General › Shortcuts** — choose another key and, if you want, combine with Ctrl/Alt/Shift. If you choose a **letter or a number** from the top row, it's **mandatory** to use at least one modifier (Ctrl, Alt, or Shift) to not interfere with normal game controls (which use WASD and slots 0–9 constantly). Numpad, F1–F12 and the navigation keys work on their own — the **Numbers** and **Navigation** groups are what save you on a laptop with no numpad.
 
+<p align="center"><img src="media/geral-atalhos.png" alt="General › Shortcuts tab" width="820"></p>
+
 > Shortcuts only work when the game window is in focus (i.e., when Ranmza GT's settings window isn't in the foreground). This way you can type normally in settings fields without triggering commands accidentally.
 
 ---
@@ -427,6 +429,8 @@ For scenes with ongoing dialog (cutscenes, visual novel auto mode, videos with s
 2. Press **Select subtitle area** (default `Numpad1`) and draw a rectangle over where the game's subtitle/dialogue appears.
 3. Press **Toggle subtitles** (default `Numpad0`) to activate.
 
+<p align="center"><img src="media/overlay-legenda-captura.png" alt="Overlay › Subtitles tab — Capture" width="820"></p>
+
 From then on, the program watches that area, automatically translating whenever new text appears and stays "still" for a moment (this avoids translating letters appearing one by one in "typewriter" effects).
 
 By default, translations appear **above** the selected area, in order (most recent at bottom), and disappear on their own if no new text appears for a few seconds. You can swap that for drawing over the original subtitle instead — that's the next topic.
@@ -498,6 +502,8 @@ Everything about Real-time Mode lives in the **Experimental** tab, inside the *R
 5. Press your **select area** key and draw the rectangle over the region where text appears.
 6. Press your **toggle** key. Translation starts appearing overlaid, updating automatically as text changes. Press it again to turn it off.
 
+<p align="center"><img src="media/experimental-tempo-real.png" alt="Real-time Mode card, in the Experimental tab" width="820"></p>
+
 > The Real-time overlay is **always** hidden from screen capture — there's nothing to turn on. Without that, the translation the program draws on top would be recaptured by its own OCR on the next cycle, feeding back on itself until it turns to mush. Only works with programs running **ON THIS PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). If you record with a capture card, the translation still shows up.
 
 > Because it's continuous and draws multiple areas live, Real-time Mode is heavier than other modes. If you notice stuttering, increase the **interval** in the card.
@@ -517,6 +523,8 @@ Many games reveal text **letter by letter**. To avoid translating incomplete sen
 
 Three controls fine-tune it: how many consecutive reads must match (*Required stable captures*), how alike they must be to count as identical (*'Same text' threshold*), and the longest it will wait before translating whatever it has (*Wait cap*).
 
+<p align="center"><img src="media/experimental-typewriter.png" alt="Typewriter effect card, in the Experimental tab" width="820"></p>
+
 ---
 
 ## 11. Using with OBS / streaming
@@ -528,7 +536,11 @@ If you stream or record the game and want **the translation to also appear in th
 3. In OBS, add a source of type **"Browser Source"** and paste that address. This version of the page has a transparent background, ready to overlay the game capture.
 4. (Optional) **Turn off** the **"Show translation on screen"** switch to drop the overlay from the game and let the translation appear **only** on the browser page/OBS — useful if OBS's capture already includes the overlay window and you don't want to see the translation twice. Leave it **on** if you want the translation in both places.
 
+<p align="center"><img src="media/overlay-web.png" alt="Overlay › Web tab" width="820"></p>
+
 You can also customize theme (light/dark/dracula), colors, font size, and whether you want to show the original text together with the translation, time, and which service was used.
+
+<p align="center"><img src="media/overlay-web-aparencia.png" alt="Overlay › Web tab — page appearance" width="820"></p>
 
 The page can also be opened in any browser on the local network (phone, second monitor, etc.) using the **Capture** address (`/captura`) shown in the tab — that version comes with history and a clear button.
 
@@ -541,6 +553,10 @@ The page can also be opened in any browser on the local network (phone, second m
 - **History tab**: shows translations made during the current session (original text, translation, time and service used), most recent first. Click an entry to copy the translation; there's also a button to clear everything.
 - **Debug › Monitor**: turns on a log of the last 10 translations with the time each step took (capture, preprocessing, recognition, translation, total) — useful to notice if any configuration is slowing the program down (for example, heavy preprocessing).
 - **DeepL usage** (**Translation › Translators**, with DeepL selected): shows how many **characters** DeepL translated in this session and your **account quota** (characters used/billing period limit) — click "Update" to check. Exclusive to DeepL: the AI engines don't expose spend through the key, and Azure has no equivalent quota endpoint (you track it in the Azure portal).
+
+<p align="center"><img src="media/historico.png" alt="History tab" width="820"></p>
+
+<p align="center"><img src="media/debug-monitor.png" alt="Debug › Monitor tab" width="820"></p>
 
 ---
 

@@ -12,8 +12,12 @@ Se você transmite ou grava o jogo e quer que **a tradução apareça também no
    inclui a janela do overlay e você não quer ver a tradução duplicada. Deixe **ligada** se
    quiser a tradução nos dois lugares.
 
+<p align="center"><img src="media/overlay-web.png" alt="Aba Overlay › Web" width="820"></p>
+
 Você também pode personalizar tema (claro/escuro/dracula), cores, tamanho da fonte, e se quer
 mostrar o texto original junto com a tradução, horário e qual serviço foi usado.
+
+<p align="center"><img src="media/overlay-web-aparencia.png" alt="Aba Overlay › Web — aparência da página" width="820"></p>
 
 A página também pode ser aberta em qualquer navegador da rede local (celular, segundo monitor,
 etc.) usando o endereço **Captura** (`/captura`) mostrado na aba — essa versão vem com histórico
