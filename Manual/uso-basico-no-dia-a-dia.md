@@ -28,7 +28,7 @@ Errou o modo? Aperte o outro atalho na sequência — a tradução anterior é l
 
 ## Não confia nos atalhos do teclado?
 
-Ative a **barra flutuante** em **Geral › Config** e dispare tudo por clique do mouse. Ela fica
+Ative a **barra flutuante** em **Geral › Atalhos** e dispare tudo por clique do mouse. Ela fica
 sempre acima de qualquer janela, move-se livremente entre monitores e é o plano B para quando o
 jogo "engole" as teclas do Numpad. Os nove botões estão explicados no
 [passo 2.7](/Manual/configuracao-rapida.md).

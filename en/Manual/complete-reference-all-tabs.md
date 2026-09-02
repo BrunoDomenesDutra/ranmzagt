@@ -21,7 +21,6 @@ Where the program runs.
   - *WGC (Windows 11)* — Windows Graphics Capture.
   - *DXGI (Windows 10)* — Desktop Duplication; it exists so Windows 10 doesn't draw the yellow border around the captured monitor.
 - **Monitor → Active display** — which monitor the program captures, translates and displays on. *Automatic* uses the Windows primary monitor. Switching monitors **clears the saved capture area** and **requires a restart** (a "Restart now" button appears at the bottom of the tab).
-- **Floating toolbar → Show floating toolbar** — turns on the always-visible button window (see step 2.7). It also opens and closes with the `NumpadSubtract` hotkey, and it **remembers the last position** you left it in.
 
 ## General › Profiles
 
@@ -64,7 +63,9 @@ Which engine recognizes the text, and how it groups lines.
 
 ## General › Shortcuts
 
-<p align="center"><img src="media/geral-atalhos.png" alt="General › Shortcuts tab" width="820"></p>
+<p align="center"><img src="media/geral-atalhos.png" alt="General › Shortcuts tab — floating toolbar and global shortcuts" width="820"></p>
+
+- **Floating toolbar → Show floating toolbar** — turns on the always-visible button window (see step 2.7). It also opens and closes with the `NumpadSubtract` hotkey, and it **remembers the last position** you left it in.
 
 Ten global shortcuts — they work with the game focused, and are disabled while the settings window is in the foreground. Each has the **Ctrl / Alt / Shift** modifiers plus a main key, picked from the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Numbers** and **Letters** groups.
 

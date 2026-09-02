@@ -22,7 +22,7 @@ The left-hand menu groups options by subject. For this quick setup you only touc
 
 | Menu | What's inside |
 |---|---|
-| **General** | Config (monitor, theme, floating toolbar), Profiles, Language, OCR and Shortcuts |
+| **General** | Config (monitor, theme), Profiles, Language, OCR and Shortcuts (floating toolbar) |
 | **Overlay** | How the translation looks on screen: Capture, Subtitles and Web |
 | **Translation** | Translators (engine and API keys) and AI (prompts and parameters) |
 | **Tools** | Inpaint (erase the original text) and Lab (test preprocessing) |
@@ -121,7 +121,7 @@ The translation appears over the game, in the position of the original text, and
 
 ## 2.7 Plan B: the floating bar
 
-Some games swallow the numpad keys, and NumLock sometimes gets in the way. For those cases, turn on **Show floating toolbar** in *General › Config*: a small window with the same commands as buttons, fired with the mouse.
+Some games swallow the numpad keys, and NumLock sometimes gets in the way. For those cases, turn on **Show floating toolbar** in *General › Shortcuts*: a small window with the same commands as buttons, fired with the mouse.
 
 <p align="center"><img src="media/barra-flutuante.png" alt="Ranmza GT floating bar" width="560"></p>
 

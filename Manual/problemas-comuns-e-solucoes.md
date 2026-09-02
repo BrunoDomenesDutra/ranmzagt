@@ -13,7 +13,7 @@ idioma sem instalar nada — outro motivo para trocar de motor em **Geral › OC
 
 #### "Apertei o atalho e nada acontece"
 → Confira se a janela de configuração não está em primeiro plano (os atalhos só funcionam com
-o jogo em foco). Se mesmo assim não funcionar, ative a **barra flutuante** (**Geral › Config**) e use
+o jogo em foco). Se mesmo assim não funcionar, ative a **barra flutuante** (**Geral › Atalhos**) e use
 os botões dela.
 
 #### "Os atalhos não funcionam em alguns jogos (mesmo com o jogo em foco)"

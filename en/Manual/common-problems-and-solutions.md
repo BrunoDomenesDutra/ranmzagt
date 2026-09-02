@@ -7,7 +7,7 @@
 → Go to **General › Language** and click the warning to install the necessary Windows language package.
 
 #### "I pressed the hotkey and nothing happened"
-→ Check if the settings window isn't in the foreground (hotkeys only work with the game in focus). If still nothing, enable the **floating toolbar** (**General › Config**) and use its buttons.
+→ Check if the settings window isn't in the foreground (hotkeys only work with the game in focus). If still nothing, enable the **floating toolbar** (**General › Shortcuts**) and use its buttons.
 
 #### "Hotkeys don't work in some games (even with game in focus)"
 → Some games run with elevated privileges (Administrator) and therefore **block Ranmza GT's global hotkey registration**. In that case, **run Ranmza GT as Administrator** (right-click the `.exe` → *Run as administrator*) — then it can activate hotkeys over the game. To avoid repeating every time, check *Run this program as an administrator* in **Properties → Compatibility** of the executable. (Alternative: use the **floating toolbar**, which fires actions by mouse click and doesn't depend on keyboard hotkeys.)

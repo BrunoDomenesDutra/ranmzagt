@@ -31,7 +31,7 @@ O menu da esquerda agrupa as opções por assunto. Nesta configuração rápida 
 
 | Menu | O que tem dentro |
 |---|---|
-| **Geral** | Config (monitor, tema, barra flutuante), Perfis, Idioma, OCR e Atalhos |
+| **Geral** | Config (monitor, tema), Perfis, Idioma, OCR e Atalhos (barra flutuante) |
 | **Overlay** | Aparência da tradução na tela: Captura, Legenda e Web |
 | **Traducao** | Tradutores (motor e chaves de API) e I.A (prompts e parâmetros) |
 | **Ferramentas** | Inpaint (apagar o texto original) e Lab (testar pré-processamento) |
@@ -177,7 +177,7 @@ tempo. Para tirá-la na hora, aperte **`NumpadDecimal`** (a vírgula do teclado 
 ## 2.7 Plano B: a barra flutuante
 
 Alguns jogos "engolem" as teclas do Numpad, e às vezes o NumLock atrapalha. Para esses casos,
-ative **Mostrar barra flutuante** em *Geral › Config*: uma janelinha com os mesmos comandos em
+ative **Mostrar barra flutuante** em *Geral › Atalhos*: uma janelinha com os mesmos comandos em
 botões, disparados por clique do mouse.
 
 <p align="center"><img src="media/barra-flutuante.png" alt="Barra flutuante do Ranmza GT" width="560"></p>

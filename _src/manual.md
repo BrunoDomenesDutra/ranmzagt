@@ -86,7 +86,7 @@ O menu da esquerda agrupa as opções por assunto. Nesta configuração rápida 
 
 | Menu | O que tem dentro |
 |---|---|
-| **Geral** | Config (monitor, tema, barra flutuante), Perfis, Idioma, OCR e Atalhos |
+| **Geral** | Config (monitor, tema), Perfis, Idioma, OCR e Atalhos (barra flutuante) |
 | **Overlay** | Aparência da tradução na tela: Captura, Legenda e Web |
 | **Traducao** | Tradutores (motor e chaves de API) e I.A (prompts e parâmetros) |
 | **Ferramentas** | Inpaint (apagar o texto original) e Lab (testar pré-processamento) |
@@ -232,7 +232,7 @@ tempo. Para tirá-la na hora, aperte **`NumpadDecimal`** (a vírgula do teclado 
 ### 2.7 Plano B: a barra flutuante
 
 Alguns jogos "engolem" as teclas do Numpad, e às vezes o NumLock atrapalha. Para esses casos,
-ative **Mostrar barra flutuante** em *Geral › Config*: uma janelinha com os mesmos comandos em
+ative **Mostrar barra flutuante** em *Geral › Atalhos*: uma janelinha com os mesmos comandos em
 botões, disparados por clique do mouse.
 
 <p align="center"><img src="media/barra-flutuante.png" alt="Barra flutuante do Ranmza GT" width="560"></p>
@@ -325,7 +325,7 @@ Errou o modo? Aperte o outro atalho na sequência — a tradução anterior é l
 
 ### Não confia nos atalhos do teclado?
 
-Ative a **barra flutuante** em **Geral › Config** e dispare tudo por clique do mouse. Ela fica
+Ative a **barra flutuante** em **Geral › Atalhos** e dispare tudo por clique do mouse. Ela fica
 sempre acima de qualquer janela, move-se livremente entre monitores e é o plano B para quando o
 jogo "engole" as teclas do Numpad. Os nove botões estão explicados no
 [passo 2.7](/Manual/configuracao-rapida.md).
@@ -865,7 +865,7 @@ idioma sem instalar nada — outro motivo para trocar de motor em **Geral › OC
 
 ##### "Apertei o atalho e nada acontece"
 → Confira se a janela de configuração não está em primeiro plano (os atalhos só funcionam com
-o jogo em foco). Se mesmo assim não funcionar, ative a **barra flutuante** (**Geral › Config**) e use
+o jogo em foco). Se mesmo assim não funcionar, ative a **barra flutuante** (**Geral › Atalhos**) e use
 os botões dela.
 
 ##### "Os atalhos não funcionam em alguns jogos (mesmo com o jogo em foco)"
@@ -1009,9 +1009,9 @@ Onde o programa opera.
   **Mantém** o monitor, as áreas selecionadas, as chaves de API, os prompts (System Prompt e
   Informações do Jogo) e a preferência de aviso de atualização.
 
-<p align="center"><img src="media/geral-config-monitor.png" alt="Aba Geral › Config — backend, monitor e barra flutuante" width="820"></p>
+<p align="center"><img src="media/geral-config-monitor.png" alt="Aba Geral › Config — backend e monitor" width="820"></p>
 
-<p align="center"><i>Rolando a mesma aba: <b>Backend de captura</b>, <b>Monitor</b> e <b>Barra flutuante</b>.</i></p>
+<p align="center"><i>Rolando a mesma aba: <b>Backend de captura</b> e <b>Monitor</b>.</i></p>
 
 - **Backend de captura → Backend** — como o programa lê os pixels da tela:
   - *Auto (recomendado)* — escolhe sozinho: WGC no Windows 11, DXGI no Windows 10, sem a borda
@@ -1022,9 +1022,6 @@ Onde o programa opera.
 - **Monitor → Tela ativa** — em qual monitor o programa captura, traduz e exibe. *Automático*
   usa o monitor principal do Windows. Trocar de monitor **limpa a área de captura** salva e
   **exige reiniciar** (botão "Reiniciar agora" aparece no rodapé da aba).
-- **Barra flutuante → Mostrar barra flutuante** — liga a janelinha de botões sempre visível
-  (veja o passo 2.7). Também abre e fecha pelo atalho `NumpadSubtract`, e ela **lembra a última
-  posição** em que você a deixou.
 
 ### Geral › Perfis
 
@@ -1096,7 +1093,11 @@ Qual motor reconhece o texto na tela.
 
 ### Geral › Atalhos
 
-<p align="center"><img src="media/geral-atalhos.png" alt="Aba Geral › Atalhos" width="820"></p>
+<p align="center"><img src="media/geral-atalhos.png" alt="Aba Geral › Atalhos — barra flutuante e atalhos globais" width="820"></p>
+
+- **Barra flutuante → Mostrar barra flutuante** — liga a janelinha de botões sempre visível
+  (veja o passo 2.7). Também abre e fecha pelo atalho `NumpadSubtract`, e ela **lembra a última
+  posição** em que você a deixou.
 
 Dez atalhos globais — funcionam com o jogo em foco e ficam desativados enquanto a janela de
 configuração está em primeiro plano. Cada um tem os modificadores **Ctrl / Alt / Shift** e uma

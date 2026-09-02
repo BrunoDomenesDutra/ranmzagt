@@ -27,9 +27,9 @@ Onde o programa opera.
   **Mantém** o monitor, as áreas selecionadas, as chaves de API, os prompts (System Prompt e
   Informações do Jogo) e a preferência de aviso de atualização.
 
-<p align="center"><img src="media/geral-config-monitor.png" alt="Aba Geral › Config — backend, monitor e barra flutuante" width="820"></p>
+<p align="center"><img src="media/geral-config-monitor.png" alt="Aba Geral › Config — backend e monitor" width="820"></p>
 
-<p align="center"><i>Rolando a mesma aba: <b>Backend de captura</b>, <b>Monitor</b> e <b>Barra flutuante</b>.</i></p>
+<p align="center"><i>Rolando a mesma aba: <b>Backend de captura</b> e <b>Monitor</b>.</i></p>
 
 - **Backend de captura → Backend** — como o programa lê os pixels da tela:
   - *Auto (recomendado)* — escolhe sozinho: WGC no Windows 11, DXGI no Windows 10, sem a borda
@@ -40,9 +40,6 @@ Onde o programa opera.
 - **Monitor → Tela ativa** — em qual monitor o programa captura, traduz e exibe. *Automático*
   usa o monitor principal do Windows. Trocar de monitor **limpa a área de captura** salva e
   **exige reiniciar** (botão "Reiniciar agora" aparece no rodapé da aba).
-- **Barra flutuante → Mostrar barra flutuante** — liga a janelinha de botões sempre visível
-  (veja o passo 2.7). Também abre e fecha pelo atalho `NumpadSubtract`, e ela **lembra a última
-  posição** em que você a deixou.
 
 ## Geral › Perfis
 
@@ -114,7 +111,11 @@ Qual motor reconhece o texto na tela.
 
 ## Geral › Atalhos
 
-<p align="center"><img src="media/geral-atalhos.png" alt="Aba Geral › Atalhos" width="820"></p>
+<p align="center"><img src="media/geral-atalhos.png" alt="Aba Geral › Atalhos — barra flutuante e atalhos globais" width="820"></p>
+
+- **Barra flutuante → Mostrar barra flutuante** — liga a janelinha de botões sempre visível
+  (veja o passo 2.7). Também abre e fecha pelo atalho `NumpadSubtract`, e ela **lembra a última
+  posição** em que você a deixou.
 
 Dez atalhos globais — funcionam com o jogo em foco e ficam desativados enquanto a janela de
 configuração está em primeiro plano. Cada um tem os modificadores **Ctrl / Alt / Shift** e uma

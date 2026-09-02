@@ -19,7 +19,7 @@ Picked the wrong mode? Just press the other hotkey right after — the previous 
 
 ## Don't trust keyboard shortcuts?
 
-Enable the **floating toolbar** in **General › Config**. It's a compact window that stays **always on top of any window** — even fullscreen games (borderless) — with the main commands at hand: select area, translate, translate with Vision, clear, toggle Subtitle Mode, select subtitle area, and show/hide areas (hover over a button to see its name).
+Enable the **floating toolbar** in **General › Shortcuts**. It's a compact window that stays **always on top of any window** — even fullscreen games (borderless) — with the main commands at hand: select area, translate, translate with Vision, clear, toggle Subtitle Mode, select subtitle area, and show/hide areas (hover over a button to see its name).
 
 Three advantages:
 

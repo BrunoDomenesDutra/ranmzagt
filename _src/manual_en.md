@@ -65,7 +65,7 @@ The left-hand menu groups options by subject. For this quick setup you only touc
 
 | Menu | What's inside |
 |---|---|
-| **General** | Config (monitor, theme, floating toolbar), Profiles, Language, OCR and Shortcuts |
+| **General** | Config (monitor, theme), Profiles, Language, OCR and Shortcuts (floating toolbar) |
 | **Overlay** | How the translation looks on screen: Capture, Subtitles and Web |
 | **Translation** | Translators (engine and API keys) and AI (prompts and parameters) |
 | **Tools** | Inpaint (erase the original text) and Lab (test preprocessing) |
@@ -164,7 +164,7 @@ The translation appears over the game, in the position of the original text, and
 
 ### 2.7 Plan B: the floating bar
 
-Some games swallow the numpad keys, and NumLock sometimes gets in the way. For those cases, turn on **Show floating toolbar** in *General › Config*: a small window with the same commands as buttons, fired with the mouse.
+Some games swallow the numpad keys, and NumLock sometimes gets in the way. For those cases, turn on **Show floating toolbar** in *General › Shortcuts*: a small window with the same commands as buttons, fired with the mouse.
 
 <p align="center"><img src="media/barra-flutuante.png" alt="Ranmza GT floating bar" width="560"></p>
 
@@ -232,7 +232,7 @@ Picked the wrong mode? Just press the other hotkey right after — the previous 
 
 ### Don't trust keyboard shortcuts?
 
-Enable the **floating toolbar** in **General › Config**. It's a compact window that stays **always on top of any window** — even fullscreen games (borderless) — with the main commands at hand: select area, translate, translate with Vision, clear, toggle Subtitle Mode, select subtitle area, and show/hide areas (hover over a button to see its name).
+Enable the **floating toolbar** in **General › Shortcuts**. It's a compact window that stays **always on top of any window** — even fullscreen games (borderless) — with the main commands at hand: select area, translate, translate with Vision, clear, toggle Subtitle Mode, select subtitle area, and show/hide areas (hover over a button to see its name).
 
 Three advantages:
 
@@ -569,7 +569,7 @@ The page can also be opened in any browser on the local network (phone, second m
 → Go to **General › Language** and click the warning to install the necessary Windows language package.
 
 ##### "I pressed the hotkey and nothing happened"
-→ Check if the settings window isn't in the foreground (hotkeys only work with the game in focus). If still nothing, enable the **floating toolbar** (**General › Config**) and use its buttons.
+→ Check if the settings window isn't in the foreground (hotkeys only work with the game in focus). If still nothing, enable the **floating toolbar** (**General › Shortcuts**) and use its buttons.
 
 ##### "Hotkeys don't work in some games (even with game in focus)"
 → Some games run with elevated privileges (Administrator) and therefore **block Ranmza GT's global hotkey registration**. In that case, **run Ranmza GT as Administrator** (right-click the `.exe` → *Run as administrator*) — then it can activate hotkeys over the game. To avoid repeating every time, check *Run this program as an administrator* in **Properties → Compatibility** of the executable. (Alternative: use the **floating toolbar**, which fires actions by mouse click and doesn't depend on keyboard hotkeys.)
@@ -648,7 +648,6 @@ Where the program runs.
   - *WGC (Windows 11)* — Windows Graphics Capture.
   - *DXGI (Windows 10)* — Desktop Duplication; it exists so Windows 10 doesn't draw the yellow border around the captured monitor.
 - **Monitor → Active display** — which monitor the program captures, translates and displays on. *Automatic* uses the Windows primary monitor. Switching monitors **clears the saved capture area** and **requires a restart** (a "Restart now" button appears at the bottom of the tab).
-- **Floating toolbar → Show floating toolbar** — turns on the always-visible button window (see step 2.7). It also opens and closes with the `NumpadSubtract` hotkey, and it **remembers the last position** you left it in.
 
 ### General › Profiles
 
@@ -691,7 +690,9 @@ Which engine recognizes the text, and how it groups lines.
 
 ### General › Shortcuts
 
-<p align="center"><img src="media/geral-atalhos.png" alt="General › Shortcuts tab" width="820"></p>
+<p align="center"><img src="media/geral-atalhos.png" alt="General › Shortcuts tab — floating toolbar and global shortcuts" width="820"></p>
+
+- **Floating toolbar → Show floating toolbar** — turns on the always-visible button window (see step 2.7). It also opens and closes with the `NumpadSubtract` hotkey, and it **remembers the last position** you left it in.
 
 Ten global shortcuts — they work with the game focused, and are disabled while the settings window is in the foreground. Each has the **Ctrl / Alt / Shift** modifiers plus a main key, picked from the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Numbers** and **Letters** groups.
 
