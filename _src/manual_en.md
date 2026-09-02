@@ -811,7 +811,11 @@ Which service translates, and with which credentials.
   - *+ Add key* / *✕* — you can register **as many keys as you like** for the same engine. When the key in use runs out of credit or hits the request limit, the next one in the list takes over automatically; once all are exhausted, it falls back to Google Translate.
 - **DeepL usage** — only with DeepL selected: calls and characters translated this session, plus the **account quota** (*Refresh* button); *Reset session* restarts the count. It's the only engine with this tracking — the AI ones don't expose spend through the key, and Azure has no equivalent quota endpoint.
 
+<p align="center"><img src="media/tradutores-openai.png" alt="Translators with OpenAI selected" width="820"></p>
+
 <p align="center"><img src="media/tradutores-claude.png" alt="Translators with Anthropic (Claude) selected" width="820"></p>
+
+<p align="center"><img src="media/tradutores-gemini.png" alt="Translators with Gemini selected" width="820"></p>
 
 <p align="center"><img src="media/tradutores-azure.png" alt="Translators with Azure Translator selected, showing the Resource region field" width="820"></p>
 

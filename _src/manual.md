@@ -1283,7 +1283,11 @@ Qual serviço traduz e com quais credenciais.
   com esse acompanhamento — os de IA não expõem o gasto pela chave, e o Azure não tem um endpoint
   de cota equivalente.
 
+<p align="center"><img src="media/tradutores-openai.png" alt="Tradutores com OpenAI selecionado" width="820"></p>
+
 <p align="center"><img src="media/tradutores-claude.png" alt="Tradutores com Anthropic (Claude) selecionado" width="820"></p>
+
+<p align="center"><img src="media/tradutores-gemini.png" alt="Tradutores com Gemini selecionado" width="820"></p>
 
 <p align="center"><img src="media/tradutores-azure.png" alt="Tradutores com Azure Translator selecionado, mostrando o campo Regiao do recurso" width="820"></p>
 
