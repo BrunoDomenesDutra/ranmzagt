@@ -825,8 +825,8 @@ Model parameters and prompts.
   - *Temperature* (0–2) — 0.0 literal · 0.3 recommended · 1.0+ creative.
   - *Max tokens* (256–4096) — response size; 1024 is plenty for translation.
 - **Conversation Context → Previous lines** (0–20) — in Subtitle Mode, sends the last lines (original + translation) as context, so the AI keeps terminology and tone consistent. 0 disables it; 3–5 recommended.
-- **System Prompt** — translator role and general rules, with **Save** and **Restore default** buttons (the latter recovers the factory text for this field only).
-- **Game Info** — theme, characters and glossary; change it per game. Same buttons.
+- **System Prompt** — translator role and general rules. It's **blank** by default, with a gray example inside the field (placeholder) showing the expected format; nothing is sent to the AI until you write your own. **Save** and **Restore default** buttons (the latter clears the field again).
+- **Game Info** — theme, characters and glossary; change it per game. Also blank by default, with a gray example. Same buttons.
 
 > With a non-AI engine active, the cards that don't apply are flagged in red ("Only applies to AI engines…" and "The current translation engine doesn't use this."). **Conversation Context** and **Game Info** also apply to **DeepL**; **Google Translate** and **Azure Translator** ignore both.
 

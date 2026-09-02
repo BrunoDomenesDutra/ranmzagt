@@ -1299,9 +1299,11 @@ Parâmetros do modelo e prompts.
 - **Contexto de Conversa → Falas anteriores** (0–20) — no Modo Legenda, envia as últimas falas
   (original + tradução) como contexto, para a IA manter consistência de termos e tom.
   0 desativa; recomendado 3–5.
-- **System Prompt** — papel do tradutor e regras gerais, com botões **Salvar** e **Restaurar
-  padrão** (que recupera o texto de fábrica só deste campo).
-- **Informações do Jogo** — tema, personagens e glossário; mude a cada jogo. Mesmos botões.
+- **System Prompt** — papel do tradutor e regras gerais. Vem **em branco**, com um exemplo em
+  cinza dentro do campo (placeholder) mostrando o formato esperado; nada é enviado à IA enquanto
+  você não escrever o seu. Botões **Salvar** e **Restaurar padrão** (que esvazia o campo de novo).
+- **Informações do Jogo** — tema, personagens e glossário; mude a cada jogo. Também vem em
+  branco, com exemplo em cinza. Mesmos botões.
 
 > Com um motor que não é de IA ativo, os cards que não se aplicam ficam marcados em vermelho
 > ("Só vale pros motores de IA…" e "O motor de tradução atual não usa isso."). O **Contexto de
