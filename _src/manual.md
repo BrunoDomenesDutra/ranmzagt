@@ -1266,6 +1266,8 @@ Qual serviço traduz e com quais credenciais.
       alcança modelos que o provedor já fechou para contas novas — é o caso das famílias
       Gemini 2.0 e 2.5, que respondem para chaves antigas mas devolvem erro em chaves
       recém-criadas. Nos dois casos, copie o ID de lá para o campo *Personalizado…*.
+  - *Fila rápida da OpenAI* — aparece abaixo do modelo, só com a OpenAI. Vem ligada: a resposta
+    chega cerca de 20% mais rápido, e a OpenAI cobra o dobro por token.
   - *Região do recurso* (só no Azure) — **obrigatória**, e fica no lugar onde o DeepL mostra a
     Formalidade. Aceita a grafia do portal ("Brazil South"): maiúsculas e espaços são ajustados
     sozinhos. O link *Ver a lista oficial de regiões do Azure* abre a tabela da Microsoft no
@@ -1303,8 +1305,6 @@ Parâmetros do modelo e prompts.
 - **Parâmetros do Modelo**
   - *Temperature* (0–2) — 0,0 literal · 0,3 recomendado · 1,0+ criativo.
   - *Max tokens* (256–4096) — tamanho da resposta; 1024 basta para tradução.
-  - *Fila rápida da OpenAI* — só com a OpenAI. Vem ligada: a resposta chega cerca de 20% mais
-    rápido, e a OpenAI cobra o dobro por token.
 - **Contexto de Conversa → Falas anteriores** (0–20) — no Modo Legenda, envia as últimas falas
   (original + tradução) como contexto, para a IA manter consistência de termos e tom.
   0 desativa; recomendado 3–5.
