@@ -13,8 +13,12 @@ Assim como no Traduzir normal, o Vision tem os dois modos, e você escolhe pelo 
 - **`Numpad6`** — Vision no **modo linha** (menus e listas).
 
 **Importante:**
-- Só funciona com **OpenAI, Claude ou Gemini** (Google Translate, DeepL e Azure Translator não
-  suportam esse modo).
+- Só funciona com **OpenAI, Claude ou Gemini** (Google Translate, DeepL, Google Cloud Translation
+  e Azure Translator não suportam esse modo).
+- Usa um modelo mais forte que o do Traduzir normal quando o escolhido é um modelo pequeno:
+  **Claude Haiku 4.5** vira **Sonnet 5** e **GPT-5.4 mini / GPT-4.1 mini** vira **GPT-4.1**.
+  Esses modelos leem melhor a imagem e custam mais por chamada. Com Sonnet, Opus, GPT-4.1 ou
+  Gemini, o Vision usa o mesmo modelo escolhido.
 - É um pouco mais lento e **sempre faz uma chamada nova** à IA (não usa o histórico de
   traduções já feitas).
 - A posição da tradução na tela ainda depende de onde o reconhecimento de texto encontrou algo

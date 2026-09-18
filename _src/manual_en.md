@@ -411,7 +411,8 @@ Just like normal Translate, Vision has both modes, and you pick with the hotkey:
 - **`Numpad6`** — Vision in **line mode** (menus and lists).
 
 **Important:**
-- Only works with **OpenAI, Claude, or Gemini** (Google Translate, DeepL and Azure Translator don't support this mode).
+- Only works with **OpenAI, Claude, or Gemini** (Google Translate, DeepL, Google Cloud Translation and Azure Translator don't support this mode).
+- Uses a stronger model than regular Translate when the chosen one is a small model: **Claude Haiku 4.5** becomes **Sonnet 5** and **GPT-5.4 mini / GPT-4.1 mini** becomes **GPT-4.1**. These models read the image better and cost more per call. With Sonnet, Opus, GPT-4.1 or Gemini, Vision uses the same model you chose.
 - It's a bit slower and **always makes a new call** to the AI (doesn't use translation history).
 - The translation's position on screen still depends on where text recognition found something — so in rare cases, the translation might be larger than the detected area.
 
