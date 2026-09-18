@@ -267,9 +267,8 @@ Qual serviço traduz e com quais credenciais.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — motores de IA, exigem chave de API.
 - **Autenticação** — aparece nos provedores com chave. As credenciais são **salvas por motor**,
   então trocar de serviço e voltar não apaga nada.
-  - *Modelo* (motores de IA) — cada motor traz três faixas: rápida/econômica, melhor equilíbrio
-    e qualidade superior.
-    - OpenAI: GPT-4.1 nano · GPT-4.1 mini · GPT-4.1
+  - *Modelo* (motores de IA) — cada motor traz três opções. A primeira é o padrão.
+    - OpenAI: GPT-5.4 mini (mais rápido) · GPT-4.1 mini (mais econômico) · GPT-4.1
     - Claude: Haiku 4.5 · Sonnet 5 · Opus 5
     - Gemini: 3.5 Flash-Lite · 3.6 Flash · 3.7 Flash
     - *Personalizado…* — última opção da lista: abre um campo livre onde você digita **qualquer
@@ -318,12 +317,16 @@ Parâmetros do modelo e prompts.
 - **Parâmetros do Modelo**
   - *Temperature* (0–2) — 0,0 literal · 0,3 recomendado · 1,0+ criativo.
   - *Max tokens* (256–4096) — tamanho da resposta; 1024 basta para tradução.
+  - *Fila rápida da OpenAI* — só com a OpenAI. Vem ligada: a resposta chega cerca de 20% mais
+    rápido, e a OpenAI cobra o dobro por token.
 - **Contexto de Conversa → Falas anteriores** (0–20) — no Modo Legenda, envia as últimas falas
   (original + tradução) como contexto, para a IA manter consistência de termos e tom.
   0 desativa; recomendado 3–5.
 - **System Prompt** — papel do tradutor e regras gerais. Vem **em branco**, com um exemplo em
   cinza dentro do campo (placeholder) mostrando o formato esperado; nada é enviado à IA enquanto
   você não escrever o seu. Botões **Salvar** e **Restaurar padrão** (que esvazia o campo de novo).
+  O idioma de destino não precisa estar aqui: o programa já manda para a IA o idioma escolhido
+  na aba **Idioma**.
 - **Informações do Jogo** — tema, personagens e glossário; mude a cada jogo. Também vem em
   branco, com exemplo em cinza. Mesmos botões.
 

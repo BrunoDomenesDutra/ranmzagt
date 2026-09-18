@@ -799,8 +799,8 @@ Which service translates, and with which credentials.
   - *Azure Translator (requires API key and region)* — Microsoft's translator; **doesn't support Vision Mode**. It has no model selection and no formality, and it **doesn't use** Conversation Context or Game Info — its translation API takes no context. In exchange, it detects the source language **block by block**: in a capture where part of the text is in another language, each block is translated from the right one.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AI engines, requiring an API key.
 - **Authentication** — shown for providers with a key. Credentials are **saved per engine**, so switching services and back erases nothing.
-  - *Model* (AI engines) — each engine offers three tiers: fast/cheap, best balance, and top quality.
-    - OpenAI: GPT-4.1 nano · GPT-4.1 mini · GPT-4.1
+  - *Model* (AI engines) — each engine offers three options. The first one is the default.
+    - OpenAI: GPT-5.4 mini (fastest) · GPT-4.1 mini (most economical) · GPT-4.1
     - Claude: Haiku 4.5 · Sonnet 5 · Opus 5
     - Gemini: 3.5 Flash-Lite · 3.6 Flash · 3.7 Flash
     - *Custom…* — the last option in the list: opens a free-text field where you type **any model ID** the provider accepts, so you can use a newer model without waiting for a program update.
@@ -828,8 +828,9 @@ Model parameters and prompts.
 - **Model Parameters**
   - *Temperature* (0–2) — 0.0 literal · 0.3 recommended · 1.0+ creative.
   - *Max tokens* (256–4096) — response size; 1024 is plenty for translation.
+  - *OpenAI fast queue* — OpenAI only. On by default: responses arrive about 20% faster, and OpenAI charges twice the price per token.
 - **Conversation Context → Previous lines** (0–20) — in Subtitle Mode, sends the last lines (original + translation) as context, so the AI keeps terminology and tone consistent. 0 disables it; 3–5 recommended.
-- **System Prompt** — translator role and general rules. It's **blank** by default, with a gray example inside the field (placeholder) showing the expected format; nothing is sent to the AI until you write your own. **Save** and **Restore default** buttons (the latter clears the field again).
+- **System Prompt** — translator role and general rules. It's **blank** by default, with a gray example inside the field (placeholder) showing the expected format; nothing is sent to the AI until you write your own. **Save** and **Restore default** buttons (the latter clears the field again). The target language doesn't need to be here: the program already sends the AI the language chosen in the **Language** tab.
 - **Game Info** — theme, characters and glossary; change it per game. Also blank by default, with a gray example. Same buttons.
 
 > With a non-AI engine active, the cards that don't apply are flagged in red ("Only applies to AI engines…" and "The current translation engine doesn't use this."). **Conversation Context** and **Game Info** also apply to **DeepL**; **Google Translate** and **Azure Translator** ignore both.
