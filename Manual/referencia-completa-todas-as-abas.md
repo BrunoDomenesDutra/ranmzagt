@@ -326,7 +326,9 @@ Parâmetros do modelo e prompts.
   cinza dentro do campo (placeholder) mostrando o formato esperado; nada é enviado à IA enquanto
   você não escrever o seu. Botões **Salvar** e **Restaurar padrão** (que esvazia o campo de novo).
   O idioma de destino não precisa estar aqui: o programa já manda para a IA o idioma escolhido
-  na aba **Idioma**.
+  na aba **Idioma**. Se você pedir aqui outro idioma ou um estilo (ex.: "tudo em maiúsculas"),
+  vale o que você escreveu. Pedidos mais difíceis, como escrever na língua do P, só os modelos
+  maiores cumprem (Claude Sonnet e Opus); os modelos rápidos ignoram.
 - **Informações do Jogo** — tema, personagens e glossário; mude a cada jogo. Também vem em
   branco, com exemplo em cinza. Mesmos botões.
 
