@@ -710,7 +710,7 @@ Eleven global shortcuts — they work with the game focused, and are disabled wh
 | Translate (paragraph mode) | `Numpad8` |
 | Translate with AI Vision (paragraph mode) | `Numpad5` |
 | Translate with AI Vision (line mode) | `Numpad6` |
-| Retranslate the last translation, skipping the cache | `Numpad4` |
+| Retranslate (no cache) | `Numpad4` |
 | Clear overlay | `NumpadDecimal` |
 | Toggle subtitles | `Numpad0` |
 | Select subtitle area | `Numpad1` |

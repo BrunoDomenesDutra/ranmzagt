@@ -1131,7 +1131,7 @@ tecla principal, escolhida entre os grupos **Numpad**, **Função** (F1–F12), 
 | Traduzir (modo parágrafo) | `Numpad8` |
 | Traduzir com I.A Vision (modo parágrafo) | `Numpad5` |
 | Traduzir com I.A Vision (modo linha) | `Numpad6` |
-| Retraduzir a última tradução, sem usar o cache | `Numpad4` |
+| Retraduzir sem cache | `Numpad4` |
 | Limpar overlay | `NumpadDecimal` |
 | Ligar/desligar legenda | `Numpad0` |
 | Selecionar área da legenda | `Numpad1` |
