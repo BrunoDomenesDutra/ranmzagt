@@ -17,12 +17,11 @@ detalhes técnicos.
 7. [Deixando a tradução com a "cara" do jogo](#7-deixando-a-tradução-com-a-cara-do-jogo)
 8. [Modo Vision — quando o OCR erra](#8-modo-vision--quando-o-ocr-erra)
 9. [Modo Legenda — tradução automática contínua](#9-modo-legenda--tradução-automática-contínua)
-10. [Modo Tempo Real — tradução contínua no lugar (experimental)](#10-modo-tempo-real--tradução-contínua-no-lugar-experimental)
-11. [Usando no OBS / transmissões](#11-usando-no-obs--transmissões)
-12. [Histórico e desempenho](#12-histórico-e-desempenho)
-13. [Problemas comuns e soluções](#13-problemas-comuns-e-soluções)
-14. [Referência completa — todas as abas](#14-referência-completa--todas-as-abas)
-15. [Atualizando o programa](#15-atualizando-o-programa)
+10. [Usando no OBS / transmissões](#10-usando-no-obs--transmissões)
+11. [Histórico e desempenho](#11-histórico-e-desempenho)
+12. [Problemas comuns e soluções](#12-problemas-comuns-e-soluções)
+13. [Referência completa — todas as abas](#13-referência-completa--todas-as-abas)
+14. [Atualizando o programa](#14-atualizando-o-programa)
 
 ---
 
@@ -92,7 +91,7 @@ O menu da esquerda agrupa as opções por assunto. Nesta configuração rápida 
 | **Ferramentas** | Inpaint (apagar o texto original) e Lab (testar pré-processamento) |
 | **Debug** | Monitor de desempenho, imagens de diagnóstico e Logs |
 | **Historico** | As traduções da sessão atual |
-| **Experimental** | Recursos em desenvolvimento, como o Modo Tempo Real |
+| **Experimental** | Recursos em desenvolvimento, como o efeito máquina de escrever da Legenda |
 | **Sobre** | Versão do programa e links |
 
 > **Idioma da interface** (em *Geral › Config*) muda só o idioma **do programa** — os menus e
@@ -145,10 +144,10 @@ pronto para uso. É com ele que você deve fazer o primeiro teste.
 > **Gratuito, mas com limite.** O Google Translate sem chave aceita só um punhado de traduções
 > num intervalo curto. Passou disso, aparece o aviso *"Limite de requisições atingido"* e aquela
 > captura fica sem tradução. Para traduzir uma fala aqui e ali ele dá conta; em sessão longa e nos
-> modos contínuos (Legenda e Tempo Real) o limite chega rápido. E o limite é contado **por
+> Modo Legenda o limite chega rápido. E o limite é contado **por
 > endereço de IP** — quem usa internet móvel ou provedor com **CGNAT** divide esse limite com
 > outros clientes e bate nele bem mais cedo. A explicação e o que fazer estão na
-> [seção 13](/Manual/problemas-comuns-e-solucoes.md).
+> [seção 12](/Manual/problemas-comuns-e-solucoes.md).
 
 ?> **Atenção: a API do Google usada aqui não é oficial.** É o mesmo endereço que a página do
 Google Tradutor usa por baixo dos panos, sem chave e sem conta. Ela não é publicada nem
@@ -274,10 +273,6 @@ Cada ação tem uma tecla principal, escolhida na lista à direita, e três bot�
 > dispararia o programa toda vez que digitasse no jogo. Teclas do Numpad, F1–F12 e as de
 > navegação funcionam sozinhas.
 
-As teclas do **Modo Tempo Real** não ficam aqui: por ser experimental, elas moram na aba
-**Experimental**, e vêm sem tecla definida. Veja a
-[seção 10](/Manual/modo-tempo-real-traducao-continua-no-lugar-experimental.md).
-
 ### Deu certo? E se não deu
 
 Se a tradução apareceu sobre o jogo, está tudo pronto — siga para a
@@ -292,7 +287,7 @@ Se a tradução apareceu sobre o jogo, está tudo pronto — siga para a
   agrupamento (`Numpad9` ↔ `Numpad8`) e veja a
   [seção 6](/Manual/configurando-a-traducao.md).
 
-Outros problemas estão na [seção 13](/Manual/problemas-comuns-e-solucoes.md).
+Outros problemas estão na [seção 12](/Manual/problemas-comuns-e-solucoes.md).
 
 ---
 
@@ -378,8 +373,8 @@ A troca vale na hora — áreas, idiomas, aparência e glossário mudam juntos, 
 notificação na tela confirma qual perfil entrou, útil quando você troca com o jogo em
 primeiro plano.
 
-Se o **Modo Legenda** ou o **Tempo Real** estiverem ligados, eles continuam ligados e passam
-a capturar a área do perfil novo.
+Se o **Modo Legenda** estiver ligado, ele continua ligado e passa a capturar a área do perfil
+novo.
 
 ### Renomear e apagar
 
@@ -399,7 +394,7 @@ Nem tudo é "por jogo" — o que é seu continua valendo em todos os perfis:
 | | Sensibilidade do agrupamento (em *Overlay › Captura*) |
 | Motor de tradução, modelo e região do Azure | Inpaint |
 | System Prompt e Informações do Jogo | Servidor web |
-| Modo Legenda e Modo Tempo Real | Idioma da interface e as opções de diagnóstico |
+| Modo Legenda | Idioma da interface e as opções de diagnóstico |
 
 A chave de API é o caso que mais importa: você digita **uma vez** e ela vale em todos os
 perfis, inclusive nos que criar depois.
@@ -426,13 +421,8 @@ perfis, inclusive nos que criar depois.
 > novo para a API: sai na hora e sem custo. O lado ruim é que, se a IA traduziu errado, o erro
 > volta toda vez que o texto aparece. O `Numpad4` repete a última tradução, no mesmo modo
 > (parágrafo, linha ou Vision), sem olhar o que está guardado, e a tradução nova substitui a
-> antiga. Funciona nas traduções feitas por atalho ou pela barra flutuante; o Modo Legenda e o
-> Modo Tempo Real não entram.
-
-> **E o Modo Tempo Real?** Os atalhos dele — ligar/desligar e selecionar área — não estão nesta
-> lista nem em Geral › Atalhos: por ser experimental, ficam na aba **Experimental**, e vêm **sem
-> tecla definida**. Você escolhe as suas lá. Veja a
-> [seção 10](/Manual/modo-tempo-real-traducao-continua-no-lugar-experimental.md).
+> antiga. Funciona nas traduções feitas por atalho ou pela barra flutuante; o Modo Legenda não
+> entra.
 
 Todos podem ser trocados em **Geral › Atalhos** — escolha outra tecla e, se quiser, combine com
 Ctrl/Alt/Shift. Se escolher uma **letra ou um número** da fileira de cima, é **obrigatório** usar
@@ -731,83 +721,7 @@ aperte `Numpad0`.
 
 ---
 
-## 10. Modo Tempo Real — tradução contínua no lugar (experimental)
-
-> Recurso **experimental** — ligado e configurado pela aba **Experimental**. O comportamento
-> ainda pode mudar e bugs são esperados.
-
-O Modo Tempo Real junta o melhor dos outros dois modos: é **contínuo e automático** como o
-Modo Legenda (não precisa apertar nada a cada fala), mas desenha a tradução **no lugar do texto
-original**, sobre cada linha detectada, como o modo Traduzir — em vez de empilhar tudo numa
-caixa fora da área. Ele trabalha sobre uma **área própria**, normalmente maior que a da legenda
-(cobre a caixa de diálogo inteira, o nome do personagem, várias linhas de uma vez).
-
-É indicado para conversas com NPCs em que aparecem **nome + várias linhas de fala** ao mesmo
-tempo, e você quer tudo traduzido ao vivo, na posição original, sem clicar.
-
-### Como usar
-
-Tudo do Tempo Real fica na aba **Experimental**, dentro do card *Modo Tempo Real (sobreposição
-ao vivo)* — inclusive os atalhos, que **não vêm com tecla definida**. É de propósito: enquanto
-o recurso é experimental, ele não ocupa uma tecla do seu teclado sem você pedir.
-
-1. Abra a aba **Experimental** e expanda o card **Modo Tempo Real**.
-2. Ligue **Permitir Modo Tempo Real**. Essa chave só **destrava** a hotkey — não começa a
-   traduzir nada por si só. Com ela desligada, o atalho não faz absolutamente nada.
-3. Defina as duas teclas ali mesmo: **Ligar/desligar Tempo Real** e **Selecionar área do Tempo
-   Real**. Escolha teclas livres do Numpad (`Numpad3` e `Numpad4` estão sobrando nos padrões de
-   fábrica) ou qualquer outra combinação.
-4. Ajuste as opções, se quiser (intervalo, fonte, fundo, contorno, limpeza automática) — os
-   padrões já funcionam.
-5. Aperte a tecla de **selecionar área** e desenhe o retângulo sobre a região onde o texto
-   aparece.
-6. Aperte a tecla de **ligar/desligar**. A tradução passa a aparecer sobreposta, atualizando
-   sozinha conforme o texto muda. Aperte de novo para desligar.
-
-<p align="center"><img src="media/experimental-tempo-real.png" alt="Card do Modo Tempo Real, na aba Experimental" width="820"></p>
-
-> O overlay do Tempo Real é **sempre** escondido das capturas de tela — não há nada para
-> ligar. Sem isso, a tradução que o programa desenha por cima seria recapturada pelo próprio
-> OCR no ciclo seguinte, se retroalimentando até virar uma bagunça. Funciona só com programas
-> rodando **NESTE PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). Gravando por placa de captura,
-> a tradução aparece assim mesmo.
-
-> Por ser contínuo e desenhar várias áreas ao vivo, o Tempo Real é mais pesado que os outros
-> modos. Se notar travadas, aumente o **intervalo** no card.
-
-### Estabilidade com fundo animado
-
-Em cenas com fundo em movimento (animações de jogos de RPG, vídeos), o reconhecimento de texto
-pode oscilar de um quadro para outro, fazendo a tradução **tremer** ou **piscar**. Dois ajustes
-no card do Tempo Real controlam isso:
-
-- **Estabilidade da posição** — quantos pixels o texto precisa andar para a tradução ser
-  reposicionada. Maior = tradução mais "parada" (ignora o tremor); menor = acompanha o texto
-  mais de perto. (Padrão: 12px.)
-- **Segurar em falha de OCR** — por quantos ciclos uma tradução continua na tela quando o
-  reconhecimento falha por um instante, evitando a piscada. Maior = segura mais tempo; menor =
-  some mais rápido. (Padrão: 6.)
-
-Regra prática: se ainda **tremer**, aumente a *Estabilidade da posição*; se ainda **piscar**,
-aumente o *Segurar em falha de OCR*.
-
-### Efeito máquina de escrever (typewriter)
-
-Muitos jogos revelam o texto **letra por letra**. Para não traduzir frases pela metade, ligue
-**Esperar o texto assentar**, no card *Esperar texto completo (efeito máquina de escrever)* da
-aba Experimental: o programa aguarda a fala parar de mudar antes de traduzir. Vale tanto para o
-Modo Tempo Real quanto para o Modo Legenda.
-
-Três controles afinam o comportamento: quantas leituras seguidas precisam bater (*Capturas
-estáveis exigidas*), o quanto elas precisam se parecer para contarem como iguais (*Limiar de
-"mesmo texto"*) e quanto tempo no máximo esperar antes de traduzir do jeito que está (*Teto de
-espera*).
-
-<p align="center"><img src="media/experimental-typewriter.png" alt="Card do efeito máquina de escrever, na aba Experimental" width="820"></p>
-
----
-
-## 11. Usando no OBS / transmissões
+## 10. Usando no OBS / transmissões
 
 Se você transmite ou grava o jogo e quer que **a tradução apareça também no vídeo/stream**
 (ou só no vídeo, sem aparecer no jogo em si), use **Overlay › Web**:
@@ -832,16 +746,15 @@ A página também pode ser aberta em qualquer navegador da rede local (celular, 
 etc.) usando o endereço **Captura** (`/captura`) mostrado na aba — essa versão vem com histórico
 e botão de limpar.
 
-> Se a tradução some das suas gravações e transmissões, há três causas possíveis. Duas são
-> automáticas, nos modos que desenham **por cima** do texto original: o Modo Tempo Real (sempre)
-> e o Modo Legenda com *"Substituir a legenda original no lugar"* ligado — nos dois o overlay
-> precisa ficar invisível para capturas, senão o OCR releria a própria tradução. A terceira é
-> uma escolha sua: *"Esconder a tradução de gravações e transmissões"*, no card **Exibição** de
+> Se a tradução some das suas gravações e transmissões, há duas causas possíveis. Uma é
+> automática: o Modo Legenda com *"Substituir a legenda original no lugar"* ligado desenha **por
+> cima** do texto original, e aí o overlay precisa ficar invisível para capturas, senão o OCR
+> releria a própria tradução. A outra é uma escolha sua: *"Esconder a tradução de gravações e transmissões"*, no card **Exibição** de
 > Overlay › Captura. É justamente nesses casos que o servidor Web resolve.
 
 ---
 
-## 12. Histórico e desempenho
+## 11. Histórico e desempenho
 
 - **Aba Historico**: mostra as traduções feitas durante a sessão atual (texto original,
   tradução, horário e serviço usado), da mais recente para a mais antiga. Clique numa entrada
@@ -863,7 +776,7 @@ e botão de limpar.
 
 ---
 
-## 13. Problemas comuns e soluções
+## 12. Problemas comuns e soluções
 
 ##### "Erro ao abrir o programa: VCRUNTIME140.dll não foi encontrado" (ou MSVCP140.dll)
 → Falta o **Microsoft Visual C++ Redistributable** no seu Windows — um componente gratuito da
@@ -907,8 +820,7 @@ aviso amarelo e a tradução daquela captura não sai.
 
 O que faz você bater no limite mais rápido do que parece: o programa envia **uma requisição para
 cada bloco de texto** da captura, todas ao mesmo tempo. Uma tela com muitas falas separadas vira
-muitas requisições de uma vez só. E os modos contínuos (**Legenda** e **Tempo Real**) repetem isso
-a cada ciclo.
+muitas requisições de uma vez só. E o **Modo Legenda** repete isso a cada fala nova.
 
 O programa já tenta de novo sozinho, uma vez, depois de um instante — o aviso só aparece quando a
 segunda tentativa também falha. E aqui vale saber de uma diferença: quando um motor com chave
@@ -1000,7 +912,7 @@ agrupamento** em **Overlay › Captura** — ela só afeta o modo Parágrafo.
 
 ---
 
-## 14. Referência completa — todas as abas
+## 13. Referência completa — todas as abas
 
 Esta seção descreve **cada aba e cada opção** da janela de configuração, na ordem em que
 aparecem no menu da esquerda. É material de consulta — para o dia a dia, as seções anteriores
@@ -1019,7 +931,7 @@ Onde o programa opera.
   configuração (Português / Inglês). Não afeta os idiomas de OCR e tradução. Na primeira
   execução ele detecta o idioma do Windows (cai para Inglês se não for Português).
 - **Atualizações → Avisar sobre novas versões** — liga o aviso que aparece ao abrir o programa
-  quando existe versão mais nova publicada (veja a seção 15). Desligue aqui, ou pelo próprio
+  quando existe versão mais nova publicada (veja a seção 14). Desligue aqui, ou pelo próprio
   aviso, e religue por este toggle.
 - **Atualizações → Verificar agora** — consulta na hora se existe versão nova, mesmo com o
   aviso desligado. A resposta aparece ao lado do botão: *"Você está na versão mais recente"*,
@@ -1146,9 +1058,6 @@ tecla principal, escolhida entre os grupos **Numpad**, **Função** (F1–F12), 
 O programa avisa se você repetir a mesma combinação em dois atalhos — um dos dois não seria
 registrado.
 
-Os atalhos do **Modo Tempo Real** não estão aqui: por ser experimental, eles ficam na aba
-Experimental e vêm **sem tecla definida**.
-
 ### Overlay › Captura
 
 Aparência da tradução manual e pré-processamento da imagem.
@@ -1256,7 +1165,7 @@ Qual serviço traduz e com quais credenciais.
     **Não suporta o Modo Vision.** Por ser gratuito, tem **limite de requisições**, contado por
     endereço de IP: em capturas com muitos blocos, em uso contínuo ou em conexões com CGNAT (IP
     dividido com outros clientes do provedor), pode aparecer o aviso *"Limite de requisições
-    atingido"* — o que fazer está na [seção 13](/Manual/problemas-comuns-e-solucoes.md).
+    atingido"* — o que fazer está na [seção 12](/Manual/problemas-comuns-e-solucoes.md).
   - *DeepL (requer chave de API)* — tradutor dedicado de alta qualidade; **não suporta o Modo
     Vision**. Não tem seleção de modelo, mas tem **Formalidade** (Padrão / Mais formal / Mais
     informal), que só afeta os idiomas-destino com suporte — PT-BR incluso — e é ignorada nos
@@ -1484,31 +1393,10 @@ entrada para copiar a tradução. Botão **Limpar histórico**.
 > Tudo nesta aba está **em desenvolvimento**: o comportamento pode mudar, bugs são esperados e
 > recursos podem ser removidos.
 
-<p align="center"><img src="media/experimental.png" alt="Aba Experimental" width="820"></p>
-
-São dois cards recolhíveis.
-
-**Modo Tempo Real (sobreposição ao vivo)** — tradução contínua desenhada no lugar do texto
-original, sobre uma área própria.
-
-<p align="center"><img src="media/experimental-tempo-real.png" alt="Card do Modo Tempo Real" width="820"></p>
-
-- *Permitir Modo Tempo Real* — destrava a hotkey abaixo, que é quem liga e desliga a captura de
-  fato. Com isso desligado, a hotkey não faz nada.
-- Os dois atalhos — *Ligar/desligar Tempo Real* e *Selecionar área do Tempo Real* — moram aqui e
-  vêm **sem tecla definida**; escolha as suas.
-- *Intervalo* (25 ms–2 s) · *Tamanho da fonte* (10–48 pt) · *Mostrar fundo* + *Opacidade*
-  (10–100%) · *Mostrar contorno* · *Limpar após silêncio* (0–10 s).
-- *Estabilidade da posição* (0–60 px) e *Segurar em falha de OCR* (0–30 ticks) — contra tremor e
-  piscada quando o fundo é animado.
-- Tem ainda um pré-processamento de imagem exclusivo. Veja a **seção 10**.
-
-> O overlay do Tempo Real é sempre invisível para capturas de tela (inclusive OBS) — ver a
-> seção 10.
+Tem um card recolhível.
 
 **Esperar texto completo (efeito máquina de escrever)** — só traduz depois que a fala termina de
-aparecer, evitando traduzir frases ainda "sendo digitadas" na tela. Vale para o Modo Legenda e o
-Modo Tempo Real.
+aparecer, evitando traduzir frases ainda "sendo digitadas" na tela. Vale para o Modo Legenda.
 
 <p align="center"><img src="media/experimental-typewriter.png" alt="Card do efeito máquina de escrever" width="820"></p>
 
@@ -1527,7 +1415,7 @@ remover créditos), além do aviso de garantia.
 
 ---
 
-## 15. Atualizando o programa
+## 14. Atualizando o programa
 
 Ao abrir o programa, se existir uma versão mais nova publicada, aparece um aviso com a versão
 que você tem e a que saiu. O botão **Baixar** abre a página da versão nova no seu navegador —

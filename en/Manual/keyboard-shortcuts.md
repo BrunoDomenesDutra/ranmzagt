@@ -14,9 +14,7 @@
 | Show/hide areas (preview) | `Numpad2` | Shows rectangles of configured areas |
 | Show/hide floating toolbar | `NumpadSubtract` (Numpad minus) | Opens or closes the floating toolbar of buttons (see section 3) |
 
-> **Retranslate (`Numpad4`).** Every translation is stored in the profile, and the same text isn't sent to the API again: it comes back instantly and at no cost. The downside is that, if the AI got it wrong, the mistake comes back every time the text shows up. `Numpad4` repeats the last translation, in the same mode (paragraph, line or Vision), without looking at what's stored, and the new translation replaces the old one. It works for translations made by shortcut or by the floating toolbar; Subtitle Mode and Real-time Mode aren't covered.
-
-> **What about Real-time Mode?** Its shortcuts — toggle and select area — aren't in this list nor in General › Shortcuts: being experimental, they live in the **Experimental** tab and come with **no key assigned**. You pick your own there. See [section 10](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md).
+> **Retranslate (`Numpad4`).** Every translation is stored in the profile, and the same text isn't sent to the API again: it comes back instantly and at no cost. The downside is that, if the AI got it wrong, the mistake comes back every time the text shows up. `Numpad4` repeats the last translation, in the same mode (paragraph, line or Vision), without looking at what's stored, and the new translation replaces the old one. It works for translations made by shortcut or by the floating toolbar; Subtitle Mode isn't covered.
 
 All can be changed in **General › Shortcuts** — choose another key and, if you want, combine with Ctrl/Alt/Shift. If you choose a **letter or a number** from the top row, it's **mandatory** to use at least one modifier (Ctrl, Alt, or Shift) to not interfere with normal game controls (which use WASD and slots 0–9 constantly). Numpad, F1–F12 and the navigation keys work on their own — the **Numbers** and **Navigation** groups are what save you on a laptop with no numpad.
 

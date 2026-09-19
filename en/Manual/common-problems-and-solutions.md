@@ -1,4 +1,4 @@
-# 13. Common problems and solutions
+# 12. Common problems and solutions
 
 #### "Error opening program: VCRUNTIME140.dll not found" (or MSVCP140.dll)
 → Your Windows is missing **Microsoft Visual C++ Redistributable** — a free Microsoft component some freshly-formatted PCs don't have. Download and install the **x64** package from this official link: <https://aka.ms/vs/17/release/vc_redist.x64.exe> — then reopen Ranmza GT, it should open normally.
@@ -18,7 +18,7 @@
 #### "Rate limit reached" using Google Translate
 → Google Translate here is the **free service, with no API key** — and a free service limits how many translations it accepts in a short window. When you hit that limit, the yellow warning appears and that capture isn't translated.
 
-What makes you hit the limit sooner than you'd expect: the program sends **one request per text block** in the capture, all at the same time. A screen with many separate lines of dialogue becomes many requests at once. And the continuous modes (**Subtitle** and **Real-time**) repeat that on every cycle.
+What makes you hit the limit sooner than you'd expect: the program sends **one request per text block** in the capture, all at the same time. A screen with many separate lines of dialogue becomes many requests at once. And **Subtitle Mode** repeats that for every new line.
 
 The program already retries once on its own, after a moment — the warning only appears when the second attempt fails too. And there's a difference worth knowing: when an engine with a key (DeepL, Azure, AI) fails, the program falls back to Google Translate. **Google has nothing to fall back to** — it is already the last resort.
 

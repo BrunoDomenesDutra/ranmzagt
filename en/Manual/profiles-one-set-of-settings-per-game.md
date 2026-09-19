@@ -25,7 +25,7 @@ The new profile becomes active right away. From there you just set the program u
 
 Click the selector in the header and pick another one (or click its row in *General › Profiles*). The switch takes effect immediately — areas, languages, appearance and glossary all change together, with no restart. An on-screen notification confirms which profile took over, handy when you switch with the game in the foreground.
 
-If **Subtitle Mode** or **Real-time Mode** are running, they stay running and start capturing the new profile's area.
+If **Subtitle Mode** is running, it stays running and starts capturing the new profile's area.
 
 ## Renaming and deleting
 
@@ -44,7 +44,7 @@ Not everything is "per game" — what is yours keeps applying across all profile
 | | Grouping sensitivity (*Overlay › Capture* tab) |
 | Translation engine, model and Azure region | Inpaint |
 | System Prompt and Game Information | Web server |
-| Subtitle Mode and Real-time Mode | Interface language and the diagnostic options |
+| Subtitle Mode | Interface language and the diagnostic options |
 
 The API key is the one that matters most: you type it **once** and it applies to every profile, including the ones you create later.
 

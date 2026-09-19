@@ -1,4 +1,4 @@
-# 14. Referência completa — todas as abas
+# 13. Referência completa — todas as abas
 
 Esta seção descreve **cada aba e cada opção** da janela de configuração, na ordem em que
 aparecem no menu da esquerda. É material de consulta — para o dia a dia, as seções anteriores
@@ -17,7 +17,7 @@ Onde o programa opera.
   configuração (Português / Inglês). Não afeta os idiomas de OCR e tradução. Na primeira
   execução ele detecta o idioma do Windows (cai para Inglês se não for Português).
 - **Atualizações → Avisar sobre novas versões** — liga o aviso que aparece ao abrir o programa
-  quando existe versão mais nova publicada (veja a seção 15). Desligue aqui, ou pelo próprio
+  quando existe versão mais nova publicada (veja a seção 14). Desligue aqui, ou pelo próprio
   aviso, e religue por este toggle.
 - **Atualizações → Verificar agora** — consulta na hora se existe versão nova, mesmo com o
   aviso desligado. A resposta aparece ao lado do botão: *"Você está na versão mais recente"*,
@@ -144,9 +144,6 @@ tecla principal, escolhida entre os grupos **Numpad**, **Função** (F1–F12), 
 O programa avisa se você repetir a mesma combinação em dois atalhos — um dos dois não seria
 registrado.
 
-Os atalhos do **Modo Tempo Real** não estão aqui: por ser experimental, eles ficam na aba
-Experimental e vêm **sem tecla definida**.
-
 ## Overlay › Captura
 
 Aparência da tradução manual e pré-processamento da imagem.
@@ -254,7 +251,7 @@ Qual serviço traduz e com quais credenciais.
     **Não suporta o Modo Vision.** Por ser gratuito, tem **limite de requisições**, contado por
     endereço de IP: em capturas com muitos blocos, em uso contínuo ou em conexões com CGNAT (IP
     dividido com outros clientes do provedor), pode aparecer o aviso *"Limite de requisições
-    atingido"* — o que fazer está na [seção 13](/Manual/problemas-comuns-e-solucoes.md).
+    atingido"* — o que fazer está na [seção 12](/Manual/problemas-comuns-e-solucoes.md).
   - *DeepL (requer chave de API)* — tradutor dedicado de alta qualidade; **não suporta o Modo
     Vision**. Não tem seleção de modelo, mas tem **Formalidade** (Padrão / Mais formal / Mais
     informal), que só afeta os idiomas-destino com suporte — PT-BR incluso — e é ignorada nos
@@ -482,31 +479,10 @@ entrada para copiar a tradução. Botão **Limpar histórico**.
 > Tudo nesta aba está **em desenvolvimento**: o comportamento pode mudar, bugs são esperados e
 > recursos podem ser removidos.
 
-<p align="center"><img src="media/experimental.png" alt="Aba Experimental" width="820"></p>
-
-São dois cards recolhíveis.
-
-**Modo Tempo Real (sobreposição ao vivo)** — tradução contínua desenhada no lugar do texto
-original, sobre uma área própria.
-
-<p align="center"><img src="media/experimental-tempo-real.png" alt="Card do Modo Tempo Real" width="820"></p>
-
-- *Permitir Modo Tempo Real* — destrava a hotkey abaixo, que é quem liga e desliga a captura de
-  fato. Com isso desligado, a hotkey não faz nada.
-- Os dois atalhos — *Ligar/desligar Tempo Real* e *Selecionar área do Tempo Real* — moram aqui e
-  vêm **sem tecla definida**; escolha as suas.
-- *Intervalo* (25 ms–2 s) · *Tamanho da fonte* (10–48 pt) · *Mostrar fundo* + *Opacidade*
-  (10–100%) · *Mostrar contorno* · *Limpar após silêncio* (0–10 s).
-- *Estabilidade da posição* (0–60 px) e *Segurar em falha de OCR* (0–30 ticks) — contra tremor e
-  piscada quando o fundo é animado.
-- Tem ainda um pré-processamento de imagem exclusivo. Veja a **seção 10**.
-
-> O overlay do Tempo Real é sempre invisível para capturas de tela (inclusive OBS) — ver a
-> seção 10.
+Tem um card recolhível.
 
 **Esperar texto completo (efeito máquina de escrever)** — só traduz depois que a fala termina de
-aparecer, evitando traduzir frases ainda "sendo digitadas" na tela. Vale para o Modo Legenda e o
-Modo Tempo Real.
+aparecer, evitando traduzir frases ainda "sendo digitadas" na tela. Vale para o Modo Legenda.
 
 <p align="center"><img src="media/experimental-typewriter.png" alt="Card do efeito máquina de escrever" width="820"></p>
 

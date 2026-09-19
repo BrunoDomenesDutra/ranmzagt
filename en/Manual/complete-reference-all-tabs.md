@@ -1,4 +1,4 @@
-# 14. Complete reference — all tabs
+# 13. Complete reference — all tabs
 
 This section describes **every tab and every option** in the settings window, in the order they appear in the left-hand menu. It's reference material — for day-to-day use, the earlier sections are enough.
 
@@ -13,7 +13,7 @@ Where the program runs.
 <p align="center"><img src="media/geral-config.png" alt="General › Config tab" width="820"></p>
 
 - **App language → Interface language** — switches the language of the settings window itself (Portuguese / English). It does not affect the OCR and translation languages. On first run it detects the Windows language (falling back to English if it isn't Portuguese).
-- **Updates → Notify me about new versions** — turns on the notice that shows up when you open the program and a newer version has been published (see section 15). Turn it off here, or from the notice itself, and turn it back on with this toggle.
+- **Updates → Notify me about new versions** — turns on the notice that shows up when you open the program and a newer version has been published (see section 14). Turn it off here, or from the notice itself, and turn it back on with this toggle.
 - **Updates → Check now** — checks right away whether a new version is out, even with the notice turned off. The answer appears next to the button: *"You are on the latest version"*, the version found (with a **Download** button that opens the page in your browser), or a warning that the check failed.
 - **Configuration → Reset to default** — restores every option to factory values. It **keeps** the monitor, the selected areas, the API keys, the prompts (System Prompt and Game Info) and the update-notice preference.
 - **Capture backend → Backend** — how the program reads screen pixels:
@@ -86,8 +86,6 @@ Eleven global shortcuts — they work with the game focused, and are disabled wh
 > **Letters and numbers** as the main key **require** a modifier (Ctrl, Alt or Shift) so they don't clash with the game, which uses WASD and slots 0–9 constantly. Numpad, F-keys and navigation keys work without one. The Numbers and Navigation groups are what save you on a laptop with no numpad.
 
 The program warns you if you assign the same combination to two shortcuts — one of them wouldn't be registered.
-
-The **Real-time Mode** shortcuts aren't here: being experimental, they live in the Experimental tab and come with **no key assigned**.
 
 ## Overlay › Capture
 
@@ -168,7 +166,7 @@ Which service translates, and with which credentials.
 <p align="center"><img src="media/tradutores-deepl.png" alt="Translation › Translators tab with DeepL" width="820"></p>
 
 - **Translation Provider → Active provider**
-  - *Google Translate — free, no key* — unofficial API, nothing to configure. It's the same address the Google Translate web page uses internally; since it is neither published nor documented, Google can change it or shut it down at any time — if it ever stops responding, the way out is switching to an engine with a key. **Doesn't support Vision Mode.** Being free, it has a **request limit**, counted per IP address: on captures with many blocks, in continuous use or on CGNAT connections (an IP shared with your ISP's other customers), a *"Rate limit reached"* warning may appear — what to do about it is in [section 13](/en/Manual/common-problems-and-solutions.md).
+  - *Google Translate — free, no key* — unofficial API, nothing to configure. It's the same address the Google Translate web page uses internally; since it is neither published nor documented, Google can change it or shut it down at any time — if it ever stops responding, the way out is switching to an engine with a key. **Doesn't support Vision Mode.** Being free, it has a **request limit**, counted per IP address: on captures with many blocks, in continuous use or on CGNAT connections (an IP shared with your ISP's other customers), a *"Rate limit reached"* warning may appear — what to do about it is in [section 12](/en/Manual/common-problems-and-solutions.md).
   - *DeepL (requires API key)* — a high-quality dedicated translator; **doesn't support Vision Mode**. It has no model selection, but it does have **Formality** (Default / More formal / More informal), which only affects target languages that support it — PT-BR included — and is ignored on the rest. It makes use of the **Game Info** field (Translation › AI) and, in Subtitle Mode, the previous lines as context, at no extra cost.
   - *Azure Translator (requires API key and region)* — Microsoft's translator; **doesn't support Vision Mode**. It has no model selection and no formality, and it **doesn't use** Conversation Context or Game Info — its translation API takes no context. In exchange, it detects the source language **block by block**: in a capture where part of the text is in another language, each block is translated from the right one.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AI engines, requiring an API key.
@@ -322,23 +320,9 @@ Lists the **current session's** translations — time, service, translation and,
 
 > Everything in this tab is **under development**: behavior can change, bugs are expected, and features can be removed.
 
-<p align="center"><img src="media/experimental.png" alt="Experimental tab" width="820"></p>
+One collapsible card.
 
-Two collapsible cards.
-
-**Real-time Mode (live overlay)** — continuous translation drawn in place of the original text, over its own area.
-
-<p align="center"><img src="media/experimental-tempo-real.png" alt="Real-time Mode card" width="820"></p>
-
-- *Allow Real-time Mode* — unlocks the hotkey below, which is what actually starts and stops the capture. With this off, the hotkey does nothing.
-- Both shortcuts — *Toggle Real-time* and *Select Real-time area* — live here and come with **no key assigned**; pick your own.
-- *Interval* (25 ms–2 s) · *Font size* (10–48 pt) · *Show background* + *opacity* (10–100%) · *Show outline* · *Clear after silence* (0–10 s).
-- *Position stability* (0–60 px) and *Hold on OCR failure* (0–30 ticks) — against shaking and flicker when the background is animated.
-- It also has its own dedicated image preprocessing. See **section 10**.
-
-> The Real-time overlay is always hidden from screen capture (OBS included) — see section 10.
-
-**Wait for complete text (typewriter effect)** — only translates once the line has finished appearing, so you don't translate sentences still "being typed" on screen. Applies to Subtitle Mode and Real-time Mode.
+**Wait for complete text (typewriter effect)** — only translates once the line has finished appearing, so you don't translate sentences still "being typed" on screen. Applies to Subtitle Mode.
 
 <p align="center"><img src="media/experimental-typewriter.png" alt="Typewriter effect card" width="820"></p>
 

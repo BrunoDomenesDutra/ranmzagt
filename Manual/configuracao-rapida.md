@@ -37,7 +37,7 @@ O menu da esquerda agrupa as opções por assunto. Nesta configuração rápida 
 | **Ferramentas** | Inpaint (apagar o texto original) e Lab (testar pré-processamento) |
 | **Debug** | Monitor de desempenho, imagens de diagnóstico e Logs |
 | **Historico** | As traduções da sessão atual |
-| **Experimental** | Recursos em desenvolvimento, como o Modo Tempo Real |
+| **Experimental** | Recursos em desenvolvimento, como o efeito máquina de escrever da Legenda |
 | **Sobre** | Versão do programa e links |
 
 > **Idioma da interface** (em *Geral › Config*) muda só o idioma **do programa** — os menus e
@@ -90,10 +90,10 @@ pronto para uso. É com ele que você deve fazer o primeiro teste.
 > **Gratuito, mas com limite.** O Google Translate sem chave aceita só um punhado de traduções
 > num intervalo curto. Passou disso, aparece o aviso *"Limite de requisições atingido"* e aquela
 > captura fica sem tradução. Para traduzir uma fala aqui e ali ele dá conta; em sessão longa e nos
-> modos contínuos (Legenda e Tempo Real) o limite chega rápido. E o limite é contado **por
+> Modo Legenda o limite chega rápido. E o limite é contado **por
 > endereço de IP** — quem usa internet móvel ou provedor com **CGNAT** divide esse limite com
 > outros clientes e bate nele bem mais cedo. A explicação e o que fazer estão na
-> [seção 13](/Manual/problemas-comuns-e-solucoes.md).
+> [seção 12](/Manual/problemas-comuns-e-solucoes.md).
 
 ?> **Atenção: a API do Google usada aqui não é oficial.** É o mesmo endereço que a página do
 Google Tradutor usa por baixo dos panos, sem chave e sem conta. Ela não é publicada nem
@@ -219,10 +219,6 @@ Cada ação tem uma tecla principal, escolhida na lista à direita, e três bot�
 > dispararia o programa toda vez que digitasse no jogo. Teclas do Numpad, F1–F12 e as de
 > navegação funcionam sozinhas.
 
-As teclas do **Modo Tempo Real** não ficam aqui: por ser experimental, elas moram na aba
-**Experimental**, e vêm sem tecla definida. Veja a
-[seção 10](/Manual/modo-tempo-real-traducao-continua-no-lugar-experimental.md).
-
 ## Deu certo? E se não deu
 
 Se a tradução apareceu sobre o jogo, está tudo pronto — siga para a
@@ -237,6 +233,6 @@ Se a tradução apareceu sobre o jogo, está tudo pronto — siga para a
   agrupamento (`Numpad9` ↔ `Numpad8`) e veja a
   [seção 6](/Manual/configurando-a-traducao.md).
 
-Outros problemas estão na [seção 13](/Manual/problemas-comuns-e-solucoes.md).
+Outros problemas estão na [seção 12](/Manual/problemas-comuns-e-solucoes.md).
 
 ---

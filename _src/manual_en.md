@@ -15,12 +15,11 @@ Practical guide to using **Ranmza GT**, the translator for games, visual novels,
 7. [Making translation look like the game](#7-making-translation-look-like-the-game)
 8. [Vision Mode — when OCR fails](#8-vision-mode--when-ocr-fails)
 9. [Subtitle Mode — continuous automatic translation](#9-subtitle-mode--continuous-automatic-translation)
-10. [Real-time Mode — continuous translation in place (experimental)](#10-real-time-mode--continuous-translation-in-place-experimental)
-11. [Using with OBS / streaming](#11-using-with-obs--streaming)
-12. [History and performance](#12-history-and-performance)
-13. [Common problems and solutions](#13-common-problems-and-solutions)
-14. [Complete reference — all tabs](#14-complete-reference--all-tabs)
-15. [Updating the program](#15-updating-the-program)
+10. [Using with OBS / streaming](#10-using-with-obs--streaming)
+11. [History and performance](#11-history-and-performance)
+12. [Common problems and solutions](#12-common-problems-and-solutions)
+13. [Complete reference — all tabs](#13-complete-reference--all-tabs)
+14. [Updating the program](#14-updating-the-program)
 
 ---
 
@@ -71,7 +70,7 @@ The left-hand menu groups options by subject. For this quick setup you only touc
 | **Tools** | Inpaint (erase the original text) and Lab (test preprocessing) |
 | **Debug** | Performance monitor, diagnostic images and Logs |
 | **History** | Translations from the current session |
-| **Experimental** | Features under development, such as Real-time Mode |
+| **Experimental** | Features under development, such as the Subtitle Mode typewriter effect |
 | **About** | Program version and links |
 
 > **Interface language** (in *General › Config*) only changes the language **of the program** — the menus and labels you're looking at. It has nothing to do with the language being translated; that's step 2.3.
@@ -105,7 +104,7 @@ Open **Translation › Translators**.
 
 The default is **Google Translate — free, no key**: nothing to configure, it's ready to use. Do your first test with it.
 
-> **Free, but capped.** Google Translate with no key only accepts a handful of translations in a short window. Go past that and a *"Rate limit reached"* warning appears, leaving that capture untranslated. For the odd line here and there it's fine; in a long session or in the continuous modes (Subtitle and Real-time) you reach the cap quickly. And the cap is counted **per IP address** — if you're on mobile internet or an ISP that uses **CGNAT**, you share that cap with other customers and hit it much sooner. The explanation and what to do about it are in [section 13](/en/Manual/common-problems-and-solutions.md).
+> **Free, but capped.** Google Translate with no key only accepts a handful of translations in a short window. Go past that and a *"Rate limit reached"* warning appears, leaving that capture untranslated. For the odd line here and there it's fine; in a long session or in Subtitle Mode you reach the cap quickly. And the cap is counted **per IP address** — if you're on mobile internet or an ISP that uses **CGNAT**, you share that cap with other customers and hit it much sooner. The explanation and what to do about it are in [section 12](/en/Manual/common-problems-and-solutions.md).
 
 ?> **Careful: the Google API used here is not official.** It's the same address the Google Translate web page uses under the hood, with no key and no account. It is neither published nor documented, so Google can change it or take it down whenever it likes, without notice — and on that day only the engines with a key keep translating. If you depend on the program to play, it's worth having a free **DeepL** or **Azure Translator** key already set up.
 
@@ -197,8 +196,6 @@ Each action has a main key, picked from the list on the right, plus three modifi
 
 > **A letter or number as the main key requires a modifier** (Ctrl, Alt or Shift) — otherwise you'd fire the program every time you typed in the game. Numpad keys, F1–F12 and the navigation keys work on their own.
 
-The **Real-time Mode** keys aren't here: being experimental, they live in the **Experimental** tab, and come with no key assigned. See [section 10](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md).
-
 ### Did it work? And if it didn't
 
 If the translation showed up over the game, you're all set — move on to [section 3](/en/Manual/basic-day-to-day-usage.md).
@@ -207,7 +204,7 @@ If the translation showed up over the game, you're all set — move on to [secti
 - **The translation shows in the History tab, but not over the game** → the game is in *Exclusive Fullscreen*. Switch it to *Borderless Fullscreen*.
 - **The translation came out wrong or scrambled** → the OCR misread it. Start by switching the grouping mode (`Numpad9` ↔ `Numpad8`) and see [section 6](/en/Manual/configuring-translation.md).
 
-Other problems are covered in [section 13](/en/Manual/common-problems-and-solutions.md).
+Other problems are covered in [section 12](/en/Manual/common-problems-and-solutions.md).
 
 ---
 
@@ -273,7 +270,7 @@ The new profile becomes active right away. From there you just set the program u
 
 Click the selector in the header and pick another one (or click its row in *General › Profiles*). The switch takes effect immediately — areas, languages, appearance and glossary all change together, with no restart. An on-screen notification confirms which profile took over, handy when you switch with the game in the foreground.
 
-If **Subtitle Mode** or **Real-time Mode** are running, they stay running and start capturing the new profile's area.
+If **Subtitle Mode** is running, it stays running and starts capturing the new profile's area.
 
 ### Renaming and deleting
 
@@ -292,7 +289,7 @@ Not everything is "per game" — what is yours keeps applying across all profile
 | | Grouping sensitivity (*Overlay › Capture* tab) |
 | Translation engine, model and Azure region | Inpaint |
 | System Prompt and Game Information | Web server |
-| Subtitle Mode and Real-time Mode | Interface language and the diagnostic options |
+| Subtitle Mode | Interface language and the diagnostic options |
 
 The API key is the one that matters most: you type it **once** and it applies to every profile, including the ones you create later.
 
@@ -314,9 +311,7 @@ The API key is the one that matters most: you type it **once** and it applies to
 | Show/hide areas (preview) | `Numpad2` | Shows rectangles of configured areas |
 | Show/hide floating toolbar | `NumpadSubtract` (Numpad minus) | Opens or closes the floating toolbar of buttons (see section 3) |
 
-> **Retranslate (`Numpad4`).** Every translation is stored in the profile, and the same text isn't sent to the API again: it comes back instantly and at no cost. The downside is that, if the AI got it wrong, the mistake comes back every time the text shows up. `Numpad4` repeats the last translation, in the same mode (paragraph, line or Vision), without looking at what's stored, and the new translation replaces the old one. It works for translations made by shortcut or by the floating toolbar; Subtitle Mode and Real-time Mode aren't covered.
-
-> **What about Real-time Mode?** Its shortcuts — toggle and select area — aren't in this list nor in General › Shortcuts: being experimental, they live in the **Experimental** tab and come with **no key assigned**. You pick your own there. See [section 10](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md).
+> **Retranslate (`Numpad4`).** Every translation is stored in the profile, and the same text isn't sent to the API again: it comes back instantly and at no cost. The downside is that, if the AI got it wrong, the mistake comes back every time the text shows up. `Numpad4` repeats the last translation, in the same mode (paragraph, line or Vision), without looking at what's stored, and the new translation replaces the old one. It works for translations made by shortcut or by the floating toolbar; Subtitle Mode isn't covered.
 
 All can be changed in **General › Shortcuts** — choose another key and, if you want, combine with Ctrl/Alt/Shift. If you choose a **letter or a number** from the top row, it's **mandatory** to use at least one modifier (Ctrl, Alt, or Shift) to not interfere with normal game controls (which use WASD and slots 0–9 constantly). Numpad, F1–F12 and the navigation keys work on their own — the **Numbers** and **Navigation** groups are what save you on a laptop with no numpad.
 
@@ -458,7 +453,7 @@ In this mode the program shows **one line at a time**, and the *Visible lines* c
 
 > In this mode the subtitle is **hidden from screen capture**. It's not a defect: that's exactly what keeps the OCR from re-reading its own translation on the next cycle and feeding back on itself. Only works with programs running **ON THIS PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). If you record with a capture card, the translation still shows up.
 
-The option applies to Subtitle Mode only — manual translation (`Numpad8`/`Numpad9`) and Real-time Mode are not affected.
+The option applies to Subtitle Mode only — manual translation (`Numpad8`/`Numpad9`) is not affected.
 
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
   <iframe src="https://player.vimeo.com/video/1218094053"
@@ -487,51 +482,7 @@ The mode also **turns itself off** after a while with no text detected in the re
 
 ---
 
-## 10. Real-time Mode — continuous translation in place (experimental)
-
-> **Experimental feature** — configured via the **Experimental** tab. Behavior may still change and bugs are expected.
-
-Real-time Mode combines the best of the other two modes: it's **continuous and automatic** like Subtitle Mode (no need to press anything for each line), but draws the translation **in the original text's place**, over each detected line, like Translate mode — instead of stacking everything in a box outside the area. It works over its **own area**, usually bigger than the subtitle area (covers the entire dialog box, character name, multiple lines at once).
-
-It's ideal for conversations with NPCs where **name + multiple lines of speech** appear at the same time, and you want everything translated live, in the original position, without clicking.
-
-### How to use
-
-Everything about Real-time Mode lives in the **Experimental** tab, inside the *Real-time Mode (live overlay)* card — including the shortcuts, which come with **no key assigned**. That's deliberate: while the feature is experimental, it doesn't claim a key on your keyboard without you asking.
-
-1. Open the **Experimental** tab and expand the **Real-time Mode** card.
-2. Turn on **Allow Real-time Mode**. That switch only **unlocks** the hotkey — it doesn't start translating anything by itself. With it off, the hotkey does absolutely nothing.
-3. Set the two keys right there: **Toggle Real-time** and **Select Real-time area**. Pick free Numpad keys (`Numpad3` and `Numpad4` are unused in the factory defaults) or any other combination.
-4. Adjust the options if you like (interval, font, background, outline, auto-clear) — the defaults work fine.
-5. Press your **select area** key and draw the rectangle over the region where text appears.
-6. Press your **toggle** key. Translation starts appearing overlaid, updating automatically as text changes. Press it again to turn it off.
-
-<p align="center"><img src="media/experimental-tempo-real.png" alt="Real-time Mode card, in the Experimental tab" width="820"></p>
-
-> The Real-time overlay is **always** hidden from screen capture — there's nothing to turn on. Without that, the translation the program draws on top would be recaptured by its own OCR on the next cycle, feeding back on itself until it turns to mush. Only works with programs running **ON THIS PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). If you record with a capture card, the translation still shows up.
-
-> Because it's continuous and draws multiple areas live, Real-time Mode is heavier than other modes. If you notice stuttering, increase the **interval** in the card.
-
-### Stability with animated backgrounds
-
-In scenes with moving backgrounds (RPG game animations, videos), text recognition may vary from frame to frame, making the translation **shake** or **flicker**. Two adjustments in the Real-time card control this:
-
-- **Position stability** — how many pixels text must move for the translation to reposition. Higher = translation more "still" (ignores shaking); lower = follows text more closely. (Default: 12px.)
-- **Hold on OCR failure** — how many cycles a translation stays on screen when recognition fails for a moment, avoiding flicker. Higher = holds longer; lower = disappears faster. (Default: 6.)
-
-Quick rule: still **shaking**? Increase *Position stability*; still **flickering**? Increase *Hold on OCR failure*.
-
-### Typewriter effect (typewriter)
-
-Many games reveal text **letter by letter**. To avoid translating incomplete sentences, turn on **Wait for the text to settle**, in the *Wait for complete text (typewriter effect)* card of the Experimental tab: the program waits for the line to stop changing before translating. Works for both Real-time Mode and Subtitle Mode.
-
-Three controls fine-tune it: how many consecutive reads must match (*Required stable captures*), how alike they must be to count as identical (*'Same text' threshold*), and the longest it will wait before translating whatever it has (*Wait cap*).
-
-<p align="center"><img src="media/experimental-typewriter.png" alt="Typewriter effect card, in the Experimental tab" width="820"></p>
-
----
-
-## 11. Using with OBS / streaming
+## 10. Using with OBS / streaming
 
 If you stream or record the game and want **the translation to also appear in the video/stream** (or only in the video, without appearing in the game itself), use the **Web** tab:
 
@@ -548,11 +499,11 @@ You can also customize theme (light/dark/dracula), colors, font size, and whethe
 
 The page can also be opened in any browser on the local network (phone, second monitor, etc.) using the **Capture** address (`/captura`) shown in the tab — that version comes with history and a clear button.
 
-> If the translation disappears from your recordings and streams, there are three possible causes. Two are automatic, in the modes that draw **over** the original text: Real-time Mode (always) and Subtitle Mode with *"Replace the original subtitle in place"* on — in both the overlay has to be invisible to captures, otherwise the OCR would re-read its own translation. The third is your own choice: *"Hide the translation from recordings and streams"*, in the **Display** card of Overlay › Capture. That is exactly the case the Web server solves.
+> If the translation disappears from your recordings and streams, there are two possible causes. One is automatic: Subtitle Mode with *"Replace the original subtitle in place"* on draws **over** the original text, and then the overlay has to be invisible to captures, otherwise the OCR would re-read its own translation. The other is your own choice: *"Hide the translation from recordings and streams"*, in the **Display** card of Overlay › Capture. That is exactly the case the Web server solves.
 
 ---
 
-## 12. History and performance
+## 11. History and performance
 
 - **History tab**: shows translations made during the current session (original text, translation, time and service used), most recent first. Click an entry to copy the translation; there's also a button to clear everything.
 - **Debug › Monitor**: turns on a log of the last 10 translations with the time each step took (capture, preprocessing, recognition, translation, total) — useful to notice if any configuration is slowing the program down (for example, heavy preprocessing).
@@ -564,7 +515,7 @@ The page can also be opened in any browser on the local network (phone, second m
 
 ---
 
-## 13. Common problems and solutions
+## 12. Common problems and solutions
 
 ##### "Error opening program: VCRUNTIME140.dll not found" (or MSVCP140.dll)
 → Your Windows is missing **Microsoft Visual C++ Redistributable** — a free Microsoft component some freshly-formatted PCs don't have. Download and install the **x64** package from this official link: <https://aka.ms/vs/17/release/vc_redist.x64.exe> — then reopen Ranmza GT, it should open normally.
@@ -584,7 +535,7 @@ The page can also be opened in any browser on the local network (phone, second m
 ##### "Rate limit reached" using Google Translate
 → Google Translate here is the **free service, with no API key** — and a free service limits how many translations it accepts in a short window. When you hit that limit, the yellow warning appears and that capture isn't translated.
 
-What makes you hit the limit sooner than you'd expect: the program sends **one request per text block** in the capture, all at the same time. A screen with many separate lines of dialogue becomes many requests at once. And the continuous modes (**Subtitle** and **Real-time**) repeat that on every cycle.
+What makes you hit the limit sooner than you'd expect: the program sends **one request per text block** in the capture, all at the same time. A screen with many separate lines of dialogue becomes many requests at once. And **Subtitle Mode** repeats that for every new line.
 
 The program already retries once on its own, after a moment — the warning only appears when the second attempt fails too. And there's a difference worth knowing: when an engine with a key (DeepL, Azure, AI) fails, the program falls back to Google Translate. **Google has nothing to fall back to** — it is already the last resort.
 
@@ -632,7 +583,7 @@ What fixes it, from simplest to most permanent:
 
 ---
 
-## 14. Complete reference — all tabs
+## 13. Complete reference — all tabs
 
 This section describes **every tab and every option** in the settings window, in the order they appear in the left-hand menu. It's reference material — for day-to-day use, the earlier sections are enough.
 
@@ -647,7 +598,7 @@ Where the program runs.
 <p align="center"><img src="media/geral-config.png" alt="General › Config tab" width="820"></p>
 
 - **App language → Interface language** — switches the language of the settings window itself (Portuguese / English). It does not affect the OCR and translation languages. On first run it detects the Windows language (falling back to English if it isn't Portuguese).
-- **Updates → Notify me about new versions** — turns on the notice that shows up when you open the program and a newer version has been published (see section 15). Turn it off here, or from the notice itself, and turn it back on with this toggle.
+- **Updates → Notify me about new versions** — turns on the notice that shows up when you open the program and a newer version has been published (see section 14). Turn it off here, or from the notice itself, and turn it back on with this toggle.
 - **Updates → Check now** — checks right away whether a new version is out, even with the notice turned off. The answer appears next to the button: *"You are on the latest version"*, the version found (with a **Download** button that opens the page in your browser), or a warning that the check failed.
 - **Configuration → Reset to default** — restores every option to factory values. It **keeps** the monitor, the selected areas, the API keys, the prompts (System Prompt and Game Info) and the update-notice preference.
 - **Capture backend → Backend** — how the program reads screen pixels:
@@ -721,7 +672,6 @@ Eleven global shortcuts — they work with the game focused, and are disabled wh
 
 The program warns you if you assign the same combination to two shortcuts — one of them wouldn't be registered.
 
-The **Real-time Mode** shortcuts aren't here: being experimental, they live in the Experimental tab and come with **no key assigned**.
 
 ### Overlay › Capture
 
@@ -802,7 +752,7 @@ Which service translates, and with which credentials.
 <p align="center"><img src="media/tradutores-deepl.png" alt="Translation › Translators tab with DeepL" width="820"></p>
 
 - **Translation Provider → Active provider**
-  - *Google Translate — free, no key* — unofficial API, nothing to configure. It's the same address the Google Translate web page uses internally; since it is neither published nor documented, Google can change it or shut it down at any time — if it ever stops responding, the way out is switching to an engine with a key. **Doesn't support Vision Mode.** Being free, it has a **request limit**, counted per IP address: on captures with many blocks, in continuous use or on CGNAT connections (an IP shared with your ISP's other customers), a *"Rate limit reached"* warning may appear — what to do about it is in [section 13](/en/Manual/common-problems-and-solutions.md).
+  - *Google Translate — free, no key* — unofficial API, nothing to configure. It's the same address the Google Translate web page uses internally; since it is neither published nor documented, Google can change it or shut it down at any time — if it ever stops responding, the way out is switching to an engine with a key. **Doesn't support Vision Mode.** Being free, it has a **request limit**, counted per IP address: on captures with many blocks, in continuous use or on CGNAT connections (an IP shared with your ISP's other customers), a *"Rate limit reached"* warning may appear — what to do about it is in [section 12](/en/Manual/common-problems-and-solutions.md).
   - *DeepL (requires API key)* — a high-quality dedicated translator; **doesn't support Vision Mode**. It has no model selection, but it does have **Formality** (Default / More formal / More informal), which only affects target languages that support it — PT-BR included — and is ignored on the rest. It makes use of the **Game Info** field (Translation › AI) and, in Subtitle Mode, the previous lines as context, at no extra cost.
   - *Azure Translator (requires API key and region)* — Microsoft's translator; **doesn't support Vision Mode**. It has no model selection and no formality, and it **doesn't use** Conversation Context or Game Info — its translation API takes no context. In exchange, it detects the source language **block by block**: in a capture where part of the text is in another language, each block is translated from the right one.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AI engines, requiring an API key.
@@ -956,23 +906,9 @@ Lists the **current session's** translations — time, service, translation and,
 
 > Everything in this tab is **under development**: behavior can change, bugs are expected, and features can be removed.
 
-<p align="center"><img src="media/experimental.png" alt="Experimental tab" width="820"></p>
+One collapsible card.
 
-Two collapsible cards.
-
-**Real-time Mode (live overlay)** — continuous translation drawn in place of the original text, over its own area.
-
-<p align="center"><img src="media/experimental-tempo-real.png" alt="Real-time Mode card" width="820"></p>
-
-- *Allow Real-time Mode* — unlocks the hotkey below, which is what actually starts and stops the capture. With this off, the hotkey does nothing.
-- Both shortcuts — *Toggle Real-time* and *Select Real-time area* — live here and come with **no key assigned**; pick your own.
-- *Interval* (25 ms–2 s) · *Font size* (10–48 pt) · *Show background* + *opacity* (10–100%) · *Show outline* · *Clear after silence* (0–10 s).
-- *Position stability* (0–60 px) and *Hold on OCR failure* (0–30 ticks) — against shaking and flicker when the background is animated.
-- It also has its own dedicated image preprocessing. See **section 10**.
-
-> The Real-time overlay is always hidden from screen capture (OBS included) — see section 10.
-
-**Wait for complete text (typewriter effect)** — only translates once the line has finished appearing, so you don't translate sentences still "being typed" on screen. Applies to Subtitle Mode and Real-time Mode.
+**Wait for complete text (typewriter effect)** — only translates once the line has finished appearing, so you don't translate sentences still "being typed" on screen. Applies to Subtitle Mode.
 
 <p align="center"><img src="media/experimental-typewriter.png" alt="Typewriter effect card" width="820"></p>
 
@@ -986,7 +922,7 @@ Program information: icon, name and installed **version**, the feature list, the
 
 ---
 
-## 15. Updating the program
+## 14. Updating the program
 
 When you open the program, if a newer version has been published, a notice appears showing the version you have and the one that came out. The **Download** button opens the new version's page in your browser — that's where the release notes and the `.zip` file are.
 

@@ -1,4 +1,4 @@
-# 13. Problemas comuns e soluções
+# 12. Problemas comuns e soluções
 
 #### "Erro ao abrir o programa: VCRUNTIME140.dll não foi encontrado" (ou MSVCP140.dll)
 → Falta o **Microsoft Visual C++ Redistributable** no seu Windows — um componente gratuito da
@@ -42,8 +42,7 @@ aviso amarelo e a tradução daquela captura não sai.
 
 O que faz você bater no limite mais rápido do que parece: o programa envia **uma requisição para
 cada bloco de texto** da captura, todas ao mesmo tempo. Uma tela com muitas falas separadas vira
-muitas requisições de uma vez só. E os modos contínuos (**Legenda** e **Tempo Real**) repetem isso
-a cada ciclo.
+muitas requisições de uma vez só. E o **Modo Legenda** repete isso a cada fala nova.
 
 O programa já tenta de novo sozinho, uma vez, depois de um instante — o aviso só aparece quando a
 segunda tentativa também falha. E aqui vale saber de uma diferença: quando um motor com chave

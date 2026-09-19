@@ -37,8 +37,8 @@ A troca vale na hora — áreas, idiomas, aparência e glossário mudam juntos, 
 notificação na tela confirma qual perfil entrou, útil quando você troca com o jogo em
 primeiro plano.
 
-Se o **Modo Legenda** ou o **Tempo Real** estiverem ligados, eles continuam ligados e passam
-a capturar a área do perfil novo.
+Se o **Modo Legenda** estiver ligado, ele continua ligado e passa a capturar a área do perfil
+novo.
 
 ## Renomear e apagar
 
@@ -58,7 +58,7 @@ Nem tudo é "por jogo" — o que é seu continua valendo em todos os perfis:
 | | Sensibilidade do agrupamento (em *Overlay › Captura*) |
 | Motor de tradução, modelo e região do Azure | Inpaint |
 | System Prompt e Informações do Jogo | Servidor web |
-| Modo Legenda e Modo Tempo Real | Idioma da interface e as opções de diagnóstico |
+| Modo Legenda | Idioma da interface e as opções de diagnóstico |
 
 A chave de API é o caso que mais importa: você digita **uma vez** e ela vale em todos os
 perfis, inclusive nos que criar depois.

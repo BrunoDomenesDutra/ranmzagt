@@ -28,7 +28,7 @@ The left-hand menu groups options by subject. For this quick setup you only touc
 | **Tools** | Inpaint (erase the original text) and Lab (test preprocessing) |
 | **Debug** | Performance monitor, diagnostic images and Logs |
 | **History** | Translations from the current session |
-| **Experimental** | Features under development, such as Real-time Mode |
+| **Experimental** | Features under development, such as the Subtitle Mode typewriter effect |
 | **About** | Program version and links |
 
 > **Interface language** (in *General › Config*) only changes the language **of the program** — the menus and labels you're looking at. It has nothing to do with the language being translated; that's step 2.3.
@@ -62,7 +62,7 @@ Open **Translation › Translators**.
 
 The default is **Google Translate — free, no key**: nothing to configure, it's ready to use. Do your first test with it.
 
-> **Free, but capped.** Google Translate with no key only accepts a handful of translations in a short window. Go past that and a *"Rate limit reached"* warning appears, leaving that capture untranslated. For the odd line here and there it's fine; in a long session or in the continuous modes (Subtitle and Real-time) you reach the cap quickly. And the cap is counted **per IP address** — if you're on mobile internet or an ISP that uses **CGNAT**, you share that cap with other customers and hit it much sooner. The explanation and what to do about it are in [section 13](/en/Manual/common-problems-and-solutions.md).
+> **Free, but capped.** Google Translate with no key only accepts a handful of translations in a short window. Go past that and a *"Rate limit reached"* warning appears, leaving that capture untranslated. For the odd line here and there it's fine; in a long session or in Subtitle Mode you reach the cap quickly. And the cap is counted **per IP address** — if you're on mobile internet or an ISP that uses **CGNAT**, you share that cap with other customers and hit it much sooner. The explanation and what to do about it are in [section 12](/en/Manual/common-problems-and-solutions.md).
 
 ?> **Careful: the Google API used here is not official.** It's the same address the Google Translate web page uses under the hood, with no key and no account. It is neither published nor documented, so Google can change it or take it down whenever it likes, without notice — and on that day only the engines with a key keep translating. If you depend on the program to play, it's worth having a free **DeepL** or **Azure Translator** key already set up.
 
@@ -154,8 +154,6 @@ Each action has a main key, picked from the list on the right, plus three modifi
 
 > **A letter or number as the main key requires a modifier** (Ctrl, Alt or Shift) — otherwise you'd fire the program every time you typed in the game. Numpad keys, F1–F12 and the navigation keys work on their own.
 
-The **Real-time Mode** keys aren't here: being experimental, they live in the **Experimental** tab, and come with no key assigned. See [section 10](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md).
-
 ## Did it work? And if it didn't
 
 If the translation showed up over the game, you're all set — move on to [section 3](/en/Manual/basic-day-to-day-usage.md).
@@ -164,6 +162,6 @@ If the translation showed up over the game, you're all set — move on to [secti
 - **The translation shows in the History tab, but not over the game** → the game is in *Exclusive Fullscreen*. Switch it to *Borderless Fullscreen*.
 - **The translation came out wrong or scrambled** → the OCR misread it. Start by switching the grouping mode (`Numpad9` ↔ `Numpad8`) and see [section 6](/en/Manual/configuring-translation.md).
 
-Other problems are covered in [section 13](/en/Manual/common-problems-and-solutions.md).
+Other problems are covered in [section 12](/en/Manual/common-problems-and-solutions.md).
 
 ---

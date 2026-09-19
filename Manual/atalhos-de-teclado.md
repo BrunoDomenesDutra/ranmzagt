@@ -18,13 +18,8 @@
 > novo para a API: sai na hora e sem custo. O lado ruim é que, se a IA traduziu errado, o erro
 > volta toda vez que o texto aparece. O `Numpad4` repete a última tradução, no mesmo modo
 > (parágrafo, linha ou Vision), sem olhar o que está guardado, e a tradução nova substitui a
-> antiga. Funciona nas traduções feitas por atalho ou pela barra flutuante; o Modo Legenda e o
-> Modo Tempo Real não entram.
-
-> **E o Modo Tempo Real?** Os atalhos dele — ligar/desligar e selecionar área — não estão nesta
-> lista nem em Geral › Atalhos: por ser experimental, ficam na aba **Experimental**, e vêm **sem
-> tecla definida**. Você escolhe as suas lá. Veja a
-> [seção 10](/Manual/modo-tempo-real-traducao-continua-no-lugar-experimental.md).
+> antiga. Funciona nas traduções feitas por atalho ou pela barra flutuante; o Modo Legenda não
+> entra.
 
 Todos podem ser trocados em **Geral › Atalhos** — escolha outra tecla e, se quiser, combine com
 Ctrl/Alt/Shift. Se escolher uma **letra ou um número** da fileira de cima, é **obrigatório** usar

@@ -33,7 +33,7 @@ In this mode the program shows **one line at a time**, and the *Visible lines* c
 
 > In this mode the subtitle is **hidden from screen capture**. It's not a defect: that's exactly what keeps the OCR from re-reading its own translation on the next cycle and feeding back on itself. Only works with programs running **ON THIS PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). If you record with a capture card, the translation still shows up.
 
-The option applies to Subtitle Mode only — manual translation (`Numpad8`/`Numpad9`) and Real-time Mode are not affected.
+The option applies to Subtitle Mode only — manual translation (`Numpad8`/`Numpad9`) is not affected.
 
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
   <iframe src="https://player.vimeo.com/video/1218094053"
