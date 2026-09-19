@@ -173,9 +173,10 @@ apaga nada. Use o botão **Testar conexao** para confirmar que a chave está vá
 entrar no jogo.
 
 > **Várias chaves com rotação automática.** Todo motor com chave aceita **mais de uma**: clique
-> em *+ Adicionar chave*. Se a chave em uso ficar sem crédito ou bater no limite de requisições,
-> o programa passa sozinho para a próxima da lista; esgotadas todas, ele cai no Google
-> Translate. Ajuda bastante em sessões longas de Modo Legenda.
+> em *+ Adicionar chave*. Se a chave em uso for inválida, ficar sem crédito ou bater no limite de
+> requisições, o programa passa sozinho para a próxima da lista; esgotadas todas, ele cai no
+> Google Translate. Outros erros, como servidor fora do ar, vão direto para o Google Translate,
+> porque a próxima chave falharia igual. Ajuda bastante em sessões longas de Modo Legenda.
 
 > Só os motores de IA (OpenAI, Claude, Gemini) suportam o **Modo Vision** — o Google Translate, o
 > DeepL e o Azure Translator não. Veja a [seção 8](/Manual/modo-vision-quando-o-ocr-erra.md).
@@ -414,11 +415,19 @@ perfis, inclusive nos que criar depois.
 | Traduzir (modo linha) | `Numpad9` | Captura e traduz cada linha por conta própria — menus e listas |
 | Traduzir com I.A Vision (modo parágrafo) | `Numpad5` | Igual ao `Numpad8`, mas mandando a imagem para a IA (veja seção 8) |
 | Traduzir com I.A Vision (modo linha) | `Numpad6` | Igual ao `Numpad9`, mas mandando a imagem para a IA (veja seção 8) |
+| Retraduzir | `Numpad4` | Repete a última tradução sem usar as traduções guardadas (veja abaixo) |
 | Limpar overlay | `NumpadDecimal` (vírgula do Numpad) | Esconde a tradução exibida |
 | Ligar/desligar legenda | `Numpad0` | Ativa a tradução automática contínua (veja seção 9) |
 | Selecionar área da legenda | `Numpad1` | Escolhe onde está a legenda do jogo |
 | Mostrar/ocultar áreas (preview) | `Numpad2` | Mostra os retângulos das áreas configuradas |
 | Mostrar/esconder barra flutuante | `NumpadSubtract` (menos do Numpad) | Abre ou fecha a barra flutuante de botões (veja seção 3) |
+
+> **Retraduzir (`Numpad4`).** Toda tradução fica guardada no perfil, e o mesmo texto não vai de
+> novo para a API: sai na hora e sem custo. O lado ruim é que, se a IA traduziu errado, o erro
+> volta toda vez que o texto aparece. O `Numpad4` repete a última tradução, no mesmo modo
+> (parágrafo, linha ou Vision), sem olhar o que está guardado, e a tradução nova substitui a
+> antiga. Funciona nas traduções feitas por atalho ou pela barra flutuante; o Modo Legenda e o
+> Modo Tempo Real não entram.
 
 > **E o Modo Tempo Real?** Os atalhos dele — ligar/desligar e selecionar área — não estão nesta
 > lista nem em Geral › Atalhos: por ser experimental, ficam na aba **Experimental**, e vêm **sem
@@ -884,7 +893,8 @@ flutuante**, que dispara as ações por clique do mouse e não depende dos atalh
 → Confira as abas **Historico** e **Debug › Monitor** para ver se a tradução está sendo feita. Falhas passageiras
 (limite de requisições, servidor fora do ar por um instante, queda de conexão) são **tentadas de
 novo automaticamente** uma vez antes de recorrer ao Google Translate. Se você tiver **mais de uma
-chave** cadastrada para o motor, ele ainda tenta as demais chaves da lista antes do fallback. Se
+chave** cadastrada para o motor e o problema for da chave (inválida, sem crédito ou no limite de
+requisições), ele tenta as demais chaves da lista antes do fallback. Se
 aparecer um aviso amarelo de "fallback para Google Translate" — e no Histórico a tradução vier
 marcada como "Google Translate (fallback)" —, quer dizer que o serviço configurado (DeepL, Azure ou
 um motor de IA) falhou em **todas** as chaves; confira suas chaves de API e créditos em
@@ -954,6 +964,12 @@ para chave inválida e para região errada ou ausente, então uma região trocad
 chave. Copie a região da página *Keys and Endpoint* do seu recurso, no portal do Azure — pode colar
 como aparece lá ("Brazil South"), que o programa ajusta o espaço e as maiúsculas sozinho. Enquanto o
 campo estiver vazio, o botão *Testar conexão* fica bloqueado.
+
+##### "A IA traduziu errado, e a mesma tradução errada volta sempre"
+→ O programa guarda cada tradução e reaproveita quando o mesmo texto aparece de novo. Com o texto
+na tela, aperte **`Numpad4` (Retraduzir)**: ele traduz de novo sem olhar o que está guardado e
+troca a tradução antiga pela nova. Se a tradução nova também sair ruim, tente o **Vision**
+(`Numpad5` ou `Numpad6`), que manda a imagem para a IA.
 
 ##### "O texto reconhecido está errado/incompleto"
 → A solução que mais resolve é trocar o motor de OCR para o **OneOCR** em **Geral › OCR** — ele
@@ -1103,7 +1119,7 @@ Qual motor reconhece o texto na tela.
   (veja o passo 2.7). Também abre e fecha pelo atalho `NumpadSubtract`, e ela **lembra a última
   posição** em que você a deixou.
 
-Dez atalhos globais — funcionam com o jogo em foco e ficam desativados enquanto a janela de
+Onze atalhos globais — funcionam com o jogo em foco e ficam desativados enquanto a janela de
 configuração está em primeiro plano. Cada um tem os modificadores **Ctrl / Alt / Shift** e uma
 tecla principal, escolhida entre os grupos **Numpad**, **Função** (F1–F12), **Navegação**
 (setas, Insert, Delete, Home, End, PageUp, PageDown), **Números** e **Letras**.
@@ -1115,6 +1131,7 @@ tecla principal, escolhida entre os grupos **Numpad**, **Função** (F1–F12), 
 | Traduzir (modo parágrafo) | `Numpad8` |
 | Traduzir com I.A Vision (modo parágrafo) | `Numpad5` |
 | Traduzir com I.A Vision (modo linha) | `Numpad6` |
+| Retraduzir a última tradução, sem usar o cache | `Numpad4` |
 | Limpar overlay | `NumpadDecimal` |
 | Ligar/desligar legenda | `Numpad0` |
 | Selecionar área da legenda | `Numpad1` |
@@ -1281,8 +1298,8 @@ Qual serviço traduz e com quais credenciais.
   `sk-ant-…`, `AIza…`, ou a chave DeepL `:fx` do plano gratuito). Ele **abre sozinho** enquanto
   nenhuma chave estiver preenchida.
   - *+ Adicionar chave* / *✕* — dá para cadastrar **quantas chaves quiser** no mesmo motor.
-    Quando a chave em uso fica sem crédito ou bate no limite de requisições, a próxima da lista
-    assume automaticamente; esgotadas todas, cai no Google Translate.
+    Quando a chave em uso é inválida, fica sem crédito ou bate no limite de requisições, a
+    próxima da lista assume automaticamente; esgotadas todas, cai no Google Translate.
 - **Uso do DeepL** — só com o DeepL selecionado: chamadas e caracteres traduzidos na sessão, mais
   a **cota da conta** (botão *Atualizar*); *Zerar sessão* reinicia a contagem. É o único motor
   com esse acompanhamento — os de IA não expõem o gasto pela chave, e o Azure não tem um endpoint

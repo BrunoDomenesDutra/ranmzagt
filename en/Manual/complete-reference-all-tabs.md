@@ -67,7 +67,7 @@ Which engine recognizes the text, and how it groups lines.
 
 - **Floating toolbar → Show floating toolbar** — turns on the always-visible button window (see step 2.7). It also opens and closes with the `NumpadSubtract` hotkey, and it **remembers the last position** you left it in.
 
-Ten global shortcuts — they work with the game focused, and are disabled while the settings window is in the foreground. Each has the **Ctrl / Alt / Shift** modifiers plus a main key, picked from the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Numbers** and **Letters** groups.
+Eleven global shortcuts — they work with the game focused, and are disabled while the settings window is in the foreground. Each has the **Ctrl / Alt / Shift** modifiers plus a main key, picked from the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Numbers** and **Letters** groups.
 
 | Action | Default |
 |---|---|
@@ -76,6 +76,7 @@ Ten global shortcuts — they work with the game focused, and are disabled while
 | Translate (paragraph mode) | `Numpad8` |
 | Translate with AI Vision (paragraph mode) | `Numpad5` |
 | Translate with AI Vision (line mode) | `Numpad6` |
+| Retranslate the last translation, skipping the cache | `Numpad4` |
 | Clear overlay | `NumpadDecimal` |
 | Toggle subtitles | `Numpad0` |
 | Select subtitle area | `Numpad1` |
@@ -182,7 +183,7 @@ Which service translates, and with which credentials.
   - *Resource region* (Azure only) — **required**, and it sits where DeepL shows Formality. It accepts the portal spelling ("Brazil South"): capitals and spaces are normalized for you. The *See Azure's official region list* link opens Microsoft's table in your browser. Key and region come from the same page: <https://portal.azure.com> → your Translator resource → *Keys and Endpoint*.
   - *Test connection* — makes a test call with the current key and model and tells you right away whether everything is fine or which error came back, instead of you finding out mid-game. It also exists for Google, to check connectivity. On Azure it only unlocks once the region is filled in, because without it the error that comes back is indistinguishable from an invalid key.
 - **API Keys** — a collapsible card where the selected engine's credential goes (`sk-…`, `sk-ant-…`, `AIza…`, or the free-plan DeepL `:fx` key). It **opens by itself** while no key is filled in.
-  - *+ Add key* / *✕* — you can register **as many keys as you like** for the same engine. When the key in use runs out of credit or hits the request limit, the next one in the list takes over automatically; once all are exhausted, it falls back to Google Translate.
+  - *+ Add key* / *✕* — you can register **as many keys as you like** for the same engine. When the key in use is invalid, runs out of credit or hits the request limit, the next one in the list takes over automatically; once all are exhausted, it falls back to Google Translate.
 - **DeepL usage** — only with DeepL selected: calls and characters translated this session, plus the **account quota** (*Refresh* button); *Reset session* restarts the count. It's the only engine with this tracking — the AI ones don't expose spend through the key, and Azure has no equivalent quota endpoint.
 
 <p align="center"><img src="media/tradutores-openai.png" alt="Translators with OpenAI selected" width="820"></p>

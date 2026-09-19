@@ -118,9 +118,10 @@ apaga nada. Use o botão **Testar conexao** para confirmar que a chave está vá
 entrar no jogo.
 
 > **Várias chaves com rotação automática.** Todo motor com chave aceita **mais de uma**: clique
-> em *+ Adicionar chave*. Se a chave em uso ficar sem crédito ou bater no limite de requisições,
-> o programa passa sozinho para a próxima da lista; esgotadas todas, ele cai no Google
-> Translate. Ajuda bastante em sessões longas de Modo Legenda.
+> em *+ Adicionar chave*. Se a chave em uso for inválida, ficar sem crédito ou bater no limite de
+> requisições, o programa passa sozinho para a próxima da lista; esgotadas todas, ele cai no
+> Google Translate. Outros erros, como servidor fora do ar, vão direto para o Google Translate,
+> porque a próxima chave falharia igual. Ajuda bastante em sessões longas de Modo Legenda.
 
 > Só os motores de IA (OpenAI, Claude, Gemini) suportam o **Modo Vision** — o Google Translate, o
 > DeepL e o Azure Translator não. Veja a [seção 8](/Manual/modo-vision-quando-o-ocr-erra.md).

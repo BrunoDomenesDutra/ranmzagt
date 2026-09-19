@@ -117,7 +117,7 @@ Qual motor reconhece o texto na tela.
   (veja o passo 2.7). Também abre e fecha pelo atalho `NumpadSubtract`, e ela **lembra a última
   posição** em que você a deixou.
 
-Dez atalhos globais — funcionam com o jogo em foco e ficam desativados enquanto a janela de
+Onze atalhos globais — funcionam com o jogo em foco e ficam desativados enquanto a janela de
 configuração está em primeiro plano. Cada um tem os modificadores **Ctrl / Alt / Shift** e uma
 tecla principal, escolhida entre os grupos **Numpad**, **Função** (F1–F12), **Navegação**
 (setas, Insert, Delete, Home, End, PageUp, PageDown), **Números** e **Letras**.
@@ -129,6 +129,7 @@ tecla principal, escolhida entre os grupos **Numpad**, **Função** (F1–F12), 
 | Traduzir (modo parágrafo) | `Numpad8` |
 | Traduzir com I.A Vision (modo parágrafo) | `Numpad5` |
 | Traduzir com I.A Vision (modo linha) | `Numpad6` |
+| Retraduzir a última tradução, sem usar o cache | `Numpad4` |
 | Limpar overlay | `NumpadDecimal` |
 | Ligar/desligar legenda | `Numpad0` |
 | Selecionar área da legenda | `Numpad1` |
@@ -295,8 +296,8 @@ Qual serviço traduz e com quais credenciais.
   `sk-ant-…`, `AIza…`, ou a chave DeepL `:fx` do plano gratuito). Ele **abre sozinho** enquanto
   nenhuma chave estiver preenchida.
   - *+ Adicionar chave* / *✕* — dá para cadastrar **quantas chaves quiser** no mesmo motor.
-    Quando a chave em uso fica sem crédito ou bate no limite de requisições, a próxima da lista
-    assume automaticamente; esgotadas todas, cai no Google Translate.
+    Quando a chave em uso é inválida, fica sem crédito ou bate no limite de requisições, a
+    próxima da lista assume automaticamente; esgotadas todas, cai no Google Translate.
 - **Uso do DeepL** — só com o DeepL selecionado: chamadas e caracteres traduzidos na sessão, mais
   a **cota da conta** (botão *Atualizar*); *Zerar sessão* reinicia a contagem. É o único motor
   com esse acompanhamento — os de IA não expõem o gasto pela chave, e o Azure não tem um endpoint

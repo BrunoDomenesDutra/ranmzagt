@@ -28,7 +28,8 @@ flutuante**, que dispara as ações por clique do mouse e não depende dos atalh
 → Confira as abas **Historico** e **Debug › Monitor** para ver se a tradução está sendo feita. Falhas passageiras
 (limite de requisições, servidor fora do ar por um instante, queda de conexão) são **tentadas de
 novo automaticamente** uma vez antes de recorrer ao Google Translate. Se você tiver **mais de uma
-chave** cadastrada para o motor, ele ainda tenta as demais chaves da lista antes do fallback. Se
+chave** cadastrada para o motor e o problema for da chave (inválida, sem crédito ou no limite de
+requisições), ele tenta as demais chaves da lista antes do fallback. Se
 aparecer um aviso amarelo de "fallback para Google Translate" — e no Histórico a tradução vier
 marcada como "Google Translate (fallback)" —, quer dizer que o serviço configurado (DeepL, Azure ou
 um motor de IA) falhou em **todas** as chaves; confira suas chaves de API e créditos em
@@ -98,6 +99,12 @@ para chave inválida e para região errada ou ausente, então uma região trocad
 chave. Copie a região da página *Keys and Endpoint* do seu recurso, no portal do Azure — pode colar
 como aparece lá ("Brazil South"), que o programa ajusta o espaço e as maiúsculas sozinho. Enquanto o
 campo estiver vazio, o botão *Testar conexão* fica bloqueado.
+
+#### "A IA traduziu errado, e a mesma tradução errada volta sempre"
+→ O programa guarda cada tradução e reaproveita quando o mesmo texto aparece de novo. Com o texto
+na tela, aperte **`Numpad4` (Retraduzir)**: ele traduz de novo sem olhar o que está guardado e
+troca a tradução antiga pela nova. Se a tradução nova também sair ruim, tente o **Vision**
+(`Numpad5` ou `Numpad6`), que manda a imagem para a IA.
 
 #### "O texto reconhecido está errado/incompleto"
 → A solução que mais resolve é trocar o motor de OCR para o **OneOCR** em **Geral › OCR** — ele

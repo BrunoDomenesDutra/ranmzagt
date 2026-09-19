@@ -13,7 +13,7 @@
 → Some games run with elevated privileges (Administrator) and therefore **block Ranmza GT's global hotkey registration**. In that case, **run Ranmza GT as Administrator** (right-click the `.exe` → *Run as administrator*) — then it can activate hotkeys over the game. To avoid repeating every time, check *Run this program as an administrator* in **Properties → Compatibility** of the executable. (Alternative: use the **floating toolbar**, which fires actions by mouse click and doesn't depend on keyboard hotkeys.)
 
 #### "Translation doesn't appear, or it's slow"
-→ Check the **History** and **Debug › Monitor** tabs to see if translation is being done. Transient failures (rate limit, server briefly down, connection drop) are **automatically retried** once before falling back to Google Translate. If you have **more than one key** registered for the engine, it still tries the other keys in the list before the fallback. If a yellow "fallback to Google Translate" warning appears — and in History the translation is marked "Google Translate (fallback)" —, the configured service (DeepL, Azure or an AI engine) failed on **every** key; check your API keys and credits in Translation › Translators.
+→ Check the **History** and **Debug › Monitor** tabs to see if translation is being done. Transient failures (rate limit, server briefly down, connection drop) are **automatically retried** once before falling back to Google Translate. If you have **more than one key** registered for the engine and the problem is the key (invalid, out of credit or at the request limit), it tries the other keys in the list before the fallback. If a yellow "fallback to Google Translate" warning appears — and in History the translation is marked "Google Translate (fallback)" —, the configured service (DeepL, Azure or an AI engine) failed on **every** key; check your API keys and credits in Translation › Translators.
 
 #### "Rate limit reached" using Google Translate
 → Google Translate here is the **free service, with no API key** — and a free service limits how many translations it accepts in a short window. When you hit that limit, the yellow warning appears and that capture isn't translated.
@@ -44,6 +44,9 @@ What fixes it, from simplest to most permanent:
 
 #### "On Azure the test says the key is invalid — but the key is right"
 → Check the **Resource region** in **Translation › Translators**. Azure returns the **same error** for an invalid key and for a wrong or missing region, so a mistyped region looks like a key problem. Copy the region from your resource's *Keys and Endpoint* page in the Azure portal — you can paste it exactly as shown there ("Brazil South"), the program strips the space and the capitals by itself. While the field is empty, the *Test connection* button stays disabled.
+
+#### "The AI translated it wrong, and the same wrong translation keeps coming back"
+→ The program stores each translation and reuses it when the same text shows up again. With the text on screen, press **`Numpad4` (Retranslate)**: it translates again without looking at what's stored and replaces the old translation with the new one. If the new one is also bad, try **Vision** (`Numpad5` or `Numpad6`), which sends the image to the AI.
 
 #### "Recognized text is wrong/incomplete"
 → Try enabling preprocessing (**Overlay › Capture**) with upscale and contrast adjustments, or use **Translate with AI Vision** (`Numpad5` paragraph, `Numpad6` line) to let the AI "see" the image and correct it.

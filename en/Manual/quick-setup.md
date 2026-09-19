@@ -74,7 +74,7 @@ When you want better quality, switch in **Active provider**:
 
 Each engine stores its own credentials, so switching away and back doesn't erase anything. Use the **Test connection** button to confirm the key is valid before jumping into the game.
 
-> **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Very handy in long Subtitle Mode sessions.
+> **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use is invalid, runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Other errors, such as a server being down, go straight to Google Translate, because the next key would fail the same way. Very handy in long Subtitle Mode sessions.
 
 > Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate, DeepL and Azure Translator don't. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
 

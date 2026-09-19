@@ -7,11 +7,19 @@
 | Traduzir (modo linha) | `Numpad9` | Captura e traduz cada linha por conta própria — menus e listas |
 | Traduzir com I.A Vision (modo parágrafo) | `Numpad5` | Igual ao `Numpad8`, mas mandando a imagem para a IA (veja seção 8) |
 | Traduzir com I.A Vision (modo linha) | `Numpad6` | Igual ao `Numpad9`, mas mandando a imagem para a IA (veja seção 8) |
+| Retraduzir | `Numpad4` | Repete a última tradução sem usar as traduções guardadas (veja abaixo) |
 | Limpar overlay | `NumpadDecimal` (vírgula do Numpad) | Esconde a tradução exibida |
 | Ligar/desligar legenda | `Numpad0` | Ativa a tradução automática contínua (veja seção 9) |
 | Selecionar área da legenda | `Numpad1` | Escolhe onde está a legenda do jogo |
 | Mostrar/ocultar áreas (preview) | `Numpad2` | Mostra os retângulos das áreas configuradas |
 | Mostrar/esconder barra flutuante | `NumpadSubtract` (menos do Numpad) | Abre ou fecha a barra flutuante de botões (veja seção 3) |
+
+> **Retraduzir (`Numpad4`).** Toda tradução fica guardada no perfil, e o mesmo texto não vai de
+> novo para a API: sai na hora e sem custo. O lado ruim é que, se a IA traduziu errado, o erro
+> volta toda vez que o texto aparece. O `Numpad4` repete a última tradução, no mesmo modo
+> (parágrafo, linha ou Vision), sem olhar o que está guardado, e a tradução nova substitui a
+> antiga. Funciona nas traduções feitas por atalho ou pela barra flutuante; o Modo Legenda e o
+> Modo Tempo Real não entram.
 
 > **E o Modo Tempo Real?** Os atalhos dele — ligar/desligar e selecionar área — não estão nesta
 > lista nem em Geral › Atalhos: por ser experimental, ficam na aba **Experimental**, e vêm **sem

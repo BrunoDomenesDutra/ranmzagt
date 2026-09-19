@@ -117,7 +117,7 @@ When you want better quality, switch in **Active provider**:
 
 Each engine stores its own credentials, so switching away and back doesn't erase anything. Use the **Test connection** button to confirm the key is valid before jumping into the game.
 
-> **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Very handy in long Subtitle Mode sessions.
+> **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use is invalid, runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Other errors, such as a server being down, go straight to Google Translate, because the next key would fail the same way. Very handy in long Subtitle Mode sessions.
 
 > Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate, DeepL and Azure Translator don't. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
 
@@ -307,11 +307,14 @@ The API key is the one that matters most: you type it **once** and it applies to
 | Translate (line mode) | `Numpad9` | Captures and translates each line on its own — menus and lists |
 | Translate with AI Vision (paragraph mode) | `Numpad5` | Same as `Numpad8`, but sending the image to the AI (see section 8) |
 | Translate with AI Vision (line mode) | `Numpad6` | Same as `Numpad9`, but sending the image to the AI (see section 8) |
+| Retranslate | `Numpad4` | Repeats the last translation without using the stored translations (see below) |
 | Clear overlay | `NumpadDecimal` (Numpad period) | Hides the displayed translation |
 | Toggle subtitles | `Numpad0` | Activates continuous automatic translation (see section 9) |
 | Select subtitle area | `Numpad1` | Choose where the game's subtitle appears |
 | Show/hide areas (preview) | `Numpad2` | Shows rectangles of configured areas |
 | Show/hide floating toolbar | `NumpadSubtract` (Numpad minus) | Opens or closes the floating toolbar of buttons (see section 3) |
+
+> **Retranslate (`Numpad4`).** Every translation is stored in the profile, and the same text isn't sent to the API again: it comes back instantly and at no cost. The downside is that, if the AI got it wrong, the mistake comes back every time the text shows up. `Numpad4` repeats the last translation, in the same mode (paragraph, line or Vision), without looking at what's stored, and the new translation replaces the old one. It works for translations made by shortcut or by the floating toolbar; Subtitle Mode and Real-time Mode aren't covered.
 
 > **What about Real-time Mode?** Its shortcuts — toggle and select area — aren't in this list nor in General › Shortcuts: being experimental, they live in the **Experimental** tab and come with **no key assigned**. You pick your own there. See [section 10](/en/Manual/real-time-mode-continuous-translation-in-place-experimental.md).
 
@@ -576,7 +579,7 @@ The page can also be opened in any browser on the local network (phone, second m
 → Some games run with elevated privileges (Administrator) and therefore **block Ranmza GT's global hotkey registration**. In that case, **run Ranmza GT as Administrator** (right-click the `.exe` → *Run as administrator*) — then it can activate hotkeys over the game. To avoid repeating every time, check *Run this program as an administrator* in **Properties → Compatibility** of the executable. (Alternative: use the **floating toolbar**, which fires actions by mouse click and doesn't depend on keyboard hotkeys.)
 
 ##### "Translation doesn't appear, or it's slow"
-→ Check the **History** and **Debug › Monitor** tabs to see if translation is being done. Transient failures (rate limit, server briefly down, connection drop) are **automatically retried** once before falling back to Google Translate. If you have **more than one key** registered for the engine, it still tries the other keys in the list before the fallback. If a yellow "fallback to Google Translate" warning appears — and in History the translation is marked "Google Translate (fallback)" —, the configured service (DeepL, Azure or an AI engine) failed on **every** key; check your API keys and credits in Translation › Translators.
+→ Check the **History** and **Debug › Monitor** tabs to see if translation is being done. Transient failures (rate limit, server briefly down, connection drop) are **automatically retried** once before falling back to Google Translate. If you have **more than one key** registered for the engine and the problem is the key (invalid, out of credit or at the request limit), it tries the other keys in the list before the fallback. If a yellow "fallback to Google Translate" warning appears — and in History the translation is marked "Google Translate (fallback)" —, the configured service (DeepL, Azure or an AI engine) failed on **every** key; check your API keys and credits in Translation › Translators.
 
 ##### "Rate limit reached" using Google Translate
 → Google Translate here is the **free service, with no API key** — and a free service limits how many translations it accepts in a short window. When you hit that limit, the yellow warning appears and that capture isn't translated.
@@ -607,6 +610,9 @@ What fixes it, from simplest to most permanent:
 
 ##### "On Azure the test says the key is invalid — but the key is right"
 → Check the **Resource region** in **Translation › Translators**. Azure returns the **same error** for an invalid key and for a wrong or missing region, so a mistyped region looks like a key problem. Copy the region from your resource's *Keys and Endpoint* page in the Azure portal — you can paste it exactly as shown there ("Brazil South"), the program strips the space and the capitals by itself. While the field is empty, the *Test connection* button stays disabled.
+
+##### "The AI translated it wrong, and the same wrong translation keeps coming back"
+→ The program stores each translation and reuses it when the same text shows up again. With the text on screen, press **`Numpad4` (Retranslate)**: it translates again without looking at what's stored and replaces the old translation with the new one. If the new one is also bad, try **Vision** (`Numpad5` or `Numpad6`), which sends the image to the AI.
 
 ##### "Recognized text is wrong/incomplete"
 → Try enabling preprocessing (**Overlay › Capture**) with upscale and contrast adjustments, or use **Translate with AI Vision** (`Numpad5` paragraph, `Numpad6` line) to let the AI "see" the image and correct it.
@@ -695,7 +701,7 @@ Which engine recognizes the text, and how it groups lines.
 
 - **Floating toolbar → Show floating toolbar** — turns on the always-visible button window (see step 2.7). It also opens and closes with the `NumpadSubtract` hotkey, and it **remembers the last position** you left it in.
 
-Ten global shortcuts — they work with the game focused, and are disabled while the settings window is in the foreground. Each has the **Ctrl / Alt / Shift** modifiers plus a main key, picked from the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Numbers** and **Letters** groups.
+Eleven global shortcuts — they work with the game focused, and are disabled while the settings window is in the foreground. Each has the **Ctrl / Alt / Shift** modifiers plus a main key, picked from the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Numbers** and **Letters** groups.
 
 | Action | Default |
 |---|---|
@@ -704,6 +710,7 @@ Ten global shortcuts — they work with the game focused, and are disabled while
 | Translate (paragraph mode) | `Numpad8` |
 | Translate with AI Vision (paragraph mode) | `Numpad5` |
 | Translate with AI Vision (line mode) | `Numpad6` |
+| Retranslate the last translation, skipping the cache | `Numpad4` |
 | Clear overlay | `NumpadDecimal` |
 | Toggle subtitles | `Numpad0` |
 | Select subtitle area | `Numpad1` |
@@ -810,7 +817,7 @@ Which service translates, and with which credentials.
   - *Resource region* (Azure only) — **required**, and it sits where DeepL shows Formality. It accepts the portal spelling ("Brazil South"): capitals and spaces are normalized for you. The *See Azure's official region list* link opens Microsoft's table in your browser. Key and region come from the same page: <https://portal.azure.com> → your Translator resource → *Keys and Endpoint*.
   - *Test connection* — makes a test call with the current key and model and tells you right away whether everything is fine or which error came back, instead of you finding out mid-game. It also exists for Google, to check connectivity. On Azure it only unlocks once the region is filled in, because without it the error that comes back is indistinguishable from an invalid key.
 - **API Keys** — a collapsible card where the selected engine's credential goes (`sk-…`, `sk-ant-…`, `AIza…`, or the free-plan DeepL `:fx` key). It **opens by itself** while no key is filled in.
-  - *+ Add key* / *✕* — you can register **as many keys as you like** for the same engine. When the key in use runs out of credit or hits the request limit, the next one in the list takes over automatically; once all are exhausted, it falls back to Google Translate.
+  - *+ Add key* / *✕* — you can register **as many keys as you like** for the same engine. When the key in use is invalid, runs out of credit or hits the request limit, the next one in the list takes over automatically; once all are exhausted, it falls back to Google Translate.
 - **DeepL usage** — only with DeepL selected: calls and characters translated this session, plus the **account quota** (*Refresh* button); *Reset session* restarts the count. It's the only engine with this tracking — the AI ones don't expose spend through the key, and Azure has no equivalent quota endpoint.
 
 <p align="center"><img src="media/tradutores-openai.png" alt="Translators with OpenAI selected" width="820"></p>
