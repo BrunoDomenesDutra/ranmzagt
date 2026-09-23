@@ -315,6 +315,8 @@ Qual serviço traduz e com quais credenciais.
 
 <p align="center"><img src="media/tradutores-gemini.png" alt="Tradutores com Gemini selecionado" width="820"></p>
 
+<p align="center"><img src="media/tradutores-openai-compat.png" alt="Tradutores com Compatível com OpenAI selecionado" width="820"></p>
+
 <p align="center"><img src="media/tradutores-azure.png" alt="Tradutores com Azure Translator selecionado, mostrando o campo Regiao do recurso" width="820"></p>
 
 ## Traducao › I.A

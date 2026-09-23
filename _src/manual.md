@@ -563,6 +563,8 @@ modelo, e o programa manda os textos da tela para lá.
   [Modo Vision](/Manual/modo-vision-quando-o-ocr-erra.md) nesse motor. Desligado, o Modo Vision
   avisa que o motor não suporta.
 
+<p align="center"><img src="media/tradutores-openai-compat.png" alt="Tradutores com Compatível com OpenAI selecionado, mostrando URL base, Modelo e a opção de imagem" width="820"></p>
+
 Depois use **Testar conexão**. Ele traduz uma palavra pelo caminho real e mostra quanto tempo a
 resposta levou.
 
@@ -1297,6 +1299,8 @@ Qual serviço traduz e com quais credenciais.
 <p align="center"><img src="media/tradutores-claude.png" alt="Tradutores com Anthropic (Claude) selecionado" width="820"></p>
 
 <p align="center"><img src="media/tradutores-gemini.png" alt="Tradutores com Gemini selecionado" width="820"></p>
+
+<p align="center"><img src="media/tradutores-openai-compat.png" alt="Tradutores com Compatível com OpenAI selecionado" width="820"></p>
 
 <p align="center"><img src="media/tradutores-azure.png" alt="Tradutores com Azure Translator selecionado, mostrando o campo Regiao do recurso" width="820"></p>
 

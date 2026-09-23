@@ -52,6 +52,8 @@ Many AI services and programs accept the same request format as the OpenAI API. 
 - **API key** — only if the service asks for one. A local server usually doesn't, and then the field stays empty.
 - **The model accepts images** — turn it on only if the model reads images. It enables [Vision Mode](/en/Manual/vision-mode-when-ocr-fails.md) on this engine. With it off, Vision Mode warns that the engine doesn't support it.
 
+<p align="center"><img src="media/tradutores-openai-compat.png" alt="Translators with OpenAI-compatible selected, showing Base URL, Model and the image option" width="820"></p>
+
 Then use **Test connection**. It translates one word through the real path and shows how long the response took.
 
 **What the service must accept.** The program sends `POST <Base URL>/chat/completions` with `model`, `messages`, `temperature` and `max_tokens`, plus the key (when there is one) in the `Authorization: Bearer` header. The translation is read from `choices[0].message.content`. The prompt, Game Info and Subtitle Mode's Conversation Context are sent the same way as with OpenAI.

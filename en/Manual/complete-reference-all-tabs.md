@@ -192,6 +192,8 @@ Which service translates, and with which credentials.
 
 <p align="center"><img src="media/tradutores-gemini.png" alt="Translators with Gemini selected" width="820"></p>
 
+<p align="center"><img src="media/tradutores-openai-compat.png" alt="Translators with OpenAI-compatible selected" width="820"></p>
+
 <p align="center"><img src="media/tradutores-azure.png" alt="Translators with Azure Translator selected, showing the Resource region field" width="820"></p>
 
 ## Translation › AI
