@@ -119,6 +119,8 @@ vai diminuir a fonte automaticamente até caber.
 → No **Modo Legenda** com *Substituir a legenda original no lugar* ligado não há auto-fit: a
 tradução tem que caber na área que você marcou. Diminua o *Tamanho da fonte* em **Overlay ›
 Legenda**, ou refaça a seleção da área um pouco mais alta que a legenda do jogo.
+→ Ou ligue *Colar no texto detectado*, no mesmo card: aí a tradução é desenhada em cima da fala e
+transborda a área em vez de ser cortada.
 
 #### "As traduções de falas diferentes estão se misturando num bloco só" (ou o contrário)
 → Primeiro confira se você apertou o atalho certo: `Numpad8` junta as linhas (parágrafo) e

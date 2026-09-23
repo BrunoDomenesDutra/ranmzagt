@@ -99,4 +99,47 @@ pasta — o passo a passo dentro do card traz o comando do PowerShell que mostra
 Por usar uma API não oficial da Microsoft, uma atualização do Snipping Tool pode quebrar a
 integração; nesse caso, rode a detecção de novo (ou reextraia os arquivos).
 
+## Serviço compatível com OpenAI
+
+Muitos serviços e programas de IA aceitam o mesmo formato de pedido da API da OpenAI. O motor
+**Compatível com OpenAI** conversa com qualquer um deles: você informa o endereço e o nome do
+modelo, e o programa manda os textos da tela para lá.
+
+**Configurando.** Em **Traducao › Tradutores**, escolha *Compatível com OpenAI* e preencha:
+
+- **URL base** — o endereço do serviço, do jeito que a documentação dele mostra. Pode ser com
+  ou sem `/chat/completions` no fim. Servidor rodando no seu próprio PC costuma ser algo como
+  `http://localhost:1234/v1`.
+- **Modelo** — o nome exato do modelo, como o serviço mostra. Não existe lista para escolher:
+  cada serviço tem os seus.
+- **Chave de API** — só se o serviço pedir. Servidor local geralmente não pede, e aí o campo
+  fica vazio.
+- **O modelo aceita imagem** — ligue só se o modelo lê imagens. É o que libera o
+  [Modo Vision](/Manual/modo-vision-quando-o-ocr-erra.md) nesse motor. Desligado, o Modo Vision
+  avisa que o motor não suporta.
+
+Depois use **Testar conexão**. Ele traduz uma palavra pelo caminho real e mostra quanto tempo a
+resposta levou.
+
+**O que o serviço precisa aceitar.** O programa manda `POST <URL base>/chat/completions` com
+`model`, `messages`, `temperature` e `max_tokens`, e a chave (quando existe) no cabeçalho
+`Authorization: Bearer`. A tradução é lida de `choices[0].message.content`. O prompt, as
+Informações do Jogo e o Contexto de Conversa do Modo Legenda vão do mesmo jeito que na OpenAI.
+
+**Boas práticas**
+
+- **Use um modelo que siga instruções.** A resposta precisa vir num formato fixo, com um número
+  para cada bloco. Modelos pequenos erram esse formato com mais frequência, e quando isso acontece
+  a tela é traduzida pelo Google Translate.
+- **Servidor no mesmo PC divide a placa de vídeo com o jogo.** O jogo e a tradução podem ficar
+  mais lentos.
+- **A primeira tradução pode demorar.** Muitos servidores locais só carregam o modelo na primeira
+  chamada. O programa espera até 90 segundos por resposta neste motor.
+- **Modelo de raciocínio gasta tokens pensando.** Se aparecer o aviso de resposta cortada no
+  limite de tokens, aumente o *Max Tokens* em **Traducao › I.A** ou troque de modelo. O bloco
+  `<think>` que alguns modelos escrevem antes da resposta é descartado.
+- **A tela vai inteira num pedido só.** Nos motores OpenAI, Claude e Gemini, telas com muitos
+  blocos são divididas em pedidos paralelos. Aqui não, porque servidor local costuma atender um
+  pedido por vez.
+
 ---

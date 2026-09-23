@@ -112,6 +112,9 @@ Quando quiser mais qualidade, troque em **Provedor ativo**:
 - **OpenAI**, **Anthropic (Claude)** ou **Gemini** — motores de IA. Precisam de chave de API
   com créditos, e em troca entregam traduções bem mais naturais e consistentes, principalmente
   em diálogos longos. Escolha o modelo em *Autenticação* e cole a chave em *Chaves de API*.
+- **Compatível com OpenAI** — para usar um serviço ou servidor de IA que não está na lista,
+  desde que ele aceite o formato de chat da OpenAI. Você informa o endereço e o modelo. Veja
+  [Serviço compatível com OpenAI](/Manual/configurando-a-traducao.md) na seção 6.
 
 Cada motor guarda as suas próprias credenciais, então trocar de um para outro e voltar não
 apaga nada. Use o botão **Testar conexao** para confirmar que a chave está válida antes de
@@ -123,7 +126,8 @@ entrar no jogo.
 > Google Translate. Outros erros, como servidor fora do ar, vão direto para o Google Translate,
 > porque a próxima chave falharia igual. Ajuda bastante em sessões longas de Modo Legenda.
 
-> Só os motores de IA (OpenAI, Claude, Gemini) suportam o **Modo Vision** — o Google Translate, o
+> Só os motores de IA (OpenAI, Claude, Gemini e o Compatível com OpenAI, quando o modelo aceita
+> imagem) suportam o **Modo Vision** — o Google Translate, o
 > DeepL e o Azure Translator não. Veja a [seção 8](/Manual/modo-vision-quando-o-ocr-erra.md).
 
 ## 2.5 Marque a área do texto

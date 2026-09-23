@@ -41,4 +41,27 @@ If preprocessing still doesn't fix recognition, **General › OCR** lets you swi
 - **WinOCR** (default) — fast (~30 ms), comes ready, but can fail on very stylized fonts.
 - **OneOCR** (experimental) — the OCR engine from the Snipping Tool, much better than WinOCR on stylized fonts and auto-detects language (no need to configure source language). You copy 3 files from Windows itself to a folder of yours — the OCR tab shows step-by-step. Because it uses an unofficial Microsoft API, a Snipping Tool update might break it; if so, just re-extract the files.
 
+## OpenAI-compatible service
+
+Many AI services and programs accept the same request format as the OpenAI API. The **OpenAI-compatible** engine talks to any of them: you enter the address and the model name, and the program sends the text on screen there.
+
+**Setting it up.** In **Translation › Translators**, pick *OpenAI-compatible* and fill in:
+
+- **Base URL** — the service address, as its documentation shows it. With or without `/chat/completions` at the end. A server running on your own PC is usually something like `http://localhost:1234/v1`.
+- **Model** — the exact model name, as the service shows it. There's no list to pick from: each service has its own.
+- **API key** — only if the service asks for one. A local server usually doesn't, and then the field stays empty.
+- **The model accepts images** — turn it on only if the model reads images. It enables [Vision Mode](/en/Manual/vision-mode-when-ocr-fails.md) on this engine. With it off, Vision Mode warns that the engine doesn't support it.
+
+Then use **Test connection**. It translates one word through the real path and shows how long the response took.
+
+**What the service must accept.** The program sends `POST <Base URL>/chat/completions` with `model`, `messages`, `temperature` and `max_tokens`, plus the key (when there is one) in the `Authorization: Bearer` header. The translation is read from `choices[0].message.content`. The prompt, Game Info and Subtitle Mode's Conversation Context are sent the same way as with OpenAI.
+
+**Good practices**
+
+- **Use a model that follows instructions.** The response has to come in a fixed format, with a number for each block. Small models get that format wrong more often, and when that happens the screen is translated by Google Translate.
+- **A server on the same PC shares the graphics card with the game.** Both the game and the translation can get slower.
+- **The first translation can take a while.** Many local servers only load the model on the first call. The program waits up to 90 seconds for a response on this engine.
+- **Reasoning models spend tokens thinking.** If you get the warning about a response cut off at the token limit, raise *Max Tokens* in **Translation › AI** or switch models. The `<think>` block some models write before the answer is discarded.
+- **The whole screen goes in a single request.** With the OpenAI, Claude and Gemini engines, screens with many blocks are split into parallel requests. Not here, because a local server usually handles one request at a time.
+
 ---

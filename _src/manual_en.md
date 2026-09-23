@@ -113,12 +113,13 @@ When you want better quality, switch in **Active provider**:
 - **DeepL** — a dedicated translator, very natural, with a formality option. Requires an API key, but has a **free plan** (those keys end in `:fx`, and the program figures out which server to use by itself).
 - **Azure Translator** — Microsoft's translator, dedicated as well. On top of the API key it requires the resource **region** (both live on the same page of the Azure portal). It detects the source language **block by block**, which helps when a capture mixes languages.
 - **OpenAI**, **Anthropic (Claude)** or **Gemini** — AI engines. They need an API key with credits, and in return deliver far more natural and consistent translations, especially in long dialogue. Pick the model under *Authentication* and paste the key under *API Keys*.
+- **OpenAI-compatible** — for an AI service or server that isn't on the list, as long as it accepts the OpenAI chat format. You enter the address and the model. See [OpenAI-compatible service](/en/Manual/configuring-translation.md) in section 6.
 
 Each engine stores its own credentials, so switching away and back doesn't erase anything. Use the **Test connection** button to confirm the key is valid before jumping into the game.
 
 > **Multiple keys with automatic rotation.** Every engine with a key accepts **more than one**: click *+ Add key*. If the key in use is invalid, runs out of credit or hits the request limit, the program moves to the next one in the list by itself; once all are exhausted, it falls back to Google Translate. Other errors, such as a server being down, go straight to Google Translate, because the next key would fail the same way. Very handy in long Subtitle Mode sessions.
 
-> Only the AI engines (OpenAI, Claude, Gemini) support **Vision Mode** — Google Translate, DeepL and Azure Translator don't. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
+> Only the AI engines (OpenAI, Claude, Gemini, and OpenAI-compatible when the model accepts images) support **Vision Mode** — Google Translate, DeepL and Azure Translator don't. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
 
 ### 2.5 Mark the text area
 
@@ -363,6 +364,29 @@ If preprocessing still doesn't fix recognition, **General › OCR** lets you swi
 
 - **WinOCR** (default) — fast (~30 ms), comes ready, but can fail on very stylized fonts.
 - **OneOCR** (experimental) — the OCR engine from the Snipping Tool, much better than WinOCR on stylized fonts and auto-detects language (no need to configure source language). You copy 3 files from Windows itself to a folder of yours — the OCR tab shows step-by-step. Because it uses an unofficial Microsoft API, a Snipping Tool update might break it; if so, just re-extract the files.
+
+### OpenAI-compatible service
+
+Many AI services and programs accept the same request format as the OpenAI API. The **OpenAI-compatible** engine talks to any of them: you enter the address and the model name, and the program sends the text on screen there.
+
+**Setting it up.** In **Translation › Translators**, pick *OpenAI-compatible* and fill in:
+
+- **Base URL** — the service address, as its documentation shows it. With or without `/chat/completions` at the end. A server running on your own PC is usually something like `http://localhost:1234/v1`.
+- **Model** — the exact model name, as the service shows it. There's no list to pick from: each service has its own.
+- **API key** — only if the service asks for one. A local server usually doesn't, and then the field stays empty.
+- **The model accepts images** — turn it on only if the model reads images. It enables [Vision Mode](/en/Manual/vision-mode-when-ocr-fails.md) on this engine. With it off, Vision Mode warns that the engine doesn't support it.
+
+Then use **Test connection**. It translates one word through the real path and shows how long the response took.
+
+**What the service must accept.** The program sends `POST <Base URL>/chat/completions` with `model`, `messages`, `temperature` and `max_tokens`, plus the key (when there is one) in the `Authorization: Bearer` header. The translation is read from `choices[0].message.content`. The prompt, Game Info and Subtitle Mode's Conversation Context are sent the same way as with OpenAI.
+
+**Good practices**
+
+- **Use a model that follows instructions.** The response has to come in a fixed format, with a number for each block. Small models get that format wrong more often, and when that happens the screen is translated by Google Translate.
+- **A server on the same PC shares the graphics card with the game.** Both the game and the translation can get slower.
+- **The first translation can take a while.** Many local servers only load the model on the first call. The program waits up to 90 seconds for a response on this engine.
+- **Reasoning models spend tokens thinking.** If you get the warning about a response cut off at the token limit, raise *Max Tokens* in **Translation › AI** or switch models. The `<think>` block some models write before the answer is discarded.
+- **The whole screen goes in a single request.** With the OpenAI, Claude and Gemini engines, screens with many blocks are split into parallel requests. Not here, because a local server usually handles one request at a time.
 
 ---
 
@@ -756,6 +780,7 @@ Which service translates, and with which credentials.
   - *DeepL (requires API key)* — a high-quality dedicated translator; **doesn't support Vision Mode**. It has no model selection, but it does have **Formality** (Default / More formal / More informal), which only affects target languages that support it — PT-BR included — and is ignored on the rest. It makes use of the **Game Info** field (Translation › AI) and, in Subtitle Mode, the previous lines as context, at no extra cost.
   - *Azure Translator (requires API key and region)* — Microsoft's translator; **doesn't support Vision Mode**. It has no model selection and no formality, and it **doesn't use** Conversation Context or Game Info — its translation API takes no context. In exchange, it detects the source language **block by block**: in a capture where part of the text is in another language, each block is translated from the right one.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AI engines, requiring an API key.
+  - *OpenAI-compatible* — any service or server that accepts the OpenAI chat format. Details in [OpenAI-compatible service](/en/Manual/configuring-translation.md).
 - **Authentication** — shown for providers with a key. Credentials are **saved per engine**, so switching services and back erases nothing.
   - *Model* (AI engines) — each engine offers three options. The first one is the default.
     - OpenAI: GPT-5.4 mini (fastest) · GPT-4.1 mini (most economical) · GPT-4.1
@@ -763,10 +788,11 @@ Which service translates, and with which credentials.
     - Gemini: 3.5 Flash-Lite · 3.6 Flash · 3.7 Flash
     - *Custom…* — the last option in the list: opens a free-text field where you type **any model ID** the provider accepts, so you can use a newer model without waiting for a program update.
     - *See the provider's full model list* — opens the selected engine's official page in your browser, with every model and its exact ID. Useful in two situations: when a model newer than the built-in list comes out, and when you have an older key that still reaches models the provider has closed off to new accounts — that's the case with the Gemini 2.0 and 2.5 families, which answer for older keys but return an error on freshly created ones. Either way, copy the ID from there into the *Custom…* field.
-  - *OpenAI fast queue* — shown below the model, OpenAI only. On by default: responses arrive about 20% faster, and OpenAI charges twice the price per token.
+  - *Base URL*, *Model* and *The model accepts images* (OpenAI-compatible only) — they take the place of the model list. Test connection only unlocks with the URL and model filled in.
+  - *OpenAI fast queue* — shown below the model, OpenAI only. **Off by default**: responses arrive about 20% faster, and OpenAI charges twice the price per token. The key is yours, so the doubled bill only happens if you turn it on.
   - *Resource region* (Azure only) — **required**, and it sits where DeepL shows Formality. It accepts the portal spelling ("Brazil South"): capitals and spaces are normalized for you. The *See Azure's official region list* link opens Microsoft's table in your browser. Key and region come from the same page: <https://portal.azure.com> → your Translator resource → *Keys and Endpoint*.
   - *Test connection* — makes a test call with the current key and model and tells you right away whether everything is fine or which error came back, instead of you finding out mid-game. It also exists for Google, to check connectivity. On Azure it only unlocks once the region is filled in, because without it the error that comes back is indistinguishable from an invalid key.
-- **API Keys** — a collapsible card where the selected engine's credential goes (`sk-…`, `sk-ant-…`, `AIza…`, or the free-plan DeepL `:fx` key). It **opens by itself** while no key is filled in.
+- **API Keys** — a collapsible card where the selected engine's credential goes (`sk-…`, `sk-ant-…`, `AIza…`, or the free-plan DeepL `:fx` key). It **opens by itself** while no key is filled in. With OpenAI-compatible the key is optional and the card stays closed.
   - *+ Add key* / *✕* — you can register **as many keys as you like** for the same engine. When the key in use is invalid, runs out of credit or hits the request limit, the next one in the list takes over automatically; once all are exhausted, it falls back to Google Translate.
 - **DeepL usage** — only with DeepL selected: calls and characters translated this session, plus the **account quota** (*Refresh* button); *Reset session* restarts the count. It's the only engine with this tracking — the AI ones don't expose spend through the key, and Azure has no equivalent quota endpoint.
 

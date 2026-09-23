@@ -65,6 +65,26 @@ Real não são afetados.
 celular porque, nesse modo, a legenda fica escondida das capturas de tela — uma gravação normal
 não mostraria a função funcionando.</i></p>
 
+### Colar no texto detectado
+
+Com a substituição ligada, aparece uma segunda opção: **"Colar no texto detectado"**. Ela muda
+onde a tradução é desenhada dentro da área.
+
+- **Desligada** (padrão): a tradução fica centralizada na **área que você selecionou**. Se a área
+  é bem maior que a fala, a tradução aparece longe do texto original, e o fundo escuro cobre a
+  área inteira.
+- **Ligada**: a tradução é desenhada **em cima da fala**, no mesmo centro e na mesma altura dela,
+  com a **mesma quantidade de linhas** que o jogo mostrou. O fundo escuro acompanha o texto em vez
+  de cobrir a área toda.
+
+Ligada, a tradução **não é encolhida para caber** na área: fonte maior transborda para os lados e
+para cima/baixo, de propósito. É assim que dá para deixar a legenda maior que a do jogo sem
+refazer a seleção. Se você prefere que a tradução respeite os limites da área, deixe a opção
+desligada.
+
+> A área selecionada continua sendo o que o programa lê. Ela precisa caber a legenda inteira do
+> jogo — o que muda é só onde a tradução é desenhada dentro dela.
+
 ## Deixando a IA "lembrar" das falas anteriores
 
 Se você está usando OpenAI, Claude ou Gemini, **Traducao › I.A** tem um controle **"Falas

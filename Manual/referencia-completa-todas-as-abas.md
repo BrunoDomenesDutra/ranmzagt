@@ -193,6 +193,9 @@ O Modo Legenda tem aparência e pré-processamento **próprios**, independentes 
   da área capturada, cobrindo a legenda original, em vez de mostrá-la acima da área. Mostra uma
   fala por vez (ver *Linhas visíveis* abaixo). Nesse modo a legenda some das capturas feitas
   neste PC — é o que impede o OCR de reler a própria tradução. Ver a seção 9.
+  - *Colar no texto detectado* (só com a opção acima ligada): a tradução é desenhada em cima da
+    fala, com as mesmas quebras de linha, em vez de centralizada na área. Fonte maior transborda
+    a área em vez de ser encolhida.
 - **Texto** — *Fonte*, *Cor do texto* e *Tamanho da fonte* (10–48 pt). Não tem altura de linha
   nem auto-fit.
 - **Fundo e Contorno** — *Mostrar fundo* + *Opacidade* (10–100%) ou *Mostrar contorno* +
@@ -263,6 +266,8 @@ Qual serviço traduz e com quais credenciais.
     o idioma de origem **bloco a bloco**: numa captura em que parte do texto está em outro idioma,
     cada bloco é traduzido a partir do idioma certo.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — motores de IA, exigem chave de API.
+  - *Compatível com OpenAI* — qualquer serviço ou servidor que aceite o formato de chat da
+    OpenAI. Detalhes em [Serviço compatível com OpenAI](/Manual/configurando-a-traducao.md).
 - **Autenticação** — aparece nos provedores com chave. As credenciais são **salvas por motor**,
   então trocar de serviço e voltar não apaga nada.
   - *Modelo* (motores de IA) — cada motor traz três opções. A primeira é o padrão.
@@ -278,8 +283,11 @@ Qual serviço traduz e com quais credenciais.
       alcança modelos que o provedor já fechou para contas novas — é o caso das famílias
       Gemini 2.0 e 2.5, que respondem para chaves antigas mas devolvem erro em chaves
       recém-criadas. Nos dois casos, copie o ID de lá para o campo *Personalizado…*.
-  - *Fila rápida da OpenAI* — aparece abaixo do modelo, só com a OpenAI. Vem ligada: a resposta
-    chega cerca de 20% mais rápido, e a OpenAI cobra o dobro por token.
+  - *URL base*, *Modelo* e *O modelo aceita imagem* (só no Compatível com OpenAI) — ficam no
+    lugar da lista de modelos. O teste de conexão só libera com URL e modelo preenchidos.
+  - *Fila rápida da OpenAI* — aparece abaixo do modelo, só com a OpenAI. **Vem desligada**: a
+    resposta chega cerca de 20% mais rápido, e a OpenAI cobra o dobro por token. A chave é sua,
+    então a conta dobrada só acontece se você ligar.
   - *Região do recurso* (só no Azure) — **obrigatória**, e fica no lugar onde o DeepL mostra a
     Formalidade. Aceita a grafia do portal ("Brazil South"): maiúsculas e espaços são ajustados
     sozinhos. O link *Ver a lista oficial de regiões do Azure* abre a tabela da Microsoft no
@@ -291,7 +299,8 @@ Qual serviço traduz e com quais credenciais.
     região estiver preenchida, porque sem ela o erro que volta é indistinguível de chave inválida.
 - **Chaves de API** — card recolhível onde entra a credencial do motor selecionado (`sk-…`,
   `sk-ant-…`, `AIza…`, ou a chave DeepL `:fx` do plano gratuito). Ele **abre sozinho** enquanto
-  nenhuma chave estiver preenchida.
+  nenhuma chave estiver preenchida. No Compatível com OpenAI a chave é opcional e o card fica
+  fechado.
   - *+ Adicionar chave* / *✕* — dá para cadastrar **quantas chaves quiser** no mesmo motor.
     Quando a chave em uso é inválida, fica sem crédito ou bate no limite de requisições, a
     próxima da lista assume automaticamente; esgotadas todas, cai no Google Translate.

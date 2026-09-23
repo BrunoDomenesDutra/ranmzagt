@@ -166,6 +166,9 @@ Quando quiser mais qualidade, troque em **Provedor ativo**:
 - **OpenAI**, **Anthropic (Claude)** ou **Gemini** — motores de IA. Precisam de chave de API
   com créditos, e em troca entregam traduções bem mais naturais e consistentes, principalmente
   em diálogos longos. Escolha o modelo em *Autenticação* e cole a chave em *Chaves de API*.
+- **Compatível com OpenAI** — para usar um serviço ou servidor de IA que não está na lista,
+  desde que ele aceite o formato de chat da OpenAI. Você informa o endereço e o modelo. Veja
+  [Serviço compatível com OpenAI](/Manual/configurando-a-traducao.md) na seção 6.
 
 Cada motor guarda as suas próprias credenciais, então trocar de um para outro e voltar não
 apaga nada. Use o botão **Testar conexao** para confirmar que a chave está válida antes de
@@ -177,7 +180,8 @@ entrar no jogo.
 > Google Translate. Outros erros, como servidor fora do ar, vão direto para o Google Translate,
 > porque a próxima chave falharia igual. Ajuda bastante em sessões longas de Modo Legenda.
 
-> Só os motores de IA (OpenAI, Claude, Gemini) suportam o **Modo Vision** — o Google Translate, o
+> Só os motores de IA (OpenAI, Claude, Gemini e o Compatível com OpenAI, quando o modelo aceita
+> imagem) suportam o **Modo Vision** — o Google Translate, o
 > DeepL e o Azure Translator não. Veja a [seção 8](/Manual/modo-vision-quando-o-ocr-erra.md).
 
 ### 2.5 Marque a área do texto
@@ -540,6 +544,49 @@ pasta — o passo a passo dentro do card traz o comando do PowerShell que mostra
 Por usar uma API não oficial da Microsoft, uma atualização do Snipping Tool pode quebrar a
 integração; nesse caso, rode a detecção de novo (ou reextraia os arquivos).
 
+### Serviço compatível com OpenAI
+
+Muitos serviços e programas de IA aceitam o mesmo formato de pedido da API da OpenAI. O motor
+**Compatível com OpenAI** conversa com qualquer um deles: você informa o endereço e o nome do
+modelo, e o programa manda os textos da tela para lá.
+
+**Configurando.** Em **Traducao › Tradutores**, escolha *Compatível com OpenAI* e preencha:
+
+- **URL base** — o endereço do serviço, do jeito que a documentação dele mostra. Pode ser com
+  ou sem `/chat/completions` no fim. Servidor rodando no seu próprio PC costuma ser algo como
+  `http://localhost:1234/v1`.
+- **Modelo** — o nome exato do modelo, como o serviço mostra. Não existe lista para escolher:
+  cada serviço tem os seus.
+- **Chave de API** — só se o serviço pedir. Servidor local geralmente não pede, e aí o campo
+  fica vazio.
+- **O modelo aceita imagem** — ligue só se o modelo lê imagens. É o que libera o
+  [Modo Vision](/Manual/modo-vision-quando-o-ocr-erra.md) nesse motor. Desligado, o Modo Vision
+  avisa que o motor não suporta.
+
+Depois use **Testar conexão**. Ele traduz uma palavra pelo caminho real e mostra quanto tempo a
+resposta levou.
+
+**O que o serviço precisa aceitar.** O programa manda `POST <URL base>/chat/completions` com
+`model`, `messages`, `temperature` e `max_tokens`, e a chave (quando existe) no cabeçalho
+`Authorization: Bearer`. A tradução é lida de `choices[0].message.content`. O prompt, as
+Informações do Jogo e o Contexto de Conversa do Modo Legenda vão do mesmo jeito que na OpenAI.
+
+**Boas práticas**
+
+- **Use um modelo que siga instruções.** A resposta precisa vir num formato fixo, com um número
+  para cada bloco. Modelos pequenos erram esse formato com mais frequência, e quando isso acontece
+  a tela é traduzida pelo Google Translate.
+- **Servidor no mesmo PC divide a placa de vídeo com o jogo.** O jogo e a tradução podem ficar
+  mais lentos.
+- **A primeira tradução pode demorar.** Muitos servidores locais só carregam o modelo na primeira
+  chamada. O programa espera até 90 segundos por resposta neste motor.
+- **Modelo de raciocínio gasta tokens pensando.** Se aparecer o aviso de resposta cortada no
+  limite de tokens, aumente o *Max Tokens* em **Traducao › I.A** ou troque de modelo. O bloco
+  `<think>` que alguns modelos escrevem antes da resposta é descartado.
+- **A tela vai inteira num pedido só.** Nos motores OpenAI, Claude e Gemini, telas com muitos
+  blocos são divididas em pedidos paralelos. Aqui não, porque servidor local costuma atender um
+  pedido por vez.
+
 ---
 
 ## 7. Deixando a tradução com a "cara" do jogo
@@ -685,6 +732,26 @@ Real não são afetados.
 <p align="center"><i>A tradução desenhada por cima da legenda original. O vídeo foi gravado com
 celular porque, nesse modo, a legenda fica escondida das capturas de tela — uma gravação normal
 não mostraria a função funcionando.</i></p>
+
+#### Colar no texto detectado
+
+Com a substituição ligada, aparece uma segunda opção: **"Colar no texto detectado"**. Ela muda
+onde a tradução é desenhada dentro da área.
+
+- **Desligada** (padrão): a tradução fica centralizada na **área que você selecionou**. Se a área
+  é bem maior que a fala, a tradução aparece longe do texto original, e o fundo escuro cobre a
+  área inteira.
+- **Ligada**: a tradução é desenhada **em cima da fala**, no mesmo centro e na mesma altura dela,
+  com a **mesma quantidade de linhas** que o jogo mostrou. O fundo escuro acompanha o texto em vez
+  de cobrir a área toda.
+
+Ligada, a tradução **não é encolhida para caber** na área: fonte maior transborda para os lados e
+para cima/baixo, de propósito. É assim que dá para deixar a legenda maior que a do jogo sem
+refazer a seleção. Se você prefere que a tradução respeite os limites da área, deixe a opção
+desligada.
+
+> A área selecionada continua sendo o que o programa lê. Ela precisa caber a legenda inteira do
+> jogo — o que muda é só onde a tradução é desenhada dentro dela.
 
 ### Deixando a IA "lembrar" das falas anteriores
 
@@ -897,6 +964,8 @@ vai diminuir a fonte automaticamente até caber.
 → No **Modo Legenda** com *Substituir a legenda original no lugar* ligado não há auto-fit: a
 tradução tem que caber na área que você marcou. Diminua o *Tamanho da fonte* em **Overlay ›
 Legenda**, ou refaça a seleção da área um pouco mais alta que a legenda do jogo.
+→ Ou ligue *Colar no texto detectado*, no mesmo card: aí a tradução é desenhada em cima da fala e
+transborda a área em vez de ser cortada.
 
 ##### "As traduções de falas diferentes estão se misturando num bloco só" (ou o contrário)
 → Primeiro confira se você apertou o atalho certo: `Numpad8` junta as linhas (parágrafo) e
@@ -1107,6 +1176,9 @@ O Modo Legenda tem aparência e pré-processamento **próprios**, independentes 
   da área capturada, cobrindo a legenda original, em vez de mostrá-la acima da área. Mostra uma
   fala por vez (ver *Linhas visíveis* abaixo). Nesse modo a legenda some das capturas feitas
   neste PC — é o que impede o OCR de reler a própria tradução. Ver a seção 9.
+  - *Colar no texto detectado* (só com a opção acima ligada): a tradução é desenhada em cima da
+    fala, com as mesmas quebras de linha, em vez de centralizada na área. Fonte maior transborda
+    a área em vez de ser encolhida.
 - **Texto** — *Fonte*, *Cor do texto* e *Tamanho da fonte* (10–48 pt). Não tem altura de linha
   nem auto-fit.
 - **Fundo e Contorno** — *Mostrar fundo* + *Opacidade* (10–100%) ou *Mostrar contorno* +
@@ -1177,6 +1249,8 @@ Qual serviço traduz e com quais credenciais.
     o idioma de origem **bloco a bloco**: numa captura em que parte do texto está em outro idioma,
     cada bloco é traduzido a partir do idioma certo.
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — motores de IA, exigem chave de API.
+  - *Compatível com OpenAI* — qualquer serviço ou servidor que aceite o formato de chat da
+    OpenAI. Detalhes em [Serviço compatível com OpenAI](/Manual/configurando-a-traducao.md).
 - **Autenticação** — aparece nos provedores com chave. As credenciais são **salvas por motor**,
   então trocar de serviço e voltar não apaga nada.
   - *Modelo* (motores de IA) — cada motor traz três opções. A primeira é o padrão.
@@ -1192,8 +1266,11 @@ Qual serviço traduz e com quais credenciais.
       alcança modelos que o provedor já fechou para contas novas — é o caso das famílias
       Gemini 2.0 e 2.5, que respondem para chaves antigas mas devolvem erro em chaves
       recém-criadas. Nos dois casos, copie o ID de lá para o campo *Personalizado…*.
-  - *Fila rápida da OpenAI* — aparece abaixo do modelo, só com a OpenAI. Vem ligada: a resposta
-    chega cerca de 20% mais rápido, e a OpenAI cobra o dobro por token.
+  - *URL base*, *Modelo* e *O modelo aceita imagem* (só no Compatível com OpenAI) — ficam no
+    lugar da lista de modelos. O teste de conexão só libera com URL e modelo preenchidos.
+  - *Fila rápida da OpenAI* — aparece abaixo do modelo, só com a OpenAI. **Vem desligada**: a
+    resposta chega cerca de 20% mais rápido, e a OpenAI cobra o dobro por token. A chave é sua,
+    então a conta dobrada só acontece se você ligar.
   - *Região do recurso* (só no Azure) — **obrigatória**, e fica no lugar onde o DeepL mostra a
     Formalidade. Aceita a grafia do portal ("Brazil South"): maiúsculas e espaços são ajustados
     sozinhos. O link *Ver a lista oficial de regiões do Azure* abre a tabela da Microsoft no
@@ -1205,7 +1282,8 @@ Qual serviço traduz e com quais credenciais.
     região estiver preenchida, porque sem ela o erro que volta é indistinguível de chave inválida.
 - **Chaves de API** — card recolhível onde entra a credencial do motor selecionado (`sk-…`,
   `sk-ant-…`, `AIza…`, ou a chave DeepL `:fx` do plano gratuito). Ele **abre sozinho** enquanto
-  nenhuma chave estiver preenchida.
+  nenhuma chave estiver preenchida. No Compatível com OpenAI a chave é opcional e o card fica
+  fechado.
   - *+ Adicionar chave* / *✕* — dá para cadastrar **quantas chaves quiser** no mesmo motor.
     Quando a chave em uso é inválida, fica sem crédito ou bate no limite de requisições, a
     próxima da lista assume automaticamente; esgotadas todas, cai no Google Translate.
