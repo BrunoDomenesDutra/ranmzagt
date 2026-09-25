@@ -100,6 +100,10 @@ traduzida sem depender das anteriores, deixe em 0.
 > deixa a tradução contínua mais coesa. **Google Translate** e **Azure Translator** não usam esse
 > contexto — a API de tradução do Azure não tem um parâmetro de contexto.
 
+> Em diálogo rápido, uma fala pode ir para tradução antes da anterior voltar. Nesse caso ela vai
+> sem a anterior no contexto (as outras falas vão normalmente). Veja *Traduzir sem esperar a fala
+> anterior* na aba **Experimental** ([seção 13](/Manual/referencia-completa-todas-as-abas.md)).
+
 ## Aparência separada
 
 Overlay › Legenda tem suas próprias opções de fonte, cor, fundo e contorno — independentes da

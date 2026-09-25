@@ -770,6 +770,10 @@ traduzida sem depender das anteriores, deixe em 0.
 > deixa a tradução contínua mais coesa. **Google Translate** e **Azure Translator** não usam esse
 > contexto — a API de tradução do Azure não tem um parâmetro de contexto.
 
+> Em diálogo rápido, uma fala pode ir para tradução antes da anterior voltar. Nesse caso ela vai
+> sem a anterior no contexto (as outras falas vão normalmente). Veja *Traduzir sem esperar a fala
+> anterior* na aba **Experimental** ([seção 13](/Manual/referencia-completa-todas-as-abas.md)).
+
 ### Aparência separada
 
 Overlay › Legenda tem suas próprias opções de fonte, cor, fundo e contorno — independentes da
@@ -1475,7 +1479,15 @@ entrada para copiar a tradução. Botão **Limpar histórico**.
 > Tudo nesta aba está **em desenvolvimento**: o comportamento pode mudar, bugs são esperados e
 > recursos podem ser removidos.
 
-Tem um card recolhível.
+Tem dois cards recolhíveis.
+
+**Legenda: traduzir sem esperar a fala anterior** — **ligado por padrão**. A Legenda continua
+lendo a tela enquanto a tradução de uma fala ainda não voltou, então a fala seguinte vai para
+tradução na hora, sem esperar a anterior. Isso só muda alguma coisa quando as falas chegam em
+menos de um segundo (jogador pulando o diálogo, cutscene rápida). Nesse caso a legenda fica
+menos para trás. Se uma tradução mais antiga voltar depois de uma mais nova já estar na tela, a
+mais antiga não aparece. Desligado, a Legenda volta a esperar cada tradução antes de ler a
+próxima fala, e as falas que aparecem e somem durante essa espera não são traduzidas.
 
 **Esperar texto completo (efeito máquina de escrever)** — só traduz depois que a fala termina de
 aparecer, evitando traduzir frases ainda "sendo digitadas" na tela. Vale para o Modo Legenda.

@@ -496,6 +496,8 @@ If you're using OpenAI, Claude, or Gemini, **Translation › AI** has a **"Previ
 
 > **DeepL** also benefits from previous lines as context, **at no extra cost** — it gets the last lines as reference (following the same **"Previous lines"** control) to keep character names and terms consistent. Even though it's not a conversational AI, this makes continuous translation more cohesive. **Google Translate** and **Azure Translator** don't use this context — the Azure translation API has no context parameter.
 
+> In fast dialogue, a line may go out for translation before the previous one comes back. In that case it goes without the previous line in its context (the other lines go as usual). See *Translate without waiting for the previous line* in the **Experimental** tab ([section 13](/en/Manual/complete-reference-all-tabs.md)).
+
 ### Separate appearance
 
 Overlay › Subtitles has its own font, color, background and outline options — separate from manual translation — so you can keep the continuous subtitle smaller/more discreet and the manual translation (`Numpad8`/`Numpad9`) bigger, for example. The image preprocessing is independent too.
@@ -936,7 +938,9 @@ Lists the **current session's** translations — time, service, translation and,
 
 > Everything in this tab is **under development**: behavior can change, bugs are expected, and features can be removed.
 
-One collapsible card.
+Two collapsible cards.
+
+**Subtitle: translate without waiting for the previous line** — **on by default**. Subtitle Mode keeps reading the screen while a line's translation hasn't come back yet, so the next line goes out for translation right away instead of waiting for the previous one. This only changes anything when lines arrive less than a second apart (player skipping dialogue, fast cutscene). In that case the subtitle falls behind less. If an older translation comes back after a newer one is already on screen, the older one isn't shown. With it off, Subtitle Mode goes back to waiting for each translation before reading the next line, and lines that appear and disappear during that wait aren't translated.
 
 **Wait for complete text (typewriter effect)** — only translates once the line has finished appearing, so you don't translate sentences still "being typed" on screen. Applies to Subtitle Mode.
 

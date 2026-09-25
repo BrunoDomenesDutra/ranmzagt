@@ -324,7 +324,9 @@ Lists the **current session's** translations — time, service, translation and,
 
 > Everything in this tab is **under development**: behavior can change, bugs are expected, and features can be removed.
 
-One collapsible card.
+Two collapsible cards.
+
+**Subtitle: translate without waiting for the previous line** — **on by default**. Subtitle Mode keeps reading the screen while a line's translation hasn't come back yet, so the next line goes out for translation right away instead of waiting for the previous one. This only changes anything when lines arrive less than a second apart (player skipping dialogue, fast cutscene). In that case the subtitle falls behind less. If an older translation comes back after a newer one is already on screen, the older one isn't shown. With it off, Subtitle Mode goes back to waiting for each translation before reading the next line, and lines that appear and disappear during that wait aren't translated.
 
 **Wait for complete text (typewriter effect)** — only translates once the line has finished appearing, so you don't translate sentences still "being typed" on screen. Applies to Subtitle Mode.
 
