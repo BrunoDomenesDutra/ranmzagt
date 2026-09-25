@@ -50,7 +50,7 @@ If you're using OpenAI, Claude, or Gemini, **Translation › AI** has a **"Previ
 
 > **DeepL** also benefits from previous lines as context, **at no extra cost** — it gets the last lines as reference (following the same **"Previous lines"** control) to keep character names and terms consistent. Even though it's not a conversational AI, this makes continuous translation more cohesive. **Google Translate** and **Azure Translator** don't use this context — the Azure translation API has no context parameter.
 
-> In fast dialogue, a line may go out for translation before the previous one comes back. In that case it goes without the previous line in its context (the other lines go as usual). See *Translate without waiting for the previous line* in the **Experimental** tab ([section 13](/en/Manual/complete-reference-all-tabs.md)).
+> Subtitle Mode doesn't wait for a line's translation to come back before reading the next one. So in fast dialogue a line may go out for translation before the previous one comes back, and in that case it goes without the previous line in its context (the other lines go as usual).
 
 ## Separate appearance
 
