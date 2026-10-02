@@ -264,9 +264,16 @@ Qual serviço traduz e com quais chaves.
 - **Chaves de API** — card recolhível onde entra a chave do serviço selecionado. Ele **abre
   sozinho** enquanto nenhuma chave estiver preenchida. As chaves ficam guardadas criptografadas e
   só abrem neste PC, na sua conta do Windows.
-  - *+ Adicionar chave* / *✕* — dá para cadastrar **quantas chaves quiser** no mesmo serviço.
+  - *+ Adicionar chave* / *Apagar* — dá para cadastrar **quantas chaves quiser** no mesmo serviço.
     Quando a chave em uso é recusada, fica sem crédito ou bate no limite de requisições, a
     próxima da lista assume na hora; esgotadas todas, cai no Google Translate.
+  - *Testar* — traduz uma palavra só com aquela chave, usando o modelo e a região escolhidos. O
+    botão fica **verde** quando a chave funciona e **vermelho** quando falha. Passe o mouse em cima
+    para ver o motivo, como "chave inválida", "sem crédito" ou "Sem internet". Editar a chave
+    apaga o resultado.
+  - *Testar todas* — testa as chaves da lista uma por vez e pinta o botão de cada uma.
+
+<p align="center"><img src="media/tradutores-testar-chave.png" alt="Botões Testar: chave funcionando em verde e chave com problema em vermelho" width="820"></p>
 
 <p align="center"><img src="media/tradutores-openai.png" alt="Tradutores com OpenAI selecionado" width="820"></p>
 

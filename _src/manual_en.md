@@ -822,7 +822,11 @@ Which service translates and with which keys.
   - *OpenAI fast queue* — shows up below the model, only with OpenAI. **It comes off.** When on, OpenAI serves you first, at twice the price per token.
   - *Resource region* (Azure only) — **required**. It accepts the portal spelling ("Brazil South"): capitals and spaces are fixed by themselves. The *See Azure's official region list* link opens Microsoft's table in the browser. Key and region come from the same page: <https://portal.azure.com> → your Translator resource → *Keys and Endpoint*.
 - **API Keys** — collapsible card where the key of the selected service goes. It **opens by itself** while no key is filled in. Keys are stored encrypted and only open on this PC, in your Windows account.
-  - *+ Add key* / *✕* — you can register **as many keys as you want** for the same service. When the key in use is rejected, runs out of credit or hits the request limit, the next one in the list takes over right away; when all are used up, it falls back to Google Translate.
+  - *+ Add key* / *Delete* — you can register **as many keys as you want** for the same service. When the key in use is rejected, runs out of credit or hits the request limit, the next one in the list takes over right away; when all are used up, it falls back to Google Translate.
+  - *Test* — translates one word using only that key, with the chosen model and region. The button turns **green** when the key works and **red** when it fails. Hover over it to see why, such as "invalid key", "out of credit" or "No internet". Editing the key clears the result.
+  - *Test all* — tests the keys in the list one at a time and colors each one's button.
+
+<p align="center"><img src="media/tradutores-testar-chave.png" alt="Test buttons: working key in green and failing key in red" width="820"></p>
 
 <p align="center"><img src="media/tradutores-openai.png" alt="Translators with OpenAI selected" width="820"></p>
 
