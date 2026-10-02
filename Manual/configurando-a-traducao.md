@@ -101,4 +101,40 @@ Com a OpenAI escolhida, o card do modelo tem a opção **Fila rápida da OpenAI*
 atende os seus pedidos antes, pelo dobro do preço por token. Ajuda quando a OpenAI está lenta. Vem
 **desligada**: a chave é sua, então a conta dobrada só acontece se você ligar.
 
+## IA no seu PC ou outro serviço
+
+Muitos programas e serviços de IA aceitam o mesmo formato de pedido da OpenAI: LM Studio, Ollama,
+llama.cpp, OpenRouter e outros. O tradutor **Compatível com OpenAI** conversa com qualquer um
+deles. Você informa o endereço e o nome do modelo, e o programa manda o texto do jogo para lá.
+
+**Configurando.** Em **Tradução › Tradutores**, escolha *Compatível com OpenAI* e preencha:
+
+- **URL base** — o endereço do servidor, do jeito que o programa de IA mostra. Pode ser com ou
+  sem `/chat/completions` no fim. Servidor no seu próprio PC costuma ser algo como
+  `http://localhost:1234/v1` (LM Studio) ou `http://localhost:11434/v1` (Ollama).
+- **Modelo** — o nome exato do modelo, como o servidor mostra. Não existe lista para escolher:
+  cada servidor tem os seus.
+- **O modelo aceita imagem** — ligue só se o modelo lê imagens. É o que libera o
+  [Modo Vision](/Manual/modo-vision-quando-o-ocr-erra.md) nesse tradutor.
+- **Chaves de API** — só se o serviço pedir. Servidor no seu PC geralmente não pede, e aí o
+  campo fica vazio.
+
+<p align="center"><img src="media/tradutores-openai-compat.png" alt="Tradutores com Compatível com OpenAI: URL base, Modelo, O modelo aceita imagem e Testar conexão" width="820"></p>
+
+Depois clique em **Testar conexão**. Ele traduz uma palavra pelo servidor e mostra se deu certo
+ou qual erro voltou. O botão só libera com a URL e o modelo preenchidos.
+
+**Boas práticas**
+
+- **Use um modelo que siga instruções.** Modelos muito pequenos às vezes respondem com
+  comentários em vez da tradução, e essa resposta é descartada.
+- **Servidor no mesmo PC divide a placa de vídeo com o jogo.** O jogo e a tradução podem ficar
+  mais lentos. A legenda espera a resposta, então um modelo lento atrasa a legenda.
+- **A primeira tradução pode demorar.** Muitos servidores só carregam o modelo na primeira
+  chamada. O programa espera até 90 segundos por resposta neste tradutor.
+- **Modelo de raciocínio:** o bloco `<think>` que alguns modelos escrevem antes da resposta é
+  descartado.
+- Com o servidor desligado aparece o alerta *"API compatível: servidor não responde"*. Sem URL
+  ou sem modelo, *"API compatível: preencha URL e modelo"*.
+
 ---

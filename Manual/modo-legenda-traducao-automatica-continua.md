@@ -79,7 +79,7 @@ quebrar a linha.
 
 ## Deixando a IA "lembrar" das falas anteriores
 
-Com uma IA (OpenAI, Anthropic, Gemini ou Groq), **Tradução › I.A** tem o controle **Falas
+Com uma IA (OpenAI, Anthropic, Gemini, Groq ou Compatível com OpenAI), **Tradução › I.A** tem o controle **Falas
 anteriores** (5 a 10, padrão 5). A IA recebe as últimas falas já traduzidas como referência antes
 de traduzir a próxima — isso ajuda a manter os mesmos nomes, termos e tom ao longo de uma
 conversa. Cada fala a mais custa tokens em toda tradução.

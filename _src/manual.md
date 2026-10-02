@@ -210,6 +210,9 @@ Quando quiser mais qualidade, troque em **Provedor ativo**:
   em troca entregam traduções mais naturais e consistentes, porque traduzem levando em conta as
   falas anteriores e as Informações do Jogo. OpenAI e Anthropic cobram por uso; Gemini e Groq têm
   plano gratuito. Escolha o modelo no card de autenticação e cole a chave em *Chaves de API*.
+- **Compatível com OpenAI** — para usar uma IA que roda no seu PC (LM Studio, Ollama) ou outro
+  serviço que não está na lista. Você informa o endereço e o nome do modelo. Veja
+  [IA no seu PC ou outro serviço](/Manual/configurando-a-traducao.md) na seção 6.
 
 <p align="center"><img src="media/tradutores-openai.png" alt="Aba Tradução › Tradutores com OpenAI" width="820"></p>
 
@@ -221,8 +224,9 @@ nada. As chaves ficam guardadas **criptografadas** e só abrem neste PC, na sua 
 > limite de requisições, o programa passa na hora para a próxima da lista; esgotadas todas, ele
 > cai no Google Translate e mostra o alerta *"<serviço> falhou, usando Google"*. Ajuda bastante em sessões longas de Modo Legenda.
 
-> Só a OpenAI, a Anthropic e o Gemini suportam o **Modo Vision** — o Google Translate, o Google
-> Cloud, o DeepL, o Azure e a Groq não. Veja a [seção 8](/Manual/modo-vision-quando-o-ocr-erra.md).
+> Só a OpenAI, a Anthropic, o Gemini e o Compatível com OpenAI (quando o modelo aceita imagem)
+> suportam o **Modo Vision** — o Google Translate, o Google Cloud, o DeepL, o Azure e a Groq não.
+> Veja a [seção 8](/Manual/modo-vision-quando-o-ocr-erra.md).
 
 ### 2.6 Marque a área do texto
 
@@ -583,6 +587,42 @@ Com a OpenAI escolhida, o card do modelo tem a opção **Fila rápida da OpenAI*
 atende os seus pedidos antes, pelo dobro do preço por token. Ajuda quando a OpenAI está lenta. Vem
 **desligada**: a chave é sua, então a conta dobrada só acontece se você ligar.
 
+### IA no seu PC ou outro serviço
+
+Muitos programas e serviços de IA aceitam o mesmo formato de pedido da OpenAI: LM Studio, Ollama,
+llama.cpp, OpenRouter e outros. O tradutor **Compatível com OpenAI** conversa com qualquer um
+deles. Você informa o endereço e o nome do modelo, e o programa manda o texto do jogo para lá.
+
+**Configurando.** Em **Tradução › Tradutores**, escolha *Compatível com OpenAI* e preencha:
+
+- **URL base** — o endereço do servidor, do jeito que o programa de IA mostra. Pode ser com ou
+  sem `/chat/completions` no fim. Servidor no seu próprio PC costuma ser algo como
+  `http://localhost:1234/v1` (LM Studio) ou `http://localhost:11434/v1` (Ollama).
+- **Modelo** — o nome exato do modelo, como o servidor mostra. Não existe lista para escolher:
+  cada servidor tem os seus.
+- **O modelo aceita imagem** — ligue só se o modelo lê imagens. É o que libera o
+  [Modo Vision](/Manual/modo-vision-quando-o-ocr-erra.md) nesse tradutor.
+- **Chaves de API** — só se o serviço pedir. Servidor no seu PC geralmente não pede, e aí o
+  campo fica vazio.
+
+<p align="center"><img src="media/tradutores-openai-compat.png" alt="Tradutores com Compatível com OpenAI: URL base, Modelo, O modelo aceita imagem e Testar conexão" width="820"></p>
+
+Depois clique em **Testar conexão**. Ele traduz uma palavra pelo servidor e mostra se deu certo
+ou qual erro voltou. O botão só libera com a URL e o modelo preenchidos.
+
+**Boas práticas**
+
+- **Use um modelo que siga instruções.** Modelos muito pequenos às vezes respondem com
+  comentários em vez da tradução, e essa resposta é descartada.
+- **Servidor no mesmo PC divide a placa de vídeo com o jogo.** O jogo e a tradução podem ficar
+  mais lentos. A legenda espera a resposta, então um modelo lento atrasa a legenda.
+- **A primeira tradução pode demorar.** Muitos servidores só carregam o modelo na primeira
+  chamada. O programa espera até 90 segundos por resposta neste tradutor.
+- **Modelo de raciocínio:** o bloco `<think>` que alguns modelos escrevem antes da resposta é
+  descartado.
+- Com o servidor desligado aparece o alerta *"API compatível: servidor não responde"*. Sem URL
+  ou sem modelo, *"API compatível: preencha URL e modelo"*.
+
 ---
 
 ## 7. Deixando a tradução com a "cara" do jogo
@@ -646,8 +686,9 @@ Assim como no Traduzir normal, o Vision tem os dois modos, e você escolhe pelo 
 - **`Numpad6`** — Vision no **modo linha** (menus e listas).
 
 **Importante:**
-- Só funciona com **OpenAI, Anthropic (Claude) ou Gemini**. Com Google Translate, Google Cloud,
-  DeepL, Azure ou Groq, o atalho traduz só o texto do OCR e mostra o alerta *"Vision só com IA"*.
+- Só funciona com **OpenAI, Anthropic (Claude), Gemini** ou **Compatível com OpenAI** com *O modelo
+  aceita imagem* ligado. Com Google Translate, Google Cloud, DeepL, Azure ou Groq, o atalho traduz
+  só o texto do OCR e mostra o alerta *"Vision só com IA"*.
 - Usa o mesmo modelo escolhido em **Tradução › Tradutores**.
 - É um pouco mais lento e **sempre faz uma chamada nova** à IA: não usa as traduções guardadas,
   porque a resposta depende da imagem.
@@ -740,7 +781,7 @@ quebrar a linha.
 
 ### Deixando a IA "lembrar" das falas anteriores
 
-Com uma IA (OpenAI, Anthropic, Gemini ou Groq), **Tradução › I.A** tem o controle **Falas
+Com uma IA (OpenAI, Anthropic, Gemini, Groq ou Compatível com OpenAI), **Tradução › I.A** tem o controle **Falas
 anteriores** (5 a 10, padrão 5). A IA recebe as últimas falas já traduzidas como referência antes
 de traduzir a próxima — isso ajuda a manter os mesmos nomes, termos e tom ao longo de uma
 conversa. Cada fala a mais custa tokens em toda tradução.
@@ -1214,7 +1255,9 @@ Qual serviço traduz e com quais chaves.
     suporta o Modo Vision.**
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — IAs, com chave de API e Modo Vision.
   - *Groq* — IA com plano gratuito, com chave de API. **Não suporta o Modo Vision.**
-- **Autenticação** — aparece nas IAs e no Azure.
+  - *Compatível com OpenAI* — IA no seu PC (LM Studio, Ollama) ou outro serviço no formato da
+    OpenAI. Chave opcional. Detalhes em [IA no seu PC ou outro serviço](/Manual/configurando-a-traducao.md).
+- **Autenticação** — aparece nas IAs, no Azure e no Compatível com OpenAI.
   - *Modelo* (IAs) — cada uma traz uma lista curta. A primeira é o padrão.
     - OpenAI: GPT-5.4 mini (mais rápido, recomendado) · GPT-4.1 mini · GPT-4.1
     - Anthropic: Haiku 4.5 · Sonnet 5 · Opus 5
@@ -1225,6 +1268,9 @@ Qual serviço traduz e com quais chaves.
       atualização do programa.
     - *Ver a lista completa de modelos do provedor* — abre no navegador a página oficial do
       serviço, com todos os modelos e os IDs exatos, para copiar para o *Personalizado…*.
+  - *URL base*, *Modelo*, *O modelo aceita imagem* e *Testar conexão* (só no Compatível com
+    OpenAI) — ficam no lugar da lista de modelos. URL, modelo e a opção de imagem ficam salvos no
+    perfil. O *Testar conexão* só libera com URL e modelo preenchidos e funciona sem chave.
   - *Fila rápida da OpenAI* — aparece abaixo do modelo, só com a OpenAI. **Vem desligada.**
     Ligada, a OpenAI atende antes, pelo dobro do preço por token.
   - *Região do recurso* (só no Azure) — **obrigatória**. Aceita a grafia do portal ("Brazil
@@ -1232,7 +1278,8 @@ Qual serviço traduz e com quais chaves.
     do Azure* abre a tabela da Microsoft no navegador. Chave e região saem da mesma página:
     <https://portal.azure.com> → o seu recurso de Translator → *Keys and Endpoint*.
 - **Chaves de API** — card recolhível onde entra a chave do serviço selecionado. Ele **abre
-  sozinho** enquanto nenhuma chave estiver preenchida. As chaves ficam guardadas criptografadas e
+  sozinho** enquanto nenhuma chave estiver preenchida; no Compatível com OpenAI a chave é opcional
+  e o card fica fechado. As chaves ficam guardadas criptografadas e
   só abrem neste PC, na sua conta do Windows.
   - *+ Adicionar chave* / *Apagar* — dá para cadastrar **quantas chaves quiser** no mesmo serviço.
     Quando a chave em uso é recusada, fica sem crédito ou bate no limite de requisições, a

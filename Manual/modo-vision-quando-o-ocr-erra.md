@@ -13,8 +13,9 @@ Assim como no Traduzir normal, o Vision tem os dois modos, e você escolhe pelo 
 - **`Numpad6`** — Vision no **modo linha** (menus e listas).
 
 **Importante:**
-- Só funciona com **OpenAI, Anthropic (Claude) ou Gemini**. Com Google Translate, Google Cloud,
-  DeepL, Azure ou Groq, o atalho traduz só o texto do OCR e mostra o alerta *"Vision só com IA"*.
+- Só funciona com **OpenAI, Anthropic (Claude), Gemini** ou **Compatível com OpenAI** com *O modelo
+  aceita imagem* ligado. Com Google Translate, Google Cloud, DeepL, Azure ou Groq, o atalho traduz
+  só o texto do OCR e mostra o alerta *"Vision só com IA"*.
 - Usa o mesmo modelo escolhido em **Tradução › Tradutores**.
 - É um pouco mais lento e **sempre faz uma chamada nova** à IA: não usa as traduções guardadas,
   porque a resposta depende da imagem.

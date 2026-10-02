@@ -10,7 +10,7 @@ Just like regular Translate, Vision has both modes, and you pick by shortcut:
 - **`Numpad6`** — Vision in **line mode** (menus and lists).
 
 **Important:**
-- It only works with **OpenAI, Anthropic (Claude) or Gemini**. With Google Translate, Google Cloud, DeepL, Azure or Groq, the shortcut translates only the OCR text and shows the *"Vision needs an AI provider"* alert.
+- It only works with **OpenAI, Anthropic (Claude), Gemini** or **OpenAI-compatible** with *The model accepts images* on. With Google Translate, Google Cloud, DeepL, Azure or Groq, the shortcut translates only the OCR text and shows the *"Vision needs an AI provider"* alert.
 - It uses the same model chosen in **Translation › Translators**.
 - It is a bit slower and **always makes a new call** to the AI: it does not use saved translations, because the answer depends on the image.
 - The position of the translation on screen still depends on where text recognition found something.

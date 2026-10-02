@@ -66,4 +66,27 @@ It only applies to Subtitle Mode; screen capture reads all the text in the area.
 
 With OpenAI selected, the model card has the **OpenAI fast queue** option. When on, OpenAI serves your requests first, at twice the price per token. It helps when OpenAI is slow. It comes **off**: the key is yours, so the doubled bill only happens if you turn it on.
 
+## AI on your PC or another service
+
+Many AI programs and services accept the same request format as OpenAI: LM Studio, Ollama, llama.cpp, OpenRouter and others. The **OpenAI-compatible** translator talks to any of them. You enter the address and the model name, and the program sends the game text there.
+
+**Setting it up.** In **Translation › Translators**, pick *OpenAI-compatible* and fill in:
+
+- **Base URL** — the server address, as the AI program shows it. It can be with or without `/chat/completions` at the end. A server on your own PC is usually something like `http://localhost:1234/v1` (LM Studio) or `http://localhost:11434/v1` (Ollama).
+- **Model** — the exact model name, as the server shows it. There is no list to pick from: each server has its own.
+- **The model accepts images** — only turn it on if the model reads images. It is what enables [Vision Mode](/en/Manual/vision-mode-when-ocr-fails.md) for this translator.
+- **API Keys** — only if the service asks for one. A server on your PC usually does not, and the field stays empty.
+
+<p align="center"><img src="media/tradutores-openai-compat.png" alt="Translators with OpenAI-compatible: Base URL, Model, The model accepts images and Test connection" width="820"></p>
+
+Then click **Test connection**. It translates one word through the server and shows whether it worked or which error came back. The button only unlocks with the URL and the model filled in.
+
+**Good practices**
+
+- **Use a model that follows instructions.** Very small models sometimes answer with comments instead of the translation, and that answer is discarded.
+- **A server on the same PC shares the graphics card with the game.** Both the game and the translation can get slower. Subtitles wait for the answer, so a slow model delays the subtitle.
+- **The first translation can take a while.** Many servers only load the model on the first call. The program waits up to 90 seconds for an answer with this translator.
+- **Reasoning models:** the `<think>` block some models write before the answer is discarded.
+- With the server off, the *"API compatível: server not responding"* alert shows up. Without a URL or a model, *"API compatível: fill in URL and model"*.
+
 ---

@@ -99,6 +99,7 @@ When you want more quality, switch in **Active provider**:
 
 - **Google Cloud Translation**, **DeepL** and **Azure Translator** — dedicated translators. They need an API key and have a free plan with a monthly limit. On DeepL, free plan keys end in `:fx`, and the program figures out which server to use. DeepL also receives the Game Info and the previous lines as context, at no extra cost. Azure, besides the key, requires the resource **region** (both are on the same page of the Azure portal).
 - **OpenAI**, **Anthropic (Claude)**, **Gemini** and **Groq** — AIs. They need an API key and, in return, deliver more natural and consistent translations, because they take the previous lines and the Game Info into account. OpenAI and Anthropic charge per use; Gemini and Groq have a free plan. Pick the model in the authentication card and paste the key under *API Keys*.
+- **OpenAI-compatible** — to use an AI running on your PC (LM Studio, Ollama) or another service that is not on the list. You enter the address and the model name. See [AI on your PC or another service](/en/Manual/configuring-translation.md) in section 6.
 
 <p align="center"><img src="media/tradutores-openai.png" alt="Translation › Translators tab with OpenAI" width="820"></p>
 
@@ -106,7 +107,7 @@ Each service keeps its own keys, so switching from one to another and back does 
 
 > **Multiple keys with automatic rotation.** Every service with a key accepts **more than one**: click *+ Add key*. If the key in use is rejected, runs out of credit or hits the request limit, the program switches right away to the next one in the list; when all are used up, it falls back to Google Translate and shows the *"<service> failed, using Google"* alert. This helps a lot in long Subtitle Mode sessions.
 
-> Only OpenAI, Anthropic and Gemini support **Vision Mode** — Google Translate, Google Cloud, DeepL, Azure and Groq do not. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
+> Only OpenAI, Anthropic, Gemini and OpenAI-compatible (when the model accepts images) support **Vision Mode** — Google Translate, Google Cloud, DeepL, Azure and Groq do not. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
 
 ## 2.6 Mark the text area
 

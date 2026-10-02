@@ -250,7 +250,9 @@ Qual serviço traduz e com quais chaves.
     suporta o Modo Vision.**
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — IAs, com chave de API e Modo Vision.
   - *Groq* — IA com plano gratuito, com chave de API. **Não suporta o Modo Vision.**
-- **Autenticação** — aparece nas IAs e no Azure.
+  - *Compatível com OpenAI* — IA no seu PC (LM Studio, Ollama) ou outro serviço no formato da
+    OpenAI. Chave opcional. Detalhes em [IA no seu PC ou outro serviço](/Manual/configurando-a-traducao.md).
+- **Autenticação** — aparece nas IAs, no Azure e no Compatível com OpenAI.
   - *Modelo* (IAs) — cada uma traz uma lista curta. A primeira é o padrão.
     - OpenAI: GPT-5.4 mini (mais rápido, recomendado) · GPT-4.1 mini · GPT-4.1
     - Anthropic: Haiku 4.5 · Sonnet 5 · Opus 5
@@ -261,6 +263,9 @@ Qual serviço traduz e com quais chaves.
       atualização do programa.
     - *Ver a lista completa de modelos do provedor* — abre no navegador a página oficial do
       serviço, com todos os modelos e os IDs exatos, para copiar para o *Personalizado…*.
+  - *URL base*, *Modelo*, *O modelo aceita imagem* e *Testar conexão* (só no Compatível com
+    OpenAI) — ficam no lugar da lista de modelos. URL, modelo e a opção de imagem ficam salvos no
+    perfil. O *Testar conexão* só libera com URL e modelo preenchidos e funciona sem chave.
   - *Fila rápida da OpenAI* — aparece abaixo do modelo, só com a OpenAI. **Vem desligada.**
     Ligada, a OpenAI atende antes, pelo dobro do preço por token.
   - *Região do recurso* (só no Azure) — **obrigatória**. Aceita a grafia do portal ("Brazil
@@ -268,7 +273,8 @@ Qual serviço traduz e com quais chaves.
     do Azure* abre a tabela da Microsoft no navegador. Chave e região saem da mesma página:
     <https://portal.azure.com> → o seu recurso de Translator → *Keys and Endpoint*.
 - **Chaves de API** — card recolhível onde entra a chave do serviço selecionado. Ele **abre
-  sozinho** enquanto nenhuma chave estiver preenchida. As chaves ficam guardadas criptografadas e
+  sozinho** enquanto nenhuma chave estiver preenchida; no Compatível com OpenAI a chave é opcional
+  e o card fica fechado. As chaves ficam guardadas criptografadas e
   só abrem neste PC, na sua conta do Windows.
   - *+ Adicionar chave* / *Apagar* — dá para cadastrar **quantas chaves quiser** no mesmo serviço.
     Quando a chave em uso é recusada, fica sem crédito ou bate no limite de requisições, a

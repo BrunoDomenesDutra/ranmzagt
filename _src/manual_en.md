@@ -146,6 +146,7 @@ When you want more quality, switch in **Active provider**:
 
 - **Google Cloud Translation**, **DeepL** and **Azure Translator** — dedicated translators. They need an API key and have a free plan with a monthly limit. On DeepL, free plan keys end in `:fx`, and the program figures out which server to use. DeepL also receives the Game Info and the previous lines as context, at no extra cost. Azure, besides the key, requires the resource **region** (both are on the same page of the Azure portal).
 - **OpenAI**, **Anthropic (Claude)**, **Gemini** and **Groq** — AIs. They need an API key and, in return, deliver more natural and consistent translations, because they take the previous lines and the Game Info into account. OpenAI and Anthropic charge per use; Gemini and Groq have a free plan. Pick the model in the authentication card and paste the key under *API Keys*.
+- **OpenAI-compatible** — to use an AI running on your PC (LM Studio, Ollama) or another service that is not on the list. You enter the address and the model name. See [AI on your PC or another service](/en/Manual/configuring-translation.md) in section 6.
 
 <p align="center"><img src="media/tradutores-openai.png" alt="Translation › Translators tab with OpenAI" width="820"></p>
 
@@ -153,7 +154,7 @@ Each service keeps its own keys, so switching from one to another and back does 
 
 > **Multiple keys with automatic rotation.** Every service with a key accepts **more than one**: click *+ Add key*. If the key in use is rejected, runs out of credit or hits the request limit, the program switches right away to the next one in the list; when all are used up, it falls back to Google Translate and shows the *"<service> failed, using Google"* alert. This helps a lot in long Subtitle Mode sessions.
 
-> Only OpenAI, Anthropic and Gemini support **Vision Mode** — Google Translate, Google Cloud, DeepL, Azure and Groq do not. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
+> Only OpenAI, Anthropic, Gemini and OpenAI-compatible (when the model accepts images) support **Vision Mode** — Google Translate, Google Cloud, DeepL, Azure and Groq do not. See [section 8](/en/Manual/vision-mode-when-ocr-fails.md).
 
 ### 2.6 Mark the text area
 
@@ -412,6 +413,29 @@ It only applies to Subtitle Mode; screen capture reads all the text in the area.
 
 With OpenAI selected, the model card has the **OpenAI fast queue** option. When on, OpenAI serves your requests first, at twice the price per token. It helps when OpenAI is slow. It comes **off**: the key is yours, so the doubled bill only happens if you turn it on.
 
+### AI on your PC or another service
+
+Many AI programs and services accept the same request format as OpenAI: LM Studio, Ollama, llama.cpp, OpenRouter and others. The **OpenAI-compatible** translator talks to any of them. You enter the address and the model name, and the program sends the game text there.
+
+**Setting it up.** In **Translation › Translators**, pick *OpenAI-compatible* and fill in:
+
+- **Base URL** — the server address, as the AI program shows it. It can be with or without `/chat/completions` at the end. A server on your own PC is usually something like `http://localhost:1234/v1` (LM Studio) or `http://localhost:11434/v1` (Ollama).
+- **Model** — the exact model name, as the server shows it. There is no list to pick from: each server has its own.
+- **The model accepts images** — only turn it on if the model reads images. It is what enables [Vision Mode](/en/Manual/vision-mode-when-ocr-fails.md) for this translator.
+- **API Keys** — only if the service asks for one. A server on your PC usually does not, and the field stays empty.
+
+<p align="center"><img src="media/tradutores-openai-compat.png" alt="Translators with OpenAI-compatible: Base URL, Model, The model accepts images and Test connection" width="820"></p>
+
+Then click **Test connection**. It translates one word through the server and shows whether it worked or which error came back. The button only unlocks with the URL and the model filled in.
+
+**Good practices**
+
+- **Use a model that follows instructions.** Very small models sometimes answer with comments instead of the translation, and that answer is discarded.
+- **A server on the same PC shares the graphics card with the game.** Both the game and the translation can get slower. Subtitles wait for the answer, so a slow model delays the subtitle.
+- **The first translation can take a while.** Many servers only load the model on the first call. The program waits up to 90 seconds for an answer with this translator.
+- **Reasoning models:** the `<think>` block some models write before the answer is discarded.
+- With the server off, the *"API compatível: server not responding"* alert shows up. Without a URL or a model, *"API compatível: fill in URL and model"*.
+
 ---
 
 ## 7. Making translation look like the game
@@ -456,7 +480,7 @@ Just like regular Translate, Vision has both modes, and you pick by shortcut:
 - **`Numpad6`** — Vision in **line mode** (menus and lists).
 
 **Important:**
-- It only works with **OpenAI, Anthropic (Claude) or Gemini**. With Google Translate, Google Cloud, DeepL, Azure or Groq, the shortcut translates only the OCR text and shows the *"Vision needs an AI provider"* alert.
+- It only works with **OpenAI, Anthropic (Claude), Gemini** or **OpenAI-compatible** with *The model accepts images* on. With Google Translate, Google Cloud, DeepL, Azure or Groq, the shortcut translates only the OCR text and shows the *"Vision needs an AI provider"* alert.
 - It uses the same model chosen in **Translation › Translators**.
 - It is a bit slower and **always makes a new call** to the AI: it does not use saved translations, because the answer depends on the image.
 - The position of the translation on screen still depends on where text recognition found something.
@@ -523,7 +547,7 @@ With *Stick to the detected text* off, **Lines on screen** (1 to 8, default 1) s
 
 ### Letting the AI "remember" previous lines
 
-With an AI (OpenAI, Anthropic, Gemini or Groq), **Translation › AI** has the **Previous lines** control (5 to 10, default 5). The AI receives the last lines already translated as reference before translating the next one — this helps keep the same names, terms and tone throughout a conversation. Each extra line costs tokens on every translation.
+With an AI (OpenAI, Anthropic, Gemini, Groq or OpenAI-compatible), **Translation › AI** has the **Previous lines** control (5 to 10, default 5). The AI receives the last lines already translated as reference before translating the next one — this helps keep the same names, terms and tone throughout a conversation. Each extra line costs tokens on every translation.
 
 > **DeepL** receives only the original text of those lines, as context, and does not charge for it. The other dedicated translators (Google Translate, Google Cloud and Azure) translate each line on its own.
 
@@ -816,7 +840,8 @@ Which service translates and with which keys.
   - *Azure Translator* — Microsoft's translator; requires a key and the resource **region**. **Does not support Vision Mode.**
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AIs, with an API key and Vision Mode.
   - *Groq* — AI with a free plan, with an API key. **Does not support Vision Mode.**
-- **Authentication** — shows up for the AIs and for Azure.
+  - *OpenAI-compatible* — AI on your PC (LM Studio, Ollama) or another service in the OpenAI format. Optional key. Details in [AI on your PC or another service](/en/Manual/configuring-translation.md).
+- **Authentication** — shows up for the AIs, for Azure and for OpenAI-compatible.
   - *Model* (AIs) — each one has a short list. The first one is the default.
     - OpenAI: GPT-5.4 mini (fastest, recommended) · GPT-4.1 mini · GPT-4.1
     - Anthropic: Haiku 4.5 · Sonnet 5 · Opus 5
@@ -824,9 +849,10 @@ Which service translates and with which keys.
     - Groq: gpt-oss-20b · gpt-oss-120b
     - *Custom…* — last option in the list: opens a free field where you type **any model ID** the service accepts, to use a newer model without waiting for a program update.
     - *See the provider's full model list* — opens the service's official page in the browser, with every model and the exact IDs, to copy into *Custom…*.
+  - *Base URL*, *Model*, *The model accepts images* and *Test connection* (OpenAI-compatible only) — take the place of the model list. URL, model and the image option are saved in the profile. *Test connection* only unlocks with URL and model filled in, and works without a key.
   - *OpenAI fast queue* — shows up below the model, only with OpenAI. **It comes off.** When on, OpenAI serves you first, at twice the price per token.
   - *Resource region* (Azure only) — **required**. It accepts the portal spelling ("Brazil South"): capitals and spaces are fixed by themselves. The *See Azure's official region list* link opens Microsoft's table in the browser. Key and region come from the same page: <https://portal.azure.com> → your Translator resource → *Keys and Endpoint*.
-- **API Keys** — collapsible card where the key of the selected service goes. It **opens by itself** while no key is filled in. Keys are stored encrypted and only open on this PC, in your Windows account.
+- **API Keys** — collapsible card where the key of the selected service goes. It **opens by itself** while no key is filled in; with OpenAI-compatible the key is optional and the card stays closed. Keys are stored encrypted and only open on this PC, in your Windows account.
   - *+ Add key* / *Delete* — you can register **as many keys as you want** for the same service. When the key in use is rejected, runs out of credit or hits the request limit, the next one in the list takes over right away; when all are used up, it falls back to Google Translate.
   - *Test* — translates one word using only that key, with the chosen model and region. The button turns **green** when the key works and **red** when it fails. Hover over it to see why, such as "invalid key", "out of credit" or "No internet". Editing the key clears the result.
   - *Test all* — tests the keys in the list one at a time and colors each one's button.

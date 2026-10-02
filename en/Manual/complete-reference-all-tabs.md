@@ -167,7 +167,8 @@ Which service translates and with which keys.
   - *Azure Translator* — Microsoft's translator; requires a key and the resource **region**. **Does not support Vision Mode.**
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AIs, with an API key and Vision Mode.
   - *Groq* — AI with a free plan, with an API key. **Does not support Vision Mode.**
-- **Authentication** — shows up for the AIs and for Azure.
+  - *OpenAI-compatible* — AI on your PC (LM Studio, Ollama) or another service in the OpenAI format. Optional key. Details in [AI on your PC or another service](/en/Manual/configuring-translation.md).
+- **Authentication** — shows up for the AIs, for Azure and for OpenAI-compatible.
   - *Model* (AIs) — each one has a short list. The first one is the default.
     - OpenAI: GPT-5.4 mini (fastest, recommended) · GPT-4.1 mini · GPT-4.1
     - Anthropic: Haiku 4.5 · Sonnet 5 · Opus 5
@@ -175,9 +176,10 @@ Which service translates and with which keys.
     - Groq: gpt-oss-20b · gpt-oss-120b
     - *Custom…* — last option in the list: opens a free field where you type **any model ID** the service accepts, to use a newer model without waiting for a program update.
     - *See the provider's full model list* — opens the service's official page in the browser, with every model and the exact IDs, to copy into *Custom…*.
+  - *Base URL*, *Model*, *The model accepts images* and *Test connection* (OpenAI-compatible only) — take the place of the model list. URL, model and the image option are saved in the profile. *Test connection* only unlocks with URL and model filled in, and works without a key.
   - *OpenAI fast queue* — shows up below the model, only with OpenAI. **It comes off.** When on, OpenAI serves you first, at twice the price per token.
   - *Resource region* (Azure only) — **required**. It accepts the portal spelling ("Brazil South"): capitals and spaces are fixed by themselves. The *See Azure's official region list* link opens Microsoft's table in the browser. Key and region come from the same page: <https://portal.azure.com> → your Translator resource → *Keys and Endpoint*.
-- **API Keys** — collapsible card where the key of the selected service goes. It **opens by itself** while no key is filled in. Keys are stored encrypted and only open on this PC, in your Windows account.
+- **API Keys** — collapsible card where the key of the selected service goes. It **opens by itself** while no key is filled in; with OpenAI-compatible the key is optional and the card stays closed. Keys are stored encrypted and only open on this PC, in your Windows account.
   - *+ Add key* / *Delete* — you can register **as many keys as you want** for the same service. When the key in use is rejected, runs out of credit or hits the request limit, the next one in the list takes over right away; when all are used up, it falls back to Google Translate.
   - *Test* — translates one word using only that key, with the chosen model and region. The button turns **green** when the key works and **red** when it fails. Hover over it to see why, such as "invalid key", "out of credit" or "No internet". Editing the key clears the result.
   - *Test all* — tests the keys in the list one at a time and colors each one's button.

@@ -147,6 +147,9 @@ Quando quiser mais qualidade, troque em **Provedor ativo**:
   em troca entregam traduções mais naturais e consistentes, porque traduzem levando em conta as
   falas anteriores e as Informações do Jogo. OpenAI e Anthropic cobram por uso; Gemini e Groq têm
   plano gratuito. Escolha o modelo no card de autenticação e cole a chave em *Chaves de API*.
+- **Compatível com OpenAI** — para usar uma IA que roda no seu PC (LM Studio, Ollama) ou outro
+  serviço que não está na lista. Você informa o endereço e o nome do modelo. Veja
+  [IA no seu PC ou outro serviço](/Manual/configurando-a-traducao.md) na seção 6.
 
 <p align="center"><img src="media/tradutores-openai.png" alt="Aba Tradução › Tradutores com OpenAI" width="820"></p>
 
@@ -158,8 +161,9 @@ nada. As chaves ficam guardadas **criptografadas** e só abrem neste PC, na sua 
 > limite de requisições, o programa passa na hora para a próxima da lista; esgotadas todas, ele
 > cai no Google Translate e mostra o alerta *"<serviço> falhou, usando Google"*. Ajuda bastante em sessões longas de Modo Legenda.
 
-> Só a OpenAI, a Anthropic e o Gemini suportam o **Modo Vision** — o Google Translate, o Google
-> Cloud, o DeepL, o Azure e a Groq não. Veja a [seção 8](/Manual/modo-vision-quando-o-ocr-erra.md).
+> Só a OpenAI, a Anthropic, o Gemini e o Compatível com OpenAI (quando o modelo aceita imagem)
+> suportam o **Modo Vision** — o Google Translate, o Google Cloud, o DeepL, o Azure e a Groq não.
+> Veja a [seção 8](/Manual/modo-vision-quando-o-ocr-erra.md).
 
 ## 2.6 Marque a área do texto
 
