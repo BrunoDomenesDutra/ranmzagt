@@ -105,7 +105,7 @@ How the screen capture translation looks.
   - *Overlay duration* — **1 minute (default)**, 2, 5, 10 minutes or *Never* (stays until the clear shortcut or the next capture).
   - *Hide the translation from recordings and streams* — the translation stays visible on your screen, but disappears from captures. It only works with programs running on this PC (OBS, Game Bar, NVIDIA ShadowPlay, etc); recording with a capture card, it shows anyway.
 - **Text**
-  - *Font* — "System default (Arial)", the fonts in the `fonts/` folder or the Windows fonts, with a preview just below.
+  - *Font* — "System default (Arial)", the fonts in the `fonts/` folder or every font installed in Windows, with a preview just below. A font installed while the program is open shows up after you open it again.
   - *Text color* — color picker (white by default).
   - *Font size* — 8 to 100 px.
   - *Line height* — 1.00 to 2.00 times the font size.

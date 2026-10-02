@@ -4,7 +4,7 @@ In **Overlay › Capture**, in the **Text** card:
 
 <p align="center"><img src="media/captura-texto.png" alt="Text card, in Overlay › Capture" width="720"></p>
 
-- **Font**: choose among the fonts in the `fonts/` folder, next to the program, the Windows fonts or the system default (Arial). The preview just below shows how it looks.
+- **Font**: choose among the fonts in the `fonts/` folder, next to the program, **every font installed in Windows** or the system default (Arial). The preview just below shows how it looks. To use a new font, install it in Windows or put the file in the `fonts/` folder and open the program again.
 - **Text color**: white by default; change it to match the game palette.
 - **Font size** and **Line height**: adjust so the text is readable and well spaced.
 - **Auto-fit** (on by default): shrinks the font until the translation fits where the original text was. When off, a translation longer than the original spills past that spot and may cover nearby text. Tip: with Auto-fit on, keep the **Font size** high — the program finds the largest size that fits by itself.

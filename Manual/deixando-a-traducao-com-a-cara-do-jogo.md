@@ -4,8 +4,10 @@ Em **Overlay › Captura**, no card **Texto**:
 
 <p align="center"><img src="media/captura-texto.png" alt="Card Texto, em Overlay › Captura" width="720"></p>
 
-- **Fonte**: escolha entre as fontes da pasta `fonts/`, ao lado do programa, as fontes do Windows
-  ou a padrão do sistema (Arial). A prévia logo abaixo mostra como fica.
+- **Fonte**: escolha entre as fontes da pasta `fonts/`, ao lado do programa, **todas as fontes
+  instaladas no Windows** ou a padrão do sistema (Arial). A prévia logo abaixo mostra como fica.
+  Para usar uma fonte nova, instale no Windows ou coloque o arquivo na pasta `fonts/` e abra o
+  programa de novo.
 - **Cor do texto**: branco por padrão; troque para combinar com a paleta do jogo.
 - **Tamanho da fonte** e **Altura da linha**: ajuste para o texto ficar legível e bem
   espaçado.

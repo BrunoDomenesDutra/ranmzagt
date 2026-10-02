@@ -157,8 +157,9 @@ Aparência da tradução da captura de tela.
     mas some das capturas. Funciona só com programas rodando neste PC (OBS, Game Bar, NVIDIA
     ShadowPlay, etc); gravando por placa de captura, ela aparece assim mesmo.
 - **Texto**
-  - *Fonte* — "Padrão do sistema (Arial)", as fontes da pasta `fonts/` ou as do Windows, com
-    prévia logo abaixo.
+  - *Fonte* — "Padrão do sistema (Arial)", as fontes da pasta `fonts/` ou todas as instaladas no
+    Windows, com prévia logo abaixo. Fonte instalada com o programa aberto aparece depois de
+    abri-lo de novo.
   - *Cor do texto* — seletor de cor (padrão branco).
   - *Tamanho da fonte* — 8 a 100 px.
   - *Altura da linha* — 1,00 a 2,00 vezes o tamanho da fonte.
