@@ -26,7 +26,8 @@ No card **Fundo e Contorno**:
 ## Quanto tempo a tradução fica na tela
 
 Em **Exibição**, escolha por quanto tempo a tradução da captura de tela fica visível depois de
-aparecer: 1 minuto (padrão), 2, 5 ou 10 minutos. Para tirá-la antes, aperte o atalho de limpar ou
+aparecer: 1 minuto (padrão), 2, 5, 10 minutos ou *Nunca*, que deixa a tradução na tela até você
+limpar ou traduzir de novo. Para tirá-la antes, aperte o atalho de limpar ou
 traduza de novo.
 
 No mesmo card fica **"Esconder a tradução de gravações e transmissões"**: ligada, a tradução

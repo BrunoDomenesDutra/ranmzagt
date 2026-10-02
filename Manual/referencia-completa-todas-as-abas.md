@@ -151,7 +151,8 @@ Aparência da tradução da captura de tela.
 <p align="center"><img src="media/overlay-captura.png" alt="Aba Overlay › Captura" width="820"></p>
 
 - **Exibição**
-  - *Duração do overlay* — **1 minuto (padrão)**, 2, 5 ou 10 minutos.
+  - *Duração do overlay* — **1 minuto (padrão)**, 2, 5, 10 minutos ou *Nunca* (fica até o atalho
+    de limpar ou a próxima captura).
   - *Esconder a tradução de gravações e transmissões* — a tradução continua visível na sua tela,
     mas some das capturas. Funciona só com programas rodando neste PC (OBS, Game Bar, NVIDIA
     ShadowPlay, etc); gravando por placa de captura, ela aparece assim mesmo.

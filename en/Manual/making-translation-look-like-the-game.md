@@ -18,7 +18,7 @@ In the **Background and Outline** card:
 
 ## How long translation stays on screen
 
-In **Display**, choose how long the screen capture translation stays visible after it shows up: 1 minute (default), 2, 5 or 10 minutes. To remove it sooner, press the clear shortcut or translate again.
+In **Display**, choose how long the screen capture translation stays visible after it shows up: 1 minute (default), 2, 5, 10 minutes or *Never*, which keeps the translation on screen until you clear it or translate again. To remove it sooner, press the clear shortcut or translate again.
 
 The same card has **"Hide the translation from recordings and streams"**: when on, the translation stays on your screen normally, but does not show up for capture programs. Useful for recording the game without the translation on top. It only applies to screen capture.
 

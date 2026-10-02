@@ -430,7 +430,7 @@ In the **Background and Outline** card:
 
 ### How long translation stays on screen
 
-In **Display**, choose how long the screen capture translation stays visible after it shows up: 1 minute (default), 2, 5 or 10 minutes. To remove it sooner, press the clear shortcut or translate again.
+In **Display**, choose how long the screen capture translation stays visible after it shows up: 1 minute (default), 2, 5, 10 minutes or *Never*, which keeps the translation on screen until you clear it or translate again. To remove it sooner, press the clear shortcut or translate again.
 
 The same card has **"Hide the translation from recordings and streams"**: when on, the translation stays on your screen normally, but does not show up for capture programs. Useful for recording the game without the translation on top. It only applies to screen capture.
 
@@ -747,7 +747,7 @@ How the screen capture translation looks.
 <p align="center"><img src="media/overlay-captura.png" alt="Overlay › Capture tab" width="820"></p>
 
 - **Display**
-  - *Overlay duration* — **1 minute (default)**, 2, 5 or 10 minutes.
+  - *Overlay duration* — **1 minute (default)**, 2, 5, 10 minutes or *Never* (stays until the clear shortcut or the next capture).
   - *Hide the translation from recordings and streams* — the translation stays visible on your screen, but disappears from captures. It only works with programs running on this PC (OBS, Game Bar, NVIDIA ShadowPlay, etc); recording with a capture card, it shows anyway.
 - **Text**
   - *Font* — "System default (Arial)", the fonts in the `fonts/` folder or the Windows fonts, with a preview just below.
