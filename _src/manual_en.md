@@ -73,8 +73,8 @@ The guide is a window over the settings screen, with eight steps:
 | **OCR** | WinOCR or OneOCR, with the pros and cons of each. With OneOCR, the button to copy its files |
 | **Languages** | The language of the game text and the language you want to read |
 | **Translation** | The translation service and its key, if needed, with a list of which one to choose |
-| **Subtitle** | Font, color and the alphabet filter of Subtitle Mode |
 | **Capture** | How long the screen capture translation stays on screen, font, color and Auto-fit |
+| **Subtitle** | Font, color and the alphabet filter of Subtitle Mode |
 | **Done** | A summary of what you chose and the keys to get started |
 
 Everything you change in the guide applies right away, just like in the tabs. The steps at the top are clickable, to go back or jump to another one. With **WinOCR**, the guide does not go past the Languages step without a chosen language, because without it WinOCR does not know what to read.

@@ -35,8 +35,8 @@ O guia é uma janela por cima da tela de configurações, com oito passos:
 | **OCR** | WinOCR ou OneOCR, com os prós e contras de cada um. Com o OneOCR, o botão para copiar os arquivos dele |
 | **Idiomas** | O idioma do texto do jogo e o idioma em que você quer ler |
 | **Tradução** | O serviço de tradução e a chave dele, se precisar, com uma lista de qual escolher |
-| **Legenda** | Fonte, cor e o filtro de alfabeto do Modo Legenda |
 | **Captura** | Quanto tempo a tradução da captura de tela fica na tela, fonte, cor e Auto-fit |
+| **Legenda** | Fonte, cor e o filtro de alfabeto do Modo Legenda |
 | **Pronto** | Um resumo do que você escolheu e as teclas para começar |
 
 Tudo o que você muda no guia vale na hora, igual nas abas. Os passos no topo são clicáveis, para
