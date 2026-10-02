@@ -16,7 +16,7 @@ If Paragraph mode is joining lines that should be separate (or splitting a line 
 
 This setting only affects Paragraph mode — Line mode ignores it.
 
-<p align="center"><img src="media/ocr-sensibilidade.png" alt="Grouping sensitivity, in Overlay › Capture" width="820"></p>
+<p align="center"><img src="media/en/ocr-sensibilidade.png" alt="Grouping sensitivity, in Overlay › Capture" width="820"></p>
 
 <p align="center"><i>The setting is in the <b>Overlay › Capture</b> tab, in the <b>Paragraph Mode Fine-Tuning</b> card.</i></p>
 
@@ -27,7 +27,7 @@ OCR is the text reader: it turns what shows up in the marked area into text to b
 - **WinOCR** (native to Windows) — ready out of the box, nothing to install, and the default. It reads text on a plain background well, but gets lost easily when the background behind the text has details, colors or movement, and only reads languages whose pack is installed in Windows.
 - **OneOCR** (recommended) — the text reader of the Windows 11 Snipping Tool. It is the one you should use.
 
-<p align="center"><img src="media/geral-ocr.png" alt="General › OCR tab with WinOCR" width="820"></p>
+<p align="center"><img src="media/en/geral-ocr.png" alt="General › OCR tab with WinOCR" width="820"></p>
 
 **Why OneOCR is far better:**
 
@@ -41,7 +41,7 @@ OCR is the text reader: it turns what shows up in the marked area into text to b
 
 **On Windows 11 it is one click.** Choose *OneOCR* in **General › OCR** (or in the OCR step of the guide) and use the **Detect and copy** button: the program finds the installed Snipping Tool, copies the 3 files to its folder and sets everything up. If the Snipping Tool is not installed, or is a version without the files, it tells you instead of failing silently. Until the files are copied, the card shows *"Did not load"* and the OCR stays stopped.
 
-<p align="center"><img src="media/geral-ocr-oneocr.png" alt="OneOCR card, in General › OCR" width="820"></p>
+<p align="center"><img src="media/en/geral-ocr-oneocr.png" alt="OneOCR card, in General › OCR" width="820"></p>
 
 <p align="center"><i>With <b>OneOCR</b> selected, the card has the <b>Detect and copy</b> button, the folder field and, below, the step by step for Windows 10.</i></p>
 
@@ -77,7 +77,7 @@ Many AI programs and services accept the same request format as OpenAI: LM Studi
 - **The model accepts images** — only turn it on if the model reads images. It is what enables [Vision Mode](/en/Manual/vision-mode-when-ocr-fails.md) for this translator.
 - **API Keys** — only if the service asks for one. A server on your PC usually does not, and the field stays empty.
 
-<p align="center"><img src="media/tradutores-openai-compat.png" alt="Translators with OpenAI-compatible: Base URL, Model, The model accepts images and Test connection" width="820"></p>
+<p align="center"><img src="media/en/tradutores-openai-compat.png" alt="Translators with OpenAI-compatible: Base URL, Model, The model accepts images and Test connection" width="820"></p>
 
 Then click **Test connection**. It translates one word through the server and shows whether it worked or which error came back. The button only unlocks with the URL and the model filled in.
 

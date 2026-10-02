@@ -18,7 +18,7 @@
 
 All of them can be changed in **General › Shortcuts** — pick another key and, if you want, combine it with Ctrl/Alt/Shift. If you choose a **letter or a number** from the top row, you **must** use at least one modifier (Ctrl, Alt or Shift), so it does not get in the way of the game's normal controls (which use WASD and slots 0–9 all the time). Numpad, F1–F12 and the navigation keys work on their own — the **Digits** and **Navigation** groups help people on laptops without a numpad.
 
-<p align="center"><img src="media/geral-atalhos.png" alt="General › Shortcuts tab" width="820"></p>
+<p align="center"><img src="media/en/geral-atalhos.png" alt="General › Shortcuts tab" width="820"></p>
 
 > Shortcuts only work when the game window is in focus (that is, when the Ranmza GT settings window is not in the foreground). This way you can type normally in the settings fields without triggering commands by accident.
 

@@ -2,7 +2,7 @@
 
 In **Overlay › Capture**, in the **Text** card:
 
-<p align="center"><img src="media/captura-texto.png" alt="Text card, in Overlay › Capture" width="720"></p>
+<p align="center"><img src="media/en/captura-texto.png" alt="Text card, in Overlay › Capture" width="720"></p>
 
 - **Font**: choose among the fonts in the `fonts/` folder, next to the program, **every font installed in Windows** or the system default (Arial). The preview just below shows how it looks. To use a new font, install it in Windows or put the file in the `fonts/` folder and open the program again.
 - **Text color**: white by default; change it to match the game palette.
@@ -11,7 +11,7 @@ In **Overlay › Capture**, in the **Text** card:
 
 In the **Background and Outline** card:
 
-<p align="center"><img src="media/captura-fundo.png" alt="Background and Outline card, in Overlay › Capture" width="720"></p>
+<p align="center"><img src="media/en/captura-fundo.png" alt="Background and Outline card, in Overlay › Capture" width="720"></p>
 
 - **Background**: draws a dark box behind the text (with adjustable opacity), to keep it readable over any scenery.
 - **Outline**: draws a border around the letters, with adjustable thickness and color — it can be used on its own or together with the background.
@@ -22,7 +22,7 @@ In **Display**, choose how long the screen capture translation stays visible aft
 
 The same card has **"Hide the translation from recordings and streams"**: when on, the translation stays on your screen normally, but does not show up for capture programs. Useful for recording the game without the translation on top. It only applies to screen capture.
 
-<p align="center"><img src="media/captura-exibicao-duracao.png" alt="Display card, in Overlay › Capture" width="820"></p>
+<p align="center"><img src="media/en/captura-exibicao-duracao.png" alt="Display card, in Overlay › Capture" width="820"></p>
 
 > It only works with programs running **ON THIS PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc). Recording with a capture card, the translation shows anyway — Windows is the one hiding the window, and what goes out through the video cable is the whole screen.
 

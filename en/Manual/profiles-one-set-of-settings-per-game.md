@@ -4,7 +4,7 @@ Each game needs different settings: the dialogue box sits in a corner of the scr
 
 The selector is at the **top of the window**, next to the **Guide** button, and shows up in every tab — because the active profile is the context of everything they show.
 
-<p align="center"><img src="media/geral-perfis.png" alt="General › Profiles tab" width="820"></p>
+<p align="center"><img src="media/en/geral-perfis.png" alt="General › Profiles tab" width="820"></p>
 
 ## The Default profile
 

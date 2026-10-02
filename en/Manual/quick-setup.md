@@ -39,7 +39,7 @@ Everything you change in the guide applies right away, just like in the tabs. Th
 
 ## 2.2 First look: how the window is organized
 
-<p align="center"><img src="media/geral-config.png" alt="General › Config tab" width="820"></p>
+<p align="center"><img src="media/en/geral-config.png" alt="General › Config tab" width="820"></p>
 
 The left menu groups the options by subject. In the quick setup you only touch **General** and **Translation** — the rest is there for when you want to fine-tune something.
 
@@ -74,7 +74,7 @@ The **Capture backend** just above can stay on *Auto (recommended)*: it picks th
 
 Open **General › Language**.
 
-<p align="center"><img src="media/geral-idioma.png" alt="General › Language tab" width="820"></p>
+<p align="center"><img src="media/en/geral-idioma.png" alt="General › Language tab" width="820"></p>
 
 - **Text language** — the language the game is in. With WinOCR, the list only shows the languages that already have the text recognition pack installed in Windows. On a new install the field comes empty, with a warning: pick one from the list.
 - **Target language** — the language you want to read.
@@ -87,7 +87,7 @@ Open **General › Language**.
 
 Open **Translation › Translators**.
 
-<p align="center"><img src="media/tradutores-google.png" alt="Translation › Translators tab with Google Translate" width="820"></p>
+<p align="center"><img src="media/en/tradutores-google.png" alt="Translation › Translators tab with Google Translate" width="820"></p>
 
 The default is **Google Translate — free**: no key and no setup, ready to use. Do your first test with it.
 
@@ -172,7 +172,7 @@ On the right end, two **+ / −** buttons resize the whole toolbar on screen —
 
 If the default keys do not suit you — keyboard without a numpad, conflict with the game controls — change them in **General › Shortcuts**.
 
-<p align="center"><img src="media/geral-atalhos.png" alt="General › Shortcuts tab" width="820"></p>
+<p align="center"><img src="media/en/geral-atalhos.png" alt="General › Shortcuts tab" width="820"></p>
 
 Each action has a main key, chosen in the list on the right, and three modifier buttons (Ctrl, Alt and Shift) you turn on if you want to combine them. The change applies right away, no restart.
 

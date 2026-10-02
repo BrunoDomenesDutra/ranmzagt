@@ -6,7 +6,7 @@ The menu has five groups with sub-items (**General**, **Overlay**, **Translation
 
 ## General › Config
 
-<p align="center"><img src="media/geral-config.png" alt="General › Config tab" width="820"></p>
+<p align="center"><img src="media/en/geral-config.png" alt="General › Config tab" width="820"></p>
 
 - **Program language → Interface language** — switches the language of the settings window itself (Portuguese / English) and of the alerts. It does not affect the OCR and translation languages. On first run it follows the Windows language (falls back to English if it is not Portuguese).
 - **Appearance** — colors of this screen and of the floating toolbar:
@@ -16,7 +16,7 @@ The menu has five groups with sub-items (**General**, **Overlay**, **Translation
 - **Updates → Notify me about new versions** — turns on the warning shown when opening the program when a newer version is published (see section 14).
 - **Updates → Check now** — checks right away whether there is a new version, even with the warning off.
 
-<p align="center"><img src="media/geral-config-monitor.png" alt="General › Config tab — reset, backend, monitor and alerts" width="820"></p>
+<p align="center"><img src="media/en/geral-config-monitor.png" alt="General › Config tab — reset, backend, monitor and alerts" width="820"></p>
 
 <p align="center"><i>Scrolling the same tab: <b>Configuration</b>, <b>Capture backend</b>, <b>Monitor</b> and <b>On-screen alerts</b>.</i></p>
 
@@ -32,7 +32,7 @@ The menu has five groups with sub-items (**General**, **Overlay**, **Translation
 
 A set of settings per game. The concept and the step by step are in [section 4](/en/Manual/profiles-one-set-of-settings-per-game.md); here are only the controls.
 
-<p align="center"><img src="media/geral-perfis.png" alt="General › Profiles tab" width="820"></p>
+<p align="center"><img src="media/en/geral-perfis.png" alt="General › Profiles tab" width="820"></p>
 
 - **New profile → Game name** — the name of the profile to be created.
   - **Duplicate current** — creates it from everything in effect right now, **including the selected areas**.
@@ -47,7 +47,7 @@ A set of settings per game. The concept and the step by step are in [section 4](
 
 The source language field **adapts to the OCR engine** chosen in General › OCR.
 
-<p align="center"><img src="media/geral-idioma.png" alt="General › Language tab" width="820"></p>
+<p align="center"><img src="media/en/geral-idioma.png" alt="General › Language tab" width="820"></p>
 
 - **Source text language**
   - With *WinOCR* — list of the languages with a text recognition pack installed in Windows, with no default option: pick the game language. With no choice, a warning shows up. If the saved language is no longer installed, the **Install language pack** button shows up and opens the Windows language screen.
@@ -58,7 +58,7 @@ The source language field **adapts to the OCR engine** chosen in General › OCR
 
 Which engine recognizes the text on screen.
 
-<p align="center"><img src="media/geral-ocr.png" alt="General › OCR tab" width="820"></p>
+<p align="center"><img src="media/en/geral-ocr.png" alt="General › OCR tab" width="820"></p>
 
 - **OCR Engine → Active engine**
   - *WinOCR (native to Windows)* — the default. Built into Windows, nothing to install. It reads the language chosen in General › Language; it gets lost with busy backgrounds and very stylized fonts.
@@ -71,7 +71,7 @@ Which engine recognizes the text on screen.
 
 ## General › Shortcuts
 
-<p align="center"><img src="media/geral-atalhos.png" alt="General › Shortcuts tab — floating toolbar and global shortcuts" width="820"></p>
+<p align="center"><img src="media/en/geral-atalhos.png" alt="General › Shortcuts tab — floating toolbar and global shortcuts" width="820"></p>
 
 - **Floating toolbar → Show floating toolbar** — turns on the always-visible button window (see step 2.8). It also opens and closes with the `NumpadSubtract` shortcut, and it **remembers the last position** and size you left it at.
 
@@ -99,7 +99,7 @@ The program warns you if you repeat the same combination in two shortcuts — on
 
 How the screen capture translation looks.
 
-<p align="center"><img src="media/overlay-captura.png" alt="Overlay › Capture tab" width="820"></p>
+<p align="center"><img src="media/en/overlay-captura.png" alt="Overlay › Capture tab" width="820"></p>
 
 - **Display**
   - *Overlay duration* — **1 minute (default)**, 2, 5, 10 minutes or *Never* (stays until the clear shortcut or the next capture).
@@ -119,13 +119,13 @@ How the screen capture translation looks.
 
 Subtitle Mode has its **own** appearance, independent from Overlay › Capture.
 
-<p align="center"><img src="media/overlay-legenda.png" alt="Overlay › Subtitles tab" width="820"></p>
+<p align="center"><img src="media/en/overlay-legenda.png" alt="Overlay › Subtitles tab" width="820"></p>
 
 - **Translation position → Stick to the detected text** — draws the translation on top of the original line, with the same line breaks, instead of above the area. It shows one line at a time, and a larger font spills over the area. In this mode the subtitle disappears from captures made on this PC — that is what stops the OCR from reading its own translation. See section 9.
 - **Text** — *Font*, *Text color* and *Font size* (10–48 px).
 - **Background and Outline** — *Show background* + *Opacity* (10–100%) and *Show outline* + *Outline thickness* (0.5–5 px) + *Outline color*.
 
-<p align="center"><img src="media/overlay-legenda-captura.png" alt="Overlay › Subtitles tab — Capture and alphabet" width="820"></p>
+<p align="center"><img src="media/en/overlay-legenda-captura.png" alt="Overlay › Subtitles tab — Capture and alphabet" width="820"></p>
 
 - **Capture**
   - *Ignore text away from the center of the area* — on by default. Skips signs near the edges of the area; turn it off for left-aligned dialogue.
@@ -138,7 +138,7 @@ Subtitle Mode has its **own** appearance, independent from Overlay › Capture.
 
 Streams screen capture translations to browsers on the local network — and to OBS.
 
-<p align="center"><img src="media/overlay-web.png" alt="Overlay › Web tab" width="820"></p>
+<p align="center"><img src="media/en/overlay-web.png" alt="Overlay › Web tab" width="820"></p>
 
 - **Web Server**
   - *Server active* — starts a local HTTP server, reachable from any device on the same network.
@@ -146,7 +146,7 @@ Streams screen capture translations to browsers on the local network — and to 
   - *Port* — 7474 by default. It also shows how many clients are connected.
 - **Addresses** — `/captura` (with history and a Clear button) and `/captura/obs` (transparent background, to use as a Browser Source in OBS), each with a **Copy** button.
 
-<p align="center"><img src="media/overlay-web-aparencia.png" alt="Overlay › Web tab — page appearance and history" width="820"></p>
+<p align="center"><img src="media/en/overlay-web-aparencia.png" alt="Overlay › Web tab — page appearance and history" width="820"></p>
 
 <p align="center"><i>Scrolling the same tab: the web page <b>Appearance</b> and the <b>History</b> buffer.</i></p>
 
@@ -185,7 +185,7 @@ Which service translates and with which keys.
   - *Test all* — tests the keys in the list one at a time and colors each one's button.
   - With **DeepL**, a working key shows below it how much of the monthly quota has been used (*"Monthly quota: 4,359 of 500,000 characters"*).
 
-<p align="center"><img src="media/tradutores-deepl.png" alt="Translators with DeepL: formality and monthly quota below the tested key" width="820"></p>
+<p align="center"><img src="media/en/tradutores-deepl.png" alt="Translators with DeepL: formality and monthly quota below the tested key" width="820"></p>
 
 <p align="center"><img src="media/tradutores-testar-chave.png" alt="Test buttons: working key in green and failing key in red" width="820"></p>
 
@@ -195,7 +195,7 @@ Which service translates and with which keys.
 
 Context sent to the AIs.
 
-<p align="center"><img src="media/ia.png" alt="Translation › AI tab" width="820"></p>
+<p align="center"><img src="media/en/ia.png" alt="Translation › AI tab" width="820"></p>
 
 - **Conversation Context → Previous lines** (5–10, default 5) — in Subtitle Mode, sends the last lines (original + translation) as context, so the AI keeps terms and tone consistent. Each extra line costs tokens on every translation. With DeepL, only the originals go, at no cost.
 - **System Prompt** — general translator rules, for every game. It comes **blank**, with a gray example inside the field; nothing is sent to the AI until you write your own. **Save** and **Restore default** buttons (which empties the field again). The target language does not need to be here: the program already sends the AI the language chosen in the **Language** tab, and asking for another language in this field is ignored. Concrete rules (glossary, keep names, do not soften swearing) work on every model.
@@ -209,7 +209,7 @@ The general reset (General › Config) does **not** erase the Game Info.
 
 AI background reconstruction (MI-GAN).
 
-<p align="center"><img src="media/ferramentas-inpaint.png" alt="Tools › Inpaint tab" width="820"></p>
+<p align="center"><img src="media/en/ferramentas-inpaint.png" alt="Tools › Inpaint tab" width="820"></p>
 
 Instead of the dark box behind the translation, it erases the original text from the screen capture and rebuilds the background with an inpainting model running inside the program — the translation looks native to the game. It applies to **screen capture** (Translate and Vision); Subtitle Mode does not use it.
 
@@ -232,7 +232,7 @@ Instead of the dark box behind the translation, it erases the original text from
 
 ### Automatic download
 
-<p align="center"><img src="media/ferramentas-inpaint-baixar.png" alt="Automatic download card, in Tools › Inpaint" width="820"></p>
+<p align="center"><img src="media/en/ferramentas-inpaint-baixar.png" alt="Automatic download card, in Tools › Inpaint" width="820"></p>
 
 The feature needs the MI-GAN model (27 MB), which does not come in the program `.zip`. The **Download automatically** card downloads and checks the model:
 
@@ -247,7 +247,7 @@ The program checks the file's **sha256** before accepting it. A file that arrive
 
 Time of each screen capture step.
 
-<p align="center"><img src="media/debug-monitor.png" alt="Debug › Monitor tab" width="820"></p>
+<p align="center"><img src="media/en/debug-monitor.png" alt="Debug › Monitor tab" width="820"></p>
 
 - **Monitoring → Active** — records the time of each step on every screen capture key press. The history is kept when navigating between tabs.
 - **Run History** — table of the last 10 captures: Time, Capture, OCR, Translation, Total, Blocks, Cache (hits without calling the API) and API (calls actually made).
@@ -257,7 +257,7 @@ Time of each screen capture step.
 
 Log of this run, in real time.
 
-<p align="center"><img src="media/debug-logs.png" alt="Debug › Logs tab" width="820"></p>
+<p align="center"><img src="media/en/debug-logs.png" alt="Debug › Logs tab" width="820"></p>
 
 - **Log captured text and translations** — privacy switch, **off by default**. Keep it off when sending a log to support, so you do not expose the game content. API keys never go to the log.
 - **Filter lines** · **Auto-scroll** · **Refresh** — viewing controls; errors come out in red, warnings in yellow.
@@ -266,7 +266,7 @@ Each run writes a file in `logs\`, next to the executable, and the program keeps
 
 ## History
 
-<p align="center"><img src="media/historico.png" alt="History tab" width="820"></p>
+<p align="center"><img src="media/en/historico.png" alt="History tab" width="820"></p>
 
 Lists the screen capture translations of the **current session** — time, service, translation and, below, the original text. Click an entry to copy the translation. **Clear history** button.
 

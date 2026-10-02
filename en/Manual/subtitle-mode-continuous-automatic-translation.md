@@ -9,7 +9,7 @@ For scenes with continuous dialogue (cutscenes, visual novel auto mode, subtitle
 
 The program always opens with subtitles off. The options are in **Overlay › Subtitles**, and the defaults already work well for most cases.
 
-<p align="center"><img src="media/overlay-legenda-captura.png" alt="Overlay › Subtitles tab — Capture and alphabet" width="820"></p>
+<p align="center"><img src="media/en/overlay-legenda-captura.png" alt="Overlay › Subtitles tab — Capture and alphabet" width="820"></p>
 
 From then on, the program watches that area several times per second and translates each new text as soon as it shows up and repeats in a second reading. This avoids translating a line that is still being written on screen. If the area stays the same, the program does not even read the text again.
 
