@@ -20,9 +20,9 @@ O **Ranmza GT** captura uma área da tela, reconhece o texto com OCR, traduz e d
 
 ### Como funciona
 
-1. **Captura** — ao apertar o atalho, fotografa a área da tela escolhida.
+1. **Captura** — ao apertar o atalho, fotografa a área da tela escolhida; no Modo Legenda, lê a área da legenda sozinho, fala por fala.
 2. **OCR** — reconhece o texto na imagem (Windows OCR nativo ou OneOCR, à sua escolha).
-3. **Tradução** — envia o texto para o motor escolhido (Google, OpenAI, Claude ou Gemini) e recebe a tradução.
+3. **Tradução** — envia o texto para o serviço escolhido (Google, Google Cloud, DeepL, Azure, OpenAI, Claude, Gemini ou Groq) e recebe a tradução.
 4. **Overlay** — desenha a tradução por cima do jogo, na mesma posição do texto original, sem capturar foco nem travar a janela.
 
 Desenvolvido em **Rust** 🦀 — nativo para Windows, sem runtime pesado, com baixo consumo de CPU/memória mesmo rodando junto de um jogo.
@@ -48,9 +48,9 @@ O Ranmza GT é gratuito. Se ele te ajudou, considere apoiar o desenvolvimento:
 
 ### How it works
 
-1. **Capture** — when you press the hotkey, it grabs the chosen area of the screen.
+1. **Capture** — when you press the hotkey, it grabs the chosen area of the screen; in Subtitle Mode, it reads the subtitle area by itself, line by line.
 2. **OCR** — recognizes the text in the image (native Windows OCR or OneOCR, your choice).
-3. **Translation** — sends the text to the chosen engine (Google, OpenAI, Claude or Gemini) and gets the translation back.
+3. **Translation** — sends the text to the chosen service (Google, Google Cloud, DeepL, Azure, OpenAI, Claude, Gemini or Groq) and gets the translation back.
 4. **Overlay** — draws the translation over the game, in the same position as the original text, without stealing focus or freezing the window.
 
 Built in **Rust** 🦀 — native for Windows, no heavy runtime, low CPU/memory footprint even while running alongside a game.

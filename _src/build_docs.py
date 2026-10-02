@@ -7,23 +7,16 @@
 #   EN  -> #/en/         (en/README.md, en/_sidebar.md, en/Manual/*.md)
 # O index.html (mantido a mao) tem o alias do _sidebar de /en/ e o botao de idioma.
 #
-# Fonte: mestre PT vive em game-translator/planos/MANUAL_DO_USUARIO.md e e copiado
-# para _src/manual.md; manual_en.md (EN) e a traducao mantida aqui em _src/.
+# Fonte: _src/manual.md (PT) e _src/manual_en.md (EN), mantidos aqui. O mestre antigo do
+# game-translator nao e mais copiado: o gt substituiu o game-translator na versao 3.0.
 import re, os, shutil, unicodedata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.dirname(HERE)            # raiz do repo (uma acima de _src/)
 KEEP = {".git", ".github", "_src", ".gitignore", "LICENSE", "index.html"}  # nunca apagar na limpeza
 
-# Tenta sincronizar o mestre PT do game-translator
-MASTER = os.path.normpath(os.path.join(
-    HERE, "..", "..", "game-translator", "planos", "MANUAL_DO_USUARIO.md"))
 SRC_PT = os.path.join(HERE, "manual.md")
 SRC_EN = os.path.join(HERE, "manual_en.md")
-
-if os.path.isfile(MASTER):
-    shutil.copyfile(MASTER, SRC_PT)
-    print("manual.md sincronizado do mestre")
 
 LOGO = os.path.join(HERE, "logo.png")   # asset fixo da marca
 MEDIA = os.path.join(HERE, "media")     # screenshots do manual (fonte)
@@ -175,10 +168,11 @@ desc_pt = ("O **Ranmza GT** captura uma área da tela, reconhece o texto com OCR
            "desenha a tradução **sobreposta ao jogo**, na mesma posição do texto original — "
            "como uma legenda flutuante. Funciona com qualquer jogo, visual novel, "
            "vídeo ou programa que mostre texto na tela.")
-how_pt = ("1. **Captura** — ao apertar o atalho, fotografa a área da tela escolhida.\n"
+how_pt = ("1. **Captura** — ao apertar o atalho, fotografa a área da tela escolhida; no Modo "
+          "Legenda, lê a área da legenda sozinho, fala por fala.\n"
           "2. **OCR** — reconhece o texto na imagem (Windows OCR nativo ou OneOCR, à sua escolha).\n"
-          "3. **Tradução** — envia o texto para o motor escolhido (Google, OpenAI, Claude ou "
-          "Gemini) e recebe a tradução.\n"
+          "3. **Tradução** — envia o texto para o serviço escolhido (Google, Google Cloud, DeepL, "
+          "Azure, OpenAI, Claude, Gemini ou Groq) e recebe a tradução.\n"
           "4. **Overlay** — desenha a tradução por cima do jogo, na mesma posição do texto "
           "original, sem capturar foco nem travar a janela.")
 rust_pt = ("Desenvolvido em **Rust** 🦀 — nativo para Windows, sem runtime pesado, com baixo "
@@ -203,10 +197,11 @@ desc_en = ("**Ranmza GT** captures an area of the screen, recognizes the text wi
            "translates it and draws the translation **overlaid on the game**, in the same "
            "position as the original text — like a floating subtitle. Works with any game, "
            "visual novel, video or program that shows text on screen.")
-how_en = ("1. **Capture** — when you press the hotkey, it grabs the chosen area of the screen.\n"
+how_en = ("1. **Capture** — when you press the hotkey, it grabs the chosen area of the screen; in "
+          "Subtitle Mode, it reads the subtitle area by itself, line by line.\n"
           "2. **OCR** — recognizes the text in the image (native Windows OCR or OneOCR, your choice).\n"
-          "3. **Translation** — sends the text to the chosen engine (Google, OpenAI, Claude or "
-          "Gemini) and gets the translation back.\n"
+          "3. **Translation** — sends the text to the chosen service (Google, Google Cloud, DeepL, "
+          "Azure, OpenAI, Claude, Gemini or Groq) and gets the translation back.\n"
           "4. **Overlay** — draws the translation over the game, in the same position as the "
           "original text, without stealing focus or freezing the window.")
 rust_en = ("Built in **Rust** 🦀 — native for Windows, no heavy runtime, low CPU/memory "

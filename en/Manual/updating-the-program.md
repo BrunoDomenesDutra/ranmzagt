@@ -1,13 +1,15 @@
 # 14. Updating the program
 
-When you open the program, if a newer version has been published, a notice appears showing the version you have and the one that came out. The **Download** button opens the new version's page in your browser — that's where the release notes and the `.zip` file are.
+When opening the program, if a newer version is published, a warning shows the version you have and the one that came out. The **Download** button opens the new version's page in your browser — that is where the news of that version and the `.zip` file are.
 
-**The program does not download and does not install anything by itself.** It only tells you; downloading and replacing the files is up to you, the same way you did the first install. This is on purpose: a program that replaces its own executable is exactly the behaviour Windows Defender blocks, and it isn't worth the risk of the whole program failing to start.
+**The program does not download or install anything by itself.** It only warns you; downloading and replacing the files are done by you, the same way as the first install. This is on purpose: a program that replaces its own executable is exactly the behavior Windows Defender blocks, and it is not worth the risk of the whole program not opening anymore.
 
-**How to update**, once you have the `.zip`: close Ranmza-GT, extract its contents over your current folder and confirm replacing the files. Your settings (`config.json`), the API keys, the fonts you dropped in `fonts/` and the files in `models/` (OneOCR and MI-GAN) are **not in the `.zip`** and stay where they are.
+**How to update**, after downloading the `.zip`: close Ranmza GT, extract the contents over the current folder and confirm replacing the files. Your settings (`config.json`), the profiles (`profiles\`), the API keys, the fonts you put in `fonts/` and the files in `models/` (OneOCR and MI-GAN) **are not in the `.zip`** and stay where they are.
 
-To turn the notice off, tick **Do not notify me about new versions** on the notice itself, or turn it off in **General › Config → Updates**. That toggle is how it comes back.
+> API keys are encrypted for this PC and this Windows account. If you copy the settings to another PC, type the keys again there.
 
-Even with the notice off, the **Check now** button in the same card checks right away whether a new version is out — that's how to look every once in a while without being told every time.
+To turn off the warning, check **Don't notify me about new versions** in the warning itself, or turn it off in **General › Config → Updates**. That switch is how it comes back.
 
-> The program queries the releases page at most once every 6 hours, no matter how many times you open and close it during the day — the notice still appears on every launch, because it uses the last stored answer. The *Check now* button ignores that interval. If you have no internet, nothing happens: no error shows up and the program opens normally.
+Even with the warning off, the **Check now** button, in the same card, checks right away whether a new version came out — it is the way to take a look now and then without being warned every time.
+
+> The program checks the releases page at most once every 6 hours, even if you open and close it several times a day — the warning keeps showing on every opening, because it uses the last saved answer. The *Check now* button ignores that interval. If you are offline, nothing happens: no error shows and the program opens normally.

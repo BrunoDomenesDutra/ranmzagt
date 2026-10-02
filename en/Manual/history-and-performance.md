@@ -1,8 +1,7 @@
 # 11. History and performance
 
-- **History tab**: shows translations made during the current session (original text, translation, time and service used), most recent first. Click an entry to copy the translation; there's also a button to clear everything.
-- **Debug › Monitor**: turns on a log of the last 10 translations with the time each step took (capture, preprocessing, recognition, translation, total) — useful to notice if any configuration is slowing the program down (for example, heavy preprocessing).
-- **DeepL usage** (**Translation › Translators**, with DeepL selected): shows how many **characters** DeepL translated in this session and your **account quota** (characters used/billing period limit) — click "Update" to check. Exclusive to DeepL: the AI engines don't expose spend through the key, and Azure has no equivalent quota endpoint (you track it in the Azure portal).
+- **History tab**: shows the screen capture translations made in the current session (original text, translation, time and service used). Click an entry to copy the translation; there is also a button to clear everything. Closing the program clears the history.
+- **Debug › Monitor**: turns on a log of the last 10 screen captures with how long each step took (capture, recognition, translation, total) — useful to see what is making translation slow. The **Cache** column shows how many blocks were resolved without calling the API, and **API**, how many calls were actually made.
 
 <p align="center"><img src="media/historico.png" alt="History tab" width="820"></p>
 

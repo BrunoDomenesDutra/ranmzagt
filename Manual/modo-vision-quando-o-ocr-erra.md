@@ -1,11 +1,11 @@
 # 8. Modo Vision — quando o OCR erra
 
 Às vezes o reconhecimento de texto comum (OCR) erra letras, perde pedaços do texto ou se perde
-totalmente em fontes muito estilizadas/artísticas, com símbolos ou ícones no meio do texto.
+totalmente em fontes muito estilizadas, com símbolos ou ícones no meio do texto.
 
-Para esses casos, use o **Traduzir com I.A Vision**. Em vez de confiar só no texto reconhecido, o
-programa **envia a imagem da tela para a Inteligência Artificial**, que "olha" a imagem e entende
-melhor o que está escrito, mesmo que o reconhecimento de texto tenha errado.
+Para esses casos, use o **Traduzir com I.A Vision**. Junto com o texto reconhecido, o programa
+**envia a imagem da área para a IA**, que "olha" a imagem, corrige o que o OCR leu errado e
+traduz. Símbolo ou ícone no meio da frase vira `[...]` na tradução.
 
 Assim como no Traduzir normal, o Vision tem os dois modos, e você escolhe pelo atalho:
 
@@ -13,16 +13,12 @@ Assim como no Traduzir normal, o Vision tem os dois modos, e você escolhe pelo 
 - **`Numpad6`** — Vision no **modo linha** (menus e listas).
 
 **Importante:**
-- Só funciona com **OpenAI, Claude ou Gemini** (Google Translate, DeepL, Google Cloud Translation
-  e Azure Translator não suportam esse modo).
-- Usa um modelo mais forte que o do Traduzir normal quando o escolhido é um modelo pequeno:
-  **Claude Haiku 4.5** vira **Sonnet 5** e **GPT-5.4 mini / GPT-4.1 mini** vira **GPT-4.1**.
-  Esses modelos leem melhor a imagem e custam mais por chamada. Com Sonnet, Opus, GPT-4.1 ou
-  Gemini, o Vision usa o mesmo modelo escolhido.
-- É um pouco mais lento e **sempre faz uma chamada nova** à IA (não usa o histórico de
-  traduções já feitas).
-- A posição da tradução na tela ainda depende de onde o reconhecimento de texto encontrou algo
-  — então, em casos raros, a tradução pode ficar maior que a área detectada.
+- Só funciona com **OpenAI, Anthropic (Claude) ou Gemini**. Com Google Translate, Google Cloud,
+  DeepL, Azure ou Groq, o atalho traduz só o texto do OCR e mostra o alerta *"Vision só com IA"*.
+- Usa o mesmo modelo escolhido em **Tradução › Tradutores**.
+- É um pouco mais lento e **sempre faz uma chamada nova** à IA: não usa as traduções guardadas,
+  porque a resposta depende da imagem.
+- A posição da tradução na tela ainda depende de onde o reconhecimento de texto encontrou algo.
 
 **Quando usar**: fontes desenhadas à mão, créditos estilizados, textos com ícones/símbolos
 misturados (ex: "pressione [ícone de botão] para continuar"), ou sempre que o atalho normal

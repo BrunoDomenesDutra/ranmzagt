@@ -1,73 +1,81 @@
 # 13. Complete reference — all tabs
 
-This section describes **every tab and every option** in the settings window, in the order they appear in the left-hand menu. It's reference material — for day-to-day use, the earlier sections are enough.
+This section describes **every tab and every option** of the settings window, in the order they appear in the left menu. It is reference material — for day-to-day use, the previous sections are enough.
 
-The menu has five groups with sub-items (**General**, **Overlay**, **Translation**, **Tools**, **Debug**) and three standalone items below them (**History**, **Experimental**, **About**).
-
-> The screenshots show the interface in Portuguese; the labels quoted in the text are the English ones you'll see with **Interface language** set to English.
+The menu has five groups with sub-items (**General**, **Overlay**, **Translation**, **Tools**, **Debug**) and two standalone items at the bottom (**History** and **About**).
 
 ## General › Config
 
-Where the program runs.
-
 <p align="center"><img src="media/geral-config.png" alt="General › Config tab" width="820"></p>
 
-- **App language → Interface language** — switches the language of the settings window itself (Portuguese / English). It does not affect the OCR and translation languages. On first run it detects the Windows language (falling back to English if it isn't Portuguese).
-- **Updates → Notify me about new versions** — turns on the notice that shows up when you open the program and a newer version has been published (see section 14). Turn it off here, or from the notice itself, and turn it back on with this toggle.
-- **Updates → Check now** — checks right away whether a new version is out, even with the notice turned off. The answer appears next to the button: *"You are on the latest version"*, the version found (with a **Download** button that opens the page in your browser), or a warning that the check failed.
-- **Configuration → Reset to default** — restores every option to factory values. It **keeps** the monitor, the selected areas, the API keys, the prompts (System Prompt and Game Info) and the update-notice preference.
-- **Capture backend → Backend** — how the program reads screen pixels:
-  - *Auto (recommended)* — decides on its own: WGC on Windows 11, DXGI on Windows 10, with no yellow border. Switches instantly, no restart.
+- **Program language → Interface language** — switches the language of the settings window itself (Portuguese / English) and of the alerts. It does not affect the OCR and translation languages. On first run it follows the Windows language (falls back to English if it is not Portuguese).
+- **Appearance** — colors of this screen and of the floating toolbar:
+  - *Theme* — Dark or Light.
+  - *Colorblind* — accessible color palette for color blindness.
+  - *Grayscale* — for achromatopsia.
+- **Updates → Notify me about new versions** — turns on the warning shown when opening the program when a newer version is published (see section 14).
+- **Updates → Check now** — checks right away whether there is a new version, even with the warning off.
+
+<p align="center"><img src="media/geral-config-monitor.png" alt="General › Config tab — reset, backend, monitor and alerts" width="820"></p>
+
+<p align="center"><i>Scrolling the same tab: <b>Configuration</b>, <b>Capture backend</b>, <b>Monitor</b> and <b>On-screen alerts</b>.</i></p>
+
+- **Configuration → Reset to default** — restores every option to factory values. It **keeps** the language and theme of the screen, the monitor, the selected areas, the API keys, the Game Info and the update warning preference.
+- **Capture backend → Backend** — how the program reads the screen pixels:
+  - *Auto (recommended)* — picks by itself: WGC on Windows 11, DXGI on Windows 10, without the yellow border. The switch applies right away, no restart.
   - *WGC (Windows 11)* — Windows Graphics Capture.
-  - *DXGI (Windows 10)* — Desktop Duplication; it exists so Windows 10 doesn't draw the yellow border around the captured monitor.
-- **Monitor → Active display** — which monitor the program captures, translates and displays on. *Automatic* uses the Windows primary monitor. Switching monitors **clears the saved capture area** and **requires a restart** (a "Restart now" button appears at the bottom of the tab).
+  - *DXGI (Windows 10)* — Desktop Duplication; it exists so Windows 10 does not draw the yellow border around the captured monitor.
+- **Monitor → Active display** — which monitor area selection, alerts, the area preview and the floating toolbar open on. *Automatic* uses the Windows primary monitor. It applies right away, no restart; each monitor keeps its own areas, and each profile keeps its own monitor.
+- **On-screen alerts → Show alerts** — short warnings in the bottom-right corner, only in serious situations (usage limit, key, no internet, OCR or capture that failed, shortcut pressed with this screen in focus) and when turning subtitles on and off.
 
 ## General › Profiles
 
-One set of settings per game. The concept and the walkthrough are in [section 4](/en/Manual/profiles-one-set-of-settings-per-game.md); this is just the controls.
+A set of settings per game. The concept and the step by step are in [section 4](/en/Manual/profiles-one-set-of-settings-per-game.md); here are only the controls.
 
 <p align="center"><img src="media/geral-perfis.png" alt="General › Profiles tab" width="820"></p>
 
 - **New profile → Game name** — the name of the profile to be created.
-  - **Duplicate current** — creates it from everything in effect right now, **selected areas included**.
-  - **Start from scratch** — creates it with the factory values.
-  - Either way the new profile **becomes active**, and from then on everything you change in the other tabs is saved into it by itself.
-- **Your profiles** — the list, in a collapsible card: click the header to fold it away once it grows. The active profile is highlighted and marked *active*; click any other one to activate it right away.
-  - **Rename** — changes the name. **Default** doesn't have this button: its name follows the interface language.
-  - **Delete** — asks for confirmation (*Delete it*). **Default** cannot be deleted. If the deleted profile was the one in use, Default takes over immediately.
-- **What changes when you switch profiles** — the summary of which options follow the profile and which apply to all of them (API keys, shortcuts, monitor, OCR tab, Inpaint and web server).
+  - **Duplicate current** — creates it from everything in effect right now, **including the selected areas**.
+  - **Start from scratch** — creates it with factory values, on the current monitor, and opens the Setup guide.
+  - In both cases the new profile **becomes active right away**, and from then on everything you change in the other tabs is saved in it by itself.
+- **Your profiles** — the list, in a collapsible card. The active profile is highlighted and marked as *active*; click any other to activate it right away.
+  - **Rename** — changes the name. **Default** does not have this button.
+  - **Delete** — asks for confirmation (*Delete it*). **Default** cannot be deleted. If the deleted profile was the one in use, Default takes over right away.
+- **What changes when you switch profiles** — the summary of which options follow the profile and which apply to all.
 
 ## General › Language
 
-The source-language field **adapts to the OCR engine** picked in General › OCR.
+The source language field **adapts to the OCR engine** chosen in General › OCR.
 
 <p align="center"><img src="media/geral-idioma.png" alt="General › Language tab" width="820"></p>
 
 - **Source text language**
-  - With *WinOCR* — the **Text language** field takes a BCP-47 tag (`en`, `ja`, `ko`, `zh-Hans`, `pt`…). If the language pack isn't installed in Windows, a warning appears with an **Install language pack** button that opens the Windows language screen directly.
-  - With *OneOCR* — **automatic detection**; there's no source language to configure and the field doesn't show.
-- **Target language** — what to translate into (`pt`, `es`, `fr`, `de`, `it`, `zh`…).
+  - With *WinOCR* — list of the languages with a text recognition pack installed in Windows, with no default option: pick the game language. With no choice, a warning shows up. If the saved language is no longer installed, the **Install language pack** button shows up and opens the Windows language screen.
+  - With *OneOCR* — **automatic detection**; there is no source language to set.
+- **Target language** — which language to translate into: Português (Brasil), Português (Portugal), Español, English, Français, Deutsch, Italiano, 日本語, 한국어, 中文（简体）and Русский.
 
 ## General › OCR
 
-Which engine recognizes the text, and how it groups lines.
+Which engine recognizes the text on screen.
 
 <p align="center"><img src="media/geral-ocr.png" alt="General › OCR tab" width="820"></p>
 
 - **OCR Engine → Active engine**
-  - *WinOCR (default — native, ~30 ms)* — the engine built into Windows: fast, offline, no external dependency. Recognition depends on the language packs installed on the system. It's the fastest, but can trip on heavily stylized game fonts.
-  - *OneOCR (Snipping Tool — experimental, ~50–150 ms)* — a multilingual model with automatic language detection. It **runs on Windows 10 and 11**; what's exclusive to Windows 11 are the files: `oneocr.dll`, `oneocr.onemodel` and `onnxruntime.dll` only ship with the Windows 11 Snipping Tool. You copy them from a Win11 machine and point to the folder (the card walks you through it, including the PowerShell command to find the Snipping Tool folder). It uses an unofficial Microsoft API — a Snipping Tool update can break the integration, in which case you just re-extract the files.
-  - The engine's configuration card is **collapsible**: it stays open while the folder isn't configured, and you can fold it away afterwards.
-
-> **Grouping isn't adjusted here.** Paragraph mode's *Grouping sensitivity* lives in **Overlay › Capture**, next to preprocessing.
+  - *WinOCR (native to Windows)* — the default. Built into Windows, nothing to install. It reads the language chosen in General › Language; it gets lost with busy backgrounds and very stylized fonts.
+  - *OneOCR (Windows 11 Snipping Tool — recommended)* — multilingual model with automatic language detection, far better than WinOCR with game fonts (the why is in [section 6](/en/Manual/configuring-translation.md), in *Switching OCR engine*). **It runs on Windows 10 and 11**; what is exclusive to Windows 11 are the files `oneocr.dll`, `oneocr.onemodel` and `onnxruntime.dll`. It uses an unofficial Microsoft API — a Snipping Tool update can break the integration.
+- **OneOCR** (shows up with OneOCR selected)
+  - *Status* — shows the folder OneOCR loaded from, or *"Did not load"* when the files are missing.
+  - *Files folder* — empty, it uses the folder where **Detect and copy** puts the files. **Browse...** picks another folder and checks that the 3 files are in it.
+  - *Detect and copy* — finds the installed Snipping Tool, copies the 3 files and sets the folder. It warns when the app is not installed or when it is a version without the files (the Windows 10 case). **It is the only way the program copies the files**: it never goes after them by itself.
+  - *Windows 10: copy from a Windows 11 PC* — collapsible block with the step by step for copying by hand.
 
 ## General › Shortcuts
 
 <p align="center"><img src="media/geral-atalhos.png" alt="General › Shortcuts tab — floating toolbar and global shortcuts" width="820"></p>
 
-- **Floating toolbar → Show floating toolbar** — turns on the always-visible button window (see step 2.7). It also opens and closes with the `NumpadSubtract` hotkey, and it **remembers the last position** you left it in.
+- **Floating toolbar → Show floating toolbar** — turns on the always-visible button window (see step 2.8). It also opens and closes with the `NumpadSubtract` shortcut, and it **remembers the last position** and size you left it at.
 
-Eleven global shortcuts — they work with the game focused, and are disabled while the settings window is in the foreground. Each has the **Ctrl / Alt / Shift** modifiers plus a main key, picked from the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Numbers** and **Letters** groups.
+Eleven global shortcuts — they work with the game in focus and are paused while the settings window is in the foreground. Each has the **Ctrl / Alt / Shift** modifiers and a main key, chosen among the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Digits** and **Letters** groups.
 
 | Action | Default |
 |---|---|
@@ -80,148 +88,120 @@ Eleven global shortcuts — they work with the game focused, and are disabled wh
 | Clear overlay | `NumpadDecimal` |
 | Toggle subtitles | `Numpad0` |
 | Select subtitle area | `Numpad1` |
-| Show/hide areas (preview) | `Numpad2` |
+| Show/hide the selected areas | `Numpad2` |
 | Show/hide floating toolbar | `NumpadSubtract` |
 
-> **Letters and numbers** as the main key **require** a modifier (Ctrl, Alt or Shift) so they don't clash with the game, which uses WASD and slots 0–9 constantly. Numpad, F-keys and navigation keys work without one. The Numbers and Navigation groups are what save you on a laptop with no numpad.
+> **Letters and digits** as the main key **require** a modifier (Ctrl, Alt or Shift) so they do not conflict with the game, which uses WASD and slots 0–9 all the time. Numpad, F-keys and navigation keys work without a modifier. The Digits and Navigation groups help people on laptops without a numpad.
 
-The program warns you if you assign the same combination to two shortcuts — one of them wouldn't be registered.
+The program warns you if you repeat the same combination in two shortcuts — one of them would not be registered. A key change applies right away, no restart.
 
 ## Overlay › Capture
 
-Appearance of manual translations, and image preprocessing.
+How the screen capture translation looks.
 
 <p align="center"><img src="media/overlay-captura.png" alt="Overlay › Capture tab" width="820"></p>
 
-- **Text**
-  - *Font* — "System default (Arial)" or any font in the `fonts/` folder, with a preview beside it.
-  - *Text color* — color picker (white by default).
-  - *Font size* — 8 to 72 pt.
-  - *Line height* — 0.80 to 2.00.
-  - *Auto-fit* — gradually shrinks the font so the text fits the block without clipping.
-- **Background and Outline** — mutually exclusive; turning one on turns the other off.
-  - *Show background* + *Background opacity* (10–100%) — a dark box behind the text.
-  - *Show outline* + *Thickness* (2–5 px) — a black outline around each letter.
-
-<p align="center"><img src="media/overlay-captura-exibicao.png" alt="Overlay › Capture tab — Display and preprocessing" width="820"></p>
-
 - **Display**
-  - *Overlay duration* — Never clear automatically / 15 s / 30 s / **1 minute (default)** / 2 / 5 / 10 minutes.
-  - *Hide the translation from recordings and streams* — the translation stays visible on your own
-    screen but disappears from captures. Only works with programs running on this PC (OBS, Game Bar,
-    NVIDIA ShadowPlay, etc); with a capture card it still shows up. Affects manual translation only.
-- **Paragraph Mode Fine-Tuning → Grouping sensitivity** (0–3.0; default 1) — a multiplier over
-  the typical vertical spacing between lines, used to decide whether two lines belong to the same
-  paragraph. Lower values split paragraphs more readily; higher ones merge more distant lines into
-  a single block. The mode itself (paragraph or line) **isn't chosen here**: it's decided at
-  capture time, by the hotkey — `Numpad8` (paragraph) or `Numpad9` (line).
-- **OCR Preprocessing** — filters applied to the image before recognition:
-  - *Enable preprocessing* turns the block on.
-  - *Grayscale* · *Invert colors*
-  - *Contrast* (1.0–3.0×) · *Upscale* (1.0–4.0×) · *Sharpen* (0–2.0×)
-  - *Advanced* — only applied when enabled: *Threshold* (0–255), *Blur* (0–5.0×), *Dilation* (0–10 px), *Erosion* (0–10 px).
+  - *Overlay duration* — **1 minute (default)**, 2, 5 or 10 minutes.
+  - *Hide the translation from recordings and streams* — the translation stays visible on your screen, but disappears from captures. It only works with programs running on this PC (OBS, Game Bar, NVIDIA ShadowPlay, etc); recording with a capture card, it shows anyway.
+- **Text**
+  - *Font* — "System default (Arial)", the fonts in the `fonts/` folder or the Windows fonts, with a preview just below.
+  - *Text color* — color picker (white by default).
+  - *Font size* — 8 to 100 px.
+  - *Line height* — 1.00 to 2.00 times the font size.
+  - *Auto-fit* — shrinks the font until the text fits where the original was.
+- **Background and Outline** — can be on together or separately.
+  - *Show background* + *Background opacity* (10–100%) — dark box behind the text.
+  - *Show outline* + *Thickness* (0.5–5 px) + *Outline color* — outline around each letter.
+- **Paragraph Mode Fine-Tuning → Grouping sensitivity** (0.5–3.0) — lower values separate paragraphs more easily; higher values join more distant lines into one block. The mode itself (paragraph or line) **is not chosen here**: it is decided at capture time, by the shortcut — `Numpad8` (paragraph) or `Numpad9` (line).
 
 ## Overlay › Subtitles
 
-Subtitle Mode has its **own** appearance and preprocessing, independent of Overlay › Capture.
+Subtitle Mode has its **own** appearance, independent from Overlay › Capture.
 
 <p align="center"><img src="media/overlay-legenda.png" alt="Overlay › Subtitles tab" width="820"></p>
 
-- **Translation position** — *Replace the original subtitle in place*: draws the translation over the
-  captured area, covering the original subtitle, instead of showing it above the area. Shows one line
-  at a time (see *Visible lines* below). In this mode the subtitle disappears from captures made on
-  this PC — that's what keeps the OCR from re-reading its own translation. See section 9.
-- **Text** — *Font*, *Text color* and *Font size* (10–48 pt). No line height and no auto-fit.
-- **Background and Outline** — *Show background* + *opacity* (10–100%), or *Show outline* + *Outline thickness* (1–5 px).
+- **Translation position → Stick to the detected text** — draws the translation on top of the original line, with the same line breaks, instead of above the area. It shows one line at a time, and a larger font spills over the area. In this mode the subtitle disappears from captures made on this PC — that is what stops the OCR from reading its own translation. See section 9.
+- **Text** — *Font*, *Text color* and *Font size* (10–48 px).
+- **Background and Outline** — *Show background* + *Opacity* (10–100%) and *Show outline* + *Outline thickness* (0.5–5 px) + *Outline color*.
 
-<p align="center"><img src="media/overlay-legenda-captura.png" alt="Overlay › Subtitles tab — Capture and preprocessing" width="820"></p>
+<p align="center"><img src="media/overlay-legenda-captura.png" alt="Overlay › Subtitles tab — Capture and alphabet" width="820"></p>
 
 - **Capture**
-  - *Interval* — how often the area is re-read (25 ms to 5 s).
-  - *Visible lines* — how many subtitle lines to keep on screen (1 to 8). **Locked at 1** when
-    *Replace the original subtitle in place* is on; the value you picked is kept for when the option
-    is turned off.
-  - *Clear after silence* — wipes the subtitle if no new text shows up for X seconds (1 to 5 s).
-  - *Turn off Subtitle Mode after inactivity* — **turns the mode off**, not just hides it, after that long without detecting text in the region: Never / 1 / 2 / 3 / 5 / 10 minutes.
-- **OCR Preprocessing** — the same controls as Overlay › Capture, but independent of it.
+  - *Ignore text away from the center of the area* — on by default. Skips signs near the edges of the area; turn it off for left-aligned dialogue.
+  - *Lines on screen* — how many lines stay visible (1 to 8). It stays at 1 with *Stick to the detected text* on.
+  - *Translation stays after the subtitle goes away* — 1 to 3 s (default 2 s).
+  - *Turn off subtitles with no text in the area* — **turns the mode off** after that long with no text: Never / 1 / 2 / 5 / 10 minutes (default 1 minute).
+- **Original subtitle alphabet** — only characters of that alphabet are considered in the subtitle; the rest is ignored. With OneOCR, choose *Any alphabet*, Latin, Japanese/Chinese, Korean or Cyrillic. With WinOCR, it follows the language in General › Language, with the **Change language** button.
 
 ## Overlay › Web
 
-Streams translations to browsers on the local network — and to OBS.
+Streams screen capture translations to browsers on the local network — and to OBS.
 
 <p align="center"><img src="media/overlay-web.png" alt="Overlay › Web tab" width="820"></p>
 
 - **Web Server**
   - *Server active* — starts a local HTTP server, reachable from any device on the same network.
-  - *Show translation on screen* — keeps the overlay even with the server running; turn it off to send **only** to the browser/OBS.
-  - *Port* (1024–65535) — also shows how many clients are connected.
-- **Addresses** — `/captura` (with history and a Clear button) and `/captura/obs` (transparent background, for use as a Browser Source in OBS), each with a **Copy** button.
-- **Appearance** — *Theme* · *Font size* (12–48 px) · *Bold* · *Detected text* (shows the original below the translation) · *Time and service* · *Custom colors*, which unlocks six pickers: translated text, original text, time, service (badge), card background and card border.
-- **History → Entries kept in the buffer** (10–200).
+  - *Show translation on screen* — keeps the overlay even with the server on; turn it off to send **only** to the browser/OBS.
+  - *Port* — 7474 by default. It also shows how many clients are connected.
+- **Addresses** — `/captura` (with history and a Clear button) and `/captura/obs` (transparent background, to use as a Browser Source in OBS), each with a **Copy** button.
+
+<p align="center"><img src="media/overlay-web-aparencia.png" alt="Overlay › Web tab — page appearance and history" width="820"></p>
+
+<p align="center"><i>Scrolling the same tab: the web page <b>Appearance</b> and the <b>History</b> buffer.</i></p>
+
+- **Appearance** — *Theme* (Dark, Light or Dracula) · *Font size* · *Bold* · *Detected text* (shows the original below the translation) · *Time and service* · *Custom colors*, which unlocks the page color pickers.
+- **History → Entries kept in the buffer** — how many translations the page keeps for whoever opens it later.
 
 ## Translation › Translators
 
-Which service translates, and with which credentials.
+Which service translates and with which keys.
 
-<p align="center"><img src="media/tradutores-deepl.png" alt="Translation › Translators tab with DeepL" width="820"></p>
+<p align="center"><img src="media/tradutores-google-cloud.png" alt="Translation › Translators tab with Google Cloud Translation" width="820"></p>
 
 - **Translation Provider → Active provider**
-  - *Google Translate — free, no key* — unofficial API, nothing to configure. It's the same address the Google Translate web page uses internally; since it is neither published nor documented, Google can change it or shut it down at any time — if it ever stops responding, the way out is switching to an engine with a key. **Doesn't support Vision Mode.** Being free, it has a **request limit**, counted per IP address: on captures with many blocks, in continuous use or on CGNAT connections (an IP shared with your ISP's other customers), a *"Rate limit reached"* warning may appear — what to do about it is in [section 12](/en/Manual/common-problems-and-solutions.md).
-  - *DeepL (requires API key)* — a high-quality dedicated translator; **doesn't support Vision Mode**. It has no model selection, but it does have **Formality** (Default / More formal / More informal), which only affects target languages that support it — PT-BR included — and is ignored on the rest. It makes use of the **Game Info** field (Translation › AI) and, in Subtitle Mode, the previous lines as context, at no extra cost.
-  - *Azure Translator (requires API key and region)* — Microsoft's translator; **doesn't support Vision Mode**. It has no model selection and no formality, and it **doesn't use** Conversation Context or Game Info — its translation API takes no context. In exchange, it detects the source language **block by block**: in a capture where part of the text is in another language, each block is translated from the right one.
-  - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AI engines, requiring an API key.
-  - *OpenAI-compatible* — any service or server that accepts the OpenAI chat format. Details in [OpenAI-compatible service](/en/Manual/configuring-translation.md).
-- **Authentication** — shown for providers with a key. Credentials are **saved per engine**, so switching services and back erases nothing.
-  - *Model* (AI engines) — each engine offers three options. The first one is the default.
-    - OpenAI: GPT-5.4 mini (fastest) · GPT-4.1 mini (most economical) · GPT-4.1
-    - Claude: Haiku 4.5 · Sonnet 5 · Opus 5
+  - *Google Translate — free* — unofficial API, nothing to set up. It is the same address the Google Translate web page uses internally; since it is not published or documented, Google can change or disable it at any time. **Does not support Vision Mode.** Being free, it has a **request limit**, counted per IP address — what to do is in [section 12](/en/Manual/common-problems-and-solutions.md).
+  - *Google Cloud Translation* — Google's official API, with a key created in the Google Cloud Console (*APIs & Services › Credentials*). **Does not support Vision Mode.**
+  - *DeepL* — dedicated translator. The free plan key ends in `:fx`, and the program picks the right server by itself. **Does not support Vision Mode.**
+  - *Azure Translator* — Microsoft's translator; requires a key and the resource **region**. **Does not support Vision Mode.**
+  - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AIs, with an API key and Vision Mode.
+  - *Groq* — AI with a free plan, with an API key. **Does not support Vision Mode.**
+- **Authentication** — shows up for the AIs and for Azure.
+  - *Model* (AIs) — each one has a short list. The first one is the default.
+    - OpenAI: GPT-5.4 mini (fastest, recommended) · GPT-4.1 mini · GPT-4.1
+    - Anthropic: Haiku 4.5 · Sonnet 5 · Opus 5
     - Gemini: 3.5 Flash-Lite · 3.6 Flash · 3.7 Flash
-    - *Custom…* — the last option in the list: opens a free-text field where you type **any model ID** the provider accepts, so you can use a newer model without waiting for a program update.
-    - *See the provider's full model list* — opens the selected engine's official page in your browser, with every model and its exact ID. Useful in two situations: when a model newer than the built-in list comes out, and when you have an older key that still reaches models the provider has closed off to new accounts — that's the case with the Gemini 2.0 and 2.5 families, which answer for older keys but return an error on freshly created ones. Either way, copy the ID from there into the *Custom…* field.
-  - *Base URL*, *Model* and *The model accepts images* (OpenAI-compatible only) — they take the place of the model list. Test connection only unlocks with the URL and model filled in.
-  - *OpenAI fast queue* — shown below the model, OpenAI only. **Off by default**: responses arrive about 20% faster, and OpenAI charges twice the price per token. The key is yours, so the doubled bill only happens if you turn it on.
-  - *Resource region* (Azure only) — **required**, and it sits where DeepL shows Formality. It accepts the portal spelling ("Brazil South"): capitals and spaces are normalized for you. The *See Azure's official region list* link opens Microsoft's table in your browser. Key and region come from the same page: <https://portal.azure.com> → your Translator resource → *Keys and Endpoint*.
-  - *Test connection* — makes a test call with the current key and model and tells you right away whether everything is fine or which error came back, instead of you finding out mid-game. It also exists for Google, to check connectivity. On Azure it only unlocks once the region is filled in, because without it the error that comes back is indistinguishable from an invalid key.
-- **API Keys** — a collapsible card where the selected engine's credential goes (`sk-…`, `sk-ant-…`, `AIza…`, or the free-plan DeepL `:fx` key). It **opens by itself** while no key is filled in. With OpenAI-compatible the key is optional and the card stays closed.
-  - *+ Add key* / *✕* — you can register **as many keys as you like** for the same engine. When the key in use is invalid, runs out of credit or hits the request limit, the next one in the list takes over automatically; once all are exhausted, it falls back to Google Translate.
-- **DeepL usage** — only with DeepL selected: calls and characters translated this session, plus the **account quota** (*Refresh* button); *Reset session* restarts the count. It's the only engine with this tracking — the AI ones don't expose spend through the key, and Azure has no equivalent quota endpoint.
+    - Groq: gpt-oss-20b · gpt-oss-120b
+    - *Custom…* — last option in the list: opens a free field where you type **any model ID** the service accepts, to use a newer model without waiting for a program update.
+    - *See the provider's full model list* — opens the service's official page in the browser, with every model and the exact IDs, to copy into *Custom…*.
+  - *OpenAI fast queue* — shows up below the model, only with OpenAI. **It comes off.** When on, OpenAI serves you first, at twice the price per token.
+  - *Resource region* (Azure only) — **required**. It accepts the portal spelling ("Brazil South"): capitals and spaces are fixed by themselves. The *See Azure's official region list* link opens Microsoft's table in the browser. Key and region come from the same page: <https://portal.azure.com> → your Translator resource → *Keys and Endpoint*.
+- **API Keys** — collapsible card where the key of the selected service goes. It **opens by itself** while no key is filled in. Keys are stored encrypted and only open on this PC, in your Windows account.
+  - *+ Add key* / *✕* — you can register **as many keys as you want** for the same service. When the key in use is rejected, runs out of credit or hits the request limit, the next one in the list takes over right away; when all are used up, it falls back to Google Translate.
 
 <p align="center"><img src="media/tradutores-openai.png" alt="Translators with OpenAI selected" width="820"></p>
 
-<p align="center"><img src="media/tradutores-claude.png" alt="Translators with Anthropic (Claude) selected" width="820"></p>
-
-<p align="center"><img src="media/tradutores-gemini.png" alt="Translators with Gemini selected" width="820"></p>
-
-<p align="center"><img src="media/tradutores-openai-compat.png" alt="Translators with OpenAI-compatible selected" width="820"></p>
-
-<p align="center"><img src="media/tradutores-azure.png" alt="Translators with Azure Translator selected, showing the Resource region field" width="820"></p>
-
 ## Translation › AI
 
-Model parameters and prompts.
+Context sent to the AIs.
 
 <p align="center"><img src="media/ia.png" alt="Translation › AI tab" width="820"></p>
 
-- **Model Parameters**
-  - *Temperature* (0–2) — 0.0 literal · 0.3 recommended · 1.0+ creative.
-  - *Max tokens* (256–4096) — response size; 1024 is plenty for translation.
-- **Conversation Context → Previous lines** (0–20) — in Subtitle Mode, sends the last lines (original + translation) as context, so the AI keeps terminology and tone consistent. 0 disables it; 3–5 recommended.
-- **System Prompt** — translator role and general rules. It's **blank** by default, with a gray example inside the field (placeholder) showing the expected format; nothing is sent to the AI until you write your own. **Save** and **Restore default** buttons (the latter clears the field again). The target language doesn't need to be here: the program already sends the AI the language chosen in the **Language** tab. If you ask here for another language or a style (e.g. "all in uppercase"), what you wrote wins. Concrete rules (glossary, keeping names, no "!", Argentine voseo) work on every model. Speech styles, like a pirate or a regional accent, come out better on the larger models (GPT-4.1, Claude Sonnet and Opus), and word games like Pig Latin only Sonnet and Opus handle.
-- **Game Info** — theme, characters and glossary; change it per game. Also blank by default, with a gray example. Same buttons.
+- **Conversation Context → Previous lines** (5–10, default 5) — in Subtitle Mode, sends the last lines (original + translation) as context, so the AI keeps terms and tone consistent. Each extra line costs tokens on every translation.
+- **System Prompt** — general translator rules, for every game. It comes **blank**, with a gray example inside the field; nothing is sent to the AI until you write your own. **Save** and **Restore default** buttons (which empties the field again). The target language does not need to be here: the program already sends the AI the language chosen in the **Language** tab, and asking for another language in this field is ignored. Concrete rules (glossary, keep names, do not soften swearing) work on every model.
+- **Game Info** — theme, characters and glossary; change it for each game. It also comes blank, with a gray example. Same buttons.
 
-> With a non-AI engine active, the cards that don't apply are flagged in red ("Only applies to AI engines…" and "The current translation engine doesn't use this."). **Conversation Context** and **Game Info** also apply to **DeepL**; **Google Translate** and **Azure Translator** ignore both.
+> With a translator that is not an AI active, the cards are marked in red: they only apply to OpenAI, Anthropic, Gemini and Groq.
 
-<p align="center"><img src="media/ia-avisos.png" alt="AI tab with Google Translate active, showing the red warnings" width="820"></p>
-
-The global reset (General › Config) does **not** wipe the System Prompt or the Game Info.
+The general reset (General › Config) does **not** erase the Game Info.
 
 ## Tools › Inpaint
 
-AI-reconstructed background (MI-GAN) — under development.
+AI background reconstruction (MI-GAN).
 
 <p align="center"><img src="media/ferramentas-inpaint.png" alt="Tools › Inpaint tab" width="820"></p>
 
-Instead of a black box behind the translation, it erases the original text from the capture and reconstructs the background with an inpainting model running inside the program — the translation ends up looking native to the game. It applies to **manual translations** (Translate and Vision); Subtitle Mode doesn't use it. It costs ~50–200 ms per translation and ~200 MB of RAM while active.
+Instead of the dark box behind the translation, it erases the original text from the screen capture and rebuilds the background with an inpainting model running inside the program — the translation looks native to the game. It applies to **screen capture** (Translate and Vision); Subtitle Mode does not use it.
 
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
   <iframe src="https://player.vimeo.com/video/1217778049"
@@ -230,112 +210,57 @@ Instead of a black box behind the translation, it erases the original text from 
           title="AI-reconstructed background"></iframe>
 </div>
 
-<p align="center"><i>The reconstructed background in place of the black box behind the translation.</i></p>
+<p align="center"><i>The reconstructed background instead of the dark box behind the translation.</i></p>
 
-- **Enable reconstructed background** — only takes effect with the files configured below.
-- **Mask fine-tuning**
-  - *Mask dilation* (0–12 px; default 3) — if an edge residue remains after erasing the text (the font halo), raise it so MI-GAN reconstructs a bit beyond the letters.
-  - *Detection threshold* (1.05–1.60; default 1.30) — a lower threshold makes the mask more sensitive (catches more halo, but may mistake textured background for text).
-  - Both apply **per capture**, with no restart.
-### Download automatically
+- **Enable reconstructed background** — can only be turned on after downloading the model, in the card below.
+- **Mask fine-tuning** — applies **per capture**, no restart.
+  - *Mask dilation* (0–12 px; default 3) — if a border residue (the font halo) is left after erasing the text, raise it so MI-GAN rebuilds a bit beyond the letters.
+  - *Detection threshold* (1.05–1.50; default 1.30) — a lower threshold makes the mask more sensitive (catches more halo, but may mistake textured background for text).
+  - *Outline* (0–16 px; default 8) — how far the letter outline is erased. Raise it if a dark stain is left with thick-outlined text; 0 erases only the letter, good for text without an outline.
+  - *Background* (0–150%; default 25%) — grain given back to the generated background, so it does not look flat next to the scenery. Lower it if the background gets too grainy.
 
-The feature needs two files that don't ship inside the program's `.zip`: the MI-GAN model (27 MB) and `onnxruntime.dll` (72 MB). The **Download automatically** card fetches both for you.
+### Automatic download
 
-Click **Download** on each one. The bar shows progress and the button turns into **Cancel** — cancelling doesn't throw away what already came down: resuming picks up where it stopped.
+<p align="center"><img src="media/ferramentas-inpaint-baixar.png" alt="Automatic download card, in Tools › Inpaint" width="820"></p>
 
-<p align="center"><img src="media/ferramentas-inpaint-baixando.png" alt="MI-GAN download in progress" width="820"></p>
+The feature needs the MI-GAN model (27 MB), which does not come in the program `.zip`. The **Download automatically** card downloads and checks the model:
 
-Once finished, both read **Ready, files verified** with a green check, and **the folder is configured on its own** — you don't have to copy any path.
+- *Model folder* — empty, it uses the `models\inpaint` folder, next to the executable. **Browse...** picks another one.
+- *Download* — the bar shows the progress and the button turns into **Cancel**. Canceled or interrupted, the download starts over next time.
 
-<p align="center"><img src="media/ferramentas-inpaint-pronto.png" alt="Both files downloaded and verified" width="820"></p>
+The program checks the file's **sha256** before accepting it. A file that arrives corrupted or different from the expected one is deleted and the download fails with a warning — a half file never passes as a good one.
 
-The program checks each file's **sha256** before accepting it. A file that arrives corrupted or different from what was expected is deleted and the download fails with a message — a half-written file never gets to pass for a good one. Both land in `models\inpaint`, next to the executable.
-
-#### Alternate address
-
-If the default download doesn't work on your network (some corporate networks and some ISPs block HuggingFace and GitHub), open **Alternate address** and paste another link.
-
-<p align="center"><img src="media/ferramentas-inpaint-endereco.png" alt="Alternate address field open" width="820"></p>
-
-Hash verification **still applies** to the alternate address. It changes where the file comes from, never which file is accepted: a link that serves something else is rejected.
-
-### Manual installation
-
-If you'd rather do it by hand — or if the gaming machine has no internet — open **Manual installation**. It has the links for both files and the folder field, with **Browse** and **Verify**.
-
-<p align="center"><img src="media/ferramentas-inpaint-manual.png" alt="Manual installation block open" width="820"></p>
-
-Download `migan_pipeline_v2.onnx` and `onnxruntime.dll` (from inside `onnxruntime-win-x64-1.26.0.zip`), put both in the same folder and point here. Once it finds both, the folder is configured right away.
-
-> Moving the `onnxruntime.dll` to another folder requires restarting the program.
-
-> Tip: turn on **Outline** in Overlay › Capture, because the reconstructed background can come out too light for white text.
-
-## Tools › Lab
-
-A lab for testing preprocessing without touching the game.
-
-<p align="center"><img src="media/ferramentas-lab-preprocessamento.png" alt="Tools › Lab tab" width="820"></p>
-
-- **Test Image** — pick a PNG/JPG from the `images/lab_images/` folder, next to the executable.
-- **Preprocessing Parameters** — the same controls as Overlay › Capture, with a **live preview**: the original and processed images appear below, side by side.
-- **Apply to Capture** / **Apply to Subtitles** — copy the setup you just tested into the matching tab.
-
-Turning on *Advanced* reveals Threshold, Blur, Dilation and Erosion, for the hard cases:
-
-<p align="center"><img src="media/ferramentas-lab-avancado.png" alt="Lab with the advanced filters enabled" width="820"></p>
+> Tip: turn on the **Outline** in the Overlay › Capture tab, because the reconstructed background may be too light for white text.
 
 ## Debug › Monitor
 
-Latency of each pipeline stage.
+Time of each screen capture step.
 
 <p align="center"><img src="media/debug-monitor.png" alt="Debug › Monitor tab" width="820"></p>
 
-- **Monitoring → Active** — records the timing of each stage on every translation. The history survives navigating between tabs.
-- **Run History** — a table of the last 10 captures: Time, Capture, Preproc, OCR, Translation, Total, Blocks, Cache (hits that skipped the API) and API (calls made).
-- **Statistics** — min, average and max for each stage.
-
-## Debug › Image
-
-Diagnostic images.
-
-<p align="center"><img src="media/debug-imagem.png" alt="Debug › Image tab" width="820"></p>
-
-- **Debug Mode → Enabled** — saves diagnostic images on every capture.
-- **Images to save** — Original capture before preprocessing (`frame.png`), Capture after preprocessing (`frame_proc.png`), OCR lines (`ocr_lines.png`), Grouped paragraphs (`ocr_paragraphs.png`) and the inpainting mask preview (`mask.png`).
-- **Output folder** — the path (default `images\ocr_debug_images`) and a button to open the folder.
+- **Monitoring → Active** — records the time of each step on every screen capture key press. The history is kept when navigating between tabs.
+- **Run History** — table of the last 10 captures: Time, Capture, OCR, Translation, Total, Blocks, Cache (hits without calling the API) and API (calls actually made).
+- **Statistics** — minimum, average and maximum of each step.
 
 ## Debug › Logs
 
-The current session's log, in real time.
+Log of this run, in real time.
 
 <p align="center"><img src="media/debug-logs.png" alt="Debug › Logs tab" width="820"></p>
 
-- **Log captured text and translations** — a privacy switch, **off by default**. Leave it off when sending a log to support, so you don't expose the game's content.
-- **Filter lines** · **Auto-scroll** · **Refresh** — view controls; errors come out in red, warnings in yellow.
+- **Log captured text and translations** — privacy switch, **off by default**. Keep it off when sending a log to support, so you do not expose the game content. API keys never go to the log.
+- **Filter lines** · **Auto-scroll** · **Refresh** — viewing controls; errors come out in red, warnings in yellow.
+
+Each run writes a file in `logs\`, next to the executable, and the program keeps the 20 most recent. That is the file support will ask for.
 
 ## History
 
 <p align="center"><img src="media/historico.png" alt="History tab" width="820"></p>
 
-Lists the **current session's** translations — time, service, translation and, below it, the original text — most recent first, up to the limit set in Overlay › Web. Click an entry to copy the translation. **Clear history** button.
-
-## Experimental
-
-> Everything in this tab is **under development**: behavior can change, bugs are expected, and features can be removed.
-
-One collapsible card.
-
-**Wait for complete text (typewriter effect)** — only translates once the line has finished appearing, so you don't translate sentences still "being typed" on screen. Applies to Subtitle Mode.
-
-<p align="center"><img src="media/experimental-typewriter.png" alt="Typewriter effect card" width="820"></p>
-
-- *Required stable captures* (2–8 frames) — how many consecutive reads must match.
-- *'Same text' threshold* (80–99%) — how alike two reads must be to count as identical.
-- *Wait cap* (0–4 s) — the longest it will wait before translating whatever it has.
+Lists the screen capture translations of the **current session** — time, service, translation and, below, the original text. Click an entry to copy the translation. **Clear history** button.
 
 ## About
 
-Program information: icon, name and installed **version**, the feature list, the author, and the full **License** — what's allowed (free personal use, distributing unmodified copies, creating content such as videos and streams) and what's prohibited (modifying or reverse-engineering, selling, redistributing modified versions, commercial use without authorization, removing credits), plus the warranty disclaimer.
+Program information: icon, name and installed **version**, the author, the project and support links, and the full **Terms of Use** — what is allowed (free personal use, distributing unmodified copies, creating content like videos and streams) and what is forbidden (modifying or reverse engineering, selling, redistributing modified versions, commercial use without permission, removing credits), plus the warranty disclaimer.
 
 ---

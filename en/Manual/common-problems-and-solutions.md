@@ -1,67 +1,75 @@
 # 12. Common problems and solutions
 
-#### "Error opening program: VCRUNTIME140.dll not found" (or MSVCP140.dll)
-→ Your Windows is missing **Microsoft Visual C++ Redistributable** — a free Microsoft component some freshly-formatted PCs don't have. Download and install the **x64** package from this official link: <https://aka.ms/vs/17/release/vc_redist.x64.exe> — then reopen Ranmza GT, it should open normally.
+#### "Error opening the program: VCRUNTIME140.dll was not found" (or MSVCP140.dll)
+→ Your Windows is missing the **Microsoft Visual C++ Redistributable** — a free Microsoft component some freshly formatted PCs do not have yet. Download and install the **x64** package from this official link: <https://aka.ms/vs/17/release/vc_redist.x64.exe> — then reopen Ranmza GT, and it opens normally.
 
-#### "Recognition detects nothing" / red warning about language
-→ Go to **General › Language** and click the warning to install the necessary Windows language package.
+#### "Ranmza GT is already running."
+→ The program opens only once, so the shortcuts do not clash. Close the other Ranmza GT window — including an old version, if it is open — and open it again.
 
-#### "I pressed the hotkey and nothing happened"
-→ Check if the settings window isn't in the foreground (hotkeys only work with the game in focus). If still nothing, enable the **floating toolbar** (**General › Shortcuts**) and use its buttons.
+#### "Recognition does not detect anything" / language warning
+→ With **WinOCR**, go to **General › Language** and check that a language is chosen and that its pack is installed in Windows. **OneOCR** does not use Windows language packs and reads any language without installing anything — another reason to switch engines in **General › OCR**.
 
-#### "Hotkeys don't work in some games (even with game in focus)"
-→ Some games run with elevated privileges (Administrator) and therefore **block Ranmza GT's global hotkey registration**. In that case, **run Ranmza GT as Administrator** (right-click the `.exe` → *Run as administrator*) — then it can activate hotkeys over the game. To avoid repeating every time, check *Run this program as an administrator* in **Properties → Compatibility** of the executable. (Alternative: use the **floating toolbar**, which fires actions by mouse click and doesn't depend on keyboard hotkeys.)
+#### "I chose OneOCR and the card says *Did not load*"
+→ The *"OCR failed to load"* alert also shows. The OneOCR files have not been copied yet. Click **Detect and copy**, in the OneOCR card in **General › OCR**. On Windows 10, follow the step by step in the same card. While OneOCR does not load, the OCR stays stopped.
 
-#### "Translation doesn't appear, or it's slow"
-→ Check the **History** and **Debug › Monitor** tabs to see if translation is being done. Transient failures (rate limit, server briefly down, connection drop) are **automatically retried** once before falling back to Google Translate. If you have **more than one key** registered for the engine and the problem is the key (invalid, out of credit or at the request limit), it tries the other keys in the list before the fallback. If a yellow "fallback to Google Translate" warning appears — and in History the translation is marked "Google Translate (fallback)" —, the configured service (DeepL, Azure or an AI engine) failed on **every** key; check your API keys and credits in Translation › Translators.
+#### "The guide does not let me past the Languages step"
+→ With WinOCR, the text language is required: pick one from the list. If the list is empty, Windows has no language pack with text recognition; install the pack for the game language, or go back to the OCR step and pick OneOCR.
 
-#### "Rate limit reached" using Google Translate
-→ Google Translate here is the **free service, with no API key** — and a free service limits how many translations it accepts in a short window. When you hit that limit, the yellow warning appears and that capture isn't translated.
+#### "I pressed the shortcut and nothing happens"
+→ Check that the settings window is not in the foreground (shortcuts only work with the game in focus). If the *"Capture: no area"* or *"Subtitles: no area"* alert shows up, mark the area first (`Numpad7` or `Numpad1`). If it still does not work, turn on the **floating toolbar** (**General › Shortcuts**) and use its buttons.
 
-What makes you hit the limit sooner than you'd expect: the program sends **one request per text block** in the capture, all at the same time. A screen with many separate lines of dialogue becomes many requests at once. And **Subtitle Mode** repeats that for every new line.
+#### "Shortcuts don't work in some games (even with the game in focus)"
+→ Some games run with elevated privileges (Administrator) and therefore **block the registration of Ranmza GT's global shortcuts**. In that case, **run Ranmza GT as Administrator** (right-click the `.exe` → *Run as administrator*) — that way it can enable the shortcuts over the game. To avoid repeating it every time, check *Run this program as an administrator* in the executable's **Properties → Compatibility**. (Alternative: use the **floating toolbar**, which triggers actions by mouse click and does not depend on keyboard shortcuts.)
 
-The program already retries once on its own, after a moment — the warning only appears when the second attempt fails too. And there's a difference worth knowing: when an engine with a key (DeepL, Azure, AI) fails, the program falls back to Google Translate. **Google has nothing to fall back to** — it is already the last resort.
+#### "The translation does not show up, or takes too long"
+→ Check the **History** and **Debug › Monitor** tabs to see if the translation is being made. Temporary failures (server down for a moment, connection drop) are **retried automatically** before falling back to Google Translate. If you have **more than one key** registered for the service and the problem is with the key (rejected, out of credit or at the request limit), it switches right away to the next key in the list. If the *"<service> failed, using Google"* alert shows — and the History marks the translation as *Google (fallback)* —, the configured service failed on **all** keys; check your API keys and credits in Translation › Translators. The service in the settings does not change: the next translation tries it again.
 
-##### Why your limit looks smaller than your neighbour's: CGNAT
+#### "Google: rate limited (429)"
+→ Google Translate here is the **free service, without an API key** — and a free service limits how many translations it accepts in a short window. When you hit that limit, the warning shows and the translation of that capture does not come out.
 
-The limit isn't per program or per account: it's counted **per IP address** — the number that identifies your connection on the internet. Everything that leaves your house reaches Google with that same number, and that's what Google uses to count how many translations you asked for.
+What makes you hit the limit faster than it seems: **Subtitle Mode** sends a translation for every new line, and a screen capture with many separate blocks turns into many texts at once.
 
-The catch is that a lot of people today **share the same IP with strangers**. There aren't enough public IPs to go around, so many ISPs (budget fibre, fixed wireless and above all mobile 4G/5G) use a technique called **CGNAT**: hundreds of customers reach the internet through a single public IP. It's like a large building with only one street number — every letter arrives at the front desk and someone hands them out inside. Seen from outside, you and your neighbours look like one person.
+And here there is a difference worth knowing: when a service with a key fails, the program falls back to Google Translate. **Google has nowhere to fall back to** — it already is the last resort.
 
-So as far as Google is concerned, that IP's quota is spent by everyone together. If someone sharing your IP has been using Google services, part of the quota is gone before you even open the game — and the warning shows up far sooner than it would for someone with a **public IP of their own**. It isn't a fault in the program or in your computer, and no setting inside it can fix that.
+##### Why your limit seems smaller than your neighbor's: CGNAT
 
-**How to tell whether you're behind CGNAT:** compare the IP shown on your router's status page (the WAN IP) with the one a "what is my IP" site reports. If the two differ, it's CGNAT — and the router's one usually starts somewhere between **100.64** and **100.127**, a range reserved for exactly this. Some ISPs will give you a public IP on request, sometimes for an extra fee.
+The limit is not per program or per account: it is counted **per IP address** — the number that identifies your connection on the internet. Everything that leaves your home reaches Google with that same number, and that is what Google uses to count how many translations you asked for.
 
-What fixes it, from simplest to most permanent:
+The problem is that many people today **share the same IP with strangers**. There are not enough public IPs for everyone, so many providers (budget fiber, radio and especially 4G/5G mobile internet) use a technique called **CGNAT**: hundreds of customers go out to the internet through a single public IP. It is like a big building with only one street number — all the letters arrive at the front desk and someone distributes them inside. Seen from outside, you and your neighbors look like one person.
 
-- **Wait a few minutes.** The limit is temporary and clears on its own.
-- **Use paragraph mode** (`Numpad8`) instead of line mode (`Numpad9`). Paragraph joins the lines of the same speech into a single block — fewer blocks, fewer requests, same screen translated.
-- **In the continuous modes, raise the capture interval** in **Overlay › Subtitles**. Translating every half second costs far more than translating every two.
-- **Switch engines** in **Translation › Translators**. **DeepL** and **Azure Translator** have free tiers: they require creating an API key, but in exchange you get your own, far more generous limit, and better translation quality. If you're behind CGNAT, this is the fix that actually works: the limit is then counted against **your key**, not against the IP, so what your ISP's other customers do stops affecting you.
+For Google, then, that IP's limit is spent by everyone together. If someone sharing your IP has been using Google services, part of the quota was gone before you opened the game — and the warning shows up much sooner than it would for someone with a **public IP of their own**. It is not a defect of the program or your computer, and there is no internal setting that fixes it.
 
-#### "A red error warning appeared"
-→ Usually means invalid API key, exhausted credits, or the service temporarily down. Check **Translation › Translators**. If the warning says the response was **cut off at the token limit**, increase **Max tokens** in **Translation › AI** (happens only with very large text blocks).
+**How to know if you are behind CGNAT:** compare the IP shown on your router's status page (the WAN IP) with what a "what is my IP" site shows. If they are different, it is CGNAT — and the router's usually starts with something between **100.64** and **100.127**, a range reserved precisely for this. Some providers give a public IP on request, sometimes for an extra fee.
 
-#### "On Azure the test says the key is invalid — but the key is right"
-→ Check the **Resource region** in **Translation › Translators**. Azure returns the **same error** for an invalid key and for a wrong or missing region, so a mistyped region looks like a key problem. Copy the region from your resource's *Keys and Endpoint* page in the Azure portal — you can paste it exactly as shown there ("Brazil South"), the program strips the space and the capitals by itself. While the field is empty, the *Test connection* button stays disabled.
+What fixes it, from simplest to most definitive:
 
-#### "The AI translated it wrong, and the same wrong translation keeps coming back"
-→ The program stores each translation and reuses it when the same text shows up again. With the text on screen, press **`Numpad4` (Retranslate)**: it translates again without looking at what's stored and replaces the old translation with the new one. If the new one is also bad, try **Vision** (`Numpad5` or `Numpad6`), which sends the image to the AI.
+- **Wait a few minutes.** The limit is temporary and lifts by itself.
+- **Use Paragraph mode** (`Numpad8`) instead of Line mode (`Numpad9`). Paragraph joins the lines of the same speech into one block — fewer blocks, same screen translated.
+- **Switch services** in **Translation › Translators**. **Google Cloud**, **DeepL**, **Azure**, **Gemini** and **Groq** have a free plan: they require creating an API key, but in return you get your own, much roomier limit. If you are behind CGNAT, it is the fix that really works: the limit is counted by **your key**, not by the IP.
 
-#### "Recognized text is wrong/incomplete"
-→ Try enabling preprocessing (**Overlay › Capture**) with upscale and contrast adjustments, or use **Translate with AI Vision** (`Numpad5` paragraph, `Numpad6` line) to let the AI "see" the image and correct it.
+#### "A red error alert showed up"
+→ It usually means an invalid API key, credits used up, or the service temporarily down. Check **Translation › Translators** and the **Debug › Logs** tab.
 
-#### "Translation is cut off or doesn't fit in the box"
-→ For manual translation (`Numpad8`/`Numpad9`), enable **Auto-fit** in **Overlay › Capture** — the program will automatically shrink the font until it fits.
-→ In **Subtitle Mode** with *Replace the original subtitle in place* on there is no auto-fit: the translation has to fit the area you marked. Lower the *Font size* in **Overlay › Subtitles**, or redo the area selection a bit taller than the game's subtitle.
+#### "On Azure, the key looks invalid — but the key is correct"
+→ Check the **Resource region** in **Translation › Translators**. Azure answers the **same error** for an invalid key and for a wrong or missing region, so a wrong region looks like a key problem. Copy the region from the *Keys and Endpoint* page of your resource in the Azure portal — you can paste it as it appears there ("Brazil South"), and the program fixes spaces and capitals by itself.
 
-#### "Translations of different lines are mixing into one block (or the opposite)"
-→ First check you pressed the right hotkey: `Numpad8` merges lines (paragraph) and `Numpad9` keeps them apart (line). If the mode is right and it still gets it wrong, adjust **Grouping sensitivity** in **Overlay › Capture** — it only affects Paragraph Mode.
+#### "The AI translated something wrong, and the same wrong translation always comes back"
+→ The program saves every translation and reuses it when the same text shows up again. With the text on screen, press **`Numpad4` (Retranslate)**: it translates again without looking at what is saved and replaces the old translation with the new one. If the new translation is also bad, try **Vision** (`Numpad5` or `Numpad6`), which sends the image to the AI.
 
-#### "I switched monitors and capture isn't working right anymore"
-→ Restart the program via the button in **General › Config** — it's necessary after switching monitors.
+#### "The recognized text is wrong/incomplete"
+→ The fix that helps the most is switching the OCR engine to **OneOCR** in **General › OCR** — it reads game fonts much better than WinOCR (the step by step and the why are in [section 6](/en/Manual/configuring-translation.md), in *Switching OCR engine*). In Subtitle Mode, also check that the area is tight around the subtitle and the **alphabet filter**. In screen capture, use **Translate with AI Vision** (`Numpad5` paragraph, `Numpad6` line) to let the AI "see" the image and fix it.
 
-#### "I want to share my logs for support, but don't want to show game content"
-→ Check **Debug › Logs** if the option "Log captured texts and translations" is **disabled** (it's the default) — this way logs don't show text/translation content.
+#### "The translation does not fit where the original text was"
+→ In screen capture, turn on **Auto-fit** in **Overlay › Capture** — the program shrinks the font until it fits.
+→ In **Subtitle Mode** with *Stick to the detected text* on, the translation spills over the area on purpose. Lower the *Font size* in **Overlay › Subtitles** if it covers what it should not.
+
+#### "Translations of different lines are getting mixed into one block" (or the opposite)
+→ First check that you pressed the right shortcut: `Numpad8` joins the lines (paragraph) and `Numpad9` splits them (line). If the mode is right and it still gets it wrong, adjust the **Grouping sensitivity** in **Overlay › Capture** — it only affects Paragraph mode.
+
+#### "I switched monitors and the areas disappeared"
+→ Each monitor keeps its own areas. The first time you use a monitor, it has no area at all: mark them again (`Numpad7` and `Numpad1`). When you go back to the previous monitor, its areas come back by themselves.
+
+#### "I want to share my logs with support, but I don't want to show the game content"
+→ Check in **Debug › Logs** that the "Log captured text and translations" option is **off** (the default) — that way the logs do not show the content of texts and translations, and API keys never show up in them.
 
 ---

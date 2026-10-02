@@ -4,42 +4,45 @@ Esta seção descreve **cada aba e cada opção** da janela de configuração, n
 aparecem no menu da esquerda. É material de consulta — para o dia a dia, as seções anteriores
 já bastam.
 
-O menu tem cinco grupos com sub-itens (**Geral**, **Overlay**, **Traducao**, **Ferramentas**,
-**Debug**) e três itens soltos embaixo (**Historico**, **Experimental**, **Sobre**).
+O menu tem cinco grupos com sub-itens (**Geral**, **Overlay**, **Tradução**, **Ferramentas**,
+**Debug**) e dois itens soltos embaixo (**Histórico** e **Sobre**).
 
 ## Geral › Config
-
-Onde o programa opera.
 
 <p align="center"><img src="media/geral-config.png" alt="Aba Geral › Config" width="820"></p>
 
 - **Idioma do programa → Idioma da interface** — troca o idioma da própria janela de
-  configuração (Português / Inglês). Não afeta os idiomas de OCR e tradução. Na primeira
-  execução ele detecta o idioma do Windows (cai para Inglês se não for Português).
+  configuração (Português / Inglês) e dos alertas. Não afeta os idiomas de OCR e tradução. Na
+  primeira execução ele segue o idioma do Windows (cai para Inglês se não for Português).
+- **Aparência** — cores desta tela e da barra flutuante:
+  - *Tema* — Escuro ou Claro.
+  - *Daltônico* — paleta de cores acessível para daltonismo.
+  - *Escala de cinza* — para acromatopsia.
 - **Atualizações → Avisar sobre novas versões** — liga o aviso que aparece ao abrir o programa
-  quando existe versão mais nova publicada (veja a seção 14). Desligue aqui, ou pelo próprio
-  aviso, e religue por este toggle.
+  quando existe versão mais nova publicada (veja a seção 14).
 - **Atualizações → Verificar agora** — consulta na hora se existe versão nova, mesmo com o
-  aviso desligado. A resposta aparece ao lado do botão: *"Você está na versão mais recente"*,
-  a versão encontrada (com um botão **Baixar** que abre a página no navegador) ou um aviso de
-  que não foi possível verificar.
+  aviso desligado.
+
+<p align="center"><img src="media/geral-config-monitor.png" alt="Aba Geral › Config — reset, backend, monitor e alertas" width="820"></p>
+
+<p align="center"><i>Rolando a mesma aba: <b>Configuração</b>, <b>Backend de captura</b>,
+<b>Monitor</b> e <b>Alertas na tela</b>.</i></p>
+
 - **Configuração → Resetar para o padrão** — restaura todas as opções aos valores de fábrica.
-  **Mantém** o monitor, as áreas selecionadas, as chaves de API, os prompts (System Prompt e
-  Informações do Jogo) e a preferência de aviso de atualização.
-
-<p align="center"><img src="media/geral-config-monitor.png" alt="Aba Geral › Config — backend e monitor" width="820"></p>
-
-<p align="center"><i>Rolando a mesma aba: <b>Backend de captura</b> e <b>Monitor</b>.</i></p>
-
+  **Mantém** o idioma e o tema da tela, o monitor, as áreas selecionadas, as chaves de API, as
+  Informações do Jogo e a preferência de aviso de atualização.
 - **Backend de captura → Backend** — como o programa lê os pixels da tela:
   - *Auto (recomendado)* — escolhe sozinho: WGC no Windows 11, DXGI no Windows 10, sem a borda
     amarela. A troca vale na hora, sem reiniciar.
   - *WGC (Windows 11)* — Windows Graphics Capture.
   - *DXGI (Windows 10)* — Desktop Duplication; existe para o Windows 10 não desenhar a borda
     amarela ao redor do monitor capturado.
-- **Monitor → Tela ativa** — em qual monitor o programa captura, traduz e exibe. *Automático*
-  usa o monitor principal do Windows. Trocar de monitor **limpa a área de captura** salva e
-  **exige reiniciar** (botão "Reiniciar agora" aparece no rodapé da aba).
+- **Monitor → Tela ativa** — em qual monitor abrem a seleção das áreas, os alertas, a prévia das
+  áreas e a barra flutuante. *Automático* usa o monitor principal do Windows. Vale na hora, sem
+  reiniciar; cada monitor guarda as próprias áreas, e cada perfil guarda o próprio monitor.
+- **Alertas na tela → Mostrar alertas** — avisos curtos no canto inferior direito, só em situação
+  grave (limite de uso, chave, sem internet, OCR ou captura que falhou, atalho apertado com esta
+  tela em foco) e ao ligar e desligar a legenda.
 
 ## Geral › Perfis
 
@@ -51,18 +54,17 @@ Um conjunto de configurações por jogo. O conceito e o passo a passo estão na
 - **Novo perfil → Nome do jogo** — o nome do perfil que vai ser criado.
   - **Duplicar o atual** — cria a partir de tudo que está valendo agora, **inclusive as áreas
     selecionadas**.
-  - **Começar do zero** — cria com os valores de fábrica.
+  - **Começar do zero** — cria com os valores de fábrica, no monitor atual, e abre o Guia de
+    configuração.
   - Em ambos os casos o perfil criado **já fica ativo**, e daí em diante tudo que você mexer
     nas outras abas é gravado nele sozinho.
-- **Seus perfis** — a lista, num card retrátil: clique no cabeçalho para recolher quando ela
-  crescer. O perfil ativo aparece destacado e marcado como *ativo*; clique em qualquer outro
-  para ativá-lo na hora.
-  - **Renomear** — troca o nome. O **Padrão** não tem este botão: o nome dele acompanha o
-    idioma da interface.
+- **Seus perfis** — a lista, num card retrátil. O perfil ativo aparece destacado e marcado como
+  *ativo*; clique em qualquer outro para ativá-lo na hora.
+  - **Renomear** — troca o nome. O **Padrão** não tem este botão.
   - **Apagar** — pede confirmação (*Apagar mesmo*). O **Padrão** não pode ser apagado. Se o
     perfil apagado era o que estava em uso, o Padrão assume na hora.
 - **O que muda ao trocar de perfil** — o resumo de quais opções acompanham o perfil e quais
-  valem para todos (chaves de API, atalhos, monitor, aba OCR, Inpaint e servidor web).
+  valem para todos.
 
 ## Geral › Idioma
 
@@ -71,12 +73,13 @@ O campo do idioma de origem **se adapta ao motor de OCR** escolhido em Geral ›
 <p align="center"><img src="media/geral-idioma.png" alt="Aba Geral › Idioma" width="820"></p>
 
 - **Idioma do texto original**
-  - Com *WinOCR* — o campo **Idioma do texto** recebe uma tag BCP-47 (`en`, `ja`, `ko`,
-    `zh-Hans`, `pt`…). Se o pacote do idioma não estiver instalado no Windows, aparece um aviso
-    com o botão **Instalar pacote de idioma**, que abre direto a tela de idiomas do Windows.
-  - Com *OneOCR* — **detecção automática**; não há idioma de origem para configurar e o campo
-    não aparece.
-- **Idioma destino** — para qual idioma traduzir (`pt`, `es`, `fr`, `de`, `it`, `zh`…).
+  - Com *WinOCR* — lista dos idiomas com pacote de leitura de texto instalado no Windows, sem
+    opção padrão: escolha o idioma do jogo. Sem escolha, aparece um aviso. Se o idioma salvo não
+    estiver mais instalado, aparece o botão **Instalar pacote de idioma**, que abre a tela de
+    idiomas do Windows.
+  - Com *OneOCR* — **detecção automática**; não há idioma de origem para configurar.
+- **Idioma destino** — para qual idioma traduzir: Português (Brasil), Português (Portugal),
+  Español, English, Français, Deutsch, Italiano, 日本語, 한국어, 中文（简体）e Русский.
 
 ## Geral › OCR
 
@@ -85,39 +88,36 @@ Qual motor reconhece o texto na tela.
 <p align="center"><img src="media/geral-ocr.png" alt="Aba Geral › OCR" width="820"></p>
 
 - **Engine de OCR → Engine ativo**
-  - *WinOCR (nativo do Windows)* — motor embutido no Windows: rápido, offline e sem
-    dependência externa. O reconhecimento depende dos pacotes de idioma instalados no sistema.
-    Não precisa de instalação nenhuma, mas pode errar em fontes muito estilizadas de jogos.
-  - *OneOCR (Snipping Tool — recomendado)* — modelo multilíngue com detecção
-    automática de idioma, bem superior ao WinOCR em fontes de jogo e praticamente sem precisar
-    de pré-processamento (o porquê está na
-    [seção 6](/Manual/configurando-a-traducao.md), em *Trocando o motor de OCR*).
-    **Roda no Windows 10 e no 11**; o que é exclusivo do Windows 11 são os
-    arquivos: `oneocr.dll`, `oneocr.onemodel` e `onnxruntime.dll` só vêm com o Snipping Tool do
-    Windows 11. Usa uma API não oficial da Microsoft — uma atualização do Snipping Tool pode
-    quebrar a integração, e aí é só rodar a detecção de novo.
-- **Configuração do OneOCR** (aparece com o OneOCR selecionado)
-  - *Detectar e Copiar Automaticamente* — acha o Snipping Tool instalado, copia os 3 arquivos
-    para a pasta do programa e configura o caminho. Avisa quando o app não está instalado ou
-    quando é uma versão sem os arquivos (o caso do Windows 10).
-  - *Passo a passo manual* — bloco recolhível com as instruções de cópia à mão, para o Windows
-    10 ou quando a detecção não acha nada. Fica aberto por padrão e lembra se você fechar.
-  - *Pasta com os 3 arquivos* — o caminho em si, com **Procurar...** e **Verificar**.
-  - O card inteiro também é **recolhível**: fica aberto enquanto a pasta não estiver
-    configurada, e depois você pode fechá-lo.
-
-> **O agrupamento não se ajusta aqui.** A *Sensibilidade do agrupamento* do modo Parágrafo fica
-> em **Overlay › Captura**, junto do pré-processamento.
+  - *WinOCR (nativo do Windows)* — o padrão. Embutido no Windows, sem nada para instalar. Lê o
+    idioma escolhido em Geral › Idioma; se perde em fundo com detalhes e em fonte muito
+    estilizada.
+  - *OneOCR (Ferramenta de Captura do Windows 11 — recomendado)* — modelo multilíngue com
+    detecção automática de idioma, bem superior ao WinOCR em fontes de jogo (o porquê está na
+    [seção 6](/Manual/configurando-a-traducao.md), em *Trocando o motor de OCR*). **Roda no
+    Windows 10 e no 11**; o que é exclusivo do Windows 11 são os arquivos `oneocr.dll`,
+    `oneocr.onemodel` e `onnxruntime.dll`. Usa uma API não oficial da Microsoft — uma
+    atualização da Ferramenta de Captura pode quebrar a integração.
+- **OneOCR** (aparece com o OneOCR selecionado)
+  - *Estado* — mostra a pasta de onde o OneOCR carregou, ou *"Não carregou"* quando faltam os
+    arquivos.
+  - *Pasta dos arquivos* — vazia, usa a pasta onde o **Detectar e copiar** coloca os arquivos.
+    **Procurar...** escolhe outra pasta e confere se os 3 arquivos estão nela.
+  - *Detectar e copiar* — acha a Ferramenta de Captura instalada, copia os 3 arquivos e configura
+    a pasta. Avisa quando o app não está instalado ou quando é uma versão sem os arquivos (o caso
+    do Windows 10). **É o único jeito de o programa copiar os arquivos**: ele nunca vai atrás
+    deles sozinho.
+  - *Windows 10: copiar de um PC com Windows 11* — bloco recolhível com o passo a passo da cópia à
+    mão.
 
 ## Geral › Atalhos
 
 <p align="center"><img src="media/geral-atalhos.png" alt="Aba Geral › Atalhos — barra flutuante e atalhos globais" width="820"></p>
 
 - **Barra flutuante → Mostrar barra flutuante** — liga a janelinha de botões sempre visível
-  (veja o passo 2.7). Também abre e fecha pelo atalho `NumpadSubtract`, e ela **lembra a última
-  posição** em que você a deixou.
+  (veja o passo 2.8). Também abre e fecha pelo atalho `NumpadSubtract`, e ela **lembra a última
+  posição** e o tamanho em que você a deixou.
 
-Onze atalhos globais — funcionam com o jogo em foco e ficam desativados enquanto a janela de
+Onze atalhos globais — funcionam com o jogo em foco e ficam pausados enquanto a janela de
 configuração está em primeiro plano. Cada um tem os modificadores **Ctrl / Alt / Shift** e uma
 tecla principal, escolhida entre os grupos **Numpad**, **Função** (F1–F12), **Navegação**
 (setas, Insert, Delete, Home, End, PageUp, PageDown), **Números** e **Letras**.
@@ -133,7 +133,7 @@ tecla principal, escolhida entre os grupos **Numpad**, **Função** (F1–F12), 
 | Limpar overlay | `NumpadDecimal` |
 | Ligar/desligar legenda | `Numpad0` |
 | Selecionar área da legenda | `Numpad1` |
-| Mostrar/ocultar áreas (preview) | `Numpad2` |
+| Mostrar/ocultar áreas | `Numpad2` |
 | Mostrar/esconder barra flutuante | `NumpadSubtract` |
 
 > **Letras e números** como tecla principal **exigem** um modificador (Ctrl, Alt ou Shift) para
@@ -142,82 +142,66 @@ tecla principal, escolhida entre os grupos **Numpad**, **Função** (F1–F12), 
 > notebook sem teclado numérico.
 
 O programa avisa se você repetir a mesma combinação em dois atalhos — um dos dois não seria
-registrado.
+registrado. A troca de tecla vale na hora, sem reiniciar.
 
 ## Overlay › Captura
 
-Aparência da tradução manual e pré-processamento da imagem.
+Aparência da tradução da captura de tela.
 
 <p align="center"><img src="media/overlay-captura.png" alt="Aba Overlay › Captura" width="820"></p>
 
 - **Exibição**
-  - *Duração do overlay* — Nunca limpar automaticamente / 15 s / 30 s /
-    **1 minuto (padrão)** / 2 / 5 / 10 minutos.
+  - *Duração do overlay* — **1 minuto (padrão)**, 2, 5 ou 10 minutos.
   - *Esconder a tradução de gravações e transmissões* — a tradução continua visível na sua tela,
     mas some das capturas. Funciona só com programas rodando neste PC (OBS, Game Bar, NVIDIA
-    ShadowPlay, etc); gravando por placa de captura, ela aparece assim mesmo. Afeta só a
-    tradução manual.
+    ShadowPlay, etc); gravando por placa de captura, ela aparece assim mesmo.
 - **Texto**
-  - *Fonte* — "Padrão do sistema (Arial)" ou qualquer fonte da pasta `fonts/`, com prévia ao
-    lado.
+  - *Fonte* — "Padrão do sistema (Arial)", as fontes da pasta `fonts/` ou as do Windows, com
+    prévia logo abaixo.
   - *Cor do texto* — seletor de cor (padrão branco).
-  - *Tamanho da fonte* — 8 a 72 pt.
-  - *Altura da linha* — 0,80 a 2,00.
-  - *Auto-fit* — reduz a fonte progressivamente para o texto caber no bloco sem cortar.
+  - *Tamanho da fonte* — 8 a 100 px.
+  - *Altura da linha* — 1,00 a 2,00 vezes o tamanho da fonte.
+  - *Auto-fit* — reduz a fonte até o texto caber no lugar do original.
 - **Fundo e Contorno** — podem ser ligados juntos ou separados.
   - *Mostrar fundo* + *Opacidade do fundo* (10–100%) — caixa escura atrás do texto.
-  - *Mostrar contorno* + *Espessura* (2–5 px) — contorno preto ao redor de cada letra.
-
-<p align="center"><img src="media/overlay-captura-exibicao.png" alt="Aba Overlay › Captura — Exibição e pré-processamento" width="820"></p>
-
-- **Ajuste Fino do Modo Parágrafo → Sensibilidade do agrupamento** (0–3,0; padrão 1) —
-  multiplicador sobre o espaçamento vertical típico entre linhas, usado para decidir se duas
-  linhas pertencem ao mesmo parágrafo. Valores menores separam parágrafos com mais facilidade;
-  maiores juntam linhas mais distantes num bloco só. O modo em si (parágrafo ou linha) **não se
-  escolhe aqui**: é decidido na hora de capturar, pelo atalho — `Numpad8` (parágrafo) ou
-  `Numpad9` (linha).
-- **Pré-processamento OCR** — filtros aplicados à imagem antes do reconhecimento:
-  - *Ativar pré-processamento* liga o bloco.
-  - *Escala de cinza* · *Inverter cores*
-  - *Contraste* (1,0–3,0×) · *Upscale* (1,0–4,0×) · *Sharpen* (0–2,0×)
-  - *Avançado* — só é aplicado quando ligado: *Threshold* (0–255), *Blur* (0–5,0×),
-    *Dilatação* (0–10 px), *Erosão* (0–10 px).
+  - *Mostrar contorno* + *Espessura* (0,5–5 px) + *Cor do contorno* — contorno ao redor de cada
+    letra.
+- **Ajuste Fino do Modo Parágrafo → Sensibilidade do agrupamento** (0,5–3,0) — valores menores
+  separam parágrafos com mais facilidade; maiores juntam linhas mais distantes num bloco só. O
+  modo em si (parágrafo ou linha) **não se escolhe aqui**: é decidido na hora de capturar, pelo
+  atalho — `Numpad8` (parágrafo) ou `Numpad9` (linha).
 
 ## Overlay › Legenda
 
-O Modo Legenda tem aparência e pré-processamento **próprios**, independentes de Overlay › Captura.
+O Modo Legenda tem aparência **própria**, independente de Overlay › Captura.
 
 <p align="center"><img src="media/overlay-legenda.png" alt="Aba Overlay › Legenda" width="820"></p>
 
-- **Posição da tradução** — *Substituir a legenda original no lugar*: desenha a tradução em cima
-  da área capturada, cobrindo a legenda original, em vez de mostrá-la acima da área. Mostra uma
-  fala por vez (ver *Linhas visíveis* abaixo). Nesse modo a legenda some das capturas feitas
-  neste PC — é o que impede o OCR de reler a própria tradução. Ver a seção 9.
-  - *Colar no texto detectado* (só com a opção acima ligada): a tradução é desenhada em cima da
-    fala, com as mesmas quebras de linha, em vez de centralizada na área. Fonte maior transborda
-    a área em vez de ser encolhida.
-- **Texto** — *Fonte*, *Cor do texto* e *Tamanho da fonte* (10–48 pt). Não tem altura de linha
-  nem auto-fit.
-- **Fundo e Contorno** — *Mostrar fundo* + *Opacidade* (10–100%) ou *Mostrar contorno* +
-  *Espessura do contorno* (1–5 px).
+- **Posição da tradução → Colar no texto detectado** — desenha a tradução em cima da fala
+  original, com as mesmas quebras de linha, em vez de acima da área. Mostra uma fala por vez, e
+  fonte maior transborda a área. Nesse modo a legenda some das capturas feitas neste PC — é o que
+  impede o OCR de reler a própria tradução. Ver a seção 9.
+- **Texto** — *Fonte*, *Cor do texto* e *Tamanho da fonte* (10–48 px).
+- **Fundo e Contorno** — *Mostrar fundo* + *Opacidade* (10–100%) e *Mostrar contorno* +
+  *Espessura do contorno* (0,5–5 px) + *Cor do contorno*.
 
-<p align="center"><img src="media/overlay-legenda-captura.png" alt="Aba Overlay › Legenda — Captura e pré-processamento" width="820"></p>
+<p align="center"><img src="media/overlay-legenda-captura.png" alt="Aba Overlay › Legenda — Captura e alfabeto" width="820"></p>
 
 - **Captura**
-  - *Intervalo* — de quanto em quanto tempo a área é relida (25 ms a 5 s).
-  - *Linhas visíveis* — quantas linhas de legenda manter na tela (1 a 8). Fica **travado em 1**
-    quando *Substituir a legenda original no lugar* está ligado; o valor escolhido é preservado
-    para quando a opção for desligada.
-  - *Limpar após silêncio* — apaga a legenda se nenhum texto novo aparecer por X segundos
-    (1 a 5 s).
-  - *Desligar Modo Legenda após inatividade* — **desliga o modo**, não só esconde, depois desse
-    tempo sem detectar texto na região: Nunca / 1 / 2 / 3 / 5 / 10 minutos.
-- **Pré-processamento OCR** — os mesmos controles de Overlay › Captura, porém independentes
-  dela.
+  - *Ignorar texto fora do centro da área* — ligada por padrão. Pula placas e letreiros perto das
+    bordas da área; desligue em diálogo alinhado à esquerda.
+  - *Falas na tela* — quantas falas ficam visíveis (1 a 8). Fica em 1 com *Colar no texto
+    detectado* ligado.
+  - *Tradução fica depois que a legenda some* — 1 a 3 s (padrão 2 s).
+  - *Desligar a legenda sem texto na área* — **desliga o modo** depois desse tempo sem texto:
+    Nunca / 1 / 2 / 5 / 10 minutos (padrão 1 minuto).
+- **Alfabeto da legenda original** — só caracteres desse alfabeto são considerados na legenda;
+  o resto é ignorado. Com o OneOCR, escolha *Qualquer alfabeto*, latino, japonês/chinês, coreano
+  ou cirílico. Com o WinOCR, segue o idioma de Geral › Idioma, com o botão **Mudar idioma**.
 
 ## Overlay › Web
 
-Transmite as traduções para navegadores na rede local — e para o OBS.
+Transmite as traduções da captura de tela para navegadores na rede local — e para o OBS.
 
 <p align="center"><img src="media/overlay-web.png" alt="Aba Overlay › Web" width="820"></p>
 
@@ -226,7 +210,7 @@ Transmite as traduções para navegadores na rede local — e para o OBS.
     rede.
   - *Mostrar tradução na tela* — mantém o overlay mesmo com o servidor ligado; desligue para
     mandar **só** para o navegador/OBS.
-  - *Porta* (1024–65535) — mostra também quantos clientes estão conectados.
+  - *Porta* — padrão 7474. Mostra também quantos clientes estão conectados.
 - **Endereços** — `/captura` (com histórico e botão Limpar) e `/captura/obs` (fundo
   transparente, para usar como Browser Source no OBS), cada um com botão **Copiar**.
 
@@ -234,133 +218,90 @@ Transmite as traduções para navegadores na rede local — e para o OBS.
 
 <p align="center"><i>Rolando a mesma aba: <b>Aparência</b> da página web e o buffer do <b>Histórico</b>.</i></p>
 
-- **Aparência** — *Tema* · *Tamanho da fonte* (12–48 px) · *Negrito* · *Texto detectado* (mostra
-  o original abaixo da tradução) · *Horário e serviço* · *Cores personalizadas*, que libera seis
-  seletores: texto traduzido, texto original, horário, serviço (badge), fundo do card e borda do
-  card.
-- **Histórico → Entradas mantidas no buffer** (10–200).
+- **Aparência** — *Tema* (Dark, Light ou Dracula) · *Tamanho da fonte* · *Negrito* · *Texto
+  detectado* (mostra o original abaixo da tradução) · *Horário e serviço* · *Cores
+  personalizadas*, que libera os seletores de cor da página.
+- **Histórico → Entradas mantidas no buffer** — quantas traduções a página guarda para quem
+  abre depois.
 
-## Traducao › Tradutores
+## Tradução › Tradutores
 
-Qual serviço traduz e com quais credenciais.
+Qual serviço traduz e com quais chaves.
 
-<p align="center"><img src="media/tradutores-deepl.png" alt="Aba Traducao › Tradutores com DeepL" width="820"></p>
+<p align="center"><img src="media/tradutores-google-cloud.png" alt="Aba Tradução › Tradutores com Google Cloud Translation" width="820"></p>
 
 - **Provedor de Tradução → Provedor ativo**
-  - *Google Translate — gratuito, sem chave* — API não oficial, nada para configurar. É o mesmo
-    endereço que a página do Google Tradutor usa internamente; como não é publicada nem
-    documentada, o Google pode alterá-la ou desativá-la a qualquer momento — se um dia ela parar
-    de responder, a saída é trocar por um motor com chave.
-    **Não suporta o Modo Vision.** Por ser gratuito, tem **limite de requisições**, contado por
-    endereço de IP: em capturas com muitos blocos, em uso contínuo ou em conexões com CGNAT (IP
-    dividido com outros clientes do provedor), pode aparecer o aviso *"Limite de requisições
-    atingido"* — o que fazer está na [seção 12](/Manual/problemas-comuns-e-solucoes.md).
-  - *DeepL (requer chave de API)* — tradutor dedicado de alta qualidade; **não suporta o Modo
-    Vision**. Não tem seleção de modelo, mas tem **Formalidade** (Padrão / Mais formal / Mais
-    informal), que só afeta os idiomas-destino com suporte — PT-BR incluso — e é ignorada nos
-    demais. Aproveita o campo **Informações do Jogo** (Traducao › I.A) e, no Modo Legenda, as falas
-    anteriores como contexto, sem custo extra.
-  - *Azure Translator (requer chave de API e região)* — o tradutor da Microsoft; **não suporta o
-    Modo Vision**. Não tem seleção de modelo nem formalidade, e **não usa** o Contexto de Conversa
-    nem as Informações do Jogo — a API de tradução dele não aceita contexto. Em compensação, detecta
-    o idioma de origem **bloco a bloco**: numa captura em que parte do texto está em outro idioma,
-    cada bloco é traduzido a partir do idioma certo.
-  - *OpenAI*, *Anthropic (Claude)*, *Gemini* — motores de IA, exigem chave de API.
-  - *Compatível com OpenAI* — qualquer serviço ou servidor que aceite o formato de chat da
-    OpenAI. Detalhes em [Serviço compatível com OpenAI](/Manual/configurando-a-traducao.md).
-- **Autenticação** — aparece nos provedores com chave. As credenciais são **salvas por motor**,
-  então trocar de serviço e voltar não apaga nada.
-  - *Modelo* (motores de IA) — cada motor traz três opções. A primeira é o padrão.
-    - OpenAI: GPT-5.4 mini (mais rápido) · GPT-4.1 mini (mais econômico) · GPT-4.1
-    - Claude: Haiku 4.5 · Sonnet 5 · Opus 5
+  - *Google Translate — gratuito* — API não oficial, nada para configurar. É o mesmo endereço que
+    a página do Google Tradutor usa internamente; como não é publicada nem documentada, o Google
+    pode alterá-la ou desativá-la a qualquer momento. **Não suporta o Modo Vision.** Por ser
+    gratuito, tem **limite de requisições**, contado por endereço de IP — o que fazer está na
+    [seção 12](/Manual/problemas-comuns-e-solucoes.md).
+  - *Google Cloud Translation* — a API oficial do Google, com chave criada no Google Cloud
+    Console (*APIs e serviços › Credenciais*). **Não suporta o Modo Vision.**
+  - *DeepL* — tradutor dedicado. A chave do plano gratuito termina em `:fx`, e o programa escolhe
+    o servidor certo sozinho. **Não suporta o Modo Vision.**
+  - *Azure Translator* — o tradutor da Microsoft; exige chave e **região** do recurso. **Não
+    suporta o Modo Vision.**
+  - *OpenAI*, *Anthropic (Claude)*, *Gemini* — IAs, com chave de API e Modo Vision.
+  - *Groq* — IA com plano gratuito, com chave de API. **Não suporta o Modo Vision.**
+- **Autenticação** — aparece nas IAs e no Azure.
+  - *Modelo* (IAs) — cada uma traz uma lista curta. A primeira é o padrão.
+    - OpenAI: GPT-5.4 mini (mais rápido, recomendado) · GPT-4.1 mini · GPT-4.1
+    - Anthropic: Haiku 4.5 · Sonnet 5 · Opus 5
     - Gemini: 3.5 Flash-Lite · 3.6 Flash · 3.7 Flash
+    - Groq: gpt-oss-20b · gpt-oss-120b
     - *Personalizado…* — última opção da lista: abre um campo livre onde você digita **qualquer
-      ID de modelo** aceito pelo provedor, para usar um modelo mais novo sem esperar uma
+      ID de modelo** aceito pelo serviço, para usar um modelo mais novo sem esperar uma
       atualização do programa.
     - *Ver a lista completa de modelos do provedor* — abre no navegador a página oficial do
-      motor selecionado, com todos os modelos e os IDs exatos. Útil em duas situações: quando
-      sai um modelo mais novo que a lista fixa, e quando você tem uma chave antiga que ainda
-      alcança modelos que o provedor já fechou para contas novas — é o caso das famílias
-      Gemini 2.0 e 2.5, que respondem para chaves antigas mas devolvem erro em chaves
-      recém-criadas. Nos dois casos, copie o ID de lá para o campo *Personalizado…*.
-  - *URL base*, *Modelo* e *O modelo aceita imagem* (só no Compatível com OpenAI) — ficam no
-    lugar da lista de modelos. O teste de conexão só libera com URL e modelo preenchidos.
-  - *Fila rápida da OpenAI* — aparece abaixo do modelo, só com a OpenAI. **Vem desligada**: a
-    resposta chega cerca de 20% mais rápido, e a OpenAI cobra o dobro por token. A chave é sua,
-    então a conta dobrada só acontece se você ligar.
-  - *Região do recurso* (só no Azure) — **obrigatória**, e fica no lugar onde o DeepL mostra a
-    Formalidade. Aceita a grafia do portal ("Brazil South"): maiúsculas e espaços são ajustados
-    sozinhos. O link *Ver a lista oficial de regiões do Azure* abre a tabela da Microsoft no
-    navegador. Chave e região saem da mesma página: <https://portal.azure.com> → o seu recurso de
-    Translator → *Keys and Endpoint*.
-  - *Testar conexão* — faz uma chamada de teste com a chave e o modelo atuais e mostra na hora
-    se está tudo certo ou qual erro voltou, em vez de você descobrir o problema no meio do jogo.
-    Também existe no Google, para checar a conectividade. No Azure ele só libera depois que a
-    região estiver preenchida, porque sem ela o erro que volta é indistinguível de chave inválida.
-- **Chaves de API** — card recolhível onde entra a credencial do motor selecionado (`sk-…`,
-  `sk-ant-…`, `AIza…`, ou a chave DeepL `:fx` do plano gratuito). Ele **abre sozinho** enquanto
-  nenhuma chave estiver preenchida. No Compatível com OpenAI a chave é opcional e o card fica
-  fechado.
-  - *+ Adicionar chave* / *✕* — dá para cadastrar **quantas chaves quiser** no mesmo motor.
-    Quando a chave em uso é inválida, fica sem crédito ou bate no limite de requisições, a
-    próxima da lista assume automaticamente; esgotadas todas, cai no Google Translate.
-- **Uso do DeepL** — só com o DeepL selecionado: chamadas e caracteres traduzidos na sessão, mais
-  a **cota da conta** (botão *Atualizar*); *Zerar sessão* reinicia a contagem. É o único motor
-  com esse acompanhamento — os de IA não expõem o gasto pela chave, e o Azure não tem um endpoint
-  de cota equivalente.
+      serviço, com todos os modelos e os IDs exatos, para copiar para o *Personalizado…*.
+  - *Fila rápida da OpenAI* — aparece abaixo do modelo, só com a OpenAI. **Vem desligada.**
+    Ligada, a OpenAI atende antes, pelo dobro do preço por token.
+  - *Região do recurso* (só no Azure) — **obrigatória**. Aceita a grafia do portal ("Brazil
+    South"): maiúsculas e espaços são ajustados sozinhos. O link *Ver a lista oficial de regiões
+    do Azure* abre a tabela da Microsoft no navegador. Chave e região saem da mesma página:
+    <https://portal.azure.com> → o seu recurso de Translator → *Keys and Endpoint*.
+- **Chaves de API** — card recolhível onde entra a chave do serviço selecionado. Ele **abre
+  sozinho** enquanto nenhuma chave estiver preenchida. As chaves ficam guardadas criptografadas e
+  só abrem neste PC, na sua conta do Windows.
+  - *+ Adicionar chave* / *✕* — dá para cadastrar **quantas chaves quiser** no mesmo serviço.
+    Quando a chave em uso é recusada, fica sem crédito ou bate no limite de requisições, a
+    próxima da lista assume na hora; esgotadas todas, cai no Google Translate.
 
 <p align="center"><img src="media/tradutores-openai.png" alt="Tradutores com OpenAI selecionado" width="820"></p>
 
-<p align="center"><img src="media/tradutores-claude.png" alt="Tradutores com Anthropic (Claude) selecionado" width="820"></p>
+## Tradução › I.A
 
-<p align="center"><img src="media/tradutores-gemini.png" alt="Tradutores com Gemini selecionado" width="820"></p>
+Contexto enviado às IAs.
 
-<p align="center"><img src="media/tradutores-openai-compat.png" alt="Tradutores com Compatível com OpenAI selecionado" width="820"></p>
+<p align="center"><img src="media/ia.png" alt="Aba Tradução › I.A" width="820"></p>
 
-<p align="center"><img src="media/tradutores-azure.png" alt="Tradutores com Azure Translator selecionado, mostrando o campo Regiao do recurso" width="820"></p>
-
-## Traducao › I.A
-
-Parâmetros do modelo e prompts.
-
-<p align="center"><img src="media/ia.png" alt="Aba Traducao › I.A" width="820"></p>
-
-- **Parâmetros do Modelo**
-  - *Temperature* (0–2) — 0,0 literal · 0,3 recomendado · 1,0+ criativo.
-  - *Max tokens* (256–4096) — tamanho da resposta; 1024 basta para tradução.
-- **Contexto de Conversa → Falas anteriores** (0–20) — no Modo Legenda, envia as últimas falas
-  (original + tradução) como contexto, para a IA manter consistência de termos e tom.
-  0 desativa; recomendado 3–5.
-- **System Prompt** — papel do tradutor e regras gerais. Vem **em branco**, com um exemplo em
-  cinza dentro do campo (placeholder) mostrando o formato esperado; nada é enviado à IA enquanto
-  você não escrever o seu. Botões **Salvar** e **Restaurar padrão** (que esvazia o campo de novo).
-  O idioma de destino não precisa estar aqui: o programa já manda para a IA o idioma escolhido
-  na aba **Idioma**. Se você pedir aqui outro idioma ou um estilo (ex.: "tudo em maiúsculas"),
-  vale o que você escreveu. Regras concretas (glossário, manter nomes, não usar "!", voseo)
-  funcionam em todos os modelos. Estilos de fala, como pirata ou sotaque regional, saem melhores
-  nos modelos maiores (GPT-4.1, Claude Sonnet e Opus), e a língua do P só o Sonnet e o Opus fazem.
+- **Contexto de Conversa → Falas anteriores** (5–10, padrão 5) — no Modo Legenda, envia as
+  últimas falas (original + tradução) como contexto, para a IA manter consistência de termos e
+  tom. Cada fala a mais custa tokens em toda tradução.
+- **System Prompt** — regras gerais do tradutor, para todos os jogos. Vem **em branco**, com um
+  exemplo em cinza dentro do campo; nada é enviado à IA enquanto você não escrever o seu. Botões
+  **Salvar** e **Restaurar padrão** (que esvazia o campo de novo). O idioma de destino não precisa
+  estar aqui: o programa já manda para a IA o idioma escolhido na aba **Idioma**, e um pedido de
+  outro idioma neste campo é ignorado. Regras concretas (glossário, manter nomes, não suavizar
+  palavrões) funcionam em todos os modelos.
 - **Informações do Jogo** — tema, personagens e glossário; mude a cada jogo. Também vem em
   branco, com exemplo em cinza. Mesmos botões.
 
-> Com um motor que não é de IA ativo, os cards que não se aplicam ficam marcados em vermelho
-> ("Só vale pros motores de IA…" e "O motor de tradução atual não usa isso."). O **Contexto de
-> Conversa** e as **Informações do Jogo** também valem para o **DeepL**; o **Google Translate** e o
-> **Azure Translator** ignoram os dois.
+> Com um tradutor que não é IA ativo, os cards ficam marcados em vermelho: eles só valem para
+> OpenAI, Anthropic, Gemini e Groq.
 
-<p align="center"><img src="media/ia-avisos.png" alt="Aba I.A com o Google Translate ativo, mostrando os avisos vermelhos" width="820"></p>
-
-O reset geral (Geral › Config) **não** apaga o System Prompt nem as Informações do Jogo.
+O reset geral (Geral › Config) **não** apaga as Informações do Jogo.
 
 ## Ferramentas › Inpaint
 
-Reconstrução de fundo por IA (MI-GAN) — em desenvolvimento.
+Reconstrução de fundo por IA (MI-GAN).
 
 <p align="center"><img src="media/ferramentas-inpaint.png" alt="Aba Ferramentas › Inpaint" width="820"></p>
 
-Em vez da caixa preta atrás da tradução, apaga o texto original da captura e reconstrói o fundo
-com um modelo de inpainting rodando dentro do programa — a tradução fica parecendo nativa do
-jogo. Vale para as **traduções manuais** (Traduzir e Vision); o Modo Legenda não usa. Custa
-~50–200 ms por tradução e ~200 MB de RAM enquanto ativo.
+Em vez da caixa escura atrás da tradução, apaga o texto original da captura de tela e reconstrói o
+fundo com um modelo de inpainting rodando dentro do programa — a tradução fica parecendo nativa do
+jogo. Vale para a **captura de tela** (Traduzir e Vision); o Modo Legenda não usa.
 
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
   <iframe src="https://player.vimeo.com/video/1217778049"
@@ -369,145 +310,79 @@ jogo. Vale para as **traduções manuais** (Traduzir e Vision); o Modo Legenda n
           title="Fundo reconstruído por IA"></iframe>
 </div>
 
-<p align="center"><i>O fundo reconstruído no lugar da caixa preta atrás da tradução.</i></p>
+<p align="center"><i>O fundo reconstruído no lugar da caixa escura atrás da tradução.</i></p>
 
-- **Ativar fundo reconstruído** — só tem efeito com os arquivos configurados abaixo.
-- **Ajuste fino da máscara**
+- **Ativar fundo reconstruído** — só pode ser ligado depois de baixar o modelo, no card abaixo.
+- **Ajuste fino da máscara** — valem **por captura**, sem reiniciar.
   - *Dilatação da máscara* (0–12 px; padrão 3) — se depois de apagar o texto ainda sobra um
     resíduo de borda (o halo da fonte), aumente para o MI-GAN reconstruir um pouco além das
     letras.
-  - *Limiar de detecção* (1,05–1,60; padrão 1,30) — limiar menor deixa a máscara mais sensível
+  - *Limiar de detecção* (1,05–1,50; padrão 1,30) — limiar menor deixa a máscara mais sensível
     (pega mais halo, mas pode confundir fundo texturizado com texto).
-  - Os dois valem **por captura**, sem reiniciar.
+  - *Contorno* (0–16 px; padrão 8) — até onde o contorno da letra é apagado. Suba se sobrar
+    mancha escura com texto de contorno grosso; 0 apaga só a letra, bom para texto sem contorno.
+  - *Fundo* (0–150%; padrão 25%) — grão devolvido ao fundo gerado, para ele não ficar liso perto
+    do cenário. Abaixe se o fundo ficar granulado demais.
+
 ### Baixar automaticamente
 
-O recurso precisa de dois arquivos que não vêm no `.zip` do programa: o modelo do MI-GAN
-(27 MB) e a `onnxruntime.dll` (72 MB). O card **Baixar automaticamente** pega os dois para você.
+<p align="center"><img src="media/ferramentas-inpaint-baixar.png" alt="Card Baixar automaticamente, em Ferramentas › Inpaint" width="820"></p>
 
-Clique em **Baixar** em cada um. A barra mostra o andamento e o botão vira **Cancelar** —
-cancelar não perde o que já baixou: retomar continua de onde parou.
+O recurso precisa do modelo do MI-GAN (27 MB), que não vem no `.zip` do programa. O card
+**Baixar automaticamente** baixa e confere o modelo:
 
-<p align="center"><img src="media/ferramentas-inpaint-baixando.png" alt="Download do MI-GAN em andamento" width="820"></p>
+- *Pasta do modelo* — vazia, usa a pasta `models\inpaint`, ao lado do executável. **Procurar...**
+  escolhe outra.
+- *Baixar* — a barra mostra o andamento e o botão vira **Cancelar**. Cancelado ou interrompido, o
+  download recomeça do zero na próxima vez.
 
-Terminado, os dois ficam com **Pronto, arquivos conferidos** e um Ok verde, e **a pasta é
-configurada sozinha** — você não precisa copiar caminho nenhum.
-
-<p align="center"><img src="media/ferramentas-inpaint-pronto.png" alt="Os dois arquivos baixados e conferidos" width="820"></p>
-
-O programa confere o **sha256** de cada arquivo antes de aceitá-lo. Arquivo que chega corrompido
-ou diferente do esperado é apagado e o download falha com aviso — nunca fica um arquivo pela
-metade se passando por bom. Os dois vão para a pasta `models\inpaint`, ao lado do executável.
-
-#### Endereço alternativo
-
-Se o download padrão não funcionar na sua rede (algumas redes corporativas e alguns provedores
-bloqueiam o HuggingFace e o GitHub), abra **Endereço alternativo** e cole outro link.
-
-<p align="center"><img src="media/ferramentas-inpaint-endereco.png" alt="Campo de endereço alternativo aberto" width="820"></p>
-
-A conferência por hash **continua valendo** no endereço alternativo. Ele troca de onde o arquivo
-vem, nunca qual arquivo é aceito: um link que entregue outra coisa é recusado.
-
-### Instalação manual
-
-Se preferir fazer à mão — ou se a máquina do jogo não tem internet —, abra **Instalação manual**.
-São os links dos dois arquivos e o campo da pasta, com **Procurar** e **Verificar**.
-
-<p align="center"><img src="media/ferramentas-inpaint-manual.png" alt="Bloco de instalação manual aberto" width="820"></p>
-
-Baixe `migan_pipeline_v2.onnx` e o `onnxruntime.dll` (de dentro do
-`onnxruntime-win-x64-1.26.0.zip`), coloque os dois na mesma pasta e aponte aqui. Achando os dois,
-a pasta é configurada na hora.
-
-> Trocar a pasta da `onnxruntime.dll` exige reiniciar o programa.
+O programa confere o **sha256** do arquivo antes de aceitá-lo. Arquivo que chega corrompido ou
+diferente do esperado é apagado e o download falha com aviso — nunca fica um arquivo pela metade
+se passando por bom.
 
 > Dica: ative o **Contorno** na aba Overlay › Captura, porque o fundo reconstruído pode ficar
 > claro demais para texto branco.
 
-## Ferramentas › Lab
-
-Laboratório para testar o pré-processamento sem mexer no jogo.
-
-<p align="center"><img src="media/ferramentas-lab-preprocessamento.png" alt="Aba Ferramentas › Lab" width="820"></p>
-
-- **Imagem de Teste** — escolhe uma imagem PNG/JPG da pasta `images/lab_images/`, ao lado do
-  executável.
-- **Parâmetros de Pré-processamento** — os mesmos controles de Overlay › Captura, com **prévia ao
-  vivo**: a imagem original e a processada aparecem embaixo, lado a lado.
-- **Aplicar em Captura** / **Aplicar em Legenda** — copiam a configuração que você acabou de
-  testar para a aba correspondente.
-
-Ligar *Avançado* revela Threshold, Blur, Dilatação e Erosão, para os casos difíceis:
-
-<p align="center"><img src="media/ferramentas-lab-avancado.png" alt="Lab com os filtros avançados ligados" width="820"></p>
-
 ## Debug › Monitor
 
-Latência de cada etapa do pipeline.
+Tempo de cada etapa da captura de tela.
 
 <p align="center"><img src="media/debug-monitor.png" alt="Aba Debug › Monitor" width="820"></p>
 
-- **Monitoramento → Ativo** — registra os tempos de cada etapa a cada tradução. O histórico é
-  mantido ao navegar entre abas.
-- **Histórico de Execuções** — tabela das últimas 10 capturas: Hora, Captura, Preproc, OCR,
-  Tradução, Total, Blocos, Cache (acertos sem chamar a API) e API (chamadas feitas).
+- **Monitoramento → Ativo** — registra os tempos de cada etapa a cada tecla da captura de tela.
+  O histórico é mantido ao navegar entre abas.
+- **Histórico de Execuções** — tabela das últimas 10 capturas: Hora, Captura, OCR, Tradução,
+  Total, Blocos, Cache (acertos sem chamar a API) e API (chamadas feitas).
 - **Estatísticas** — mínimo, média e máximo de cada etapa.
-
-## Debug › Imagem
-
-Imagens de diagnóstico.
-
-<p align="center"><img src="media/debug-imagem.png" alt="Aba Debug › Imagem" width="820"></p>
-
-- **Modo Debug → Ativado** — salva imagens de diagnóstico a cada captura.
-- **Imagens a salvar** — Captura original antes do pré-processamento (`frame.png`), Captura pós
-  pré-processamento (`frame_proc.png`), Linhas do OCR (`ocr_lines.png`), Parágrafos agrupados
-  (`ocr_paragraphs.png`) e Preview da máscara de inpainting (`mask.png`).
-- **Pasta de output** — o caminho (padrão `images\ocr_debug_images`) e um botão para abrir a
-  pasta.
 
 ## Debug › Logs
 
-Log da sessão atual, em tempo real.
+Log desta execução, em tempo real.
 
 <p align="center"><img src="media/debug-logs.png" alt="Aba Debug › Logs" width="820"></p>
 
 - **Logar textos capturados e traduções** — chave de privacidade, **desligada por padrão**.
-  Deixe desligada ao mandar log para suporte, para não expor o conteúdo do jogo.
+  Deixe desligada ao mandar log para suporte, para não expor o conteúdo do jogo. As chaves de API
+  nunca vão para o log.
 - **Filtrar linhas** · **Auto-scroll** · **Atualizar** — controles da visualização; erros saem
   em vermelho, avisos em amarelo.
 
-## Historico
+Cada execução grava um arquivo em `logs\`, ao lado do executável, e o programa guarda os 20 mais
+recentes. É esse arquivo que o suporte vai pedir.
 
-<p align="center"><img src="media/historico.png" alt="Aba Historico" width="820"></p>
+## Histórico
 
-Lista as traduções da **sessão atual** — horário, serviço, tradução e, abaixo, o texto original
-— da mais recente para a mais antiga, até o limite definido em Overlay › Web. Clique numa
-entrada para copiar a tradução. Botão **Limpar histórico**.
+<p align="center"><img src="media/historico.png" alt="Aba Histórico" width="820"></p>
 
-## Experimental
-
-> Tudo nesta aba está **em desenvolvimento**: o comportamento pode mudar, bugs são esperados e
-> recursos podem ser removidos.
-
-Tem um card recolhível.
-
-**Esperar texto completo (efeito máquina de escrever)** — só traduz depois que a fala termina de
-aparecer, evitando traduzir frases ainda "sendo digitadas" na tela. Vale para o Modo Legenda.
-
-<p align="center"><img src="media/experimental-typewriter.png" alt="Card do efeito máquina de escrever" width="820"></p>
-
-- *Capturas estáveis exigidas* (2–8 frames) — quantas leituras seguidas precisam bater.
-- *Limiar de "mesmo texto"* (80–99%) — o quanto duas leituras precisam se parecer para contarem
-  como iguais.
-- *Teto de espera* (0–4 s) — tempo máximo de espera antes de traduzir do jeito que está.
+Lista as traduções da captura de tela na **sessão atual** — horário, serviço, tradução e, abaixo,
+o texto original. Clique numa entrada para copiar a tradução. Botão **Limpar histórico**.
 
 ## Sobre
 
-Informações do programa: ícone, nome e **versão** instalada, a lista de funcionalidades, o autor
-e a **Licença de Uso** completa — o que é permitido (uso pessoal gratuito, distribuir cópias não
-modificadas, criar conteúdo como vídeos e streams) e o que é proibido (modificar ou fazer
-engenharia reversa, vender, redistribuir versões modificadas, uso comercial sem autorização,
-remover créditos), além do aviso de garantia.
+Informações do programa: ícone, nome e **versão** instalada, o autor, os links do projeto e de
+apoio, e a **Licença de Uso** completa — o que é permitido (uso pessoal gratuito, distribuir
+cópias não modificadas, criar conteúdo como vídeos e streams) e o que é proibido (modificar ou
+fazer engenharia reversa, vender, redistribuir versões modificadas, uso comercial sem
+autorização, remover créditos), além do aviso de garantia.
 
 ---

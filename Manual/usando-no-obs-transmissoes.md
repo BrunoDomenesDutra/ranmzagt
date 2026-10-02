@@ -1,7 +1,7 @@
 # 10. Usando no OBS / transmissões
 
-Se você transmite ou grava o jogo e quer que **a tradução apareça também no vídeo/stream**
-(ou só no vídeo, sem aparecer no jogo em si), use **Overlay › Web**:
+Se você transmite ou grava o jogo e quer que **a tradução da captura de tela apareça também no
+vídeo/stream** (ou só no vídeo, sem aparecer no jogo em si), use **Overlay › Web**:
 
 1. Ative o **Servidor ativo**.
 2. Copie o endereço **Captura — OBS** (`/captura/obs`) mostrado na aba, no botão *Copiar*.
@@ -15,7 +15,8 @@ Se você transmite ou grava o jogo e quer que **a tradução apareça também no
 <p align="center"><img src="media/overlay-web.png" alt="Aba Overlay › Web" width="820"></p>
 
 Você também pode personalizar tema (claro/escuro/dracula), cores, tamanho da fonte, e se quer
-mostrar o texto original junto com a tradução, horário e qual serviço foi usado.
+mostrar o texto original junto com a tradução, horário e qual serviço foi usado. As páginas
+abertas mudam na hora.
 
 <p align="center"><img src="media/overlay-web-aparencia.png" alt="Aba Overlay › Web — aparência da página" width="820"></p>
 
@@ -24,9 +25,10 @@ etc.) usando o endereço **Captura** (`/captura`) mostrado na aba — essa vers�
 e botão de limpar.
 
 > Se a tradução some das suas gravações e transmissões, há duas causas possíveis. Uma é
-> automática: o Modo Legenda com *"Substituir a legenda original no lugar"* ligado desenha **por
-> cima** do texto original, e aí o overlay precisa ficar invisível para capturas, senão o OCR
-> releria a própria tradução. A outra é uma escolha sua: *"Esconder a tradução de gravações e transmissões"*, no card **Exibição** de
-> Overlay › Captura. É justamente nesses casos que o servidor Web resolve.
+> automática: o Modo Legenda com *Colar no texto detectado* ligado desenha **por cima** do texto
+> original, e aí o overlay precisa ficar invisível para capturas, senão o OCR releria a própria
+> tradução. A outra é uma escolha sua: *"Esconder a tradução de gravações e transmissões"*, no
+> card **Exibição** de Overlay › Captura. Para a captura de tela, é justamente nesses casos que o
+> servidor Web resolve.
 
 ---

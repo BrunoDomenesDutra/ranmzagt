@@ -9,10 +9,13 @@ arquivos são feitos por você, do mesmo jeito que na primeira instalação. Iss
 um programa que substitui o próprio executável é exatamente o comportamento que o Windows
 Defender bloqueia, e não vale o risco de o programa inteiro parar de abrir.
 
-**Como atualizar**, depois de baixar o `.zip`: feche o Ranmza-GT, extraia o conteúdo por cima
-da pasta atual e confirme a substituição dos arquivos. Suas configurações (`config.json`),
-as chaves de API, as fontes que você colocou em `fonts/` e os arquivos de `models/` (OneOCR e
-MI-GAN) **não estão no `.zip`** e continuam onde estão.
+**Como atualizar**, depois de baixar o `.zip`: feche o Ranmza GT, extraia o conteúdo por cima
+da pasta atual e confirme a substituição dos arquivos. Suas configurações (`config.json`), os
+perfis (`profiles\`), as chaves de API, as fontes que você colocou em `fonts/` e os arquivos de
+`models/` (OneOCR e MI-GAN) **não estão no `.zip`** e continuam onde estão.
+
+> As chaves de API ficam criptografadas para este PC e esta conta do Windows. Se você copiar a
+> configuração para outro PC, digite as chaves de novo lá.
 
 Para desligar o aviso, marque **Não avisar sobre novas versões** no próprio aviso, ou desligue
 em **Geral › Config → Atualizações**. É por esse toggle que ele volta a aparecer.

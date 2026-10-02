@@ -1,20 +1,14 @@
 # 11. Histórico e desempenho
 
-- **Aba Historico**: mostra as traduções feitas durante a sessão atual (texto original,
-  tradução, horário e serviço usado), da mais recente para a mais antiga. Clique numa entrada
-  para copiar a tradução; há também um botão para limpar tudo.
-- **Debug › Monitor**: liga um registro das últimas 10 traduções com o tempo que cada etapa
-  levou (captura, pré-processamento, reconhecimento, tradução, total) — útil para perceber se
-  alguma configuração está deixando o programa lento (por exemplo, pré-processamento muito
-  pesado). A coluna **Cache** mostra quantos blocos foram resolvidos sem chamar a API, e a
-  **API**, quantas chamadas foram feitas de fato.
-- **Uso do DeepL** (**Traducao › Tradutores**, com o DeepL selecionado): mostra quantos
-  **caracteres** o DeepL traduziu nesta sessão e a **cota da conta** (caracteres usados/limite do
-  período de cobrança) — clique em "Atualizar" para consultar. É exclusivo do DeepL: os motores
-  de IA não expõem o gasto pela chave, e o Azure não tem um endpoint de cota equivalente (o
-  acompanhamento dele fica no portal do Azure).
+- **Aba Histórico**: mostra as traduções da captura de tela feitas na sessão atual (texto
+  original, tradução, horário e serviço usado). Clique numa entrada para copiar a tradução; há
+  também um botão para limpar tudo. Fechar o programa limpa o histórico.
+- **Debug › Monitor**: liga um registro das últimas 10 capturas de tela com o tempo que cada
+  etapa levou (captura, reconhecimento, tradução, total) — útil para perceber o que está
+  deixando a tradução lenta. A coluna **Cache** mostra quantos blocos foram resolvidos sem chamar
+  a API, e a **API**, quantas chamadas foram feitas de fato.
 
-<p align="center"><img src="media/historico.png" alt="Aba Historico" width="820"></p>
+<p align="center"><img src="media/historico.png" alt="Aba Histórico" width="820"></p>
 
 <p align="center"><img src="media/debug-monitor.png" alt="Aba Debug › Monitor" width="820"></p>
 

@@ -1,25 +1,26 @@
 # 9. Modo Legenda — tradução automática contínua
 
 Para cenas com diálogo contínuo (cutscenes, modo automático de visual novels, vídeos com
-legenda), o Modo Legenda traduz **sozinho, repetidamente**, sem você precisar apertar nada.
+legenda), o Modo Legenda traduz **sozinho**, sem você precisar apertar nada a cada fala.
 
 ## Como configurar
 
-1. Em **Overlay › Legenda**, ajuste as opções de captura (intervalo, quantas linhas mostrar,
-   etc.) — os padrões já funcionam bem para a maioria dos casos.
-2. Aperte **Selecionar área da legenda** (padrão `Numpad1`) e desenhe um retângulo sobre onde a
-   legenda/diálogo aparece no jogo.
-3. Aperte **Ligar/desligar legenda** (padrão `Numpad0`) para ativar.
+1. Aperte **Selecionar área da legenda** (padrão `Numpad1`) e desenhe um retângulo sobre onde a
+   legenda aparece no jogo. Essa área é separada da área da captura de tela.
+2. Aperte **Ligar/desligar legenda** (padrão `Numpad0`) para ligar. Um alerta na tela confirma.
 
-<p align="center"><img src="media/overlay-legenda-captura.png" alt="Aba Overlay › Legenda — Captura" width="820"></p>
+O programa sempre abre com a legenda desligada. As opções ficam em **Overlay › Legenda**, e os
+padrões já funcionam bem para a maioria dos casos.
 
-A partir daí, o programa fica de olho naquela área, traduzindo automaticamente sempre que um
-texto novo aparecer e ficar "parado" por um instante (isso evita traduzir letras aparecendo uma
-por uma em efeitos de "máquina de escrever").
+<p align="center"><img src="media/overlay-legenda-captura.png" alt="Aba Overlay › Legenda — Captura e alfabeto" width="820"></p>
 
-Por padrão, as traduções aparecem **acima** da área selecionada, em ordem (mais recente
-embaixo), e somem sozinhas se nenhum texto novo aparecer por alguns segundos. Dá para trocar
-isso pela sobreposição no lugar da legenda original — é o tópico a seguir.
+A partir daí, o programa fica de olho naquela área várias vezes por segundo e traduz cada texto
+novo assim que ele aparece e se repete numa segunda leitura. Isso evita traduzir uma fala ainda
+sendo escrita na tela. Se a área ficar igual, o programa nem relê o texto.
+
+Por padrão, a tradução aparece **acima** da área selecionada e some sozinha alguns segundos
+depois de a legenda sumir do jogo. Dá para trocar isso pela tradução em cima da legenda original
+— é o tópico a seguir.
 
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
   <iframe src="https://player.vimeo.com/video/1217784520"
@@ -28,31 +29,35 @@ isso pela sobreposição no lugar da legenda original — é o tópico a seguir.
           title="Modo Legenda traduzindo sozinho"></iframe>
 </div>
 
-<p align="center"><i>Modo Legenda traduzindo sozinho, com as traduções acima da área selecionada.</i></p>
+<p align="center"><i>Modo Legenda traduzindo sozinho, com a tradução acima da área selecionada.</i></p>
 
-## Substituindo a legenda original no lugar
+## Ignorar texto fora do centro da área
 
-Em **Overlay › Legenda**, o primeiro card (*Posição da tradução*) tem a opção **"Substituir a
-legenda original no lugar"**. Ligada, a tradução deixa de aparecer acima da área e passa a ser
-desenhada **em cima** dela, cobrindo a legenda original do jogo — como se o jogo estivesse
-legendado no seu idioma.
+A opção **Ignorar texto fora do centro da área**, no card **Captura**, vem ligada. Com ela, o
+programa ignora o texto perto das bordas da área, como placas, letreiros e textos do jogo que
+aparecem ao lado da legenda.
 
-Nesse modo o programa mostra **uma fala por vez**, e o controle *Linhas visíveis* fica travado
-em 1. O motivo é simples: a área que você selecionou tem o tamanho de **uma** legenda do jogo,
-então empilhar duas ou três falas traduzidas ali dentro não caberia — o texto sairia cortado na
-borda. Sua escolha de linhas fica guardada e volta a valer assim que você desligar a opção.
+- Quanto mais justa a área estiver em volta da legenda, melhor funciona. Marque só a faixa onde
+  a legenda aparece.
+- Em jogos com diálogo alinhado à esquerda, como alguns RPGs e visual novels, deixe essa opção
+  desligada.
 
-> Se mesmo com uma fala a tradução não couber (o português costuma ser mais longo que o inglês
-> ou o japonês), diminua o *Tamanho da fonte* no card **Texto**, ou refaça a seleção da área um
-> pouco mais alta que a legenda do jogo.
+## Colar no texto detectado
 
-> Nesse modo a legenda fica **escondida das capturas de tela**. Não é um defeito: é justamente
-> isso que impede o OCR de reler a própria tradução no ciclo seguinte e se retroalimentar.
-> Funciona só com programas rodando **NESTE PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc).
-> Gravando por placa de captura, a tradução aparece assim mesmo.
+Em **Overlay › Legenda**, o primeiro card (*Posição da tradução*) tem a opção **Colar no texto
+detectado**. Ligada, a tradução deixa de aparecer acima da área e passa a ser desenhada **em
+cima da fala original**, com as mesmas quebras de linha, cobrindo a legenda do jogo — como se o
+jogo estivesse legendado no seu idioma.
 
-A opção vale só para o Modo Legenda — a tradução manual (`Numpad8`/`Numpad9`) e o Modo Tempo
-Real não são afetados.
+- Nesse modo o programa mostra **uma fala por vez**, e *Falas na tela* fica em 1.
+- A tradução **não é encolhida para caber**: fonte maior transborda a área, de propósito. É assim
+  que dá para deixar a legenda maior que a do jogo.
+- A área selecionada continua sendo o que o programa lê. Ela precisa caber a legenda inteira do
+  jogo.
+
+> Nesse modo a legenda fica **escondida das capturas de tela**. É isso que impede o OCR de reler
+> a própria tradução no ciclo seguinte. Funciona só com programas rodando **NESTE PC** (OBS, Game
+> Bar, NVIDIA ShadowPlay, etc). Gravando por placa de captura, a tradução aparece assim mesmo.
 
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
   <iframe src="https://player.vimeo.com/video/1218094053"
@@ -65,61 +70,38 @@ Real não são afetados.
 celular porque, nesse modo, a legenda fica escondida das capturas de tela — uma gravação normal
 não mostraria a função funcionando.</i></p>
 
-### Colar no texto detectado
+## Mais de uma fala na tela
 
-Com a substituição ligada, aparece uma segunda opção: **"Colar no texto detectado"**. Ela muda
-onde a tradução é desenhada dentro da área.
-
-- **Desligada** (padrão): a tradução fica centralizada na **área que você selecionou**. Se a área
-  é bem maior que a fala, a tradução aparece longe do texto original, e o fundo escuro cobre a
-  área inteira.
-- **Ligada**: a tradução é desenhada **em cima da fala**, no mesmo centro e na mesma altura dela,
-  com a **mesma quantidade de linhas** que o jogo mostrou. O fundo escuro acompanha o texto em vez
-  de cobrir a área toda.
-
-Ligada, a tradução **não é encolhida para caber** na área: fonte maior transborda para os lados e
-para cima/baixo, de propósito. É assim que dá para deixar a legenda maior que a do jogo sem
-refazer a seleção. Se você prefere que a tradução respeite os limites da área, deixe a opção
-desligada.
-
-> A área selecionada continua sendo o que o programa lê. Ela precisa caber a legenda inteira do
-> jogo — o que muda é só onde a tradução é desenhada dentro dela.
+Com *Colar no texto detectado* desligado, **Falas na tela** (1 a 8, padrão 1) define quantas
+falas ficam visíveis ao mesmo tempo. Com mais de uma, cada fala fica numa linha, começando com um
+traço, no meio do monitor. Fala comprida demais para a largura diminui a fonte do bloco, em vez de
+quebrar a linha.
 
 ## Deixando a IA "lembrar" das falas anteriores
 
-Se você está usando OpenAI, Claude ou Gemini, **Traducao › I.A** tem um controle **"Falas
-anteriores"** (0 a 20, padrão 5). Com ele ligado, a IA recebe as últimas falas já traduzidas
-como referência antes de traduzir a próxima — isso ajuda a manter os mesmos nomes, termos e
-tom ao longo de uma conversa. Se notar que a IA está mudando o nome de um personagem ou o tom
-da tradução de uma fala para outra, aumente esse valor; se preferir que cada fala seja
-traduzida sem depender das anteriores, deixe em 0.
+Com uma IA (OpenAI, Anthropic, Gemini ou Groq), **Tradução › I.A** tem o controle **Falas
+anteriores** (5 a 10, padrão 5). A IA recebe as últimas falas já traduzidas como referência antes
+de traduzir a próxima — isso ajuda a manter os mesmos nomes, termos e tom ao longo de uma
+conversa. Cada fala a mais custa tokens em toda tradução.
 
-> O **DeepL** também aproveita as falas anteriores como contexto, **sem custo extra** — ele
-> recebe as últimas falas como referência (seguindo o mesmo controle **"Falas anteriores"**)
-> para manter a consistência de nomes e termos. Mesmo não sendo uma IA conversacional, isso
-> deixa a tradução contínua mais coesa. **Google Translate** e **Azure Translator** não usam esse
-> contexto — a API de tradução do Azure não tem um parâmetro de contexto.
-
-> A Legenda não espera a tradução de uma fala voltar para ler a próxima. Em diálogo rápido, então,
-> uma fala pode ir para tradução antes da anterior voltar, e nesse caso ela vai sem a anterior no
-> contexto (as outras falas vão normalmente).
+> Os tradutores dedicados (Google Translate, Google Cloud, DeepL e Azure) traduzem cada fala
+> sozinha, sem as falas anteriores.
 
 ## Aparência separada
 
 Overlay › Legenda tem suas próprias opções de fonte, cor, fundo e contorno — independentes da
-tradução manual — então você pode deixar a legenda contínua menor/mais discreta e a tradução
-manual (`Numpad8`/`Numpad9`) maior, por exemplo. O pré-processamento de imagem também é
-independente.
+captura de tela — então você pode deixar a legenda contínua menor e mais discreta e a tradução da
+captura de tela maior, por exemplo.
 
 ## Desligando
 
-Aperte **`Numpad0`** novamente, ou o botão verde de balão na barra flutuante. A legenda na tela
-é limpa imediatamente.
+Aperte **`Numpad0`** novamente, ou o botão de ligar/desligar a legenda na barra flutuante. A
+legenda na tela é limpa imediatamente.
 
-O modo também **se desliga sozinho** depois de um tempo sem detectar texto na região, para não
-ficar rodando à toa quando você sai da cutscene e esquece de desligar. O tempo é escolhido em
-*Overlay › Legenda → Desligar Modo Legenda após inatividade*: Nunca, 1, 2, 3, 5 ou 10 minutos
-(padrão 1 minuto). Repare que isso **desliga o modo**, não só esconde a legenda — para religar,
-aperte `Numpad0`.
+O modo também **se desliga sozinho** depois de um tempo sem texto na área, para não ficar rodando
+à toa quando você sai da cutscene e esquece de desligar. O tempo é escolhido em
+*Overlay › Legenda → Desligar a legenda sem texto na área*: Nunca, 1, 2, 5 ou 10 minutos (padrão
+1 minuto). Legenda parada na tela conta como texto. Repare que isso **desliga o modo**, não só
+esconde a legenda — para religar, aperte `Numpad0`.
 
 ---

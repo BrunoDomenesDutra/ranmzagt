@@ -2,68 +2,64 @@
 
 ## Text type: dialog or menu?
 
-The grouping mode **isn't picked in a tab** — it's decided at capture time, by which hotkey you press:
+The grouping mode **is not chosen in a tab** — it is decided at capture time, by the shortcut you press:
 
-- **`Numpad8` — Paragraph Mode** — groups nearby lines into a single translation block. Use for **dialogs, character speech, flowing text** (visual novels, JRPGs).
-- **`Numpad9` — Line Mode** — each line becomes a separate translation. Use for **menus, inventory, status, HUD** — where each line is independent info and shouldn't be mixed with the one above or below.
+- **`Numpad8` — Paragraph Mode** — joins nearby lines into a single translation block. Use it for **dialogues, character lines, running text** (visual novels, JRPGs).
+- **`Numpad9` — Line Mode** — each line becomes a separate translation. Use it for **menus, inventory, stats, HUD** — where each line is independent information and must not be mixed with the one above or below.
 
 The same goes for Vision: `Numpad5` is paragraph and `Numpad6` is line.
 
-If Paragraph Mode is grouping lines that should be separate (or separating a speech that should stay together), adjust the **Grouping sensitivity**, in **Overlay › Capture**:
-- Text being **separated too much**? Increase the value (up to 3.0).
-- Text being **grouped too much**? Decrease the value (down to 0).
+If Paragraph mode is joining lines that should be separate (or splitting a line that should stay together), adjust the **Grouping sensitivity** in **Overlay › Capture**:
 
-This adjustment only affects Paragraph Mode — in Line Mode it is ignored.
+- Text **split too much**? Raise the value (up to 3.0).
+- Text **joined too much**? Lower the value (down to 0.5).
+
+This setting only affects Paragraph mode — Line mode ignores it.
 
 <p align="center"><img src="media/ocr-sensibilidade.png" alt="Grouping sensitivity, in Overlay › Capture" width="820"></p>
 
-<p align="center"><i>The setting sits in the <b>Overlay › Capture</b> tab, in the <b>Paragraph Mode Fine-Tuning</b> card.</i></p>
+<p align="center"><i>The setting is in the <b>Overlay › Capture</b> tab, in the <b>Paragraph Mode Fine-Tuning</b> card.</i></p>
 
-## Improving difficult text recognition
+## Switching OCR engine — and why OneOCR is recommended
 
-If the program isn't detecting text correctly (small fonts, stylized, with effects), go to **Overlay › Capture** and enable **Preprocessing**. A few quick tips:
+OCR is the text reader: it turns what shows up in the marked area into text to be translated. It is used in screen capture and in Subtitle Mode, and the better it reads, the better the translation. In **General › OCR** you choose between two:
 
-- **Small text**: increase **Upscale** (2x or 3x usually fixes it).
-- **Font with thick outline**: increase **Sharpen** a bit.
-- **Text with low contrast against background**: increase **Contrast**.
-- **Light text on dark background** (or vice versa, if it's giving wrong results): try **Invert colors**.
+- **WinOCR** (native to Windows) — ready out of the box, nothing to install, and the default. It reads text on a plain background well, but gets lost easily when the background behind the text has details, colors or movement, and only reads languages whose pack is installed in Windows.
+- **OneOCR** (recommended) — the text reader of the Windows 11 Snipping Tool. It is the one you should use.
 
-<p align="center"><img src="media/captura-preprocessamento.png" alt="OCR Preprocessing card, in Overlay › Capture" width="820"></p>
+<p align="center"><img src="media/geral-ocr.png" alt="General › OCR tab with WinOCR" width="820"></p>
 
-<p align="center"><i>The <b>OCR Preprocessing</b> card, in <b>Overlay › Capture</b>. The extra filters (Threshold, Blur, Dilation, Erosion) only kick in with <b>Advanced</b> turned on.</i></p>
+**Why OneOCR is far better:**
 
-Don't know where to start? Use **Tools › Lab** — you can test all these options on sample images, see the result in real time, and then apply the best-working configuration directly to Capture or Subtitles.
+- **It reads much more accurately.** Stylized fonts, text with outline, shadow or effects on top, small text, text over busy backgrounds — situations where WinOCR returns swapped letters or missing words and OneOCR reads correctly.
+- **All languages at once, with no setup.** It is a single multilingual model (Latin, Japanese, Chinese, Korean, Cyrillic…) with automatic detection: there is no "text language" to choose and no Windows language pack to install. A game that mixes English and Japanese on the same screen is read the same way.
+- **Fewer things to go wrong day to day.** No missing language pack and no switching languages for every game.
 
-## Switching OCR engine (advanced)
+**Is it worth the trouble of getting the files?** Yes, by far. It is three files copied once — after that the quality of the whole translation goes up, because everything that comes after (grouping, translation, subtitles) depends on the text being read correctly.
 
-If preprocessing still doesn't fix recognition, **General › OCR** lets you switch the text recognition "engine":
+**What it needs:** the files `oneocr.dll`, `oneocr.onemodel` and `onnxruntime.dll`. The program **never goes after them by itself**: you copy them, with one click.
 
-- **WinOCR** (default) — fast (~30 ms), comes ready, but can fail on very stylized fonts.
-- **OneOCR** (experimental) — the OCR engine from the Snipping Tool, much better than WinOCR on stylized fonts and auto-detects language (no need to configure source language). You copy 3 files from Windows itself to a folder of yours — the OCR tab shows step-by-step. Because it uses an unofficial Microsoft API, a Snipping Tool update might break it; if so, just re-extract the files.
+**On Windows 11 it is one click.** Choose *OneOCR* in **General › OCR** (or in the OCR step of the guide) and use the **Detect and copy** button: the program finds the installed Snipping Tool, copies the 3 files to its folder and sets everything up. If the Snipping Tool is not installed, or is a version without the files, it tells you instead of failing silently. Until the files are copied, the card shows *"Did not load"* and the OCR stays stopped.
 
-## OpenAI-compatible service
+<p align="center"><img src="media/geral-ocr-oneocr.png" alt="OneOCR card, in General › OCR" width="820"></p>
 
-Many AI services and programs accept the same request format as the OpenAI API. The **OpenAI-compatible** engine talks to any of them: you enter the address and the model name, and the program sends the text on screen there.
+<p align="center"><i>With <b>OneOCR</b> selected, the card has the <b>Detect and copy</b> button, the folder field and, below, the step by step for Windows 10.</i></p>
 
-**Setting it up.** In **Translation › Translators**, pick *OpenAI-compatible* and fill in:
+**On Windows 10 it is manual**, because **the files only come with the Windows 11 Snipping Tool** (OneOCR itself runs on both). Copy the three from a Windows 11 machine and point to the folder with **Browse...** — the step by step inside the card has the PowerShell command that shows where they are.
 
-- **Base URL** — the service address, as its documentation shows it. With or without `/chat/completions` at the end. A server running on your own PC is usually something like `http://localhost:1234/v1`.
-- **Model** — the exact model name, as the service shows it. There's no list to pick from: each service has its own.
-- **API key** — only if the service asks for one. A local server usually doesn't, and then the field stays empty.
-- **The model accepts images** — turn it on only if the model reads images. It enables [Vision Mode](/en/Manual/vision-mode-when-ocr-fails.md) on this engine. With it off, Vision Mode warns that the engine doesn't support it.
+Since it uses an unofficial Microsoft API, a Snipping Tool update can break the integration; in that case, click **Detect and copy** again.
 
-<p align="center"><img src="media/tradutores-openai-compat.png" alt="Translators with OpenAI-compatible selected, showing Base URL, Model and the image option" width="820"></p>
+## Subtitle alphabet filter
 
-Then use **Test connection**. It translates one word through the real path and shows how long the response took.
+In Subtitle Mode, the program can consider only the letters of one alphabet and ignore the rest: Latin, Japanese/Chinese, Korean or Cyrillic. Useful when names, signs or symbols in another alphabet show up near the subtitle. It is in **Overlay › Subtitles**, in the **Original subtitle alphabet** card:
 
-**What the service must accept.** The program sends `POST <Base URL>/chat/completions` with `model`, `messages`, `temperature` and `max_tokens`, plus the key (when there is one) in the `Authorization: Bearer` header. The translation is read from `choices[0].message.content`. The prompt, Game Info and Subtitle Mode's Conversation Context are sent the same way as with OpenAI.
+- With **OneOCR**, you choose the alphabet in the list (default: *Any alphabet*).
+- With **WinOCR**, the filter follows the language chosen in **General › Language** by itself.
 
-**Good practices**
+It only applies to Subtitle Mode; screen capture reads all the text in the area.
 
-- **Use a model that follows instructions.** The response has to come in a fixed format, with a number for each block. Small models get that format wrong more often, and when that happens the screen is translated by Google Translate.
-- **A server on the same PC shares the graphics card with the game.** Both the game and the translation can get slower.
-- **The first translation can take a while.** Many local servers only load the model on the first call. The program waits up to 90 seconds for a response on this engine.
-- **Reasoning models spend tokens thinking.** If you get the warning about a response cut off at the token limit, raise *Max Tokens* in **Translation › AI** or switch models. The `<think>` block some models write before the answer is discarded.
-- **The whole screen goes in a single request.** With the OpenAI, Claude and Gemini engines, screens with many blocks are split into parallel requests. Not here, because a local server usually handles one request at a time.
+## OpenAI fast queue
+
+With OpenAI selected, the model card has the **OpenAI fast queue** option. When on, OpenAI serves your requests first, at twice the price per token. It helps when OpenAI is slow. It comes **off**: the key is yours, so the doubled bill only happens if you turn it on.
 
 ---

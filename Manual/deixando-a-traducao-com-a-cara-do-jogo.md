@@ -2,40 +2,38 @@
 
 Em **Overlay › Captura**, no card **Texto**:
 
-- **Fonte**: escolha entre as fontes incluídas na pasta `fonts/` ou use a padrão do sistema
-  (Arial). A prévia logo abaixo mostra como fica.
+<p align="center"><img src="media/captura-texto.png" alt="Card Texto, em Overlay › Captura" width="720"></p>
+
+- **Fonte**: escolha entre as fontes da pasta `fonts/`, ao lado do programa, as fontes do Windows
+  ou a padrão do sistema (Arial). A prévia logo abaixo mostra como fica.
 - **Cor do texto**: branco por padrão; troque para combinar com a paleta do jogo.
 - **Tamanho da fonte** e **Altura da linha**: ajuste para o texto ficar legível e bem
   espaçado.
-- **Auto-fit**: deixe ativado para o programa **diminuir a fonte automaticamente** até a
-  tradução inteira caber no espaço do texto original — assim o texto nunca é cortado. Dica: com
-  o Auto-fit ligado, deixe o **Tamanho da fonte** no máximo — o programa encontra sozinho o
-  maior tamanho que exibe a tradução completa preenchendo bem a área, e subir mais o controle
-  não muda mais nada.
+- **Auto-fit**: diminui a fonte até a tradução caber no lugar do texto original. Desligado, a
+  tradução mais longa que o original passa desse lugar e pode cobrir o texto vizinho. Dica: com
+  o Auto-fit ligado, deixe o **Tamanho da fonte** alto — o programa encontra sozinho o maior
+  tamanho que cabe.
+
+No card **Fundo e Contorno**:
+
+<p align="center"><img src="media/captura-fundo.png" alt="Card Fundo e Contorno, em Overlay › Captura" width="720"></p>
+
 - **Fundo**: desenha uma caixa escura atrás do texto (com opacidade ajustável), para garantir
   legibilidade sobre qualquer cenário.
-- **Contorno**: desenha uma borda preta nas letras, para um visual mais discreto/integrado —
-  pode ser usado sozinho ou junto com o fundo.
-
-<p align="center"><img src="media/captura-texto-fundo.png" alt="Cards Texto e Fundo e Contorno, em Overlay › Captura" width="720"></p>
-
-<p align="center"><i>Os cards <b>Texto</b> e <b>Fundo e Contorno</b>, em <b>Overlay › Captura</b>.
-A prévia embaixo da fonte mostra o resultado antes de você testar no jogo.</i></p>
+- **Contorno**: desenha uma borda nas letras, com espessura e cor ajustáveis — pode ser usado
+  sozinho ou junto com o fundo.
 
 ## Quanto tempo a tradução fica na tela
 
-Em "Exibição", escolha por quanto tempo a tradução permanece visível depois de aparecer: 15s,
-30s, 1 minuto (padrão), 2, 5 ou 10 minutos — ou "Nunca" (a tradução só some quando você apertar
-o atalho de limpar ou traduzir de novo).
+Em **Exibição**, escolha por quanto tempo a tradução da captura de tela fica visível depois de
+aparecer: 1 minuto (padrão), 2, 5 ou 10 minutos. Para tirá-la antes, aperte o atalho de limpar ou
+traduza de novo.
 
 No mesmo card fica **"Esconder a tradução de gravações e transmissões"**: ligada, a tradução
 continua na sua tela normalmente, mas não aparece para programas de captura. Útil para gravar o
-jogo sem a tradução por cima. Vale só para a tradução manual; o Modo Legenda tem a opção
-equivalente na aba dele.
+jogo sem a tradução por cima. Vale só para a captura de tela.
 
 <p align="center"><img src="media/captura-exibicao-duracao.png" alt="Card Exibição, em Overlay › Captura" width="820"></p>
-
-<p align="center"><i>O card <b>Exibição</b>, em <b>Overlay › Captura</b>.</i></p>
 
 > Funciona só com programas rodando **NESTE PC** (OBS, Game Bar, NVIDIA ShadowPlay, etc).
 > Gravando por placa de captura, a tradução aparece assim mesmo — quem esconde a janela é o

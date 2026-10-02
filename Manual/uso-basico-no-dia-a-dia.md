@@ -14,6 +14,10 @@
 5. Se o texto do jogo mudar antes da tradução sumir, é só apertar **Traduzir** de novo — a
    tradução antiga é limpa automaticamente antes da nova captura.
 
+Para diálogos que passam sozinhos, como cutscenes, use o **Modo Legenda**
+([seção 9](/Manual/modo-legenda-traducao-automatica-continua.md)): você liga uma vez e ele
+traduz cada fala sem você apertar nada.
+
 ## Parágrafo ou linha: pegue o jeito
 
 A escolha entre `Numpad8` e `Numpad9` é o ajuste que mais muda o resultado no dia a dia, e você
@@ -31,12 +35,13 @@ Errou o modo? Aperte o outro atalho na sequência — a tradução anterior é l
 Ative a **barra flutuante** em **Geral › Atalhos** e dispare tudo por clique do mouse. Ela fica
 sempre acima de qualquer janela, move-se livremente entre monitores e é o plano B para quando o
 jogo "engole" as teclas do Numpad. Os nove botões estão explicados no
-[passo 2.7](/Manual/configuracao-rapida.md).
+[passo 2.8](/Manual/configuracao-rapida.md).
 
 ## Conferindo se as áreas estão certas
 
-Aperte **Mostrar/ocultar áreas** (padrão `Numpad2`) para desenhar retângulos coloridos
-mostrando onde o programa vai capturar (e, se o Modo Legenda estiver configurado, onde a
-legenda aparece). Aperte de novo para esconder. Não traduz nada, é só um guia visual.
+Aperte **Mostrar/ocultar áreas** (padrão `Numpad2`) para desenhar no monitor escolhido o
+contorno e o nome de cada área: a da captura de tela, a da legenda e a faixa onde a tradução da
+legenda aparece. Aperte de novo para esconder. Não traduz nada, é só um guia visual, e acompanha
+na hora uma área nova ou uma mudança na configuração.
 
 ---
