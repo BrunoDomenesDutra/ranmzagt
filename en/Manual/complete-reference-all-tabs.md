@@ -186,9 +186,6 @@ Which service translates and with which keys.
   - With **DeepL**, a working key shows below it how much of the monthly quota has been used (*"Monthly quota: 4,359 of 500,000 characters"*).
 
 <p align="center"><img src="media/en/tradutores-deepl.png" alt="Translators with DeepL: formality and monthly quota below the tested key" width="820"></p>
-
-<p align="center"><img src="media/tradutores-testar-chave.png" alt="Test buttons: working key in green and failing key in red" width="820"></p>
-
 <p align="center"><img src="media/en/tradutores-openai.png" alt="Translators with OpenAI selected" width="820"></p>
 
 ## Translation › AI

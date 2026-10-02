@@ -1293,9 +1293,6 @@ Qual serviço traduz e com quais chaves.
     (*"Cota do mês: 4.359 de 500.000 caracteres"*).
 
 <p align="center"><img src="media/tradutores-deepl.png" alt="Tradutores com DeepL: formalidade e cota do mês abaixo da chave testada" width="820"></p>
-
-<p align="center"><img src="media/tradutores-testar-chave.png" alt="Botões Testar: chave funcionando em verde e chave com problema em vermelho" width="820"></p>
-
 <p align="center"><img src="media/tradutores-openai.png" alt="Tradutores com OpenAI selecionado" width="820"></p>
 
 ### Tradução › I.A
