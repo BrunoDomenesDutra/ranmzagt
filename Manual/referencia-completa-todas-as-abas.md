@@ -337,6 +337,10 @@ jogo. Vale para a **captura de tela** (Traduzir e Vision); o Modo Legenda não u
 <p align="center"><i>O fundo reconstruído no lugar da caixa escura atrás da tradução.</i></p>
 
 - **Ativar fundo reconstruído** — só pode ser ligado depois de baixar o modelo, no card abaixo.
+- **Usar a placa de vídeo** — vem ligado. Com a placa de vídeo, apagar o texto leva cerca de
+  0,03 s por captura; no processador, cerca de 0,3 s. Desligue se o Inpaint der erro ou deixar o
+  jogo lento. Se a placa de vídeo falhar, o programa usa o processador sozinho. A troca vale na
+  hora.
 - **Ajuste fino da máscara** — valem **por captura**, sem reiniciar.
   - *Dilatação da máscara* (0–12 px; padrão 3) — se depois de apagar o texto ainda sobra um
     resíduo de borda (o halo da fonte), aumente para o MI-GAN reconstruir um pouco além das

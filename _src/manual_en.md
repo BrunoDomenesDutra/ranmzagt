@@ -896,6 +896,7 @@ Instead of the dark box behind the translation, it erases the original text from
 <p align="center"><i>The reconstructed background instead of the dark box behind the translation.</i></p>
 
 - **Enable reconstructed background** — can only be turned on after downloading the model, in the card below.
+- **Use the graphics card** — comes on. With the graphics card, erasing the text takes about 0.03 s per capture; on the processor, about 0.3 s. Turn it off if Inpaint fails or makes the game slow. If the graphics card fails, the program falls back to the processor by itself. The change applies right away.
 - **Mask fine-tuning** — applies **per capture**, no restart.
   - *Mask dilation* (0–12 px; default 3) — if a border residue (the font halo) is left after erasing the text, raise it so MI-GAN rebuilds a bit beyond the letters.
   - *Detection threshold* (1.05–1.50; default 1.30) — a lower threshold makes the mask more sensitive (catches more halo, but may mistake textured background for text).
