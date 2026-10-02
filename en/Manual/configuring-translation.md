@@ -56,6 +56,10 @@ In Subtitle Mode, the program can consider only the letters of one alphabet and 
 - With **OneOCR**, you choose the alphabet in the list (default: *Any alphabet*).
 - With **WinOCR**, the filter follows the language chosen in **General › Language** by itself.
 
+Example: in the scene below, the English subtitle sits on top of a Japanese news headline. With *Any alphabet*, the program reads both together and sends the Japanese to the translation in the middle of the line. With *Latin*, it ignores the Japanese characters and translates only the subtitle.
+
+<p align="center"><img src="media/legenda-alfabeto-exemplo.png" alt="English subtitle on top of a Japanese headline" width="820"></p>
+
 It only applies to Subtitle Mode; screen capture reads all the text in the area.
 
 ## OpenAI fast queue

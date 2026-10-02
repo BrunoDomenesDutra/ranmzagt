@@ -87,6 +87,12 @@ original**:
 - Com o **OneOCR**, você escolhe o alfabeto na lista (padrão: *Qualquer alfabeto*).
 - Com o **WinOCR**, o filtro segue sozinho o idioma escolhido em **Geral › Idioma**.
 
+Exemplo: na cena abaixo, a legenda em inglês fica por cima de uma manchete de jornal em japonês.
+Com *Qualquer alfabeto*, o programa lê as duas juntas e manda o japonês para a tradução no meio da
+fala. Com *Latino*, ele ignora os caracteres japoneses e traduz só a legenda.
+
+<p align="center"><img src="media/legenda-alfabeto-exemplo.png" alt="Legenda em inglês por cima de uma manchete em japonês" width="820"></p>
+
 Vale só para o Modo Legenda; a captura de tela lê todo o texto da área.
 
 ## Fila rápida da OpenAI
