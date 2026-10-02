@@ -120,7 +120,7 @@ tela, use o **Traduzir com I.A Vision** (`Numpad5` parágrafo, `Numpad6` linha) 
 "ver" a imagem e corrigir.
 
 #### "A tradução não cabe no lugar do texto original"
-→ Na captura de tela, ligue o **Auto-fit** em **Overlay › Captura** — o programa diminui a fonte
+→ Na captura de tela, confira se o **Auto-fit** está ligado em **Overlay › Captura** — o programa diminui a fonte
 até caber.
 → No **Modo Legenda** com *Colar no texto detectado* ligado, a tradução transborda a área de
 propósito. Diminua o *Tamanho da fonte* em **Overlay › Legenda** se ela cobrir o que não deve.

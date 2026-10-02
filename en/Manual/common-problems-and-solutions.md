@@ -60,7 +60,7 @@ What fixes it, from simplest to most definitive:
 → The fix that helps the most is switching the OCR engine to **OneOCR** in **General › OCR** — it reads game fonts much better than WinOCR (the step by step and the why are in [section 6](/en/Manual/configuring-translation.md), in *Switching OCR engine*). In Subtitle Mode, also check that the area is tight around the subtitle and the **alphabet filter**. In screen capture, use **Translate with AI Vision** (`Numpad5` paragraph, `Numpad6` line) to let the AI "see" the image and fix it.
 
 #### "The translation does not fit where the original text was"
-→ In screen capture, turn on **Auto-fit** in **Overlay › Capture** — the program shrinks the font until it fits.
+→ In screen capture, check that **Auto-fit** is on in **Overlay › Capture** — the program shrinks the font until it fits.
 → In **Subtitle Mode** with *Stick to the detected text* on, the translation spills over the area on purpose. Lower the *Font size* in **Overlay › Subtitles** if it covers what it should not.
 
 #### "Translations of different lines are getting mixed into one block" (or the opposite)

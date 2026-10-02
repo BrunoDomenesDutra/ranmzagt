@@ -590,7 +590,7 @@ Em **Overlay › Captura**, no card **Texto**:
 - **Cor do texto**: branco por padrão; troque para combinar com a paleta do jogo.
 - **Tamanho da fonte** e **Altura da linha**: ajuste para o texto ficar legível e bem
   espaçado.
-- **Auto-fit**: diminui a fonte até a tradução caber no lugar do texto original. Desligado, a
+- **Auto-fit** (vem ligado): diminui a fonte até a tradução caber no lugar do texto original. Desligado, a
   tradução mais longa que o original passa desse lugar e pode cobrir o texto vizinho. Dica: com
   o Auto-fit ligado, deixe o **Tamanho da fonte** alto — o programa encontra sozinho o maior
   tamanho que cabe.
@@ -932,7 +932,7 @@ tela, use o **Traduzir com I.A Vision** (`Numpad5` parágrafo, `Numpad6` linha) 
 "ver" a imagem e corrigir.
 
 ##### "A tradução não cabe no lugar do texto original"
-→ Na captura de tela, ligue o **Auto-fit** em **Overlay › Captura** — o programa diminui a fonte
+→ Na captura de tela, confira se o **Auto-fit** está ligado em **Overlay › Captura** — o programa diminui a fonte
 até caber.
 → No **Modo Legenda** com *Colar no texto detectado* ligado, a tradução transborda a área de
 propósito. Diminua o *Tamanho da fonte* em **Overlay › Legenda** se ela cobrir o que não deve.
@@ -1118,7 +1118,7 @@ Aparência da tradução da captura de tela.
   - *Cor do texto* — seletor de cor (padrão branco).
   - *Tamanho da fonte* — 8 a 100 px.
   - *Altura da linha* — 1,00 a 2,00 vezes o tamanho da fonte.
-  - *Auto-fit* — reduz a fonte até o texto caber no lugar do original.
+  - *Auto-fit* — reduz a fonte até o texto caber no lugar do original. **Vem ligado.**
 - **Fundo e Contorno** — podem ser ligados juntos ou separados.
   - *Mostrar fundo* + *Opacidade do fundo* (10–100%) — caixa escura atrás do texto.
   - *Mostrar contorno* + *Espessura* (0,5–5 px) + *Cor do contorno* — contorno ao redor de cada

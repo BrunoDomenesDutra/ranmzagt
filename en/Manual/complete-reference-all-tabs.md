@@ -109,7 +109,7 @@ How the screen capture translation looks.
   - *Text color* — color picker (white by default).
   - *Font size* — 8 to 100 px.
   - *Line height* — 1.00 to 2.00 times the font size.
-  - *Auto-fit* — shrinks the font until the text fits where the original was.
+  - *Auto-fit* — shrinks the font until the text fits where the original was. **On by default.**
 - **Background and Outline** — can be on together or separately.
   - *Show background* + *Background opacity* (10–100%) — dark box behind the text.
   - *Show outline* + *Thickness* (0.5–5 px) + *Outline color* — outline around each letter.

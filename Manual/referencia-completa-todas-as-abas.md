@@ -162,7 +162,7 @@ Aparência da tradução da captura de tela.
   - *Cor do texto* — seletor de cor (padrão branco).
   - *Tamanho da fonte* — 8 a 100 px.
   - *Altura da linha* — 1,00 a 2,00 vezes o tamanho da fonte.
-  - *Auto-fit* — reduz a fonte até o texto caber no lugar do original.
+  - *Auto-fit* — reduz a fonte até o texto caber no lugar do original. **Vem ligado.**
 - **Fundo e Contorno** — podem ser ligados juntos ou separados.
   - *Mostrar fundo* + *Opacidade do fundo* (10–100%) — caixa escura atrás do texto.
   - *Mostrar contorno* + *Espessura* (0,5–5 px) + *Cor do contorno* — contorno ao redor de cada

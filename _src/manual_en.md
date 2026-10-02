@@ -419,7 +419,7 @@ In **Overlay › Capture**, in the **Text** card:
 - **Font**: choose among the fonts in the `fonts/` folder, next to the program, the Windows fonts or the system default (Arial). The preview just below shows how it looks.
 - **Text color**: white by default; change it to match the game palette.
 - **Font size** and **Line height**: adjust so the text is readable and well spaced.
-- **Auto-fit**: shrinks the font until the translation fits where the original text was. When off, a translation longer than the original spills past that spot and may cover nearby text. Tip: with Auto-fit on, keep the **Font size** high — the program finds the largest size that fits by itself.
+- **Auto-fit** (on by default): shrinks the font until the translation fits where the original text was. When off, a translation longer than the original spills past that spot and may cover nearby text. Tip: with Auto-fit on, keep the **Font size** high — the program finds the largest size that fits by itself.
 
 In the **Background and Outline** card:
 
@@ -629,7 +629,7 @@ What fixes it, from simplest to most definitive:
 → The fix that helps the most is switching the OCR engine to **OneOCR** in **General › OCR** — it reads game fonts much better than WinOCR (the step by step and the why are in [section 6](/en/Manual/configuring-translation.md), in *Switching OCR engine*). In Subtitle Mode, also check that the area is tight around the subtitle and the **alphabet filter**. In screen capture, use **Translate with AI Vision** (`Numpad5` paragraph, `Numpad6` line) to let the AI "see" the image and fix it.
 
 ##### "The translation does not fit where the original text was"
-→ In screen capture, turn on **Auto-fit** in **Overlay › Capture** — the program shrinks the font until it fits.
+→ In screen capture, check that **Auto-fit** is on in **Overlay › Capture** — the program shrinks the font until it fits.
 → In **Subtitle Mode** with *Stick to the detected text* on, the translation spills over the area on purpose. Lower the *Font size* in **Overlay › Subtitles** if it covers what it should not.
 
 ##### "Translations of different lines are getting mixed into one block" (or the opposite)
@@ -754,7 +754,7 @@ How the screen capture translation looks.
   - *Text color* — color picker (white by default).
   - *Font size* — 8 to 100 px.
   - *Line height* — 1.00 to 2.00 times the font size.
-  - *Auto-fit* — shrinks the font until the text fits where the original was.
+  - *Auto-fit* — shrinks the font until the text fits where the original was. **On by default.**
 - **Background and Outline** — can be on together or separately.
   - *Show background* + *Background opacity* (10–100%) — dark box behind the text.
   - *Show outline* + *Thickness* (0.5–5 px) + *Outline color* — outline around each letter.

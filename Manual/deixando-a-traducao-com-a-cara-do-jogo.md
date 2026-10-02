@@ -9,7 +9,7 @@ Em **Overlay › Captura**, no card **Texto**:
 - **Cor do texto**: branco por padrão; troque para combinar com a paleta do jogo.
 - **Tamanho da fonte** e **Altura da linha**: ajuste para o texto ficar legível e bem
   espaçado.
-- **Auto-fit**: diminui a fonte até a tradução caber no lugar do texto original. Desligado, a
+- **Auto-fit** (vem ligado): diminui a fonte até a tradução caber no lugar do texto original. Desligado, a
   tradução mais longa que o original passa desse lugar e pode cobrir o texto vizinho. Dica: com
   o Auto-fit ligado, deixe o **Tamanho da fonte** alto — o programa encontra sozinho o maior
   tamanho que cabe.
