@@ -58,7 +58,7 @@ With *Stick to the detected text* off, **Lines on screen** (1 to 8, default 1) s
 
 With an AI (OpenAI, Anthropic, Gemini or Groq), **Translation › AI** has the **Previous lines** control (5 to 10, default 5). The AI receives the last lines already translated as reference before translating the next one — this helps keep the same names, terms and tone throughout a conversation. Each extra line costs tokens on every translation.
 
-> The dedicated translators (Google Translate, Google Cloud, DeepL and Azure) translate each line on its own, without the previous lines.
+> **DeepL** receives only the original text of those lines, as context, and does not charge for it. The other dedicated translators (Google Translate, Google Cloud and Azure) translate each line on its own.
 
 ## Separate appearance
 

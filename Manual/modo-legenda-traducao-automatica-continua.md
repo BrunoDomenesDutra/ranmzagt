@@ -84,8 +84,8 @@ anteriores** (5 a 10, padrão 5). A IA recebe as últimas falas já traduzidas c
 de traduzir a próxima — isso ajuda a manter os mesmos nomes, termos e tom ao longo de uma
 conversa. Cada fala a mais custa tokens em toda tradução.
 
-> Os tradutores dedicados (Google Translate, Google Cloud, DeepL e Azure) traduzem cada fala
-> sozinha, sem as falas anteriores.
+> O **DeepL** recebe só o texto original dessas falas, como contexto, e não cobra por ele. Os
+> outros tradutores dedicados (Google Translate, Google Cloud e Azure) traduzem cada fala sozinha.
 
 ## Aparência separada
 

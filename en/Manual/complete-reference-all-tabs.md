@@ -162,7 +162,8 @@ Which service translates and with which keys.
 - **Translation Provider → Active provider**
   - *Google Translate — free* — unofficial API, nothing to set up. It is the same address the Google Translate web page uses internally; since it is not published or documented, Google can change or disable it at any time. **Does not support Vision Mode.** Being free, it has a **request limit**, counted per IP address — what to do is in [section 12](/en/Manual/common-problems-and-solutions.md).
   - *Google Cloud Translation* — Google's official API, with a key created in the Google Cloud Console (*APIs & Services › Credentials*). **Does not support Vision Mode.**
-  - *DeepL* — dedicated translator. The free plan key ends in `:fx`, and the program picks the right server by itself. **Does not support Vision Mode.**
+  - *DeepL* — dedicated translator. The free plan key ends in `:fx`, and the program picks the right server by itself. It receives the Game Info and the previous lines as context, at no cost. **Does not support Vision Mode.**
+    - *Formality* — shows up below the provider, only with DeepL: *Default*, *More formal* or *More informal*. It changes how people are addressed (tu/vous, du/Sie). It is ignored in languages where DeepL has no formality. It is saved in the profile.
   - *Azure Translator* — Microsoft's translator; requires a key and the resource **region**. **Does not support Vision Mode.**
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — AIs, with an API key and Vision Mode.
   - *Groq* — AI with a free plan, with an API key. **Does not support Vision Mode.**
@@ -180,6 +181,9 @@ Which service translates and with which keys.
   - *+ Add key* / *Delete* — you can register **as many keys as you want** for the same service. When the key in use is rejected, runs out of credit or hits the request limit, the next one in the list takes over right away; when all are used up, it falls back to Google Translate.
   - *Test* — translates one word using only that key, with the chosen model and region. The button turns **green** when the key works and **red** when it fails. Hover over it to see why, such as "invalid key", "out of credit" or "No internet". Editing the key clears the result.
   - *Test all* — tests the keys in the list one at a time and colors each one's button.
+  - With **DeepL**, a working key shows below it how much of the monthly quota has been used (*"Monthly quota: 4,359 of 500,000 characters"*).
+
+<p align="center"><img src="media/tradutores-deepl.png" alt="Translators with DeepL: formality and monthly quota below the tested key" width="820"></p>
 
 <p align="center"><img src="media/tradutores-testar-chave.png" alt="Test buttons: working key in green and failing key in red" width="820"></p>
 
@@ -191,11 +195,11 @@ Context sent to the AIs.
 
 <p align="center"><img src="media/ia.png" alt="Translation › AI tab" width="820"></p>
 
-- **Conversation Context → Previous lines** (5–10, default 5) — in Subtitle Mode, sends the last lines (original + translation) as context, so the AI keeps terms and tone consistent. Each extra line costs tokens on every translation.
+- **Conversation Context → Previous lines** (5–10, default 5) — in Subtitle Mode, sends the last lines (original + translation) as context, so the AI keeps terms and tone consistent. Each extra line costs tokens on every translation. With DeepL, only the originals go, at no cost.
 - **System Prompt** — general translator rules, for every game. It comes **blank**, with a gray example inside the field; nothing is sent to the AI until you write your own. **Save** and **Restore default** buttons (which empties the field again). The target language does not need to be here: the program already sends the AI the language chosen in the **Language** tab, and asking for another language in this field is ignored. Concrete rules (glossary, keep names, do not soften swearing) work on every model.
-- **Game Info** — theme, characters and glossary; change it for each game. It also comes blank, with a gray example. Same buttons.
+- **Game Info** — theme, characters and glossary; change it for each game. It also comes blank, with a gray example. Same buttons. With DeepL, the text goes as context: it helps with tone and terms, but requests written here are not followed.
 
-> With a translator that is not an AI active, the cards are marked in red: they only apply to OpenAI, Anthropic, Gemini and Groq.
+> With Google Translate, Google Cloud or Azure active, the cards are marked in red, because they do not apply to them. With DeepL, only the System Prompt is marked.
 
 The general reset (General › Config) does **not** erase the Game Info.
 

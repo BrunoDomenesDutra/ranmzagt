@@ -239,7 +239,11 @@ Qual serviço traduz e com quais chaves.
   - *Google Cloud Translation* — a API oficial do Google, com chave criada no Google Cloud
     Console (*APIs e serviços › Credenciais*). **Não suporta o Modo Vision.**
   - *DeepL* — tradutor dedicado. A chave do plano gratuito termina em `:fx`, e o programa escolhe
-    o servidor certo sozinho. **Não suporta o Modo Vision.**
+    o servidor certo sozinho. Recebe as Informações do Jogo e as falas anteriores como contexto,
+    sem custo. **Não suporta o Modo Vision.**
+    - *Formalidade* — aparece abaixo do provedor, só com o DeepL: *Padrão*, *Mais formal* ou
+      *Mais informal*. Muda o tratamento (você/o senhor). Nos idiomas em que o DeepL não tem
+      formalidade, é ignorada. Fica salva no perfil.
   - *Azure Translator* — o tradutor da Microsoft; exige chave e **região** do recurso. **Não
     suporta o Modo Vision.**
   - *OpenAI*, *Anthropic (Claude)*, *Gemini* — IAs, com chave de API e Modo Vision.
@@ -272,6 +276,10 @@ Qual serviço traduz e com quais chaves.
     para ver o motivo, como "chave inválida", "sem crédito" ou "Sem internet". Editar a chave
     apaga o resultado.
   - *Testar todas* — testa as chaves da lista uma por vez e pinta o botão de cada uma.
+  - No **DeepL**, a chave que funciona mostra abaixo dela quanto da cota do mês já foi usado
+    (*"Cota do mês: 4.359 de 500.000 caracteres"*).
+
+<p align="center"><img src="media/tradutores-deepl.png" alt="Tradutores com DeepL: formalidade e cota do mês abaixo da chave testada" width="820"></p>
 
 <p align="center"><img src="media/tradutores-testar-chave.png" alt="Botões Testar: chave funcionando em verde e chave com problema em vermelho" width="820"></p>
 
@@ -285,7 +293,7 @@ Contexto enviado às IAs.
 
 - **Contexto de Conversa → Falas anteriores** (5–10, padrão 5) — no Modo Legenda, envia as
   últimas falas (original + tradução) como contexto, para a IA manter consistência de termos e
-  tom. Cada fala a mais custa tokens em toda tradução.
+  tom. Cada fala a mais custa tokens em toda tradução. No DeepL, vão só os originais, sem custo.
 - **System Prompt** — regras gerais do tradutor, para todos os jogos. Vem **em branco**, com um
   exemplo em cinza dentro do campo; nada é enviado à IA enquanto você não escrever o seu. Botões
   **Salvar** e **Restaurar padrão** (que esvazia o campo de novo). O idioma de destino não precisa
@@ -293,10 +301,11 @@ Contexto enviado às IAs.
   outro idioma neste campo é ignorado. Regras concretas (glossário, manter nomes, não suavizar
   palavrões) funcionam em todos os modelos.
 - **Informações do Jogo** — tema, personagens e glossário; mude a cada jogo. Também vem em
-  branco, com exemplo em cinza. Mesmos botões.
+  branco, com exemplo em cinza. Mesmos botões. No DeepL, o texto vai como contexto: ajuda no tom
+  e nos termos, mas pedidos escritos aqui não são seguidos.
 
-> Com um tradutor que não é IA ativo, os cards ficam marcados em vermelho: eles só valem para
-> OpenAI, Anthropic, Gemini e Groq.
+> Com Google Translate, Google Cloud ou Azure ativo, os cards ficam marcados em vermelho, porque
+> não valem para eles. Com o DeepL, só o System Prompt fica marcado.
 
 O reset geral (Geral › Config) **não** apaga as Informações do Jogo.
 

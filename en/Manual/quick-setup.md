@@ -97,7 +97,7 @@ The default is **Google Translate — free**: no key and no setup, ready to use.
 
 When you want more quality, switch in **Active provider**:
 
-- **Google Cloud Translation**, **DeepL** and **Azure Translator** — dedicated translators. They need an API key and have a free plan with a monthly limit. On DeepL, free plan keys end in `:fx`, and the program figures out which server to use. Azure, besides the key, requires the resource **region** (both are on the same page of the Azure portal).
+- **Google Cloud Translation**, **DeepL** and **Azure Translator** — dedicated translators. They need an API key and have a free plan with a monthly limit. On DeepL, free plan keys end in `:fx`, and the program figures out which server to use. DeepL also receives the Game Info and the previous lines as context, at no extra cost. Azure, besides the key, requires the resource **region** (both are on the same page of the Azure portal).
 - **OpenAI**, **Anthropic (Claude)**, **Gemini** and **Groq** — AIs. They need an API key and, in return, deliver more natural and consistent translations, because they take the previous lines and the Game Info into account. OpenAI and Anthropic charge per use; Gemini and Groq have a free plan. Pick the model in the authentication card and paste the key under *API Keys*.
 
 <p align="center"><img src="media/tradutores-openai.png" alt="Translation › Translators tab with OpenAI" width="820"></p>

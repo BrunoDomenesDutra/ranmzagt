@@ -140,7 +140,8 @@ Quando quiser mais qualidade, troque em **Provedor ativo**:
 
 - **Google Cloud Translation**, **DeepL** e **Azure Translator** — tradutores dedicados. Precisam
   de chave de API e têm plano gratuito com limite por mês. No DeepL, as chaves do plano gratuito
-  terminam em `:fx`, e o programa reconhece sozinho qual servidor usar. O Azure, além da chave,
+  terminam em `:fx`, e o programa reconhece sozinho qual servidor usar. O DeepL também recebe as
+  Informações do Jogo e as falas anteriores como contexto, sem custo extra. O Azure, além da chave,
   exige a **região** do recurso (as duas coisas ficam na mesma página do portal do Azure).
 - **OpenAI**, **Anthropic (Claude)**, **Gemini** e **Groq** — IAs. Precisam de chave de API, e
   em troca entregam traduções mais naturais e consistentes, porque traduzem levando em conta as
