@@ -157,7 +157,7 @@ Streams screen capture translations to browsers on the local network — and to 
 
 Which service translates and with which keys.
 
-<p align="center"><img src="media/tradutores-google-cloud.png" alt="Translation › Translators tab with Google Cloud Translation" width="820"></p>
+<p align="center"><img src="media/en/tradutores-google-cloud.png" alt="Translation › Translators tab with Google Cloud Translation" width="820"></p>
 
 - **Translation Provider → Active provider**
   - *Google Translate — free* — unofficial API, nothing to set up. It is the same address the Google Translate web page uses internally; since it is not published or documented, Google can change or disable it at any time. **Does not support Vision Mode.** Being free, it has a **request limit**, counted per IP address — what to do is in [section 12](/en/Manual/common-problems-and-solutions.md).
@@ -189,7 +189,7 @@ Which service translates and with which keys.
 
 <p align="center"><img src="media/tradutores-testar-chave.png" alt="Test buttons: working key in green and failing key in red" width="820"></p>
 
-<p align="center"><img src="media/tradutores-openai.png" alt="Translators with OpenAI selected" width="820"></p>
+<p align="center"><img src="media/en/tradutores-openai.png" alt="Translators with OpenAI selected" width="820"></p>
 
 ## Translation › AI
 

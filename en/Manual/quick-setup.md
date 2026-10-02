@@ -101,7 +101,7 @@ When you want more quality, switch in **Active provider**:
 - **OpenAI**, **Anthropic (Claude)**, **Gemini** and **Groq** — AIs. They need an API key and, in return, deliver more natural and consistent translations, because they take the previous lines and the Game Info into account. OpenAI and Anthropic charge per use; Gemini and Groq have a free plan. Pick the model in the authentication card and paste the key under *API Keys*.
 - **OpenAI-compatible** — to use an AI running on your PC (LM Studio, Ollama) or another service that is not on the list. You enter the address and the model name. See [AI on your PC or another service](/en/Manual/configuring-translation.md) in section 6.
 
-<p align="center"><img src="media/tradutores-openai.png" alt="Translation › Translators tab with OpenAI" width="820"></p>
+<p align="center"><img src="media/en/tradutores-openai.png" alt="Translation › Translators tab with OpenAI" width="820"></p>
 
 Each service keeps its own keys, so switching from one to another and back does not erase anything. Keys are stored **encrypted** and only open on this PC, in your Windows account.
 
