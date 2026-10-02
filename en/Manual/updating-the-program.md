@@ -6,6 +6,8 @@ When opening the program, if a newer version is published, a warning shows the v
 
 **How to update**, after downloading the `.zip`: close Ranmza GT, extract the contents over the current folder and confirm replacing the files. Your settings (`config.json`), the profiles (`profiles\`), the API keys, the fonts you put in `fonts/` and the files in `models/` (OneOCR and MI-GAN) **are not in the `.zip`** and stay where they are.
 
+> **`DirectML.dll` comes along.** Since version 3.0, the `.zip` also has `DirectML.dll`, from Microsoft, next to `Ranmza-GT.exe`. Keep both in the same folder. The program loads this file when it opens, and Inpaint uses it to erase the text with the graphics card. The one that comes with Windows 10 is older than required; without the copy from the `.zip`, the program may not open on Windows 10.
+
 > API keys are encrypted for this PC and this Windows account. If you copy the settings to another PC, type the keys again there.
 
 To turn off the warning, check **Don't notify me about new versions** in the warning itself, or turn it off in **General › Config → Updates**. That switch is how it comes back.

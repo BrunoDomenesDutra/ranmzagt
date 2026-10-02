@@ -14,6 +14,12 @@ da pasta atual e confirme a substituição dos arquivos. Suas configurações (`
 perfis (`profiles\`), as chaves de API, as fontes que você colocou em `fonts/` e os arquivos de
 `models/` (OneOCR e MI-GAN) **não estão no `.zip`** e continuam onde estão.
 
+> **O `DirectML.dll` vai junto.** Desde a versão 3.0, o `.zip` traz o `DirectML.dll`, da
+> Microsoft, além do `Ranmza-GT.exe`. Deixe os dois na mesma pasta. O programa carrega esse
+> arquivo ao abrir, e o Inpaint o usa para apagar o texto pela placa de vídeo. O que vem no
+> Windows 10 é mais antigo que o exigido; sem a cópia do `.zip`, o programa pode não abrir no
+> Windows 10.
+
 > As chaves de API ficam criptografadas para este PC e esta conta do Windows. Se você copiar a
 > configuração para outro PC, digite as chaves de novo lá.
 
