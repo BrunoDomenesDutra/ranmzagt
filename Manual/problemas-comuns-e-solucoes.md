@@ -28,7 +28,8 @@ ou volte ao passo OCR e escolha o OneOCR.
 #### "Apertei o atalho e nada acontece"
 → Confira se a janela de configuração não está em primeiro plano (os atalhos só funcionam com
 o jogo em foco). Se aparecer o alerta *"Captura sem área"* ou *"Legenda sem área"*, marque a área
-primeiro (`Numpad7` ou `Numpad1`). Se mesmo assim não funcionar, ative a **barra flutuante**
+primeiro (`Numpad7` ou `Numpad1`). Atalho com Shift e tecla do Numpad não dispara com o NumLock
+ligado: troque o Shift por Ctrl ou Alt. Se mesmo assim não funcionar, ative a **barra flutuante**
 (**Geral › Atalhos**) e use os botões dela.
 
 #### "Os atalhos não funcionam em alguns jogos (mesmo com o jogo em foco)"

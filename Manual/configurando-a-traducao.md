@@ -116,10 +116,14 @@ deles. Você informa o endereço e o nome do modelo, e o programa manda o texto 
   cada servidor tem os seus.
 - **O modelo aceita imagem** — ligue só se o modelo lê imagens. É o que libera o
   [Modo Vision](/Manual/modo-vision-quando-o-ocr-erra.md) nesse tradutor.
+- **Desligar o raciocínio do modelo** — modelos que pensam antes de responder, como o Qwen3,
+  demoram bem mais. Ligada, o programa pede ao servidor para pular essa etapa. Num teste com o
+  Qwen3 0.6B no Ollama, a resposta caiu de 5,7 s para 0,3 s. Nem todo servidor aceita o pedido:
+  se a tradução passar a falhar, desligue. Vem desligada.
 - **Chaves de API** — só se o serviço pedir. Servidor no seu PC geralmente não pede, e aí o
   campo fica vazio.
 
-<p align="center"><img src="media/tradutores-openai-compat.png" alt="Tradutores com Compatível com OpenAI: URL base, Modelo, O modelo aceita imagem e Testar conexão" width="820"></p>
+<p align="center"><img src="media/tradutores-openai-compat.png" alt="Tradutores com Compatível com OpenAI: URL base, Modelo, O modelo aceita imagem, Desligar o raciocínio do modelo e Testar conexão" width="820"></p>
 
 Depois clique em **Testar conexão**. Ele traduz uma palavra pelo servidor e mostra se deu certo
 ou qual erro voltou. O botão só libera com a URL e o modelo preenchidos.
@@ -133,7 +137,8 @@ ou qual erro voltou. O botão só libera com a URL e o modelo preenchidos.
 - **A primeira tradução pode demorar.** Muitos servidores só carregam o modelo na primeira
   chamada. O programa espera até 90 segundos por resposta neste tradutor.
 - **Modelo de raciocínio:** o bloco `<think>` que alguns modelos escrevem antes da resposta é
-  descartado.
+  descartado. Quando o modelo raciocina, demora mais de 5 segundos ou recusa o *Desligar o
+  raciocínio do modelo*, o log diz e sugere o que mudar.
 - Com o servidor desligado aparece o alerta *"API compatível: servidor não responde"*. Sem URL
   ou sem modelo, *"API compatível: preencha URL e modelo"*.
 

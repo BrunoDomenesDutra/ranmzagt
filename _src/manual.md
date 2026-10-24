@@ -237,6 +237,19 @@ Solte o botão para confirmar, ou aperte `ESC` para cancelar.
 A área fica salva. Você só precisa marcar de novo se o jogo mudar a posição da caixa de texto
 ou se você trocar a resolução.
 
+**Texto em mais de um lugar.** Se o jogo mostra texto em pontos separados da tela, como o
+diálogo embaixo e o nome do item no canto, você pode marcar até **5 áreas** na captura de tela:
+
+- **Acrescentar área** soma uma área às que já existem. Com 5, ele só mostra o alerta *"Máximo
+  de 5 áreas"*.
+- **Limpar áreas** apaga todas.
+- O `Numpad7` continua marcando uma área só e apaga as acrescentadas.
+
+Os dois atalhos vêm **sem tecla**: escolha uma em *Geral › Atalhos* (veja o
+[passo 2.9](/Manual/configuracao-rapida.md)). Os atalhos de tradução leem todas as áreas de uma
+vez, e o texto de uma área nunca entra no mesmo parágrafo do texto de outra. O Modo Legenda
+continua com uma área só.
+
 > Sem área marcada, os atalhos de tradução não traduzem nada: aparece o alerta *"Captura sem
 > área"*. Marque a área primeiro.
 
@@ -289,6 +302,10 @@ botões, disparados por clique do mouse.
 Ela fica **sempre por cima de tudo** — inclusive de jogo em janela sem borda — e você a arrasta
 pela alça de pontinhos da esquerda para qualquer canto de qualquer monitor. O atalho
 `NumpadSubtract` (o menos do teclado numérico) mostra e esconde a barra.
+
+A barra aparece em gravações, transmissões e screenshots. Se ela ficar em cima da área
+traduzida, o programa lê os botões dela junto com o texto do jogo. Nesse caso, ligue **Esconder
+a barra de gravações e transmissões**, em *Geral › Atalhos*: ela continua visível para você.
 
 Os botões, da esquerda para a direita (passe o mouse sobre um para ver o nome), em três grupos:
 
@@ -374,9 +391,12 @@ jogo "engole" as teclas do Numpad. Os nove botões estão explicados no
 ### Conferindo se as áreas estão certas
 
 Aperte **Mostrar/ocultar áreas** (padrão `Numpad2`) para desenhar no monitor escolhido o
-contorno e o nome de cada área: a da captura de tela, a da legenda e a faixa onde a tradução da
+contorno e o nome de cada área: as da captura de tela, a da legenda e a faixa onde a tradução da
 legenda aparece. Aperte de novo para esconder. Não traduz nada, é só um guia visual, e acompanha
 na hora uma área nova ou uma mudança na configuração.
+
+A prévia aparece em gravações e screenshots, e o programa também lê os nomes das áreas. Desligue
+a prévia antes de traduzir ou de gravar.
 
 ---
 
@@ -450,7 +470,9 @@ perfis, inclusive nos que criar depois.
 
 | Atalho | Padrão | O que faz |
 |---|---|---|
-| Selecionar área | `Numpad7` | Abre o seletor para escolher onde está o texto da captura de tela |
+| Selecionar área | `Numpad7` | Abre o seletor para escolher onde está o texto da captura de tela; apaga as áreas acrescentadas |
+| Acrescentar área (até 5) | sem tecla | Soma mais uma área à captura de tela, sem apagar as outras (veja o [passo 2.6](/Manual/configuracao-rapida.md)) |
+| Limpar áreas | sem tecla | Apaga todas as áreas da captura de tela |
 | Traduzir (modo parágrafo) | `Numpad8` | Captura e traduz juntando as linhas próximas num bloco — diálogos |
 | Traduzir (modo linha) | `Numpad9` | Captura e traduz cada linha por conta própria — menus e listas |
 | Traduzir com I.A Vision (modo parágrafo) | `Numpad5` | Igual ao `Numpad8`, mas mandando a imagem para a IA (veja seção 8) |
@@ -477,6 +499,13 @@ sozinhas — os grupos **Números** e **Navegação** salvam quem está em noteb
 numérico.
 
 <p align="center"><img src="media/geral-atalhos.png" alt="Aba Geral › Atalhos" width="820"></p>
+
+<p align="center"><i>Na imagem, <b>Acrescentar área</b> está em Ctrl + Numpad7 e <b>Limpar
+áreas</b> em Alt + Numpad7, só de exemplo. No programa, os dois vêm sem tecla.</i></p>
+
+> **Shift com tecla do Numpad não funciona.** Com o NumLock ligado, o Windows troca Shift + tecla
+> do Numpad pela tecla de navegação (Shift + Numpad7 vira Home), e o atalho não dispara. Combine
+> as teclas do Numpad com Ctrl ou Alt.
 
 > Os atalhos só funcionam quando a janela do jogo está em foco (ou seja, quando a janela de
 > configuração do Ranmza GT não está em primeiro plano). Assim você pode digitar normalmente
@@ -602,10 +631,14 @@ deles. Você informa o endereço e o nome do modelo, e o programa manda o texto 
   cada servidor tem os seus.
 - **O modelo aceita imagem** — ligue só se o modelo lê imagens. É o que libera o
   [Modo Vision](/Manual/modo-vision-quando-o-ocr-erra.md) nesse tradutor.
+- **Desligar o raciocínio do modelo** — modelos que pensam antes de responder, como o Qwen3,
+  demoram bem mais. Ligada, o programa pede ao servidor para pular essa etapa. Num teste com o
+  Qwen3 0.6B no Ollama, a resposta caiu de 5,7 s para 0,3 s. Nem todo servidor aceita o pedido:
+  se a tradução passar a falhar, desligue. Vem desligada.
 - **Chaves de API** — só se o serviço pedir. Servidor no seu PC geralmente não pede, e aí o
   campo fica vazio.
 
-<p align="center"><img src="media/tradutores-openai-compat.png" alt="Tradutores com Compatível com OpenAI: URL base, Modelo, O modelo aceita imagem e Testar conexão" width="820"></p>
+<p align="center"><img src="media/tradutores-openai-compat.png" alt="Tradutores com Compatível com OpenAI: URL base, Modelo, O modelo aceita imagem, Desligar o raciocínio do modelo e Testar conexão" width="820"></p>
 
 Depois clique em **Testar conexão**. Ele traduz uma palavra pelo servidor e mostra se deu certo
 ou qual erro voltou. O botão só libera com a URL e o modelo preenchidos.
@@ -619,7 +652,8 @@ ou qual erro voltou. O botão só libera com a URL e o modelo preenchidos.
 - **A primeira tradução pode demorar.** Muitos servidores só carregam o modelo na primeira
   chamada. O programa espera até 90 segundos por resposta neste tradutor.
 - **Modelo de raciocínio:** o bloco `<think>` que alguns modelos escrevem antes da resposta é
-  descartado.
+  descartado. Quando o modelo raciocina, demora mais de 5 segundos ou recusa o *Desligar o
+  raciocínio do modelo*, o log diz e sugere o que mudar.
 - Com o servidor desligado aparece o alerta *"API compatível: servidor não responde"*. Sem URL
   ou sem modelo, *"API compatível: preencha URL e modelo"*.
 
@@ -723,6 +757,10 @@ sendo escrita na tela. Se a área ficar igual, o programa nem relê o texto.
 Por padrão, a tradução aparece **acima** da área selecionada e some sozinha alguns segundos
 depois de a legenda sumir do jogo. Dá para trocar isso pela tradução em cima da legenda original
 — é o tópico a seguir.
+
+Na horizontal, a tradução fica no **meio do monitor**, esteja a área onde estiver. Para deixar a
+tradução no centro da área, desligue **Centralizar a tradução no monitor**, no card *Posição da
+tradução* de Overlay › Legenda. Com mais de uma fala na tela, ela fica sempre no meio do monitor.
 
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
   <iframe src="https://player.vimeo.com/video/1217784520"
@@ -834,6 +872,11 @@ A página também pode ser aberta em qualquer navegador da rede local (celular, 
 etc.) usando o endereço **Captura** (`/captura`) mostrado na aba — essa versão vem com histórico
 e botão de limpar.
 
+A barra flutuante, os alertas e a prévia das áreas também aparecem na gravação. Para tirar a
+barra e os alertas, ligue *Esconder a barra de gravações e transmissões* (Geral › Atalhos) e
+*Esconder os alertas de gravações e transmissões* (Geral › Config). A prévia não tem essa opção:
+desligue com o `Numpad2` antes de gravar.
+
 > Se a tradução some das suas gravações e transmissões, há duas causas possíveis. Uma é
 > automática: o Modo Legenda com *Colar no texto detectado* ligado desenha **por cima** do texto
 > original, e aí o overlay precisa ficar invisível para capturas, senão o OCR releria a própria
@@ -889,7 +932,8 @@ ou volte ao passo OCR e escolha o OneOCR.
 ##### "Apertei o atalho e nada acontece"
 → Confira se a janela de configuração não está em primeiro plano (os atalhos só funcionam com
 o jogo em foco). Se aparecer o alerta *"Captura sem área"* ou *"Legenda sem área"*, marque a área
-primeiro (`Numpad7` ou `Numpad1`). Se mesmo assim não funcionar, ative a **barra flutuante**
+primeiro (`Numpad7` ou `Numpad1`). Atalho com Shift e tecla do Numpad não dispara com o NumLock
+ligado: troque o Shift por Ctrl ou Alt. Se mesmo assim não funcionar, ative a **barra flutuante**
 (**Geral › Atalhos**) e use os botões dela.
 
 ##### "Os atalhos não funcionam em alguns jogos (mesmo com o jogo em foco)"
@@ -1028,10 +1072,10 @@ O menu tem cinco grupos com sub-itens (**Geral**, **Overlay**, **Tradução**, *
 - **Atualizações → Verificar agora** — consulta na hora se existe versão nova, mesmo com o
   aviso desligado.
 
-<p align="center"><img src="media/geral-config-monitor.png" alt="Aba Geral › Config — reset, backend, monitor e alertas" width="820"></p>
+<p align="center"><img src="media/geral-config-monitor.png" alt="Aba Geral › Config — backend, monitor e alertas" width="820"></p>
 
-<p align="center"><i>Rolando a mesma aba: <b>Configuração</b>, <b>Backend de captura</b>,
-<b>Monitor</b> e <b>Alertas na tela</b>.</i></p>
+<p align="center"><i>Rolando a mesma aba, abaixo de <b>Configuração</b>: <b>Backend de
+captura</b>, <b>Monitor</b> e <b>Alertas na tela</b>.</i></p>
 
 - **Configuração → Resetar para o padrão** — restaura todas as opções aos valores de fábrica.
   **Mantém** o idioma e o tema da tela, o monitor, as áreas selecionadas, as chaves de API, as
@@ -1048,6 +1092,8 @@ O menu tem cinco grupos com sub-itens (**Geral**, **Overlay**, **Tradução**, *
 - **Alertas na tela → Mostrar alertas** — avisos curtos no canto inferior direito, só em situação
   grave (limite de uso, chave, sem internet, OCR ou captura que falhou, atalho apertado com esta
   tela em foco) e ao ligar e desligar a legenda.
+- **Alertas na tela → Esconder os alertas de gravações e transmissões** — tira os alertas do OBS,
+  do Game Bar e de screenshots. Eles continuam visíveis para você. Vem desligada.
 
 ### Geral › Perfis
 
@@ -1116,13 +1162,16 @@ Qual motor reconhece o texto na tela.
 
 ### Geral › Atalhos
 
-<p align="center"><img src="media/geral-atalhos.png" alt="Aba Geral › Atalhos — barra flutuante e atalhos globais" width="820"></p>
+<p align="center"><img src="media/geral-atalhos.png" alt="Aba Geral › Atalhos — atalhos globais" width="820"></p>
 
 - **Barra flutuante → Mostrar barra flutuante** — liga a janelinha de botões sempre visível
   (veja o passo 2.8). Também abre e fecha pelo atalho `NumpadSubtract`, e ela **lembra a última
-  posição** e o tamanho em que você a deixou.
+  posição** e o tamanho em que você a deixou. O card fica acima dos atalhos, fora da imagem.
+- **Barra flutuante → Esconder a barra de gravações e transmissões** — tira a barra do OBS, do
+  Game Bar e de screenshots. Ela continua visível para você. Ligue se a barra ficar em cima da
+  área traduzida, para o programa não ler os botões. Vem desligada.
 
-Onze atalhos globais — funcionam com o jogo em foco e ficam pausados enquanto a janela de
+Treze atalhos globais — funcionam com o jogo em foco e ficam pausados enquanto a janela de
 configuração está em primeiro plano. Cada um tem os modificadores **Ctrl / Alt / Shift** e uma
 tecla principal, escolhida entre os grupos **Numpad**, **Função** (F1–F12), **Navegação**
 (setas, Insert, Delete, Home, End, PageUp, PageDown), **Números** e **Letras**.
@@ -1130,6 +1179,8 @@ tecla principal, escolhida entre os grupos **Numpad**, **Função** (F1–F12), 
 | Ação | Padrão |
 |---|---|
 | Selecionar área | `Numpad7` |
+| Acrescentar área (até 5) | sem tecla |
+| Limpar áreas | sem tecla |
 | Traduzir (modo linha) | `Numpad9` |
 | Traduzir (modo parágrafo) | `Numpad8` |
 | Traduzir com I.A Vision (modo parágrafo) | `Numpad5` |
@@ -1145,6 +1196,9 @@ tecla principal, escolhida entre os grupos **Numpad**, **Função** (F1–F12), 
 > não conflitar com o jogo, que usa WASD e os slots 0–9 o tempo todo. Numpad, F-keys e teclas de
 > navegação funcionam sem modificador. Os grupos Números e Navegação salvam quem está em
 > notebook sem teclado numérico.
+
+**Acrescentar área** e **Limpar áreas** vêm sem tecla: escolha uma na lista. *Sem tecla*, no
+topo da lista, desliga qualquer atalho. Na imagem, os dois estão com teclas só de exemplo.
 
 O programa avisa se você repetir a mesma combinação em dois atalhos — um dos dois não seria
 registrado. A troca de tecla vale na hora, sem reiniciar.
@@ -1188,6 +1242,9 @@ O Modo Legenda tem aparência **própria**, independente de Overlay › Captura.
   original, com as mesmas quebras de linha, em vez de acima da área. Mostra uma fala por vez, e
   fonte maior transborda a área. Nesse modo a legenda some das capturas feitas neste PC — é o que
   impede o OCR de reler a própria tradução. Ver a seção 9.
+- **Posição da tradução → Centralizar a tradução no monitor** — ligada por padrão. A tradução
+  acima da área fica no meio do monitor; desligada, no centro da área. Com várias falas na tela,
+  fica sempre no meio do monitor. Apagada com *Colar no texto detectado* ligado.
 - **Texto** — *Fonte*, *Cor do texto* e *Tamanho da fonte* (10–48 px).
 - **Fundo e Contorno** — *Mostrar fundo* + *Opacidade* (10–100%) e *Mostrar contorno* +
   *Espessura do contorno* (0,5–5 px) + *Cor do contorno*.
@@ -1268,9 +1325,9 @@ Qual serviço traduz e com quais chaves.
       atualização do programa.
     - *Ver a lista completa de modelos do provedor* — abre no navegador a página oficial do
       serviço, com todos os modelos e os IDs exatos, para copiar para o *Personalizado…*.
-  - *URL base*, *Modelo*, *O modelo aceita imagem* e *Testar conexão* (só no Compatível com
-    OpenAI) — ficam no lugar da lista de modelos. URL, modelo e a opção de imagem ficam salvos no
-    perfil. O *Testar conexão* só libera com URL e modelo preenchidos e funciona sem chave.
+  - *URL base*, *Modelo*, *O modelo aceita imagem*, *Desligar o raciocínio do modelo* e *Testar
+    conexão* (só no Compatível com OpenAI) — ficam no lugar da lista de modelos. URL, modelo e as
+    duas opções ficam salvos no perfil. O *Testar conexão* só libera com URL e modelo preenchidos e funciona sem chave.
   - *Fila rápida da OpenAI* — aparece abaixo do modelo, só com a OpenAI. **Vem desligada.**
     Ligada, a OpenAI atende antes, pelo dobro do preço por token.
   - *Região do recurso* (só no Azure) — **obrigatória**. Aceita a grafia do portal ("Brazil

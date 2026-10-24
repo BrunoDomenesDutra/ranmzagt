@@ -22,6 +22,10 @@ Por padrão, a tradução aparece **acima** da área selecionada e some sozinha 
 depois de a legenda sumir do jogo. Dá para trocar isso pela tradução em cima da legenda original
 — é o tópico a seguir.
 
+Na horizontal, a tradução fica no **meio do monitor**, esteja a área onde estiver. Para deixar a
+tradução no centro da área, desligue **Centralizar a tradução no monitor**, no card *Posição da
+tradução* de Overlay › Legenda. Com mais de uma fala na tela, ela fica sempre no meio do monitor.
+
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
   <iframe src="https://player.vimeo.com/video/1217784520"
           style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"

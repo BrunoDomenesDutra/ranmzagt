@@ -174,6 +174,19 @@ Solte o botão para confirmar, ou aperte `ESC` para cancelar.
 A área fica salva. Você só precisa marcar de novo se o jogo mudar a posição da caixa de texto
 ou se você trocar a resolução.
 
+**Texto em mais de um lugar.** Se o jogo mostra texto em pontos separados da tela, como o
+diálogo embaixo e o nome do item no canto, você pode marcar até **5 áreas** na captura de tela:
+
+- **Acrescentar área** soma uma área às que já existem. Com 5, ele só mostra o alerta *"Máximo
+  de 5 áreas"*.
+- **Limpar áreas** apaga todas.
+- O `Numpad7` continua marcando uma área só e apaga as acrescentadas.
+
+Os dois atalhos vêm **sem tecla**: escolha uma em *Geral › Atalhos* (veja o
+[passo 2.9](/Manual/configuracao-rapida.md)). Os atalhos de tradução leem todas as áreas de uma
+vez, e o texto de uma área nunca entra no mesmo parágrafo do texto de outra. O Modo Legenda
+continua com uma área só.
+
 > Sem área marcada, os atalhos de tradução não traduzem nada: aparece o alerta *"Captura sem
 > área"*. Marque a área primeiro.
 
@@ -226,6 +239,10 @@ botões, disparados por clique do mouse.
 Ela fica **sempre por cima de tudo** — inclusive de jogo em janela sem borda — e você a arrasta
 pela alça de pontinhos da esquerda para qualquer canto de qualquer monitor. O atalho
 `NumpadSubtract` (o menos do teclado numérico) mostra e esconde a barra.
+
+A barra aparece em gravações, transmissões e screenshots. Se ela ficar em cima da área
+traduzida, o programa lê os botões dela junto com o texto do jogo. Nesse caso, ligue **Esconder
+a barra de gravações e transmissões**, em *Geral › Atalhos*: ela continua visível para você.
 
 Os botões, da esquerda para a direita (passe o mouse sobre um para ver o nome), em três grupos:
 

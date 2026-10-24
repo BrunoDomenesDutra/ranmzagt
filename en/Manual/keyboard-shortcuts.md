@@ -2,7 +2,9 @@
 
 | Shortcut | Default | What it does |
 |---|---|---|
-| Select area | `Numpad7` | Opens the selector to choose where the screen capture text is |
+| Select area | `Numpad7` | Opens the selector to choose where the screen capture text is; removes the added areas |
+| Add area (up to 5) | no key | Adds one more area to screen capture, without removing the others (see [step 2.6](/en/Manual/quick-setup.md)) |
+| Clear areas | no key | Removes all screen capture areas |
 | Translate (paragraph mode) | `Numpad8` | Captures and translates joining nearby lines into a block — dialogues |
 | Translate (line mode) | `Numpad9` | Captures and translates each line on its own — menus and lists |
 | Translate with AI Vision (paragraph mode) | `Numpad5` | Same as `Numpad8`, but sending the image to the AI (see section 8) |
@@ -19,6 +21,8 @@
 All of them can be changed in **General › Shortcuts** — pick another key and, if you want, combine it with Ctrl/Alt/Shift. If you choose a **letter or a number** from the top row, you **must** use at least one modifier (Ctrl, Alt or Shift), so it does not get in the way of the game's normal controls (which use WASD and slots 0–9 all the time). Numpad, F1–F12 and the navigation keys work on their own — the **Digits** and **Navigation** groups help people on laptops without a numpad.
 
 <p align="center"><img src="media/en/geral-atalhos.png" alt="General › Shortcuts tab" width="820"></p>
+
+> **Shift with a numpad key does not work.** With NumLock on, Windows turns Shift + numpad key into the navigation key (Shift + Numpad7 becomes Home), and the shortcut does not fire. Combine numpad keys with Ctrl or Alt.
 
 > Shortcuts only work when the game window is in focus (that is, when the Ranmza GT settings window is not in the foreground). This way you can type normally in the settings fields without triggering commands by accident.
 

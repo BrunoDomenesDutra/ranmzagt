@@ -115,6 +115,14 @@ With the game open and in focus, press **`Numpad7`**. The screen darkens and you
 
 The area is saved. You only need to mark it again if the game moves the text box or you change the resolution.
 
+**Text in more than one place.** If the game shows text in separate spots on the screen, like the dialogue at the bottom and the item name in a corner, you can mark up to **5 areas** for screen capture:
+
+- **Add area** adds one area to the ones you already have. With 5, it only shows the *"Maximum of 5 areas"* alert.
+- **Clear areas** removes all of them.
+- `Numpad7` still marks a single area and removes the added ones.
+
+Both shortcuts come **with no key**: pick one in *General › Shortcuts* (see [step 2.9](/en/Manual/quick-setup.md)). The translation shortcuts read all areas at once, and text from one area never ends up in the same paragraph as text from another. Subtitle Mode still uses a single area.
+
 > With no area marked, the translation shortcuts do not translate anything: the *"Capture: no area"* alert shows up. Mark the area first.
 
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
@@ -157,6 +165,8 @@ Some games "swallow" the Numpad keys, and sometimes NumLock gets in the way. For
 <p align="center"><img src="media/barra-flutuante.png" alt="Ranmza GT floating toolbar" width="560"></p>
 
 It stays **always on top of everything** — including a borderless window game — and you drag it by the dotted handle on the left to any corner of any monitor. The `NumpadSubtract` shortcut (the numpad minus) shows and hides the toolbar.
+
+The toolbar shows up in recordings, streams and screenshots. If it sits on top of the translated area, the program reads its buttons along with the game text. In that case, turn on **Hide the toolbar from recordings and streams** in *General › Shortcuts*: it stays visible to you.
 
 The buttons, from left to right (hover over one to see its name), in three groups:
 

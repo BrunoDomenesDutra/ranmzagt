@@ -40,8 +40,11 @@ jogo "engole" as teclas do Numpad. Os nove botões estão explicados no
 ## Conferindo se as áreas estão certas
 
 Aperte **Mostrar/ocultar áreas** (padrão `Numpad2`) para desenhar no monitor escolhido o
-contorno e o nome de cada área: a da captura de tela, a da legenda e a faixa onde a tradução da
+contorno e o nome de cada área: as da captura de tela, a da legenda e a faixa onde a tradução da
 legenda aparece. Aperte de novo para esconder. Não traduz nada, é só um guia visual, e acompanha
 na hora uma área nova ou uma mudança na configuração.
+
+A prévia aparece em gravações e screenshots, e o programa também lê os nomes das áreas. Desligue
+a prévia antes de traduzir ou de gravar.
 
 ---

@@ -75,6 +75,7 @@ Many AI programs and services accept the same request format as OpenAI: LM Studi
 - **Base URL** — the server address, as the AI program shows it. It can be with or without `/chat/completions` at the end. A server on your own PC is usually something like `http://localhost:1234/v1` (LM Studio) or `http://localhost:11434/v1` (Ollama).
 - **Model** — the exact model name, as the server shows it. There is no list to pick from: each server has its own.
 - **The model accepts images** — only turn it on if the model reads images. It is what enables [Vision Mode](/en/Manual/vision-mode-when-ocr-fails.md) for this translator.
+- **Turn off model reasoning** — models that think before answering, like Qwen3, take much longer. With it on, the program asks the server to skip that step. In a test with Qwen3 0.6B on Ollama, the answer went from 5.7 s to 0.3 s. Not every server accepts the request: if translation starts failing, turn it off. Off by default.
 - **API Keys** — only if the service asks for one. A server on your PC usually does not, and the field stays empty.
 
 <p align="center"><img src="media/en/tradutores-openai-compat.png" alt="Translators with OpenAI-compatible: Base URL, Model, The model accepts images and Test connection" width="820"></p>
@@ -86,7 +87,7 @@ Then click **Test connection**. It translates one word through the server and sh
 - **Use a model that follows instructions.** Very small models sometimes answer with comments instead of the translation, and that answer is discarded.
 - **A server on the same PC shares the graphics card with the game.** Both the game and the translation can get slower. Subtitles wait for the answer, so a slow model delays the subtitle.
 - **The first translation can take a while.** Many servers only load the model on the first call. The program waits up to 90 seconds for an answer with this translator.
-- **Reasoning models:** the `<think>` block some models write before the answer is discarded.
+- **Reasoning models:** the `<think>` block some models write before the answer is discarded. When the model reasons, takes more than 5 seconds or refuses *Turn off model reasoning*, the log says so and suggests what to change.
 - With the server off, the *"API compatível: server not responding"* alert shows up. Without a URL or a model, *"API compatível: fill in URL and model"*.
 
 ---

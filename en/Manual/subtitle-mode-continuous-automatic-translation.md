@@ -15,6 +15,8 @@ From then on, the program watches that area several times per second and transla
 
 By default, the translation shows up **above** the selected area and disappears by itself a few seconds after the subtitle leaves the game. You can switch that to the translation on top of the original subtitle — that is the next topic.
 
+Horizontally, the translation sits in the **middle of the monitor**, wherever the area is. To keep the translation centered on the area, turn off **Center the translation on the monitor** in the *Translation position* card of Overlay › Subtitles. With more than one line on screen, it always sits in the middle of the monitor.
+
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
   <iframe src="https://player.vimeo.com/video/1217784520"
           style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"

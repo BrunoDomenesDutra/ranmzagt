@@ -2,7 +2,9 @@
 
 | Atalho | Padrão | O que faz |
 |---|---|---|
-| Selecionar área | `Numpad7` | Abre o seletor para escolher onde está o texto da captura de tela |
+| Selecionar área | `Numpad7` | Abre o seletor para escolher onde está o texto da captura de tela; apaga as áreas acrescentadas |
+| Acrescentar área (até 5) | sem tecla | Soma mais uma área à captura de tela, sem apagar as outras (veja o [passo 2.6](/Manual/configuracao-rapida.md)) |
+| Limpar áreas | sem tecla | Apaga todas as áreas da captura de tela |
 | Traduzir (modo parágrafo) | `Numpad8` | Captura e traduz juntando as linhas próximas num bloco — diálogos |
 | Traduzir (modo linha) | `Numpad9` | Captura e traduz cada linha por conta própria — menus e listas |
 | Traduzir com I.A Vision (modo parágrafo) | `Numpad5` | Igual ao `Numpad8`, mas mandando a imagem para a IA (veja seção 8) |
@@ -29,6 +31,13 @@ sozinhas — os grupos **Números** e **Navegação** salvam quem está em noteb
 numérico.
 
 <p align="center"><img src="media/geral-atalhos.png" alt="Aba Geral › Atalhos" width="820"></p>
+
+<p align="center"><i>Na imagem, <b>Acrescentar área</b> está em Ctrl + Numpad7 e <b>Limpar
+áreas</b> em Alt + Numpad7, só de exemplo. No programa, os dois vêm sem tecla.</i></p>
+
+> **Shift com tecla do Numpad não funciona.** Com o NumLock ligado, o Windows troca Shift + tecla
+> do Numpad pela tecla de navegação (Shift + Numpad7 vira Home), e o atalho não dispara. Combine
+> as teclas do Numpad com Ctrl ou Alt.
 
 > Os atalhos só funcionam quando a janela do jogo está em foco (ou seja, quando a janela de
 > configuração do Ranmza GT não está em primeiro plano). Assim você pode digitar normalmente

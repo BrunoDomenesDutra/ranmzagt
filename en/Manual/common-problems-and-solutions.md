@@ -16,7 +16,7 @@
 → With WinOCR, the text language is required: pick one from the list. If the list is empty, Windows has no language pack with text recognition; install the pack for the game language, or go back to the OCR step and pick OneOCR.
 
 #### "I pressed the shortcut and nothing happens"
-→ Check that the settings window is not in the foreground (shortcuts only work with the game in focus). If the *"Capture: no area"* or *"Subtitles: no area"* alert shows up, mark the area first (`Numpad7` or `Numpad1`). If it still does not work, turn on the **floating toolbar** (**General › Shortcuts**) and use its buttons.
+→ Check that the settings window is not in the foreground (shortcuts only work with the game in focus). If the *"Capture: no area"* or *"Subtitles: no area"* alert shows up, mark the area first (`Numpad7` or `Numpad1`). A shortcut with Shift and a numpad key does not fire with NumLock on: swap Shift for Ctrl or Alt. If it still does not work, turn on the **floating toolbar** (**General › Shortcuts**) and use its buttons.
 
 #### "Shortcuts don't work in some games (even with the game in focus)"
 → Some games run with elevated privileges (Administrator) and therefore **block the registration of Ranmza GT's global shortcuts**. In that case, **run Ranmza GT as Administrator** (right-click the `.exe` → *Run as administrator*) — that way it can enable the shortcuts over the game. To avoid repeating it every time, check *Run this program as an administrator* in the executable's **Properties → Compatibility**. (Alternative: use the **floating toolbar**, which triggers actions by mouse click and does not depend on keyboard shortcuts.)

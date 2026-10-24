@@ -25,6 +25,8 @@ Turn on the **floating toolbar** in **General › Shortcuts** and trigger everyt
 
 ## Checking if your areas are correct
 
-Press **Show/hide the selected areas** (default `Numpad2`) to draw on the chosen monitor the outline and name of each area: the screen capture area, the subtitle area and the strip where the subtitle translation appears. Press it again to hide them. It does not translate anything, it is only a visual guide, and it follows a new area or a settings change right away.
+Press **Show/hide the selected areas** (default `Numpad2`) to draw on the chosen monitor the outline and name of each area: the screen capture areas, the subtitle area and the strip where the subtitle translation appears. Press it again to hide them. It does not translate anything, it is only a visual guide, and it follows a new area or a settings change right away.
+
+The preview shows up in recordings and screenshots, and the program also reads the area names. Turn the preview off before translating or recording.
 
 ---

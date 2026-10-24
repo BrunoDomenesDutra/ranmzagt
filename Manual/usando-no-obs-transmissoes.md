@@ -24,6 +24,11 @@ A página também pode ser aberta em qualquer navegador da rede local (celular, 
 etc.) usando o endereço **Captura** (`/captura`) mostrado na aba — essa versão vem com histórico
 e botão de limpar.
 
+A barra flutuante, os alertas e a prévia das áreas também aparecem na gravação. Para tirar a
+barra e os alertas, ligue *Esconder a barra de gravações e transmissões* (Geral › Atalhos) e
+*Esconder os alertas de gravações e transmissões* (Geral › Config). A prévia não tem essa opção:
+desligue com o `Numpad2` antes de gravar.
+
 > Se a tradução some das suas gravações e transmissões, há duas causas possíveis. Uma é
 > automática: o Modo Legenda com *Colar no texto detectado* ligado desenha **por cima** do texto
 > original, e aí o overlay precisa ficar invisível para capturas, senão o OCR releria a própria

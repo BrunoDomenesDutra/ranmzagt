@@ -162,6 +162,14 @@ With the game open and in focus, press **`Numpad7`**. The screen darkens and you
 
 The area is saved. You only need to mark it again if the game moves the text box or you change the resolution.
 
+**Text in more than one place.** If the game shows text in separate spots on the screen, like the dialogue at the bottom and the item name in a corner, you can mark up to **5 areas** for screen capture:
+
+- **Add area** adds one area to the ones you already have. With 5, it only shows the *"Maximum of 5 areas"* alert.
+- **Clear areas** removes all of them.
+- `Numpad7` still marks a single area and removes the added ones.
+
+Both shortcuts come **with no key**: pick one in *General › Shortcuts* (see [step 2.9](/en/Manual/quick-setup.md)). The translation shortcuts read all areas at once, and text from one area never ends up in the same paragraph as text from another. Subtitle Mode still uses a single area.
+
 > With no area marked, the translation shortcuts do not translate anything: the *"Capture: no area"* alert shows up. Mark the area first.
 
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
@@ -204,6 +212,8 @@ Some games "swallow" the Numpad keys, and sometimes NumLock gets in the way. For
 <p align="center"><img src="media/barra-flutuante.png" alt="Ranmza GT floating toolbar" width="560"></p>
 
 It stays **always on top of everything** — including a borderless window game — and you drag it by the dotted handle on the left to any corner of any monitor. The `NumpadSubtract` shortcut (the numpad minus) shows and hides the toolbar.
+
+The toolbar shows up in recordings, streams and screenshots. If it sits on top of the translated area, the program reads its buttons along with the game text. In that case, turn on **Hide the toolbar from recordings and streams** in *General › Shortcuts*: it stays visible to you.
 
 The buttons, from left to right (hover over one to see its name), in three groups:
 
@@ -264,7 +274,9 @@ Turn on the **floating toolbar** in **General › Shortcuts** and trigger everyt
 
 ### Checking if your areas are correct
 
-Press **Show/hide the selected areas** (default `Numpad2`) to draw on the chosen monitor the outline and name of each area: the screen capture area, the subtitle area and the strip where the subtitle translation appears. Press it again to hide them. It does not translate anything, it is only a visual guide, and it follows a new area or a settings change right away.
+Press **Show/hide the selected areas** (default `Numpad2`) to draw on the chosen monitor the outline and name of each area: the screen capture areas, the subtitle area and the strip where the subtitle translation appears. Press it again to hide them. It does not translate anything, it is only a visual guide, and it follows a new area or a settings change right away.
+
+The preview shows up in recordings and screenshots, and the program also reads the area names. Turn the preview off before translating or recording.
 
 ---
 
@@ -323,7 +335,9 @@ The API key is the case that matters most: you type it **once** and it applies t
 
 | Shortcut | Default | What it does |
 |---|---|---|
-| Select area | `Numpad7` | Opens the selector to choose where the screen capture text is |
+| Select area | `Numpad7` | Opens the selector to choose where the screen capture text is; removes the added areas |
+| Add area (up to 5) | no key | Adds one more area to screen capture, without removing the others (see [step 2.6](/en/Manual/quick-setup.md)) |
+| Clear areas | no key | Removes all screen capture areas |
 | Translate (paragraph mode) | `Numpad8` | Captures and translates joining nearby lines into a block — dialogues |
 | Translate (line mode) | `Numpad9` | Captures and translates each line on its own — menus and lists |
 | Translate with AI Vision (paragraph mode) | `Numpad5` | Same as `Numpad8`, but sending the image to the AI (see section 8) |
@@ -340,6 +354,8 @@ The API key is the case that matters most: you type it **once** and it applies t
 All of them can be changed in **General › Shortcuts** — pick another key and, if you want, combine it with Ctrl/Alt/Shift. If you choose a **letter or a number** from the top row, you **must** use at least one modifier (Ctrl, Alt or Shift), so it does not get in the way of the game's normal controls (which use WASD and slots 0–9 all the time). Numpad, F1–F12 and the navigation keys work on their own — the **Digits** and **Navigation** groups help people on laptops without a numpad.
 
 <p align="center"><img src="media/en/geral-atalhos.png" alt="General › Shortcuts tab" width="820"></p>
+
+> **Shift with a numpad key does not work.** With NumLock on, Windows turns Shift + numpad key into the navigation key (Shift + Numpad7 becomes Home), and the shortcut does not fire. Combine numpad keys with Ctrl or Alt.
 
 > Shortcuts only work when the game window is in focus (that is, when the Ranmza GT settings window is not in the foreground). This way you can type normally in the settings fields without triggering commands by accident.
 
@@ -422,6 +438,7 @@ Many AI programs and services accept the same request format as OpenAI: LM Studi
 - **Base URL** — the server address, as the AI program shows it. It can be with or without `/chat/completions` at the end. A server on your own PC is usually something like `http://localhost:1234/v1` (LM Studio) or `http://localhost:11434/v1` (Ollama).
 - **Model** — the exact model name, as the server shows it. There is no list to pick from: each server has its own.
 - **The model accepts images** — only turn it on if the model reads images. It is what enables [Vision Mode](/en/Manual/vision-mode-when-ocr-fails.md) for this translator.
+- **Turn off model reasoning** — models that think before answering, like Qwen3, take much longer. With it on, the program asks the server to skip that step. In a test with Qwen3 0.6B on Ollama, the answer went from 5.7 s to 0.3 s. Not every server accepts the request: if translation starts failing, turn it off. Off by default.
 - **API Keys** — only if the service asks for one. A server on your PC usually does not, and the field stays empty.
 
 <p align="center"><img src="media/en/tradutores-openai-compat.png" alt="Translators with OpenAI-compatible: Base URL, Model, The model accepts images and Test connection" width="820"></p>
@@ -433,7 +450,7 @@ Then click **Test connection**. It translates one word through the server and sh
 - **Use a model that follows instructions.** Very small models sometimes answer with comments instead of the translation, and that answer is discarded.
 - **A server on the same PC shares the graphics card with the game.** Both the game and the translation can get slower. Subtitles wait for the answer, so a slow model delays the subtitle.
 - **The first translation can take a while.** Many servers only load the model on the first call. The program waits up to 90 seconds for an answer with this translator.
-- **Reasoning models:** the `<think>` block some models write before the answer is discarded.
+- **Reasoning models:** the `<think>` block some models write before the answer is discarded. When the model reasons, takes more than 5 seconds or refuses *Turn off model reasoning*, the log says so and suggests what to change.
 - With the server off, the *"API compatível: server not responding"* alert shows up. Without a URL or a model, *"API compatível: fill in URL and model"*.
 
 ---
@@ -505,6 +522,8 @@ The program always opens with subtitles off. The options are in **Overlay › Su
 From then on, the program watches that area several times per second and translates each new text as soon as it shows up and repeats in a second reading. This avoids translating a line that is still being written on screen. If the area stays the same, the program does not even read the text again.
 
 By default, the translation shows up **above** the selected area and disappears by itself a few seconds after the subtitle leaves the game. You can switch that to the translation on top of the original subtitle — that is the next topic.
+
+Horizontally, the translation sits in the **middle of the monitor**, wherever the area is. To keep the translation centered on the area, turn off **Center the translation on the monitor** in the *Translation position* card of Overlay › Subtitles. With more than one line on screen, it always sits in the middle of the monitor.
 
 <div style="position:relative;padding-top:56.25%;max-width:820px;margin:0 auto">
   <iframe src="https://player.vimeo.com/video/1217784520"
@@ -580,6 +599,8 @@ You can also customize the theme (light/dark/dracula), colors, font size, and wh
 
 The page can also be opened in any browser on the local network (phone, second monitor, etc.) using the **Capture** address (`/captura`) shown in the tab — that version comes with history and a clear button.
 
+The floating toolbar, the alerts and the area preview also show up in recordings. To remove the toolbar and the alerts, turn on *Hide the toolbar from recordings and streams* (General › Shortcuts) and *Hide alerts from recordings and streams* (General › Config). The preview has no such option: turn it off with `Numpad2` before recording.
+
 > If the translation disappears from your recordings and streams, there are two possible causes. One is automatic: Subtitle Mode with *Stick to the detected text* on draws **over** the original text, and then the overlay must be invisible to captures, otherwise the OCR would read its own translation. The other is your choice: *"Hide the translation from recordings and streams"*, in the **Display** card of Overlay › Capture. For screen capture, those are exactly the cases the Web server solves.
 
 ---
@@ -613,7 +634,7 @@ The page can also be opened in any browser on the local network (phone, second m
 → With WinOCR, the text language is required: pick one from the list. If the list is empty, Windows has no language pack with text recognition; install the pack for the game language, or go back to the OCR step and pick OneOCR.
 
 ##### "I pressed the shortcut and nothing happens"
-→ Check that the settings window is not in the foreground (shortcuts only work with the game in focus). If the *"Capture: no area"* or *"Subtitles: no area"* alert shows up, mark the area first (`Numpad7` or `Numpad1`). If it still does not work, turn on the **floating toolbar** (**General › Shortcuts**) and use its buttons.
+→ Check that the settings window is not in the foreground (shortcuts only work with the game in focus). If the *"Capture: no area"* or *"Subtitles: no area"* alert shows up, mark the area first (`Numpad7` or `Numpad1`). A shortcut with Shift and a numpad key does not fire with NumLock on: swap Shift for Ctrl or Alt. If it still does not work, turn on the **floating toolbar** (**General › Shortcuts**) and use its buttons.
 
 ##### "Shortcuts don't work in some games (even with the game in focus)"
 → Some games run with elevated privileges (Administrator) and therefore **block the registration of Ranmza GT's global shortcuts**. In that case, **run Ranmza GT as Administrator** (right-click the `.exe` → *Run as administrator*) — that way it can enable the shortcuts over the game. To avoid repeating it every time, check *Run this program as an administrator* in the executable's **Properties → Compatibility**. (Alternative: use the **floating toolbar**, which triggers actions by mouse click and does not depend on keyboard shortcuts.)
@@ -700,6 +721,7 @@ The menu has five groups with sub-items (**General**, **Overlay**, **Translation
   - *DXGI (Windows 10)* — Desktop Duplication; it exists so Windows 10 does not draw the yellow border around the captured monitor.
 - **Monitor → Active display** — which monitor area selection, alerts, the area preview and the floating toolbar open on. *Automatic* uses the Windows primary monitor. It applies right away, no restart; each monitor keeps its own areas, and each profile keeps its own monitor.
 - **On-screen alerts → Show alerts** — short warnings in the bottom-right corner, only in serious situations (usage limit, key, no internet, OCR or capture that failed, shortcut pressed with this screen in focus) and when turning subtitles on and off.
+- **On-screen alerts → Hide alerts from recordings and streams** — removes the alerts from OBS, Game Bar and screenshots. They stay visible to you. Off by default.
 
 ### General › Profiles
 
@@ -747,12 +769,15 @@ Which engine recognizes the text on screen.
 <p align="center"><img src="media/en/geral-atalhos.png" alt="General › Shortcuts tab — floating toolbar and global shortcuts" width="820"></p>
 
 - **Floating toolbar → Show floating toolbar** — turns on the always-visible button window (see step 2.8). It also opens and closes with the `NumpadSubtract` shortcut, and it **remembers the last position** and size you left it at.
+- **Floating toolbar → Hide the toolbar from recordings and streams** — removes the toolbar from OBS, Game Bar and screenshots. It stays visible to you. Turn it on if the toolbar sits on top of the translated area, so the program does not read its buttons. Off by default.
 
-Eleven global shortcuts — they work with the game in focus and are paused while the settings window is in the foreground. Each has the **Ctrl / Alt / Shift** modifiers and a main key, chosen among the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Digits** and **Letters** groups.
+Thirteen global shortcuts — they work with the game in focus and are paused while the settings window is in the foreground. Each has the **Ctrl / Alt / Shift** modifiers and a main key, chosen among the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Digits** and **Letters** groups.
 
 | Action | Default |
 |---|---|
 | Select area | `Numpad7` |
+| Add area (up to 5) | no key |
+| Clear areas | no key |
 | Translate (line mode) | `Numpad9` |
 | Translate (paragraph mode) | `Numpad8` |
 | Translate with AI Vision (paragraph mode) | `Numpad5` |
@@ -765,6 +790,8 @@ Eleven global shortcuts — they work with the game in focus and are paused whil
 | Show/hide floating toolbar | `NumpadSubtract` |
 
 > **Letters and digits** as the main key **require** a modifier (Ctrl, Alt or Shift) so they do not conflict with the game, which uses WASD and slots 0–9 all the time. Numpad, F-keys and navigation keys work without a modifier. The Digits and Navigation groups help people on laptops without a numpad.
+
+**Add area** and **Clear areas** come with no key: pick one from the list. *No key*, at the top of the list, turns off any shortcut.
 
 The program warns you if you repeat the same combination in two shortcuts — one of them would not be registered. A key change applies right away, no restart.
 
@@ -795,6 +822,7 @@ Subtitle Mode has its **own** appearance, independent from Overlay › Capture.
 <p align="center"><img src="media/en/overlay-legenda.png" alt="Overlay › Subtitles tab" width="820"></p>
 
 - **Translation position → Stick to the detected text** — draws the translation on top of the original line, with the same line breaks, instead of above the area. It shows one line at a time, and a larger font spills over the area. In this mode the subtitle disappears from captures made on this PC — that is what stops the OCR from reading its own translation. See section 9.
+- **Translation position → Center the translation on the monitor** — on by default. The translation above the area sits in the middle of the monitor; off, it is centered on the area. With several lines on screen, it always sits in the middle of the monitor. Greyed out with *Stick to the detected text* on.
 - **Text** — *Font*, *Text color* and *Font size* (10–48 px).
 - **Background and Outline** — *Show background* + *Opacity* (10–100%) and *Show outline* + *Outline thickness* (0.5–5 px) + *Outline color*.
 
@@ -849,7 +877,7 @@ Which service translates and with which keys.
     - Groq: gpt-oss-20b · gpt-oss-120b
     - *Custom…* — last option in the list: opens a free field where you type **any model ID** the service accepts, to use a newer model without waiting for a program update.
     - *See the provider's full model list* — opens the service's official page in the browser, with every model and the exact IDs, to copy into *Custom…*.
-  - *Base URL*, *Model*, *The model accepts images* and *Test connection* (OpenAI-compatible only) — take the place of the model list. URL, model and the image option are saved in the profile. *Test connection* only unlocks with URL and model filled in, and works without a key.
+  - *Base URL*, *Model*, *The model accepts images*, *Turn off model reasoning* and *Test connection* (OpenAI-compatible only) — take the place of the model list. URL, model and both options are saved in the profile. *Test connection* only unlocks with URL and model filled in, and works without a key.
   - *OpenAI fast queue* — shows up below the model, only with OpenAI. **It comes off.** When on, OpenAI serves you first, at twice the price per token.
   - *Resource region* (Azure only) — **required**. It accepts the portal spelling ("Brazil South"): capitals and spaces are fixed by themselves. The *See Azure's official region list* link opens Microsoft's table in the browser. Key and region come from the same page: <https://portal.azure.com> → your Translator resource → *Keys and Endpoint*.
 - **API Keys** — collapsible card where the key of the selected service goes. It **opens by itself** while no key is filled in; with OpenAI-compatible the key is optional and the card stays closed. Keys are stored encrypted and only open on this PC, in your Windows account.

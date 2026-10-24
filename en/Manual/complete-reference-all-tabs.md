@@ -27,6 +27,7 @@ The menu has five groups with sub-items (**General**, **Overlay**, **Translation
   - *DXGI (Windows 10)* — Desktop Duplication; it exists so Windows 10 does not draw the yellow border around the captured monitor.
 - **Monitor → Active display** — which monitor area selection, alerts, the area preview and the floating toolbar open on. *Automatic* uses the Windows primary monitor. It applies right away, no restart; each monitor keeps its own areas, and each profile keeps its own monitor.
 - **On-screen alerts → Show alerts** — short warnings in the bottom-right corner, only in serious situations (usage limit, key, no internet, OCR or capture that failed, shortcut pressed with this screen in focus) and when turning subtitles on and off.
+- **On-screen alerts → Hide alerts from recordings and streams** — removes the alerts from OBS, Game Bar and screenshots. They stay visible to you. Off by default.
 
 ## General › Profiles
 
@@ -74,12 +75,15 @@ Which engine recognizes the text on screen.
 <p align="center"><img src="media/en/geral-atalhos.png" alt="General › Shortcuts tab — floating toolbar and global shortcuts" width="820"></p>
 
 - **Floating toolbar → Show floating toolbar** — turns on the always-visible button window (see step 2.8). It also opens and closes with the `NumpadSubtract` shortcut, and it **remembers the last position** and size you left it at.
+- **Floating toolbar → Hide the toolbar from recordings and streams** — removes the toolbar from OBS, Game Bar and screenshots. It stays visible to you. Turn it on if the toolbar sits on top of the translated area, so the program does not read its buttons. Off by default.
 
-Eleven global shortcuts — they work with the game in focus and are paused while the settings window is in the foreground. Each has the **Ctrl / Alt / Shift** modifiers and a main key, chosen among the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Digits** and **Letters** groups.
+Thirteen global shortcuts — they work with the game in focus and are paused while the settings window is in the foreground. Each has the **Ctrl / Alt / Shift** modifiers and a main key, chosen among the **Numpad**, **Function** (F1–F12), **Navigation** (arrows, Insert, Delete, Home, End, PageUp, PageDown), **Digits** and **Letters** groups.
 
 | Action | Default |
 |---|---|
 | Select area | `Numpad7` |
+| Add area (up to 5) | no key |
+| Clear areas | no key |
 | Translate (line mode) | `Numpad9` |
 | Translate (paragraph mode) | `Numpad8` |
 | Translate with AI Vision (paragraph mode) | `Numpad5` |
@@ -92,6 +96,8 @@ Eleven global shortcuts — they work with the game in focus and are paused whil
 | Show/hide floating toolbar | `NumpadSubtract` |
 
 > **Letters and digits** as the main key **require** a modifier (Ctrl, Alt or Shift) so they do not conflict with the game, which uses WASD and slots 0–9 all the time. Numpad, F-keys and navigation keys work without a modifier. The Digits and Navigation groups help people on laptops without a numpad.
+
+**Add area** and **Clear areas** come with no key: pick one from the list. *No key*, at the top of the list, turns off any shortcut.
 
 The program warns you if you repeat the same combination in two shortcuts — one of them would not be registered. A key change applies right away, no restart.
 
@@ -122,6 +128,7 @@ Subtitle Mode has its **own** appearance, independent from Overlay › Capture.
 <p align="center"><img src="media/en/overlay-legenda.png" alt="Overlay › Subtitles tab" width="820"></p>
 
 - **Translation position → Stick to the detected text** — draws the translation on top of the original line, with the same line breaks, instead of above the area. It shows one line at a time, and a larger font spills over the area. In this mode the subtitle disappears from captures made on this PC — that is what stops the OCR from reading its own translation. See section 9.
+- **Translation position → Center the translation on the monitor** — on by default. The translation above the area sits in the middle of the monitor; off, it is centered on the area. With several lines on screen, it always sits in the middle of the monitor. Greyed out with *Stick to the detected text* on.
 - **Text** — *Font*, *Text color* and *Font size* (10–48 px).
 - **Background and Outline** — *Show background* + *Opacity* (10–100%) and *Show outline* + *Outline thickness* (0.5–5 px) + *Outline color*.
 
@@ -176,7 +183,7 @@ Which service translates and with which keys.
     - Groq: gpt-oss-20b · gpt-oss-120b
     - *Custom…* — last option in the list: opens a free field where you type **any model ID** the service accepts, to use a newer model without waiting for a program update.
     - *See the provider's full model list* — opens the service's official page in the browser, with every model and the exact IDs, to copy into *Custom…*.
-  - *Base URL*, *Model*, *The model accepts images* and *Test connection* (OpenAI-compatible only) — take the place of the model list. URL, model and the image option are saved in the profile. *Test connection* only unlocks with URL and model filled in, and works without a key.
+  - *Base URL*, *Model*, *The model accepts images*, *Turn off model reasoning* and *Test connection* (OpenAI-compatible only) — take the place of the model list. URL, model and both options are saved in the profile. *Test connection* only unlocks with URL and model filled in, and works without a key.
   - *OpenAI fast queue* — shows up below the model, only with OpenAI. **It comes off.** When on, OpenAI serves you first, at twice the price per token.
   - *Resource region* (Azure only) — **required**. It accepts the portal spelling ("Brazil South"): capitals and spaces are fixed by themselves. The *See Azure's official region list* link opens Microsoft's table in the browser. Key and region come from the same page: <https://portal.azure.com> → your Translator resource → *Keys and Endpoint*.
 - **API Keys** — collapsible card where the key of the selected service goes. It **opens by itself** while no key is filled in; with OpenAI-compatible the key is optional and the card stays closed. Keys are stored encrypted and only open on this PC, in your Windows account.

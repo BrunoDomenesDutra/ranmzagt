@@ -17,6 +17,8 @@
     ════════════════════════════════════════════════════════ */
 
     :root {
+      /* Contorno das capturas da tela de config: no tema escuro elas tem a cor do fundo */
+      --al-img-border: #C4C4B8;
       --al-bg:       #F8F8F2;
       --al-sidebar:  #EEEEE6;
       --al-current:  #E2E2D8;
@@ -144,6 +146,7 @@
 
     .markdown-section hr { border-bottom: 1px solid var(--al-border) !important; }
     .markdown-section img { border-radius: 6px; }
+    .markdown-section img[src*="media/"]:not([src*="logo"]) { border: 1px solid var(--al-img-border); }
 
     /* ── Busca ── */
     .search input {
@@ -234,6 +237,7 @@
        dois, no bloco html[data-theme="dark-a11y"] logo abaixo. ── */
     html[data-theme="dark"],
     html[data-theme="dark-a11y"] {
+      --al-img-border: #6272A4;
       --al-bg:      #282A36;
       --al-sidebar: #21222C;
       --al-current: #44475A;
