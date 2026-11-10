@@ -416,10 +416,12 @@ Since it uses an unofficial Microsoft API, a Snipping Tool update can break the 
 
 In Subtitle Mode, the program can consider only the letters of one alphabet and ignore the rest: Latin, Japanese/Chinese, Korean or Cyrillic. Useful when names, signs or symbols in another alphabet show up near the subtitle. It is in **Overlay › Subtitles**, in the **Original subtitle alphabet** card:
 
-- With **OneOCR**, you choose the alphabet in the list (default: *Any alphabet*).
+- With **OneOCR**, the default is *Automatic (from the first lines)*: the program finds out the subtitle's alphabet from the first translated lines and then ignores the others. If you prefer, choose the alphabet in the list.
 - With **WinOCR**, the filter follows the language chosen in **General › Language** by itself.
 
-Example: in the scene below, the English subtitle sits on top of a Japanese news headline. With *Any alphabet*, the program reads both together and sends the Japanese to the translation in the middle of the line. With *Latin*, it ignores the Japanese characters and translates only the subtitle.
+Example: in the scene below, the English subtitle sits on top of a Japanese news headline. Without the filter, the program reads both together and sends the Japanese to the translation in the middle of the line. With *Latin*, or with *Automatic* after the first lines in English, it ignores the Japanese characters and translates only the subtitle.
+
+With *Automatic*, if you switch to a game with subtitles in another alphabet, turn the subtitles off and on (`Numpad0`) so the program learns again. If you forget, it notices by itself after a few ignored lines.
 
 <p align="center"><img src="media/legenda-alfabeto-exemplo.png" alt="English subtitle on top of a Japanese headline" width="820"></p>
 
@@ -540,6 +542,16 @@ The **Ignore text away from the center of the area** option, in the **Capture** 
 
 - The tighter the area is around the subtitle, the better it works. Mark only the strip where the subtitle appears.
 - In games with left-aligned dialogue, like some RPGs and visual novels, keep this option off.
+
+### Wait for the line to finish appearing
+
+Some games type the subtitle letter by letter, like a typewriter. Without help, the program translates pieces of the line while it is still being typed, and sometimes the end is left out.
+
+Turn on **Wait for the line to finish appearing**, in the **Capture** card, in those games. The program waits for the line to stop growing and translates the whole line once.
+
+- The translation shows up a little later, on every line: about 0.2 s more. If the line does not end in a period, exclamation or question mark, the wait is almost 1 s, because it may continue.
+- It comes off. Keep it off in games where the subtitle appears all at once.
+- The option is saved in the profile, so you can turn it on only in the profile of the game that needs it.
 
 ### Stick to the detected text
 
@@ -830,10 +842,11 @@ Subtitle Mode has its **own** appearance, independent from Overlay › Capture.
 
 - **Capture**
   - *Ignore text away from the center of the area* — on by default. Skips signs near the edges of the area; turn it off for left-aligned dialogue.
+  - *Wait for the line to finish appearing* — off by default. For games that type the subtitle letter by letter; the translation shows up about 0.2 s later on every line.
   - *Lines on screen* — how many lines stay visible (1 to 8). It stays at 1 with *Stick to the detected text* on.
   - *Translation stays after the subtitle goes away* — 1 to 3 s (default 2 s).
   - *Turn off subtitles with no text in the area* — **turns the mode off** after that long with no text: Never / 1 / 2 / 5 / 10 minutes (default 1 minute).
-- **Original subtitle alphabet** — only characters of that alphabet are considered in the subtitle; the rest is ignored. With OneOCR, choose *Any alphabet*, Latin, Japanese/Chinese, Korean or Cyrillic. With WinOCR, it follows the language in General › Language, with the **Change language** button.
+- **Original subtitle alphabet** — only characters of that alphabet are considered in the subtitle; the rest is ignored. With OneOCR, choose *Automatic (from the first lines)* (default), Latin, Japanese/Chinese, Korean or Cyrillic. With WinOCR, it follows the language in General › Language, with the **Change language** button.
 
 ### Overlay › Web
 

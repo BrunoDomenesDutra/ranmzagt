@@ -205,14 +205,16 @@ O Modo Legenda tem aparência **própria**, independente de Overlay › Captura.
 - **Captura**
   - *Ignorar texto fora do centro da área* — ligada por padrão. Pula placas e letreiros perto das
     bordas da área; desligue em diálogo alinhado à esquerda.
+  - *Esperar a fala terminar de aparecer* — desligada por padrão. Para jogos que escrevem a
+    legenda letra por letra; a tradução sai cerca de 0,2 s depois em toda fala.
   - *Falas na tela* — quantas falas ficam visíveis (1 a 8). Fica em 1 com *Colar no texto
     detectado* ligado.
   - *Tradução fica depois que a legenda some* — 1 a 3 s (padrão 2 s).
   - *Desligar a legenda sem texto na área* — **desliga o modo** depois desse tempo sem texto:
     Nunca / 1 / 2 / 5 / 10 minutos (padrão 1 minuto).
 - **Alfabeto da legenda original** — só caracteres desse alfabeto são considerados na legenda;
-  o resto é ignorado. Com o OneOCR, escolha *Qualquer alfabeto*, latino, japonês/chinês, coreano
-  ou cirílico. Com o WinOCR, segue o idioma de Geral › Idioma, com o botão **Mudar idioma**.
+  o resto é ignorado. Com o OneOCR, escolha *Automático (pelas primeiras falas)* (padrão), latino,
+  japonês/chinês, coreano ou cirílico. Com o WinOCR, segue o idioma de Geral › Idioma, com o botão **Mudar idioma**.
 
 ## Overlay › Web
 

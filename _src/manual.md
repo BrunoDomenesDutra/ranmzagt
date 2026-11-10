@@ -599,12 +599,19 @@ latino, japonês/chinês, coreano ou cirílico. Útil quando aparecem nomes, pla
 outro alfabeto perto da legenda. Fica em **Overlay › Legenda**, no card **Alfabeto da legenda
 original**:
 
-- Com o **OneOCR**, você escolhe o alfabeto na lista (padrão: *Qualquer alfabeto*).
+- Com o **OneOCR**, o padrão é *Automático (pelas primeiras falas)*: o programa descobre o
+  alfabeto da legenda pelas primeiras falas traduzidas e passa a ignorar os outros. Se preferir,
+  escolha o alfabeto na lista.
 - Com o **WinOCR**, o filtro segue sozinho o idioma escolhido em **Geral › Idioma**.
 
 Exemplo: na cena abaixo, a legenda em inglês fica por cima de uma manchete de jornal em japonês.
-Com *Qualquer alfabeto*, o programa lê as duas juntas e manda o japonês para a tradução no meio da
-fala. Com *Latino*, ele ignora os caracteres japoneses e traduz só a legenda.
+Sem o filtro, o programa lê as duas juntas e manda o japonês para a tradução no meio da fala. Com
+*Latino*, ou com *Automático* depois das primeiras falas em inglês, ele ignora os caracteres
+japoneses e traduz só a legenda.
+
+No *Automático*, se você trocar de jogo para um com legenda em outro alfabeto, desligue e ligue a
+legenda (`Numpad0`) para o programa aprender de novo. Se esquecer, ele percebe sozinho depois de
+algumas falas ignoradas.
 
 <p align="center"><img src="media/legenda-alfabeto-exemplo.png" alt="Legenda em inglês por cima de uma manchete em japonês" width="820"></p>
 
@@ -781,6 +788,20 @@ aparecem ao lado da legenda.
   a legenda aparece.
 - Em jogos com diálogo alinhado à esquerda, como alguns RPGs e visual novels, deixe essa opção
   desligada.
+
+### Esperar a fala terminar de aparecer
+
+Alguns jogos escrevem a legenda letra por letra, como uma máquina de escrever. Sem ajuda, o
+programa traduz pedaços da fala enquanto ela ainda está sendo escrita, e às vezes o final fica de
+fora.
+
+Ligue **Esperar a fala terminar de aparecer**, no card **Captura**, nesses jogos. O programa espera
+a fala parar de crescer e traduz a fala inteira uma vez só.
+
+- A tradução sai um pouco depois, em toda fala: cerca de 0,2 s a mais. Se a fala não termina em
+  ponto, exclamação ou interrogação, a espera é de quase 1 s, porque ela pode continuar.
+- Vem desligada. Deixe desligada nos jogos em que a legenda aparece inteira de uma vez.
+- A opção fica salva no perfil, então dá para ligar só no perfil do jogo que precisa.
 
 ### Colar no texto detectado
 
@@ -1254,14 +1275,16 @@ O Modo Legenda tem aparência **própria**, independente de Overlay › Captura.
 - **Captura**
   - *Ignorar texto fora do centro da área* — ligada por padrão. Pula placas e letreiros perto das
     bordas da área; desligue em diálogo alinhado à esquerda.
+  - *Esperar a fala terminar de aparecer* — desligada por padrão. Para jogos que escrevem a
+    legenda letra por letra; a tradução sai cerca de 0,2 s depois em toda fala.
   - *Falas na tela* — quantas falas ficam visíveis (1 a 8). Fica em 1 com *Colar no texto
     detectado* ligado.
   - *Tradução fica depois que a legenda some* — 1 a 3 s (padrão 2 s).
   - *Desligar a legenda sem texto na área* — **desliga o modo** depois desse tempo sem texto:
     Nunca / 1 / 2 / 5 / 10 minutos (padrão 1 minuto).
 - **Alfabeto da legenda original** — só caracteres desse alfabeto são considerados na legenda;
-  o resto é ignorado. Com o OneOCR, escolha *Qualquer alfabeto*, latino, japonês/chinês, coreano
-  ou cirílico. Com o WinOCR, segue o idioma de Geral › Idioma, com o botão **Mudar idioma**.
+  o resto é ignorado. Com o OneOCR, escolha *Automático (pelas primeiras falas)* (padrão), latino,
+  japonês/chinês, coreano ou cirílico. Com o WinOCR, segue o idioma de Geral › Idioma, com o botão **Mudar idioma**.
 
 ### Overlay › Web
 

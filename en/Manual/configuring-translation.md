@@ -53,10 +53,12 @@ Since it uses an unofficial Microsoft API, a Snipping Tool update can break the 
 
 In Subtitle Mode, the program can consider only the letters of one alphabet and ignore the rest: Latin, Japanese/Chinese, Korean or Cyrillic. Useful when names, signs or symbols in another alphabet show up near the subtitle. It is in **Overlay › Subtitles**, in the **Original subtitle alphabet** card:
 
-- With **OneOCR**, you choose the alphabet in the list (default: *Any alphabet*).
+- With **OneOCR**, the default is *Automatic (from the first lines)*: the program finds out the subtitle's alphabet from the first translated lines and then ignores the others. If you prefer, choose the alphabet in the list.
 - With **WinOCR**, the filter follows the language chosen in **General › Language** by itself.
 
-Example: in the scene below, the English subtitle sits on top of a Japanese news headline. With *Any alphabet*, the program reads both together and sends the Japanese to the translation in the middle of the line. With *Latin*, it ignores the Japanese characters and translates only the subtitle.
+Example: in the scene below, the English subtitle sits on top of a Japanese news headline. Without the filter, the program reads both together and sends the Japanese to the translation in the middle of the line. With *Latin*, or with *Automatic* after the first lines in English, it ignores the Japanese characters and translates only the subtitle.
+
+With *Automatic*, if you switch to a game with subtitles in another alphabet, turn the subtitles off and on (`Numpad0`) so the program learns again. If you forget, it notices by itself after a few ignored lines.
 
 <p align="center"><img src="media/legenda-alfabeto-exemplo.png" alt="English subtitle on top of a Japanese headline" width="820"></p>
 

@@ -136,10 +136,11 @@ Subtitle Mode has its **own** appearance, independent from Overlay › Capture.
 
 - **Capture**
   - *Ignore text away from the center of the area* — on by default. Skips signs near the edges of the area; turn it off for left-aligned dialogue.
+  - *Wait for the line to finish appearing* — off by default. For games that type the subtitle letter by letter; the translation shows up about 0.2 s later on every line.
   - *Lines on screen* — how many lines stay visible (1 to 8). It stays at 1 with *Stick to the detected text* on.
   - *Translation stays after the subtitle goes away* — 1 to 3 s (default 2 s).
   - *Turn off subtitles with no text in the area* — **turns the mode off** after that long with no text: Never / 1 / 2 / 5 / 10 minutes (default 1 minute).
-- **Original subtitle alphabet** — only characters of that alphabet are considered in the subtitle; the rest is ignored. With OneOCR, choose *Any alphabet*, Latin, Japanese/Chinese, Korean or Cyrillic. With WinOCR, it follows the language in General › Language, with the **Change language** button.
+- **Original subtitle alphabet** — only characters of that alphabet are considered in the subtitle; the rest is ignored. With OneOCR, choose *Automatic (from the first lines)* (default), Latin, Japanese/Chinese, Korean or Cyrillic. With WinOCR, it follows the language in General › Language, with the **Change language** button.
 
 ## Overlay › Web
 

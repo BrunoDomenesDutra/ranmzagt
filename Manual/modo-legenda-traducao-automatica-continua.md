@@ -46,6 +46,20 @@ aparecem ao lado da legenda.
 - Em jogos com diálogo alinhado à esquerda, como alguns RPGs e visual novels, deixe essa opção
   desligada.
 
+## Esperar a fala terminar de aparecer
+
+Alguns jogos escrevem a legenda letra por letra, como uma máquina de escrever. Sem ajuda, o
+programa traduz pedaços da fala enquanto ela ainda está sendo escrita, e às vezes o final fica de
+fora.
+
+Ligue **Esperar a fala terminar de aparecer**, no card **Captura**, nesses jogos. O programa espera
+a fala parar de crescer e traduz a fala inteira uma vez só.
+
+- A tradução sai um pouco depois, em toda fala: cerca de 0,2 s a mais. Se a fala não termina em
+  ponto, exclamação ou interrogação, a espera é de quase 1 s, porque ela pode continuar.
+- Vem desligada. Deixe desligada nos jogos em que a legenda aparece inteira de uma vez.
+- A opção fica salva no perfil, então dá para ligar só no perfil do jogo que precisa.
+
 ## Colar no texto detectado
 
 Em **Overlay › Legenda**, o primeiro card (*Posição da tradução*) tem a opção **Colar no texto

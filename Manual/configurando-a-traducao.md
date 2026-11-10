@@ -84,12 +84,19 @@ latino, japonês/chinês, coreano ou cirílico. Útil quando aparecem nomes, pla
 outro alfabeto perto da legenda. Fica em **Overlay › Legenda**, no card **Alfabeto da legenda
 original**:
 
-- Com o **OneOCR**, você escolhe o alfabeto na lista (padrão: *Qualquer alfabeto*).
+- Com o **OneOCR**, o padrão é *Automático (pelas primeiras falas)*: o programa descobre o
+  alfabeto da legenda pelas primeiras falas traduzidas e passa a ignorar os outros. Se preferir,
+  escolha o alfabeto na lista.
 - Com o **WinOCR**, o filtro segue sozinho o idioma escolhido em **Geral › Idioma**.
 
 Exemplo: na cena abaixo, a legenda em inglês fica por cima de uma manchete de jornal em japonês.
-Com *Qualquer alfabeto*, o programa lê as duas juntas e manda o japonês para a tradução no meio da
-fala. Com *Latino*, ele ignora os caracteres japoneses e traduz só a legenda.
+Sem o filtro, o programa lê as duas juntas e manda o japonês para a tradução no meio da fala. Com
+*Latino*, ou com *Automático* depois das primeiras falas em inglês, ele ignora os caracteres
+japoneses e traduz só a legenda.
+
+No *Automático*, se você trocar de jogo para um com legenda em outro alfabeto, desligue e ligue a
+legenda (`Numpad0`) para o programa aprender de novo. Se esquecer, ele percebe sozinho depois de
+algumas falas ignoradas.
 
 <p align="center"><img src="media/legenda-alfabeto-exemplo.png" alt="Legenda em inglês por cima de uma manchete em japonês" width="820"></p>
 

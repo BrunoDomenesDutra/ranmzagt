@@ -33,6 +33,16 @@ The **Ignore text away from the center of the area** option, in the **Capture** 
 - The tighter the area is around the subtitle, the better it works. Mark only the strip where the subtitle appears.
 - In games with left-aligned dialogue, like some RPGs and visual novels, keep this option off.
 
+## Wait for the line to finish appearing
+
+Some games type the subtitle letter by letter, like a typewriter. Without help, the program translates pieces of the line while it is still being typed, and sometimes the end is left out.
+
+Turn on **Wait for the line to finish appearing**, in the **Capture** card, in those games. The program waits for the line to stop growing and translates the whole line once.
+
+- The translation shows up a little later, on every line: about 0.2 s more. If the line does not end in a period, exclamation or question mark, the wait is almost 1 s, because it may continue.
+- It comes off. Keep it off in games where the subtitle appears all at once.
+- The option is saved in the profile, so you can turn it on only in the profile of the game that needs it.
+
 ## Stick to the detected text
 
 In **Overlay › Subtitles**, the first card (*Translation position*) has the **Stick to the detected text** option. When on, the translation no longer shows above the area and is drawn **on top of the original line**, with the same line breaks, covering the game subtitle — as if the game were subtitled in your language.
