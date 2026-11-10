@@ -126,6 +126,8 @@ Open **General › Language**.
 - **Text language** — the language the game is in. With WinOCR, the list only shows the languages that already have the text recognition pack installed in Windows. On a new install the field comes empty, with a warning: pick one from the list.
 - **Target language** — the language you want to read.
 
+> **Your language is not on the Target language list?** Pick **Other (type the code)** at the end of the list and type the language code in **Language code**: `uk` for Ukrainian, `fil` for Filipino, `es-419` for Latin American Spanish. The **See the list of codes** link opens a list with the code of each language. The code applies when you leave the field or press Enter. It works best with AI translation (ChatGPT, Claude, Gemini…): Google, DeepL and Azure only translate the languages they support and fail on the others.
+
 > **The game language is not on the list?** WinOCR only reads languages whose pack is installed in Windows. Install it in *Settings → Time & Language → Language & region* and open the program again. If Windows has no pack with text recognition at all, the warning has an **Install language pack** button that opens that screen.
 
 > **Using OneOCR?** Then there is no source language to choose: it is a single multilingual model (Latin, Japanese, Chinese, Korean, Cyrillic…) that detects the language by itself, and the **Text language** field does not even show while it is selected. The **Target language** still applies normally. OneOCR is the **recommended** engine and is chosen in *General › OCR* — see *Switching OCR engine* in [section 6](/en/Manual/configuring-translation.md).
@@ -760,6 +762,7 @@ The source language field **adapts to the OCR engine** chosen in General › OCR
   - With *WinOCR* — list of the languages with a text recognition pack installed in Windows, with no default option: pick the game language. With no choice, a warning shows up. If the saved language is no longer installed, the **Install language pack** button shows up and opens the Windows language screen.
   - With *OneOCR* — **automatic detection**; there is no source language to set.
 - **Target language** — which language to translate into: Português (Brasil), Português (Portugal), Español, English, Français, Deutsch, Italiano, 日本語, 한국어, 中文（简体）and Русский.
+  - *Other (type the code)* — for a language outside the list. It opens the **Language code** field, where you type the two- or three-letter code, with the region if you want (`uk`, `fil`, `es-419`, `zh-TW`), and the **See the list of codes** link. The code applies when you leave the field or press Enter; an invalid code shows a warning and is not saved. It works best with AI translation; Google, DeepL and Azure fail on languages they do not support.
 
 ### General › OCR
 

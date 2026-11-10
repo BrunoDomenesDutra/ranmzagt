@@ -54,6 +54,7 @@ The source language field **adapts to the OCR engine** chosen in General › OCR
   - With *WinOCR* — list of the languages with a text recognition pack installed in Windows, with no default option: pick the game language. With no choice, a warning shows up. If the saved language is no longer installed, the **Install language pack** button shows up and opens the Windows language screen.
   - With *OneOCR* — **automatic detection**; there is no source language to set.
 - **Target language** — which language to translate into: Português (Brasil), Português (Portugal), Español, English, Français, Deutsch, Italiano, 日本語, 한국어, 中文（简体）and Русский.
+  - *Other (type the code)* — for a language outside the list. It opens the **Language code** field, where you type the two- or three-letter code, with the region if you want (`uk`, `fil`, `es-419`, `zh-TW`), and the **See the list of codes** link. The code applies when you leave the field or press Enter; an invalid code shows a warning and is not saved. It works best with AI translation; Google, DeepL and Azure fail on languages they do not support.
 
 ## General › OCR
 

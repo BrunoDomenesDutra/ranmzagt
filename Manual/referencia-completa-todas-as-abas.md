@@ -82,6 +82,13 @@ O campo do idioma de origem **se adapta ao motor de OCR** escolhido em Geral ›
   - Com *OneOCR* — **detecção automática**; não há idioma de origem para configurar.
 - **Idioma destino** — para qual idioma traduzir: Português (Brasil), Português (Portugal),
   Español, English, Français, Deutsch, Italiano, 日本語, 한국어, 中文（简体）e Русский.
+  - *Outro (digitar o código)* — para um idioma fora da lista. Abre o campo **Código do idioma**,
+    onde vai o código de duas ou três letras, com a região se quiser (`uk`, `fil`, `es-419`,
+    `zh-TW`), e o link **Ver a lista de códigos**. O código vale ao sair do campo ou com Enter;
+    código inválido mostra um aviso e não é salvo. Funciona melhor com tradução por IA; o
+    Google, o DeepL e o Azure dão erro nos idiomas que não têm.
+
+<p align="center"><img src="media/idioma-destino-outro.png" alt="Idioma destino com a opção Outro e o campo Código do idioma" width="820"></p>
 
 ## Geral › OCR
 

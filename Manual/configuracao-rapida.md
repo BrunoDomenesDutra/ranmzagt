@@ -103,6 +103,15 @@ Abra **Geral › Idioma**.
   vazio, com um aviso: escolha um da lista.
 - **Idioma destino** — o idioma em que você quer ler. Português (Brasil) é o padrão.
 
+> **O seu idioma não está na lista do Idioma destino?** Escolha **Outro (digitar o código)** no
+> fim da lista e digite o código do idioma em **Código do idioma**: `uk` para ucraniano, `fil`
+> para filipino, `es-419` para o espanhol da América Latina. O link **Ver a lista de códigos**
+> abre uma lista com o código de cada idioma. O código vale quando você sai do campo ou aperta
+> Enter. Funciona melhor com tradução por IA (ChatGPT, Claude, Gemini…): o Google, o DeepL e o
+> Azure só traduzem os idiomas que eles têm e dão erro nos outros.
+
+<p align="center"><img src="media/idioma-destino-outro.png" alt="Idioma destino com a opção Outro e o campo Código do idioma" width="820"></p>
+
 > **O idioma do jogo não está na lista?** O WinOCR só lê idiomas cujo pacote está instalado no
 > Windows. Instale em *Configurações → Hora e Idioma → Idioma e região* e abra o programa de novo.
 > Se o Windows não tiver nenhum pacote com leitura de texto, o aviso traz o botão **Instalar
