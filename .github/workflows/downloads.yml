@@ -1,0 +1,45 @@
+# Grava uma vez por dia o total de downloads de cada release em estatisticas/downloads.csv, na branch estatisticas.
+# O GitHub só guarda o total; a diferença entre dois dias mostra quanto cada versão subiu.
+name: Downloads por dia
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # 00:00 em Brasília
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: downloads
+  cancel-in-progress: false
+
+jobs:
+  gravar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: estatisticas
+
+      - name: Acrescentar o total de hoje
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          arquivo=estatisticas/downloads.csv
+          hoje=$(date -u +%Y-%m-%d)
+          mkdir -p estatisticas
+          [ -f "$arquivo" ] || echo 'data,release,downloads' > "$arquivo"
+          # Rodar de novo no mesmo dia troca as linhas do dia em vez de duplicar
+          grep -v "^$hoje," "$arquivo" > novo.csv || true
+          gh api "repos/${{ github.repository }}/releases" --paginate \
+            --jq ".[] | \"$hoje,\(.tag_name),\([.assets[].download_count] | add // 0)\"" >> novo.csv
+          mv novo.csv "$arquivo"
+
+      - name: Commitar
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898283+github-actions[bot]@users.noreply.github.com'
+          git add estatisticas/downloads.csv
+          git diff --cached --quiet || git commit -m "chore(estatisticas): downloads de $(date -u +%Y-%m-%d)"
+          git push
