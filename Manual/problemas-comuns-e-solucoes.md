@@ -10,6 +10,23 @@ abre normalmente.
 → O programa abre uma vez só, para os atalhos não brigarem. Feche a outra janela do Ranmza GT —
 inclusive uma versão antiga, se estiver aberta — e abra de novo.
 
+#### "A janela de configuração ficou toda branca"
+→ A causa mais comum é o **RivaTuner Statistics Server** (que vem com o **MSI Afterburner**). Ele
+se injeta em todo programa que desenha na tela, inclusive no componente do Windows que mostra a
+janela de configuração (`msedgewebview2.exe`), e às vezes derruba esse componente. O Ranmza GT
+recarrega a janela sozinho algumas vezes; se ela continuar branca, tire esse componente do RivaTuner:
+
+1. Abra o **RivaTuner Statistics Server** (ícone perto do relógio).
+2. Clique em **Add** (o **+** verde, embaixo à esquerda) e escolha o arquivo
+   `C:\Program Files (x86)\Microsoft\EdgeWebView\Application\<versão>\msedgewebview2.exe`.
+3. Com ele selecionado na lista, mude **Application detection level** para **None**.
+4. Repita os passos 2 e 3 com o `Ranmza-GT.exe`, para o RivaTuner também deixar em paz as janelas
+   da tradução.
+5. Feche e abra o Ranmza GT de novo.
+
+O passo 2 é o que resolve a tela branca. O perfil vale pelo nome do arquivo, então continua valendo
+quando o Windows atualizar o `msedgewebview2.exe` para outra versão.
+
 #### "O reconhecimento não detecta nada" / aviso sobre idioma
 → Com o **WinOCR**, vá em **Geral › Idioma** e confira se um idioma está escolhido e se o pacote
 dele está instalado no Windows. O **OneOCR** não usa pacotes de idioma do Windows e lê qualquer

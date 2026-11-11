@@ -638,6 +638,17 @@ The floating toolbar, the alerts and the area preview also show up in recordings
 ##### "Ranmza GT is already running."
 → The program opens only once, so the shortcuts do not clash. Close the other Ranmza GT window — including an old version, if it is open — and open it again.
 
+##### "The settings window turned all white"
+→ The most common cause is **RivaTuner Statistics Server** (bundled with **MSI Afterburner**). It injects itself into every program that draws on the screen, including the Windows component that shows the settings window (`msedgewebview2.exe`), and sometimes crashes that component. Ranmza GT reloads the window on its own a few times; if it stays white, take that component out of RivaTuner:
+
+1. Open **RivaTuner Statistics Server** (icon near the clock).
+2. Click **Add** (the green **+**, bottom left) and pick the file `C:\Program Files (x86)\Microsoft\EdgeWebView\Application\<version>\msedgewebview2.exe`.
+3. With it selected in the list, set **Application detection level** to **None**.
+4. Repeat steps 2 and 3 with `Ranmza-GT.exe`, so RivaTuner also leaves the translation windows alone.
+5. Close Ranmza GT and open it again.
+
+Step 2 is what fixes the white window. The profile matches the file name, so it keeps working when Windows updates `msedgewebview2.exe` to another version.
+
 ##### "Recognition does not detect anything" / language warning
 → With **WinOCR**, go to **General › Language** and check that a language is chosen and that its pack is installed in Windows. **OneOCR** does not use Windows language packs and reads any language without installing anything — another reason to switch engines in **General › OCR**.
 
