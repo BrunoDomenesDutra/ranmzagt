@@ -112,7 +112,8 @@ captura de tela — então você pode deixar a legenda contínua menor e mais di
 captura de tela maior, por exemplo.
 
 O card **Fundo e Contorno** da legenda também tem o **Efeito de vidro**: a imagem do jogo atrás
-da legenda fica borrada, no lugar da caixa escura, e acompanha o vídeo em tempo real. A
+da legenda fica borrada, no lugar da caixa escura. Sobre vídeo no navegador e em muitos jogos, o
+borrado mostra a cena de um instante antes e se atualiza de tempos em tempos. A
 *Opacidade* controla o quanto ela escurece. O vidro precisa que as linhas formem um bloco só;
 falas com fundos separados ficam com a caixa escura.
 

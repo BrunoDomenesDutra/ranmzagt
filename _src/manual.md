@@ -716,7 +716,8 @@ No card **Fundo e Contorno**:
 - **Contorno**: desenha uma borda nas letras, com espessura e cor ajustáveis — pode ser usado
   sozinho ou junto com o fundo.
 - **Efeito de vidro**: no lugar da caixa escura, borra a imagem do jogo atrás de cada bloco,
-  como um vidro fosco. O borrado acompanha o jogo em tempo real. Ele fica logo abaixo de
+  como um vidro fosco. Sobre vídeo no navegador e em muitos jogos, o borrado mostra a cena de um
+  instante antes e se atualiza de tempos em tempos, por exemplo a cada tradução nova. Ele fica logo abaixo de
   *Mostrar fundo* e só liga com o fundo ativo. A *Opacidade do fundo* também vale para ele:
   quanto maior, mais escuro e menos borrado. Quando o Inpaint reconstrói o fundo, o vidro não
   aparece. No Windows 11 a caixa tem os cantos arredondados; no Windows 10, retos.
@@ -883,7 +884,8 @@ captura de tela — então você pode deixar a legenda contínua menor e mais di
 captura de tela maior, por exemplo.
 
 O card **Fundo e Contorno** da legenda também tem o **Efeito de vidro**: a imagem do jogo atrás
-da legenda fica borrada, no lugar da caixa escura, e acompanha o vídeo em tempo real. A
+da legenda fica borrada, no lugar da caixa escura. Sobre vídeo no navegador e em muitos jogos, o
+borrado mostra a cena de um instante antes e se atualiza de tempos em tempos. A
 *Opacidade* controla o quanto ela escurece. O vidro precisa que as linhas formem um bloco só;
 falas com fundos separados ficam com a caixa escura.
 

@@ -15,7 +15,7 @@ In the **Background and Outline** card:
 
 - **Background**: draws a dark box behind the text (with adjustable opacity), to keep it readable over any scenery.
 - **Outline**: draws a border around the letters, with adjustable thickness and color — it can be used on its own or together with the background.
-- **Glass effect**: instead of the dark box, it blurs the game image behind each block, like frosted glass. The blur follows the game in real time. It sits right below *Show background* and only turns on with the background on. *Background opacity* also applies to it: higher values look darker and show less blur. When Inpaint rebuilds the background, the glass does not show. On Windows 11 the box has rounded corners; on Windows 10, square ones.
+- **Glass effect**: instead of the dark box, it blurs the game image behind each block, like frosted glass. Over browser videos and many games, the blur shows the scene from a moment earlier and refreshes from time to time, for example on each new translation. It sits right below *Show background* and only turns on with the background on. *Background opacity* also applies to it: higher values look darker and show less blur. When Inpaint rebuilds the background, the glass does not show. On Windows 11 the box has rounded corners; on Windows 10, square ones.
 
 ## How long translation stays on screen
 

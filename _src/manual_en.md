@@ -488,7 +488,7 @@ In the **Background and Outline** card:
 
 - **Background**: draws a dark box behind the text (with adjustable opacity), to keep it readable over any scenery.
 - **Outline**: draws a border around the letters, with adjustable thickness and color — it can be used on its own or together with the background.
-- **Glass effect**: instead of the dark box, it blurs the game image behind each block, like frosted glass. The blur follows the game in real time. It sits right below *Show background* and only turns on with the background on. *Background opacity* also applies to it: higher values look darker and show less blur. When Inpaint rebuilds the background, the glass does not show. On Windows 11 the box has rounded corners; on Windows 10, square ones.
+- **Glass effect**: instead of the dark box, it blurs the game image behind each block, like frosted glass. Over browser videos and many games, the blur shows the scene from a moment earlier and refreshes from time to time, for example on each new translation. It sits right below *Show background* and only turns on with the background on. *Background opacity* also applies to it: higher values look darker and show less blur. When Inpaint rebuilds the background, the glass does not show. On Windows 11 the box has rounded corners; on Windows 10, square ones.
 
 ### How long translation stays on screen
 
@@ -601,7 +601,7 @@ With an AI (OpenAI, Anthropic, Gemini, Groq or OpenAI-compatible), **Translation
 
 Overlay › Subtitles has its own font, color, background and outline options — independent from screen capture — so you can keep the continuous subtitle smaller and more discreet and the screen capture translation larger, for example.
 
-The subtitle **Background and Outline** card also has the **Glass effect**: the game image behind the subtitle is blurred instead of the dark box, and it follows the video in real time. *Opacity* controls how much it darkens. The glass needs the lines to form a single block; lines with separate backgrounds keep the dark box.
+The subtitle **Background and Outline** card also has the **Glass effect**: the game image behind the subtitle is blurred instead of the dark box. Over browser videos and many games, the blur shows the scene from a moment earlier and refreshes from time to time. *Opacity* controls how much it darkens. The glass needs the lines to form a single block; lines with separate backgrounds keep the dark box.
 
 With *Stick to the detected text* on, the subtitle does not show in recordings. To show it in OBS, use the **Subtitles — OBS** address from the Web tab (see section 10).
 
