@@ -911,8 +911,24 @@ desligue com o `Numpad2` antes de gravar.
 > automática: o Modo Legenda com *Colar no texto detectado* ligado desenha **por cima** do texto
 > original, e aí o overlay precisa ficar invisível para capturas, senão o OCR releria a própria
 > tradução. A outra é uma escolha sua: *"Esconder a tradução de gravações e transmissões"*, no
-> card **Exibição** de Overlay › Captura. Para a captura de tela, é justamente nesses casos que o
-> servidor Web resolve.
+> card **Exibição** de Overlay › Captura. O servidor Web resolve os dois casos: o endereço
+> **Captura — OBS** para a captura de tela e o **Legenda — OBS** para a legenda colada no texto.
+
+### Legenda colada no texto no OBS
+
+Com *Colar no texto detectado* ligado, a legenda some das gravações, para o OCR não ler a própria
+tradução. Para ela aparecer no OBS:
+
+1. Em **Overlay › Web**, ative o **Servidor ativo**.
+2. Copie o endereço **Legenda — OBS** (`/legenda/obs`).
+3. No OBS, adicione uma fonte **"Navegador" (Browser Source)** com esse endereço e a resolução do
+   seu monitor. Deixe a fonte acima do jogo, do mesmo tamanho e na mesma posição da imagem dele.
+4. Em **Overlay › Legenda**, deixe *Colar no texto detectado* ligado.
+
+A legenda aparece no OBS no mesmo lugar da original, com a fonte, as cores e o fundo da aba
+Legenda, e some junto com a da tela. Se a imagem do jogo estiver cortada ou em janela na cena, a
+legenda sai do lugar. No OBS, o *Efeito de vidro* vira o fundo escuro, porque a página não
+recebe a imagem do jogo.
 
 ---
 
@@ -1289,6 +1305,9 @@ Aparência da tradução da captura de tela.
   - *Auto-fit* — reduz a fonte até o texto caber no lugar do original. **Vem ligado.**
 - **Fundo e Contorno** — podem ser ligados juntos ou separados.
   - *Mostrar fundo* + *Opacidade do fundo* (10–100%) — caixa escura atrás do texto.
+  - *Efeito de vidro* — borra a imagem atrás de cada bloco em vez de só escurecer. Só liga com
+    *Mostrar fundo* ativo. A *Opacidade do fundo* também vale para ele: quanto maior, mais escuro
+    e menos borrado. Quando o Inpaint gera o fundo, o vidro não aparece.
   - *Mostrar contorno* + *Espessura* (0,5–5 px) + *Cor do contorno* — contorno ao redor de cada
     letra.
 - **Ajuste Fino do Modo Parágrafo → Sensibilidade do agrupamento** (0,5–3,0) — valores menores
@@ -1311,7 +1330,9 @@ O Modo Legenda tem aparência **própria**, independente de Overlay › Captura.
   fica sempre no meio do monitor. Apagada com *Colar no texto detectado* ligado.
 - **Texto** — *Fonte*, *Cor do texto* e *Tamanho da fonte* (10–48 px).
 - **Fundo e Contorno** — *Mostrar fundo* + *Opacidade* (10–100%) e *Mostrar contorno* +
-  *Espessura do contorno* (0,5–5 px) + *Cor do contorno*.
+  *Espessura do contorno* (0,5–5 px) + *Cor do contorno*. *Efeito de vidro*, logo abaixo de
+  *Mostrar fundo*, borra a imagem atrás da legenda em vez de só escurecer; a *Opacidade* também
+  vale para ele. Falas com fundos separados ficam com o fundo escuro.
 
 <p align="center"><img src="media/overlay-legenda-captura.png" alt="Aba Overlay › Legenda — Captura e alfabeto" width="820"></p>
 

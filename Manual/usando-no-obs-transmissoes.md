@@ -33,7 +33,23 @@ desligue com o `Numpad2` antes de gravar.
 > automática: o Modo Legenda com *Colar no texto detectado* ligado desenha **por cima** do texto
 > original, e aí o overlay precisa ficar invisível para capturas, senão o OCR releria a própria
 > tradução. A outra é uma escolha sua: *"Esconder a tradução de gravações e transmissões"*, no
-> card **Exibição** de Overlay › Captura. Para a captura de tela, é justamente nesses casos que o
-> servidor Web resolve.
+> card **Exibição** de Overlay › Captura. O servidor Web resolve os dois casos: o endereço
+> **Captura — OBS** para a captura de tela e o **Legenda — OBS** para a legenda colada no texto.
+
+## Legenda colada no texto no OBS
+
+Com *Colar no texto detectado* ligado, a legenda some das gravações, para o OCR não ler a própria
+tradução. Para ela aparecer no OBS:
+
+1. Em **Overlay › Web**, ative o **Servidor ativo**.
+2. Copie o endereço **Legenda — OBS** (`/legenda/obs`).
+3. No OBS, adicione uma fonte **"Navegador" (Browser Source)** com esse endereço e a resolução do
+   seu monitor. Deixe a fonte acima do jogo, do mesmo tamanho e na mesma posição da imagem dele.
+4. Em **Overlay › Legenda**, deixe *Colar no texto detectado* ligado.
+
+A legenda aparece no OBS no mesmo lugar da original, com a fonte, as cores e o fundo da aba
+Legenda, e some junto com a da tela. Se a imagem do jogo estiver cortada ou em janela na cena, a
+legenda sai do lugar. No OBS, o *Efeito de vidro* vira o fundo escuro, porque a página não
+recebe a imagem do jogo.
 
 ---

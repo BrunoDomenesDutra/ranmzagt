@@ -188,6 +188,9 @@ Aparência da tradução da captura de tela.
   - *Auto-fit* — reduz a fonte até o texto caber no lugar do original. **Vem ligado.**
 - **Fundo e Contorno** — podem ser ligados juntos ou separados.
   - *Mostrar fundo* + *Opacidade do fundo* (10–100%) — caixa escura atrás do texto.
+  - *Efeito de vidro* — borra a imagem atrás de cada bloco em vez de só escurecer. Só liga com
+    *Mostrar fundo* ativo. A *Opacidade do fundo* também vale para ele: quanto maior, mais escuro
+    e menos borrado. Quando o Inpaint gera o fundo, o vidro não aparece.
   - *Mostrar contorno* + *Espessura* (0,5–5 px) + *Cor do contorno* — contorno ao redor de cada
     letra.
 - **Ajuste Fino do Modo Parágrafo → Sensibilidade do agrupamento** (0,5–3,0) — valores menores
@@ -210,7 +213,9 @@ O Modo Legenda tem aparência **própria**, independente de Overlay › Captura.
   fica sempre no meio do monitor. Apagada com *Colar no texto detectado* ligado.
 - **Texto** — *Fonte*, *Cor do texto* e *Tamanho da fonte* (10–48 px).
 - **Fundo e Contorno** — *Mostrar fundo* + *Opacidade* (10–100%) e *Mostrar contorno* +
-  *Espessura do contorno* (0,5–5 px) + *Cor do contorno*.
+  *Espessura do contorno* (0,5–5 px) + *Cor do contorno*. *Efeito de vidro*, logo abaixo de
+  *Mostrar fundo*, borra a imagem atrás da legenda em vez de só escurecer; a *Opacidade* também
+  vale para ele. Falas com fundos separados ficam com o fundo escuro.
 
 <p align="center"><img src="media/overlay-legenda-captura.png" alt="Aba Overlay › Legenda — Captura e alfabeto" width="820"></p>
 

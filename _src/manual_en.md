@@ -128,6 +128,8 @@ Open **General › Language**.
 
 > **Your language is not on the Target language list?** Pick **Other (type the code)** at the end of the list and type the language code in **Language code**: `uk` for Ukrainian, `fil` for Filipino, `es-419` for Latin American Spanish. The **See the list of codes** link opens a list with the code of each language. The code applies when you leave the field or press Enter. It works best with AI translation (ChatGPT, Claude, Gemini…): Google, DeepL and Azure only translate the languages they support and fail on the others.
 
+<p align="center"><img src="media/en/idioma-destino-outro.png" alt="Target language with the Other option and the Language code field" width="820"></p>
+
 > **The game language is not on the list?** WinOCR only reads languages whose pack is installed in Windows. Install it in *Settings → Time & Language → Language & region* and open the program again. If Windows has no pack with text recognition at all, the warning has an **Install language pack** button that opens that screen.
 
 > **Using OneOCR?** Then there is no source language to choose: it is a single multilingual model (Latin, Japanese, Chinese, Korean, Cyrillic…) that detects the language by itself, and the **Text language** field does not even show while it is selected. The **Target language** still applies normally. OneOCR is the **recommended** engine and is chosen in *General › OCR* — see *Switching OCR engine* in [section 6](/en/Manual/configuring-translation.md).
@@ -615,7 +617,18 @@ The page can also be opened in any browser on the local network (phone, second m
 
 The floating toolbar, the alerts and the area preview also show up in recordings. To remove the toolbar and the alerts, turn on *Hide the toolbar from recordings and streams* (General › Shortcuts) and *Hide alerts from recordings and streams* (General › Config). The preview has no such option: turn it off with `Numpad2` before recording.
 
-> If the translation disappears from your recordings and streams, there are two possible causes. One is automatic: Subtitle Mode with *Stick to the detected text* on draws **over** the original text, and then the overlay must be invisible to captures, otherwise the OCR would read its own translation. The other is your choice: *"Hide the translation from recordings and streams"*, in the **Display** card of Overlay › Capture. For screen capture, those are exactly the cases the Web server solves.
+> If the translation disappears from your recordings and streams, there are two possible causes. One is automatic: Subtitle Mode with *Stick to the detected text* on draws **over** the original text, and then the overlay must be invisible to captures, otherwise the OCR would read its own translation. The other is your choice: *"Hide the translation from recordings and streams"*, in the **Display** card of Overlay › Capture. The Web server solves both cases: the **Capture — OBS** address for screen capture and the **Subtitles — OBS** address for the subtitle stuck to the detected text.
+
+### Subtitle stuck to the detected text in OBS
+
+With *Stick to the detected text* on, the subtitle disappears from recordings, so the OCR does not read its own translation. To show it in OBS:
+
+1. In **Overlay › Web**, turn on **Server active**.
+2. Copy the **Subtitles — OBS** address (`/legenda/obs`).
+3. In OBS, add a **"Browser" (Browser Source)** source with that address and your monitor resolution. Keep the source above the game, the same size and in the same position as the game image.
+4. In **Overlay › Subtitles**, keep *Stick to the detected text* on.
+
+The subtitle shows in OBS in the same place as the original, with the font, colors and background of the Subtitles tab, and it disappears together with the one on screen. If the game image is cropped or windowed in the scene, the subtitle is out of place. In OBS, the *Glass effect* becomes the dark background, because the page does not receive the game image.
 
 ---
 
@@ -779,6 +792,8 @@ The source language field **adapts to the OCR engine** chosen in General › OCR
 - **Target language** — which language to translate into: Português (Brasil), Português (Portugal), Español, English, Français, Deutsch, Italiano, 日本語, 한국어, 中文（简体）and Русский.
   - *Other (type the code)* — for a language outside the list. It opens the **Language code** field, where you type the two- or three-letter code, with the region if you want (`uk`, `fil`, `es-419`, `zh-TW`), and the **See the list of codes** link. The code applies when you leave the field or press Enter; an invalid code shows a warning and is not saved. It works best with AI translation; Google, DeepL and Azure fail on languages they do not support.
 
+<p align="center"><img src="media/en/idioma-destino-outro.png" alt="Target language with the Other option and the Language code field" width="820"></p>
+
 ### General › OCR
 
 Which engine recognizes the text on screen.
@@ -842,6 +857,7 @@ How the screen capture translation looks.
   - *Auto-fit* — shrinks the font until the text fits where the original was. **On by default.**
 - **Background and Outline** — can be on together or separately.
   - *Show background* + *Background opacity* (10–100%) — dark box behind the text.
+  - *Glass effect* — blurs the image behind each block instead of only darkening it. It only turns on with *Show background* on. *Background opacity* also applies to it: higher values look darker and show less blur. When Inpaint generates the background, the glass does not show.
   - *Show outline* + *Thickness* (0.5–5 px) + *Outline color* — outline around each letter.
 - **Paragraph Mode Fine-Tuning → Grouping sensitivity** (0.5–3.0) — lower values separate paragraphs more easily; higher values join more distant lines into one block. The mode itself (paragraph or line) **is not chosen here**: it is decided at capture time, by the shortcut — `Numpad8` (paragraph) or `Numpad9` (line).
 
@@ -854,7 +870,7 @@ Subtitle Mode has its **own** appearance, independent from Overlay › Capture.
 - **Translation position → Stick to the detected text** — draws the translation on top of the original line, with the same line breaks, instead of above the area. It shows one line at a time, and a larger font spills over the area. In this mode the subtitle disappears from captures made on this PC — that is what stops the OCR from reading its own translation. See section 9.
 - **Translation position → Center the translation on the monitor** — on by default. The translation above the area sits in the middle of the monitor; off, it is centered on the area. With several lines on screen, it always sits in the middle of the monitor. Greyed out with *Stick to the detected text* on.
 - **Text** — *Font*, *Text color* and *Font size* (10–48 px).
-- **Background and Outline** — *Show background* + *Opacity* (10–100%) and *Show outline* + *Outline thickness* (0.5–5 px) + *Outline color*.
+- **Background and Outline** — *Show background* + *Opacity* (10–100%) and *Show outline* + *Outline thickness* (0.5–5 px) + *Outline color*. *Glass effect*, right below *Show background*, blurs the image behind the subtitle instead of only darkening it; *Opacity* also applies to it. Lines with separate backgrounds keep the dark background.
 
 <p align="center"><img src="media/en/overlay-legenda-captura.png" alt="Overlay › Subtitles tab — Capture and alphabet" width="820"></p>
 
