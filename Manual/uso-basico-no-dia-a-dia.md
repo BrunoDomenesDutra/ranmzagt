@@ -44,8 +44,7 @@ minimizar a janela de configuração, ela sai da barra de tarefas e o programa f
 lado do relógio. A legenda, a captura de tela e os atalhos continuam funcionando.
 
 - **Dois cliques no ícone** abrem a janela de novo.
-- **Botão direito no ícone** abre o menu: *Abrir configurações*, *Ligar/desligar legenda* e
-  *Sair*.
+- **Botão direito no ícone** abre o menu: *Abrir configurações* e *Sair*.
 - O **X** da janela continua fechando o programa.
 
 No Windows 11, o ícone pode aparecer escondido na seta **^** da bandeja. Arraste-o para fora uma

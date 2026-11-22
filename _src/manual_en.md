@@ -281,7 +281,7 @@ Turn on the **floating toolbar** in **General › Shortcuts** and trigger everyt
 Turn on **Minimize to tray** in **General › Config** (or in the last step of the guide). When you minimize the settings window, it leaves the taskbar and the program stays only as the icon next to the clock. Subtitles, screen capture and shortcuts keep working.
 
 - **Double-click the icon** to open the window again.
-- **Right-click the icon** for the menu: *Open settings*, *Turn subtitles on/off* and *Exit*.
+- **Right-click the icon** for the menu: *Open settings* and *Exit*.
 - The window **X** still closes the program.
 
 On Windows 11, the icon may show up hidden under the **^** arrow in the tray. Drag it out once and it stays visible.
@@ -799,7 +799,7 @@ The menu has five groups with sub-items (**General**, **Overlay**, **Translation
   - *Theme* — Dark or Light.
   - *Colorblind* — accessible color palette for color blindness.
   - *Grayscale* — for achromatopsia.
-- **Windows tray → Minimize to tray** — when minimized, this window leaves the taskbar and stays only as the icon next to the clock. Subtitles, screen capture and shortcuts keep working. Double-click the icon to open the window again. Right-click the icon for the menu: *Open settings*, *Turn subtitles on/off* and *Exit*. The window X still closes the program. It comes off by default and also shows up in the last step of the guide.
+- **Windows tray → Minimize to tray** — when minimized, this window leaves the taskbar and stays only as the icon next to the clock. Subtitles, screen capture and shortcuts keep working. Double-click the icon to open the window again. Right-click the icon for the menu: *Open settings* and *Exit*. The window X still closes the program. It comes off by default and also shows up in the last step of the guide.
 - **Updates → Notify me about new versions** — turns on the warning shown when opening the program when a newer version is published (see section 14).
 - **Updates → Check now** — checks right away whether there is a new version, even with the warning off.
 
