@@ -18,6 +18,11 @@ O menu tem cinco grupos com sub-itens (**Geral**, **Overlay**, **Tradução**, *
   - *Tema* — Escuro ou Claro.
   - *Daltônico* — paleta de cores acessível para daltonismo.
   - *Escala de cinza* — para acromatopsia.
+- **Bandeja do Windows → Minimizar para a bandeja** — ao minimizar, esta janela sai da barra de
+  tarefas e fica só no ícone ao lado do relógio. A legenda, a captura de tela e os atalhos
+  continuam funcionando. Dois cliques no ícone abrem a janela de novo. O botão direito no ícone
+  abre o menu: *Abrir configurações*, *Ligar/desligar legenda* e *Sair*. O X da janela continua
+  fechando o programa. Vem desligada; também aparece no último passo do guia.
 - **Atualizações → Avisar sobre novas versões** — liga o aviso que aparece ao abrir o programa
   quando existe versão mais nova publicada (veja a seção 14).
 - **Atualizações → Verificar agora** — consulta na hora se existe versão nova, mesmo com o

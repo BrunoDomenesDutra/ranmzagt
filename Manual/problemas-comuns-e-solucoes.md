@@ -153,6 +153,11 @@ agrupamento** em **Overlay › Captura** — ela só afeta o modo Parágrafo.
 nenhuma: marque de novo (`Numpad7` e `Numpad1`). Ao voltar para o monitor anterior, as áreas dele
 voltam sozinhas.
 
+#### "Minimizei e o programa sumiu da barra de tarefas"
+→ Com **Minimizar para a bandeja** ligado, o programa fica só no ícone ao lado do relógio. Dê
+dois cliques nele para abrir a janela. No Windows 11, o ícone pode estar escondido na seta **^**
+da bandeja: arraste-o para fora uma vez, e ele fica sempre visível.
+
 #### "Quero compartilhar meus logs para suporte, mas não quero mostrar o conteúdo do jogo"
 → Confira em **Debug › Logs** se a opção "Logar textos capturados e traduções" está
 **desativada** (é o padrão) — assim os logs não mostram o conteúdo dos textos e traduções, e as

@@ -37,7 +37,7 @@ O guia é uma janela por cima da tela de configurações, com oito passos:
 | **Tradução** | O serviço de tradução e a chave dele, se precisar, com uma lista de qual escolher |
 | **Captura** | Quanto tempo a tradução da captura de tela fica na tela, fonte, cor e Auto-fit |
 | **Legenda** | Fonte, cor e o filtro de alfabeto do Modo Legenda |
-| **Pronto** | Um resumo do que você escolheu e as teclas para começar |
+| **Pronto** | Um resumo do que você escolheu, as teclas para começar e a opção de minimizar para a bandeja |
 
 Tudo o que você muda no guia vale na hora, igual nas abas. Os passos no topo são clicáveis, para
 voltar ou pular para outro. Com o **WinOCR**, o guia não passa do passo Idiomas sem um idioma

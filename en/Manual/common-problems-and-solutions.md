@@ -80,6 +80,9 @@ What fixes it, from simplest to most definitive:
 #### "I switched monitors and the areas disappeared"
 → Each monitor keeps its own areas. The first time you use a monitor, it has no area at all: mark them again (`Numpad7` and `Numpad1`). When you go back to the previous monitor, its areas come back by themselves.
 
+#### "I minimized it and the program disappeared from the taskbar"
+→ With **Minimize to tray** on, the program stays only as the icon next to the clock. Double-click it to open the window. On Windows 11, the icon may be hidden under the **^** arrow in the tray: drag it out once and it stays visible.
+
 #### "I want to share my logs with support, but I don't want to show the game content"
 → Check in **Debug › Logs** that the "Log captured text and translations" option is **off** (the default) — that way the logs do not show the content of texts and translations, and API keys never show up in them.
 

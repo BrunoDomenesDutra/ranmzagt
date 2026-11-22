@@ -100,7 +100,7 @@ O guia é uma janela por cima da tela de configurações, com oito passos:
 | **Tradução** | O serviço de tradução e a chave dele, se precisar, com uma lista de qual escolher |
 | **Captura** | Quanto tempo a tradução da captura de tela fica na tela, fonte, cor e Auto-fit |
 | **Legenda** | Fonte, cor e o filtro de alfabeto do Modo Legenda |
-| **Pronto** | Um resumo do que você escolheu e as teclas para começar |
+| **Pronto** | Um resumo do que você escolheu, as teclas para começar e a opção de minimizar para a bandeja |
 
 Tudo o que você muda no guia vale na hora, igual nas abas. Os passos no topo são clicáveis, para
 voltar ou pular para outro. Com o **WinOCR**, o guia não passa do passo Idiomas sem um idioma
@@ -1087,6 +1087,11 @@ agrupamento** em **Overlay › Captura** — ela só afeta o modo Parágrafo.
 nenhuma: marque de novo (`Numpad7` e `Numpad1`). Ao voltar para o monitor anterior, as áreas dele
 voltam sozinhas.
 
+##### "Minimizei e o programa sumiu da barra de tarefas"
+→ Com **Minimizar para a bandeja** ligado, o programa fica só no ícone ao lado do relógio. Dê
+dois cliques nele para abrir a janela. No Windows 11, o ícone pode estar escondido na seta **^**
+da bandeja: arraste-o para fora uma vez, e ele fica sempre visível.
+
 ##### "Quero compartilhar meus logs para suporte, mas não quero mostrar o conteúdo do jogo"
 → Confira em **Debug › Logs** se a opção "Logar textos capturados e traduções" está
 **desativada** (é o padrão) — assim os logs não mostram o conteúdo dos textos e traduções, e as
@@ -1114,6 +1119,11 @@ O menu tem cinco grupos com sub-itens (**Geral**, **Overlay**, **Tradução**, *
   - *Tema* — Escuro ou Claro.
   - *Daltônico* — paleta de cores acessível para daltonismo.
   - *Escala de cinza* — para acromatopsia.
+- **Bandeja do Windows → Minimizar para a bandeja** — ao minimizar, esta janela sai da barra de
+  tarefas e fica só no ícone ao lado do relógio. A legenda, a captura de tela e os atalhos
+  continuam funcionando. Dois cliques no ícone abrem a janela de novo. O botão direito no ícone
+  abre o menu: *Abrir configurações*, *Ligar/desligar legenda* e *Sair*. O X da janela continua
+  fechando o programa. Vem desligada; também aparece no último passo do guia.
 - **Atualizações → Avisar sobre novas versões** — liga o aviso que aparece ao abrir o programa
   quando existe versão mais nova publicada (veja a seção 14).
 - **Atualizações → Verificar agora** — consulta na hora se existe versão nova, mesmo com o
