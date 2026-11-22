@@ -37,6 +37,20 @@ sempre acima de qualquer janela, move-se livremente entre monitores e é o plano
 jogo "engole" as teclas do Numpad. Os nove botões estão explicados no
 [passo 2.8](/Manual/configuracao-rapida.md).
 
+## Deixando o programa só na bandeja
+
+Ligue **Minimizar para a bandeja** em **Geral › Config** (ou no último passo do guia). Ao
+minimizar a janela de configuração, ela sai da barra de tarefas e o programa fica só no ícone ao
+lado do relógio. A legenda, a captura de tela e os atalhos continuam funcionando.
+
+- **Dois cliques no ícone** abrem a janela de novo.
+- **Botão direito no ícone** abre o menu: *Abrir configurações*, *Ligar/desligar legenda* e
+  *Sair*.
+- O **X** da janela continua fechando o programa.
+
+No Windows 11, o ícone pode aparecer escondido na seta **^** da bandeja. Arraste-o para fora uma
+vez, e ele fica sempre visível.
+
 ## Conferindo se as áreas estão certas
 
 Aperte **Mostrar/ocultar áreas** (padrão `Numpad2`) para desenhar no monitor escolhido o

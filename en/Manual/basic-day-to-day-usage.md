@@ -23,6 +23,16 @@ Wrong mode? Press the other shortcut right after — the previous translation is
 
 Turn on the **floating toolbar** in **General › Shortcuts** and trigger everything with the mouse. It stays above any window, moves freely between monitors and is plan B for when the game "swallows" the Numpad keys. The nine buttons are explained in [step 2.8](/en/Manual/quick-setup.md).
 
+## Keeping the program only in the tray
+
+Turn on **Minimize to tray** in **General › Config** (or in the last step of the guide). When you minimize the settings window, it leaves the taskbar and the program stays only as the icon next to the clock. Subtitles, screen capture and shortcuts keep working.
+
+- **Double-click the icon** to open the window again.
+- **Right-click the icon** for the menu: *Open settings*, *Turn subtitles on/off* and *Exit*.
+- The window **X** still closes the program.
+
+On Windows 11, the icon may show up hidden under the **^** arrow in the tray. Drag it out once and it stays visible.
+
 ## Checking if your areas are correct
 
 Press **Show/hide the selected areas** (default `Numpad2`) to draw on the chosen monitor the outline and name of each area: the screen capture areas, the subtitle area and the strip where the subtitle translation appears. Press it again to hide them. It does not translate anything, it is only a visual guide, and it follows a new area or a settings change right away.

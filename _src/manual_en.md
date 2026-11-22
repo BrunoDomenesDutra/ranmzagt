@@ -276,6 +276,16 @@ Wrong mode? Press the other shortcut right after — the previous translation is
 
 Turn on the **floating toolbar** in **General › Shortcuts** and trigger everything with the mouse. It stays above any window, moves freely between monitors and is plan B for when the game "swallows" the Numpad keys. The nine buttons are explained in [step 2.8](/en/Manual/quick-setup.md).
 
+### Keeping the program only in the tray
+
+Turn on **Minimize to tray** in **General › Config** (or in the last step of the guide). When you minimize the settings window, it leaves the taskbar and the program stays only as the icon next to the clock. Subtitles, screen capture and shortcuts keep working.
+
+- **Double-click the icon** to open the window again.
+- **Right-click the icon** for the menu: *Open settings*, *Turn subtitles on/off* and *Exit*.
+- The window **X** still closes the program.
+
+On Windows 11, the icon may show up hidden under the **^** arrow in the tray. Drag it out once and it stays visible.
+
 ### Checking if your areas are correct
 
 Press **Show/hide the selected areas** (default `Numpad2`) to draw on the chosen monitor the outline and name of each area: the screen capture areas, the subtitle area and the strip where the subtitle translation appears. Press it again to hide them. It does not translate anything, it is only a visual guide, and it follows a new area or a settings change right away.
@@ -478,6 +488,7 @@ In the **Background and Outline** card:
 
 - **Background**: draws a dark box behind the text (with adjustable opacity), to keep it readable over any scenery.
 - **Outline**: draws a border around the letters, with adjustable thickness and color — it can be used on its own or together with the background.
+- **Glass effect**: instead of the dark box, it blurs the game image behind each block, like frosted glass. The blur follows the game in real time. It sits right below *Show background* and only turns on with the background on. *Background opacity* also applies to it: higher values look darker and show less blur. When Inpaint rebuilds the background, the glass does not show. On Windows 11 the box has rounded corners; on Windows 10, square ones.
 
 ### How long translation stays on screen
 
@@ -589,6 +600,10 @@ With an AI (OpenAI, Anthropic, Gemini, Groq or OpenAI-compatible), **Translation
 ### Separate appearance
 
 Overlay › Subtitles has its own font, color, background and outline options — independent from screen capture — so you can keep the continuous subtitle smaller and more discreet and the screen capture translation larger, for example.
+
+The subtitle **Background and Outline** card also has the **Glass effect**: the game image behind the subtitle is blurred instead of the dark box, and it follows the video in real time. *Opacity* controls how much it darkens. The glass needs the lines to form a single block; lines with separate backgrounds keep the dark box.
+
+With *Stick to the detected text* on, the subtitle does not show in recordings. To show it in OBS, use the **Subtitles — OBS** address from the Web tab (see section 10).
 
 ### Turning it off
 
@@ -892,7 +907,7 @@ Streams screen capture translations to browsers on the local network — and to 
   - *Server active* — starts a local HTTP server, reachable from any device on the same network.
   - *Show translation on screen* — keeps the overlay even with the server on; turn it off to send **only** to the browser/OBS.
   - *Port* — 7474 by default. It also shows how many clients are connected.
-- **Addresses** — `/captura` (with history and a Clear button) and `/captura/obs` (transparent background, to use as a Browser Source in OBS), each with a **Copy** button.
+- **Addresses** — `/captura` (with history and a Clear button), `/captura/obs` (transparent background, to use as a Browser Source in OBS) and `/legenda/obs` (the subtitle stuck to the detected text, in the same place as the original; see section 10), each with a **Copy** button.
 
 <p align="center"><img src="media/en/overlay-web-aparencia.png" alt="Overlay › Web tab — page appearance and history" width="820"></p>
 

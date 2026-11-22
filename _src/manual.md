@@ -397,6 +397,20 @@ sempre acima de qualquer janela, move-se livremente entre monitores e é o plano
 jogo "engole" as teclas do Numpad. Os nove botões estão explicados no
 [passo 2.8](/Manual/configuracao-rapida.md).
 
+### Deixando o programa só na bandeja
+
+Ligue **Minimizar para a bandeja** em **Geral › Config** (ou no último passo do guia). Ao
+minimizar a janela de configuração, ela sai da barra de tarefas e o programa fica só no ícone ao
+lado do relógio. A legenda, a captura de tela e os atalhos continuam funcionando.
+
+- **Dois cliques no ícone** abrem a janela de novo.
+- **Botão direito no ícone** abre o menu: *Abrir configurações*, *Ligar/desligar legenda* e
+  *Sair*.
+- O **X** da janela continua fechando o programa.
+
+No Windows 11, o ícone pode aparecer escondido na seta **^** da bandeja. Arraste-o para fora uma
+vez, e ele fica sempre visível.
+
 ### Conferindo se as áreas estão certas
 
 Aperte **Mostrar/ocultar áreas** (padrão `Numpad2`) para desenhar no monitor escolhido o
@@ -701,6 +715,11 @@ No card **Fundo e Contorno**:
   legibilidade sobre qualquer cenário.
 - **Contorno**: desenha uma borda nas letras, com espessura e cor ajustáveis — pode ser usado
   sozinho ou junto com o fundo.
+- **Efeito de vidro**: no lugar da caixa escura, borra a imagem do jogo atrás de cada bloco,
+  como um vidro fosco. O borrado acompanha o jogo em tempo real. Ele fica logo abaixo de
+  *Mostrar fundo* e só liga com o fundo ativo. A *Opacidade do fundo* também vale para ele:
+  quanto maior, mais escuro e menos borrado. Quando o Inpaint reconstrói o fundo, o vidro não
+  aparece. No Windows 11 a caixa tem os cantos arredondados; no Windows 10, retos.
 
 ### Quanto tempo a tradução fica na tela
 
@@ -862,6 +881,14 @@ conversa. Cada fala a mais custa tokens em toda tradução.
 Overlay › Legenda tem suas próprias opções de fonte, cor, fundo e contorno — independentes da
 captura de tela — então você pode deixar a legenda contínua menor e mais discreta e a tradução da
 captura de tela maior, por exemplo.
+
+O card **Fundo e Contorno** da legenda também tem o **Efeito de vidro**: a imagem do jogo atrás
+da legenda fica borrada, no lugar da caixa escura, e acompanha o vídeo em tempo real. A
+*Opacidade* controla o quanto ela escurece. O vidro precisa que as linhas formem um bloco só;
+falas com fundos separados ficam com a caixa escura.
+
+Com *Colar no texto detectado* ligado, a legenda não aparece nas gravações. Para mostrar ela no
+OBS, use o endereço **Legenda — OBS** da aba Web (veja a seção 10).
 
 ### Desligando
 
@@ -1362,8 +1389,9 @@ Transmite as traduções da captura de tela para navegadores na rede local — e
   - *Mostrar tradução na tela* — mantém o overlay mesmo com o servidor ligado; desligue para
     mandar **só** para o navegador/OBS.
   - *Porta* — padrão 7474. Mostra também quantos clientes estão conectados.
-- **Endereços** — `/captura` (com histórico e botão Limpar) e `/captura/obs` (fundo
-  transparente, para usar como Browser Source no OBS), cada um com botão **Copiar**.
+- **Endereços** — `/captura` (com histórico e botão Limpar), `/captura/obs` (fundo
+  transparente, para usar como Browser Source no OBS) e `/legenda/obs` (a legenda colada no
+  texto, no mesmo lugar da original; veja a seção 10), cada um com botão **Copiar**.
 
 <p align="center"><img src="media/overlay-web-aparencia.png" alt="Aba Overlay › Web — aparência da página e histórico" width="820"></p>
 

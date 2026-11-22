@@ -76,6 +76,10 @@ With an AI (OpenAI, Anthropic, Gemini, Groq or OpenAI-compatible), **Translation
 
 Overlay › Subtitles has its own font, color, background and outline options — independent from screen capture — so you can keep the continuous subtitle smaller and more discreet and the screen capture translation larger, for example.
 
+The subtitle **Background and Outline** card also has the **Glass effect**: the game image behind the subtitle is blurred instead of the dark box, and it follows the video in real time. *Opacity* controls how much it darkens. The glass needs the lines to form a single block; lines with separate backgrounds keep the dark box.
+
+With *Stick to the detected text* on, the subtitle does not show in recordings. To show it in OBS, use the **Subtitles — OBS** address from the Web tab (see section 10).
+
 ## Turning it off
 
 Press **`Numpad0`** again, or the toggle subtitles button on the floating toolbar. The subtitle on screen is cleared immediately.

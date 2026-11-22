@@ -157,7 +157,7 @@ Streams screen capture translations to browsers on the local network — and to 
   - *Server active* — starts a local HTTP server, reachable from any device on the same network.
   - *Show translation on screen* — keeps the overlay even with the server on; turn it off to send **only** to the browser/OBS.
   - *Port* — 7474 by default. It also shows how many clients are connected.
-- **Addresses** — `/captura` (with history and a Clear button) and `/captura/obs` (transparent background, to use as a Browser Source in OBS), each with a **Copy** button.
+- **Addresses** — `/captura` (with history and a Clear button), `/captura/obs` (transparent background, to use as a Browser Source in OBS) and `/legenda/obs` (the subtitle stuck to the detected text, in the same place as the original; see section 10), each with a **Copy** button.
 
 <p align="center"><img src="media/en/overlay-web-aparencia.png" alt="Overlay › Web tab — page appearance and history" width="820"></p>
 

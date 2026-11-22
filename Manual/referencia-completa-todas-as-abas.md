@@ -245,8 +245,9 @@ Transmite as traduções da captura de tela para navegadores na rede local — e
   - *Mostrar tradução na tela* — mantém o overlay mesmo com o servidor ligado; desligue para
     mandar **só** para o navegador/OBS.
   - *Porta* — padrão 7474. Mostra também quantos clientes estão conectados.
-- **Endereços** — `/captura` (com histórico e botão Limpar) e `/captura/obs` (fundo
-  transparente, para usar como Browser Source no OBS), cada um com botão **Copiar**.
+- **Endereços** — `/captura` (com histórico e botão Limpar), `/captura/obs` (fundo
+  transparente, para usar como Browser Source no OBS) e `/legenda/obs` (a legenda colada no
+  texto, no mesmo lugar da original; veja a seção 10), cada um com botão **Copiar**.
 
 <p align="center"><img src="media/overlay-web-aparencia.png" alt="Aba Overlay › Web — aparência da página e histórico" width="820"></p>
 
