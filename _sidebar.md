@@ -8,7 +8,7 @@
 - [7. Deixando a tradução com a "cara" do jogo](/Manual/deixando-a-traducao-com-a-cara-do-jogo.md)
 - [8. Modo Vision — quando o OCR erra](/Manual/modo-vision-quando-o-ocr-erra.md)
 - [9. Modo Legenda — tradução automática contínua](/Manual/modo-legenda-traducao-automatica-continua.md)
-- [10. Usando no OBS / transmissões](/Manual/usando-no-obs-transmissoes.md)
+- [10. Web](/Manual/web.md)
 - [11. Histórico e desempenho](/Manual/historico-e-desempenho.md)
 - [12. Problemas comuns e soluções](/Manual/problemas-comuns-e-solucoes.md)
 - [13. Referência completa — todas as abas](/Manual/referencia-completa-todas-as-abas.md)

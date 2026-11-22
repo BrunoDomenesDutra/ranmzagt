@@ -15,7 +15,7 @@ Practical guide to using **Ranmza GT**, the translator for games, visual novels,
 7. [Making translation look like the game](#7-making-translation-look-like-the-game)
 8. [Vision Mode — when OCR fails](#8-vision-mode--when-ocr-fails)
 9. [Subtitle Mode — continuous automatic translation](#9-subtitle-mode--continuous-automatic-translation)
-10. [Using with OBS / streaming](#10-using-with-obs--streaming)
+10. [Web](#10-web)
 11. [History and performance](#11-history-and-performance)
 12. [Common problems and solutions](#12-common-problems-and-solutions)
 13. [Complete reference — all tabs](#13-complete-reference--all-tabs)
@@ -613,37 +613,71 @@ The mode also **turns itself off** after a while with no text in the area, so it
 
 ---
 
-## 10. Using with OBS / streaming
+## 10. Web
 
-If you stream or record the game and want **the screen capture translation to show up in the video/stream too** (or only in the video, without showing in the game itself), use **Overlay › Web**:
+The **Overlay › Web** tab turns on a server on your local network that shows the translations on a browser page. Use it to follow the translations on your phone or a second monitor, and to bring the translation into OBS when it does not show up in the recording.
 
-1. Turn on **Server active**.
-2. Copy the **Capture — OBS** address (`/captura/obs`) shown in the tab, with the *Copy* button.
-3. In OBS, add a **"Browser" (Browser Source)** source and paste that address. This version of the page has a transparent background, ready to overlay the game capture.
-4. (Optional) **Turn off** the **"Show translation on screen"** switch to remove the overlay from the game and have the translation show **only** in the browser/OBS page — useful if the OBS capture already includes the overlay window and you do not want to see the translation twice. Keep it **on** if you want the translation in both places.
+> **You do not need the Web server for the translation to show up in OBS.** With OBS capturing the monitor (*Display Capture*), the translation goes into the recording like any window. It is left out in three cases:
+> - OBS uses *Game Capture*, which records only the game image, without the windows on top;
+> - Subtitle Mode has *Stick to the detected text* on, which hides the subtitle from recordings so the OCR does not read its own translation;
+> - *Hide the translation from recordings and streams* is on in Overlay › Capture.
+>
+> In those cases, use the OBS addresses of this tab.
 
 <p align="center"><img src="media/en/overlay-web.png" alt="Overlay › Web tab" width="820"></p>
 
-You can also customize the theme (light/dark/dracula), colors, font size, and whether to show the original text along with the translation, the time and which service was used. Open pages change right away.
+### Web Server
+
+- **Server active** — turns the server on. With it off, none of the addresses below work. The first time, Windows Firewall asks whether to allow the program on the network.
+- **Show translation on screen** — applies to screen capture. Off, the translation shows only on the pages, not on top of the game. It can only be changed with the server on.
+- **Port** — default 7474. Next to it you see how many pages are connected.
+
+### Addresses
+
+Each address has a **Copy** button.
+
+- **Capture** (`/captura`) — list of the screen capture translations, with history and a Clear button. Open it in the browser of any device on the same network, such as your phone.
+- **Capture — OBS** (`/captura/obs`) — the same list, with a transparent background and no button, for use in OBS.
+- **Subtitles — OBS** (`/legenda/obs`) — the Subtitle Mode subtitle with *Stick to the detected text* on, in the same place as the original subtitle.
+
+The two capture pages only receive screen capture translations (`Numpad8`, `Numpad9` and Vision). The subtitle goes only to the **Subtitles — OBS** address.
+
+### Adding it to OBS
+
+**Screen capture translation:**
+
+1. Turn on **Server active** and copy the **Capture — OBS** address.
+2. In OBS, add a **"Browser" (Browser Source)** source with that address.
+3. If the translation also shows up in the monitor capture and appears twice, turn off **Show translation on screen**.
+
+**Subtitle stuck to the detected text:**
+
+1. Turn on **Server active** and copy the **Subtitles — OBS** address.
+2. In OBS, add a **"Browser" (Browser Source)** source with that address and your monitor resolution. Keep the source above the game, the same size and in the same position as the game image.
+3. In **Overlay › Subtitles**, keep *Stick to the detected text* on.
+
+The subtitle shows in OBS in the same place as the original, with the font, colors and background of the Subtitles tab, and it disappears together with the one on screen. If the game image is cropped or windowed in the scene, the subtitle is out of place. In OBS, the *Glass effect* becomes the dark background, because the page does not receive the game image.
+
+### Appearance
+
+Applies to the **Capture** and **Capture — OBS** pages. The subtitle page uses the appearance of the Subtitles tab. Open pages change right away.
 
 <p align="center"><img src="media/en/overlay-web-aparencia.png" alt="Overlay › Web tab — page appearance" width="820"></p>
 
-The page can also be opened in any browser on the local network (phone, second monitor, etc.) using the **Capture** address (`/captura`) shown in the tab — that version comes with history and a clear button.
+- **Theme** — Dark, Light or Dracula.
+- **Font size** — 12 to 48 px.
+- **Bold** — translation in bold.
+- **Detected text** — shows the original text read by the OCR below the translation.
+- **Time and service** — shows the time of the translation and the service that translated it.
+- **Custom colors** — replaces the theme colors with yours: translated text, original text, time, service, card background and card border.
+
+### History
+
+- **Entries kept in the buffer** — how many translations the server keeps for whoever opens the page later, from 10 to 200. The Clear button on the page and the one in the History tab erase the list.
+
+### Toolbar, alerts and preview in recordings
 
 The floating toolbar, the alerts and the area preview also show up in recordings. To remove the toolbar and the alerts, turn on *Hide the toolbar from recordings and streams* (General › Shortcuts) and *Hide alerts from recordings and streams* (General › Config). The preview has no such option: turn it off with `Numpad2` before recording.
-
-> If the translation disappears from your recordings and streams, there are two possible causes. One is automatic: Subtitle Mode with *Stick to the detected text* on draws **over** the original text, and then the overlay must be invisible to captures, otherwise the OCR would read its own translation. The other is your choice: *"Hide the translation from recordings and streams"*, in the **Display** card of Overlay › Capture. The Web server solves both cases: the **Capture — OBS** address for screen capture and the **Subtitles — OBS** address for the subtitle stuck to the detected text.
-
-### Subtitle stuck to the detected text in OBS
-
-With *Stick to the detected text* on, the subtitle disappears from recordings, so the OCR does not read its own translation. To show it in OBS:
-
-1. In **Overlay › Web**, turn on **Server active**.
-2. Copy the **Subtitles — OBS** address (`/legenda/obs`).
-3. In OBS, add a **"Browser" (Browser Source)** source with that address and your monitor resolution. Keep the source above the game, the same size and in the same position as the game image.
-4. In **Overlay › Subtitles**, keep *Stick to the detected text* on.
-
-The subtitle shows in OBS in the same place as the original, with the font, colors and background of the Subtitles tab, and it disappears together with the one on screen. If the game image is cropped or windowed in the scene, the subtitle is out of place. In OBS, the *Glass effect* becomes the dark background, because the page does not receive the game image.
 
 ---
 
