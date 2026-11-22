@@ -624,6 +624,8 @@ The **Overlay › Web** tab turns on a server on your local network that shows t
 >
 > In those cases, use the OBS addresses of this tab.
 
+?> **Hiding from recordings only applies to programs that record or stream on this same PC**, such as OBS, Game Bar, Discord and NVIDIA ShadowPlay. **When recording with a capture card**, on another PC, the card receives the same image that goes to your monitor: the translation, the subtitle stuck to the detected text, the toolbar and the alerts show up normally in the recording, even with the hide options on. In that case you do not need the OBS addresses.
+
 <p align="center"><img src="media/en/overlay-web.png" alt="Overlay › Web tab" width="820"></p>
 
 ### Web Server

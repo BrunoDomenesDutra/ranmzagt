@@ -14,6 +14,8 @@ tradução ao OBS quando ela não entra na gravação.
 >
 > Nesses casos, use os endereços do OBS desta aba.
 
+?> **Esconder da gravação só vale para programas que gravam ou transmitem neste mesmo PC**, como OBS, Game Bar, Discord e NVIDIA ShadowPlay. **Gravando por uma placa de captura**, em outro PC, a placa recebe a mesma imagem que vai para o seu monitor: a tradução, a legenda colada no texto, a barra e os alertas aparecem normalmente na gravação, mesmo com as opções de esconder ligadas. Nesse caso você não precisa dos endereços do OBS.
+
 <p align="center"><img src="media/overlay-web.png" alt="Aba Overlay › Web" width="820"></p>
 
 ## Servidor Web
