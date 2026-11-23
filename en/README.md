@@ -39,3 +39,20 @@ Ranmza GT is free. If it helped you, consider supporting the development:
 </p>
 
 ☕ **[Ko-fi](https://ko-fi.com/ranmza)** (card/PayPal, worldwide) &nbsp;·&nbsp; 💚 **[LivePix](https://livepix.gg/ranmza)** (Pix, Brazil only)
+
+### Privacy
+
+Ranmza GT does not collect any of your data. There is no analytics, telemetry, tracking or user account, and nothing is sent to us.
+
+Everything the program stores stays on your computer, in its own folder: settings, profiles, API keys (encrypted by Windows), translation cache and logs.
+
+The program only connects to the internet in these cases, and none of them goes through us:
+
+- **Translation:** the text read on screen goes straight from your PC to the translation service you picked (Google, DeepL, OpenAI, Claude…), with your key. In Vision mode, the image of the area goes too. What the service does with it follows its own privacy policy.
+- **New version notice:** on startup, the program asks GitHub whether a newer version exists. Only the installed version number is sent. You can turn it off in **General › Config → Updates**.
+- **Inpaint model:** it is downloaded from Hugging Face only when you click **Download**.
+- **Web server:** it only works on your local network and comes off by default.
+
+Logs stay on your PC only. By default, they do not record game text or translations, and API keys never show up in them. The only way a log reaches us is if you send it yourself.
+
+On our side, we only see the download count that GitHub shows on the releases page.

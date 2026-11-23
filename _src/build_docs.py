@@ -125,6 +125,47 @@ def support_en():
           f'💚 **[LivePix]({LIVEPIX_URL})** (Pix, Brazil only)\n')
     return s
 
+# Privacidade logo depois do apoio, na página inicial e no README; conferido contra o código do gt em 2026-11-23
+def privacy_pt():
+    return """
+### Privacidade
+
+O Ranmza GT não coleta nenhum dado seu. Não tem analytics, telemetria, rastreamento nem conta de usuário, e nada é enviado para nós.
+
+Tudo o que o programa guarda fica no seu computador, na pasta dele: configurações, perfis, chaves de API (criptografadas pelo Windows), cache de traduções e logs.
+
+O programa só se conecta à internet nestes casos, e nenhum deles passa por nós:
+
+- **Tradução:** o texto lido na tela vai direto do seu PC para o serviço de tradução que você escolheu (Google, DeepL, OpenAI, Claude…), com a sua chave. No modo Vision, a imagem da área também vai junto. O que o serviço faz com isso segue a política de privacidade dele.
+- **Aviso de versão nova:** ao abrir, o programa consulta o GitHub para saber se existe versão mais nova. Vai só o número da versão instalada. Dá para desligar em **Geral › Config → Atualizações**.
+- **Modelo do Inpaint:** é baixado do Hugging Face só quando você clica em **Baixar**.
+- **Servidor Web:** funciona só na sua rede local e vem desligado.
+
+Os logs ficam só no seu PC. Por padrão, eles não gravam o texto do jogo nem as traduções, e as chaves de API nunca aparecem neles. A única forma de um log chegar até nós é você mesmo enviá-lo.
+
+Do nosso lado, vemos só o número de downloads que o GitHub mostra na página de versões.
+"""
+
+def privacy_en():
+    return """
+### Privacy
+
+Ranmza GT does not collect any of your data. There is no analytics, telemetry, tracking or user account, and nothing is sent to us.
+
+Everything the program stores stays on your computer, in its own folder: settings, profiles, API keys (encrypted by Windows), translation cache and logs.
+
+The program only connects to the internet in these cases, and none of them goes through us:
+
+- **Translation:** the text read on screen goes straight from your PC to the translation service you picked (Google, DeepL, OpenAI, Claude…), with your key. In Vision mode, the image of the area goes too. What the service does with it follows its own privacy policy.
+- **New version notice:** on startup, the program asks GitHub whether a newer version exists. Only the installed version number is sent. You can turn it off in **General › Config → Updates**.
+- **Inpaint model:** it is downloaded from Hugging Face only when you click **Download**.
+- **Web server:** it only works on your local network and comes off by default.
+
+Logs stay on your PC only. By default, they do not record game text or translations, and API keys never show up in them. The only way a log reaches us is if you send it yourself.
+
+On our side, we only see the download count that GitHub shows on the releases page.
+"""
+
 def build_lang(sections, *, out_prefix, sidebar_home_label, home_md,
                skip_slug, manual_label):
     """Gera Manual/*.md + _sidebar.md de um idioma. out_prefix='' (PT) ou 'en' (EN).
@@ -190,6 +231,7 @@ home_pt += rust_pt + '\n\n'
 home_pt += (f"📖 **[Abrir o manual completo]({PAGES_URL})** &nbsp;·&nbsp; "
             f"⬇️ **[Baixar (Releases)]({RELEASES_URL})**\n\n")
 home_pt += support_pt()
+home_pt += privacy_pt()
 
 # --- EN ---
 tagline_en = "Translate any game, video or on-screen text — overlaid, in real time."
@@ -219,6 +261,7 @@ home_en += rust_en + '\n\n'
 home_en += (f"📖 **[Open the full manual]({PAGES_URL}#/en/)** &nbsp;·&nbsp; "
             f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n\n")
 home_en += support_en()
+home_en += privacy_en()
 
 # O README raiz (landing do GitHub + home PT do Docsify) tambem traz a versao EN da
 # descricao, com link pro manual EN — para quem chega pela pagina do repo em ingles.
@@ -229,6 +272,7 @@ home_pt += rust_en + '\n\n'
 home_pt += (f"📖 **[Open the full manual]({PAGES_URL}#/en/)** &nbsp;·&nbsp; "
             f"⬇️ **[Download (Releases)]({RELEASES_URL})**\n\n")
 home_pt += support_en()
+home_pt += privacy_en()
 
 # ---------- Gera ----------
 n_pt = build_lang(read_and_split(SRC_PT), out_prefix='',   sidebar_home_label='Início',
