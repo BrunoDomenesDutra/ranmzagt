@@ -55,8 +55,6 @@ O programa só se conecta à internet nestes casos, e nenhum deles passa por nó
 
 Os logs ficam só no seu PC. Por padrão, eles não gravam o texto do jogo nem as traduções, e as chaves de API nunca aparecem neles. A única forma de um log chegar até nós é você mesmo enviá-lo.
 
-Do nosso lado, vemos só o número de downloads que o GitHub mostra na página de versões.
-
 ---
 
 ## English
@@ -99,5 +97,3 @@ The program only connects to the internet in these cases, and none of them goes 
 - **Web server:** it only works on your local network and comes off by default.
 
 Logs stay on your PC only. By default, they do not record game text or translations, and API keys never show up in them. The only way a log reaches us is if you send it yourself.
-
-On our side, we only see the download count that GitHub shows on the releases page.
